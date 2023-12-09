@@ -26,6 +26,7 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: ""
+          MERGE_METHOD_LABEL_REQUIRED: "false"
           MERGE_FILTER_AUTHOR: "nwithan8"
           MERGE_REQUIRED_APPROVALS: 0
           MERGE_METHOD: "squash"
