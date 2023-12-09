@@ -5,7 +5,7 @@
     <Registry>https://hub.docker.com/r/nwithan8/plex_prerolls</Registry>
     <Branch>
         <Tag>latest</Tag>
-        <TagDescription>Latest stable release</TagDescription>
+        <TagDescription>Latest release</TagDescription>
     </Branch>
     <Network>host</Network>
     <Shell>bash</Shell>
