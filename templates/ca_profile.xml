@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maintainer>
+    <Icon>https://raw.githubusercontent.com/nwithan8/assets/main/images/avatar/duck/duck_300.png</Icon>
+    <Profile>
+        An open-source developer and fellow Unraid user, creating and maintaining templates for the community. Most templates are for my own projects, but I'm happy to add any template that is requested.
+    </Profile>
+    <DonateLink>https://www.buymeacoffee.com/nwithan8</DonateLink>
+    <DonateText>If you like my work, please consider donating</DonateText>
+    <WebPage>https://github.com/nwithan8/unraid_templates</WebPage>
+    <Forum>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Forum>
+</Maintainer>
