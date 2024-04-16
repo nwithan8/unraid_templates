@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>VHS Server</Name>
+    <Repository>ghcr.io/charmbracelet/vhs:latest</Repository>
+    <Registry>ghcr.io/charmbracelet/vhs</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <PostArgs>serve</PostArgs>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/charmbracelet/vhs</Project>
+    <Overview>Your CLI home video recorder</Overview>
+    <Beta>False</Beta>
+    <Category>Backup: Cloud: Productivity: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/vhs-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/vhs.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-04-16
+
+        Initial release (v0.7.2+)
+    </Changes>
+    <Config Name="SSH Port" Target="1976" Default="" Mode="tcp" Description="Container Port: 1976" Type="Port" Display="always" Required="true" Mask="false">1976</Config>
+</Container>
