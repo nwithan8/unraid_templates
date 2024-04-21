@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>LocalAI</Name>
+    <Repository>localai/localai</Repository>
+    <Registry>https://hub.docker.com/r/localai/localai</Registry>
+    <Branch>
+        <Tag>latest-aio-cpu</Tag>
+        <TagDescription>Latest all-in-one release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-aio-gpu-nvidia-cuda-11</Tag>
+        <TagDescription>Latest release with Nvidia (CUDA 11) support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-aio-gpu-nvidia-cuda-12</Tag>
+        <TagDescription>Latest release with Nvidia (CUDA 12) support</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://localai.io/</Project>
+    <Overview>
+        The free, Open Source OpenAI alternative. Self-hosted, community-driven and local-first.  &#xD;
+        Drop-in replacement for OpenAI running on consumer-grade hardware.  &#xD;
+        No GPU required.  &#xD;
+        Runs gguf, transformers, diffusers and many more models architectures.  &#xD;
+        It allows to generate Text, Audio, Video, Images. Also with voice cloning capabilities.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Icon>https://github.com/go-skynet/LocalAI/assets/2420543/0966aa2a-166e-4f99-a3e5-6c915fc997dd</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/local_ai.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-04-20
+
+        Initial release
+    </Changes>
+    <Config Name="WebUI HTTP Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+    <Config Name="Debug mode" Target="DEBUG" Default="true|false" Description="Whether to enable debug mode" Type="Variable" Display="advanced" Required="true" Mask="false" />
+    <Config Name="Model Storage Path" Target="/build/models" Default="/mnt/user/appdata/local_ai/models" Mode="rw" Description="Storage for models" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/local_ai/models</Config>
+</Container>
