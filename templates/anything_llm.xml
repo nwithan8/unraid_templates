@@ -27,7 +27,7 @@
         Initial release
     </Changes>
     <Config Name="WebUI HTTP Port" Target="3001" Default="3001" Mode="tcp" Description="Container Port: 3001" Type="Port" Display="always" Required="true" Mask="false">3001</Config>
-    <Config Name="Environment File Path" Target="/app/server/.env" Default="/mnt/user/appdata/anythingllm/.env" Mode="rw" Description="Path to the environmental variable file" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/anythingllm/.env</Config>
+    <Config Name="Environment File Path" Target="/app/server/.env" Default="/mnt/user/appdata/anythingllm/.env" Mode="rw" Description="Path to the environmental variable file. File must exist before running!" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/anythingllm/.env</Config>
     <Config Name="In-container storage path" Target="STORAGE_DIR" Default="/app/server/storage" Description="In-container storage location. Do not change!" Type="Variable" Display="advanced" Required="true" Mask="false">/app/server/storage</Config>
     <Config Name="Storage Path" Target="/app/server/storage" Default="/mnt/user/appdata/anythingllm" Mode="rw" Description="Storage for databases and file storage" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/anythingllm</Config>
 </Container>
