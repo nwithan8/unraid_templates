@@ -29,5 +29,5 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI HTTP Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
 </Container>
