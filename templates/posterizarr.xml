@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Posterizarr</Name>
+    <Repository>ghcr.io/fscorrupt/docker-posterizarr</Repository>
+    <Registry>https://github.com/fscorrupt/Posterizarr/pkgs/container/docker-posterizarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/fscorrupt/Posterizarr</Project>
+    <Overview>
+        Automated poster maker for Plex.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Tools: MediaServer Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/posterizarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/posterizarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-04-24
+
+        Initial release
+    </Changes>
+    <Config Name="Run time" Target="RUN_TIME" Default="00:00" Description="Comma-separated list of times to run the script. Format: HH:MM (24-hour time)" Type="Variable" Display="always" Required="true" Mask="false">00:00</Config>
+    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="UMASK" Target="UMASK" Default="022" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
+    <Config Name="TERM" Target="TERM" Default="xterm" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">xterm</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/posterizarr" Mode="rw" Description="Storage for config files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr</Config>
+</Container>
