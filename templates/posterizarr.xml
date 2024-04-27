@@ -23,6 +23,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-04-27
+
+        Add missing asset path
+
         ### 2024-04-24
 
         Initial release
@@ -33,4 +37,5 @@
     <Config Name="UMASK" Target="UMASK" Default="022" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
     <Config Name="TERM" Target="TERM" Default="xterm" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">xterm</Config>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/posterizarr" Mode="rw" Description="Storage for config files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr</Config>
+    <Config Name="Asset Path" Target="/assets" Default="/mnt/user/appdata/posterizarr/assets" Mode="rw" Description="Storage for assets" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr/assets</Config>
 </Container>
