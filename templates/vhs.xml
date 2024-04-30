@@ -7,7 +7,7 @@
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
-    <Network>host</Network>
+    <Network>bridge</Network>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <PostArgs>serve</PostArgs>
@@ -22,6 +22,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-04-30
+
+        Fix port mapping via bridge network
+
         ### 2024-04-16
 
         Initial release (v0.7.2+)

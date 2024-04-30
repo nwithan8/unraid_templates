@@ -15,7 +15,7 @@
         <Tag>latest-aio-gpu-nvidia-cuda-12</Tag>
         <TagDescription>Latest release with Nvidia (CUDA 12) support</TagDescription>
     </Branch>
-    <Network>host</Network>
+    <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
@@ -40,6 +40,10 @@
         If you are using an Nvidia GPU, add "--gpus=all" to the Extra Parameters field under Advanced.
     </Requires>
     <Changes>
+        ### 2024-04-30
+
+        Fix port mapping via bridge network
+
         ### 2024-04-20
 
         Initial release

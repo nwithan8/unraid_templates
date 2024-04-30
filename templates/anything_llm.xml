@@ -7,7 +7,7 @@
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
-    <Network>host</Network>
+    <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3001]/</WebUI>
     <Shell>bash</Shell>
     <Privileged>true</Privileged>
@@ -27,6 +27,10 @@
         - `touch anythingllm.db` at /mnt/user/appdata/anythingllm/anythingllm.db &#xD;
     </Requires>
     <Changes>
+        ### 2024-04-30
+
+        Fix port mapping via bridge network
+
         ### 2024-04-20
 
         Initial release

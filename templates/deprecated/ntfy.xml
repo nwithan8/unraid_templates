@@ -7,7 +7,7 @@
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
-    <Network>host</Network>
+    <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
