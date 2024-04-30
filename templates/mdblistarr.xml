@@ -7,7 +7,8 @@
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
-    <Network>host</Network>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5353]/</WebUI>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
@@ -20,10 +21,14 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-04-30
+
+        Fix bad volume mapping
+
         ### 2024-04-28
 
         Initial release
     </Changes>
     <Config Name="WebUI" Target="5353" Default="" Mode="tcp" Description="Container Port: 5353" Type="Port" Display="always" Required="false" Mask="false">5353</Config>
-    <Config Name="Data Path" Target="/usr/src/app" Default="/mnt/user/appdata/mdblistarr" Mode="rw" Description="Storage for files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/mdblistarr</Config>
+    <Config Name="Database Path" Target="/usr/src/db" Default="/mnt/user/appdata/mdblistarr/db" Mode="rw" Description="Storage for database" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/mdblistarr/db</Config>
 </Container>
