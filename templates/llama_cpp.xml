@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>llama.cpp</Name>
+    <Repository>ghcr.io/ggerganov/llama.cpp</Repository>
+    <Registry>https://github.com/ggerganov/llama.cpp/pkgs/container/llama.cpp</Registry>
+    <Branch>
+        <Tag>server</Tag>
+        <TagDescription>Latest server release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>server-cuda</Tag>
+        <TagDescription>Latest server release with Nvidia (CUDA) support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>server-rocm</Tag>
+        <TagDescription>Latest server release with AMD (ROCm) support</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <PostArgs>-m /models/model.gguf --port 8000 --host 0.0.0.0 --n-gpu-layers 1</PostArgs>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/ggerganov/llama.cpp</Project>
+    <Overview>
+        Inference of Meta's LLaMA model (and others) in pure C/C++
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Icon>https://user-images.githubusercontent.com/1991296/230134379-7181e485-c521-4d23-a0d6-f7b3b61ba524.png</Icon>
+    <Banner>https://user-images.githubusercontent.com/1991296/230134379-7181e485-c521-4d23-a0d6-f7b3b61ba524.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/llama_cpp.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        The image for this container is several gigabytes. If you receive a "no space left on device" warning
+        during installation, please increase the vDisk size in your Docker settings. &#xD;
+        This container expects a "model.gguf" file to be present in the model storage path. &#xD;
+        If you are using an Nvidia GPU, add "--gpus all" to the Extra Parameters field under Advanced.
+    </Requires>
+    <Changes>
+        ### 2024-05-07
+
+        Initial release
+    </Changes>
+    <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+    <Config Name="Model Storage Path" Target="/models" Default="/mnt/user/appdata/llama_cpp/model" Mode="rw" Description="Storage for model" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/llama_cpp/model</Config>
+</Container>
