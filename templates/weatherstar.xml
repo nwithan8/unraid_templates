@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>WeatherStar</Name>
+    <Repository>ghcr.io/netbymatt/ws4kp</Repository>
+    <Registry>https://github.com/netbymatt/ws4kp/pkgs/container/ws4kp</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/netbymatt/ws4kp</Project>
+    <Overview>Bring back the feel of the 90's with a weather forecast that has the look and feel of The Weather Channel at that time but available in a modern way</Overview>
+    <Beta>False</Beta>
+    <Category>Other: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/weatherstar-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/weatherstar.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-05-07
+
+        Initial release
+    </Changes>
+    <Config Name="WebUI" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+</Container>
