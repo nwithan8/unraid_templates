@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>webtrees</Name>
+    <Repository>dtjs48jkt/webtrees</Repository>
+    <Registry>https://hub.docker.com/r/dtjs48jkt/webtrees</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>https://[IP]:[PORT:8079]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://webtrees.net</Project>
+    <Overview>
+        The web’s leading online collaborative genealogy application
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Other: Productivity: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/webtrees-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/webtrees.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-05-08
+
+        Initial release
+    </Changes>
+    <Config Name="WebUI" Target="8079" Default="8079" Mode="tcp" Description="Container Port: 8079" Type="Port" Display="always" Required="true" Mask="false">8079</Config>
+    <Config Name="Database host" Target="DB_HOST" Default="localhost" Description="Database Hostname" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Database port" Target="DB_PORT" Default="3306" Description="Database Port" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Database user" Target="DB_USER" Default="" Description="Database Username" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Database password" Target="DB_PASSWORD" Default="" Description="Database Password" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Database name" Target="DB_NAME" Default="" Description="Database Name" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Use pretty URLs" Target="PRETTYURLS" Default="true|false" Description="Use pretty URLs" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Pretty URLs base path" Target="BASE_URL" Default="" Description="Pretty URLs base path" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="GUID" Target="GROUP_ID" Default="999" Description="Group ID" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Auto-update on start" Target="UPDATE_ON_START" Default="false|true" Description="Auto-update on start" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Disable SSL" Target="DISABLE_SSL" Default="true|false" Description="Disable SSL" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Web Port" Target="PORT" Default="8079" Description="Web Port" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Config path" Target="/var/www/html/data" Default="/mnt/user/appdata/webtrees" Mode="rw" Description="Config path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/webtrees</Config>
+    <Config Name="Localtime path" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="Localtime path" Type="Path" Display="advanced" Required="true" Mask="false">/etc/localtime</Config>
+</Container>
