@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Gramps Web</Name>
+    <Repository>ghcr.io/gramps-project/grampsweb</Repository>
+    <Registry>https://github.com/gramps-project/gramps-web/pkgs/container/grampsweb</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-devel</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://www.grampsweb.org</Project>
+    <Overview>
+        A modern web app that allows to browse and collaboratively edit a genealogical database, based on and interoperable with the Gramps desktop application.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Other: Productivity: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/gramps-web-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/gramps_web.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-05-08
+
+        Initial release
+    </Changes>
+    <Config Name="WebUI" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always" Required="true" Mask="false">5000</Config>
+    <Config Name="Tree name" Target="GRAMPSWEB_TREE" Default="Gramps Web" Description="Name of the Gramps tree" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Users database path" Target="/app/users" Default="/mnt/user/appdata/gramps/users" Mode="rw" Description="Users database path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/users</Config>
+    <Config Name="Search index path" Target="/app/indexdir" Default="/mnt/user/appdata/gramps/indexdir" Mode="rw" Description="Search index path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/indexdir</Config>
+    <Config Name="Thumbnail storage path" Target="/app/thumbnail_cache" Default="/mnt/user/appdata/gramps/thumbnail_cache" Mode="rw" Description="Thumbnail storage path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/thumbnail_cache</Config>
+    <Config Name="Export and report storage path" Target="/app/cache" Default="/mnt/user/appdata/gramps/cache" Mode="rw" Description="Export and report storage path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/cache</Config>
+    <Config Name="Secrets storage path" Target="/app/secret" Default="/mnt/user/appdata/gramps/secret" Mode="rw" Description="Secrets storage path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/secret</Config>
+    <Config Name="Database path" Target="/root/.gramps/grampsdb" Default="/mnt/user/appdata/gramps/database" Mode="rw" Description="Database path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/database</Config>
+    <Config Name="Media storage path" Target="/app/media" Default="/mnt/user/appdata/gramps/media" Mode="rw" Description="Media storage path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/media</Config>
+    <Config Name="Temporary storage path" Target="/tmp" Default="/mnt/user/appdata/gramps/tmp" Mode="rw" Description="Temporary storage path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/tmp</Config>
+</Container>
