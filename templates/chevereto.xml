@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Chevereto</Name>
+    <Repository>ghcr.io/chevereto/chevereto</Repository>
+    <Registry>https://github.com/chevereto/chevereto/pkgs/container/chevereto</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://chevereto.com</Project>
+    <Overview>
+        Self-hosted Image and Video Hosting solution, your own Flickr/imgur media sharing alternative with your rules.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Photos MediaServer:Photos Tools: Productivity: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/chevereto-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/chevereto.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires a separate MariaDB server  &#xD;
+        If the container reports permission errors, please adjust the permissions of the images path accordingly: https://github.com/Haxxnet/Compose-Examples/blob/main/examples/chevereto/README.md
+    </Requires>
+    <Changes>
+        ### 2024-05-08
+
+        Initial release
+    </Changes>
+    <Config Name="WebUI" Target="80" Default="8999" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
+    <Config Name="Images path" Target="/var/www/html/images" Default="/mnt/user/appdata/chevereto/images" Mode="rw" Description="Images path" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/chevereto/images</Config>
+    <Config Name="MariaDB Host" Target="CHEVERETO_DB_HOST" Default="mariadb" Description="MariaDB Hostname" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="MariaDB Port" Target="CHEVERETO_DB_PORT" Default="3306" Description="MariaDB Port" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="MariaDB User" Target="CHEVERETO_DB_USER" Default="chevereto" Description="MariaDB Database Username" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="MariaDB Password" Target="CHEVERETO_DB_PASS" Default="chevereto" Description="MariaDB Database Password" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="MariaDB Database" Target="CHEVERETO_DB_NAME" Default="chevereto" Description="MariaDB Database Name" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Asset storage type" Target="CHEVERETO_ASSET_STORAGE_TYPE" Default="local" Description="Asset storage type" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Asset storage path" Target="CHEVERETO_ASSET_STORAGE_URL" Default="/images/_assets" Description="Asset storage path" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Asset storage bucket" Target="CHEVERETO_ASSET_STORAGE_BUCKET" Default="/var/www/html/images/_assets" Description="Asset storage bucket" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+</Container>
