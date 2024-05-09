@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>AutoKuma</Name>
+    <Repository>ghcr.io/bigboot/autokuma</Repository>
+    <Registry>https://github.com/BigBoot/AutoKuma/pkgs/container/autokuma</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>master</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>true</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/BigBoot/AutoKuma</Project>
+    <Overview>
+        AutoKuma is a utility that automates the creation of Uptime Kuma monitors based on Docker container labels. &#xD;
+        With AutoKuma, you can eliminate the need for manual monitor creation in the Uptime Kuma UI.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Tools: Productivity: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/autokuma-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/autokuma.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires a separate Uptime Kuma server &#xD;
+        &#xD;
+        Requires Docker containers to be labeled with the appropriate "Docker label prefix" &#xD;
+        You can add labels to a Docker container using the "Add another Path, Port, Variable, Label or Device" button in the Docker container settings. &#xD;
+        More about required labels here: https://github.com/BigBoot/AutoKuma?tab=readme-ov-file#usage-
+    </Requires>
+    <Changes>
+        ### 2024-05-09
+
+        Initial release
+    </Changes>
+    <Config Name="Uptime Kuma URL" Target="AUTOKUMA__KUMA__URL" Default="http://localhost:3001" Description="URL of the Uptime Kuma instance to add monitors to" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Uptime Kuma username" Target="AUTOKUMA__KUMA__USERNAME" Default="" Description="Uptime Kuma username, required if auth is enabled" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Uptime Kuma password" Target="AUTOKUMA__KUMA__PASSWORD" Default="" Description="Uptime Kuma password, required if auth is enabled" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Uptime Kuma MFA token" Target="AUTOKUMA__KUMA__MFA_TOKEN" Default="" Description="Uptime Kuma MFA token, required if MFA is enabled" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Uptime Kuma tag name" Target="AUTOKUMA__TAG_NAME" Default="AutoKuma" Description="The name of the AutoKuma tag, used to track managed containers" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Uptime Kuma tag color" Target="AUTOKUMA__TAG_COLOR" Default="#42C0FB" Description="The color of the AutoKuma tag" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Docker label prefix" Target="AUTOKUMA__DOCKER__LABEL_PREFIX" Default="kuma" Description="The prefix for Docker labels that AutoKuma should look for" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="On deletion action" Target="AUTOKUMA__ON_DELETE" Default="delete|keep" Description="The action to take on the Uptime Kuma monitor when a container is deleted" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Uptime Kuma headers" Target="AUTOKUMA__KUMA__HEADERS" Default="" Description="Comma-separated list of HTTP headers to send when connecting to Uptime Kuma" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Uptime Kuma connection timeout" Target="AUTOKUMA__KUMA__CONNECT_TIMEOUT" Default="5" Description="The timeout for the initial connection to Uptime Kuma, in seconds" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Uptime Kuma call timeout" Target="AUTOKUMA__KUMA__CALL_TIMEOUT" Default="5" Description="TThe timeout for executing calls to the Uptime Kuma server, in seconds" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Static monitor configuration paths" Target="AUTOKUMA__STATIC_MONITORS" Default="/static_monitors" Description="Path to the directory inside the container containing static monitor configurations" Type="Variable" Display="advanced-hide" Required="true" Mask="false" />
+    <Config Name="AutoKuma static monitor configurations" Target="/static_monitors" Default="/mnt/user/appdata/autokuma/static_monitors" Mode="rw" Description="Path to the directory containing static monitor configurations" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/autokuma/static_monitors</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
