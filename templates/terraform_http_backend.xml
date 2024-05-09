@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Terraform HTTP Backend</Name>
+    <Repository>markcaudill/terraform-http-backend:1.0.3</Repository>
+    <Registry>https://hub.docker.com/r/markcaudill/terraform-http-backend</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://www.terraform.io</Project>
+    <Overview>
+        Self-host a Terraform backend and state files
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Tools: Productivity: Status:Stable</Category>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/terraform_http_backend.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires post-install configuration: https://github.com/markcaudill/terraform-http-backend
+    </Requires>
+    <Changes>
+        ### 2024-05-09
+
+        Initial release
+    </Changes>
+    <Config Name="Server Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+</Container>
