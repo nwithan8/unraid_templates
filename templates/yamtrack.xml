@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Yamtrack</Name>
+    <Repository>ghcr.io/fuzzygrim/yamtrack</Repository>
+    <Registry>https://github.com/fuzzygrim/Yamtrack/pkgs/container/yamtrack</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>dev</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/FuzzyGrim/Yamtrack</Project>
+    <Overview>
+        Yamtrack is a self-hosted media tracker for movies, tv shows, anime and manga.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaApp:Books MediaApp:Other Status:Stable</Category>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/yamtrack.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires a separate Redis server
+    </Requires>
+    <Changes>
+        ### 2024-05-09
+
+        Initial release
+    </Changes>
+    <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+    <Config Name="Secret" Target="SECRET" Default="" Description="Secret key for the application" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Redis Host" Target="REDIS_URL" Default="redis://localhost:6379" Description="Redis connection details" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="TMDb API key" Target="TMDB_API" Default="" Description="Override default The Movie Database API key" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Allow NSFW on TMDb" Target="TMDB_NSFW" Default="False|True" Description="Allow NSFW content from TMDb" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="TMDb language" Target="TMDB_LANG" Default="en" Description="The language to use for TMDb" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="MyAnimeList API key" Target="MAL_API" Default="" Description="Override default MyAnimeList API key" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Allow NSFW on MyAnimeList" Target="MAL_NSFW" Default="False|True" Description="Allow NSFW content from MyAnimeList" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="IGDB API key" Target="IGDB_ID" Default="" Description="Override default IGDB API key" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="IGDB API secret" Target="IGDB_SECRET" Default="" Description="Override default IGDB API secret" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Allow NSFW on IGDB" Target="IGDB_NSFW" Default="False|True" Description="Allow NSFW content from IGDB" Type="Variable" Display="advanced" Required="true" Mask="false"/>\
+    <Config Name="Allowed hosts" Target="ALLOWED_HOSTS" Default="" Description="Host/domain names that this Django site can serve, set this to your domain name if exposing to the public" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Allow user registration" Target="REGISTRATION" Default="True|False" Description="Allow users to register for an account" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Debug" Target="DEBUG" Default="False|True" Description="Enable debug mode" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="The user ID of the user running the container" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="PGID" Target="PGID" Default="1000" Description="The group ID of the user running the container" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Webserver process count" Target="WEB_CONCURRENCY" Default="1" Description="Number of webserver processes, recommended to have a value of (2 x num cores) + 1" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Database storage path" Target="/yamtrack/db" Default="/mnt/user/appdata/yamtrack/db" Mode="rw" Description="Path to the database storage" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/yamtrack/db</Config>
+</Container>
