@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>LiveKit</Name>
+    <Repository>livekit/livekit-server</Repository>
+    <Registry>https://hub.docker.com/r/livekit/livekit-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>master</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://livekit.io</Project>
+    <Overview>
+        An open source project that provides scalable, multi-user conferencing based on WebRTC. It's designed to provide everything you need to build real-time video audio data capabilities in your applications.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Audio MediaApp:Video MediaApp:Other Tools: Productivity: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/livekit-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/livekit.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Container expects a "config.yaml" file to be mounted at /config/config.yaml before running. &#xD;
+        See https://docs.livekit.io/home/self-hosting/deployment/#Configuration for more information.
+    </Requires>
+    <Changes>
+        ### 2024-05-21
+
+        Initial release
+    </Changes>
+    <PostArgs>--config /config/config.yaml</PostArgs>
+    <Config Name="Main Port" Target="7880" Default="7880" Mode="tcp" Description="Container Port: 7880" Type="Port" Display="always" Required="true" Mask="false">7880</Config>
+    <Config Name="WebRTC UDP Ports" Target="50000-60000" Default="50000-60000" Mode="udp" Description="UDP ports for client traffic" Type="Port" Display="advanced" Required="true" Mask="false">50000-60000</Config>
+    <Config Name="WebRTC TCP Port" Target="7881" Default="7881" Mode="tcp" Description="TCP port for client traffic when UDP not available" Type="Port" Display="advanced" Required="true" Mask="false">7881</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/livekit" Mode="rw" Description="Parent folder for config.yaml file" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/livekit</Config>
+</Container>
