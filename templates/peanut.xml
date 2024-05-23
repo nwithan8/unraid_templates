@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>PeaNUT</Name>
+    <Repository>brandawg93/peanut</Repository>
+    <Registry>https://hub.docker.com/r/brandawg93/peanut</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/Brandawg93/PeaNUT</Project>
+    <Overview>
+        A Tiny Dashboard for Network UPS Tools
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Backup: Other: Tools: Productivity: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/peanut-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/peanut.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-05-23
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+    <Config Name="NUT Server Host" Target="NUT_HOST" Default="" Description="Hostname or IP of the NUT server" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="NUT Server Port" Target="NUT_PORT" Default="3493" Description="Port of the NUT server" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="NUT Username" Target="USERNAME" Default="" Description="Username for the NUT server" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="NUT Password" Target="PASSWORD" Default="" Description="Password for the NUT server" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Web Host" Target="WEB_HOST" Default="0.0.0.0" Description="Hostname of web server" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Web Port" Target="WEB_PORT" Default="8080" Description="Port of web server. Changing will break default Web UI mapping." Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Web Path" Target="BASE_PATH" Default="" Description="Base path of web server for reverse proxy" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>
