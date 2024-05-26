@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Threadfin</Name>
+    <Repository>fyb3roptik/threadfin</Repository>
+    <Registry>https://hub.docker.com/r/fyb3roptik/threadfin</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-nvidia</Tag>
+        <TagDescription>Latest stable release with Nvidia support</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:34400]/</WebUI>
+    <Privileged>true</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/Threadfin/Threadfin</Project>
+    <Overview>
+        An M3U proxy for Kernel/Plex/Jellyfin/Emby based on xTeVe
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/threadfin-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/threadfin.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-05-26
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="34400" Default="34400" Mode="tcp" Description="Container Port: 34400" Type="Port" Display="always" Required="true" Mask="false">34400</Config>
+    <Config Name="Configuration data" Target="/home/threadfin/conf" Default="/mnt/user/appdata/threadfin/config" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/threadfin/config</Config>
+    <Config Name="Temporary data" Target="/tmp/threadfin" Default="/mnt/user/appdata/threadfin/temp" Mode="rw" Description="Path to temporary data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/threadfin/temp</Config>
+    <Config Name="PUID" Target="PUID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
+    <Config Name="PGID" Target="PGID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
+</Container>
