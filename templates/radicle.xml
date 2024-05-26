@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Radicle</Name>
+    <Repository>tomsquest/docker-radicale</Repository>
+    <Registry>https://hub.docker.com/r/tomsquest/docker-radicale/</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <WebUI>http://[IP]:[PORT:5232]/</WebUI>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://radicale.org</Project>
+    <Overview>
+        Docker container for Radicale calendar, to-do list and contact (CalDAV/CardDAV) server
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Tools: Productivity: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/radicle-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/radicle.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        See https://radicale.org/master.html#configuration and https://github.com/tomsquest/docker-radicale/blob/master/config for information about making a "config" file for Radicale. This config file should be stored in the "Config path" folder.
+    </Requires>
+    <Changes>
+        ### 2024-05-26
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5232" Default="5232" Mode="tcp" Description="Container Port: 5232" Type="Port" Display="always" Required="true" Mask="false">5232</Config>
+    <Config Name="Config path" Target="/config" Default="/mnt/user/appdata/radicle/config" Mode="ro" Description="Parent folder storing config file" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/radicle/config</Config>
+    <Config Name="Data path" Target="/data" Default="/mnt/user/appdata/radicle/data" Mode="rw" Description="Data path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/radicle/data</Config>
+
+</Container>
