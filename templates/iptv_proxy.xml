@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>IPTV Proxy</Name>
+    <Repository>ghcr.io/pierre-emmanuelj/iptv-proxy/iptv-proxy</Repository>
+    <Registry>https://github.com/pierre-emmanuelJ/iptv-proxy/pkgs/container/iptv-proxy%2Fiptv-proxy</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>true</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/pierre-emmanuelJ/iptv-proxy</Project>
+    <Overview>
+        A reverse proxy for M3U and XtreamCodes IPTV streams
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/iptv_proxy.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-05-26
+
+        Initial release
+    </Changes>
+    <Config Name="Stream Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+    <Config Name="M3U Storage Path" Target="/root/iptv" Default="/mnt/user/appdata/iptv-proxy/m3u" Mode="rw" Description="Path to M3U files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/iptv-proxy/m3u</Config>
+    <Config Name="M3U URL" Target="M3U_URL" Default="/root/iptv/iptv.m3u" Description="Path to M3U file (local in M3U Storage Path or remote URL). Remove if using XtreamCodes." Type="Variable" Display="always" Required="false" Mask="false">/root/iptv/iptv.m3u</Config>
+    <Config Name="XtreamCodes Username" Target="XTREAM_USER" Default="" Description="Username for XtreamCodes. Remove if using M3U." Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="XtreamCodes Password" Target="XTREAM_PASSWORD" Default="" Description="Password for XtreamCodes. Remove if using M3U." Type="Variable" Display="always" Required="false" Mask="true" />
+    <Config Name="XtreamCodes URL" Target="XTREAM_BASE_URL" Default="" Description="URL and port for XtreamCodes. Remove if using M3U." Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="Username" Target="USER" Default="" Description="Username for basic authentication" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="Password" Target="PASSWORD" Default="" Description="Password for basic authentication" Type="Variable" Display="always" Required="false" Mask="true" />
+    <Config Name="Internal Port" Target="PORT" Default="8080" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Internal Hostname" Target="HOSTNAME" Default="0.0.0.0" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Internal GIN Mode" Target="GIN_MODE" Default="release" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">release</Config>
+</Container>
