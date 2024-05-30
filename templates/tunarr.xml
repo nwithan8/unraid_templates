@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Tunarr</Name>
+    <Repository>ghcr.io/chrisbenincasa/tunarr</Repository>
+    <Registry>https://github.com/chrisbenincasa/tunarr/pkgs/container/tunarr</Registry>
+    <Branch>
+        <Tag>edge</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>edge-vaapi</Tag>
+        <TagDescription>Latest development release with Intel iGPU support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>edge-nvidia</Tag>
+        <TagDescription>Latest development release with Nvidia GPU support</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://tunarr.com</Project>
+    <Overview>
+        Create live TV channels from media on your Plex servers, and more!&#xD;
+        Access your channels by adding the spoofed Tunarr HDHomerun tuner to Plex, Jellyfin, or Emby. Or utilize generated M3U files with any 3rd party IPTV player app.&#xD;
+        Tunarr is a fork of dizqueTV.&#xD;
+        [br]
+        **Nvidia GPU Use:**&#xD;
+        Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and add **--runtime=nvidia** to [b]"extra parameters"[/b] (switch on advanced view) and copy your **GPU UUID** to **NVIDIA_VISIBLE_DEVICES.**&#xD;
+        [br]
+        **Intel GPU Use:**&#xD;
+        Edit your **go** file to include **modprobe i915**, save and reboot, then add **--device=/dev/dri** to **"extra parameters"** (switch on advanced view)
+    </Overview>
+    <Beta>True</Beta>
+    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <ExtraSearchTerms>Tuner TV Media Video Live Channels HDHomerun Emby Plex Jellyfin IPTV Unraid Nvidia Intel ErsatzTV dizqueTV pseudoTV</ExtraSearchTerms>
+    <Icon>https://tunarr.com/assets/tunarr.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tunarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-05-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Don't forget to add Nvidia- or Intel-specific parameters for hardware transcoding. Enable **Advanced View** and see **Overview** for details.
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+    <Config Name="Configuration data" Target="/tunarr/server/build/.tunarr" Default="/mnt/user/appdata/tunarr" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/tunarr</Config>
+    <Config Name="dizqueTV migration data" Target="/.dizquetv" Default="" Mode="ro" Description="Path to old dizqueTV installation for migration" Type="Path" Display="advanced" Required="false" Mask="false" />
+    <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Nvidia Driver Capabilities" Target="NVIDIA_DRIVER_CAPABILITIES" Default="all" Mode="" Description="Nvidia Driver Capabilities (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="advanced-hide" Required="false" Mask="false">all</Config>
+    <Config Name="PUID" Target="PUID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
+    <Config Name="PGID" Target="PGID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
+</Container>
