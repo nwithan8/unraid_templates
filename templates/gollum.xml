@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Gollum</Name>
+    <Repository>gollumwiki/gollum:master</Repository>
+    <Registry>https://hub.docker.com/r/gollumwiki/gollum</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4567]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/gollum/gollum</Project>
+    <Overview>
+        A simple wiki system built on top of Git.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Wiki Documentation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/gollum-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/gollum.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-05-31
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="4567" Default="4567" Mode="tcp" Description="Container Port: 4567" Type="Port" Display="always" Required="true" Mask="false">4567</Config>
+    <Config Name="Data storage" Target="/wiki" Default="/mnt/user/appdata/gollum" Mode="rw" Description="Path to data storage" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gollum</Config>
+    <Config Name="PUID" Target="PUID" Default="99" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
