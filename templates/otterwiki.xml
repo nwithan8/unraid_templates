@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>An Otter Wiki</Name>
+    <Repository>redimp/otterwiki:latest</Repository>
+    <Registry>https://hub.docker.com/r/redimp/otterwiki</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://otterwiki.com</Project>
+    <Overview>
+        A Python-based collaborative content management system (wiki), powered by Git and Markdown.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Wiki Documentation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/redimp/otterwiki/main/otterwiki/static/img/otterhead.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/otterwiki.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-05-31
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+    <Config Name="Data storage" Target="/app-data" Default="/mnt/user/appdata/otterwiki" Mode="rw" Description="Path to data storage" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/otterwiki</Config>
+    <Config Name="PUID" Target="PUID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
+    <Config Name="PGID" Target="PGID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
+</Container>
