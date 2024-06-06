@@ -20,7 +20,9 @@
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
-    <Requires>Please see announcements for potential breaking changes: https://github.com/nwithan8/tauticord/blob/master/documentation/ANNOUNCEMENTS.md</Requires>
+    <Requires>
+        Please see announcements for potential breaking changes: https://github.com/nwithan8/tauticord/blob/master/documentation/ANNOUNCEMENTS.md
+    </Requires>
     <Changes>
         ### 2024-03-30 - BREAKING CHANGE
 

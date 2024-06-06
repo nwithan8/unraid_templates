@@ -26,7 +26,7 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Requires>
-        Requires a separate Redis server
+        Requires a separate Redis server.
     </Requires>
     <Changes>
         ### 2024-05-09

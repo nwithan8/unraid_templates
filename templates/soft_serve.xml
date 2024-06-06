@@ -20,7 +20,9 @@
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
-    <Requires>Configuration done via a config.yaml file in the /soft-serve directory</Requires>
+    <Requires>
+        Configuration done via a config.yaml file in the /soft-serve directory
+    </Requires>
     <Changes>
         ### 2024-04-30
 

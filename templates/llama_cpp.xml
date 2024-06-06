@@ -33,8 +33,7 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Requires>
-        The image for this container is several gigabytes. If you receive a "no space left on device" warning
-        during installation, please increase the vDisk size in your Docker settings. &#xD;
+        The image for this container is several gigabytes. If you receive a "no space left on device" warning during installation, please increase the vDisk size in your Docker settings. &#xD;
         This container expects a "model.gguf" file to be present in the model storage path. &#xD;
         If you are using an Nvidia GPU, add "--gpus all" to the Extra Parameters field under Advanced.
     </Requires>

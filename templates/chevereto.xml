@@ -23,7 +23,7 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Requires>
-        Requires a separate MariaDB server  &#xD;
+        Requires a separate MariaDB server. &#xD;
         If the container reports permission errors, please adjust the permissions of the images path accordingly: https://github.com/Haxxnet/Compose-Examples/blob/main/examples/chevereto/README.md
     </Requires>
     <Changes>
