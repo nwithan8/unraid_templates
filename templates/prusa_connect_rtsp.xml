@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Prusa Connect RTSP</Name>
-    <Repository>ghcr.io/beccazero/prusa-connect-rtsp</Repository>
+    <Repository>ghcr.io/beccazero/prusa-connect-rtsp:main</Repository>
     <Registry>https://github.com/beccazero/prusa-connect-rtsp/pkgs/container/prusa-connect-rtsp</Registry>
     <Branch>
         <Tag>main</Tag>

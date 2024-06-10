@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Tunarr</Name>
-    <Repository>ghcr.io/chrisbenincasa/tunarr</Repository>
+    <Repository>ghcr.io/chrisbenincasa/tunarr:edge</Repository>
     <Registry>https://github.com/chrisbenincasa/tunarr/pkgs/container/tunarr</Registry>
     <Branch>
         <Tag>edge</Tag>
