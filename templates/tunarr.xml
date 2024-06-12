@@ -40,6 +40,14 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-06-12
+
+        Fix default PGID and PUID
+
+        ### 2024-06-10
+
+        Fix default branch
+
         ### 2024-05-30
 
         Initial release
@@ -52,6 +60,6 @@
     <Config Name="dizqueTV migration data" Target="/.dizquetv" Default="" Mode="ro" Description="Path to old dizqueTV installation for migration" Type="Path" Display="advanced" Required="false" Mask="false" />
     <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Nvidia Driver Capabilities" Target="NVIDIA_DRIVER_CAPABILITIES" Default="all" Mode="" Description="Nvidia Driver Capabilities (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="advanced-hide" Required="false" Mask="false">all</Config>
-    <Config Name="PUID" Target="PUID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
-    <Config Name="PGID" Target="PGID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
