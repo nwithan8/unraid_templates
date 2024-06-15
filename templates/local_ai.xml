@@ -1,19 +1,55 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>LocalAI</Name>
-    <Repository>localai/localai</Repository>
+    <Repository>localai/localai:latest-cpu</Repository>
     <Registry>https://hub.docker.com/r/localai/localai</Registry>
     <Branch>
+        <Tag>latest-cpu</Tag>
+        <TagDescription>Latest standard release (CPU only)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-cublas-cuda11</Tag>
+        <TagDescription>Latest standard release with Nvidia GPU (CUDA 11) support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-cublas-cuda12</Tag>
+        <TagDescription>Latest standard release with Nvidia GPU (CUDA 12) support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-hipblas</Tag>
+        <TagDescription>Latest standard release with AMD GPU support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-sycl-f16</Tag>
+        <TagDescription>Latest standard release with Intel iGPU (sycl f16) support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-sycl-f32</Tag>
+        <TagDescription>Latest standard release with Intel iGPU (sycl f32) support</TagDescription>
+    </Branch>
+    <Branch>
         <Tag>latest-aio-cpu</Tag>
-        <TagDescription>Latest all-in-one release</TagDescription>
+        <TagDescription>Latest all-in-one release (CPU only)</TagDescription>
     </Branch>
     <Branch>
         <Tag>latest-aio-gpu-nvidia-cuda-11</Tag>
-        <TagDescription>Latest release with Nvidia (CUDA 11) support</TagDescription>
+        <TagDescription>Latest all-in-one release with Nvidia GPU (CUDA 11) support</TagDescription>
     </Branch>
     <Branch>
         <Tag>latest-aio-gpu-nvidia-cuda-12</Tag>
-        <TagDescription>Latest release with Nvidia (CUDA 12) support</TagDescription>
+        <TagDescription>Latest all-in-one release with Nvidia GPU (CUDA 12) support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-aio-gpu-hipblas</Tag>
+        <TagDescription>Latest all-in-one release with AMD GPU support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-aio-gpu-intel-f16</Tag>
+        <TagDescription>Latest all-in-one release with Intel iGPU (sycl f16) support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-aio-gpu-intel-f32</Tag>
+        <TagDescription>Latest all-in-one release with Intel iGPU (sycl f32) support</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
@@ -26,7 +62,13 @@
         Drop-in replacement for OpenAI running on consumer-grade hardware. &#xD;
         No GPU required. &#xD;
         Runs gguf, transformers, diffusers and many more models architectures. &#xD;
-        It allows to generate Text, Audio, Video, Images. Also with voice cloning capabilities.
+        It allows to generate Text, Audio, Video, Images. Also with voice cloning capabilities. &#xD;
+        &#xD;
+        Additional image variants are also available: https://localai.io/basics/container/#standard-container-images &#xD;
+        &#xD;
+        For Nvidia GPU support, add "--gpus all" to the Extra Parameters field under Advanced. &#xD;
+        For AMD GPU support, add "/dev/kfd" and "/dev/dri" each as a Device and add the required Variables: https://localai.io/features/gpu-acceleration/#setup-example-dockercontainerd &#xD;
+        For Intel iGPU support, add "/dev/dri" as a Device. &#xD;
     </Overview>
     <Beta>False</Beta>
     <Category>AI: Productivity: Tools: Status:Stable</Category>
@@ -36,10 +78,15 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Requires>
-        The image for this container is several gigabytes. If you receive a "no space left on device" warning during installation, please increase the vDisk size in your Docker settings. &#xD;
-        If you are using an Nvidia GPU, add "--gpus=all" to the Extra Parameters field under Advanced.
+        The images for this container are several gigabytes (standard images upwards of ~17 GB, AIO images upwards of ~40 GB). &#xD;
+        If you receive a "no space left on device" warning during installation, please increase the vDisk size in your Docker settings. &#xD;
+        Additional image variants are also available: https://localai.io/basics/container/#standard-container-images &#xD;
     </Requires>
     <Changes>
+        ### 2024-06-15
+
+        Add required GPU parameters by default, add non-AIO branches, add better size estimate in install warning
+
         ### 2024-06-07
 
         Remove broken GALLERIES environmental variable
@@ -52,6 +99,7 @@
 
         Initial release
     </Changes>
+    <ExtraParams>--gpus=all</ExtraParams>
     <Config Name="WebUI" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
     <Config Name="Debug mode" Target="DEBUG" Default="true|false" Description="Whether to enable debug mode" Type="Variable" Display="advanced" Required="true" Mask="false"/>
     <Config Name="Model Storage Path" Target="/build/models" Default="/mnt/user/appdata/local_ai/models" Mode="rw" Description="Storage for models" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/local_ai/models</Config>
