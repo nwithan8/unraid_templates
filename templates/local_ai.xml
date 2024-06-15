@@ -8,23 +8,23 @@
         <TagDescription>Latest standard release (CPU only)</TagDescription>
     </Branch>
     <Branch>
-        <Tag>latest-cublas-cuda11</Tag>
+        <Tag>latest-gpu-nvidia-cuda-11</Tag>
         <TagDescription>Latest standard release with Nvidia GPU (CUDA 11) support</TagDescription>
     </Branch>
     <Branch>
-        <Tag>latest-cublas-cuda12</Tag>
+        <Tag>latest-gpu-nvidia-cuda-12</Tag>
         <TagDescription>Latest standard release with Nvidia GPU (CUDA 12) support</TagDescription>
     </Branch>
     <Branch>
-        <Tag>latest-hipblas</Tag>
+        <Tag>latest-gpu-hipblas</Tag>
         <TagDescription>Latest standard release with AMD GPU support</TagDescription>
     </Branch>
     <Branch>
-        <Tag>latest-sycl-f16</Tag>
+        <Tag>latest-gpu-intel-f16</Tag>
         <TagDescription>Latest standard release with Intel iGPU (sycl f16) support</TagDescription>
     </Branch>
     <Branch>
-        <Tag>latest-sycl-f32</Tag>
+        <Tag>latest-gpu-intel-f32</Tag>
         <TagDescription>Latest standard release with Intel iGPU (sycl f32) support</TagDescription>
     </Branch>
     <Branch>
