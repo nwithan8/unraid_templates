@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>AUTOMATIC1111 Stable Diffusion Web UI</Name>
+    <Repository>goolashe/automatic1111-sd-webui</Repository>
+    <Registry>https://hub.docker.com/r/goolashe/automatic1111-sd-webui</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:7860]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Project>https://github.com/AUTOMATIC1111/stable-diffusion-webui</Project>
+    <Overview>
+        A web interface for Stable Diffusion &#xD;
+        Integrates with Open WebUI: https://docs.openwebui.com/tutorial/images/#configuring-open-webui &#xD;
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <ExtraSearchTerms>WebUI images generation AI llama ollama</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/automatic1111-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/automatic1111.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-06-17
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a web UI for Stable Diffusion and uses a Docker image which is several gigabytes. If you receive a "no space left on device" warning during installation, please increase the vDisk size in your Docker settings.
+    </Requires>
+    <ExtraParams>--gpus=all</ExtraParams>
+    <Config Name="Web UI Port" Target="7860" Default="7860" Mode="tcp" Description="Container Port: 7860" Type="Port" Display="always" Required="true" Mask="false">7860</Config>
+    <Config Name="Configuration data" Target="/data" Default="/mnt/user/appdata/automatic1111/data" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/automatic1111/data</Config>
+    <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Extra CLI arguments"  Target="CLI_ARGS" Default="--api" Description="Extra CLI arguments" Type="Variable" Display="advanced-hide" Required="false" Mask="false">--api</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
