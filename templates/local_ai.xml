@@ -68,7 +68,7 @@
         &#xD;
         For Nvidia GPU support, add "--gpus all" to the Extra Parameters field under Advanced. &#xD;
         For AMD GPU support, add "/dev/kfd" and "/dev/dri" each as a Device and add the required Variables: https://localai.io/features/gpu-acceleration/#setup-example-dockercontainerd &#xD;
-        For Intel iGPU support, add "/dev/dri" as a Device. &#xD;
+        For Intel iGPU support, add "/dev/dri" as a Device and add "--device=/dev/dri" to the Extra Parameters field under Advanced. &#xD;
     </Overview>
     <Beta>False</Beta>
     <Category>AI: Productivity: Tools: Status:Stable</Category>
@@ -83,6 +83,10 @@
         Additional image variants are also available: https://localai.io/basics/container/#standard-container-images &#xD;
     </Requires>
     <Changes>
+        ### 2024-06-20
+
+        Update documentation for Intel iGPU passthrough
+
         ### 2024-06-15
 
         Add required GPU parameters by default, add non-AIO branches, add better size estimate in install warning
