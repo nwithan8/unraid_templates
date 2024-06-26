@@ -11,6 +11,7 @@
     <Overview>
         A web interface for Stable Diffusion &#xD;
         Integrates with Open WebUI: https://docs.openwebui.com/tutorial/images/#configuring-open-webui &#xD;
+        Add custom models: https://github.com/AbdBarho/stable-diffusion-webui-docker/wiki/Usage#custom-models &#xD;
     </Overview>
     <Beta>False</Beta>
     <Category>AI: Productivity: Tools: Status:Stable</Category>
@@ -35,7 +36,6 @@
     <ExtraParams>--gpus=all</ExtraParams>
     <Config Name="Web UI Port" Target="7860" Default="7860" Mode="tcp" Description="Container Port: 7860" Type="Port" Display="always" Required="true" Mask="false">7860</Config>
     <Config Name="Configuration data" Target="/data" Default="/mnt/user/appdata/automatic1111/data" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/automatic1111/data</Config>
-    <Config Name="Models directory" Target="/stable-diffusion-webui/models" Default="/mnt/user/appdata/automatic1111/models" Mode="rw" Description="Path to models directory" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/automatic1111/models</Config>
     <Config Name="Output directory" Target="/output" Default="/mnt/user/appdata/automatic1111/output" Mode="rw" Description="Path to output (saved images) directory" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/automatic1111/output</Config>
     <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
     <Config Name="Extra CLI arguments"  Target="CLI_ARGS" Default="--api" Description="Extra CLI arguments" Type="Variable" Display="advanced-hide" Required="false" Mask="false">--api</Config>
