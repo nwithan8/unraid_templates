@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>ImageMaid</Name>
+    <Repository>kometateam/imagemaid:develop</Repository>
+    <Registry>https://hub.docker.com/r/kometateam/imagemaid</Registry>
+    <Network>bridge</Network>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Kometa-Team/ImageMaid/issues</Support>
+    <Project>https://github.com/Kometa-Team/ImageMaid</Project>
+    <Overview>Clean up images in a Plex Media Server. Formerly Plex Image Cleanup. Part of the Kometa suite.</Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <ExtraSearchTerms>images Plex Kometa trash automation TitleCardMaker</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/image-maid-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/image_maid.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-07-10
+
+        Initial release
+    </Changes>
+    <Requires>
+        Container requires a .env file in the Config Path directory. See documentation for details: https://github.com/Kometa-Team/ImageMaid?tab=readme-ov-file#example-env-file
+    </Requires>
+    <Config Name="Plex Path" Target="/plex" Default="" Mode="rw" Description="Path to root Plex directory (typically Library/Application Support/Plex Media Server, should contain a Plug-in Support directory)" Type="Path" Display="always" Required="true" Mask="false" />
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/image_maid" Mode="rw" Description="Path to config directory containing .env file" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/image_maid</Config>
+</Container>
