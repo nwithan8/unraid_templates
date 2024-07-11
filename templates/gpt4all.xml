@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>gpt4all</Name>
+    <Repository>ghcr.io/huggingface/text-generation-inference:latest</Repository>
+    <Registry>https://github.com/huggingface/text-generation-inference/pkgs/container/text-generation-inference</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/nomic-ai/gpt4all/issues</Support>
+    <Project>https://github.com/nomic-ai/gpt4all</Project>
+    <Overview>
+        An all-in-one LLM server and chat UI
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/gpt4all-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/gpt4all.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires an Nvidia GPU.&#xD;
+        [br]
+        In **Post Arguments**, replace `$MODEL` with the model you want to host and `$NUM_SHARD` with the number of shards you want to use (recommended: 1).&#xD;
+    </Requires>
+    <Changes>
+        ### 2024-07-10
+
+        Initial release
+    </Changes>
+    <ExtraParams>--gpus all --shm-size 1g</ExtraParams>
+    <PostArgs>--model-id $MODEL --num-shard $NUM_SHARD</PostArgs>
+    <Config Name="HuggingFace Token" Target="HUGGING_FACE_HUB_TOKEN" Default="" Description="The HuggingFace token to use" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="WebUI" Target="80" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/gpt4all/data" Mode="rw" Description="Data directory" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gpt4all/data</Config>
+    <Config Name="Use flash attention" Default="false|true" Target="USE_FLASH_ATTENTION" Type="Variable" Description="Use flash attention" Display="advanced" Required="false" Mask="false"/>
+</Container>
