@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Plex Rewind</Name>
+    <Repository>ghcr.io/raunot/plex-rewind:main</Repository>
+    <Registry>https://github.com/raunot/plex-rewind/pkgs/container/plex-rewind</Registry>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <WebUI>http://[IP]:[PORT:8383]/</WebUI>
+    <Support>https://github.com/RaunoT/plex-rewind/issues</Support>
+    <Project>https://github.com/RaunoT/plex-rewind</Project>
+    <Overview>Present Plex user statistics and habits in a beautiful and organized manner à la Spotify Wrapped.</Overview>
+    <Category>Tools: MediaServer Status:Stable</Category>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/plex_rewind.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        You must place a copy of "settings.json" in the Config Path for the initial boot: https://github.com/RaunoT/plex-rewind/blob/develop/config/settings.json
+    </Requires>
+    <Config Name="WebUI" Target="8383" Default="8383" Mode="tcp" Description="Container Port: 8383" Type="Port" Display="always" Required="true" Mask="false">8383</Config>
+    <Config Name="Site URL" Target="NEXT_PUBLIC_SITE_URL" Default="http://localhost:8383" Description="Change to your domain (and port) if app is publicly exposed." Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="Authentication Secret" Target="NEXTAUTH_SECRET" Default="" Description="Required to encrypt authentication JWT token. Run 'openssl rand -base64 32' to generate." Type="Variable" Display="always" Required="true" Mask="true" />
+    <Config Name="Authentication URL" Target="NEXTAUTH_URL" Default="http://localhost:8383" Description="Change to your domain (and port) if app is publicly exposed." Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="All-Time Start Date" Target="NEXT_PUBLIC_STATISTICS_START_DATE" Default="2018-01-01" Description="Start date for 'all time' option" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/plex_rewind/config" Mode="rw" Description="Where config file will be stored" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/plex_rewind/config</Config>
+</Container>
