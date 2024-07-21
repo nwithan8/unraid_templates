@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>llama.cpp</Name>
-    <Repository>ghcr.io/ggerganov/llama.cpp</Repository>
+    <Repository>ghcr.io/ggerganov/llama.cpp:server</Repository>
     <Registry>https://github.com/ggerganov/llama.cpp/pkgs/container/llama.cpp</Registry>
     <Branch>
         <Tag>server</Tag>
