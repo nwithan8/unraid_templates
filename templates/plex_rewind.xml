@@ -23,12 +23,21 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Requires>
-        You must place a copy of "settings.json" in the Config Path for the initial boot: https://github.com/RaunoT/plex-rewind/blob/develop/config/settings.json
+        You must place a copy of "settings.json" in the Settings File path BEFORE the initial boot: https://raw.githubusercontent.com/nwithan8/unraid_templates/main/ref/plex_rewind/settings.json
     </Requires>
+    <Changes>
+        ### 2024-07-25
+
+        Change Config Path to direct "settings.json" path
+
+        ### 2024-07-16
+
+        Initial release
+    </Changes>
     <Config Name="WebUI" Target="8383" Default="8383" Mode="tcp" Description="Container Port: 8383" Type="Port" Display="always" Required="true" Mask="false">8383</Config>
     <Config Name="Site URL" Target="NEXT_PUBLIC_SITE_URL" Default="http://192.168.1.1:8383" Description="IMPORTANT: Change to your server IP address and port, or domain if app is publicly exposed." Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Authentication Secret" Target="NEXTAUTH_SECRET" Default="" Description="Required to encrypt authentication JWT token. Run 'openssl rand -base64 32' to generate." Type="Variable" Display="always" Required="true" Mask="true" />
     <Config Name="Authentication URL" Target="NEXTAUTH_URL" Default="http://192.168.1.1:8383" Description="IMPORTANT: Change to your server IP address and port, or domain if app is publicly exposed." Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="All-Time Start Date" Target="NEXT_PUBLIC_STATISTICS_START_DATE" Default="2018-01-01" Description="Start date for 'all time' option" Type="Variable" Display="always" Required="true" Mask="false" />
-    <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/plex_rewind/config" Mode="rw" Description="Where config file will be stored" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/plex_rewind/config</Config>
+    <Config Name="Settings File" Target="/app/config/settings.json" Default="/mnt/user/appdata/plex_rewind/config/settings.json" Mode="rw" Description="Path to settings file" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/plex_rewind/config/settings.json</Config>
 </Container>
