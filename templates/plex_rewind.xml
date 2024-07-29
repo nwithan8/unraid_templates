@@ -23,7 +23,7 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Requires>
-        You must place a copy of "settings.json" in the Settings File path BEFORE the initial boot: https://raw.githubusercontent.com/nwithan8/unraid_templates/main/ref/plex_rewind/settings.json
+        You must place a copy of "settings.json" in the Settings File path BEFORE the initial boot: https://raw.githubusercontent.com/RaunoT/plex-rewind/develop/config/settings.example.json
     </Requires>
     <Changes>
         ### 2024-07-25
