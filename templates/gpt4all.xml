@@ -6,7 +6,7 @@
     <Network>bridge</Network>
     <Privileged>true</Privileged>
     <Support>https://github.com/nomic-ai/gpt4all/issues</Support>
-    <Project>https://github.com/nomic-ai/gpt4all</Project>
+    <Project>https://www.nomic.ai/gpt4all</Project>
     <Overview>
         An all-in-one LLM server and chat UI
     </Overview>
