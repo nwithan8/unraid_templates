@@ -1,19 +1,31 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Tunarr</Name>
-    <Repository>ghcr.io/chrisbenincasa/tunarr:edge</Repository>
+    <Repository>ghcr.io/chrisbenincasa/tunarr:latest</Repository>
     <Registry>https://github.com/chrisbenincasa/tunarr/pkgs/container/tunarr</Registry>
     <Branch>
-        <Tag>edge</Tag>
+        <Tag>latest</Tag>
         <TagDescription>Latest development release</TagDescription>
     </Branch>
     <Branch>
-        <Tag>edge-vaapi</Tag>
+        <Tag>latest-vaapi</Tag>
         <TagDescription>Latest development release with Intel iGPU support</TagDescription>
     </Branch>
     <Branch>
-        <Tag>edge-nvidia</Tag>
+        <Tag>latest-nvidia</Tag>
         <TagDescription>Latest development release with Nvidia GPU support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>edge</Tag>
+        <TagDescription>Edge release (every 2 hours) release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>edge-vaapi</Tag>
+        <TagDescription>Edge release (every 2 hours) release with Intel iGPU support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>edge-nvidia</Tag>
+        <TagDescription>Edge release (every 2 hours) release with Nvidia GPU support</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8000]/</WebUI>
@@ -40,6 +52,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ## 2024-08-04
+
+        Default to the latest tag
+        Fixes default configuration data location after https://github.com/chrisbenincasa/tunarr/pull/643
+
         ## 2024-06-16
 
         Adjust configuration path, add backup path
@@ -60,8 +77,7 @@
         Don't forget to add Nvidia- or Intel-specific parameters for hardware transcoding. Enable **Advanced View** and see **Overview** for details.
     </Requires>
     <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
-    <Config Name="Configuration data" Target="/tunarr/server/build/.tunarr" Default="/mnt/user/appdata/tunarr/config" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/tunarr/config</Config>
-    <Config Name="Backup data" Target="/config/tunarr/backups" Default="/mnt/user/appdata/tunarr/backup" Mode="rw" Description="Path to backup data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/tunarr/backup</Config>
+    <Config Name="Configuration data" Target="/config/tunarr" Default="/mnt/user/appdata/tunarr/config" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/tunarr/config</Config>
     <Config Name="dizqueTV migration data" Target="/.dizquetv" Default="" Mode="ro" Description="Path to old dizqueTV installation for migration" Type="Path" Display="advanced" Required="false" Mask="false" />
     <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Nvidia Driver Capabilities" Target="NVIDIA_DRIVER_CAPABILITIES" Default="all" Mode="" Description="Nvidia Driver Capabilities (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="advanced-hide" Required="false" Mask="false">all</Config>
