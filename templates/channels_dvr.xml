@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Channels DVR</Name>
+    <Repository>fancybits/channels-dvr:latest</Repository>
+    <Registry>https://hub.docker.com/r/fancybits/channels-dvr</Registry>
+    <Network>host</Network>
+    <Privileged>true</Privileged>
+    <Support>https://community.getchannels.com/t/unraid-community-app-store/30764</Support>
+    <Project>https://getchannels.com/dvr</Project>
+    <Overview>The Channels DVR server</Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <ExtraSearchTerms>iOS Android TV app</ExtraSearchTerms>
+    <Icon>https://getchannels.com/assets/img/avatar-120.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/channels_dvr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-08-04
+
+        Initial release
+    </Changes>
+    <Requires>
+        Container requires a subscription to Channels DVR. To log in, establish an SSH tunnel to the container (e.g. `ssh -L8089:localhost:8089 root@unraid_ip`) and visit http://localhost:8089 in your browser.
+    </Requires>
+    <Config Name="DVR Storage" Target="/shares/DVR" Default="" Mode="rw" Description="Path to DVR recordings storage" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Container Port: 8089" Type="Port" Display="always" Required="true" Mask="false">8089</Config>
+    <Config Name="Config Path" Target="/channels-dvr" Default="/mnt/user/appdata/channels-dvr" Mode="rw" Description="Path to config storage" Type="Path" Dislay="advanced" Required="true" Mask="false">/mnt/user/appdata/channels-dvr</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
