@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Pocket ID</Name>
+    <Repository>stonith404/pocket-id:latest</Repository>
+    <Registry>https://hub.docker.com/r/stonith404/pocket-id</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>development</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Support>https://github.com/stonith404/pocket-id/issues</Support>
+    <Project>https://github.com/stonith404/pocket-id</Project>
+    <Overview>A simple OIDC provider that allows users to authenticate with their passkeys to your services.</Overview>
+    <Beta>False</Beta>
+    <Category>Network:Privacy Productivity: Security: Tools: Other:</Category>
+    <ExtraSearchTerms>authentication passkey password Authelia Authentik Keycloack ORY Hydra</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pocket-id-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pocket_id.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-08-12
+
+        Initial release
+    </Changes>
+    <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Public App URL" Target="PUBLIC_APP_URL" Default="http://localhost" Description="The URL where you will access the app. Recommended to change from default." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost</Config>
+    <Config Name="Data Path" Target="/app/backend/data" Default="/mnt/user/appdata/pocket-id/data" Mode="rw" Description="Data directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pocket-id/data</Config>
+    <Config Name="Database Path" Target="DB_PATH" Default="data/pocket-id.db" Description="Path inside the container to the SQLite database file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">data/pocket-id.db</Config>
+    <Config Name="Upload Path" Target="UPLOAD_PATH" Default="data/uploads" Description="Path inside the container where uploaded files are stored" Type="Variable" Display="advanced-hide" Required="true" Mask="false">data/uploads</Config>
+    <Config Name="Frontend Port" Target="PORT" Default="3000" Mode="tcp" Description="The port inside the container on which the frontend should listen" Type="Variable" Display="advanced-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Backend Port" Target="BACKEND_PORT" Default="8080" Mode="tcp" Description="The port inside the container on which the backend should listen" Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
