@@ -27,6 +27,10 @@
         - `touch anythingllm.db` at /mnt/user/appdata/anythingllm/anythingllm.db &#xD;
     </Requires>
     <Changes>
+        ### 2024-08-13
+
+        Add SYS_ADMIN capabilities for web scraping, see: https://docs.anythingllm.com/installation/self-hosted/local-docker#recommend-way-to-run-dockerized-anythingllm
+
         ### 2024-07-10
 
         Remove unnecessary privileged mode
@@ -39,6 +43,7 @@
 
         Initial release
     </Changes>
+    <ExtraParams>--cap-add SYS_ADMIN</ExtraParams>
     <Config Name="WebUI" Target="3001" Default="3001" Mode="tcp" Description="Container Port: 3001" Type="Port" Display="always" Required="true" Mask="false">3001</Config>
     <Config Name="Environment File Path" Target="/app/server/.env" Default="/mnt/user/appdata/anythingllm/.env" Mode="rw" Description="Path to the environmental variable file. File must exist before running!" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/anythingllm/.env</Config>
     <Config Name="In-container storage path" Target="STORAGE_DIR" Default="/app/server/storage" Description="In-container storage location. Do not change!" Type="Variable" Display="advanced" Required="true" Mask="false">/app/server/storage</Config>
