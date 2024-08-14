@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Invoke AI</Name>
+    <Repository>ghcr.io/invoke-ai/invokeai:latest</Repository>
+    <Registry>https://github.com/invoke-ai/InvokeAI/pkgs/container/invokeai</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest standard release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9090]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/invoke-ai/InvokeAI/issues</Support>
+    <Project>https://invoke-ai.github.io/InvokeAI/</Project>
+    <Overview>
+        An implementation of Stable Diffusion, the open source text-to-image and image-to-image generator, providing a streamlined process with various new features and options to aid the image generation process. &#xD;
+        &#xD;
+        Additional image variants are also available: https://localai.io/basics/container/#standard-container-images &#xD;
+        &#xD;
+        **Nvidia GPU Use:**&#xD;
+        Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and add **--runtime=nvidia --gpus=all** to [b]"extra parameters"[/b] (switch on advanced view) &#xD;
+        [br]
+        **AMD GPU Use:**&#xD;
+        For AMD GPU support, add "/dev/kfd" and "/dev/dri" each as a Device and add the required Variables: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/docker.html#accessing-gpus-in-containers &#xD;
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/invoke-ai-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/invoke_ai.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        The images for this container are several gigabytes (upwards of ~9 GB). &#xD;
+        If you receive a "no space left on device" warning during installation, please increase the vDisk size in your Docker settings. &#xD;
+    </Requires>
+    <Changes>
+        ### 2024-08-13
+
+        Initial release
+    </Changes>
+    <ExtraParams>--gpus=all</ExtraParams>
+    <Config Name="WebUI" Target="9090" Default="9090" Mode="tcp" Description="Container Port: 9090" Type="Port" Display="always" Required="true" Mask="false">9090</Config>
+    <Config Name="HuggingFace Hub Token" Target="HUGGING_FACE_HUB_TOKEN" Default="" Description="HuggingFace Hub token for downloading models from private repositories" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Appdata and Model Storage Path" Target="/invokeai_root" Default="/mnt/user/appdata/invoke_ai" Mode="rw" Description="Path for app data and models storage" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/invoke_ai</Config>
+    <Config Name="Data root" Target="INVOKEAI_ROOT" Default="/invokeai_root" Description="Location of InvokeAI root directory inside the container" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/invokeai_root</Config>
+</Container>
