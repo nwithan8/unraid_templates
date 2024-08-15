@@ -15,8 +15,6 @@
     <Overview>
         An implementation of Stable Diffusion, the open source text-to-image and image-to-image generator, providing a streamlined process with various new features and options to aid the image generation process. &#xD;
         &#xD;
-        Additional image variants are also available: https://localai.io/basics/container/#standard-container-images &#xD;
-        &#xD;
         **Nvidia GPU Use:**&#xD;
         Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and add **--runtime=nvidia --gpus=all** to [b]"extra parameters"[/b] (switch on advanced view) &#xD;
         [br]
