@@ -17,6 +17,7 @@
     <Beta>False</Beta>
     <Category>MediaApp:Books Tools: Status Stable</Category>
     <ExtraSearchTerms>Audible audiobooks download automation audio</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/libation-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/libation.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
