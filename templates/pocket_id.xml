@@ -30,7 +30,7 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="WebUI" Target="80" Default="3000" Mode="tcp" Description="Port to access WebUI: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="Public App URL" Target="PUBLIC_APP_URL" Default="http://localhost" Description="The URL where you will access the app. Recommended to change from default." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost</Config>
     <Config Name="Data Path" Target="/app/backend/data" Default="/mnt/user/appdata/pocket-id/data" Mode="rw" Description="Data directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pocket-id/data</Config>
     <Config Name="Database Path" Target="DB_PATH" Default="data/pocket-id.db" Description="Path inside the container to the SQLite database file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">data/pocket-id.db</Config>
