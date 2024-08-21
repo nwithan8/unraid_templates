@@ -13,7 +13,7 @@
     </Branch>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
-    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <Support>https://github.com/stonith404/pocket-id/issues</Support>
     <Project>https://github.com/stonith404/pocket-id</Project>
     <Overview>A simple OIDC provider that allows users to authenticate with their passkeys to your services.</Overview>
