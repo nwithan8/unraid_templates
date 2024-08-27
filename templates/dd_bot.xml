@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>DD Bot</Name>
+    <Repository>assaro/ddbot:latest</Repository>
+    <Registry>https://hub.docker.com/r/assaro/ddbot</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Assaro/DD_Bot/issues</Support>
+    <Project>https://github.com/Assaro/DD_Bot</Project>
+    <Overview>Discord bot to control Docker services via the Docker socket</Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Other: Productivity: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dd-bot-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dd_bot.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        After installing the container, you will need to configure the bot via the `settings.json` file in the Config path: https://github.com/Assaro/DD_Bot/blob/master/sites/settings.md
+    </Requires>
+    <Changes>
+        ### 2024-08-26
+
+        Initial release
+    </Changes>
+    <Config Name="Config path" Target="/app/settings" Default="/mnt/user/appdata/dd_bot/config" Mode="rw" Description="Storage for config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dd_bot/config</Config>
+    <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="" Mode="ro" Description="Gives DDBot the ability to restart, stop, start, refresh and remove containers." Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
