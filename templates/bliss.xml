@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>bliss</Name>
+    <Repository>elstensoftware/bliss</Repository>
+    <Registry>https://hub.docker.com/r/elstensoftware/bliss</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3220]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://www.blisshq.com/get-help.html</Support>
+    <Project>https://www.blisshq.com/</Project>
+    <Overview>
+        bliss is an automated music library organizer for self-hosters and music hoarders.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Audio MediaServer:Audio Other: Tools: Status:Stable</Category>
+    <ExtraSearchTerms>Headphones Lidarr Plex music Jellyfin Emby audiobooks</ExtraSearchTerms>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/bliss.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-08-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Due to a permissions issue, you must create the Configuration Data path before starting the container. Open a terminal and run the following command: "mkdir -p /mnt/user/appdata/bliss/config"
+    </Requires>
+    <Config Name="Web UI Port" Target="3220" Default="3220" Mode="tcp" Description="Container Port: 3220" Type="Port" Display="always-hide" Required="true" Mask="false">3220</Config>
+    <Config Name="Services Port" Target="3221" Default="3221" Mode="tcp" Description="Container Port: 3221" Type="Port" Display="always-hide" Required="true" Mask="false">3221</Config>
+    <Config Name="Music Files" Target="/music" Default="" Mode="rw" Description="Path to music files" Type="Path" Display="always-hide" Required="true" Mask="false" />
+    <Config Name="Configuration Data" Target="/config" Default="/mnt/user/appdata/bliss/config" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/bliss/config</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
