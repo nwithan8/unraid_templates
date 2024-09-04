@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Immich Kiosk</Name>
+    <Repository>damongolding/immich-kiosk:latest</Repository>
+    <Registry>https://hub.docker.com/r/damongolding/immich-kiosk</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/damongolding/immich-kiosk/issues</Support>
+    <Project>https://github.com/damongolding/immich-kiosk</Project>
+    <Overview>A web slideshow for Immich</Overview>
+    <Category>Tools: MediaServer Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/immich-kiosk-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/immich_kiosk.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-04
+
+        Initial release
+    </Changes>
+    <Requires>
+        Container requires a "config.yaml" file at the "Config File" path BEFORE starting. See the project page for more information: https://github.com/damongolding/immich-kiosk?tab=readme-ov-file#configuration
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Config File" Target="/config.yaml" Default="/mnt/user/appdata/immich_kiosk/config.yaml" Mode="rw" Description="Config file for application" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/immich_kiosk/config.yaml</Config>
+</Container>
