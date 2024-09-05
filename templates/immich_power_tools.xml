@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Immich Kiosk</Name>
+    <Repository>ghcr.io/varun-raj/immich-power-tools:latest</Repository>
+    <Registry>ghcr.io/varun-raj/immich-power-tools</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/varun-raj/immich-power-tools/issues</Support>
+    <Project>https://immich-power-tools.featureos.app</Project>
+    <Overview>An unofficial Immich client to provide better tools to organize and manage your Immich account.</Overview>
+    <Category>Tools: MediaServer Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/immich-power-tools-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/immich_power_tools.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-05
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Immich server and Postgres database.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Immich URL" Target="IMMICH_URL" Default="" Description="The URL to the Immich Server" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Immich API Key" Target="IMMICH_API_KEY" Default="" Description="The API for your Immich server" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Database Host" Target="DB_HOST" Default="localhost" Description="The host for the Postgres database connection" Type="Variable" Display="always" Required="false" Mask="false">localhost</Config>
+    <Config Name="Database Port" Target="DB_PORT" Default="5432" Description="The port for the Postgres database connection" Type="Variable" Display="always" Required="false" Mask="false">5432</Config>
+    <Config Name="Database Username" Target="DB_USERNAME" Default="" Description="The username for the Postgres database connection" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Database Password" Target="DB_PASSWORD" Default="" Description="The password for the Postgres database connection" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Database Name" Target="DB_DATABASE_NAME" Default="" Description="The name of the Postgres database" Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>

@@ -9,7 +9,6 @@
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3000]</WebUI>
-    <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Support>https://github.com/damongolding/immich-kiosk/issues</Support>
     <Project>https://github.com/damongolding/immich-kiosk</Project>
@@ -30,12 +29,12 @@
         Initial release
     </Changes>
     <Requires>
-        Container requires a "config.yaml" file at the "Config File" path BEFORE starting if using config file; otherwise use environmental variables. See the project page for more information: https://github.com/damongolding/immich-kiosk?tab=readme-ov-file#configuration
+        Requires a separate Immich server. Container requires a "config.yaml" file at the "Config File" path BEFORE starting if using config file; otherwise use environmental variables. See the project page for more information: https://github.com/damongolding/immich-kiosk?tab=readme-ov-file#configuration
     </Requires>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
     <Config Name="Config File" Target="/config.yaml" Default="/mnt/user/appdata/immich_kiosk/config.yaml" Mode="rw" Description="Config file for application. Remove this if using environmental variables instead." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/immich_kiosk/config.yaml</Config>
     <Config Name="Immich URL" Target="KIOSK_IMMICH_URL" Default="" Description="The URL to the Immich Server" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="Immich API Key" Target="KIOSK_IMMICH_API_KEY" Default="" Description="The API for your Immich server" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Immich API Key" Target="KIOSK_IMMICH_API_KEY" Default="" Description="The API for your Immich server" Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Disable Kiosk UI" Target="KIOSK_DISABLE_UI" Default="false|true" Description="A shortcut to set KIOSK_SHOW_TIME, KIOSK_SHOW_DATE, KIOSK_SHOW_IMAGE_TIME and KIOSK_SHOW_IMAGE_DATE" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Show current time" Target="KIOSK_SHOW_TIME" Default="true|false" Description="Display current time" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Current time format" Target="KIOSK_TIME_FORMAT" Default="12|24" Description="Display current time in either 12-hour or 24-hour format" Type="Variable" Display="always" Required="false" Mask="false"/>
