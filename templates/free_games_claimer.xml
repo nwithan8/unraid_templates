@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Free Games Claimer</Name>
+    <Repository>ghcr.io/vogler/free-games-claimer:latest</Repository>
+    <Registry>ghcr.io/vogler/free-games-claimer</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:6080]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/vogler/free-games-claimer/issues</Support>
+    <Project>https://github.com/vogler/free-games-claimer</Project>
+    <Overview>
+        Automatically claims free games on the Epic Games Store, Amazon Prime Gaming and GOG.&#xD;
+        [br]
+        See documentation for more details: https://github.com/vogler/free-games-claimer/?tab=readme-ov-file#configuration--options
+    </Overview>
+    <Category>Downloaders: GameServers: MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <ExtraSearchTerms>VNC Epic Steam free automation gaming deals sales</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/free-games-claimer-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/free_games_claimer.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-16
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="6080" Default="6080" Mode="tcp" Description="Container Port: 6080" Type="Port" Display="always" Required="true" Mask="false">6080</Config>
+    <Config Name="Default login - Email" Target="EMAIL" Default="" Description="The email address to use for logging in" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Default login - Password" Target="PASSWORD" Default="" Description="The password to use for logging in" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Epic Games Store - Email" Target="EG_EMAIL" Default="" Description="The email address to use for logging in to the Epic Games Store. Overrides default email." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Epic Games Store - Password" Target="EG_PASSWORD" Default="" Description="The password to use for logging in to the Epic Games Store. Overrides default password." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Epic Games Store - 2FA OTP key" Target="EG_OTPKEY" Default="" Description="The OTP key to use for logging in to the Epic Games Store. See documentation for more details: https://github.com/vogler/free-games-claimer?tab=readme-ov-file#automatic-login-two-factor-authentication" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Epic Games Store - Parental pin" Target="EG_PARENTALPIN" Default="" Description="The parental pin to use for logging in to the Epic Games Store." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Amazon Prime Gaming - Email" Target="PG_EMAIL" Default="" Description="The email address to use for logging in to Amazon Prime Gaming. Overrides default email." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Amazon Prime Gaming - Password" Target="PG_PASSWORD" Default="" Description="The password to use for logging in to Amazon Prime Gaming. Overrides default password." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Amazon Prime Gaming - 2FA OTP key" Target="PG_OTPKEY" Default="" Description="The OTP key to use for logging in to Amazon Prime Gaming. See documentation for more details: https://github.com/vogler/free-games-claimer?tab=readme-ov-file#automatic-login-two-factor-authentication" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Amazon Prime Gaming - Try to redeem external keys" Target="PG_REDEEM" Default="0|1" Description="Try to redeem keys on external stores (1 = true, 0 = false)" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
+    <Config Name="Amazon Prime Gaming - Try to claim DLCs" Target="PG_CLAIMDLC" Default="0|1" Description="Try to claim DLCs (1 = true, 0 = false)" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
+    <Config Name="GOG - Email" Target="GOG_EMAIL" Default="" Description="The email address to use for logging in to GOG. Overrides default email." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="GOG - Password" Target="GOG_PASSWORD" Default="" Description="The password to use for logging in to GOG. Overrides default password." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="GOG - Keep newsletter subscription" Target="GOG_NEWSLETTER" Default="0|1" Description="Keep the newsletter subscription (1 = true, 0 = false)" Type="Variable" Display="always" Required="true" Mask="false">0</Config>
+    <Config Name="Legacy Games - Email" Target="LG_EMAIL" Default="" Description="The email address to use for logging in to the Legacy Games. Overrides default email. Uses Prime Gaming email if not set." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Notification service" Target="NOTIFY" Default="" Description="The Apprise notification service to use for notifications. See documentation for more details: https://github.com/vogler/free-games-claimer#notifications" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Notification title" Target="NOTIFY_TITLE" Default="Free Games Claimer" Description="The title to use for notifications" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Config data" Target="/fgc/data" Default="/mnt/user/appdata/free_games_claimer/data" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/free_games_claimer/data</Config>
+    <Config Name="Enable VNC browser" Target="SHOW" Default="1|0" Description="Enable browser. DO NOT CHANGE." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
+    <Config Name="VNC window width" Target="WIDTH" Default="1280" Description="The width of the browser window" Type="Variable" Display="advanced-hide" Required="false" Mask="false">1280</Config>
+    <Config Name="VNC window height" Target="HEIGHT" Default="1280" Description="The height of the browser window" Type="Variable" Display="advanced-hide" Required="false" Mask="false">1280</Config>
+    <Config Name="VNC password" Target="VNC_PASSWORD" Default="" Description="The password for the VNC server" Type="Variable" Display="advanced-hide" Required="false" Mask="true"/>
+    <Config Name="VNC data profile" Target="BROWSER_DIR" Default="data/browser" Mode="rw" Description="Directory (inside Docker) for browser profile. DO NOT CHANGE." Type="Variable" Display="advanced-hide" Required="true" Mask="false">data/browser</Config>
+    <Config Name="Timeout" Target="TIMEOUT" Default="60" Description="The amount of time in seconds to wait for the page to load" Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
+    <Config Name="Login timeout" Target="LOGIN_TIMEOUT" Default="180" Description="The amount of time in seconds to wait for the login page to load" Type="Variable" Display="advanced-hide" Required="true" Mask="false">180</Config>
+</Container>
