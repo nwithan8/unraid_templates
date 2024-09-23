@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Postiz</Name>
+    <Repository>ghcr.io/gitroomhq/postiz-app:latest</Repository>
+    <Registry>ghcr.io/gitroomhq/postiz-app</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4200]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/gitroomhq/postiz-app/issues</Support>
+    <Project>https://postiz.com/</Project>
+    <Overview>Everything you need to manage your social media posts, build an audience, capture leads, and grow your business.</Overview>
+    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/postiz-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/postiz.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-23
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate Postgres and Redis databases. See documentation for more information: https://docs.postiz.com/installation/docker-compose#example-docker-composeyml-file
+    </Requires>
+    <Config Name="Web UI Port" Target="4200" Default="4200" Mode="tcp" Description="Container Port: 4200" Type="Port" Display="always" Required="true" Mask="false">4200</Config>
+    <Config Name="Backend Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Web UI URL" Target="MAIN_URL" Default="https://SERVER_IP_ADDRESS:4200" Description="The public URL to the Postiz Web UI. Provide server IP address." Type="Variable" Display="always" Required="true" Mask="false">https://SERVER_IP_ADDRESS:4200</Config>
+    <Config Name="Public Frontend URL" Target="FRONTEND_URL" Default="https://SERVER_IP_ADDRESS:4200" Description="The public URL to the Postiz frontend. Same as Web UI URL." Type="Variable" Display="always" Required="true" Mask="false">https://SERVER_IP_ADDRESS:4200</Config>
+    <Config Name="Public Backend URL" Target="NEXT_PUBLIC_BACKEND_URL" Default="https://SERVER_IP_ADDRESS:3000" Description="The public URL to the Postiz backend. Provide server IP address." Type="Variable" Display="always" Required="true" Mask="false">https://SERVER_IP_ADDRESS:3000</Config>
+    <Config Name="JWT Secret" Target="JWT_SECRET" Default="" Description="JWT token used for encryption. Generate with 'openssl rand -base64 32'" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Postgres Database URL" Target="DATABASE_URL" Default="postgresql://USERNAME:PASSWORD@IP:5432/DATABASE_NAME" Description="Connection URL for Postgres database" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Redis Database URL" Target="REDIS_URL" Default="redis://localhost:6379" Description="Connection URL for Postgres database" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Cloudflare Account ID" Target="CLOUDFLARE_ACCOUNT_ID" Default="" Description="Cloudflare account ID" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Cloudflare Access Key" Target="CLOUDFLARE_ACCESS_KEY" Default="" Description="Cloudflare access key" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Cloudflare Access Key Secret" Target="CLOUDFLARE_SECRET_ACCESS_KEY" Default="" Description="Cloudflare access key secret" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Cloudflare Bucket Name" Target="CLOUDFLARE_BUCKETNAME" Default="postiz" Description="Cloudflare bucket name" Type="Variable" Display="always" Required="true" Mask="false">postiz</Config>
+    <Config Name="Cloudflare Bucket URL" Target="CLOUDFLARE_BUCKET_URL" Default="" Description="Cloudflare bucket URL" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Cloudflare Region" Target="CLOUDFLARE_REGION" Default="auto" Description="Cloudflare region" Type="Variable" Display="always" Required="true" Mask="false">auto</Config>
+    <Config Name="Twitter/X Client ID" Target="X_CLIENT" Default="" Description="Client ID for Twitter/X" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Twitter/X Client Secret" Target="X_SECRET" Default="" Description="Client secret for Twitter/X" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Twitter/X API Key" Target="X_API_KEY" Default="" Description="API key for Twitter/X" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Twitter/X API Key Secret" Target="X_API_SECRET" Default="" Description="API key secret for Twitter/X" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="LinkedIn Client ID" Target="LINKEDIN_CLIENT_ID" Default="" Description="Client ID for LinkedIn" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="LinkedIn Client Secret" Target="LINKEDIN_CLIENT_SECRET" Default="" Description="Client secret for LinkedIn" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Reddit Client ID" Target="REDDIT_CLIENT_ID" Default="" Description="Client ID for Reddit" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Reddit Client Secret" Target="REDDIT_CLIENT_SECRET" Default="" Description="Client secret for Reddit" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="GitHub Client ID" Target="GITHUB_CLIENT_ID" Default="" Description="Client ID for GitHub" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="GitHub Client Secret" Target="GITHUB_CLIENT_SECRET" Default="" Description="Client secret for GitHub" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Beehive API Key" Target="BEEHIIVE_API_KEY" Default="" Description="API key for Beehive" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Beehive Publication ID" Target="BEEHIIVE_PUBLICATION_ID" Default="" Description="Publication ID for Beehive" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Threads App ID" Target="THREADS_APP_ID" Default="" Description="App ID for Threads" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Threads App Secret" Target="THREADS_APP_SECRET" Default="" Description="App secret for Threads" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Facebook App ID" Target="FACEBOOK_APP_ID" Default="" Description="App ID for Facebook" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Facebook App Secret" Target="FACEBOOK_APP_SECRET" Default="" Description="App secret for Facebook" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="YouTube Client ID" Target="YOUTUBE_CLIENT_ID" Default="" Description="Client ID for YouTube" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="YouTube Client Secret" Target="YOUTUBE_CLIENT_SECRET" Default="" Description="Client secret for YouTube" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="TikTok Client ID" Target="TIKTOK_CLIENT_ID" Default="" Description="Client ID for TikTok" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="TikTok Client Secret" Target="TIKTOK_CLIENT_SECRET" Default="" Description="Client secret for TikTok" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Pinterest Client ID" Target="PINTEREST_CLIENT_ID" Default="" Description="Client ID for Pinterest" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Pinterest Client Secret" Target="PINTEREST_CLIENT_SECRET" Default="" Description="Client secret for Pinterest" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Dribble Client ID" Target="DRIBBLE_CLIENT_ID" Default="" Description="Client ID for Dribble" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Dribble Client Secret" Target="DRIBBLE_CLIENT_SECRET" Default="" Description="Client secret for Dribble" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="OpenAI API Key" Target="OPENAI_API_KEY" Default="" Description="API Key for OpenAI" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/postiz/config" Mode="rw" Description="Where config data will be stored" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/postiz/config</Config>
+    <Config Name="Discord Link" Target="NEXT_PUBLIC_DISCORD_SUPPORT" Default="" Description="Link to support Discord server" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Polotno Link" Target="NEXT_PUBLIC_POLOTNO" Default="" Description="Link to Polotno" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Stripe Fee Amount" Target="FEE_AMOUNT" Default="0.05" Description="Stripe fee amount" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Stripe Publishable Key" Target="STRIPE_PUBLISHABLE_KEY" Default="" Description="Stripe publishable key" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Stripe Secret Key" Target="STRIPE_SECRET_KEY" Default="" Description="Stripe secret key" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Stripe Signing Key" Target="STRIPE_SIGNING_KEY" Default="" Description="Stripe signing key" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Stripe Signing Key Connect" Target="STRIPE_SIGNING_KEY_CONNECT" Default="" Description="Stripe signing key connect" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Internal Backend URL" Target="BACKEND_INTERNAL_URL" Default="http://localhost:3000" Description="Internal URL used for backend communication. Do not change." Display="advanced-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Is Self-Hosted" Target="IS_GENERAL" Default="true|false" Description="Enable for self-hosted instances. Do not change." Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
