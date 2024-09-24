@@ -1,8 +1,12 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>ClipCascade</Name>
-    <Repository>sathvikrao/clipcascade:0.1.0</Repository>
+    <Repository>sathvikrao/clipcascade:latest</Repository>
     <Registry>https://hub.docker.com/r/sathvikrao/clipcascade</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
     <Privileged>false</Privileged>
