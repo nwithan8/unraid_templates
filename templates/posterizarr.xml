@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Posterizarr</Name>
-    <Repository>ghcr.io/fscorrupt/docker-posterizarr</Repository>
-    <Registry>https://github.com/fscorrupt/Posterizarr/pkgs/container/docker-posterizarr</Registry>
+    <Repository>ghcr.io/fscorrupt/docker-posterizarr-root</Repository>
+    <Registry>https://github.com/fscorrupt/Posterizarr/pkgs/container/docker-posterizarr-root</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -42,7 +42,7 @@
     <Config Name="Run time" Target="RUN_TIME" Default="00:00" Description="Comma-separated list of times to run the script. Format: HH:MM (24-hour time)" Type="Variable" Display="always" Required="true" Mask="false">00:00</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
-    <Config Name="UMASK" Target="UMASK" Default="022" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
+    <Config Name="UMASK" Target="UMASK" Default="002" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
     <Config Name="TERM" Target="TERM" Default="xterm" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">xterm</Config>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/posterizarr" Mode="rw" Description="Storage for config files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr</Config>
     <Config Name="Asset Path" Target="/assets" Default="/mnt/user/appdata/posterizarr/assets" Mode="rw" Description="Storage for assets" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr/assets</Config>
