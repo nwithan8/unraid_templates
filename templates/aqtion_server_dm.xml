@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>AQtion Server - Team Deathmatch</Name>
+    <Name>AQtion Server - Deathmatch</Name>
     <Repository>aqtiongame/server:v51-bot27</Repository>
     <Registry>https://hub.docker.com/r/aqtiongame/server</Registry>
     <Network>bridge</Network>
@@ -8,12 +8,12 @@
     <Support>https://github.com/actionquake/distrib/issues</Support>
     <Project>https://github.com/actionquake/distrib</Project>
     <Overview>
-        A server for the Action Quake 2 mod for Quake 2. This server is configured for Team Deathmatch.
+        A server for the Action Quake 2 mod for Quake 2. This server is configured for Deathmatch.
     </Overview>
     <Beta>False</Beta>
     <Category>GameServers: Network:Web Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/aqtion-server-icon.png</Icon>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/aqtion_server_tdm.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/aqtion_server_dm.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
@@ -25,26 +25,28 @@
     <Requires>
         AQtion Server does not publish a "latest" Docker tag. You may need to manually change the tag to the latest version: https://hub.docker.com/r/aqtiongame/server/tags&#xD;
         [br]
-        Requires a Message of the Day text file passed in the Message of the Day File configuration: https://github.com/actionquake/distrib/blob/main/server/tdm1.motd
+        Requires a Message of the Day text file passed in the Message of the Day File configuration: https://github.com/actionquake/distrib/blob/main/server/dm1.motd
     </Requires>
     <Config Name="Server Port - TCP" Target="27940" Default="27940" Mode="tcp" Description="Container Port: 27940" Type="Port" Display="always-hide" Required="true" Mask="false">27940</Config>
     <Config Name="Server Port - UDP" Target="27940" Default="27940" Mode="udp" Description="Container Port: 27940" Type="Port" Display="always-hide" Required="true" Mask="false">27940</Config>
     <Config Name="Server Port" Target="PORT" Default="27940" Description="Internal server port. Must match port above." Type="Variable" Display="always-hide" Required="true" Mask="false">27940</Config>
-    <Config Name="Server Name" Target="HOSTNAME" Default="AQtion TDM Server" Description="Hostname of server in server browser" Type="Variable" Display="always-hide" Required="true" Mask="false">AQtion TDM Server</Config>
+    <Config Name="Server Name" Target="HOSTNAME" Default="AQtion Deathmatch Server" Description="Hostname of server in server browser" Type="Variable" Display="always-hide" Required="true" Mask="false">AQtion Deathmatch Server</Config>
     <Config Name="Admin Password" Target="RCON_PASSWORD" Default="" Description="Password for remote console access" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Team 1 - Name" Target="TEAM_1_NAME" Default="Red" Description="Name of team 1" Type="Variable" Display="always-hide" Required="true" Mask="false">Red</Config>
     <Config Name="Team 1 - Skin" Target="TEAM_1_SKIN" Default="male/ctf_r" Description="Skin of team 1" Type="Variable" Display="always-hide" Required="true" Mask="false">male/ctf_r</Config>
     <Config Name="Team 2 - Name" Target="TEAM_2_NAME" Default="Blue" Description="Name of team 2" Type="Variable" Display="always-hide" Required="true" Mask="false">Blue</Config>
     <Config Name="Team 2 - Skin" Target="TEAM_2_SKIN" Default="male/ctf_b" Description="Skin of team 2" Type="Variable" Display="always-hide" Required="true" Mask="false">male/ctf_b</Config>
+    <Config Name="Shield" Target="DM_SHIELD" Default="30" Description="Amount of shield to give players" Type="Variable" Display="always-hide" Required="true" Mask="false">30</Config>
     <Config Name="Map Rotation" Target="ROTATION" Default="deepcanyon,cliff2,urban2,bwcity2p,tjt,murder,tokyo,passin,urban3remix,lumber,beer,actcity3,riot,urban" Description="Comma-separated list of maps. Last map loads first." Type="Variable" Display="always-hide" Required="true" Mask="false">deepcanyon,cliff2,urban2,bwcity2p,tjt,murder,tokyo,passin,urban3remix,lumber,beer,actcity3,riot,urban</Config>
     <Config Name="Message of the Day File" Target="/aq2server/action/motd.txt" Default="" Mode="ro" Description="A Message of the Day text file" Type="Path" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Maps Path" Target="/aq2server/action/maps" Default="/mnt/user/appdata/aqtion_server_tdm/maps" Description="Path to maps" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aqtion_server_tdm/maps</Config>
-    <Config Name="Logs Path" Target="/aq2server/action/logs" Default="/mnt/user/appdata/aqtion_server_tdm/logs" Description="Path to log files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aqtion_server_tdm/logs</Config>
-    <Config Name="Demos Path" Target="/aq2server/action/demos" Default="/mnt/user/appdata/aqtion_server_tdm/demos" Description="Path to demos" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aqtion_server_tdm/demos</Config>
-    <Config Name="Max Clients" Target="MAXCLIENTS" Default="16" Description="Maximum number of clients allowed to connect to server, plus 2 for reserved slots" Type="Variable" Display="advanced-hide" Required="true" Mask="false">16</Config>
-    <Config Name="Log file name" Target="LOGFILE_NAME" Default="tdm" Description="Name of the log file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">tdm</Config>
+    <Config Name="Maps Path" Target="/aq2server/action/maps" Default="/mnt/user/appdata/aqtion_server_deathmatch/maps" Description="Path to maps" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aqtion_server_deathmatch/maps</Config>
+    <Config Name="Logs Path" Target="/aq2server/action/logs" Default="/mnt/user/appdata/aqtion_server_deathmatch/logs" Description="Path to log files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aqtion_server_deathmatch/logs</Config>
+    <Config Name="Demos Path" Target="/aq2server/action/demos" Default="/mnt/user/appdata/aqtion_server_deathmatch/demos" Description="Path to demos" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aqtion_server_deathmatch/demos</Config>
+    <Config Name="Max Clients" Target="MAXCLIENTS" Default="13" Description="Maximum number of clients allowed to connect to server, plus 2 for reserved slots" Type="Variable" Display="advanced-hide" Required="true" Mask="false">13</Config>
+    <Config Name="Log file name" Target="LOGFILE_NAME" Default="deathmatch" Description="Name of the log file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">deathmatch</Config>
     <Config Name="Announcement Message" Target="ADDSTUFFCMD_BEGIN" Default="say vers: $version gdrv: $gl_driver=" Description="Announcement message to display when players join" Type="Variable" Display="advanced-hide" Required="true" Mask="false">say vers: $version gdrv: $gl_driver=</Config>
-    <Config Name="Enable Team Deathmatch" Target="TEAMDM" Default="1|0" Description="1 = Enable Team Deathmatch" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Enable Team Play" Target="TEAMPLAY" Default="0|1" Description="0 = Disable Team Play" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Enable Deathmatch" Target="DM_CHOOSE" Default="1|0" Description="1 = Enable Deathmatch" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Team 3 - Name" Target="TEAM_3_NAME" Default="UNUSED" Description="Name of team 3. Unused by this mode, do not change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">UNUSED</Config>
     <Config Name="Team 3 - Skin" Target="TEAM_3_SKIN" Default="UNUSED" Description="Skin of team 3. Unused by this mode, do not change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">UNUSED</Config>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
