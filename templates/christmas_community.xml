@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Christmas Community</Name>
+    <Repository>wingysam/christmas-community:latest</Repository>
+    <Registry>https://hub.docker.com/r/wingysam/christmas-community</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Wingysam/Christmas-Community/issues</Support>
+    <Project>https://github.com/Wingysam/Christmas-Community</Project>
+    <Overview>
+        A simple place for your entire family to use to find gifts that people want and avoid double-gifting.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>gifts christmas holiday planning planner share coordinate</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/Wingysam/Christmas-Community/master/src/static/img/logo.transparent.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/christmas_community.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-23
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+    <Config Name="Enable Public Lists" Target="LISTS_PUBLIC" Default="false|true" Description="Allow viewing wishlists without logging in" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Enable Single List Mode" Target="SINGLE_LIST" Default="false|true" Description="Limit to only one list (only the admin account's list). Useful for weddings, birthdays, etc." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Use Table Mode" Target="TABLE" Default="true|false" Description="true - Use table layout, false - use legacy card layout" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Site Title" Target="SITE_TITLE" Default="Christmas Community" Description="Title of the site, displayed on page and navigation bar" Type="Variable" Display="always" Required="true" Mask="false">Christmas Community</Config>
+    <Config Name="Short Site Title" Target="SHORT_TITLE" Default="Christmas" Description="Short title of the site, used when shared to home screen" Type="Variable" Display="always" Required="true" Mask="false">Christmas</Config>
+    <Config Name="Allow Markdown in notes" Target="MARKDOWN" Default="true|false" Description="Allow markdown in notes. Does not work when Table Mode is disabled." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Show Available Update Notices" Target="UPDATE_CHECK" Default="true|false" Description="Check for updates and show a notice if an update is available." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Enable Profile Pictures" Target="PFP" Default="true|false" Description="Enable profile pictures." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Bulmaswatch Theme" Target="BULMASWATCH" Default="default" Description="Bulmaswatch theme to use: https://jenil.github.io/bulmaswatch." Type="Variable" Display="always" Required="true" Mask="false">default</Config>
+    <Config Name="Data Directory" Target="/data" Default="/mnt/user/appdata/christmas_community/data" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/christmas_community/data</Config>
+    <Config Name="Database location" Target="DB_PREFIX" Default="dbs/" Description="Internal (in container) database location" Type="Variable" Display="advanced" Required="false" Mask="false">dbs/</Config>
+    <Config Name="Login Failure Redirect" Target="DEFAULT_FAILURE_REDIRECT" Default="" Description="Redirect to this page after a login failure" Type="Variable" Display="advanced" Required="false" Mask="false">/login</Config>
+    <Config Name="Web Server Port" Target="PORT" Default="80" Description="Port to run the web server on. Not recommended to change." Type="Variable" Display="advanced" Required="false" Mask="false">80</Config>
+    <Config Name="Expose Database Port" Target="DB_EXPOSE_PORT" Default="" Description="Expose internal PouchDB port. Mostly for debugging. Leave empty to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Proxy server" Target="PROXY_SERVER" Default="" Description="Proxy server to use for requests. Leave empty to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Session Cookie Secret" Target="SECRET" Default="" Description="Secret to use for session cookies. Leave empty to generate a random secret." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Session Max Age" Target="MAX_AGE" Default="604800000" Description="Max age of session cookies in milliseconds." Type="Variable" Display="advanced" Required="false" Mask="false">604800000</Config>
+    <Config Name="Root Path" Target="ROOT_PATH" Default="/" Description="Root path to serve the site from. Useful for proxying." Type="Variable" Display="advanced" Required="false" Mask="false">/</Config>
+    <Config Name="Proxy Forwarded Trust Source" Target="TRUST_PROXY" Default="loopback" Description="Trust the X-Forwarded-For header from this source. Set to 'loopback' to trust all." Type="Variable" Display="advanced" Required="false" Mask="false">loopback</Config>
+    <Config Name="Enable Amazon Smile" Target="SMILE" Default="false|true" Description="Amazon Smile has been discontinued, set this to false to avoid potential issues." Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Language" Target="LANGUAGE" Default="en-US" Description="Language to use." Type="Variable" Display="advanced" Required="false" Mask="false">en-US</Config>
+</Container>
