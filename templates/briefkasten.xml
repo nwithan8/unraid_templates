@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Briefkasten</Name>
+    <Repository>ndom91/briefkasten:latest</Repository>
+    <Registry>https://hub.docker.com/r/ndom91/briefkasten</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.briefkastenhq.com</Support>
+    <Project>https://briefkastenhq.com</Project>
+    <Overview>
+        A self-hosted bookmarking application.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>web bookmark tab save</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/briefkasten-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/briefkasten.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires a separate Postgres database.
+    </Requires>
+    <Changes>
+        ### 2024-09-24
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Database Connection URL" Target="DATABASE_URL" Default="postgresql://user:password@host:port/dbname" Description="Connection URL for the Postgres database" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Authentication Secret" Target="NEXTAUTH_SECRET" Default="" Description="Secret to use for authentication. Run `openssl rand -hex 32` to generate." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="GitHub - Client ID" Target="GITHUB_ID" Default="" Description="GitHub OAuth Client ID" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="GitHub - Client Secret" Target="GITHUB_SECRET" Default="" Description="GitHub OAuth Client Secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Google - Client ID" Target="GOOGLE_ID" Default="" Description="Google OAuth Client ID" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Google - Client Secret" Target="GOOGLE_SECRET" Default="" Description="Google OAuth Client Secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Azure Active Directory - Client ID" Target="AZURE_AD_CLIENT_ID" Default="" Description="Azure Active Directory OAuth Client ID" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Azure Active Directory - Client Secret" Target="AZURE_AD_CLIENT_SECRET" Default="" Description="Azure Active Directory OAuth Client Secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Azure Active Directory - Tenant ID" Target="AZURE_AD_TENANT_ID" Default="" Description="Azure Active Directory Tenant ID" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Keycloak - Name" Target="KEYCLOAK_NAME" Default="" Description="Keycloak Name" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Keycloak - ID" Target="KEYCLOAK_ID" Default="" Description="Keycloak ID" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Keycloak - Secret" Target="KEYCLOAK_SECRET" Default="" Description="Keycloak Secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Keycloak - Issuer" Target="KEYCLOAK_REALM" Default="" Description="Keycloak Issuer" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Keycloak - Allow Dangerous Email Account Linking" Target="KEYCLOAK_DANGER_EMAIL_ACC_LINK" Default="false|true" Description="May help if getting OAuthAccountNotLinked error while using Keycloak IdP. See documentation." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Authentik - Name" Target="AUTHENTIK_NAME" Default="" Description="Authentik Name, displayed on 'Continue with' button" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Authentik - ID" Target="AUTHENTIK_ID" Default="" Description="Authentik ID" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Authentik - Secret" Target="AUTHENTIK_SECRET" Default="" Description="Authentik Secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Authentik - Issuer" Target="AUTHENTIK_ISSUER" Default="" Description="URL to Authentik application" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Auto-Login With First Provider" Target="AUTOLOGIN_FIRST_PROVIDER" Default="false|true" Description="Try to automatically log in with the first provider" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Email Provider - SMTP Server" Target="SMTP_SERVER" Default="" Description="SMTP server to use for sending emails" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Email Provider - SMTP From Email" Target="STMP_FROM" Default="" Description="Email address to send emails from" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Supabase - Key" Target="SUPABASE_KEY" Default="" Description="Supabase API Key, for storing bookmark screenshots in cloud" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Supabase - URL" Target="SUPABASE_URL" Default="" Description="Supabase URL, for storing bookmark screenshots in cloud" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Supabase - Bucket ID" Target="SUPABASE_BUCKET_ID" Default="" Description="Supabase Bucket ID, for storing bookmark screenshots in cloud" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Authentication URL" Target="NEXTAUTH_URL" Default="http://localhost:3000" Description="Internal authentication URL. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://localhost:3000</Config>
+</Container>
