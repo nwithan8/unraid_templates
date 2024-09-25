@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>localtunnel</Name>
+    <Repository>defunctzombie/localtunnel-server:latest</Repository>
+    <Registry>https://hub.docker.com/r/defunctzombie/localtunnel-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/localtunnel/server/issues</Support>
+    <Project>https://localtunnel.me</Project>
+    <Overview>
+        Expose your localhost to the world for easy testing and sharing
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Network:Web Network:Proxy Productivity: Tools: Status Stable</Category>
+    <ExtraSearchTerms>local tunnel serveo ngrok route traffic SSH terminal expose port forwarding proxy</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/localtunnel-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/localtunnel.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-25
+
+        Initial release
+    </Changes>
+    <PostArgs>--port 3000</PostArgs>
+    <Config Name="Traffic Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+</Container>

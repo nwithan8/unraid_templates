@@ -16,7 +16,7 @@
     </Overview>
     <Beta>False</Beta>
     <Category>Cloud: Network:Web Network:Proxy Productivity: Tools: Status Stable</Category>
-    <ExtraSearchTerms>tunnel ngrok route traffic SSH terminal expose port forwarding proxy</ExtraSearchTerms>
+    <ExtraSearchTerms>local tunnel serveo ngrok route traffic SSH terminal expose port forwarding proxy</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/serveo-server-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/serveo_server.xml</TemplateURL>
     <Maintainer>
