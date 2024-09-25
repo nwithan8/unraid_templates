@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>AQtion Server - 3 Team</Name>
+    <Repository>aqtiongame/server:v51-bot27</Repository>
+    <Registry>https://hub.docker.com/r/aqtiongame/server</Registry>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/actionquake/distrib/issues</Support>
+    <Project>https://github.com/actionquake/distrib</Project>
+    <Overview>
+        A server for the Action Quake 2 mod for Quake 2. This server is configured for 3 teams.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>GameServers: Network:Web Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/aqtion-server-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/aqtion_server_3team.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-24
+
+        Initial release
+    </Changes>
+    <Requires>
+        AQtion Server does not publish a "latest" Docker tag. You may need to manually change the tag to the latest version: https://hub.docker.com/r/aqtiongame/server/tags&#xD;
+        [br]
+        Requires a 3team1.motd file passed in the MOTD File configuration.
+    </Requires>
+    <Config Name="Server Port - TCP" Target="27940" Default="27940" Mode="tcp" Description="Container Port: 27940" Type="Port" Display="always-hide" Required="true" Mask="false">27940</Config>
+    <Config Name="Server Port - UDP" Target="27940" Default="27940" Mode="udp" Description="Container Port: 27940" Type="Port" Display="always-hide" Required="true" Mask="false">27940</Config>
+    <Config Name="Server Port" Target="PORT" Default="27940" Description="Internal server port. Must match port above." Type="Variable" Display="always-hide" Required="true" Mask="false">27940</Config>
+    <Config Name="Server Name" Target="HOSTNAME" Default="AQtion 3Team Server" Description="Hostname of server in server browser" Type="Variable" Display="always-hide" Required="true" Mask="false">AQtion 3Team Server</Config>
+    <Config Name="Admin Password" Target="RCON_PASSWORD" Default="" Description="Password for remote console access" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Team 1 - Name" Target="TEAM_1_NAME" Default="Red" Description="Name of team 1" Type="Variable" Display="always-hide" Required="true" Mask="false">Red</Config>
+    <Config Name="Team 1 - Skin" Target="TEAM_1_SKIN" Default="male/ctf_r" Description="Skin of team 1" Type="Variable" Display="always-hide" Required="true" Mask="false">male/ctf_r</Config>
+    <Config Name="Team 2 - Name" Target="TEAM_2_NAME" Default="Blue" Description="Name of team 2" Type="Variable" Display="advanced-hide" Required="true" Mask="false">Blue</Config>
+    <Config Name="Team 2 - Skin" Target="TEAM_2_SKIN" Default="male/ctf_b" Description="Skin of team 2" Type="Variable" Display="advanced-hide" Required="true" Mask="false">male/ctf_b</Config>
+    <Config Name="Team 3 - Name" Target="TEAM_3_NAME" Default="Green" Description="Name of team 3" Type="Variable" Display="advanced-hide" Required="true" Mask="false">Green</Config>
+    <Config Name="Team 3 - Skin" Target="TEAM_3_SKIN" Default="male/ctf_g" Description="Skin of team 3" Type="Variable" Display="advanced-hide" Required="true" Mask="false">male/ctf_g</Config>
+    <Config Name="Map Rotation" Target="ROTATION" Default="deepcanyon,cliff2,urban2,bwcity2p,tjt,murder,tokyo,passin,urban3remix,lumber,beer,actcity3,riot,urban" Description="Comma-separated list of maps. Last map loads first." Type="Variable" Display="always-hide" Required="true" Mask="false">deepcanyon,cliff2,urban2,bwcity2p,tjt,murder,tokyo,passin,urban3remix,lumber,beer,actcity3,riot,urban</Config>
+    <Config Name="MOTD File" Target="/aq2server/action/motd.txt" Default="" Mode="ro" Description="A 3team1.motd file" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Maps Path" Target="/aq2server/action/maps" Default="/mnt/user/appdata/aqtion_server_3team1/maps" Description="Path to maps" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aqtion_server_3team1/maps</Config>
+    <Config Name="Logs Path" Target="/aq2server/action/logs" Default="/mnt/user/appdata/aqtion_server_3team1/logs" Description="Path to log files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aqtion_server_3team1/logs</Config>
+    <Config Name="Demos Path" Target="/aq2server/action/demos" Default="/mnt/user/appdata/aqtion_server_3team1/demos" Description="Path to demos" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aqtion_server_3team1/demos</Config>
+    <Config Name="Max Clients" Target="MAXCLIENTS" Default="18" Description="Maximum number of clients allowed to connect to server, plus 2 for reserved slots" Type="Variable" Display="advanced-hide" Required="true" Mask="false">18</Config>
+    <Config Name="Log file name" Target="LOGFILE_NAME" Default="3team1" Description="Name of the log file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">3team1</Config>
+    <Config Name="Use 3 Teams" Target="USE_3TEAMS" Default="1|0" Description="1 = Enable 3 teams support" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
