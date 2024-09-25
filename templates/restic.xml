@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>restic</Name>
+    <Repository>restic/restic:latest</Repository>
+    <Registry>https://hub.docker.com/r/restic/restic</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/restic/restic/issues</Support>
+    <Project>https://restic.net/</Project>
+    <Overview>
+        A backup program that is fast, efficient and secure.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Backup: Cloud: Other: Productivity: Tools: Status Stable</Category>
+    <ExtraSearchTerms>backup rclone cloud storage BackBlaze S3 AWS drive dropbox Azure Swift SFTP</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/restic-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/restic.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Runs as a utility container (triggers a command-line tool, has no web UI). See documentation for more details: https://restic.readthedocs.io&#xD;
+        [br]
+        Expects a password file to be mounted at /pass.
+    </Requires>
+    <Changes>
+        ### 2024-09-24
+
+        Initial release
+    </Changes>
+    <ExtraParams>--hostname unraid</ExtraParams>
+    <PostArgs>--password-file /pass backup /data</PostArgs>
+    <Config Name="Password file" Target="/pass" Default="" Description="Path to password file" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Backup path" Target="/data" Default="" Mode="rw" Description="Path to files to back up" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Restic Repository" Target="RESTIC_REPOSITORY" Default="rest:https://user:pass@hostname/" Description="Restic repository path." Type="Variable" Display="always" Required="true" Mask="false">rest:https://user:pass@hostname/</Config>
+</Container>
