@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>webhook.site Backend</Name>
+    <Repository>webhooksite/laravel-echo-server:latest</Repository>
+    <Registry>https://hub.docker.com/r/webhooksite/laravel-echo-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/webhooksite/webhook.site/issues</Support>
+    <Project>https://webhook.site</Project>
+    <Overview>
+        (Backend) A website to generate unique, random URLs that you can use to test and debug Webhooks and HTTP requests, as well as to create your own workflows.
+    </Overview>
+    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/webhook-site-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/webhook_site_backend.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires a separate Redis database and "webhook.site Frontend" (also available in Community Applications).
+    </Requires>
+    <Changes>
+        ### 2024-09-26
+
+        Initial release
+    </Changes>
+    <Config Name="Server Port" Target="6001" Default="6001" Mode="tcp" Description="Container Port: 6001" Type="Port" Display="always-hide" Required="true" Mask="false">6001</Config>
+    <Config Name="Frontend URL" Target="LARAVEL_ECHO_SERVER_AUTH_HOST" Default="http://localhost" Description="Frontend URL. Replace with IP and port of the frontend." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost</Config>
+    <Config Name="Redis Host" Target="ECHO_REDIS_HOSTNAME" Default="localhost" Description="Redis host. Replace with IP address of Redis server." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis Port" Target="ECHO_REDIS_PORT" Default="6379" Description="Redis port" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Server Host" Target="LARAVEL_ECHO_SERVER_HOST" Default="0.0.0.0" Description="Server Host. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Server Port (Internal)" Target="LARAVEL_ECHO_SERVER_PORT" Default="6001" Description="Server Port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">6001</Config>
+    <Config Name="Server Protocol" Target="ECHO_PROTOCOL" Default="http" Description="Server Protocol. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">http</Config>
+    <Config Name="Allow CORS" Target="ECHO_ALLOW_CORS" Default="true|false" Description="Allow CORS. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Origin" Target="ECHO_ALLOW_ORIGIN" Default="*" Description="Allow Origin. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">*</Config>
+    <Config Name="Allow Methods" Target="ECHO_ALLOW_METHODS" Default="*" Description="Allow Methods. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">*</Config>
+    <Config Name="Allow Headers" Target="ECHO_ALLOW_HEADERS" Default="*" Description="Allow Headers. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">*</Config>
+</Container>

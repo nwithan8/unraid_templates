@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>webhook.site Frontend</Name>
+    <Repository>webhooksite/webhook.site:latest</Repository>
+    <Registry>https://hub.docker.com/r/webhooksite/webhook.site</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/webhooksite/webhook.site/issues</Support>
+    <Project>https://webhook.site</Project>
+    <Overview>
+        (Frontend) A website to generate unique, random URLs that you can use to test and debug Webhooks and HTTP requests, as well as to create your own workflows.
+    </Overview>
+    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/webhook-site-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/webhook_site_frontend.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires a separate Redis database and "webhook.site Backend" (also available in Community Applications).
+
+        You must enter a container console and run the following command upon each startup:
+
+        `sed -i -e 's/laravel-echo-server:6001/${BACKEND_SERVER_HOST}:${BACKEND_SERVER_PORT}/g' /etc/nginx/conf.d/nginx.conf`
+    </Requires>
+    <Changes>
+        ### 2024-09-26
+
+        Initial release
+    </Changes>
+    <PostArgs>php artisan queue:work --daemon --tries=3 --timeout=10"</PostArgs>
+    <Config Name="Web UI Port" Target="80" Default="8084" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8084</Config>
+    <Config Name="Server Host" Target="BACKEND_SERVER_HOST" Default="localhost" Description="Hostname for the backend server. Replace with IP address of the backend server." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Server Port" Target="BACKEND_SERVER_PORT" Default="6001" Description="Port for the backend server" Type="Variable" Display="always-hide" Required="true" Mask="false">6001</Config>
+    <Config Name="App URL" Target="APP_URL" Default="http://localhost:8084" Description="Application URL. Replace with IP and port. Port must match Web UI Port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8084</Config>
+    <Config Name="Redis Host" Target="REDIS_HOST" Default="localhost" Description="Redis host. Replace with IP address of Redis server." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis Port" Target="REDIS_PORT" Default="6379" Description="Redis port" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Redis Password" Target="REDIS_PASSWORD" Default="" Description="Redis password" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Redis Database" Target="REDIS_DB" Default="" Description="Redis database" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="App Environment" Target="APP_ENV" Default="dev" Description="Application environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">dev</Config>
+    <Config Name="App Debug" Target="APP_DEBUG" Default="true|false" Description="Application debug mode. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="App Log" Target="APP_LOG" Default="errorlog" Description="Application log level. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">errorlog</Config>
+    <Config Name="Database connection" Target="DB_CONNECTION" Default="sqlite" Description="Database connection type. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">sqlite</Config>
+    <Config Name="Broadcast Driver" Target="BROADCAST_DRIVER" Default="redis" Description="Broadcast driver. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">redis</Config>
+    <Config Name="Cache Driver" Target="CACHE_DRIVER" Default="redis" Description="Cache driver. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">redis</Config>
+    <Config Name="Queue Driver" Target="QUEUE_DRIVER" Default="redis" Description="Queue driver. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">redis</Config>
+    <Config Name="Echo Host Mode" Target="ECHO_HOST_MODE" Default="path" Description="Echo host mode. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">path</Config>
+</Container>
