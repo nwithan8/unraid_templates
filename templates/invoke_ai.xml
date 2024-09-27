@@ -22,7 +22,7 @@
         For AMD GPU support, add "/dev/kfd" and "/dev/dri" each as a Device and add the required Variables: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/docker.html#accessing-gpus-in-containers &#xD;
     </Overview>
     <Beta>False</Beta>
-    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/invoke-ai-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/invoke_ai.xml</TemplateURL>
     <Maintainer>

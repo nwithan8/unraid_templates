@@ -16,7 +16,7 @@
         Self-hosted Image and Video Hosting solution, your own Flickr/imgur media sharing alternative with your rules.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Photos MediaServer:Photos Tools: Productivity: Status:Stable</Category>
+    <Category>MediaApp:Photos MediaServer:Photos Tools: Productivity: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/chevereto-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/chevereto.xml</TemplateURL>
     <Maintainer>

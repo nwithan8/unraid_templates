@@ -14,7 +14,7 @@
     <Overview>
         (Backend) A website to generate unique, random URLs that you can use to test and debug Webhooks and HTTP requests, as well as to create your own workflows.
     </Overview>
-    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/webhook-site-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/webhook_site_backend.xml</TemplateURL>
     <Maintainer>

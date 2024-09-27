@@ -10,7 +10,7 @@
     <Project>https://github.com/Kometa-Team/ImageMaid</Project>
     <Overview>Clean up images in a Plex Media Server. Formerly Plex Image Cleanup. Part of the Kometa suite.</Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <Category>MediaApp:Video MediaServer:Video Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>images Plex Kometa trash automation TitleCardMaker</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/image-maid-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/image_maid.xml</TemplateURL>

@@ -17,7 +17,7 @@
         [br]
         See documentation for more details: https://github.com/vogler/free-games-claimer/?tab=readme-ov-file#configuration--options
     </Overview>
-    <Category>Downloaders: GameServers: MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Category>Downloaders: GameServers: MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>VNC Epic Steam free automation gaming deals sales</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/free-games-claimer-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/free_games_claimer.xml</TemplateURL>

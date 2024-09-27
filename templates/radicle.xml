@@ -16,7 +16,7 @@
         Docker container for Radicale calendar, to-do list and contact (CalDAV/CardDAV) server
     </Overview>
     <Beta>False</Beta>
-    <Category>Tools: Productivity: Status:Stable</Category>
+    <Category>Tools: Productivity: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/radicale-icon.png</Icon>
     <!--- Template was initially misspelled, cannot be correct without deprecation -->
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/radicle.xml</TemplateURL>

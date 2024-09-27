@@ -20,7 +20,7 @@
         An M3U proxy for Kernel/Plex/Jellyfin/Emby based on xTeVe
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <Category>MediaApp:Video MediaServer:Video Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/threadfin-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/threadfin.xml</TemplateURL>
     <Maintainer>

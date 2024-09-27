@@ -44,7 +44,7 @@
         Edit your **go** file to include **modprobe i915**, save and reboot, then add **--device=/dev/dri** to **"extra parameters"** (switch on advanced view)
     </Overview>
     <Beta>True</Beta>
-    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <Category>MediaApp:Video MediaServer:Video Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>Tuner TV Media Video Live Channels HDHomerun Emby Plex Jellyfin IPTV Unraid Nvidia Intel ErsatzTV dizqueTV pseudoTV</ExtraSearchTerms>
     <Icon>https://tunarr.com/assets/tunarr.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tunarr.xml</TemplateURL>

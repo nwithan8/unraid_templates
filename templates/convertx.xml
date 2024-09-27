@@ -15,7 +15,7 @@
     <Overview>
         A self-hosted online file converter. Supports over a thousand different formats.
     </Overview>
-    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/convertx-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/convertx.xml</TemplateURL>
     <Maintainer>

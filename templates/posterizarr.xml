@@ -16,7 +16,7 @@
         Automated poster maker for Plex.
     </Overview>
     <Beta>False</Beta>
-    <Category>Tools: MediaServer Status:Stable</Category>
+    <Category>Tools: MediaServer Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/posterizarr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/posterizarr.xml</TemplateURL>
     <Maintainer>

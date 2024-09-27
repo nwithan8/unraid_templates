@@ -16,7 +16,7 @@
         A self hostable free open-source speed reading app. Highly customizable. Implements chunking, pacing and highlighting.
     </Overview>
     <Beta>False</Beta>
-    <Category>Tools: Productivity: Status:Stable</Category>
+    <Category>Tools: Productivity: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/axym-reader-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/axym_reader.xml</TemplateURL>
     <Maintainer>

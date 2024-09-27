@@ -13,7 +13,7 @@
     <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
     <Project>https://github.com/nwithan8/tauticord</Project>
     <Overview>Tauticord is a Discord bot that displays live data from Tautulli, including stream summaries, bandwidth and library statistics.</Overview>
-    <Category>Tools: MediaServer Status:Stable</Category>
+    <Category>Tools: MediaServer Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/icon.png</Icon>
     <Banner>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/banner.png</Banner>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tauticord.xml</TemplateURL>

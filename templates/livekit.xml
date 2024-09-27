@@ -19,7 +19,7 @@
         An open source project that provides scalable, multi-user conferencing based on WebRTC. It's designed to provide everything you need to build real-time video audio data capabilities in your applications.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp: MediaApp:Video MediaApp:Other Tools: Productivity: Status:Stable</Category>
+    <Category>MediaApp: MediaApp:Video MediaApp:Other Tools: Productivity: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/livekit-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/livekit.xml</TemplateURL>
     <Maintainer>

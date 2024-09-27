@@ -15,7 +15,7 @@
         A reverse proxy for M3U and XtreamCodes IPTV streams
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <Category>MediaApp:Video MediaServer:Video Tools: Other: Status:Stable</Category>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/iptv_proxy.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

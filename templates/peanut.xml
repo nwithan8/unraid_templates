@@ -16,7 +16,7 @@
         A Tiny Dashboard for Network UPS Tools
     </Overview>
     <Beta>False</Beta>
-    <Category>Backup: Other: Tools: Productivity: Status:Stable</Category>
+    <Category>Backup: Tools: Productivity: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/peanut-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/peanut.xml</TemplateURL>
     <Maintainer>

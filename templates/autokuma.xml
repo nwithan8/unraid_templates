@@ -20,7 +20,7 @@
         With AutoKuma, you can eliminate the need for manual monitor creation in the Uptime Kuma UI.
     </Overview>
     <Beta>False</Beta>
-    <Category>Tools: Productivity: Status:Stable</Category>
+    <Category>Tools: Productivity: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/autokuma-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/autokuma.xml</TemplateURL>
     <Maintainer>

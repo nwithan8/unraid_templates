@@ -13,7 +13,7 @@
     <Support>https://github.com/damongolding/immich-kiosk/issues</Support>
     <Project>https://github.com/damongolding/immich-kiosk</Project>
     <Overview>A web slideshow for Immich</Overview>
-    <Category>Tools: MediaServer Status:Stable</Category>
+    <Category>Tools: MediaServer Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/immich-kiosk-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/immich_kiosk.xml</TemplateURL>
     <Maintainer>

@@ -19,7 +19,7 @@
     <Overview>
         A minimalistic web application designed for sending private and secure notes with end-to-end encryption.
     </Overview>
-    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/enclosed-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/enclosed.xml</TemplateURL>
     <Maintainer>

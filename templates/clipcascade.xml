@@ -16,7 +16,7 @@
         Automatically sync your clipboard across multiple devices, no key press required. Ensures seamless clipboard sharing between devices, prioritizing privacy with end-to-end encryption.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/Sathvik-Rao/ClipCascade/refs/heads/main/logo/logo.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/clipcascade.xml</TemplateURL>
     <Maintainer>

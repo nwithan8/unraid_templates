@@ -19,7 +19,7 @@
         TGraph Bot is a bot for posting Tautulli graphs to a Discord channel.
     </Overview>
     <Beta>False</Beta>
-    <Category>Tools: MediaServer Status:Stable</Category>
+    <Category>Tools: MediaServer Other: Status:Stable</Category>
     <ExtraSearchTerms>Tautulli Plex Discord bot automation statistics</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tgraph-bot-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tgraph_bot.xml</TemplateURL>

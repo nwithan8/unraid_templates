@@ -17,7 +17,7 @@
     <Support>https://github.com/RaunoT/plex-rewind/issues</Support>
     <Project>https://github.com/RaunoT/plex-rewind</Project>
     <Overview>Present Plex user statistics and habits in a beautiful and organized manner à la Spotify Wrapped.</Overview>
-    <Category>Tools: MediaServer Status:Stable</Category>
+    <Category>Tools: MediaServer Other: Status:Stable</Category>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/plex_rewind.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

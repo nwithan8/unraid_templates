@@ -25,7 +25,7 @@
         Inference of Meta's LLaMA model (and others) in pure C/C++
     </Overview>
     <Beta>False</Beta>
-    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://user-images.githubusercontent.com/1991296/230134379-7181e485-c521-4d23-a0d6-f7b3b61ba524.png</Icon>
     <Banner>https://user-images.githubusercontent.com/1991296/230134379-7181e485-c521-4d23-a0d6-f7b3b61ba524.png</Banner>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/llama_cpp.xml</TemplateURL>

@@ -14,7 +14,7 @@
     <Project>https://github.com/charmbracelet/soft-serve</Project>
     <Overview>The mighty, self-hostable Git server for the command line</Overview>
     <Beta>False</Beta>
-    <Category>Backup: Cloud: Productivity: Tools: Status:Stable</Category>
+    <Category>Backup: Cloud: Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/softserve-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/soft_serve.xml</TemplateURL>
     <Maintainer>

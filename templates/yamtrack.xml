@@ -20,7 +20,7 @@
         Yamtrack is a self-hosted media tracker for movies, tv shows, anime and manga.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Video MediaApp:Books MediaApp:Other Status:Stable</Category>
+    <Category>MediaApp:Video MediaApp:Books MediaApp:Other Other: Status:Stable</Category>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/yamtrack.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

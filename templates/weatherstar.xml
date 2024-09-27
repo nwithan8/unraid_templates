@@ -14,7 +14,7 @@
     <Project>https://github.com/netbymatt/ws4kp</Project>
     <Overview>Bring back the feel of the 90's with a weather forecast that has the look and feel of The Weather Channel at that time but available in a modern way</Overview>
     <Beta>False</Beta>
-    <Category>Other: Tools: Status:Stable</Category>
+    <Category>Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/weatherstar-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/weatherstar.xml</TemplateURL>
     <Maintainer>

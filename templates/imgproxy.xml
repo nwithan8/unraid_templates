@@ -13,7 +13,7 @@
         Additional configuration available via environment variables: https://docs.imgproxy.net/configuration/options
     </Overview>
     <Beta>False</Beta>
-    <Category>Tools: Productivity: Status:Stable</Category>
+    <Category>Tools: Productivity: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/imgproxy-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/imgproxy.xml</TemplateURL>
     <Maintainer>

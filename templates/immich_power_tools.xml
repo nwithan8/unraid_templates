@@ -13,7 +13,7 @@
     <Support>https://github.com/varun-raj/immich-power-tools/issues</Support>
     <Project>https://immich-power-tools.featureos.app</Project>
     <Overview>An unofficial Immich client to provide better tools to organize and manage your Immich account.</Overview>
-    <Category>Tools: MediaServer Status:Stable</Category>
+    <Category>Tools: MediaServer Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/immich-power-tools-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/immich_power_tools.xml</TemplateURL>
     <Maintainer>

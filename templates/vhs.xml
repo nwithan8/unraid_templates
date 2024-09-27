@@ -15,7 +15,7 @@
     <Project>https://github.com/charmbracelet/vhs</Project>
     <Overview>Your CLI home video recorder</Overview>
     <Beta>False</Beta>
-    <Category>Backup: Cloud: Productivity: Tools: Status:Stable</Category>
+    <Category>Backup: Cloud: Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/vhs-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/vhs.xml</TemplateURL>
     <Maintainer>

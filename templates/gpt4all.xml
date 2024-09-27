@@ -11,7 +11,7 @@
         An all-in-one LLM server and chat UI
     </Overview>
     <Beta>False</Beta>
-    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/gpt4all-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/gpt4all.xml</TemplateURL>
     <Maintainer>

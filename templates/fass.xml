@@ -15,7 +15,7 @@
         A simple server that enables scraping of website with dynamic content.
     </Overview>
     <Beta>False</Beta>
-    <Category>Tools: Productivity: Status:Stable</Category>
+    <Category>Tools: Productivity: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/fass-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/fass.xml</TemplateURL>
     <Maintainer>

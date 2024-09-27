@@ -18,7 +18,7 @@
         It features AI personas, AGI functions, multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, presets for developers, and more.
     </Overview>
     <Beta>False</Beta>
-    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/big-agi-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/big_agi.xml</TemplateURL>
     <Maintainer>

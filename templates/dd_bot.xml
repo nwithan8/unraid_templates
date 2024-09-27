@@ -13,7 +13,7 @@
     <Project>https://github.com/Assaro/DD_Bot</Project>
     <Overview>Discord bot to control Docker services via the Docker socket</Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Other Other: Productivity: Tools: Status:Stable</Category>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dd-bot-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dd_bot.xml</TemplateURL>
     <Maintainer>

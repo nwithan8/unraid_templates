@@ -12,7 +12,7 @@
         Self-host a Terraform backend and state files
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Other Tools: Productivity: Status:Stable</Category>
+    <Category>MediaApp:Other Tools: Productivity: Other: Status:Stable</Category>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/terraform_http_backend.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

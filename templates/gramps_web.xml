@@ -20,7 +20,7 @@
         A modern web app that allows to browse and collaboratively edit a genealogical database, based on and interoperable with the Gramps desktop application.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Other Other: Productivity: Status:Stable</Category>
+    <Category>MediaApp:Other Productivity: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/gramps-web-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/gramps_web.xml</TemplateURL>
     <Maintainer>

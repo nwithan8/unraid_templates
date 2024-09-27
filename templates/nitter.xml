@@ -16,7 +16,7 @@
         A free and open source alternative Twitter front-end focused on privacy and performance.
     </Overview>
     <Beta>False</Beta>
-    <Category>Cloud: MediaApp:Other Other: Productivity: Tools: Status:Stable</Category>
+    <Category>Cloud: MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/nitter-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/nitter.xml</TemplateURL>
     <Maintainer>

@@ -15,7 +15,7 @@
     <Project>https://useanything.com</Project>
     <Overview>The all-in-one AI app for any LLM with full RAG and AI Agent capabilities.</Overview>
     <Beta>False</Beta>
-    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/anythingllm-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/anything_llm.xml</TemplateURL>
     <Maintainer>

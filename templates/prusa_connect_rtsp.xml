@@ -15,7 +15,7 @@
         Capture images from a RTSP camera upload them to Prusa Connect.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Photos Tools: Productivity: Status:Stable</Category>
+    <Category>MediaApp:Photos Tools: Productivity: Other: Status:Stable</Category>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/prusa_connect_rtsp.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

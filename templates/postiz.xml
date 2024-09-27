@@ -13,7 +13,7 @@
     <Support>https://github.com/gitroomhq/postiz-app/issues</Support>
     <Project>https://postiz.com/</Project>
     <Overview>Everything you need to manage your social media posts, build an audience, capture leads, and grow your business.</Overview>
-    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/postiz-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/postiz.xml</TemplateURL>
     <Maintainer>

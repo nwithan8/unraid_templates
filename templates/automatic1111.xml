@@ -14,7 +14,7 @@
         Add custom models: https://github.com/AbdBarho/stable-diffusion-webui-docker/wiki/Usage#custom-models &#xD;
     </Overview>
     <Beta>False</Beta>
-    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>WebUI images generation AI llama ollama</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/automatic1111-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/automatic1111.xml</TemplateURL>

@@ -71,7 +71,7 @@
         For Intel iGPU support, add "/dev/dri" as a Device and add "--device=/dev/dri" to the Extra Parameters field under Advanced. &#xD;
     </Overview>
     <Beta>False</Beta>
-    <Category>AI: Productivity: Tools: Status:Stable</Category>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://github.com/go-skynet/LocalAI/assets/2420543/0966aa2a-166e-4f99-a3e5-6c915fc997dd</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/local_ai.xml</TemplateURL>
     <Maintainer>
