@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Enclosed</Name>
+    <Repository>corentinth/enclosed:latest</Repository>
+    <Registry>https://hub.docker.com/r/corentinth/enclosed</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-rootless</Tag>
+        <TagDescription>Latest stable release without root permissions required (use if standard causing issues)</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8787]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/CorentinTh/enclosed/issues</Support>
+    <Project>https://enclosed.cc</Project>
+    <Overview>
+        A minimalistic web application designed for sending private and secure notes with end-to-end encryption.
+    </Overview>
+    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/enclosed-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/enclosed.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-27
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8787" Default="8787" Mode="tcp" Description="Container Port: 8787" Type="Port" Display="always-hide" Required="true" Mask="false">8787</Config>
+    <Config Name="Config data" Target="/app/.data" Default="/mnt/user/appdata/enclosed/data" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/enclosed/data</Config>
+</Container>
