@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Haptic</Name>
+    <Repository>chroxify/haptic-web:latest</Repository>
+    <Registry>https://hub.docker.com/r/chroxify/haptic-web</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/chroxify/haptic/issues</Support>
+    <Project>https://haptic.md</Project>
+    <Overview>
+        A local-first and privacy-focused open-source Markdown editor.
+    </Overview>
+    <Category>MediaApp:Other Productivity: Tools: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/haptic-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/haptic.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-27
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+</Container>

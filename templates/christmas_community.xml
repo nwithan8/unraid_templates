@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-09-27
+
+        Fix default redirect URL and database location
+
         ### 2024-09-23
 
         Initial release
