@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Maybe</Name>
+    <Repository>ghcr.io/maybe-finance/maybe:stable</Repository>
+    <Registry>ghcr.io/maybe-finance/maybe</Registry>
+    <Branch>
+        <Tag>stable</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/maybe-finance/maybe/issues</Support>
+    <Project>https://maybe.co</Project>
+    <Overview>
+        A self-hosted personal finance and wealth management app.
+    </Overview>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/maybe-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/maybe.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-27
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database. See the Maybe documentation for more information: https://github.com/maybe-finance/maybe/blob/main/docs/hosting/docker.md
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY_BASE" Default="" Description="Secret key. Run `openssl rand -hex 64` to generate a secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Host" Target="DB_HOST" Default="" Description="Postgres database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Username" Target="POSTGRES_USER" Default="maybe_user" Description="Postgres database username" Type="Variable" Display="always-hide" Required="true" Mask="false">maybe_user</Config>
+    <Config Name="Postgres - Password" Target="POSTGRES_PASSWORD" Default="" Description="Postgres database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Database" Target="POSTGRES_DB" Default="maybe_production" Description="Postgres database name" Type="Variable" Display="always-hide" Required="true" Mask="false">maybe_production</Config>
+    <Config Name="Config data" Target="/rails/storage" Default="/mnt/user/appdata/maybe/data" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/maybe/data</Config>
+    <Config Name="Is Self-Hosted" Target="SELF_HOSTING_ENABLED" Default="true|false" Description="Is the application self-hosted. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Enforce SSL" Target="RAILS_FORCE_SSL" Default="false|true" Description="Enforce SSL connections. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Assume SSL" Target="RAILS_ASSUME_SSL" Default="false|true" Description="Assume SSL connections. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Good Job Execution Mode" Target="GOOD_JOB_EXECUTION_MODE" Default="async" Description="Good Job execution mode. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
