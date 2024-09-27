@@ -28,7 +28,7 @@
     </Changes>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="Allow Guest Account Registration" Target="ACCOUNT_REGISTRATION" Default="false|true" Description="Allow guest account registration" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="JWT Secret" Target="JWT_SECRET" Default="" Description="Run 'openssl rand -base64 32' to generate a secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="JWT Secret" Target="JWT_SECRET" Default="" Description="Run `openssl rand -base64 32` to generate a secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Allow HTTP" Target="HTTP_ALLOWED" Default="false|true" Description="Allow HTTP connections. Only set to true for local connections" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Allow Unauthenticated Use" Target="ALLOW_UNAUTHENTICATED" Default="false|true" Description="Allow use of the application without requiring login" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Auto-Delete File Timeout" Target="AUTO_DELETE_EVERY_N_HOURS" Default="24" Description="Automatically delete files after X hours. Set to 0 to disable." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
