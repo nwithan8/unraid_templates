@@ -38,7 +38,6 @@
     <Config Name="Use Table Mode" Target="TABLE" Default="true|false" Description="true - Use table layout, false - use legacy card layout" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Site Title" Target="SITE_TITLE" Default="Christmas Community" Description="Title of the site, displayed on page and navigation bar" Type="Variable" Display="always" Required="true" Mask="false">Christmas Community</Config>
     <Config Name="Short Site Title" Target="SHORT_TITLE" Default="Christmas" Description="Short title of the site, used when shared to home screen" Type="Variable" Display="always" Required="true" Mask="false">Christmas</Config>
-    <Config Name="Login Failure Redirect" Target="DEFAULT_FAILURE_REDIRECT" Default="/setup" Description="Redirect to this page after a login failure. Use '/setup' during setup, change to '/login' after setup." Type="Variable" Display="always-hide" Required="false" Mask="false">/setup</Config>
     <Config Name="Allow Markdown in notes" Target="MARKDOWN" Default="true|false" Description="Allow markdown in notes. Does not work when Table Mode is disabled." Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Show Available Update Notices" Target="UPDATE_CHECK" Default="true|false" Description="Check for updates and show a notice if an update is available." Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Enable Profile Pictures" Target="PFP" Default="true|false" Description="Enable profile pictures." Type="Variable" Display="always" Required="true" Mask="false"/>
@@ -51,6 +50,7 @@
     <Config Name="Session Cookie Secret" Target="SECRET" Default="" Description="Secret to use for session cookies. Leave empty to generate a random secret." Type="Variable" Display="advanced" Required="false" Mask="true"/>
     <Config Name="Session Max Age" Target="MAX_AGE" Default="604800000" Description="Max age of session cookies in milliseconds." Type="Variable" Display="advanced" Required="false" Mask="false">604800000</Config>
     <Config Name="Root Path" Target="ROOT_PATH" Default="/" Description="Root path to serve the site from. Useful for proxying." Type="Variable" Display="advanced" Required="false" Mask="false">/</Config>
+    <Config Name="Login Failure Redirect" Target="DEFAULT_FAILURE_REDIRECT" Default="" Description="Redirect to this page after a login failure." Type="Variable" Display="advanced" Required="false" Mask="false"/>
     <Config Name="Proxy Forwarded Trust Source" Target="TRUST_PROXY" Default="loopback" Description="Trust the X-Forwarded-For header from this source. Set to 'loopback' to trust all." Type="Variable" Display="advanced" Required="false" Mask="false">loopback</Config>
     <Config Name="Enable Amazon Smile" Target="SMILE" Default="false|true" Description="Amazon Smile has been discontinued, set this to false to avoid potential issues." Type="Variable" Display="advanced" Required="true" Mask="false"/>
     <Config Name="Language" Target="LANGUAGE" Default="en-US" Description="Language to use." Type="Variable" Display="advanced" Required="false" Mask="false">en-US</Config>
