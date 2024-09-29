@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>AnonAddy</Name>
+    <Repository>anonaddy/anonaddy:latest</Repository>
+    <Registry>https://hub.docker.com/r/anonaddy/anonaddy</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/anonaddy/anonaddy/issues</Support>
+    <Project>https://addy.io/</Project>
+    <Overview>
+        Self-hosted anonymous email forwarding
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Network:Privacy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>email bitwarden anonymous redirect forward hide</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/anon-addy-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/anon_addy.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MySQL and Redis server. See documentation: https://github.com/anonaddy/anonaddy/blob/master/SELF-HOSTING.md
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="SMTP Email Port" Target="25" Default="25" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always-hide" Required="true" Mask="false">25</Config>
+    <Config Name="App URL" Target="APP_URL" Default="http://localhost:8000/" Description="The URL to the AnonAddy server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000/</Config>
+    <Config Name="MySQL - Host" Target="DB_HOST" Default="localhost" Description="The host for the MySQL database connection" Type="Variable" Display="always-hide" Required="false" Mask="false">localhost</Config>
+    <Config Name="MySQL - Port" Target="DB_PORT" Default="3306" Description="The port for the MySQL database connection" Type="Variable" Display="always-hide" Required="false" Mask="false">3306</Config>
+    <Config Name="MySQL - Username" Target="DB_USERNAME" Default="anonaddy" Description="The username for the MySQL database connection" Type="Variable" Display="always-hide" Required="false" Mask="false">anonaddy</Config>
+    <Config Name="MySQL - Password" Target="DB_PASSWORD" Default="" Description="The password for the MySQL database connection" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="MySQL - Database" Target="DB_DATABASE" Default="anonaddy" Description="The name of the MySQL database" Type="Variable" Display="always-hide" Required="false" Mask="false">anonaddy</Config>
+    <Config Name="Redis - Host" Target="REDIS_HOST" Default="localhost" Description="The host for the Redis connection" Type="Variable" Display="always-hide" Required="false" Mask="false">localhost</Config>
+    <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="The port for the Redis connection" Type="Variable" Display="always-hide" Required="false" Mask="false">6379</Config>
+    <Config Name="Redis - Password" Target="REDIS_PASSWORD" Default="null" Description="The password for the Redis connection. Use 'null' to not set." Type="Variable" Display="always-hide" Required="true" Mask="true">null</Config>
+    <Config Name="Outgoing Mail - From Name" Target="MAIL_FROM_NAME" Default="AnonAddy" Description="The name to use when sending emails" Type="Variable" Display="always-hide" Required="true" Mask="false">AnonAddy</Config>
+    <Config Name="Outgoing Mail - From Address" Target="MAIL_FROM_ADDRESS" Default="" Description="The email address to use when sending emails" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Outgoing Mail - Host" Target="MAIL_HOST" Default="" Description="The host for the mail server connection" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Outgoing Mail - Port" Target="MAIL_PORT" Default="25" Description="The port for the mail server connection. Not recommended to change." Type="Variable" Display="always-hide" Required="true" Mask="false">25</Config>
+    <Config Name="Outgoing Mail - Encryption" Target="MAIL_ENCRYPTION" Default="tls" Description="The encryption for the mail server connection" Type="Variable" Display="always-hide" Required="true" Mask="false">tls</Config>
+    <Config Name="Outgoing Mail - EHLO Host" Target="MAIL_EHLO_DOMAIN" Default="" Description="The EHLO host for the mail server connection" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Outgoing Mail - Verify Peer" Target="MAIL_VERIFY_PEER" Default="true|false" Description="Verify the peer when connecting to the mail server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AnonAddy - Return Email" Target="ANONADDY_RETURN_PATH" Default="" Description="The SMTP FROM address to be used if the alias address cannot be, e.g. for a custom domain that is not verified for sending" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AnonAddy - Admin Username" Target="ANONADDY_ADMIN_USERNAME" Default="" Description="The username for the admin account" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AnonAddy - Enable Registration" Target="ANONADDY_ENABLE_REGISTRATION" Default="true|false" Description="Allow users to register" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AnonAddy - Domain" Target="ANONADDY_DOMAIN" Default="" Description="The domain to use for the AnonAddy server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AnonAddy - Hostname" Target="ANONADDY_HOSTNAME" Default="" Description="The hostname to use for the AnonAddy server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AnonAddy - DNS Resolver" Target="ANONADDY_DNS_RESOLVER" Default="127.0.0.1" Description="The DNS resolver to use for the AnonAddy server" Type="Variable" Display="always-hide" Required="true" Mask="false">127.0.0.1</Config>
+    <Config Name="AnonAddy - All Domains" Target="ANONADDY_ALL_DOMAINS" Default="" Description="Comma-separated list of all domains to use for the AnonAddy server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AnonAddy - Secret" Target="ANONADDY_SECRET" Default="" Description="The secret to use for the AnonAddy server. Run `openssl rand -base64 32` to generate." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="AnonAddy - Email Limit" Target="ANONADDY_LIMIT" Default="200" Description="Number of emails that can be forwarded through the service per hour by any one user" Type="Variable" Display="always-hide" Required="true" Mask="false">200</Config>
+    <Config Name="AnonAddy - Bandwidth Limit" Target="ANONADDY_BANDWIDTH_LIMIT" Default="104857600" Description="Monthly bandwidth limit, in bytes" Type="Variable" Display="always-hide" Required="true" Mask="false">104857600</Config>
+    <Config Name="AnonAddy - Alias Limit" Target="ANONADDY_NEW_ALIAS_LIMIT" Default="100" Description="Number of new aliases that can be created per hour" Type="Variable" Display="always-hide" Required="true" Mask="false">100</Config>
+    <Config Name="AnonAddy - Additional Username Limit" Target="ANONADDY_ADDITIONAL_USERNAME_LIMIT" Default="10" Description="Number of additional usernames that can be added" Type="Variable" Display="always-hide" Required="true" Mask="false">10</Config>
+    <Config Name="AnonAddy - Private Key Fingerprint" Target="ANONADDY_SIGNING_KEY_FINGERPRINT" Default="" Description="Fingerprint of the private key that you generated on the server to be used to sign encrypted forwarded emails" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Data Directory" Target="/data" Default="/mnt/user/appdata/anon_addy/data" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/anon_addy/data</Config>
+    <Config Name="App Name" Target="APP_NAME" Default="AnonAddy" Description="The name of the app" Type="Variable" Display="advanced-hide" Required="true" Mask="false">AnonAddy</Config>
+    <Config Name="App Environment" Target="APP_ENV" Default="production" Description="The environment the app is running in" Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+    <Config Name="Enable Debugging" Target="APP_DEBUG" Default="false|true" Description="Enable debugging" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Level" Target="APP_LOG_LEVEL" Default="debug" Description="The log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false">debug</Config>
+    <Config Name="DKIM Signing Key" Target="ANONADDY_DKIM_SIGNING_KEY" Default="" Description="Only needed if you plan to add any custom domains through the web application. See documentation: https://github.com/anonaddy/anonaddy/blob/master/SELF-HOSTING.md" Type="Variable" Display="advanced-hide" Required="false" Mask="true"/>
+    <Config Name="Log Channel" Target="LOG_CHANNEL" Default="stack" Description="The log channel" Type="Variable" Display="advanced-hide" Required="true" Mask="false">stack</Config>
+    <Config Name="Database Connection" Target="DB_CONNECTION" Default="mysql" Description="The database connection. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">mysql</Config>
+    <Config Name="Redis Client" Target="REDIS_CLIENT" Default="phpredis" Description="The Redis client. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">phpredis</Config>
+    <Config Name="Mail Driver" Target="MAIL_DRIVER" Default="smtp" Description="The mail driver. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">smtp</Config>
+    <Config Name="DKIM Selector" Target="ANONADDY_DKIM_SELECTOR" Default="default" Description="The DKIM selector. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">default</Config>
+</Container>
