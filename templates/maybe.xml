@@ -36,6 +36,7 @@
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="Secret Key" Target="SECRET_KEY_BASE" Default="" Description="Secret key. Run `openssl rand -hex 64` to generate a secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Postgres - Host" Target="DB_HOST" Default="" Description="Postgres database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Port" Target="DB_PORT" Default="5432" Description="Postgres database port" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
     <Config Name="Postgres - Username" Target="POSTGRES_USER" Default="maybe_user" Description="Postgres database username" Type="Variable" Display="always-hide" Required="true" Mask="false">maybe_user</Config>
     <Config Name="Postgres - Password" Target="POSTGRES_PASSWORD" Default="" Description="Postgres database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Postgres - Database" Target="POSTGRES_DB" Default="maybe_production" Description="Postgres database name" Type="Variable" Display="always-hide" Required="true" Mask="false">maybe_production</Config>
