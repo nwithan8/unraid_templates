@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Cal.com</Name>
+    <Repository>calcom/cal.com:latest</Repository>
+    <Registry>https://hub.docker.com/r/calcom/cal.com</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/calcom/docker/issues</Support>
+    <Project>https://cal.com</Project>
+    <Overview>
+        The open-source Calendly alternative
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Network:Privacy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>calendso calendly calendar schedule</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/cal-com-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/cal_com.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-09-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate PostgreSQL database container
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Web URL" Target="NEXT_PUBLIC_WEBAPP_URL" Default="http://localhost:3000" Description="The base URL for the webapp. Replace localhost with IP address" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="API URL" Target="NEXT_PUBLIC_API_V2_URL" Default="http://localhost:5555/api/v2" Description="The base URL for the API. Replace localhost with IP address" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:5555/api/v2</Config>
+    <Config Name="Web Secret" Target="NEXTAUTH_SECRET" Default="" Description="Secret for the webapp. Use `openssl rand -base64 32` to generate." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="CalDAV Secret" Target="CALENDSO_ENCRYPTION_KEY" Default="" Description="Secret for CalDAV. Use `dd if=/dev/urandom bs=1K count=1 | md5sum` to generate." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Email - From Header" Target="EMAIL_FROM" Default="" Description="Email address to use as the 'from' address in emails" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Host" Target="EMAIL_SERVER_HOST" Default="" Description="SMTP server host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Port" Target="EMAIL_SERVER_PORT" Default="587" Description="SMTP server port" Type="Variable" Display="always-hide" Required="true" Mask="false">587</Config>
+    <Config Name="Email - Username" Target="EMAIL_SERVER_USER" Default="" Description="SMTP server username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Password" Target="EMAIL_SERVER_PASSWORD" Default="" Description="SMTP server password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="postgresql://USERNAME:PASSWORD@IP_ADDRESS/DATABASE_NAME" Description="Connection URL for Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://USERNAME:PASSWORD@IP_ADDRESS/DATABASE_NAME</Config>
+    <Config Name="Database Direct URL" Target="DATABASE_DIRECT_URL" Default="" Description="Use the same value as DATABASE_URL unless using connection pooler." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Accept License" Target="LICENSE" Default="agree|disagree" Description="Accept the license. More details: https://github.com/calendso/calendso/blob/main/LICENSE" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Google API Credential JSON" Target="GOOGLE_API_CREDENTIALS" Default="{}" Description="Google API credential JSON" Type="Variable" Display="always-hide" Required="true" Mask="true">{}</Config>
+    <Config Name="Office 365 - Client ID" Target="MS_GRAPH_CLIENT_ID" Default="" Description="MS Graph client ID for Office 365 and Outlook.com integration" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Office 365 - Client Secret" Target="MS_GRAPH_CLIENT_SECRET" Default="" Description="MS Graph client secret for Office 365 and Outlook.com integration" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Zoom - Client ID" Target="ZOOM_CLIENT_ID" Default="" Description="Zoom client ID for Zoom integration" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Zoom - Client Secret" Target="ZOOM_CLIENT_SECRET" Default="" Description="Zoom client secret for Zoom integration" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Override Authentication URL" Target="NEXTAUTH_URL" Default="" Description="Override the authentication URL" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Disable Telemetry" Target="CALCOM_TELEMETRY_DISABLED" Default="1|0" Description="1 - Disable anonymous usage statistics" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Environment" Target="NODE_ENV" Default="production" Description="The environment the app is running in" Type="Variable" Display="advanced" Required="true" Mask="false">production</Config>
+</Container>
