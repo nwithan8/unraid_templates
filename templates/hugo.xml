@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Hugo</Name>
+    <Repository>klakegg/hugo:latest</Repository>
+    <Registry>https://hub.docker.com/r/klakegg/hugo</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/klakegg/docker-hugo/issues</Support>
+    <Project>https://gohugo.io/</Project>
+    <Overview>
+        Run a Hugo open-source static site generator.
+    </Overview>
+    <Category>Network:Web Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>website site host server HTML CSS JavaScript framework</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/hugo-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/hugo.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-01
+
+        Initial release
+    </Changes>
+    <PostArgs>server</PostArgs>
+    <Config Name="Web UI Port" Target="1313" Default="1313" Mode="tcp" Description="Container Port: 1313" Type="Port" Display="always-hide" Required="true" Mask="false">1313</Config>
+    <Config Name="Site Content" Target="/src" Default="/mnt/user/appdata/hugo/site" Mode="rw" Description="Site content to be served by Hugo" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/hugo/site</Config>
+</Container>
