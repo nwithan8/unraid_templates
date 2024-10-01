@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Minio Client</Name>
+    <Repository>minio/mc:latest</Repository>
+    <Registry>https://hub.docker.com/r/minio/mc</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://min.io/docs/minio/container/index.html</Support>
+    <Project>https://min.io/</Project>
+    <Overview>
+        Provides a modern alternative to UNIX commands, supporting filesystems and Amazon S3 compatible cloud storage service (AWS Signature v2 and v4).
+    </Overview>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/minio-client-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/minio_client.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-01
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool. After installing, open a console into the container to use the `mc` command.
+    </Requires>
+    <Config Name="Config data" Target="/data" Default="/mnt/user/appdata/minio_mc/data" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/minio_mc/data</Config>
+</Container>
