@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>TraefikShaper</Name>
+    <Repository>l4rm4nd/traefikshaper:latest</Repository>
+    <Registry>https://hub.docker.com/r/l4rm4nd/traefikshaper</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/l4rm4nd/TraefikShaper/issues</Support>
+    <Project>https://github.com/l4rm4nd/TraefikShaper</Project>
+    <Overview>
+        Docker container to manipulate Traefik's IpAllowList middleware for dynamic IP whitelisting
+    </Overview>
+    <Category>Network:Proxy Productivity: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/traefik-shaper-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/traefik_shaper.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a dynamic whitelist YAML file at the "Whitelist File" path.
+    </Requires>
+    <Config Name="App Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+
+    <Config Name="App URL" Target="APPURL" Default="http://localhost:5000" Description="URL of the app. Replace with domain (ex. https://traefikshaper.example.com)" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:5000</Config>
+    <Config Name="Access Request Endpoint" Target="GRANT_HTTP_ENDPOINT" Default="" Description="Endpoint for clients to request access (ex. /knock-knock)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Private Class Subnets" Target="DEFAULT_PRIVATE_CLASS_SOURCE_RANGE" Default="True|False" Description="Add private class subnets to the IPAllowList" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Depth IP Strategy" Target="IPSTRATEGY_DEPTH" Default="0" Description="The depth ip strategy used in the IPAllowList middleware. Use 1 if traefik runs behind another proxy (e.g. CloudFlare)" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Expiration Time" Target="EXPIRATION_TIME" Default="300" Description="How long access is granted, in seconds" Type="Variable" Display="always-hide" Required="true" Mask="false">300</Config>
+    <Config Name="Apprise Notification URL" Target="APPRISE_NOTIFICATION_URL" Default="" Description="Your preferred apprise url. See documentation: https://github.com/caronc/apprise" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Enable Traefik" Target="traefik.enable" Default="true" Description="Enable Traefik" Type="Label" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Docker Network" Target="traefik.docker.network" Default="" Description="Docker network" Type="Label" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Router Rule" Target="traefik.http.routers.traefikshaper.rule" Default="" Description="Router rule (ex. Host(`traefikshaper.example.com`))" Type="Label" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Whitelist File" Target="/app/dynamic-whitelist.yml" Default="" Mode="rw" Description="Path to the dynamic whitelist file" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Router Service Name" Target="traefik.http.routers.traefikshaper.service" Default="traefikshaper" Description="Router service name" Type="Label" Display="advanced-hide" Required="true" Mask="false">traefikshaper</Config>
+    <Config Name="Loadbalancer Port" Target="traefik.http.services.traefikshaper.loadbalancer.server.port" Default="5000" Description="Loadbalancer port" Type="Label" Display="advanced-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="Local Time" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="Container local time" Type="Path" Display="advanced-hide" Required="true" Mask="false">/etc/localtime</Config>
+    <Config Name="Timezone" Target="/etc/timezone" Default="/etc/timezone" Mode="ro" Description="Container timezone" Type="Path" Display="advanced-hide" Required="true" Mask="false">/etc/timezone</Config>
+</Container>
