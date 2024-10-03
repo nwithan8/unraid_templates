@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Tsunami</Name>
+    <Repository>heywoodlh/tsunami:latest</Repository>
+    <Registry>https://hub.docker.com/r/heywoodlh/tsunami</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://google.github.io/tsunami-security-scanner/howto/</Support>
+    <Project>https://google.github.io/tsunami-security-scanner/</Project>
+    <Overview>
+        A general purpose network security scanner with an extensible plugin system for detecting high severity vulnerabilities with high confidence.
+    </Overview>
+    <Category>Network:Management Security: Productivity: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tsunami-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tsunami.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool. After installing, open a console into the container to access the utility.
+    </Requires>
+    <Config Name="Logs" Target="/usr/tsunami/logs" Default="/mnt/user/appdata/tsunami/logs" Mode="rw" Description="Log files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/tsunami/logs</Config>
+</Container>
