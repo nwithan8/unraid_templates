@@ -8,6 +8,7 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:1313]</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/klakegg/docker-hugo/issues</Support>
     <Project>https://gohugo.io/</Project>

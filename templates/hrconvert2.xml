@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>HRConvert2</Name>
+    <Repository>zelon88/hrconvert2:latest</Repository>
+    <Registry>https://hub.docker.com/r/zelon88/hrconvert2</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/zelon88/HRConvert2/issues</Support>
+    <Project>https://github.com/zelon88/HRConvert2</Project>
+    <Overview>
+        A self-hosted drag-and-drop file conversion server and file sharing tool that supports 400+ file formats.
+    </Overview>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>files CAD vector drawing 3D models spreadsheets images documents</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/hrconvert2-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/hrconvert2.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-03
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="8435" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8435</Config>
+</Container>
