@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Hound</Name>
+    <Repository>ghcr.io/hound-search/hound:latest</Repository>
+    <Registry>ghcr.io/hound-search/hound</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:6080]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/hound-search/hound/issues</Support>
+    <Project>https://github.com/hound-search/hound</Project>
+    <Overview>
+        An extremely fast source code search engine.
+    </Overview>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/hound-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/hound.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-04
+
+        Initial release
+    </Changes>
+    <Requires>
+        Hound expects a `config.json` file to be present in the "Config Data" directory. This file should contain the configuration for Hound. See example: https://github.com/hound-search/hound/blob/main/config-example.json
+    </Requires>
+    <Config Name="Web UI Port" Target="6080" Default="6080" Mode="tcp" Description="Container Port: 6080" Type="Port" Display="always-hide" Required="true" Mask="false">6080</Config>
+    <Config Name="Config Data" Target="/data" Default="/mnt/user/appdata/hound/data" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/hound/data</Config>
+</Container>
