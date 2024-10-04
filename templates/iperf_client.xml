@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>iperf3 Client</Name>
+    <Repository>networkstatic/iperf3:latest</Repository>
+    <Registry>https://hub.docker.com/r/networkstatic/iperf3</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/nerdalert/iperf3/issues</Support>
+    <Project>https://github.com/nerdalert/iperf3</Project>
+    <Overview>
+        Run a client for iperf, a network performance testing tool. &#xD;
+        [br]
+        Provide the address of the iperf3 server to test network performance against in "Post Arguments" (enable Advanced View).
+    </Overview>
+    <Category>Network:Management Productivity: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/iperf3-client-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/iperf3_client.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-04
+
+        Initial release
+    </Changes>
+    <Requires>
+        Once started, this container will immediately begin testing network performance against the iperf3 server specified in the "Post Arguments" field. View the results in the container log.
+    </Requires>
+    <PostArgs>-c IPERF_SERVER_IP</PostArgs>
+</Container>
