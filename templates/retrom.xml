@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Retrom</Name>
+    <Repository>ghcr.io/jmberesford/retrom-service:latest</Repository>
+    <Registry>ghcr.io/jmberesford/retrom-service</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/JMBeresford/retrom/issues</Support>
+    <Project>https://github.com/JMBeresford/retrom</Project>
+    <Overview>
+        Retrom is a centralized game library management service that allows you to host your games on a single device, and connect clients on any amount of other devices to (un)install/download and subsequently launch said games locally.
+    </Overview>
+    <Category>MediaApp:Other MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/retrom-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/retrom.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-09
+
+        Initial release
+    </Changes>
+    <Requires>
+        This application expects a `config.json` file to be present in the "Config Data" directory. See documentation: https://github.com/JMBeresford/retrom/blob/main/README.md#docker-recommended &#xD;
+        [br]
+        This application requires a separate Postgres database. Configuration data for the Postgres container (host, username, password, database name) should be updated in the `config.json` file.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Access web interface" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Service Port" Target="5101" Default="5101" Mode="tcp" Description="Allow external clients to connect to server" Type="Port" Display="always-hide" Required="true" Mask="false">5101</Config>
+    <Config Name="Library" Target="/library" Default="" Mode="rw" Description="Library of games" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config data" Target="/config" Default="/mnt/user/appdata/retrom/config" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/retrom/config</Config>
+</Container>
