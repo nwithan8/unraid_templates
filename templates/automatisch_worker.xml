@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Automatisch - Worker</Name>
+    <Repository>automatischio/automatisch:latest</Repository>
+    <Registry>https://hub.docker.com/r/automatischio/automatisch</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://automatisch.io/docs</Support>
+    <Project>https://automatisch.io</Project>
+    <Overview>
+        Automatisch is a business automation tool that lets you connect different services like Twitter, Slack, and more to automate your business processes.
+    </Overview>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Zapier Integromat open-source automation Reddit notifications n8n</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/automatisch-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/automatisch_gui.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-10
+
+        Initial release
+    </Changes>
+    <Requires>
+        This application requires separate Postgres and Redis databases. See documentation: https://automatisch.io/docs/advanced/configuration &#xD;
+        [br]
+        This is the worker for Automatisch. A separate web interface container is required to run the application.
+    </Requires>
+    <Config Name="Redis - Host" Target="REDIS_HOST" Default="localhost" Description="Host for Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="Port for Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Redis - Username" Target="REDIS_USERNAME" Default="" Description="Username for Redis server" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Redis - Password" Target="REDIS_PASSWORD" Default="" Description="Password for Redis server" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Postgres - Host" Target="POSTGRES_HOST" Default="localhost" Description="Host for Postgres server" Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Postgres - Port" Target="POSTGRES_PORT" Default="5432" Description="Port for Postgres server" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Postgres - Database Name" Target="POSTGRES_DATABASE" Default="automatisch" Description="Database name for Postgres server" Type="Variable" Display="always-hide" Required="true" Mask="false">automatisch</Config>
+    <Config Name="Postgres - Username" Target="POSTGRES_USERNAME" Default="" Description="Username for Postgres server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Password" Target="POSTGRES_PASSWORD" Default="" Description="Password for Postgres server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Encryption Key" Target="ENCRYPTION_KEY" Default="" Description="Encryption Key to store credentials" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Webhook Secret Key" Target="WEBHOOK_SECRET_KEY" Default="" Description="Webhook Secret Key to verify webhook requests" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="App Secret Key" Target="APP_SECRET_KEY" Default="" Description="Secret Key to authenticate the user" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Storage path" Target="/automatisch/storage" Default="/mnt/user/appdata/automatisch/storage" Mode="rw" Description="Data storage path for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/automatisch/storage</Config>
+    <Config Name="Environment" Target="APP_ENV" Default="production" Description="Environment for the application. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+    <Config Name="Is Worker" Target="WORKER" Default="true|false" Description="Enable worker mode. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">true</Config>
+</Container>
