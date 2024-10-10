@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>RTSPtoWeb</Name>
+    <Repository>ghcr.io/deepch/rtsptoweb:latest</Repository>
+    <Registry>ghcr.io/deepch/rtsptoweb</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8083]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/deepch/RTSPtoWeb/issues</Support>
+    <Project>https://github.com/deepch/RTSPtoWeb</Project>
+    <Overview>
+        RTSPtoWeb converts your RTSP streams to formats consumable in a web browser like MSE (Media Source Extensions), WebRTC, or HLS.
+    </Overview>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/rtsp-to-web-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/rtsp_to_web.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-09
+
+        Initial release
+    </Changes>
+    <Requires>
+        This application expects a `config.json` file to be mounted at the Config Data path. See example: https://github.com/deepch/RTSPtoWeb?tab=readme-ov-file#example-configjson
+    </Requires>
+    <Config Name="Web UI Port" Target="8083" Default="8083" Mode="tcp" Description="Container Port: 8083" Type="Port" Display="always-hide" Required="true" Mask="false">8083</Config>
+    <Config Name="Config data" Target="/config/config.json" Default="/mnt/user/appdata/rtsp_to_web/config.json" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/rtsp_to_web/config.json</Config>
+</Container>
