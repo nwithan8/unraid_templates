@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Huly - Collaborator</Name>
+    <Repository>hardcoreeng/collaborator:latest</Repository>
+    <Registry>https://hub.docker.com/r/hardcoreeng/collaborator</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/hcengineering/huly-selfhost/issues</Support>
+    <Project>https://huly.io</Project>
+    <Overview>
+        An all-in-one project management platform (alternative to Linear, Jira, Slack, Notion, Motion)
+    </Overview>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Trello project management Linear Jira Slack Notion Motion</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huly-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huly_collaborator.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        This application requires separate MongoDB, MinIO and ElasticSearch instances. See documentation: https://github.com/hcengineering/huly-selfhost/blob/main/template.compose.yaml &#xD;
+        [br]
+        This is the collaborator container for Huly. Other Huly containers are required to run the entire suite.
+    </Requires>
+    <Config Name="App Port" Target="3078" Default="3078" Mode="tcp" Description="Allow other containers to access application" Type="Port" Display="always-hide" Required="true" Mask="false">3078</Config>
+    <Config Name="Secret Key" Target="SECRET" Default="" Description="Needs to match across all Huly containers. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Accounts URL" Target="ACCOUNTS_URL" Default="http://localhost:3000" Description="URL for the accounts service (this container). Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="MongoDB Connection URL" Target="MONGO_URL" Default="mongodb://localhost:27017" Description="Connection URL for MongoDB." Type="Variable" Display="always-hide" Required="true" Mask="false">mongodb://localhost:27017</Config>
+    <Config Name="MinIO Storage Configuration" Target="STORAGE_CONFIG" Default="" Description="MinIO storage configuration. See documentation for more information: https://github.com/hcengineering/huly-selfhost/blob/79062e681f84358a8ac15d5af7c81561db3c891a/template.compose.yaml#L56" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Collaborator Port" Target="COLLABORATOR_PORT" Default="3078" Description="Internal port for the server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3078</Config>
+</Container>

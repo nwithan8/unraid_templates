@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Huly - Rekoni</Name>
+    <Repository>hardcoreeng/rekoni-service:latest</Repository>
+    <Registry>https://hub.docker.com/r/hardcoreeng/rekoni-service</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/hcengineering/huly-selfhost/issues</Support>
+    <Project>https://huly.io</Project>
+    <Overview>
+        An all-in-one project management platform (alternative to Linear, Jira, Slack, Notion, Motion)
+    </Overview>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Trello project management Linear Jira Slack Notion Motion</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huly-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huly_rekoni.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        This application requires separate MongoDB, MinIO and ElasticSearch instances. See documentation: https://github.com/hcengineering/huly-selfhost/blob/main/template.compose.yaml &#xD;
+        [br]
+        This is the Rekoni container for Huly. Other Huly containers are required to run the entire suite.
+    </Requires>
+    <Config Name="App Port" Target="4004" Default="4004" Mode="tcp" Description="Allow other containers to access application" Type="Port" Display="always-hide" Required="true" Mask="false">4004</Config>
+    <Config Name="Secret Key" Target="SECRET" Default="" Description="Needs to match across all Huly containers. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+</Container>

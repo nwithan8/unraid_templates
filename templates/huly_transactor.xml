@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Huly - Frontend</Name>
+    <Repository>hardcoreeng/front:latest</Repository>
+    <Registry>https://hub.docker.com/r/hardcoreeng/front</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/hcengineering/huly-selfhost/issues</Support>
+    <Project>https://huly.io</Project>
+    <Overview>
+        An all-in-one project management platform (alternative to Linear, Jira, Slack, Notion, Motion)
+    </Overview>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Trello project management Linear Jira Slack Notion Motion</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huly-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huly_transactor.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        This application requires separate MongoDB, MinIO and ElasticSearch instances. See documentation: https://github.com/hcengineering/huly-selfhost/blob/main/template.compose.yaml &#xD;
+        [br]
+        This is the transactor container for Huly. Other Huly containers are required to run the entire suite.
+    </Requires>
+    <Config Name="App Port" Target="3333" Default="3333" Mode="tcp" Description="Allow other containers to access application" Type="Port" Display="always-hide" Required="true" Mask="false">3333</Config>
+    <Config Name="Secret Key" Target="SERVER_SECRET" Default="" Description="Needs to match across all Huly containers. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Server Cursor Max Items" Target="SERVER_CURSOR_MAXITEMS" Default="30000" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">30000</Config>
+    <Config Name="ElasticSearch URL" Target="ELASTIC_URL" Default="http://localhost:9200" Description="URL for the ElasticSearch service. Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:9200</Config>
+    <Config Name="ElasticSearch Index Name" Target="ELASTIC_INDEX_NAME" Default="huly_storage_index" Description="ElasticSearch index name" Type="Variable" Display="always-hide" Required="true" Mask="false">huly_storage_index</Config>
+    <Config Name="MongoDB Connection URL" Target="MONGO_URL" Default="mongodb://localhost:27017" Description="Connection URL for MongoDB." Type="Variable" Display="always-hide" Required="true" Mask="false">mongodb://localhost:27017</Config>
+    <Config Name="MinIO Storage Configuration" Target="STORAGE_CONFIG" Default="" Description="MinIO storage configuration. See documentation for more information: https://github.com/hcengineering/huly-selfhost/blob/79062e681f84358a8ac15d5af7c81561db3c891a/template.compose.yaml#L56" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Rekoni URL" Target="REKONI_URL" Default="http://localhost:4004" Description="URL for the Rekoni service. Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:4004</Config>
+    <Config Name="Frontend URL" Target="FRONT_URL" Default="http://localhost:8080" Description="URL for the frontend. Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8080</Config>
+    <Config Name="Accounts URL" Target="ACCOUNTS_URL" Default="http://localhost:3000" Description="URL for the accounts service (this container). Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Order Names By Last Name First" Target="LAST_NAME_FIRST" Default="true|false" Description="Order names by last name first" Type="Variable" Display="always-hide" Required="true" Mask="false">false</Config>
+    <Config Name="Metrics Console" Target="METRICS_CONSOLE" Default="false|true" Description="Enable metrics console" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Metrics File" Target="METRICS_FILE" Default="metrics.txt" Description="Metrics file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">metrics.txt</Config>
+</Container>

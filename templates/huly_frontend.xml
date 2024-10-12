@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Huly - Frontend</Name>
+    <Repository>hardcoreeng/front:latest</Repository>
+    <Registry>https://hub.docker.com/r/hardcoreeng/front</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/hcengineering/huly-selfhost/issues</Support>
+    <Project>https://huly.io</Project>
+    <Overview>
+        An all-in-one project management platform (alternative to Linear, Jira, Slack, Notion, Motion)
+    </Overview>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Trello project management Linear Jira Slack Notion Motion</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huly-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huly_frontend.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        This application requires separate MongoDB, MinIO and ElasticSearch instances. See documentation: https://github.com/hcengineering/huly-selfhost/blob/main/template.compose.yaml &#xD;
+        [br]
+        This is the frontend container for Huly. Other Huly containers are required to run the entire suite.
+    </Requires>
+    <Config Name="App Port" Target="8080" Default="8080" Mode="tcp" Description="Access web interface" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Secret Key" Target="SERVER_SECRET" Default="" Description="Needs to match across all Huly containers. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Accounts URL" Target="ACCOUNTS_URL" Default="http://localhost:3000" Description="URL for the accounts service (this container). Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Rekoni URL" Target="REKONI_URL" Default="http://localhost:4004" Description="URL for the Rekoni service. Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:4004</Config>
+    <Config Name="Calendar URL" Target="CALENDAR_URL" Default="http://localhost:8095" Description="URL for the Calendar service. Replace with server IP address and correct port." Type="Variable" Display="always" Required="false" Mask="false">http://localhost:8095</Config>
+    <Config Name="Gmail URL" Target="GMAIL_URL" Default="http://localhost:8088" Description="URL for the Gmail service. Replace with server IP address and correct port." Type="Variable" Display="always" Required="false" Mask="false">http://localhost:8088</Config>
+    <Config Name="Telegram URL" Target="TELEGRAM_URL" Default="http://localhost:8086" Description="URL for the Telegram service. Replace with server IP address and correct port." Type="Variable" Display="always" Required="false" Mask="false">http://localhost:8086</Config>
+    <Config Name="ElasticSearch URL" Target="ELASTIC_URL" Default="http://localhost:9200" Description="URL for the ElasticSearch service. Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:9200</Config>
+    <Config Name="Huly Collaborator URL" Target="COLLABORATOR_URL" Default="ws://localhost:3078" Description="URL for the Huly Collaborator service. Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">ws://localhost:3078</Config>
+    <Config Name="MinIO Storage Configuration" Target="STORAGE_CONFIG" Default="" Description="MinIO storage configuration. See documentation for more information: https://github.com/hcengineering/huly-selfhost/blob/79062e681f84358a8ac15d5af7c81561db3c891a/template.compose.yaml#L56" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="MongoDB Connection URL" Target="MONGO_URL" Default="mongodb://localhost:27017" Description="Connection URL for MongoDB." Type="Variable" Display="always-hide" Required="true" Mask="false">mongodb://localhost:27017</Config>
+    <Config Name="Site Title" Target="TITLE" Default="Huly Self-Hosted" Description="Title for the site" Type="Variable" Display="always-hide" Required="true" Mask="false">Huly Self-Hosted</Config>
+    <Config Name="Server Port" Target="SERVER_PORT" Default="8080" Description="Internal port for the server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Uploaded Files Location" Target="UPLOAD_URL" Default="/files" Description="Location for uploaded files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/files</Config>
+    <Config Name="Default Language" Target="DEFAULT_LANGUAGE" Default="en" Description="Default language for the site. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
+</Container>
