@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>PinePods</Name>
+    <Repository>madeofpendletonwool/pinepods:latest</Repository>
+    <Registry>https://hub.docker.com/r/madeofpendletonwool/pinepods</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8040]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://www.pinepods.online/docs/intro</Support>
+    <Project>https://www.pinepods.online</Project>
+    <Overview>
+        A Rust based podcast management system that manages podcasts with multi-user support and relies on a central database with clients to connect to it.
+    </Overview>
+    <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pinepods-icon.jpeg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pinepods.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-11
+
+        Initial release
+    </Changes>
+    <Requires>
+        This template requires a separate MariaDB or PostgreSQL database.
+    </Requires>
+    <Config Name="Web UI Port" Target="8040" Default="8040" Mode="tcp" Description="Container Port: 8040" Type="Port" Display="always-hide" Required="true" Mask="false">8040</Config>
+    <Config Name="Username" Target="USERNAME" Default="" Description="Username for login" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Password" Target="PASSWORD" Default="" Description="Password for login" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="User Full Name" Target="FULLNAME" Default="" Description="Full name of user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="User Email" Target="EMAIL" Default="" Description="Email of user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Type" Target="DB_TYPE" Default="mariadb|postgresql" Description="Type of database to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Host" Target="DB_HOST" Default="" Description="Hostname of database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Port" Target="DB_PORT" Default="" Description="Port of database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Name" Target="DB_NAME" Default="" Description="Name of database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Username" Target="DB_USER" Default="" Description="Username for database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Password" Target="DB_PASS" Default="" Description="Password for database" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Downloads Path" Target="/opt/pinepods/downloads" Default="/mnt/user/appdata/pinepods/downloads" Mode="rw" Description="Path to downloads folder" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Search API URL" Target="SEARCH_API_URL" Default="https://search.pinepods.online/api/search" Description="URL of podcast search API" Type="String" Display="advanced-hide" Required="true" Mask="false">https://search.pinepods.online/api/search</Config>
+    <Config Name="Debug Mode" Target="DEBUG" Default="False|True" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Backups Path" Target="/opt/pinepods/backups" Default="/mnt/user/appdata/pinepods/backups" Mode="rw" Description="Path to backups folder" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
