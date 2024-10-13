@@ -17,7 +17,7 @@
     </Overview>
     <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pinepods-icon.jpeg</Icon>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pinepods-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pinepods.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

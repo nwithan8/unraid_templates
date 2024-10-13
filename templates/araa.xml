@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Araa</Name>
+    <Repository>temthelem/araa-search:latest</Repository>
+    <Registry>https://hub.docker.com/r/temthelem/araa-search</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://extravi.dev/araa/</Support>
+    <Project>https://araa.extravi.dev/</Project>
+    <Overview>
+        A privacy-respecting, ad-free, self-hosted Google metasearch engine with strong security that offers full API support and utilizes Qwant for images, and DuckDuckGo for auto-complete.
+    </Overview>
+    <Category>Network:Privacy Security: Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Google search DuckDuckGo privacy Bing SearchXNG hearch LibreY LibreX araa</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/araa-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/araa.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-13
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Customization - Shebang" Target="SHEBANG" Default="!" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">!</Config>
+    <Config Name="Customization - Theme" Target="DEFAULT_THEME" Default="dark_default|dark_blur" Description="Default theme to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Customization - Method" Target="DEFAULT_METHOD" Default="GET" Description="Default method to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Customization - Donate Link" Target="DONATE_URL" Default="https://github.com/sponsors/Extravi" Description="Link to donate" Type="Variable" Display="always-hide" Required="true" Mask="false">https://github.com/sponsors/Extravi</Config>
+    <Config Name="Customization - Language" Target="DEFAULT_LANG" Default="english" Description="Default language to use" Type="Variable" Display="always-hide" Required="true" Mask="false">english</Config>
+    <Config Name="Enable API" Target="ENABLE_API" Default="False|True" Description="Enable API" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Piped - Instance" Target="PIPED_INSTANCE" Default="yt.extravi.dev" Description="Piped (alternate YouTube frontend) instance to use" Type="Variable" Display="always-hide" Required="true" Mask="false">yt.extravi.dev</Config>
+    <Config Name="Piped - API" Target="PIPED_API" Default="yt.extravi.dev" Description="Piped (alternate YouTube frontend) API to use" Type="Variable" Display="always-hide" Required="true" Mask="false">yt.extravi.dev</Config>
+    <Config Name="Piped - Proxy" Target="PIPED_PROXY" Default="yt.extravi.dev" Description="Piped (alternate YouTube frontend) proxy to use" Type="Variable" Display="always-hide" Required="true" Mask="false">yt.extravi.dev</Config>
+    <Config Name="Torrents - Enable" Target="ENABLE_TORRENTS" Default="True|False" Description="Enable torrents" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Torrents - Sites" Target="TORRENT_SITES" Default="[ 'nyaa', 'torrentgalaxy', 'tpb', 'rutor' ]" Description="JSON array of torrent sites to use" Type="Variable" Display="always-hide" Required="true" Mask="false">[ 'nyaa', 'torrentgalaxy', 'tpb', 'rutor' ]</Config>
+    <Config Name="Torrents - TorrentGalaxy Domain" Target="TORRENTGALAXY_DOMAIN" Default="torrentgalaxy.to" Description="TorrentGalaxy domain to use" Type="Variable" Display="always-hide" Required="true" Mask="false">torrentgalaxy.to</Config>
+    <Config Name="Torrents - Nyaa Domain" Target="NYAA_DOMAIN" Default="nyaa.si" Description="Nyaa domain to use" Type="Variable" Display="always-hide" Required="true" Mask="false">nyaa.si</Config>
+    <Config Name="Torrents - Apibay Domain" Target="APIBAY_DOMAIN" Default="apibay.org" Description="The Pirate Bay API domain to use" Type="Variable" Display="always-hide" Required="true" Mask="false">apibay.org</Config>
+    <Config Name="Torrents - Rutor Domain" Target="RUTOR_DOMAIN" Default="rutor.info" Description="Rutor domain to use" Type="Variable" Display="always-hide" Required="true" Mask="false">rutor.info</Config>
+</Container>
