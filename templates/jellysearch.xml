@@ -11,7 +11,7 @@
         A fast full-text search proxy for Jellyfin. Integrates seamlessly with most Jellyfin clients.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaServer:Video Tools: Productivity: Other: Status:Stable</Category>
+    <Category>MediaServer Tools: Productivity: Other: Status:Stable</Category>
     <ExtraSearchTerms>Jellyfin proxy search Plex Emby speed database Meilisearch</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/jellysearch-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/jellysearch.xml</TemplateURL>
