@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Subs</Name>
+    <Repository>ghcr.io/ajnart/subs:latest</Repository>
+    <Registry>https://github.com/ajnart/subs/pkgs/container/subs</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ajnart/subs/issues</Support>
+    <Project>https://subs.ajnart.fr</Project>
+    <Overview>
+        A simplistic open-source subscription cost tracker
+    </Overview>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>subscriptions cost calculator tracker money budget planner server host</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/ajnart/subs/refs/heads/main/public/assets/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/subs.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-13
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Database Path" Target="/database" Default="/mnt/user/appdata/subs/database" Mode="rw" Description="Database directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/subs/database</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="file:/database/db.sqlite" Description="Internal database URL" Type="Variable" Display="advanced-hide" Required="true" Mask="false">file:/database/db.sqlite</Config>
+    <Config Name="Use KV Database" Target="NEXT_PUBLIC_USE_SQLITE" Default="false|true" Description="Use KV database instead of localStorage" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
