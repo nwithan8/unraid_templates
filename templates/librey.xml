@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>LibreY</Name>
+    <Repository>ghcr.io/ahwxorg/librey:latest</Repository>
+    <Registry>ghcr.io/ahwxorg/librey</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Ahwxorg/LibreY/issues</Support>
+    <Project>https://librey.org/</Project>
+    <Overview>
+        A fork of LibreX, a framework- and JavaScript-free privacy respecting meta search engine, giving you results from Google, Qwant, Ahmia and popular torrent sites without spying on you. LibreY changed some features like automatic redirection. &#xD;
+        [br]
+        See documentation for all available settings: https://github.com/Ahwxorg/LibreY/tree/main/docker#environment-variables-that-can-be-set-in-the-docker-container
+    </Overview>
+    <Category>Network:Privacy Security: Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Google search DuckDuckGo privacy Bing SearchXNG hearch LibreY LibreX araa</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/librey-icon.jpeg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/librey.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-13
+
+        Initial release
+    </Changes>
+    <Requires>
+        Please see the documentation for all available settings: https://github.com/Ahwxorg/LibreY/tree/main/docker#environment-variables-that-can-be-set-in-the-docker-container
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Language" Target="CONFIG_LANGUAGE" Default="en" Description="Language to perform searches in" Type="Variable" Display="always-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Text Search Engine" Target="CONFIG_TEXT_SEARCH_ENGINE" Default="auto|brave|duckduckgo|ecosia|google|mojeek|yandex" Description="Text search engine to use. Set 'auto' to use any available search engine." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Default Number of Results" Target="CONFIG_NUMBER_OF_RESULTS" Default="10" Description="Number of results to show by default" Type="Variable" Display="always-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Site Name" Target="OPEN_SEARCH_TITLE" Default="LibreY" Description="Site name to show in search results" Type="Variable" Display="always-hide" Required="true" Mask="false">LibreY</Config>
+    <Config Naem="Site Long Name" Target="OPEN_SEARCH_LONG_NAME" Default="LibreY Search" Description="Site long name to show in search results" Type="Variable" Display="always-hide" Required="true" Mask="false">LibreY Search</Config>
+    <Config Name="Site Description" Target="OPEN_SEARCH_DESCRIPTION" Default="Framework and javascript free privacy respecting meta search engine" Description="Site description to show in search results" Type="Variable" Display="always-hide" Required="true" Mask="false">Framework and javascript free privacy respecting meta search engine</Config>
+    <Config Name="Site Host" Target="OPEN_SEARCH_HOST" Default="http://localhost:8080" Description="Site host to identify on network. Replace with IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8080</Config>
+    <Config Name="Google - Domain" Target="CONFIG_GOOGLE_DOMAIN" Default="com" Description="Which Google domain the search will be done on. Change according to your country." Type="Variable" Display="always-hide" Required="true" Mask="false">com</Config>
+    <Config Name="Invidious Instance" Target="CONFIG_INVIDIOUS_INSTANCE" Default="https://invidious.snopyta.org" Description="Invidious instance to use for YouTube videos" Type="Variable" Display="always-hide" Required="true" Mask="false">https://invidious.snopyta.org</Config>
+    <Config Name="Disable BitTorrent Search" Target="CONFIG_DISABLE_BITTORRENT_SEARCH" Default="false|true" Description="Disable BitTorrent search" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="BitTorrent Trackers" Target="CONFIG_BITTORRENT_TRACKERS" Default="" Description="List of bittorrent trackers for torrent search. See documentation: https://github.com/Ahwxorg/LibreY/tree/main/docker#environment-variables-that-can-be-set-in-the-docker-container" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Enable Hidden Service Search" Target="CONFIG_HIDDEN_SERVICE_SEARCH" Default="false|true" Description="Enable hidden service search" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Show Result Source" Target="CONFIG_SHOW_RESULT_SOURCE" Default="true|false" Description="Whether to show where the result is from on the results page" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Instance Fallback" Target="CONFIG_INSTANCE_FALLBACK" Default="true|false" Description="Fallback to another instance if the current one is rate-limited" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disable API" Target="CONFIG_DISABLE_API" Default="false|true" Description="Disable the API" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Theme" Target="CONFIG_DEFAULT_THEME" Default="dark|dark|nord|discord" Description="Default theme to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Rate-Limit Cooldown" Target="CONFIG_RATE_LIMIT_COOLDOWN" Default="25" Description="Cooldown time, in minutes, for rate limiting" Type="Variable" Display="advanced-hide" Required="true" Mask="false">25</Config>
+    <Config Name="Cache Time" Target="CONFIG_CACHE_TIME" Default="20" Description="Time, in minutes, to cache results for" Type="Variable" Display="advanced-hide" Required="true" Mask="false">20</Config>
+    <Config Name="Search Encoding" Target="OPEN_SEARCH_ENCODING" Default="UTF-8" Description="Encoding to use for search results" Type="Variable" Display="advanced-hide" Required="true" Mask="false">UTF-8</Config>
+    <Config Name="PHP - Proxy Enabled" Target="CURLOPT_PROXY_ENABLED" Default="false|true" Description="Enable PHP proxy. See documentation: https://github.com/Ahwxorg/LibreY/tree/main/docker#curl" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="PHP - Proxy Host" Target="CURLOPT_PROXY" Default="192.0.2.53:8388" Description="PHP proxy host" Type="Variable" Display="advanced-hide" Required="true" Mask="false">192.0.2.53:8388</Config>
+    <Config Name="PHP - Proxy Type" Target="CURLOPT_PROXY_TYPE" Default="CURLPROXY_HTTP" Description="PHP proxy type" Type="Variable" Display="advanced-hide" Required="true" Mask="false">CURLPROXY_HTTP</Config>
+    <Config Name="PHP - Proxy User-Agent" Target="CURLOPT_USERAGENT" Default="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:116.0) Gecko/20100101 Firefox/116.0" Description="PHP proxy user agent" Type="Variable" Display="advanced-hide" Required="true" Mask="false">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:116.0) Gecko/20100101 Firefox/116.0</Config>
+    <Config Name="PHP - Follow Location" Target="CURLOPT_FOLLOWLOCATION" Default="true|false" Description="PHP follow location" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+
+    <Config Name="Google - Site Language" Target="CONFIG_GOOGLE_LANGUAGE_SITE" Default="en" Description="Language to use for Google site" Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Google - Results Language" Target="CONFIG_GOOGLE_LANGUAGE_RESULTS" Default="en" Description="Language to use for Google results" Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Wikipedia - Language" Target="CONFIG_WIKIPEDIA_LANGUAGE" Default="en" Description="Language to use for Wikipedia" Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Nginx Logs Path" Target="/var/log/nginx" Default="/mnt/user/appdata/librey/nginx" Mode="rw" Description="Path to Nginx logs" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/librey/nginx</Config>
+    <Config Name="PHP Logs Path" Target="/var/log/php83" Default="/mnt/user/appdata/librey/php" Mode="rw" Description="Path to PHP logs" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/librey/php</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+    <Config Name="Version" Target="VERSION" Default="docker" Description="Tell application it is running as a Docker container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">docker</Config>
+</Container>

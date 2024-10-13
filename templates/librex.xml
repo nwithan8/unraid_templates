@@ -16,7 +16,7 @@
         A framework- and JavaScript-free privacy respecting meta search engine, giving you results from Google, Qwant, Ahmia and popular torrent sites without spying on you.
     </Overview>
     <Category>Network:Privacy Security: Cloud: Productivity: Tools: Other: Status:Stable</Category>
-    <ExtraSearchTerms>Google search DuckDuckGo privacy Bing SearchXNG hearch LibreY araa</ExtraSearchTerms>
+    <ExtraSearchTerms>Google search DuckDuckGo privacy Bing SearchXNG hearch LibreY LibreX araa</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/librex-icon.jpeg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/librex.xml</TemplateURL>
     <Maintainer>
@@ -28,10 +28,10 @@
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
-    <Config Name="Google - Site Language" Target="CONFIG_GOOGLE_LANGUAGE_SITE" Default="en" Description="Language to use for Google site" Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
-    <Config Name="Google - Results Language" Target="CONFIG_GOOGLE_LANGUAGE_RESULTS" Default="en" Description="Language to use for Google results" Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
-    <Config Name="Google - Domain" Target="CONFIG_GOOGLE_DOMAIN" Default="com" Description="Google domain to use" Type="Variable" Display="advanced-hide" Required="true" Mask="false">com</Config>
-    <Config Name="Wikipedia - Language" Target="CONFIG_WIKIPEDIA_LANGUAGE" Default="en" Description="Language to use for Wikipedia" Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Google - Domain" Target="CONFIG_GOOGLE_DOMAIN" Default="com" Description="Which Google domain the search will be done on. Change according to your country." Type="Variable" Display="always-hide" Required="true" Mask="false">com</Config>
+    <Config Name="Google - Site Language" Target="CONFIG_GOOGLE_LANGUAGE_SITE" Default="en" Description="Language to use for Google site" Type="Variable" Display="always-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Google - Results Language" Target="CONFIG_GOOGLE_LANGUAGE_RESULTS" Default="en" Description="Language to use for Google results" Type="Variable" Display="always-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Wikipedia - Language" Target="CONFIG_WIKIPEDIA_LANGUAGE" Default="en" Description="Language to use for Wikipedia" Type="Variable" Display="always-hide" Required="true" Mask="false">en</Config>
     <Config Name="Nginx Logs Path" Target="/var/log/nginx" Default="/mnt/user/appdata/librex/nginx" Mode="rw" Description="Path to Nginx logs" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/librex/nginx</Config>
     <Config Name="PHP Logs Path" Target="/var/log/php7" Default="/mnt/user/appdata/librex/php" Mode="rw" Description="Path to PHP logs" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/librex/php</Config>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
