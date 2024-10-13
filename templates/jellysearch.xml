@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>JellySearch</Name>
+    <Repository>domistyle/jellysearch:latest</Repository>
+    <Registry>https://hub.docker.com/r/domistyle/jellysearch</Registry>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://gitlab.com/DomiStyle/jellysearch</Support>
+    <Project>https://gitlab.com/DomiStyle/jellysearch</Project>
+    <Overview>
+        A fast full-text search proxy for Jellyfin. Integrates seamlessly with most Jellyfin clients.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Video Tools: Productivity: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Jellyfin proxy search Plex Emby speed database Meilisearch</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/jellysearch-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/jellysearch.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-13
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Meilisearch instance (available as a separate template) &#xD;
+        [br]
+        Requires configuration of reverse proxy: https://gitlab.com/DomiStyle/jellysearch#setting-up-the-reverse-proxy
+    </Requires>
+    <Config Name="Jellyfin Config Path" Target="/config" Default="" Mode="ro" Description="Path to Jellyfin config folder" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Jellyfin URL" Target="JELLYFIN_URL" Default="http://jellyfin:8096" Description="URL to Jellyfin server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Meilisearch URL" Target="MEILI_URL" Default="http://meilisearch:7700" Description="URL to Meilisearch server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Meilisearch Master Key" Target="MEILI_MASTER_KEY" Default="" Description="Meilisearch master key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Index Cron Schedule" Target="INDEX_CRON" Default="0 0 0/2 ? * * *" Description="Cron schedule for indexing. Pattern: https://www.quartz-scheduler.net/documentation/quartz-3.x/tutorial/crontrigger.html" Type="Variable" Display="always-hide" Required="true" Mask="false">0 0 0/2 ? * * *</Config>
+    <Config Name="Internal Jellyfin Config Directory" Target="JELLYFIN_CONFIG_DIR" Default="/config" Description="Internal Jellyfin config directory. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config</Config>
+</Container>
