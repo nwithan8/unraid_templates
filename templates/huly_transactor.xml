@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>Huly - Frontend</Name>
+    <Name>Huly - Transactor</Name>
     <Repository>hardcoreeng/front:latest</Repository>
     <Registry>https://hub.docker.com/r/hardcoreeng/front</Registry>
     <Branch>
