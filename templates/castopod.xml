@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Castopod</Name>
+    <Repository>castopod/castopod:latest</Repository>
+    <Registry>https://hub.docker.com/r/castopod/castopod</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>beta</Tag>
+        <TagDescription>Latest beta release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.castopod.org</Support>
+    <Project>https://castopod.org/</Project>
+    <Overview>
+        Castopod is a free and open-source hosting platform made for podcasters who want to engage and interact with their audience. &#xD;
+        [br]
+        See documentation for all available configuration options: https://docs.castopod.org/main/en/getting-started/docker/
+    </Overview>
+    <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync Castopod</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/castopod-icon.jpeg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/castopod.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-13
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate MariaDB and Redis databases.
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="App URL" Target="CP_BASEURL" Default="http://localhost:8000" Description="URL of Castopod. Change to IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000</Config>
+    <Config Name="Analytics Salt" Target="CP_ANALYTICS_SALT" Default="" Description="Salt for analytics" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="MariaDB - Host" Target="CP_DATABASE_HOSTNAME" Default="" Description="Hostname of MariaDB" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="MariaDB - Username" Target="CP_DATABASE_USERNAME" Default="" Description="Username for MariaDB" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="MariaDB - Password" Target="CP_DATABASE_PASSWORD" Default="" Description="Password for MariaDB" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="MariaDB - Database" Target="CP_DATABASE_NAME" Default="" Description="Name of MariaDB database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis - Host" Target="CP_REDIS_HOST" Default="" Description="Hostname of Redis" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis - Port" Target="CP_REDIS_PORT" Default="6379" Description="Port of Redis" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Redis - Password" Target="CP_REDIS_PASSWORD" Default="" Description="Password for Redis" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Redis - Database" Target="CP_REDIS_DATABASE" Default="0" Description="Database number for Redis" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Cache Handler" Target="CP_CACHE_HANDLER" Default="redis|file" Description="Cache handler to use" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Media Path" Target="/var/www/castopod/public/media" Default="/mnt/user/appdata/castopod/media" Mode="rw" Description="Path to media storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/castopod/media</Config>
+</Container>

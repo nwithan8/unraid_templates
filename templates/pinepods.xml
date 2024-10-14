@@ -16,7 +16,7 @@
         A Rust based podcast management system that manages podcasts with multi-user support and relies on a central database with clients to connect to it.
     </Overview>
     <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
-    <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync</ExtraSearchTerms>
+    <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync Castopod</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pinepods-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pinepods.xml</TemplateURL>
     <Maintainer>
