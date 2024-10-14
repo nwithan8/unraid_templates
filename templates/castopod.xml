@@ -26,7 +26,7 @@
         See documentation for all available configuration options: https://docs.castopod.org/main/en/getting-started/docker/
     </Overview>
     <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
-    <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync Castopod</ExtraSearchTerms>
+    <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync Castopod oPodSync</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/castopod-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/castopod.xml</TemplateURL>
     <Maintainer>

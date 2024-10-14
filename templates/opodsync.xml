@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>oPodSync</Name>
+    <Repository>ganeshlab/opodsync:latest</Repository>
+    <Registry>https://hub.docker.com/r/ganeshlab/opodsync</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/kd2org/opodsync/issues</Support>
+    <Project>https://github.com/kd2org/opodsync</Project>
+    <Overview>
+        A minimalist podcast synchronization server, for self-hosting your podcast listening / download history. This allows you to keep track of which episodes have been listened to. Previously known as Micro GPodder.
+    </Overview>
+    <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync Castopod oPodSync</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/opodsync-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/opodsync.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.local.php` file in the "Config Data" path. See documentation: https://github.com/kd2org/opodsync?tab=readme-ov-file#configuration
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Config Data" Target="/var/www/server/data" Default="/mnt/user/appdata/opodsync/config" Mode="rw" Description="Path to config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/opodsync/config</Config>
+</Container>
