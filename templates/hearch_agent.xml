@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Hearchco - Agent</Name>
+    <Repository>ghcr.io/hearchco/agent:latest</Repository>
+    <Registry>ghcr.io/hearchco/agent</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/hearchco/agent/issues</Support>
+    <Project>https://hearch.co</Project>
+    <Overview>
+        Hearchco is a distributed and fast metasearch engine that respects your privacy.
+    </Overview>
+    <Category>Network:Privacy Security: Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Google search DuckDuckGo privacy Bing SearchXNG Hearchco LibreY LibreX araa</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/hearchco-icon.jpeg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/hearcho_agent.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is the agent/backend for the Hearchco metasearch engine. It requires a frontend to also be running. &#xD;
+        [br]
+        This application requires a separate Redis database.
+    </Requires>
+    <Config Name="Application Port" Target="8000" Default="8000" Mode="tcp" Description="Port over which the frontend will communicate with this backend" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Frontend URLs" Target="HEARCHCO_SERVER_FRONTENDURLS" Default="http://localhost:3000" Description="Comma-separated list of frontend URLs that are allowed to communicate with this backend. Replace with IP:PORT or domain of your frontend" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Redis Host" Target="HEARCHCO_SERVER_CACHE_REDIS_HOST" Default="" Description="Host of the Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis Port" Target="HEARCHCO_SERVER_CACHE_REDIS_PORT" Default="6379" Description="Port of the Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Redis Password" Target="HEARCHCO_SERVER_CACHE_REDIS_PASSWORD" Default="" Description="Password of the Redis database" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Image Proxy Secret Key" Target="HEARCHCO_SERVER_IMAGEPROXY_SECRETKEY" Default="" Description="Secret key used for hashing image URLs in the image proxy. Should be at least 32 characters long." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Cache Type" Target="HEARCHCO_SERVER_CACHE_TYPE" Default="redis|dynamodb|none" Description="Type of cache to use. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>

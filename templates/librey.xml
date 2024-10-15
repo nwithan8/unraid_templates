@@ -18,7 +18,7 @@
         See documentation for all available settings: https://github.com/Ahwxorg/LibreY/tree/main/docker#environment-variables-that-can-be-set-in-the-docker-container
     </Overview>
     <Category>Network:Privacy Security: Cloud: Productivity: Tools: Other: Status:Stable</Category>
-    <ExtraSearchTerms>Google search DuckDuckGo privacy Bing SearchXNG hearch LibreY LibreX araa</ExtraSearchTerms>
+    <ExtraSearchTerms>Google search DuckDuckGo privacy Bing SearchXNG Hearchco LibreY LibreX araa</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/librey-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/librey.xml</TemplateURL>
     <Maintainer>

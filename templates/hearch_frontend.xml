@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Hearchco - Frontend</Name>
+    <Repository>ghcr.io/hearchco/frontend:latest</Repository>
+    <Registry>ghcr.io/hearchco/frontend</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/hearchco/frontend/issues</Support>
+    <Project>https://hearch.co</Project>
+    <Overview>
+        Hearchco is a distributed and fast metasearch engine that respects your privacy.
+    </Overview>
+    <Category>Network:Privacy Security: Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Google search DuckDuckGo privacy Bing SearchXNG Hearchco LibreY LibreX araa</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/hearchco-icon.jpeg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/hearcho_frontend.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is the frontend for the Hearchco metasearch engine. It requires an agent to also be running. &#xD;
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Public URL" Target="PUBLIC_URI" Default="http://localhost:3000" Description="Publicly accessible URL for the frontend, used to advertise service. Replace with your domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Agent URL" Target="API_URI" Default="http://localhost:8000" Description="URL for the agent, used to communicate with the backend. Replace with IP address or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000</Config>
+    <Config Name="Public Agent URL" Target="PUBLIC_API_URI" Default="http://localhost:8000" Description="Publicly accessible URL for the agent, used to fetch data from browser. Replace with your domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000</Config>
+</Container>
