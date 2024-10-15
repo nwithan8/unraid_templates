@@ -27,7 +27,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
     <Config Name="Customization - Shebang" Target="SHEBANG" Default="!" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">!</Config>
     <Config Name="Customization - Theme" Target="DEFAULT_THEME" Default="dark_default|dark_blur" Description="Default theme to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Customization - Method" Target="DEFAULT_METHOD" Default="GET" Description="Default method to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>

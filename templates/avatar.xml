@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Avatar</Name>
+    <Repository>frncsdrk/avatar:latest</Repository>
+    <Registry>https://hub.docker.com/r/frncsdrk/avatar</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/frncsdrk/avatar/issues</Support>
+    <Project>https://frncsdrk.github.io/avatar</Project>
+    <Overview>
+        Self-hosted service for creating random avatars.
+    </Overview>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Gravatar avatar icon profile picture</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/avatar-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/avatar.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-14
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="9000" Default="9000" Mode="tcp" Description="Container Port: 9000" Type="Port" Display="always-hide" Required="true" Mask="false">9000</Config>
+</Container>
