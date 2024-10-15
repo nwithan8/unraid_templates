@@ -15,7 +15,7 @@
     <Overview>
         A minimalist podcast synchronization server, for self-hosting your podcast listening / download history. This allows you to keep track of which episodes have been listened to. Previously known as Micro GPodder.
     </Overview>
-    <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync Castopod oPodSync</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/opodsync-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/opodsync.xml</TemplateURL>

@@ -16,7 +16,7 @@
         bliss is an automated music library organizer for self-hosters and music hoarders.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Audio MediaServer:Audio Other: Tools: Status:Stable</Category>
+    <Category>MediaApp:Music MediaServer:Music Other: Tools: Status:Stable</Category>
     <ExtraSearchTerms>Headphones Lidarr Plex music Jellyfin Emby audiobooks</ExtraSearchTerms>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/bliss.xml</TemplateURL>
     <Maintainer>

@@ -16,7 +16,7 @@
     </Overview>
     <Category>Network:Privacy Security: Cloud: Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>Google search DuckDuckGo privacy Bing SearchXNG Hearchco LibreY LibreX araa</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/hearchco-icon.jpeg</Icon>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/hearchco-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/hearcho_agent.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
