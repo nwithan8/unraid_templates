@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Fladder</Name>
+    <Repository>ghcr.io/donutware/fladder:v0.2.6</Repository>
+    <Registry>ghcr.io/donutware/fladder</Registry>
+    <Branch>
+        <Tag>v0.2.6</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/DonutWare/Fladder/issues</Support>
+    <Project>https://donutware.github.io/Fladder/</Project>
+    <Overview>
+        A simple Jellyfin frontend built on top of Flutter.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaApp:Music MediaServer Tools: Productivity: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Jellyfin Plex Emby frontend player mobile desktop web</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/fladder-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/fladder.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-17
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Lock to Base URL" Target="BASE_URL" Default="https://server-url" Description="Lock the front-end to a specific Jellyfin instance. Optional, remove to disable." Type="Variable" Display="always" Required="false" Mask="false">https://server-url</Config>
+</Container>
