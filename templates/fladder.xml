@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Fladder</Name>
-    <Repository>ghcr.io/donutware/fladder:v0.2.6</Repository>
+    <Repository>ghcr.io/donutware/fladder:latest</Repository>
     <Registry>ghcr.io/donutware/fladder</Registry>
     <Branch>
-        <Tag>v0.2.6</Tag>
+        <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
