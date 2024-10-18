@@ -17,7 +17,7 @@
     <Beta>False</Beta>
     <Category>MediaApp:Music MediaServer:Music Tools: Productivity: Other: Status:Stable</Category>
     <ExtraSearchTerms>Azuracast internet radio streaming audio</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/azuracast-now-playing-icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/azuracast-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/azuracast_now_playing.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
@@ -28,7 +28,7 @@
         Initial release
     </Changes>
     <Requires>
-        This application is a command-line utility and does not have a web interface. See documentaton: https://github.com/AzuraCast/nowplaying?tab=readme-ov-file#usage-example
+        This application is a command-line utility and does not have a web interface. See documentation: https://github.com/AzuraCast/nowplaying?tab=readme-ov-file#usage-example
     </Requires>
     <PostArgs>composer test</PostArgs>
     <Config Name="Config Data" Target="/app" Default="/mnt/user/appdata/nowplaying" Mode="rw" Description="Configuration data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nowplaying</Config>

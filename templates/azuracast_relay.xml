@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>AzuraRelay</Name>
+    <Repository>ghcr.io/azuracast/relay:latest</Repository>
+    <Registry>ghcr.io/azuracast/relay</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/AzuraCast/AzuraRelay/issues</Support>
+    <Project>https://github.com/AzuraCast/AzuraRelay/</Project>
+    <Overview>
+        A "relay in a box" containing a lightweight web application and Icecast servers that can connect to and relay an AzuraRelay parent instance.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music MediaServer:Music Tools: Productivity: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Azuracast internet radio streaming audio relay proxy</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/azuracast-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/azuracast_relay.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        AzuraRelay supports relaying up to 50 stations. &#xD;
+        [br]
+        Out of the box, this template is configured to consume ports every tenth port between 8000 and 8490 (e.g. 8000, 8010, 8020, etc.). &#xD;
+        Azuracast works best with a 1:1 mapping of internal and external ports, so it is recommended to use this 8000-8490 range for the relay ports. &#xD;
+        You can simply remove any ports you don't need from the template, starting with the highest port number and working down.
+    </Requires>
+    <Config Name="HTTP Port" Target="80" Default="1080" Description="HTTP port" Type="Port" Display="always-hide" Required="true" Mask="false">1080</Config>
+    <Config Name="HTTPS Port" Target="443" Default="1443" Description="HTTPS port" Type="Port" Display="always-hide" Required="true" Mask="false">1443</Config>
+    <Config Name="LetsEncrypt Host" Target="LETSENCRYPT_HOST" Default="" Description="Optional, LetsEncrypt host" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="LetsEncrypt Email" Target="LETSENCRYPT_EMAIL" Default="" Description="Optional, LetsEncrypt email" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Station 1 Port" Target="8000" Default="8000" Description="Station 1 port" Type="Port" Display="always" Required="false" Mask="false">8000</Config>
+    <Config Name="Station 2 Port" Target="8010" Default="8010" Description="Station 2 port" Type="Port" Display="always" Required="false" Mask="false">8010</Config>
+    <Config Name="Station 3 Port" Target="8020" Default="8020" Description="Station 3 port" Type="Port" Display="always" Required="false" Mask="false">8020</Config>
+    <Config Name="Station 4 Port" Target="8030" Default="8030" Description="Station 4 port" Type="Port" Display="always" Required="false" Mask="false">8030</Config>
+    <Config Name="Station 5 Port" Target="8040" Default="8040" Description="Station 5 port" Type="Port" Display="always" Required="false" Mask="false">8040</Config>
+    <Config Name="Station 6 Port" Target="8050" Default="8050" Description="Station 6 port" Type="Port" Display="always" Required="false" Mask="false">8050</Config>
+    <Config Name="Station 7 Port" Target="8060" Default="8060" Description="Station 7 port" Type="Port" Display="always" Required="false" Mask="false">8060</Config>
+    <Config Name="Station 8 Port" Target="8070" Default="8070" Description="Station 8 port" Type="Port" Display="always" Required="false" Mask="false">8070</Config>
+    <Config Name="Station 9 Port" Target="8080" Default="8080" Description="Station 9 port" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
+    <Config Name="Station 10 Port" Target="8090" Default="8090" Description="Station 10 port" Type="Port" Display="always" Required="false" Mask="false">8090</Config>
+    <Config Name="Station 11 Port" Target="8100" Default="8100" Description="Station 11 port" Type="Port" Display="always" Required="false" Mask="false">8100</Config>
+    <Config Name="Station 12 Port" Target="8110" Default="8110" Description="Station 12 port" Type="Port" Display="always" Required="false" Mask="false">8110</Config>
+    <Config Name="Station 13 Port" Target="8120" Default="8120" Description="Station 13 port" Type="Port" Display="always" Required="false" Mask="false">8120</Config>
+    <Config Name="Station 14 Port" Target="8130" Default="8130" Description="Station 14 port" Type="Port" Display="always" Required="false" Mask="false">8130</Config>
+    <Config Name="Station 15 Port" Target="8140" Default="8140" Description="Station 15 port" Type="Port" Display="always" Required="false" Mask="false">8140</Config>
+    <Config Name="Station 16 Port" Target="8150" Default="8150" Description="Station 16 port" Type="Port" Display="always" Required="false" Mask="false">8150</Config>
+    <Config Name="Station 17 Port" Target="8160" Default="8160" Description="Station 17 port" Type="Port" Display="always" Required="false" Mask="false">8160</Config>
+    <Config Name="Station 18 Port" Target="8170" Default="8170" Description="Station 18 port" Type="Port" Display="always" Required="false" Mask="false">8170</Config>
+    <Config Name="Station 19 Port" Target="8180" Default="8180" Description="Station 19 port" Type="Port" Display="always" Required="false" Mask="false">8180</Config>
+    <Config Name="Station 20 Port" Target="8190" Default="8190" Description="Station 20 port" Type="Port" Display="always" Required="false" Mask="false">8190</Config>
+    <Config Name="Station 21 Port" Target="8200" Default="8200" Description="Station 21 port" Type="Port" Display="always" Required="false" Mask="false">8200</Config>
+    <Config Name="Station 22 Port" Target="8210" Default="8210" Description="Station 22 port" Type="Port" Display="always" Required="false" Mask="false">8210</Config>
+    <Config Name="Station 23 Port" Target="8220" Default="8220" Description="Station 23 port" Type="Port" Display="always" Required="false" Mask="false">8220</Config>
+    <Config Name="Station 24 Port" Target="8230" Default="8230" Description="Station 24 port" Type="Port" Display="always" Required="false" Mask="false">8230</Config>
+    <Config Name="Station 25 Port" Target="8240" Default="8240" Description="Station 25 port" Type="Port" Display="always" Required="false" Mask="false">8240</Config>
+    <Config Name="Station 26 Port" Target="8250" Default="8250" Description="Station 26 port" Type="Port" Display="always" Required="false" Mask="false">8250</Config>
+    <Config Name="Station 27 Port" Target="8260" Default="8260" Description="Station 27 port" Type="Port" Display="always" Required="false" Mask="false">8260</Config>
+    <Config Name="Station 28 Port" Target="8270" Default="8270" Description="Station 28 port" Type="Port" Display="always" Required="false" Mask="false">8270</Config>
+    <Config Name="Station 29 Port" Target="8280" Default="8280" Description="Station 29 port" Type="Port" Display="always" Required="false" Mask="false">8280</Config>
+    <Config Name="Station 30 Port" Target="8290" Default="8290" Description="Station 30 port" Type="Port" Display="always" Required="false" Mask="false">8290</Config>
+    <Config Name="Station 31 Port" Target="8300" Default="8300" Description="Station 31 port" Type="Port" Display="always" Required="false" Mask="false">8300</Config>
+    <Config Name="Station 32 Port" Target="8310" Default="8310" Description="Station 32 port" Type="Port" Display="always" Required="false" Mask="false">8310</Config>
+    <Config Name="Station 33 Port" Target="8320" Default="8320" Description="Station 33 port" Type="Port" Display="always" Required="false" Mask="false">8320</Config>
+    <Config Name="Station 34 Port" Target="8330" Default="8330" Description="Station 34 port" Type="Port" Display="always" Required="false" Mask="false">8330</Config>
+    <Config Name="Station 35 Port" Target="8340" Default="8340" Description="Station 35 port" Type="Port" Display="always" Required="false" Mask="false">8340</Config>
+    <Config Name="Station 36 Port" Target="8350" Default="8350" Description="Station 36 port" Type="Port" Display="always" Required="false" Mask="false">8350</Config>
+    <Config Name="Station 37 Port" Target="8360" Default="8360" Description="Station 37 port" Type="Port" Display="always" Required="false" Mask="false">8360</Config>
+    <Config Name="Station 38 Port" Target="8370" Default="8370" Description="Station 38 port" Type="Port" Display="always" Required="false" Mask="false">8370</Config>
+    <Config Name="Station 39 Port" Target="8380" Default="8380" Description="Station 39 port" Type="Port" Display="always" Required="false" Mask="false">8380</Config>
+    <Config Name="Station 40 Port" Target="8390" Default="8390" Description="Station 40 port" Type="Port" Display="always" Required="false" Mask="false">8390</Config>
+    <Config Name="Station 41 Port" Target="8400" Default="8400" Description="Station 41 port" Type="Port" Display="always" Required="false" Mask="false">8400</Config>
+    <Config Name="Station 42 Port" Target="8410" Default="8410" Description="Station 42 port" Type="Port" Display="always" Required="false" Mask="false">8410</Config>
+    <Config Name="Station 43 Port" Target="8420" Default="8420" Description="Station 43 port" Type="Port" Display="always" Required="false" Mask="false">8420</Config>
+    <Config Name="Station 44 Port" Target="8430" Default="8430" Description="Station 44 port" Type="Port" Display="always" Required="false" Mask="false">8430</Config>
+    <Config Name="Station 45 Port" Target="8440" Default="8440" Description="Station 45 port" Type="Port" Display="always" Required="false" Mask="false">8440</Config>
+    <Config Name="Station 46 Port" Target="8450" Default="8450" Description="Station 46 port" Type="Port" Display="always" Required="false" Mask="false">8450</Config>
+    <Config Name="Station 47 Port" Target="8460" Default="8460" Description="Station 47 port" Type="Port" Display="always" Required="false" Mask="false">8460</Config>
+    <Config Name="Station 48 Port" Target="8470" Default="8470" Description="Station 48 port" Type="Port" Display="always" Required="false" Mask="false">8470</Config>
+    <Config Name="Station 49 Port" Target="8480" Default="8480" Description="Station 49 port" Type="Port" Display="always" Required="false" Mask="false">8480</Config>
+    <Config Name="Station 50 Port" Target="8490" Default="8490" Description="Station 50 port" Type="Port" Display="always" Required="false" Mask="false">8490</Config>
+    <Config Name="ACME Path" Target="/var/app/acme" Default="/mnt/user/appdata/azuracast_relay/acme" Mode="rw" Description="ACME storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/azuracast_relay/acme</Config>
+    <Config Name="Temp Data Path" Target="/var/app/www_tmp" Default="/mnt/user/appdata/azuracast_relay/tmp" Mode="rw" Description="Temporary data storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/azuracast_relay/tmp</Config>
+    <Config Name="Stations Data Path" Target="/var/app/stations" Default="/mnt/user/appdata/azuracast_relay/stations" Mode="rw" Description="Stations data storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/azuracast_relay/stations</Config>
+    <Config Name="Compose Project Name" Target="COMPOSE_PROJECT_NAME" Default="azurarelay" Description="Compose project name" Type="Variable" Display="advanced-hide" Required="true" Mask="false">azurarelay</Config>
+    <Config Name="Internal HTTP Port" Target="AZURARELAY_HTTP_PORT" Default="80" Description="Internal HTTP port" Type="Variable" Display="advanced-hide" Required="true" Mask="false">80</Config>
+    <Config Name="Internal HTTPS Port" Target="AZURARELAY_HTTPS_PORT" Default="443" Description="Internal HTTPS port" Type="Variable" Display="advanced-hide" Required="true" Mask="false">443</Config>
+</Container>
