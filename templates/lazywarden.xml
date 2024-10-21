@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Lazywarden</Name>
+    <Repository>querylab/lazywarden:latest</Repository>
+    <Registry>https://hub.docker.com/r/querylab/lazywarden</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/querylab/lazywarden/issues</Support>
+    <Project>https://github.com/querylab/lazywarden</Project>
+    <Overview>Secure, Automated, and Multi-Cloud Bitwarden Backup and Import System</Overview>
+    <Category>Cloud: Security: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/lazywarden-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/lazywarden.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-20
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `.env` file at the "Environmental Variable File" path. See documentation for details: https://github.com/querylab/lazywarden/blob/main/.env
+    </Requires>
+    <Config Name="Unlock vault?" Target="UNLOCK_VAULT" Default="true|false" Description="Unlock the vault during then backup process" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/root/lazywarden/config" Default="/mnt/user/appdata/lazywarden/config" Description="The path to the configuration files" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lazywarden/config</Config>
+    <Config Name="Environmental Variable File" Target="/app/.env" Default="/mnt/user/appdata/lazywarden/.env" Description="The path to the environmental variable file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lazywarden/.env</Config>
+    <Config Name="Backup Path" Target="/root/lazywarden/backup-drive" Default="/mnt/user/appdata/lazywarden/backup" Description="The path to the backup files" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lazywarden/backup</Config>
+</Container>
