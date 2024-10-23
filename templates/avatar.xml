@@ -8,7 +8,7 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:9000]</WebUI>
+    <WebUI>http://[IP]:[PORT:9000]/avatar</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/frncsdrk/avatar/issues</Support>
     <Project>https://frncsdrk.github.io/avatar</Project>
@@ -23,9 +23,17 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-10-23
+
+        Fix missing config file
+
         ### 2024-10-14
 
         Initial release
     </Changes>
+    <Requires>
+        Expects a `default.json` file in the "Config Path": https://raw.githubusercontent.com/nwithan8/unraid_templates/master/ref/avatar/default.json
+    </Requires>
     <Config Name="Web UI Port" Target="9000" Default="9000" Mode="tcp" Description="Container Port: 9000" Type="Port" Display="always-hide" Required="true" Mask="false">9000</Config>
+    <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/avatar/config" Description="Path to store configuration files" Mode="rw" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/avatar/config</Config>
 </Container>

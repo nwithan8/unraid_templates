@@ -1,0 +1,7 @@
+{
+  "service": {
+    "server": {
+      "port": 9000
+    }
+  }
+}
