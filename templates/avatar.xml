@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Avatar</Name>
-    <Repository>frncsdrk/avatar:latest</Repository>
+    <Repository>frncsdrk/avatar:stable</Repository>
     <Registry>https://hub.docker.com/r/frncsdrk/avatar</Registry>
     <Branch>
-        <Tag>latest</Tag>
+        <Tag>stable</Tag>
         <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest development release, may have breaking changes</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:9000]/avatar</WebUI>
@@ -23,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-10-24
+
+        Use `stable` tag by default
+
         ### 2024-10-23
 
         Fix missing config file
