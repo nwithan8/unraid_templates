@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Superstreamer - App</Name>
+    <Repository>superstreamerapp/app:latest</Repository>
+    <Registry>https://hub.docker.com/r/superstreamerapp/app</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:52000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://superstreamer.xyz/guide/getting-started</Support>
+    <Project>hhttps://superstreamer.xyz</Project>
+    <Overview>
+        Superstreamer is here to make video delivery simple. Imagine having everything you need in one platform — starting with your raw video, Superstreamer helps you transcode it, package it into HLS playlists, and upload it to S3 with ease. You can even create custom playlists for each viewer, adding bumpers, ads, or filters on the fly.
+    </Overview>
+    <Category>MediaApp:Music MediaApp:Video MediaServer:Music MediaServer:Video Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>music video hosting transcode server streaming download playlists queue Stitcher ads advertisements sponsors</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/superstreamer-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/superstreamer_app.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is the frontend for the Superstreamer suite. It requires other Superstreamer containers to be running. &#xD;
+    </Requires>
+    <Config Name="Web UI Port" Target="52000" Default="52000" Mode="tcp" Description="Container Port: 52000" Type="Port" Display="always-hide" Required="true" Mask="false">52000</Config>
+    <Config Name="Public API Endpoint" Target="PUBLIC_API_ENDPOINT" Default="http://localhost:520001" Description="Publicly accessible URL for Superstreamer API container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52001</Config>
+    <Config Name="Public Stitcher Endpoint" Target="PUBLIC_STITCHER_ENDPOINT" Default="http://localhost:52002" Description="Publicly accessible URL for Superstreamer Stitcher container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52002</Config>
+</Container>
