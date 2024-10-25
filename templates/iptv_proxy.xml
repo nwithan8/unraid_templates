@@ -29,7 +29,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Stream Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+    <Config Name="Stream Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
     <Config Name="M3U Storage Path" Target="/root/iptv" Default="/mnt/user/appdata/iptv-proxy/m3u" Mode="rw" Description="Path to M3U files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/iptv-proxy/m3u</Config>
     <Config Name="M3U URL" Target="M3U_URL" Default="/root/iptv/iptv.m3u" Description="Path to M3U file (local in M3U Storage Path or remote URL). Remove if using XtreamCodes." Type="Variable" Display="always" Required="false" Mask="false">/root/iptv/iptv.m3u</Config>
     <Config Name="XtreamCodes Username" Target="XTREAM_USER" Default="" Description="Username for XtreamCodes. Remove if using M3U." Type="Variable" Display="always" Required="false" Mask="false" />

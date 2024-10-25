@@ -30,5 +30,5 @@
 
         Initial release (v0.7.2+)
     </Changes>
-    <Config Name="SSH Port" Target="1976" Default="" Mode="tcp" Description="Container Port: 1976" Type="Port" Display="always" Required="true" Mask="false">1976</Config>
+    <Config Name="SSH Port" Target="1976" Default="" Mode="tcp" Description="Container Port: 1976" Type="Port" Display="always" Required="false" Mask="false">1976</Config>
 </Container>

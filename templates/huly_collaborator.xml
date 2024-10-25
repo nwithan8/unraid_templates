@@ -31,7 +31,7 @@
         [br]
         This is the collaborator container for Huly. Other Huly containers are required to run the entire suite.
     </Requires>
-    <Config Name="App Port" Target="3078" Default="3078" Mode="tcp" Description="Allow other containers to access application" Type="Port" Display="always-hide" Required="true" Mask="false">3078</Config>
+    <Config Name="App Port" Target="3078" Default="3078" Mode="tcp" Description="Allow other containers to access application" Type="Port" Display="always-hide" Required="false" Mask="false">3078</Config>
     <Config Name="Secret Key" Target="SECRET" Default="" Description="Needs to match across all Huly containers. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Accounts URL" Target="ACCOUNTS_URL" Default="http://localhost:3000" Description="URL for the accounts service (this container). Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
     <Config Name="MongoDB Connection URL" Target="MONGO_URL" Default="mongodb://localhost:27017" Description="Connection URL for MongoDB." Type="Variable" Display="always-hide" Required="true" Mask="false">mongodb://localhost:27017</Config>

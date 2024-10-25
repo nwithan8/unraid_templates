@@ -30,7 +30,7 @@
     <Requires>
         This is the frontend for the Mixin suite. It requires other Mixin containers to be running. &#xD;
     </Requires>
-    <Config Name="Web UI Port" Target="52000" Default="52000" Mode="tcp" Description="Container Port: 52000" Type="Port" Display="always-hide" Required="true" Mask="false">52000</Config>
+    <Config Name="Web UI Port" Target="52000" Default="52000" Mode="tcp" Description="Container Port: 52000" Type="Port" Display="always-hide" Required="false" Mask="false">52000</Config>
     <Config Name="Public API Endpoint" Target="PUBLIC_API_ENDPOINT" Default="http://localhost:520001" Description="Publicly accessible URL for Mixin API container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52001</Config>
     <Config Name="Public Stitcher Endpoint" Target="PUBLIC_STITCHER_ENDPOINT" Default="http://localhost:52002" Description="Publicly accessible URL for Mixin Stitcher container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52002</Config>
 </Container>

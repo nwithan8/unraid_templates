@@ -31,7 +31,7 @@
         [br]
         This is the transactor container for Huly. Other Huly containers are required to run the entire suite.
     </Requires>
-    <Config Name="App Port" Target="3333" Default="3333" Mode="tcp" Description="Allow other containers to access application" Type="Port" Display="always-hide" Required="true" Mask="false">3333</Config>
+    <Config Name="App Port" Target="3333" Default="3333" Mode="tcp" Description="Allow other containers to access application" Type="Port" Display="always-hide" Required="false" Mask="false">3333</Config>
     <Config Name="Secret Key" Target="SERVER_SECRET" Default="" Description="Needs to match across all Huly containers. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Server Cursor Max Items" Target="SERVER_CURSOR_MAXITEMS" Default="30000" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">30000</Config>
     <Config Name="ElasticSearch URL" Target="ELASTIC_URL" Default="http://localhost:9200" Description="URL for the ElasticSearch service. Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:9200</Config>

@@ -31,7 +31,7 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI" Target="80" Default="8999" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
+    <Config Name="WebUI" Target="80" Default="8999" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8999</Config>
     <Config Name="Images path" Target="/var/www/html/images" Default="/mnt/user/appdata/chevereto/images" Mode="rw" Description="Images path" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/chevereto/images</Config>
     <Config Name="MariaDB Host" Target="CHEVERETO_DB_HOST" Default="mariadb" Description="MariaDB Hostname" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="MariaDB Port" Target="CHEVERETO_DB_PORT" Default="3306" Description="MariaDB Port" Type="Variable" Display="always" Required="true" Mask="false"/>

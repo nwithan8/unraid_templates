@@ -30,8 +30,8 @@
     <Requires>
         Due to a permissions issue, you must create the Configuration Data path before starting the container. Open a terminal and run the following command: "mkdir -p /mnt/user/appdata/bliss/config"
     </Requires>
-    <Config Name="Web UI Port" Target="3220" Default="3220" Mode="tcp" Description="Container Port: 3220" Type="Port" Display="always-hide" Required="true" Mask="false">3220</Config>
-    <Config Name="Services Port" Target="3221" Default="3221" Mode="tcp" Description="Container Port: 3221" Type="Port" Display="always-hide" Required="true" Mask="false">3221</Config>
+    <Config Name="Web UI Port" Target="3220" Default="3220" Mode="tcp" Description="Container Port: 3220" Type="Port" Display="always-hide" Required="false" Mask="false">3220</Config>
+    <Config Name="Services Port" Target="3221" Default="3221" Mode="tcp" Description="Container Port: 3221" Type="Port" Display="always-hide" Required="false" Mask="false">3221</Config>
     <Config Name="Music Files" Target="/music" Default="" Mode="rw" Description="Path to music files" Type="Path" Display="always-hide" Required="true" Mask="false" />
     <Config Name="Configuration Data" Target="/config" Default="/mnt/user/appdata/bliss/config" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/bliss/config</Config>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>

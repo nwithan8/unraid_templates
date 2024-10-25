@@ -29,10 +29,10 @@
 
         Initial release
     </Changes>
-    <Config Name="SSH Port" Target="35353" Default="" Mode="tcp" Description="Container Port: 35353" Type="Port" Display="always" Required="true" Mask="false">35353</Config>
-    <Config Name="HTTP Port" Target="35354" Default="" Mode="tcp" Description="Container Port: 35354" Type="Port" Display="always" Required="true" Mask="false">35354</Config>
-    <Config Name="Stats Port" Target="35355" Default="" Mode="tcp" Description="Container Port: 35355" Type="Port" Display="always" Required="true" Mask="false">35355</Config>
-    <Config Name="Health Port" Target="35356" Default="" Mode="tcp" Description="Container Port: 35356" Type="Port" Display="always" Required="true" Mask="false">35356</Config>
+    <Config Name="SSH Port" Target="35353" Default="" Mode="tcp" Description="Container Port: 35353" Type="Port" Display="always" Required="false" Mask="false">35353</Config>
+    <Config Name="HTTP Port" Target="35354" Default="" Mode="tcp" Description="Container Port: 35354" Type="Port" Display="always" Required="false" Mask="false">35354</Config>
+    <Config Name="Stats Port" Target="35355" Default="" Mode="tcp" Description="Container Port: 35355" Type="Port" Display="always" Required="false" Mask="false">35355</Config>
+    <Config Name="Health Port" Target="35356" Default="" Mode="tcp" Description="Container Port: 35356" Type="Port" Display="always" Required="false" Mask="false">35356</Config>
     <Config Name="Max storage per user" Target="CHARM_SERVER_USER_MAX_STORAGE" Default="0" Description="Maximum storage per user. 0 for no limit" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
     <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/charm" Mode="rw" Description="Storage for databases and file storage" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/charm</Config>
 </Container>

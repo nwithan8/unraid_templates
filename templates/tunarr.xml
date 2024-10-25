@@ -76,7 +76,7 @@
     <Requires>
         Don't forget to add Nvidia- or Intel-specific parameters for hardware transcoding. Enable **Advanced View** and see **Overview** for details.
     </Requires>
-    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="false" Mask="false">8000</Config>
     <Config Name="Configuration data" Target="/config/tunarr" Default="/mnt/user/appdata/tunarr/config" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/tunarr/config</Config>
     <Config Name="dizqueTV migration data" Target="/.dizquetv" Default="" Mode="ro" Description="Path to old dizqueTV installation for migration" Type="Path" Display="advanced" Required="false" Mask="false" />
     <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always-hide" Required="false" Mask="false"/>

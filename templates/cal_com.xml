@@ -31,7 +31,7 @@
     <Requires>
         Requires a separate PostgreSQL database container
     </Requires>
-    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="false" Mask="false">3000</Config>
     <Config Name="Web URL" Target="NEXT_PUBLIC_WEBAPP_URL" Default="http://localhost:3000" Description="The base URL for the webapp. Replace localhost with IP address" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
     <Config Name="API URL" Target="NEXT_PUBLIC_API_V2_URL" Default="http://localhost:5555/api/v2" Description="The base URL for the API. Replace localhost with IP address" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:5555/api/v2</Config>
     <Config Name="Web Secret" Target="NEXTAUTH_SECRET" Default="" Description="Secret for the webapp. Use `openssl rand -base64 32` to generate." Type="Variable" Display="always-hide" Required="true" Mask="true"/>

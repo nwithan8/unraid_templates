@@ -31,7 +31,7 @@
         [br]
         This application requires a separate Redis database.
     </Requires>
-    <Config Name="Application Port" Target="8000" Default="8000" Mode="tcp" Description="Port over which the frontend will communicate with this backend" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Application Port" Target="8000" Default="8000" Mode="tcp" Description="Port over which the frontend will communicate with this backend" Type="Port" Display="always-hide" Required="false" Mask="false">8000</Config>
     <Config Name="Frontend URLs" Target="HEARCHCO_SERVER_FRONTENDURLS" Default="http://localhost:3000" Description="Comma-separated list of frontend URLs that are allowed to communicate with this backend. Replace with IP:PORT or domain of your frontend" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
     <Config Name="Redis Host" Target="HEARCHCO_SERVER_CACHE_REDIS_HOST" Default="" Description="Host of the Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Redis Port" Target="HEARCHCO_SERVER_CACHE_REDIS_PORT" Default="6379" Description="Port of the Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>

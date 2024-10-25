@@ -31,6 +31,6 @@
         This container expects Hugo configuration files to be present in the "Site Content" path; otherwise, the container will not start. See documentation: https://gohugo.io/getting-started/configuration/
     </Requires>
     <PostArgs>server</PostArgs>
-    <Config Name="Web UI Port" Target="1313" Default="1313" Mode="tcp" Description="Container Port: 1313" Type="Port" Display="always-hide" Required="true" Mask="false">1313</Config>
+    <Config Name="Web UI Port" Target="1313" Default="1313" Mode="tcp" Description="Container Port: 1313" Type="Port" Display="always-hide" Required="false" Mask="false">1313</Config>
     <Config Name="Site Content" Target="/src" Default="/mnt/user/appdata/hugo/site" Mode="rw" Description="Site content to be served by Hugo" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/hugo/site</Config>
 </Container>

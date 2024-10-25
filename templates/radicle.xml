@@ -35,7 +35,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="5232" Default="5232" Mode="tcp" Description="Container Port: 5232" Type="Port" Display="always" Required="true" Mask="false">5232</Config>
+    <Config Name="Web UI Port" Target="5232" Default="5232" Mode="tcp" Description="Container Port: 5232" Type="Port" Display="always" Required="false" Mask="false">5232</Config>
     <Config Name="Config path" Target="/config" Default="/mnt/user/appdata/radicale/config" Mode="ro" Description="Parent folder storing config file" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/radicale/config</Config>
     <Config Name="Data path" Target="/data" Default="/mnt/user/appdata/radicale/data" Mode="rw" Description="Data path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/radicale/data</Config>
 

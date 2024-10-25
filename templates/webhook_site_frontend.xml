@@ -34,7 +34,7 @@
         Initial release
     </Changes>
     <PostArgs>php artisan queue:work --daemon --tries=3 --timeout=10"</PostArgs>
-    <Config Name="Web UI Port" Target="80" Default="8084" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8084</Config>
+    <Config Name="Web UI Port" Target="80" Default="8084" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="false" Mask="false">8084</Config>
     <Config Name="Server Host" Target="BACKEND_SERVER_HOST" Default="localhost" Description="Hostname for the backend server. Replace with IP address of the backend server." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Server Port" Target="BACKEND_SERVER_PORT" Default="6001" Description="Port for the backend server" Type="Variable" Display="always-hide" Required="true" Mask="false">6001</Config>
     <Config Name="App URL" Target="APP_URL" Default="http://localhost:8084" Description="Application URL. Replace with IP and port. Port must match Web UI Port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8084</Config>

@@ -27,8 +27,8 @@
     <Requires>
         Requires separate Postgres and Redis databases. See documentation for more information: https://docs.postiz.com/installation/docker-compose#example-docker-composeyml-file
     </Requires>
-    <Config Name="Web UI Port" Target="4200" Default="4200" Mode="tcp" Description="Container Port: 4200" Type="Port" Display="always" Required="true" Mask="false">4200</Config>
-    <Config Name="Backend Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Web UI Port" Target="4200" Default="4200" Mode="tcp" Description="Container Port: 4200" Type="Port" Display="always" Required="false" Mask="false">4200</Config>
+    <Config Name="Backend Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
     <Config Name="Web UI URL" Target="MAIN_URL" Default="https://SERVER_IP_ADDRESS:4200" Description="The public URL to the Postiz Web UI. Provide server IP address." Type="Variable" Display="always" Required="true" Mask="false">https://SERVER_IP_ADDRESS:4200</Config>
     <Config Name="Public Frontend URL" Target="FRONTEND_URL" Default="https://SERVER_IP_ADDRESS:4200" Description="The public URL to the Postiz frontend. Same as Web UI URL." Type="Variable" Display="always" Required="true" Mask="false">https://SERVER_IP_ADDRESS:4200</Config>
     <Config Name="Public Backend URL" Target="NEXT_PUBLIC_BACKEND_URL" Default="https://SERVER_IP_ADDRESS:3000" Description="The public URL to the Postiz backend. Provide server IP address." Type="Variable" Display="always" Required="true" Mask="false">https://SERVER_IP_ADDRESS:3000</Config>

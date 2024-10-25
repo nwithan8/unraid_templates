@@ -20,7 +20,7 @@
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
-    <Config Name="WebUI" Target="80" Default="6839" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">6839</Config>
+    <Config Name="WebUI" Target="80" Default="6839" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">6839</Config>
     <Config Name="Config Path" Target="/etc/ntfy" Default="" Mode="rw" Description="Where advanced configuration files are stored" Type="Path" Display="always" Required="false" Mask="false" />
     <Config Name="Cache Path" Target="/var/cache/ntfy" Default="" Mode="rw" Description="Use persistent message cache" Type="Path" Display="always" Required="false" Mask="false" />
 </Container>

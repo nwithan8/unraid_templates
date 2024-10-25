@@ -35,8 +35,8 @@
         Initial release
     </Changes>
     <PostArgs>--config /config/config.yaml</PostArgs>
-    <Config Name="Main Port" Target="7880" Default="7880" Mode="tcp" Description="Container Port: 7880" Type="Port" Display="always" Required="true" Mask="false">7880</Config>
+    <Config Name="Main Port" Target="7880" Default="7880" Mode="tcp" Description="Container Port: 7880" Type="Port" Display="always" Required="false" Mask="false">7880</Config>
     <Config Name="WebRTC UDP Ports" Target="50000-60000" Default="50000-60000" Mode="udp" Description="UDP ports for client traffic" Type="Port" Display="advanced" Required="true" Mask="false">50000-60000</Config>
-    <Config Name="WebRTC TCP Port" Target="7881" Default="7881" Mode="tcp" Description="TCP port for client traffic when UDP not available" Type="Port" Display="advanced" Required="true" Mask="false">7881</Config>
+    <Config Name="WebRTC TCP Port" Target="7881" Default="7881" Mode="tcp" Description="TCP port for client traffic when UDP not available" Type="Port" Display="advanced" Required="false" Mask="false">7881</Config>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/livekit" Mode="rw" Description="Parent folder for config.yaml file" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/livekit</Config>
 </Container>

@@ -28,7 +28,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+    <Config Name="Web UI Port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">80</Config>
     <Config Name="Data storage" Target="/app-data" Default="/mnt/user/appdata/otterwiki" Mode="rw" Description="Path to data storage" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/otterwiki</Config>
     <Config Name="PUID" Target="PUID" Default="99" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>

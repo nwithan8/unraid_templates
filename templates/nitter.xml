@@ -33,6 +33,6 @@
         Initial release
     </Changes>
     <ExtraParams>--cap-drop ALL</ExtraParams>
-    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="false" Mask="false">8080</Config>
     <Config Name="Nitter Configuration" Target="/src/nitter.conf" Default="" Description="Path to Nitter configuration file" Mode="ro" Type="Path" Display="always-hide" Required="true" Mask="false"/>
 </Container>

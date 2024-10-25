@@ -29,6 +29,6 @@
     <Requires>
         This application expects a `config.json` file to be mounted at the Config Data path. See example: https://github.com/deepch/RTSPtoWeb?tab=readme-ov-file#example-configjson
     </Requires>
-    <Config Name="Web UI Port" Target="8083" Default="8083" Mode="tcp" Description="Container Port: 8083" Type="Port" Display="always-hide" Required="true" Mask="false">8083</Config>
+    <Config Name="Web UI Port" Target="8083" Default="8083" Mode="tcp" Description="Container Port: 8083" Type="Port" Display="always-hide" Required="false" Mask="false">8083</Config>
     <Config Name="Config data" Target="/config/config.json" Default="/mnt/user/appdata/rtsp_to_web/config.json" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/rtsp_to_web/config.json</Config>
 </Container>

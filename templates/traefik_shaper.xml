@@ -28,7 +28,7 @@
     <Requires>
         Expects a dynamic whitelist YAML file at the "Whitelist File" path.
     </Requires>
-    <Config Name="App Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="App Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="false" Mask="false">5000</Config>
 
     <Config Name="App URL" Target="APPURL" Default="http://localhost:5000" Description="URL of the app. Replace with domain (ex. https://traefikshaper.example.com)" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:5000</Config>
     <Config Name="Access Request Endpoint" Target="GRANT_HTTP_ENDPOINT" Default="" Description="Endpoint for clients to request access (ex. /knock-knock)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>

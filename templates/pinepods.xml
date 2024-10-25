@@ -30,7 +30,7 @@
     <Requires>
         This template requires a separate MariaDB or PostgreSQL database.
     </Requires>
-    <Config Name="Web UI Port" Target="8040" Default="8040" Mode="tcp" Description="Container Port: 8040" Type="Port" Display="always-hide" Required="true" Mask="false">8040</Config>
+    <Config Name="Web UI Port" Target="8040" Default="8040" Mode="tcp" Description="Container Port: 8040" Type="Port" Display="always-hide" Required="false" Mask="false">8040</Config>
     <Config Name="Username" Target="USERNAME" Default="" Description="Username for login" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Password" Target="PASSWORD" Default="" Description="Password for login" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="User Full Name" Target="FULLNAME" Default="" Description="Full name of user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>

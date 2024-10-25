@@ -33,7 +33,7 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+    <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="false" Mask="false">8000</Config>
     <Config Name="Secret" Target="SECRET" Default="" Description="Secret key for the application" Type="Variable" Display="always" Required="true" Mask="true"/>
     <Config Name="Redis Host" Target="REDIS_URL" Default="redis://localhost:6379" Description="Redis connection details" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="TMDb API key" Target="TMDB_API" Default="" Description="Override default The Movie Database API key" Type="Variable" Display="advanced" Required="false" Mask="true"/>

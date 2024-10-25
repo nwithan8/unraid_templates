@@ -39,7 +39,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="34400" Default="34400" Mode="tcp" Description="Container Port: 34400" Type="Port" Display="always" Required="true" Mask="false">34400</Config>
+    <Config Name="Web UI Port" Target="34400" Default="34400" Mode="tcp" Description="Container Port: 34400" Type="Port" Display="always" Required="false" Mask="false">34400</Config>
     <Config Name="Configuration data" Target="/home/threadfin/conf" Default="/mnt/user/appdata/threadfin/config" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/threadfin/config</Config>
     <Config Name="Temporary data" Target="/tmp/threadfin" Default="/mnt/user/appdata/threadfin/temp" Mode="rw" Description="Path to temporary data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/threadfin/temp</Config>
     <Config Name="PUID" Target="PUID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>

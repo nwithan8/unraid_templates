@@ -31,8 +31,8 @@
         [br]
         This application requires a separate Postgres database. Configuration data for the Postgres container (host, username, password, database name) should be updated in the `config.json` file.
     </Requires>
-    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Access web interface" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
-    <Config Name="Service Port" Target="5101" Default="5101" Mode="tcp" Description="Allow external clients to connect to server" Type="Port" Display="always-hide" Required="true" Mask="false">5101</Config>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Access web interface" Type="Port" Display="always-hide" Required="false" Mask="false">3000</Config>
+    <Config Name="Service Port" Target="5101" Default="5101" Mode="tcp" Description="Allow external clients to connect to server" Type="Port" Display="always-hide" Required="false" Mask="false">5101</Config>
     <Config Name="Library" Target="/library" Default="" Mode="rw" Description="Library of games" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Config data" Target="/config" Default="/mnt/user/appdata/retrom/config" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/retrom/config</Config>
 </Container>

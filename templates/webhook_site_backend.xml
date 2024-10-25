@@ -28,7 +28,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Server Port" Target="6001" Default="6001" Mode="tcp" Description="Container Port: 6001" Type="Port" Display="always-hide" Required="true" Mask="false">6001</Config>
+    <Config Name="Server Port" Target="6001" Default="6001" Mode="tcp" Description="Container Port: 6001" Type="Port" Display="always-hide" Required="false" Mask="false">6001</Config>
     <Config Name="Frontend URL" Target="LARAVEL_ECHO_SERVER_AUTH_HOST" Default="http://localhost" Description="Frontend URL. Replace with IP and port of the frontend." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost</Config>
     <Config Name="Redis Host" Target="ECHO_REDIS_HOSTNAME" Default="localhost" Description="Redis host. Replace with IP address of Redis server." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Redis Port" Target="ECHO_REDIS_PORT" Default="6379" Description="Redis port" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>

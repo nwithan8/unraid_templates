@@ -31,8 +31,8 @@
     <Requires>
         Requires a separate MySQL and Redis server. See documentation: https://github.com/anonaddy/anonaddy/blob/master/SELF-HOSTING.md
     </Requires>
-    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
-    <Config Name="SMTP Email Port" Target="25" Default="25" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always-hide" Required="true" Mask="false">25</Config>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="false" Mask="false">8000</Config>
+    <Config Name="SMTP Email Port" Target="25" Default="25" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always-hide" Required="false" Mask="false">25</Config>
     <Config Name="App URL" Target="APP_URL" Default="http://localhost:8000/" Description="The URL to the AnonAddy server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000/</Config>
     <Config Name="MySQL - Host" Target="DB_HOST" Default="localhost" Description="The host for the MySQL database connection" Type="Variable" Display="always-hide" Required="false" Mask="false">localhost</Config>
     <Config Name="MySQL - Port" Target="DB_PORT" Default="3306" Description="The port for the MySQL database connection" Type="Variable" Display="always-hide" Required="false" Mask="false">3306</Config>

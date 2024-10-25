@@ -24,7 +24,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="4567" Default="4567" Mode="tcp" Description="Container Port: 4567" Type="Port" Display="always" Required="true" Mask="false">4567</Config>
+    <Config Name="Web UI Port" Target="4567" Default="4567" Mode="tcp" Description="Container Port: 4567" Type="Port" Display="always" Required="false" Mask="false">4567</Config>
     <Config Name="Data storage" Target="/wiki" Default="/mnt/user/appdata/gollum" Mode="rw" Description="Path to data storage" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gollum</Config>
     <Config Name="PUID" Target="PUID" Default="99" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
