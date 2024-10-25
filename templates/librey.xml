@@ -32,7 +32,7 @@
     <Requires>
         Please see the documentation for all available settings: https://github.com/Ahwxorg/LibreY/tree/main/docker#environment-variables-that-can-be-set-in-the-docker-container
     </Requires>
-    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="false" Mask="false">8080</Config>
     <Config Name="Language" Target="CONFIG_LANGUAGE" Default="en" Description="Language to perform searches in" Type="Variable" Display="always-hide" Required="true" Mask="false">en</Config>
     <Config Name="Text Search Engine" Target="CONFIG_TEXT_SEARCH_ENGINE" Default="auto|brave|duckduckgo|ecosia|google|mojeek|yandex" Description="Text search engine to use. Set 'auto' to use any available search engine." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Default Number of Results" Target="CONFIG_NUMBER_OF_RESULTS" Default="10" Description="Number of results to show by default" Type="Variable" Display="always-hide" Required="true" Mask="false">10</Config>

@@ -27,7 +27,7 @@
     <Requires>
         Requires a separate Immich server and Postgres database.
     </Requires>
-    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
     <Config Name="Immich URL" Target="IMMICH_URL" Default="" Description="The URL to the Immich Server" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Immich API Key" Target="IMMICH_API_KEY" Default="" Description="The API for your Immich server" Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Database Host" Target="DB_HOST" Default="localhost" Description="The host for the Postgres database connection" Type="Variable" Display="always" Required="false" Mask="false">localhost</Config>

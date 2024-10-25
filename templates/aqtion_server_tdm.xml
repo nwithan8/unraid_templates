@@ -27,7 +27,7 @@
         [br]
         Requires a Message of the Day text file passed in the Message of the Day File configuration: https://github.com/actionquake/distrib/blob/main/server/tdm1.motd
     </Requires>
-    <Config Name="Server Port - TCP" Target="27940" Default="27940" Mode="tcp" Description="Container Port: 27940" Type="Port" Display="always-hide" Required="true" Mask="false">27940</Config>
+    <Config Name="Server Port - TCP" Target="27940" Default="27940" Mode="tcp" Description="Container Port: 27940" Type="Port" Display="always-hide" Required="false" Mask="false">27940</Config>
     <Config Name="Server Port - UDP" Target="27940" Default="27940" Mode="udp" Description="Container Port: 27940" Type="Port" Display="always-hide" Required="true" Mask="false">27940</Config>
     <Config Name="Server Port" Target="PORT" Default="27940" Description="Internal server port. Must match port above." Type="Variable" Display="always-hide" Required="true" Mask="false">27940</Config>
     <Config Name="Server Name" Target="HOSTNAME" Default="AQtion TDM Server" Description="Hostname of server in server browser" Type="Variable" Display="always-hide" Required="true" Mask="false">AQtion TDM Server</Config>

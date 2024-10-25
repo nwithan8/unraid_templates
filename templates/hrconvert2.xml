@@ -27,5 +27,5 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="80" Default="8435" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8435</Config>
+    <Config Name="Web UI Port" Target="80" Default="8435" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="false" Mask="false">8435</Config>
 </Container>

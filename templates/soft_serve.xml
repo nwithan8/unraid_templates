@@ -32,9 +32,9 @@
 
         Initial release
     </Changes>
-    <Config Name="SSH Port" Target="23231" Default="" Mode="tcp" Description="Container Port: 23231" Type="Port" Display="always" Required="true" Mask="false">23231</Config>
-    <Config Target="23232" Default="" Mode="tcp" Description="Container Port: 23232" Type="Port" Display="always" Required="true" Mask="false">23232</Config>
-    <Config Target="23233" Default="" Mode="tcp" Description="Container Port: 23233" Type="Port" Display="always" Required="true" Mask="false">23233</Config>
-    <Config Target="9418" Default="" Mode="tcp" Description="Container Port: 9418" Type="Port" Display="always" Required="true" Mask="false">9418</Config>
+    <Config Name="SSH Port" Target="23231" Default="" Mode="tcp" Description="Container Port: 23231" Type="Port" Display="always" Required="false" Mask="false">23231</Config>
+    <Config Target="23232" Default="" Mode="tcp" Description="Container Port: 23232" Type="Port" Display="always" Required="false" Mask="false">23232</Config>
+    <Config Target="23233" Default="" Mode="tcp" Description="Container Port: 23233" Type="Port" Display="always" Required="false" Mask="false">23233</Config>
+    <Config Target="9418" Default="" Mode="tcp" Description="Container Port: 9418" Type="Port" Display="always" Required="false" Mask="false">9418</Config>
     <Config Name="Data Path" Target="/soft-serve" Default="/mnt/user/appdata/softserve" Mode="rw" Description="Storage for config file, databases and repos" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/softserve</Config>
 </Container>

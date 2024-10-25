@@ -32,7 +32,7 @@
         [br]
         This is the web interface for Automatisch. A separate worker container is required to run the application.
     </Requires>
-    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Access web interface" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Access web interface" Type="Port" Display="always-hide" Required="false" Mask="false">3000</Config>
     <Config Name="Web UI URL" Target="WEB_APP_URL" Default="http://localhost:3000" Description="URL for the web interface. Replace with local IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
     <Config Name="Redis - Host" Target="REDIS_HOST" Default="localhost" Description="Host for Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
     <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="Port for Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>

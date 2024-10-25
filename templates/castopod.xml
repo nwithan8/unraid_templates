@@ -40,7 +40,7 @@
     <Requires>
         Requires separate MariaDB and Redis databases.
     </Requires>
-    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="false" Mask="false">8000</Config>
     <Config Name="App URL" Target="CP_BASEURL" Default="http://localhost:8000" Description="URL of Castopod. Change to IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000</Config>
     <Config Name="Analytics Salt" Target="CP_ANALYTICS_SALT" Default="" Description="Salt for analytics" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="MariaDB - Host" Target="CP_DATABASE_HOSTNAME" Default="" Description="Hostname of MariaDB" Type="Variable" Display="always-hide" Required="true" Mask="false"/>

@@ -28,5 +28,5 @@
         Initial release
     </Changes>
     <PostArgs>--port 3000</PostArgs>
-    <Config Name="Traffic Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Traffic Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="false" Mask="false">3000</Config>
 </Container>

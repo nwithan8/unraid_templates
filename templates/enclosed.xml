@@ -30,6 +30,6 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="8787" Default="8787" Mode="tcp" Description="Container Port: 8787" Type="Port" Display="always-hide" Required="true" Mask="false">8787</Config>
+    <Config Name="Web UI Port" Target="8787" Default="8787" Mode="tcp" Description="Container Port: 8787" Type="Port" Display="always-hide" Required="false" Mask="false">8787</Config>
     <Config Name="Config data" Target="/app/.data" Default="/mnt/user/appdata/enclosed/data" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/enclosed/data</Config>
 </Container>

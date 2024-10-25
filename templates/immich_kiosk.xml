@@ -31,7 +31,7 @@
     <Requires>
         Requires a separate Immich server. Container requires a "config.yaml" file at the "Config File" path BEFORE starting if using config file; otherwise use environmental variables. See the project page for more information: https://github.com/damongolding/immich-kiosk?tab=readme-ov-file#configuration
     </Requires>
-    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
     <Config Name="Config File" Target="/config.yaml" Default="/mnt/user/appdata/immich_kiosk/config.yaml" Mode="rw" Description="Config file for application. Remove this if using environmental variables instead." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/immich_kiosk/config.yaml</Config>
     <Config Name="Immich URL" Target="KIOSK_IMMICH_URL" Default="" Description="The URL to the Immich Server" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Immich API Key" Target="KIOSK_IMMICH_API_KEY" Default="" Description="The API for your Immich server" Type="Variable" Display="always" Required="false" Mask="true"/>

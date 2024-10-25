@@ -29,6 +29,6 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI" Target="5353" Default="" Mode="tcp" Description="Container Port: 5353" Type="Port" Display="always" Required="true" Mask="false">5353</Config>
+    <Config Name="WebUI" Target="5353" Default="" Mode="tcp" Description="Container Port: 5353" Type="Port" Display="always" Required="false" Mask="false">5353</Config>
     <Config Name="Database Path" Target="/usr/src/db" Default="/mnt/user/appdata/mdblistarr/db" Mode="rw" Description="Storage for database" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/mdblistarr/db</Config>
 </Container>

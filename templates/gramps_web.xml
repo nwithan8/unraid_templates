@@ -31,7 +31,7 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always" Required="true" Mask="false">5000</Config>
+    <Config Name="WebUI" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always" Required="false" Mask="false">5000</Config>
     <Config Name="Tree name" Target="GRAMPSWEB_TREE" Default="Gramps Web" Description="Name of the Gramps tree" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Users database path" Target="/app/users" Default="/mnt/user/appdata/gramps/users" Mode="rw" Description="Users database path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/users</Config>
     <Config Name="Search index path" Target="/app/indexdir" Default="/mnt/user/appdata/gramps/indexdir" Mode="rw" Description="Search index path" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gramps/indexdir</Config>

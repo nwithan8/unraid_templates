@@ -28,6 +28,6 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="false" Mask="false">8080</Config>
     <Config Name="Lock to Base URL" Target="BASE_URL" Default="https://server-url" Description="Lock the front-end to a specific Jellyfin instance. Optional, remove to disable." Type="Variable" Display="always" Required="false" Mask="false">https://server-url</Config>
 </Container>

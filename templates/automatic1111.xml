@@ -34,7 +34,7 @@
         This is a web UI for Stable Diffusion and uses a Docker image which is several gigabytes. If you receive a "no space left on device" warning during installation, please increase the vDisk size in your Docker settings.
     </Requires>
     <ExtraParams>--gpus=all</ExtraParams>
-    <Config Name="Web UI Port" Target="7860" Default="7860" Mode="tcp" Description="Container Port: 7860" Type="Port" Display="always" Required="true" Mask="false">7860</Config>
+    <Config Name="Web UI Port" Target="7860" Default="7860" Mode="tcp" Description="Container Port: 7860" Type="Port" Display="always" Required="false" Mask="false">7860</Config>
     <Config Name="Configuration data" Target="/data" Default="/mnt/user/appdata/automatic1111/data" Mode="rw" Description="Path to configuration data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/automatic1111/data</Config>
     <Config Name="Output directory" Target="/output" Default="/mnt/user/appdata/automatic1111/output" Mode="rw" Description="Path to output (saved images) directory" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/automatic1111/output</Config>
     <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>

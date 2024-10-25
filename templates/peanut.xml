@@ -27,7 +27,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+    <Config Name="Web UI" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
     <Config Name="NUT Server Host" Target="NUT_HOST" Default="" Description="Hostname or IP of the NUT server" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="NUT Server Port" Target="NUT_PORT" Default="3493" Description="Port of the NUT server" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="NUT Username" Target="USERNAME" Default="" Description="Username for the NUT server" Type="Variable" Display="advanced" Required="false" Mask="false"/>

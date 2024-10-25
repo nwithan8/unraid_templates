@@ -42,6 +42,6 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+    <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="false" Mask="false">8000</Config>
     <Config Name="Model Storage Path" Target="/models" Default="/mnt/user/appdata/llama_cpp/model" Mode="rw" Description="Storage for model" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/llama_cpp/model</Config>
 </Container>

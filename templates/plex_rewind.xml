@@ -35,7 +35,7 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI" Target="8383" Default="8383" Mode="tcp" Description="Container Port: 8383" Type="Port" Display="always" Required="true" Mask="false">8383</Config>
+    <Config Name="WebUI" Target="8383" Default="8383" Mode="tcp" Description="Container Port: 8383" Type="Port" Display="always" Required="false" Mask="false">8383</Config>
     <Config Name="Site URL" Target="NEXT_PUBLIC_SITE_URL" Default="http://192.168.1.1:8383" Description="IMPORTANT: Change to your server IP address and port, or domain if app is publicly exposed." Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Authentication Secret" Target="NEXTAUTH_SECRET" Default="" Description="Required to encrypt authentication JWT token. Run `openssl rand -base64 32` to generate." Type="Variable" Display="always" Required="true" Mask="true" />
     <Config Name="Authentication URL" Target="NEXTAUTH_URL" Default="http://192.168.1.1:8383" Description="IMPORTANT: Change to your server IP address and port, or domain if app is publicly exposed." Type="Variable" Display="always" Required="true" Mask="false" />

@@ -29,6 +29,6 @@
     <Requires>
         Hound expects a `config.json` file to be present in the "Config Data" directory. This file should contain the configuration for Hound. See example: https://github.com/hound-search/hound/blob/main/config-example.json
     </Requires>
-    <Config Name="Web UI Port" Target="6080" Default="6080" Mode="tcp" Description="Container Port: 6080" Type="Port" Display="always-hide" Required="true" Mask="false">6080</Config>
+    <Config Name="Web UI Port" Target="6080" Default="6080" Mode="tcp" Description="Container Port: 6080" Type="Port" Display="always-hide" Required="false" Mask="false">6080</Config>
     <Config Name="Config Data" Target="/data" Default="/mnt/user/appdata/hound/data" Mode="rw" Description="Config data for application" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/hound/data</Config>
 </Container>

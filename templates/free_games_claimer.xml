@@ -29,7 +29,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="6080" Default="6080" Mode="tcp" Description="Container Port: 6080" Type="Port" Display="always" Required="true" Mask="false">6080</Config>
+    <Config Name="Web UI Port" Target="6080" Default="6080" Mode="tcp" Description="Container Port: 6080" Type="Port" Display="always" Required="false" Mask="false">6080</Config>
     <Config Name="Default login - Email" Target="EMAIL" Default="" Description="The email address to use for logging in" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Default login - Password" Target="PASSWORD" Default="" Description="The password to use for logging in" Type="Variable" Display="always" Required="true" Mask="true"/>
     <Config Name="Epic Games Store - Email" Target="EG_EMAIL" Default="" Description="The email address to use for logging in to the Epic Games Store. Overrides default email." Type="Variable" Display="always" Required="false" Mask="false"/>

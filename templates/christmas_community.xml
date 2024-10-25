@@ -36,7 +36,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
     <Config Name="Enable Public Lists" Target="LISTS_PUBLIC" Default="false|true" Description="Allow viewing wishlists without logging in" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Enable Single List Mode" Target="SINGLE_LIST" Default="false|true" Description="Limit to only one list (only the admin account's list). Useful for weddings, birthdays, etc." Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Use Table Mode" Target="TABLE" Default="true|false" Description="true - Use table layout, false - use legacy card layout" Type="Variable" Display="always" Required="true" Mask="false"/>

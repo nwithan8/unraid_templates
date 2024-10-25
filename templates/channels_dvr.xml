@@ -25,7 +25,7 @@
         Container requires a subscription to Channels DVR. To log in, establish an SSH tunnel to the container (e.g. `ssh -L8089:localhost:8089 root@unraid_ip`) and visit http://localhost:8089 in your browser.
     </Requires>
     <Config Name="DVR Storage" Target="/shares/DVR" Default="" Mode="rw" Description="Path to DVR recordings storage" Type="Path" Display="always" Required="true" Mask="false"/>
-    <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Container Port: 8089" Type="Port" Display="always" Required="true" Mask="false">8089</Config>
+    <Config Name="WebUI" Target="8089" Default="8089" Mode="tcp" Description="Container Port: 8089" Type="Port" Display="always" Required="false" Mask="false">8089</Config>
     <Config Name="Config Path" Target="/channels-dvr" Default="/mnt/user/appdata/channels-dvr" Mode="rw" Description="Path to config storage" Type="Path" Dislay="advanced" Required="true" Mask="false">/mnt/user/appdata/channels-dvr</Config>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>

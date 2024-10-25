@@ -31,6 +31,6 @@
         [br]
         This is the Rekoni container for Huly. Other Huly containers are required to run the entire suite.
     </Requires>
-    <Config Name="App Port" Target="4004" Default="4004" Mode="tcp" Description="Allow other containers to access application" Type="Port" Display="always-hide" Required="true" Mask="false">4004</Config>
+    <Config Name="App Port" Target="4004" Default="4004" Mode="tcp" Description="Allow other containers to access application" Type="Port" Display="always-hide" Required="false" Mask="false">4004</Config>
     <Config Name="Secret Key" Target="SECRET" Default="" Description="Needs to match across all Huly containers. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
 </Container>

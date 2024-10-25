@@ -32,7 +32,7 @@
         [br]
         This is the frontend container for Huly. Other Huly containers are required to run the entire suite.
     </Requires>
-    <Config Name="App Port" Target="8080" Default="8080" Mode="tcp" Description="Access web interface" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="App Port" Target="8080" Default="8080" Mode="tcp" Description="Access web interface" Type="Port" Display="always-hide" Required="false" Mask="false">8080</Config>
     <Config Name="Secret Key" Target="SERVER_SECRET" Default="" Description="Needs to match across all Huly containers. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Accounts URL" Target="ACCOUNTS_URL" Default="http://localhost:3000" Description="URL for the accounts service (this container). Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
     <Config Name="Rekoni URL" Target="REKONI_URL" Default="http://localhost:4004" Description="URL for the Rekoni service. Replace with server IP address and correct port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:4004</Config>

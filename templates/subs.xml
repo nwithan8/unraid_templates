@@ -27,7 +27,7 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="false" Mask="false">3000</Config>
     <Config Name="Database Path" Target="/database" Default="/mnt/user/appdata/subs/database" Mode="rw" Description="Database directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/subs/database</Config>
     <Config Name="Database URL" Target="DATABASE_URL" Default="file:/database/db.sqlite" Description="Internal database URL" Type="Variable" Display="advanced-hide" Required="true" Mask="false">file:/database/db.sqlite</Config>
     <Config Name="Use KV Database" Target="NEXT_PUBLIC_USE_SQLITE" Default="false|true" Description="Use KV database instead of localStorage" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>

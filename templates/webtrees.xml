@@ -32,7 +32,7 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI" Target="80" Default="8079" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8079</Config>
+    <Config Name="WebUI" Target="80" Default="8079" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8079</Config>
     <Config Name="Database host" Target="DB_HOST" Default="localhost" Description="Database Hostname" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Database port" Target="DB_PORT" Default="3306" Description="Database Port" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Database user" Target="DB_USER" Default="" Description="Database Username" Type="Variable" Display="always" Required="true" Mask="false"/>

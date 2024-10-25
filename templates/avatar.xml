@@ -42,6 +42,6 @@
     <Requires>
         Expects a `default.json` file in the "Config Path": https://raw.githubusercontent.com/nwithan8/unraid_templates/master/ref/avatar/default.json
     </Requires>
-    <Config Name="Web UI Port" Target="9000" Default="9000" Mode="tcp" Description="Container Port: 9000" Type="Port" Display="always-hide" Required="true" Mask="false">9000</Config>
+    <Config Name="Web UI Port" Target="9000" Default="9000" Mode="tcp" Description="Container Port: 9000" Type="Port" Display="always-hide" Required="false" Mask="false">9000</Config>
     <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/avatar/config" Description="Path to store configuration files" Mode="rw" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/avatar/config</Config>
 </Container>

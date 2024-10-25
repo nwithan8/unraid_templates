@@ -24,5 +24,5 @@
 
         Initial release
     </Changes>
-    <Config Name="WebUI" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+    <Config Name="WebUI" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
 </Container>
