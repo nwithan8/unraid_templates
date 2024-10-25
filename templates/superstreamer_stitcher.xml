@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>Mixwave - Artisan</Name>
-    <Repository>mixwave/artisan:latest</Repository>
-    <Registry>https://hub.docker.com/r/mixwave/artisan</Registry>
+    <Name>Superstreamer - Stitcher</Name>
+    <Repository>superstreamerapp/stitcher:latest</Repository>
+    <Registry>https://hub.docker.com/r/superstreamerapp/stitcher</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
-    <Support>https://matvp91.github.io/mixwave/getting-started.html</Support>
-    <Project>https://matvp91.github.io/mixwave/</Project>
+    <Support>https://superstreamer.xyz/guide/getting-started</Support>
+    <Project>hhttps://superstreamer.xyz</Project>
     <Overview>
-        Mixwave is a self-hostable platform that aims to simplify the complexities of video delivery. Transcode and package your media for online streaming with simple API calls and sane defaults, or craft dynamic HLS playlists on the fly with bumpers, ads and filters.
+        Superstreamer is here to make video delivery simple. Imagine having everything you need in one platform — starting with your raw video, Superstreamer helps you transcode it, package it into HLS playlists, and upload it to S3 with ease. You can even create custom playlists for each viewer, adding bumpers, ads, or filters on the fly.
     </Overview>
     <Category>MediaApp:Music MediaApp:Video MediaServer:Music MediaServer:Video Cloud: Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>music video hosting transcode server streaming download playlists queue Stitcher ads advertisements sponsors</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mixwave-icon.png</Icon>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mixwave_artisan.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/superstreamer-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/superstreamer_stitcher.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
@@ -26,15 +26,14 @@
 
         Initial release
     </Changes>
-    <Requires>
-        This is the queue manager for the Mixin suite. It requires other Mixin containers to be running. &#xD;
-        [br]
-        This container requires a separate Redis database.
+     <Requires>
+        This is the Stitcher for the Superstreamer suite. It requires other Superstreamer containers to be running. &#xD;
     </Requires>
+    <Config Name="Application Port" Target="52002" Default="52002" Mode="tcp" Description="Port over which other containers will communicate with this container" Type="Port" Display="always-hide" Required="true" Mask="false">52002</Config>
     <Config Name="Redis - Host" Target="REDIS_HOST" Default="" Description="Hostname of the Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="Port of the Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
-    <Config Name="Public API Endpoint" Target="PUBLIC_API_ENDPOINT" Default="http://localhost:520001" Description="Publicly accessible URL for Mixin API container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52001</Config>
-    <Config Name="Public Stitcher Endpoint" Target="PUBLIC_STITCHER_ENDPOINT" Default="http://localhost:52002" Description="Publicly accessible URL for Mixin Stitcher container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52002</Config>
+    <Config Name="Public API Endpoint" Target="PUBLIC_API_ENDPOINT" Default="http://localhost:520001" Description="Publicly accessible URL for Superstreamer API container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52001</Config>
+    <Config Name="Public Stitcher Endpoint" Target="PUBLIC_STITCHER_ENDPOINT" Default="http://localhost:52002" Description="Publicly accessible URL for Superstreamer Stitcher container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52002</Config>
     <Config Name="Public AWS S3 Endpoint" Target="PUBLIC_S3_ENDPOINT" Default="" Description="Publicly accessible URL for S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="AWS S3 Endpoint" Target="S3_ENDPOINT" Default="" Description="URL for S3 storage bucket (minus bucket name) used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="AWS S3 Bucket" Target="S3_BUCKET" Default="" Description="Name of the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
