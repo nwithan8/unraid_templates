@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>release-bot</Name>
+    <Repository>ghcr.io/janisv/release-bot:latest</Repository>
+    <Registry>ghcr.io/janisv/release-bot</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/JanisV/release-bot/issues</Support>
+    <Project>https://github.com/JanisV/release-bot</Project>
+    <Overview>
+        A Telegram bot that monitors the releases of given repos, sending messages upon a new release.
+    </Overview>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>GitHub notifications Telegram social media communication bot automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/release-bot-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/release_bot.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-25
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires creating a Telegram bot and obtaining the token. See documentation: https://github.com/JanisV/release-bot?tab=readme-ov-file#set-the-necessary-env-vars
+    </Requires>
+    <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="Telegram Bot Token" Target="TELEGRAM_BOT_TOKEN" Default="" Description="Token for the Telegram bot" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Maximum repositories per chat" Target="MAX_REPOS_PER_CHAT" Default="0" Description="Maximum number of repositories a chat can monitor. 0 for unlimited" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="GitHub Token" Target="GITHUB_TOKEN" Default="" Description="Token for the GitHub API. If not provided, restricted by rate limiting" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Site URL" Target="SITE_URL" Default="" Description="URL of the site to listen for incoming requests from Telegram. If not provided, will use polling instead of webhooks" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Database URI" Target="DATABASE_URI" Default="" Description="URI for the database. If not provided, will use SQLite database" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/release_bot/data" Mode="rw" Description="Path to data (SQLite) storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/release_bot/data</Config>
+</Container>
