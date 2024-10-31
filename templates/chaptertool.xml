@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>chaptertool</Name>
+    <Repository>martintillmann/chaptertool-gui:latest</Repository>
+    <Registry>https://hub.docker.com/r/martintillmann/chaptertool-gui</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8989]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Mtillmann/chaptertool/issues</Support>
+    <Project>https://mtillmann.github.io/chaptertool/</Project>
+    <Overview>
+        Create and convert chapters for podcasts, youtube, matroska, mkvmerge/nero/vorbis, webvtt, ffmpeginfo, ffmetadata, pyscenedetect, apple chapters, edl, podlove simple chapters (xml, json), apple hls chapters and mp4chaps. &#xD;
+        [br]
+        Some features are not available in the web interface, but can be accessed via the command line interface: https://github.com/Mtillmann/chaptertool?tab=readme-ov-file#cli
+    </Overview>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>audio edit clip chapter format file podcast youtube matroska mkvmerge nero vorbis webvtt ffmpeginfo ffmetadata pyscenedetect apple edl podlove simple xml json hls mp4chaps</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/chaptertool-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/chaptertool.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-31
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8989" Default="8989" Mode="tcp" Description="Container Port: 8989" Type="Port" Display="always-hide" Required="true" Mask="false">8989</Config>
+</Container>
