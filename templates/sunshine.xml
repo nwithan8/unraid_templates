@@ -15,10 +15,6 @@
         <Tag>latest-ubuntu-24.04</Tag>
         <TagDescription>Latest stable release (Ubuntu 24.04)</TagDescription>
     </Branch>
-    <Branch>
-        <Tag>latest-fedora-40</Tag>
-        <TagDescription>Latest stable release (Fedora 40)</TagDescription>
-    </Branch>
     <Network>host</Network>
     <WebUI>http://[IP]:[PORT:47990]</WebUI>
     <Privileged>false</Privileged>
@@ -37,6 +33,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-10-31
+
+        Remove old Fedora tags
+
         ### 2024-10-30
 
         Initial release
