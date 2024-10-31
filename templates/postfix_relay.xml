@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>postfix-relay</Name>
+    <Repository>mwader/postfix-relay:latest</Repository>
+    <Registry>https://hub.docker.com/r/mwader/postfix-relay</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/wader/postfix-relay/issues</Support>
+    <Project>https://www.postfix.org/</Project>
+    <Overview>
+        A relay for sending email without using an external SMTP server. &#xD;
+        [br]
+        See all available configuration options: https://github.com/wader/postfix-relay#postfix-variables
+    </Overview>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>email Gmail Yahoo AOL SMTP IMAP POP3 server relay communication</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/postfix-relay-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/postfix_relay.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-30
+
+        Initial release
+    </Changes>
+    <Config Name="SMTP Port" Target="25" Default="25" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always-hide" Required="true" Mask="false">25</Config>
+    <Config Name="Hostname" Target="POSTFIX_myhostname" Default="" Description="Hostname for this SMTP server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="OpenDKIM Key Storage Path" Target="/etc/opendkim/keys" Default="/mnt/user/appdata/postfix_relay/opendkim_keys" Mode="rw" Description="Path to store OpenDKIM keys" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/postfix_relay/opendkim_keys</Config>
+</Container>
