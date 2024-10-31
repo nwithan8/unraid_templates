@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>PeerTube</Name>
+    <Repository>chocobozzz/peertube:production-bookworm</Repository>
+    <Registry>https://hub.docker.com/r/chocobozzz/peertube</Registry>
+    <Branch>
+        <Tag>production-bookworm</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop-bookworm</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4567]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.joinpeertube.org/</Support>
+    <Project>https://joinpeertube.org/</Project>
+    <Overview>
+        A free, decentralized and federated video platform developed as an alternative to other platforms such as YouTube, Dailymotion or Vimeo. &#xD;
+    </Overview>
+    <Category>MediaApp:Video MediaApp:Music MediaServer:Video MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>video streaming self-hosted decentralized federated YouTube Vimeo Dailymotion</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/peertube-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/peertube.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate Postgres, Redis and Postfix-Relay containers.
+    </Requires>
+    <Config Name="Live Feature Port" Target="1935" Default="1935" Mode="tcp" Description="Container Port: 1935" Type="Port" Display="always" Required="false" Mask="false">1935</Config>
+    <Config Name="Web UI Port" Target="9000" Default="9000" Mode="tcp" Description="Container Port: 9000" Type="Port" Display="always" Required="false" Mask="false">9000</Config>
+    <Config Name="Hostname" Target="PEERTUBE_WEBSERVER_HOSTNAME" Default="" Description="Hostname for this PeerTube server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Secret" Target="PEERTUBE_SECRET" Default="" Description="Secret for this PeerTube server. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Host" Target="PEERTUBE_DB_HOSTNAME" Default="" Description="IP address or hostname of Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Port" Target="PEERTUBE_DB_PORT" Default="5432" Description="Port of Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Database" Target="PEERTUBE_DB_NAME" Default="peertube" Description="Name of Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - User" Target="PEERTUBE_DB_USERNAME" Default="peertube" Description="Username for Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Password" Target="PEERTUBE_DB_PASSWORD" Default="" Description="Password for Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Enable SSL" Target="PEERTUBE_DB_SSL" Default="false|true" Description="Enable SSL for Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis - Host" Target="PEERTUBE_REDIS_HOSTNAME" Default="" Description="IP address or hostname of Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis - Port" Target="PEERTUBE_REDIS_PORT" Default="6379" Description="Port of Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postfix-Relay - Host" Target="PEERTUBE_SMTP_HOSTNAME" Default="" Description="IP address or hostname of Postfix-Relay server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postfix-Relay - Port" Target="PEERTUBE_SMTP_PORT" Default="25" Description="Port of Postfix-Relay server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postfix-Relay - From Address" Target="PEERTUBE_SMTP_FROM" Default="" Description="Email address to send from" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postfix-Relay - TLS" Target="PEERTUBE_SMTP_TLS" Default="false|true" Description="Enable TLS for Postfix-Relay server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postfix-Relay - Disable STARTTLS" Target="PEERTUBE_SMTP_DISABLE_STARTTLS" Default="false|true" Description="Disable STARTTLS for Postfix-Relay server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postfix-Relay - Admin Email" Target="PEERTUBE_ADMIN_EMAIL" Default="" Description="Email address for admin" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/peertube/data" Mode="rw" Description="Path to data storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/peertube/data</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/peertube/config" Mode="rw" Description="Path to config storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/peertube/config</Config>
+    <Config Name="Webserver - Port" Target="PEERTUBE_WEBSERVER_PORT" Default="9000" Mode="tcp" Description="Webserver Port" Type="Variable" Display="advanced-hide" Required="true" Mask="false">9000</Config>
+    <Config Name="Webserver - Enable HTTPS" Target="PEERTUBE_WEBSERVER_HTTPS" Default="false|true" Description="Enable HTTPS for webserver" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Webserver - Trust Proxy" Target="PEERTUBE_TRUST_PROXY" Default="['127.0.0.1', 'loopback']" Description="Trust proxy for webserver" Type="Variable" Display="advanced-hide" Required="true" Mask="false">['127.0.0.1', 'loopback']</Config>
+</Container>
