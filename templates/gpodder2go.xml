@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>gpodder2go</Name>
+    <Repository>ghcr.io/oxtyped/gpodder2go:latest</Repository>
+    <Registry>ghcr.io/oxtyped/gpodder2go</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/oxtyped/gpodder2go/issues</Support>
+    <Project>https://github.com/oxtyped/gpodder2go</Project>
+    <Overview>
+        gpodder2go is a simple self-hosted, golang, drop-in replacement for gpodder/mygpo server to handle podcast subscriptions management for gpodder clients. &#xD;
+        [br]
+        Enter the console of the container to run commands like `/gpodder2go --help` to see available commands.
+    </Overview>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>podcasts AntennaPod PodFetch PodGrab gPodder server Plex audio stream download client manager sync Castopod oPodSync</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/gpodder2go-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/gpodder2go.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-30
+
+        Initial release
+    </Changes>
+    <Config Name="Server Port" Target="3005" Default="3005" Mode="tcp" Description="Container Port: 3005" Type="Port" Display="always-hide" Required="true" Mask="false">3005</Config>
+    <Config Name="Skip Authentication" Target="NO_AUTH" Default="false|true" Description="Skip authentication" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Verifier Secret Key" Target="VERIFIER_SECRET_KEY" Default="" Description="Secret key for verifying requests" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/gpodder2go/data" Mode="rw" Description="Path to data storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/gpodder2go/data</Config>
+</Container>
