@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Sunshine</Name>
+    <Repository>lizardbyte/sunshine:latest</Repository>
+    <Registry>https://hub.docker.com/r/lizardbyte/sunshine</Registry>
+    <Branch>
+        <Tag>latest-debian-bookworm</Tag>
+        <TagDescription>Latest stable release (Debian Bookworm)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-archlinux</Tag>
+        <TagDescription>Latest stable release (Arch Linux)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-ubuntu-24.04</Tag>
+        <TagDescription>Latest stable release (Ubuntu 24.04)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-fedora-40</Tag>
+        <TagDescription>Latest stable release (Fedora 40)</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <WebUI>http://[IP]:[PORT:47990]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.lizardbyte.dev/projects/sunshine/en/latest/index.html</Support>
+    <Project>https://app.lizardbyte.dev/Sunshine/</Project>
+    <Overview>
+        A self-hosted game stream host for Moonlight. You can connect to Sunshine from any Moonlight client on a variety of devices. &#xD;
+        [br]
+        See documentation for further configuration: https://docs.lizardbyte.dev/projects/sunshine/en/latest/about/docker.html
+    </Overview>
+    <Category>Cloud: GameServers: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>game server Nvidia AMD Intel Steam Epic Moonlight client</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/sunshine-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/sunshine.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-10-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Explanation of different tags: https://github.com/orgs/LizardByte/discussions/544#discussioncomment-11106837
+    </Requires>
+    <Config Name="Server Port" Target="48010" Default="48010" Mode="" Description="Server Port" Type="Port" Display="always-hide" Required="true" Mask="false">48010</Config>
+    <Config Name="TCP Ports" Target="47984-47990" Default="47984-47990" Mode="tcp" Description="TCP ports for client traffic" Type="Port" Display="always-hide" Required="true" Mask="false">47984-47990</Config>
+    <Config Name="UDP Ports" Target="47998-48000" Default="47998-48000" Mode="udp" Description="UDP ports for client traffic" Type="Port" Display="always-hide" Required="true" Mask="false">47998-48000</Config>
+
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/sunshine/config" Mode="rw" Description="Path to config storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/sunshine/config</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">099</Config>
+</Container>
