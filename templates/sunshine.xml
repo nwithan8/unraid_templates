@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Sunshine</Name>
-    <Repository>lizardbyte/sunshine:latest</Repository>
+    <Repository>lizardbyte/sunshine:latest-debian-bookworm</Repository>
     <Registry>https://hub.docker.com/r/lizardbyte/sunshine</Registry>
     <Branch>
         <Tag>latest-debian-bookworm</Tag>
