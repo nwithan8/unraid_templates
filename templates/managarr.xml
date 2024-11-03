@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Managarr</Name>
+    <Repository>darkalex17/managarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/darkalex17/managarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Dark-Alex-17/managarr/issues</Support>
+    <Project>https://github.com/Dark-Alex-17/managarr</Project>
+    <Overview>
+        A TUI and CLI to help you manage your HTPC and -Arrs setup. &#xD;
+        [br]
+        This is a command-line tool, designed to be used in a terminal. It does not have a web interface. Enter the container console to use it: https://github.com/Dark-Alex-17/managarr?tab=readme-ov-file#the-managarr-cli
+    </Overview>
+    <Category>MediaApp:Video MediaApp:Music MediaServer:Video MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Radarr Sonarr Lidarr Readarr Prowlarr Whisparr Bazarr Tautulli Plex server manager tool media music video audio movie tv show series files porn xxx</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/managarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/managarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-02
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yml` file in the Config File Path folder: https://github.com/Dark-Alex-17/managarr?tab=readme-ov-file#example-configuration
+    </Requires>
+    <Config Name="Config File Path" Target="/root/.config/managarr" Default="/mnt/user/appdata/managarr/config" Mode="rw" Description="Path to the folder containing the config file" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/managarr/config</Config>
+</Container>
