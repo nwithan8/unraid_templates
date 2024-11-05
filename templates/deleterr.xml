@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Deleterr</Name>
+    <Repository>rfsbraz/deleterr:latest</Repository>
+    <Registry>https://github.com/rfsbraz/deleterr/pkgs/container/deleterr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>nightly</Tag>
+        <TagDescription>Latest nightly release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/rfsbraz/deleterr/issues</Support>
+    <Project>https://github.com/rfsbraz/deleterr</Project>
+    <Overview>
+        Deleterr uses Radarr, Sonarr, and Tautulli to identify and delete media files based on user-specified criteria. Deleterr is customizable, allowing you to specify metadata based rules for different libraries and Sonarr/Radarr instances. &#xD;
+        [br]
+        Setup Deleterr to run on a schedule and it will automatically delete media files that meet your criteria. This allows to keep your library fresh and clean, without having to manually manage it to free up space.
+    </Overview>
+    <Category>MediaApp:Video MediaApp:Music MediaServer:Video MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Radarr Sonarr Lidarr Tautili Plex media manager tool media video audio movie tv show series files delete clean space</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/deleterr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/deleterr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-05
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `settings.yaml` file in the Config File Path folder: https://github.com/rfsbraz/deleterr?tab=readme-ov-file#configuration
+    </Requires>
+    <Config Name="Config File Path" Target="/config" Default="/mnt/user/appdata/deleterr/config" Mode="rw" Description="Path to the folder containing the config file" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/deleterr/config</Config>
+    <Config Name="Log Files Path" Target="/config/logs" Default="/mnt/user/appdata/deleterr/logs" Mode="rw" Description="Path to the folder containing the log files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/deleterr/logs</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|DEBUG|ERROR" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
