@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Lumunarr</Name>
+    <Repository>chadwpalm/lumunarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/chadwpalm/lumunarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <WebUI>http://[IP]:[PORT:3939]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/chadwpalm/Lumunarr/wiki</Support>
+    <Project>https://github.com/chadwpalm/Lumunarr</Project>
+    <Overview>
+        A connector application for controlling Philips Hue lighting using Plex webhooks. Actions like play, pause, stop, and resume will trigger lighting scenes through a Hue bridge.
+    </Overview>
+    <Category>HomeAutomation: MediaApp:Video MediaServer:Video MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Plex webhooks playback control lighting scenes Philips Hue bridge Home Assistant</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/lumunarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/lumunarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-05
+
+        Initial release
+    </Changes>
+    <Requires>
+        Running in host network mode allows Lumunarr to discover Philips Hue bridges on the local network via mDNS. Using bridge mode will require pulling the bridge IP from Hue Cloud.
+    </Requires>
+    <Config Name="Application Port" Target="3939" Default="3939" Mode="tcp" Description="Container Port: 3939" Type="Port" Display="always-hide" Required="true" Mask="false">3939</Config>
+    <Config Name="Config File Path" Target="/config" Default="/mnt/user/appdata/lumunarr/config" Mode="rw" Description="Path to application config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lumunarr/config</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
