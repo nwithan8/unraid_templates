@@ -1,21 +1,25 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Scriberr</Name>
-    <Repository>ghcr.io/rishikanthc/scriberr:beta</Repository>
+    <Repository>ghcr.io/rishikanthc/scriberr:latest</Repository>
     <Registry>ghcr.io/rishikanthc/scriberr</Registry>
     <Branch>
-        <Tag>beta</Tag>
-        <TagDescription>Latest beta release</TagDescription>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>nightly</Tag>
+        <TagDescription>Latest nightly release</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3000]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/rishikanthc/Scriberr/issues</Support>
-    <Project>https://github.com/rishikanthc/Scriberr</Project>
+    <Project>https://scriberr.app/</Project>
     <Overview>
         A self-hostable AI audio transcription and summarization tool.
     </Overview>
-    <Beta>True</Beta>
+    <Beta>False</Beta>
     <Category>AI: MediaApp:Music MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>transcribe AI llama Ollama OpenAI LocalAI summary record audio speak dialogue talk</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/scriberr-icon.png</Icon>
@@ -24,24 +28,36 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-11-06
+
+        Add missing variables to template
+
         ### 2024-10-05
 
         Initial release
     </Changes>
     <Requires>
-        Requires a separate Redis container. &#xD;
+        Requires separate Redis and Pocketbase containers. &#xD;
         [br]
         On first load, app will throw a 500 error due to missing database. Simply reload the page.
     </Requires>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="Database UI Port" Target="8080" Default="8080" Mode="tcp" Description="Expose database UI (optional)" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
     <Config Name="JobQueue UI Port" Target="9243" Default="9243" Mode="tcp" Description="Expose job queue UI (optional)" Type="Port" Display="always" Required="false" Mask="false">9243</Config>
-    <Config Name="OpenAI API Key" Target="OPENAI_API_KEY" Default="" Description="OpenAI API key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Admin Email Address" Target="POCKETBASE_ADMIN_EMAIL" Default="" Description="Email address of the admin user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Admin Password" Target="POCKETBASE_ADMIN_PASSWORD" Default="" Description="Password of the admin user" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Redis Host" Target="REDIS_HOST" Default="127.0.0.1" Description="Hostname of the Redis container" Type="Variable" Display="always-hide" Required="true" Mask="false">172.0.0.1</Config>
-    <Config Name="Redis Port" Target="REDIS_PORT" Default="6379" Description="Port of the Redis container" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="OpenAI - API Key" Target="OPENAI_API_KEY" Default="" Description="OpenAI API key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="OpenAI - Endpoint" Target="OPENAI_ENDPOINT" Default="http://ollama:11434/v1" Description="OpenAI (or Ollama-compatible) API endpoint" Type="Variable" Display="always-hide" Required="true" Mask="false">http://ollama:11434/v1</Config>
+    <Config Name="OpenAI - Model" Target="OPENAI_MODEL" Default="llama3.2" Description="AI model to use. Make sure this matches the model in the Ollama container." Type="Variable" Display="always-hide" Required="true" Mask="false">llama3.2</Config>
+    <Config Name="OpenAI - User" Target="OPENAI_ROLE" Default="user" Description="Role to use with OpenAI" Type="Variable" Display="always-hide" Required="true" Mask="false">user</Config>
+    <Config Name="Pocketbase - URL" Target="POCKETBASE_URL" Default="http://localhost:3000" Description="URL of the Pocketbase container" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Pocketbase - Email Address" Target="POCKETBASE_ADMIN_EMAIL" Default="" Description="Email address of the admin user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Pocketbase - Password" Target="POCKETBASE_ADMIN_PASSWORD" Default="" Description="Password of the admin user" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Redis - Host" Target="REDIS_HOST" Default="127.0.0.1" Description="Hostname of the Redis container" Type="Variable" Display="always-hide" Required="true" Mask="false">172.0.0.1</Config>
+    <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="Port of the Redis container" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Use Nvidia GPU" Target="NVIDIA" Default="false|true" Description="Use Nvidia GPU for AI processing" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Concurrency" Target="CONCURRENCY" Default="1" Description="Number of concurrent jobs to run" Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
     <Config Name="Database Path" Target="/app/db" Default="/mnt/user/appdata/scriberr/db" Mode="rw" Description="Database path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/scriberr/db</Config>
     <Config Name="Config Path" Target="/scriberr" Default="/mnt/user/appdata/scriberr/config" Mode="rw" Description="Config path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/scriberr/config</Config>
+    <Config Name="Models Path" Target="/scriberr/models" Default="/mnt/user/appdata/scriberr/models" Mode="rw" Description="Models path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/scriberr/models</Config>
     <Config Name="Internal Config Path" Target="SCRIBO_FILES" Default="/scriberr" Mode="rw" Description="Internal config path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/scriberr</Config>
+    <Config Name="Dev Mode" Target="DEV_MODE" Default="false|true" Description="Enable development mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
