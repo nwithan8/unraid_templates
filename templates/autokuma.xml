@@ -51,5 +51,5 @@
     <Config Name="Uptime Kuma call timeout" Target="AUTOKUMA__KUMA__CALL_TIMEOUT" Default="5" Description="TThe timeout for executing calls to the Uptime Kuma server, in seconds" Type="Variable" Display="advanced" Required="false" Mask="false"/>
     <Config Name="Static monitor configuration paths" Target="AUTOKUMA__STATIC_MONITORS" Default="/static_monitors" Description="Path to the directory inside the container containing static monitor configurations" Type="Variable" Display="advanced-hide" Required="true" Mask="false" />
     <Config Name="AutoKuma static monitor configurations" Target="/static_monitors" Default="/mnt/user/appdata/autokuma/static_monitors" Mode="rw" Description="Path to the directory containing static monitor configurations" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/autokuma/static_monitors</Config>
-    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
 </Container>

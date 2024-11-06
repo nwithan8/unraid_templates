@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Ofelia</Name>
+    <Repository>mcuadros/ofelia:latest</Repository>
+    <Registry>https://hub.docker.com/r/mcuadros/ofelia</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/mcuadros/ofelia/issues</Support>
+    <Project>https://github.com/mcuadros/ofelia</Project>
+    <Overview>
+        Ofelia is a modern and low footprint job scheduler for docker environments, built on Go. &#xD;
+        [br]
+        This runs tasks on a schedule, either inside this container or inside other containers via Labels on those containers. See documentation: https://github.com/mcuadros/ofelia?tab=readme-ov-file#docker-labels-configurations
+    </Overview>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>job scheduler cron docker labels</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ofelia-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ofelia.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-06
+
+        Initial release
+    </Changes>
+    <Requires>
+        This container utilizes the Docker socket to manage other containers via Labels on those containers. See documentation: https://github.com/mcuadros/ofelia?tab=readme-ov-file#docker-labels-configurations
+    </Requires>
+    <PostArgs>daemon --docker</PostArgs>
+    <Config Name="Command" Target="ofelia.job-local.date-log.command" Default="date" Description="Command to run inside this container on a schedule. This is used as an example and not recommended to change." Type="Label" Display="always" Required="true" Mask="false">date</Config>
+    <Config Name="Schedule" Target="ofelia.job-local.date-log.schedule" Default="@every 5s" Description="Schedule to run the command. This is used as an example and not recommended to change." Type="Label" Display="always" Required="true" Mask="false">@every 5s</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
