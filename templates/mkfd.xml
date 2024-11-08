@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>mkfd</Name>
+    <Repository>tbosk/mkfd:latest</Repository>
+    <Registry>https://hub.docker.com/r/tbosk/mkfd</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/TBosak/mkfd/issues</Support>
+    <Project>https://github.com/TBosak/mkfd</Project>
+    <Overview>
+        RSS feed builder created with Bun and Hono.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>RSS feed Bun Hono server web links server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mkfd-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mkfd.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-08
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="Passkey" Target="PASSKEY" Default="" Description="" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Cookie Secret" Target="COOKIE_SECRET" Default="" Description="" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Data Path" Target="/public/feeds" Default="/mnt/user/appdata/mkfd/feeds" Mode="rw" Description="Data path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/mkfd/feeds</Config>
+</Container>
