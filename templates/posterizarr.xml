@@ -23,6 +23,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-11-08
+
+        Use Unraid-default PUID and PGID
+        
         ### 2024-08-25
 
         Use Unraid-default PUID and PGID
@@ -46,4 +50,6 @@
     <Config Name="TERM" Target="TERM" Default="xterm" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">xterm</Config>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/posterizarr" Mode="rw" Description="Storage for config files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr</Config>
     <Config Name="Asset Path" Target="/assets" Default="/mnt/user/appdata/posterizarr/assets" Mode="rw" Description="Storage for assets" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr/assets</Config>
+    <Config Name="Manual Asset Path" Target="/manualassets" Default="/mnt/user/appdata/posterizarr/manualassets" Mode="rw" Description="Storage for manual assets" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr/manualassets</Config>
+    <Config Name="Backup Path" Target="/assetsbackup" Default="/mnt/user/appdata/posterizarr/assetsbackup" Mode="rw" Description="Storage for asset backups" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr/assetsbackup</Config>
 </Container>
