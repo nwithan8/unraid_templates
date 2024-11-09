@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>NGINX + PHP-FPM</Name>
+    <Repository>richarvey/nginx-php-fpm:latest</Repository>
+    <Registry>https://hub.docker.com/r/richarvey/nginx-php-fpm</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/alexwilczewski/docker-sabredav/issues</Support>
+    <Project>https://github.com/alexwilczewski/docker-sabredav</Project>
+    <Overview>
+        Nginx + PHP-FPM capable of pulling application code from git.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Web Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>nginx php-fpm webserver git website</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/nginx-php-fpm-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/nginx_php_fpm.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-09
+
+        Initial release
+    </Changes>
+    <Config Name="HTTP Port" Target="80" Default="1080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">1080</Config>
+    <Config Name="HTTPS Port" Target="443" Default="1443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always-hide" Required="true" Mask="false">1443</Config>
+    <Config Name="Git - Email" Target="GIT_EMAIL" Default="" Description="Git email" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Git - Name" Target="GIT_NAME" Default="" Description="Git name" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Git - Username" Target="GIT_USERNAME" Default="" Description="Git username" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Git - Repository" Target="GIT_REPO" Default="" Description="Git repository" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Git - Personal Token" Target="GIT_PERSONAL_TOKEN" Default="" Description="Git personal token" Type="Variable" Display="always" Required="false" Mask="true"/>
+</Container>
