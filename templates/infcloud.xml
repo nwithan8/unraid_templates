@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Infcloud</Name>
+    <Repository>ckulka/infcloud:latest</Repository>
+    <Registry>https://hub.docker.com/r/ckulka/infcloud</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>experimental</Tag>
+        <TagDescription>Latest experimental release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ckulka/infcloud-docker/issues</Support>
+    <Project>https://inf-it.com/open-source/clients/infcloud</Project>
+    <Overview>
+        An open-source CalDAV/CardDAV web client implementation.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>calendar contacts caldav carddav web client PHP</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/infcloud-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/infcloud.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-09
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a separate PHP server to be running on the host machine with the same "PHP Path" as the container. &#xD;
+        [br]
+        Expects a `config.js` file at the "Config File" path before starting the container.
+    </Requires>
+    <Config Name="Web UI Port" Target="80" Default="1080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">1080</Config>
+    <Config Name="Config File" Target="/usr/share/nginx/infcloud/config.js" Default="/mnt/user/appdata/infcloud/config.js" Mode="ro" Description="Config file path" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/infcloud/config.js</Config>
+    <Config Name="PHP Path" Target="/usr/share/nginx/infcloud" Default="/mnt/user/appdata/infcloud/php" Mode="rw" Description="Data path" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/infcloud/php</Config>
+</Container>
