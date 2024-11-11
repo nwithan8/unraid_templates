@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>MedAssist</Name>
+    <Repository>ghcr.io/njic/medassist:latest</Repository>
+    <Registry>ghcr.io/njic/medassist</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3111]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/njic/medassist/issues</Support>
+    <Project>https://github.com/njic/medassist</Project>
+    <Overview>
+        A simple application to makes it easy to keep track of medication inventory and reorder on time by sending reminders.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>medication inventory reorder reminders medicine reminders assistance health care</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/medassist-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/medassist.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-11
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3111" Default="3111" Mode="tcp" Description="Container Port: 3111" Type="Port" Display="always-hide" Required="true" Mask="false">3111</Config>
+    <Config Name="Database Path" Target="/app/medassist" Default="/mnt/user/appdata/medassist/database" Mode="rw" Description="Data path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/medassist/database</Config>
+</Container>
