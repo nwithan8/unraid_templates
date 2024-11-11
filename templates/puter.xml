@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Puter</Name>
+    <Repository>ghcr.io/heyputer/puter:latest</Repository>
+    <Registry>ghcr.io/heyputer/puter</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4100]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.puter.com/</Support>
+    <Project>https://puter.com</Project>
+    <Overview>
+        An advanced, open-source internet operating system designed to be feature-rich, exceptionally fast, and highly extensible.
+    </Overview>
+    <Beta>True</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>puter internet operating system advanced open-source feature-rich fast extensible privacy cloud personal development web</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/puter-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/puter.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-11
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="4100" Default="4100" Mode="tcp" Description="Container Port: 4100" Type="Port" Display="always-hide" Required="true" Mask="false">4100</Config>
+    <Config Name="Config Path" Target="/etc/puter" Default="/mnt/user/appdata/puter/config" Mode="rw" Description="Config path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/puter/config</Config>
+    <Config Name="Data Path" Target="/var/puter" Default="/mnt/user/appdata/puter/data" Mode="rw" Description="Data path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/puter/data</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+</Container>
