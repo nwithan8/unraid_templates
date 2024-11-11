@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>CodeChef</Name>
+    <Repository>ghcr.io/ipdotsetaf/codechef:latest</Repository>
+    <Registry>ghcr.io/ipdotsetaf/codechef</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4200]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ipdotsetaf/codechef/issues</Support>
+    <Project>https://codechef.ipdotsetaf.ir/</Project>
+    <Overview>
+        A developer tool for converting different languages repetitive codes to another language.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>code chef .NET TypeScript JavaScript JSON XML HTML TOML YAML converter</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/codechef-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/codechef.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-10
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="4200" Default="4200" Mode="tcp" Description="Container Port: 4200" Type="Port" Display="always-hide" Required="true" Mask="false">4200</Config>
+    <Config Name="Proxy Port" Target="50505" Default="50505" Mode="tcp" Description="Proxy Port" Type="Port" Display="always-hide" Required="true" Mask="false">50505</Config>
+    <Config Name="Allowed Origin" Target="ALLOWED_ORIGIN" Default="http://localhost:4200" Description="Allowed Origin" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://localhost:4200</Config>
+</Container>
