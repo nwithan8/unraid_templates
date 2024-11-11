@@ -12,7 +12,7 @@
         <TagDescription>Latest development release</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:4567]/</WebUI>
+    <WebUI>http://[IP]:[PORT:9000]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://docs.joinpeertube.org/</Support>
     <Project>https://joinpeertube.org/</Project>
