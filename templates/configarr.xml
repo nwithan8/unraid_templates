@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Configarr</Name>
+    <Repository>ghcr.io/raydak-labs/configarr:latest</Repository>
+    <Registry>ghcr.io/raydak-labs/configarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://configarr.raydak.de/docs/intro</Support>
+    <Project>https://configarr.raydak.de/</Project>
+    <Overview>
+        A powerful configuration and synchronization tool designed specifically for Sonarr v4 and Radarr v5. It streamlines the process of managing custom formats and quality profiles by automatically synchronizing settings from TRaSH Guides while supporting additional customizations.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>configuration synchronization Sonarr Radarr Recyclarr Notifiarr Profilarr custom formats quality profiles TRaSH Guides</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/configarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/configarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-13
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yml` and `secrets.yml` file in the "Config Path" path. See documentation: https://configarr.raydak.de/docs/configuration/config-file
+    </Requires>
+    <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/configarr/config" Mode="rw" Description="Config path, stores config.yml and secrets.yml" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/configarr/config</Config>
+    <Config Name="Repos Cache Path" Target="/app/repos" Default="/mnt/user/appdata/configarr/repos" Mode="rw" Description="Repos cache path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/configarr/repos</Config>
+    <Config Name="Custom Formats Path" Target="/app/cfs" Default="/mnt/user/appdata/configarr/cfs" Mode="rw" Description="Custom formats path, optional" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/configarr/cfs</Config>
+    <Config Name="Templates Path" Target="/app/templates" Default="/mnt/user/appdata/configarr/templates" Mode="rw" Description="Templates path, optional" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/configarr/templates</Config>
+</Container>
