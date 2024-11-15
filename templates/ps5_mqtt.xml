@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>PS5 MQTT</Name>
+    <Repository>ghcr.io/funkeyflo/ps5-mqtt/amd64:latest</Repository>
+    <Registry>https://github.com/FunkeyFlo/ps5-mqtt/pkgs/container/ps5-mqtt%2Famd64</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>edge</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <WebUI>http://[IP]:[PORT:8645]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/FunkeyFlo/ps5-mqtt/wiki</Support>
+    <Project>https://github.com/FunkeyFlo/ps5-mqtt</Project>
+    <Overview>
+        Integrate your Sony Playstation 5 devices with Home Assistant using MQTT.
+    </Overview>
+    <Category>HomeAutomation: MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>PS5 MQTT Home Assistant PlayStation Sony automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ps5-mqtt-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ps5_mqtt.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-15
+
+        Initial release
+    </Changes>
+    <Requires>
+        This template assumes the AMD64 architecture. If you are using a different architecture, please adjust the repository URL accordingly: https://github.com/FunkeyFlo?tab=packages&amp;repo_name=ps5-mqtt
+    </Requires>
+    <PostArgs>sh /app/run-standalone.sh</PostArgs>
+
+    <Config Name="Application Port" Target="8645" Default="8645" Mode="tcp" Description="Container Port: 8645" Type="Port" Display="always-hide" Required="true" Mask="false">8645</Config>
+    <Config Name="MQTT - Host" Target="MQTT_HOST" Default="0.0.0.0" Description="MQTT Host" Type="Variable" Display="always-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="MQTT - Port" Target="MQTT_PORT" Default="1883" Description="MQTT Port" Type="Variable" Display="always-hide" Required="true" Mask="false">1883</Config>
+    <Config Name="MQTT - Username" Target="MQTT_USERNAME" Default="" Description="MQTT Username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="MQTT - Password" Target="MQTT_PASSWORD" Default="" Description="MQTT Password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="MQTT - Discovery Topic" Target="DISCOVERY_TOPIC" Default="homeassistant" Description="MQTT Topic. Default for Home Assistant is 'homeassistant'" Type="Variable" Display="always" Required="false" Mask="false">homeassistant</Config>
+    <Config Name="Interval - Device Check" Target="DEVICE_CHECK_INTERVAL" Default="5000" Description="Interval in ms to check for new devices" Type="Variable" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="Interval - Device Discovery" Target="DEVICE_DISCOVERY_INTERVAL" Default="60000" Description="Interval in ms to discover new devices" Type="Variable" Display="always-hide" Required="true" Mask="false">60000</Config>
+    <Config Name="Interval - Account Check" Target="ACCOUNT_CHECK_INTERVAL" Default="5000" Description="Interval in ms to check for new accounts" Type="Variable" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="PlayStation Network Accounts" Target="PSN_ACCOUNTS" Default="" Description='JSON array of PSN accounts to monitor. Example: [{"username": "MyPsnUser", "npsso":"npsso_value"}] Delete if not used.' Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Include PS4 Devices" Target="INCLUDE_PS4_DEVICES" Default="false|true" Description="Include PS4 devices in discovery" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config File Path" Target="/config" Default="/mnt/user/appdata/ps5_mqtt/config" Mode="rw" Description="Path to application config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ps5_mqtt/config</Config>
+    <Config Name="Internal Port" Target="FRONTEND_PORT" Default="8645" Description="Internal port for web interface" Type="Variable" Display="advanced-hide" Required="true" Mask="false">8645</Config>
+    <Config Name="Internal Credential Storage Path" Target="CREDENTIALS_STORAGE_PATH" Default="/config/credentials.json" Description="Path to store credentials" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config/credentials.json</Config>
+    <Config Name="Debug Topic" Target="DEBUG" Default="@ha:ps5:*" Description="Debug topic for logging" Type="Variable" Display="advanced-hide" Required="true" Mask="false">@ha:ps5:*</Config>
+</Container>
