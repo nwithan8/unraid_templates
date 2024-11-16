@@ -23,12 +23,17 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-11-16
+
+        Fix config file mapping
+
         ### 2024-11-11
 
         Initial release
     </Changes>
     <Requires>
-        Expects a `.env` file in the "Config Data" path. See documentation: https://github.com/idio-sync/romm-comm?tab=readme-ov-file#configuration
+        Expects a `.env` file at the "Config File" path before starting. See documentation: https://github.com/idio-sync/romm-comm?tab=readme-ov-file#configuration
     </Requires>
-    <Config Name="Config Path" Target="/app/data" Default="/mnt/user/appdata/romm_comm/config" Mode="rw" Description="Config path, where a .env file is present" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/romm_comm/config</Config>
+    <Config Name="Config File" Target="/app/.env" Default="/mnt/user/appdata/romm_comm/.env" Mode="rw" Description="A .env config file" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/romm_comm/.env</Config>
+    <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/romm_comm/data" Mode="rw" Description="Data path, where app data is stored" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/romm_comm/data</Config>
 </Container>
