@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>monitarr</Name>
+    <Repository>ghcr.io/nickshanks347/monitarr:latest</Repository>
+    <Registry>ghcr.io/nickshanks347/monitarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/nickshanks347/monitarr/issues</Support>
+    <Project>https://github.com/nickshanks347/monitarr</Project>
+    <Overview>
+        A very simple tool to monitor downloads from Sonarr and Radarr.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>monitor Sonarr Radarr Lidarr Plex</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/monitarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/monitarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires separate Sonarr and Radarr instances.
+    </Requires>
+    <Changes>
+        ### 2024-11-17
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Sonarr - URL" Target="SONARR_URL" Default="http://sonarr:8989" Description="URL to Sonarr" Type="String" Display="always" Required="false" Mask="false"/>
+    <Config Name="Sonarr - API Key" Target="SONARR_API_KEY" Default="" Description="API Key for Sonarr" Type="String" Display="always" Required="false" Mask="true"/>
+    <Config Name="Radarr - URL" Target="RADARR_URL" Default="http://radarr:7878" Description="URL to Radarr" Type="String" Display="always" Required="false" Mask="false"/>
+    <Config Name="Radarr - API Key" Target="RADARR_API_KEY" Default="" Description="API Key for Radarr" Type="String" Display="always" Required="false" Mask="true"/>
+</Container>
