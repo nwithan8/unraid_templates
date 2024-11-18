@@ -27,13 +27,17 @@
         Requires separate Sonarr and Radarr instances.
     </Requires>
     <Changes>
+        ### 2024-11-18
+
+        Fix Type for variables
+
         ### 2024-11-17
 
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
-    <Config Name="Sonarr - URL" Target="SONARR_URL" Default="http://sonarr:8989" Description="URL to Sonarr" Type="String" Display="always" Required="false" Mask="false"/>
-    <Config Name="Sonarr - API Key" Target="SONARR_API_KEY" Default="" Description="API Key for Sonarr" Type="String" Display="always" Required="false" Mask="true"/>
-    <Config Name="Radarr - URL" Target="RADARR_URL" Default="http://radarr:7878" Description="URL to Radarr" Type="String" Display="always" Required="false" Mask="false"/>
-    <Config Name="Radarr - API Key" Target="RADARR_API_KEY" Default="" Description="API Key for Radarr" Type="String" Display="always" Required="false" Mask="true"/>
+    <Config Name="Sonarr - URL" Target="SONARR_URL" Default="http://sonarr:8989" Description="URL to Sonarr" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Sonarr - API Key" Target="SONARR_API_KEY" Default="" Description="API Key for Sonarr" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Radarr - URL" Target="RADARR_URL" Default="http://radarr:7878" Description="URL to Radarr" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Radarr - API Key" Target="RADARR_API_KEY" Default="" Description="API Key for Radarr" Type="Variable" Display="always" Required="false" Mask="true"/>
 </Container>
