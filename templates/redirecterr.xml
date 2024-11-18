@@ -31,7 +31,7 @@
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="8481" Default="8481" Mode="tcp" Description="Container Port: 8481" Type="Port" Display="always-hide" Required="true" Mask="false">8481</Config>
-    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|debug|warn|error" Description="Log level" Type="String" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|debug|warn|error" Description="Log level" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
 
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/redirecterr/config" Description="Path to configuration data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/redirecterr/config</Config>
     <Config Name="Logs Path" Target="/logs" Default="/mnt/user/appdata/redirecterr/logs" Description="Path to log files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/redirecterr/logs</Config>
