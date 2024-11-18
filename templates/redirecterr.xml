@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Redirecterr</Name>
+    <Repository>varthe/redirecterr:latest</Repository>
+    <Registry>https://hub.docker.com/r/varthe/redirecterr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8481]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/varthe/Redirecterr/issues</Support>
+    <Project>https://github.com/varthe/Redirecterr</Project>
+    <Overview>
+        Filter and redirect Overseerr requests based on requester, keywords, age ratings, and more. Supports routing to multiple instances simultaneously.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/redirecterr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/redirecterr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Requires>
+        Requires a `config.yaml` file in the "Config Path" directory. See documentation: https://github.com/varthe/Redirecterr?tab=readme-ov-file#configuration-overview
+    </Requires>
+    <Changes>
+        ### 2024-11-17
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8481" Default="8481" Mode="tcp" Description="Container Port: 8481" Type="Port" Display="always-hide" Required="true" Mask="false">8481</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|debug|warn|error" Description="Log level" Type="String" Display="always-hide" Required="true" Mask="false"/>
+
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/redirecterr/config" Description="Path to configuration data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/redirecterr/config</Config>
+    <Config Name="Logs Path" Target="/logs" Default="/mnt/user/appdata/redirecterr/logs" Description="Path to log files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/redirecterr/logs</Config>
+</Container>
