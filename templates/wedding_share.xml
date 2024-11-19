@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>WeddingShare</Name>
+    <Repository>cirx08/wedding_share:latest</Repository>
+    <Registry>https://hub.docker.com/r/cirx08/wedding_share</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/cirx08/WeddingShare/issues</Support>
+    <Project>https://github.com/cirx08/WeddingShare</Project>
+    <Overview>
+        A basic photo sharing site, allowing anyone to upload and view shared albums.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>photo album share image gallery pictures wedding event party</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/wedding-share-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/wedding_share.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Cirx08/WeddingShare/main/screenshots/Homepage.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Cirx08/WeddingShare/main/screenshots/Gallery.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Cirx08/WeddingShare/main/screenshots/Homepage-Mobile.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Cirx08/WeddingShare/main/screenshots/Gallery-Mobile.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-19
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="App Title" Target="TITLE" Default="Wedding Share" Description="Title of the app" Type="Variable" Display="always-hide" Required="true" Mask="false">Wedding Share</Config>
+    <Config Name="Logo URL" Target="LOGO" Default="https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/wedding-share-icon.png" Description="URL of the logo" Type="Variable" Display="always-hide" Required="true" Mask="false">https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/wedding-share-icon.png</Config>
+    <Config Name="Gallery Column Count" Target="GALLERY_COLUMNS" Default="4" Description="Number of columns in the gallery" Type="Variable" Display="always-hide" Required="true" Mask="false">4</Config>
+    <Config Name="Allowed File Types" Target="ALLOWED_FILE_TYPES" Default=".jpg,.jpeg,.png" Description="Comma separated list of allowed file types" Type="Variable" Display="always-hide" Required="true" Mask="false">.jpg,.jpeg,.png</Config>
+    <Config Name="Max File Size" Target="MAX_FILE_SIZE_MB" Default="10" Description="Maximum file size in MB" Type="Variable" Display="always-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Secret key to combat strangers uploading. Optional, but recommended." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Disable Upload" Target="DISABLE_UPLOAD" Default="false|true" Description="Disable the ability to upload files" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disable QR Code" Target="DISABLE_QR_CODE" Default="false|true" Description="Disable the sharable QR code" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Hide Secret Key from QR Code" Target="HIDE_KEY_FROM_QR_CODE" Default="false|true" Description="Hide the secret key from the QR code" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disable Home Link" Target="DISABLE_HOME_LINK" Default="false|true" Description="Disable the home link" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Uploads path" Target="/app/wwwroot/uploads" Default="/mnt/user/appdata/wedding_share/uploads" Description="Path to uploaded files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/wedding_share/uploads</Config>
+</Container>
