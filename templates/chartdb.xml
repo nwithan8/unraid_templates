@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>ChartDB</Name>
+    <Repository>ghcr.io/chartdb/chartdb:latest</Repository>
+    <Registry>ghcr.io/chartdb/chartdb</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://chartdb.io/</Support>
+    <Project>https://chartdb.io/</Project>
+    <Overview>
+        Database diagrams editor that allows you to visualize and design your DB with a single query.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>database MySQL Postgres SQL diagram visualizer WordPress Pokemon PHP Python Laravel Rails CMS Node.js SaaS Django Monica Symfony</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/chartdb-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/chartdb.xml</TemplateURL>
+    <Banner>https://chartdb.io/assets/logo-light-Bks3id4h.png</Banner>
+    <Screenshot>https://chartdb.io/assets/employeedb.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-20
+
+        Initial release
+    </Changes>
+    <Requires>
+        This container cannot use the AI-powered features due to the OpenAI API key requirement being at image build time, not run time.
+    </Requires>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+</Container>
