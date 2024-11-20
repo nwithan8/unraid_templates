@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Newznabarr</Name>
+    <Repository>riffsphereha/newznabarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/riffsphereha/newznabarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:10000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/iffsphereha/newznabarr/issues</Support>
+    <Project>https://github.com/iffsphereha/newznabarr</Project>
+    <Overview>
+        A Usenet plugin framework for the *arr ecosystem designed to fill that gap. Can be added to Sonarr, Radarr, Lidarr and Readarr to download media using search plugins under the hood.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Usenet Sonarr Radarr Lidarr Readarr plugin search content indexer</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/newznabarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/newznabarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-20
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="10000" Default="10000" Mode="tcp" Description="Container Port: 10000" Type="Port" Display="always-hide" Required="true" Mask="false">10000</Config>
+    <Config Name="Config path" Target="/config" Default="/mnt/user/appdata/newznabarr/config" Description="Path to the config folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/newznabarr/config</Config>
+    <Config Name="Download Path" Target="/data/downloads/downloadarr" Default="/mnt/user/appdata/newznabarr/downloads" Description="Path to the download folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/newznabarr/downloads</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="Internal Port" Target="FLASK_RUN_PORT" Default="10000" Description="Internal port of the app. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">10000</Config>
+    <Config Name="Internal Config Path" Target="CONFIG" Default="/config" Description="Internal path to the config folder. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config</Config>
+</Container>
