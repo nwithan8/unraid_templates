@@ -16,7 +16,7 @@
         [br]
         This is a command-line tool, designed to be used in a terminal. It does not have a web interface. Enter the container console to use it: https://github.com/Dark-Alex-17/managarr?tab=readme-ov-file#the-managarr-cli
     </Overview>
-    <Category>MediaApp:Video MediaApp:Music MediaServer:Video MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <Category>Downloaders MediaApp:Video MediaApp:Music MediaServer:Video MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>Radarr Sonarr Lidarr Readarr Prowlarr Whisparr Bazarr Tautulli Plex server manager tool media music video audio movie tv show series files porn xxx</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/managarr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/managarr.xml</TemplateURL>

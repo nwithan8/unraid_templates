@@ -16,7 +16,7 @@
         A very simple tool to monitor downloads from Sonarr and Radarr.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <Category>Downloaders MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>monitor Sonarr Radarr Lidarr Plex</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/monitarr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/monitarr.xml</TemplateURL>

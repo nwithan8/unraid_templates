@@ -24,7 +24,7 @@
         [br]
         Setup Deleterr to run on a schedule and it will automatically delete media files that meet your criteria. This allows to keep your library fresh and clean, without having to manually manage it to free up space.
     </Overview>
-    <Category>MediaApp:Video MediaApp:Music MediaServer:Video MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <Category>Downloaders MediaApp:Video MediaApp:Music MediaServer:Video MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>Radarr Sonarr Lidarr Tautili Plex media manager tool media video audio movie tv show series files delete clean space</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/deleterr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/deleterr.xml</TemplateURL>
