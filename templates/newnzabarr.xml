@@ -8,7 +8,6 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:10000]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/iffsphereha/newznabarr/issues</Support>
     <Project>https://github.com/iffsphereha/newznabarr</Project>
@@ -24,11 +23,15 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-11-22
+
+        Remove unused Web UI
+
         ### 2024-11-20
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="10000" Default="10000" Mode="tcp" Description="Container Port: 10000" Type="Port" Display="always-hide" Required="true" Mask="false">10000</Config>
+    <Config Name="Communication Port" Target="10000" Default="10000" Mode="tcp" Description="Port to use for Usenet communication" Type="Port" Display="always-hide" Required="true" Mask="false">10000</Config>
     <Config Name="Config path" Target="/config" Default="/mnt/user/appdata/newznabarr/config" Description="Path to the config folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/newznabarr/config</Config>
     <Config Name="Download Path" Target="/data/downloads/downloadarr" Default="/mnt/user/appdata/newznabarr/downloads" Description="Path to the download folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/newznabarr/downloads</Config>
     <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
