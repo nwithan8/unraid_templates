@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Scratch Map</Name>
+    <Repository>ad3m3r5/scratch-map:latest</Repository>
+    <Registry>https://hub.docker.com/r/ad3m3r5/scratch-map</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ad3m3r5/scratch-map/issues</Support>
+    <Project>https://github.com/ad3m3r5/scratch-map</Project>
+    <Overview>
+        An open-source scratch-off style map to track your travels.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>location tracking map travel scratch</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/scratch-map-icon.jpg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/scratch_map.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-22
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Database Path" Target="/data" Default="/mnt/user/appdata/scratch_map/database" Description="Path to database files" Mode="rw" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/scratch_map/database</Config>
+    <Config Name="Internal Web Port" Target="PORT" Default="8080" Description="Internal web port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Internal Database Path" Target="DBLOCATION" Default="/data" Description="Internal database path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+</Container>
