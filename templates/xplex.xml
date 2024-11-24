@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>xplex</Name>
+    <Repository>xplex/xplex:latest</Repository>
+    <Registry>https://hub.docker.com/r/xplex/xplex</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://xplex.me/intro/</Support>
+    <Project>https://xplex.me/</Project>
+    <Overview>
+        Your personal, self-hosted, open source, multi-streaming server
+    </Overview>
+    <Beta>False</Beta>
+    <Category>GameServers: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>streaming server video media OBS YouTube Twitch Facebook broadcast StreamLabs Plex</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/xplex-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/xplex.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-24
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="1080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">1080</Config>
+    <Config Name="Broadcast Port" Target="1935" Default="1935" Mode="tcp" Description="Container Port: 1935" Type="Port" Display="always-hide" Required="true" Mask="false">1935</Config>
+</Container>
