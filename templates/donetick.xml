@@ -30,9 +30,9 @@
         Initial release
     </Changes>
     <Requires>
-        Requires a config file to be mounted at the "Config File" path. See documentation: https://github.com/donetick/donetick/blob/main/config/selfhosted.yaml
+        Requires a `selfhosted.yaml` file to be in the "Config File" path. See documentation: https://github.com/donetick/donetick/blob/main/config/selfhosted.yaml
     </Requires>
     <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
-    <Config Name="Config File" Target="/config/selfhosted.yaml" Default="/mnt/user/appdata/donetick/config.yaml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/donetick/config.yaml</Config>
+    <Config Name="Config Path" Target="/config/" Default="/mnt/user/appdata/donetick/config" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/donetick/config</Config>
     <Config Name="Database Path" Target="/usr/src/app/data" Default="/mnt/user/appdata/donetick/database" Description="Path to the database" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/donetick/database</Config>
 </Container>
