@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Donetick</Name>
+    <Repository>donetick/donetick:latest</Repository>
+    <Registry>https://hub.docker.com/r/donetick/donetick</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://donetick.com/</Support>
+    <Project>https://donetick.com/</Project>
+    <Overview>
+        An open-source, user-friendly app for managing tasks and chores, featuring customizable options to help you and others stay organized.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>task chore list organizer organizer</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/donetick-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/donetick.xml</TemplateURL>
+    <Banner>https://raw.githubusercontent.com/donetick/donetick/main/assets/logo.png</Banner>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-24
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a config file to be mounted at the "Config File" path. See documentation: https://github.com/donetick/donetick/blob/main/config/selfhosted.yaml
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Config File" Target="/config/selfhosted.yaml" Default="/mnt/user/appdata/donetick/config.yaml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/donetick/config.yaml</Config>
+    <Config Name="Database Path" Target="/usr/src/app/data" Default="/mnt/user/appdata/donetick/database" Description="Path to the database" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/donetick/database</Config>
+</Container>
