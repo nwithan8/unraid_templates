@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-11-27
+
+        Fix PGID and PUID permissions
+
         ### 2024-11-22
 
         Initial release
@@ -32,6 +36,6 @@
     <Config Name="Database Path" Target="/data" Default="/mnt/user/appdata/scratch_map/database" Description="Path to database files" Mode="rw" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/scratch_map/database</Config>
     <Config Name="Internal Web Port" Target="PORT" Default="8080" Description="Internal web port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
     <Config Name="Internal Database Path" Target="DBLOCATION" Default="/data" Description="Internal database path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data</Config>
-    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
-    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PUID" Target="PUID" Default="99" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
