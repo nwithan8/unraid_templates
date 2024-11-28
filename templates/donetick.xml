@@ -8,7 +8,7 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <WebUI>http://[IP]:[PORT:2021]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://donetick.com/</Support>
     <Project>https://donetick.com/</Project>
@@ -25,6 +25,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-11-28
+
+        - Fix database mapping
+        - Fix Web UI port mapping
+
         ### 2024-11-24
 
         Initial release
@@ -32,7 +37,8 @@
     <Requires>
         Requires a `selfhosted.yaml` file to be in the "Config File" path. See documentation: https://github.com/donetick/donetick/blob/main/config/selfhosted.yaml
     </Requires>
-    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
-    <Config Name="Config Path" Target="/config/" Default="/mnt/user/appdata/donetick/config" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/donetick/config</Config>
-    <Config Name="Database Path" Target="/usr/src/app/data" Default="/mnt/user/appdata/donetick/database" Description="Path to the database" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/donetick/database</Config>
+    <Config Name="Web UI Port" Target="2021" Default="2021" Mode="tcp" Description="Container port: 2021" Type="Port" Display="always-hide" Required="true" Mask="false">2021</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/donetick/config" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/donetick/config</Config>
+    <Config Name="Database Path" Target="/usr/src/app/data" Default="/mnt/user/appdata/donetick/database" Description="Path to database files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/donetick/database</Config>
+    <Config Name="Internal Database File" Target="DT_SQLITE_PATH" Default="/usr/src/app/data/donetick.db" Description="Internal path to the database file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/usr/src/app/data/donetick.db</Config>
 </Container>
