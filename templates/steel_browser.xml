@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Steel</Name>
+    <Repository>ghcr.io/steel-dev/steel-browser:latest</Repository>
+    <Registry>ghcr.io/steel-dev/steel-browser</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5173]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.steel.dev</Support>
+    <Project>https://steel.dev/</Project>
+    <Overview>
+        The open-source browser API built for AI agents. Steel provides a REST API to control headless browsers with session management, proxy support, and anti-detection features. Perfect for web automation, scraping, and building AI agents that can interact with the web.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>browser automation web agent ai agent search internet</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/steel-dev/steel-browser/main/images/steel_header_logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/steel_browser.xml</TemplateURL>
+    <Screenshot>https://github.com/steel-dev/steel-browser/raw/main/images/demo.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-27
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5173" Default="5173" Mode="tcp" Description="Container Port: 5173" Type="Port" Display="always-hide" Required="true" Mask="false">5173</Config>
+    <Config Name="Vite API Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="CDP Redirect Port" Target="9223" Default="9223" Mode="tcp" Description="Container Port: 9223" Type="Port" Display="always-hide" Required="true" Mask="false">9223</Config>
+</Container>
