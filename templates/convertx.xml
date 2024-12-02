@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>ConvertX</Name>
-    <Repository>ghcr.io/c4illin/convertx:latest</Repository>
-    <Registry>ghcr.io/c4illin/convertx</Registry>
+    <Repository>c4illin/convertx:latest</Repository>
+    <Registry>https://hub.docker.com/r/c4illin/convertx</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -22,6 +22,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-12-02
+
+        Switch from GitHub Container Registry to Docker Hub for image hosting
+
         ### 2024-09-27
 
         Initial release
