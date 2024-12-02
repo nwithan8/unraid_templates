@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Reubah</Name>
+    <Repository>ghcr.io/dendianugerah/reubah:latest</Repository>
+    <Registry>ghcr.io/dendianugerah/reubah</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8081]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dendianugerah/reubah/issues</Support>
+    <Project>https://github.com/dendianugerah/reubah</Project>
+    <Overview>
+        A simple web-based tool for processing images and converting documents with a simple interface.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>image document convert processing</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/reubah-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/reubah.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/dendianugerah/reubah/main/static/assets/home.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/dendianugerah/reubah/main/static/assets/document.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/dendianugerah/reubah/main/static/assets/merge.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-12-01
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8081" Default="8081" Mode="tcp" Description="Container Port: 8081" Type="Port" Display="always-hide" Required="true" Mask="false">8081</Config>
+    <Config Name="Temp Directory" Target="/app/tmp" Default="/mnt/user/appdata/reubah/tmp" Description="Path to temporary files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/reubah/tmp</Config>
+    <Config Name="Doc Temp Directory" Target="/tmp" Default="/mnt/user/appdata/reubah/doc_tmp" Description="Path to temporary files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/reubah/doc_tmp</Config>
+    <Config Name="Internal Port" Target="PORT" Default="8081" Description="Internal Port" Type="Variable" Display="advanced-hide" Required="true" Mask="false">8081</Config>
+</Container>
