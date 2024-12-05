@@ -10,12 +10,17 @@
     <Network>bridge</Network>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Support>https://github.com/nwithan8/tauticord/issues</Support>
     <Project>https://github.com/nwithan8/tauticord</Project>
     <Overview>Tauticord is a Discord bot that displays live data from Tautulli, including stream summaries, bandwidth and library statistics.</Overview>
-    <Category>Tools: MediaServer Status:Stable</Category>
+    <Category>MediaApp:Other Productivity: Tools: MediaServer Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/icon.png</Icon>
     <Banner>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/banner.png</Banner>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/embed.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/libraries.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/recently_added.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/most_active_libraries.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/graphs_play_duration_day_of_week.png</Screenshot>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tauticord.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
