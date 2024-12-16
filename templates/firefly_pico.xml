@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Firefly Pico</Name>
+    <Repository>cioraneanu/firefly-pico:latest</Repository>
+    <Registry>https://hub.docker.com/r/cioraneanu/firefly-pico</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/cioraneanu/firefly-pico/issues</Support>
+    <Project>https://github.com/cioraneanu/firefly-pico</Project>
+    <Overview>
+        A delightful Firefly III companion web app for effortless transaction tracking.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>firefly iii finance budget money transaction tracking app mobile web</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/firefly-pico-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/firefly_pico.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/cioraneanu/firefly-pico/main/docs/images/presentation.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/cioraneanu/firefly-pico/main/docs/images/demo.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-12-16
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database container and a Firefly III instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="80" Default="6976" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">6976</Config>
+    <Config Name="Firefly III URL" Target="FIREFLY_URL" Default="https://firefly.domain.com" Description="URL of the Firefly III instance" Type="Variable" Display="always-hide" Required="true" Mask="false">https://firefly.domain.com</Config>
+    <Config Name="Database - Host" Target="DB_HOST" Default="localhost" Description="Hostname of the Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Database - Port" Target="DB_PORT" Default="5432" Description="Port of the Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Database - Name" Target="DB_DATABASE" Default="firefly-pico" Description="Name of the Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false">firefly-pico</Config>
+    <Config Name="Database - User" Target="DB_USERNAME" Default="firefly-pico" Description="Username of the Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false">firefly-pico</Config>
+    <Config Name="Database - Password" Target="DB_PASSWORD" Default="" Description="Password of the Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Database - Type" Target="DB_CONNECTION" Default="pgsql" Description="Type of the database. Not recommended to change" Type="Variable" Display="advanced-hide" Required="true" Mask="false">pgsql</Config>
+</Container>
