@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Beaver Habit Tracker</Name>
+    <Repository>daya0576/beaverhabits:latest</Repository>
+    <Registry>https://hub.docker.com/r/daya0576/beaverhabits</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/daya0576/beaverhabits/issues</Support>
+    <Project>https://beaverhabits.com/demo</Project>
+    <Overview>
+        A self-hosted habit tracking app without "Goals".
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>habit tracker goal mobile web help assistance resolution</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/beaver-habits-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/beaver_habits.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/beaver_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/beaver_demo_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/beaver_demo_3.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-12-22
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="First Day of the Week" Target="FIRST_DAY_OF_WEEK" Default="0" Description="0=Monday, 6=Sunday" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Maximum User Count" Target="MAX_USER_COUNT" Default="1" Description="Maximum number of users. Set to 1 to prevent other users from logging in." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Display Completed Count Badge" Target="INDEX_SHOW_HABIT_COUNT" Default="false|true" Description="Display the total completed count badge on the main page." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Data Storage Method" Target="HABITS_STORAGE" Default="USER_DISK|DATABASE" Description="The DATABASE option stores everything in a single SQLite database file named habits.db. On the other hand, the USER_DISK option saves habits and records in a local JSON file." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Data Storage Path" Target="/app/.user" Default="/mnt/user/appdata/beaver_habits/data" Description="Path to data storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/beaver_habits/data</Config>
+    <Config Name="iOS Standalone Mode" Target="ENABLE_IOS_STANDALONE" Default="false|true" Description="Experiential feature to enable standalone mode on iOS." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
