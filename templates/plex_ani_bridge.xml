@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>PlexAniBridge</Name>
+    <Repository>ghcr.io/eliasbenb/plexanibridge:latest</Repository>
+    <Registry>ghcr.io/eliasbenb/plexanibridge</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest edge release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/eliasbenb/PlexAniBridge/issues</Support>
+    <Project>https://github.com/eliasbenb/PlexAniBridge</Project>
+    <Overview>
+        A synchronization tool that automatically keeps your AniList profile up-to-date based on your Plex watching activity. &#xD;
+        [br]
+        See configuration instructions: https://github.com/eliasbenb/PlexAniBridge#Configuration
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex anilist anime manga Kometa meta manager sync activity watch status tool</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/plex-ani-bridge-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/plex_ani_bridge.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-12-23
+
+        Initial release
+    </Changes>
+    <Config Name="AniList Token" Target="ANILIST_TOKEN" Default="" Description="AniList API token" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Plex - Token" Target="PLEX_TOKEN" Default="" Description="Plex API token" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Plex - User" Target="PLEX_USER" Default="" Description="Plex user to sync" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex - URL" Target="PLEX_URL" Default="" Description="Plex server URL" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex - Sections" Target="PLEX_SECTIONS" Default='["Anime TV", "Anime Movies"]' Description="JSON list of Plex sections to sync" Type="Variable" Display="always-hide" Required="true" Mask="false">["Anime TV", "Anime Movies"]</Config>
+    <Config Name="Sync Interval" Target="SYNC_INTERVAL" Default="3600" Description="Interval, in seconds, to sync Plex and AniList. Set to -1 to disable" Type="Variable" Display="always-hide" Required="true" Mask="false">3600</Config>
+    <Config Name="Partial Scan" Target="PARTIAL_SCAN" Default="True|False" Description="Only consider items added/updated/rated since last sync." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Destructive Sync" Target="DESTRUCTIVE_SYNC" Default="False|True" Description="Regressively update AniList data to match Plex regardless of existing data." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Excluded Sync Fields" Target="EXCLUDED_SYNC_FIELDS" Default='["notes", "score"]' Description="JSON list of AniList fields to exclude from sync" Type="Variable" Display="always-hide" Required="true" Mask="false">["notes", "score"]</Config>
+    <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/plex_ani_bridge/data" Description="Path to store internal data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plex_ani_bridge/data</Config>
+    <Config Name="Internal Data Path" Target="DATA_PATH" Default="/app/data" Description="Internal data path" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/data</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|DEBUG|WARNING|ERROR|CRITICAL" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Dry Run" Target="DRY_RUN" Default="False|True" Description="Disables modifying AniList data" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Fuzzy Search Threshold" Target="FUZZY_SEARCH_THRESHOLD" Default="90" Description="Fuzzy search threshold for matching anime titles" Type="Variable" Display="advanced-hide" Required="true" Mask="false">90</Config>
+</Container>
