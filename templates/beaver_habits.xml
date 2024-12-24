@@ -31,6 +31,7 @@
 
         Initial release
     </Changes>
+    <ExtraParams>--user 99:100</ExtraParams>
     <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
     <Config Name="First Day of the Week" Target="FIRST_DAY_OF_WEEK" Default="0" Description="0=Monday, 6=Sunday" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
     <Config Name="Maximum User Count" Target="MAX_USER_COUNT" Default="1" Description="Maximum number of users. Set to 1 to prevent other users from logging in." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
@@ -38,6 +39,4 @@
     <Config Name="Data Storage Method" Target="HABITS_STORAGE" Default="USER_DISK|DATABASE" Description="The DATABASE option stores everything in a single SQLite database file named habits.db. On the other hand, the USER_DISK option saves habits and records in a local JSON file." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Data Storage Path" Target="/app/.user" Default="/mnt/user/appdata/beaver_habits/data" Description="Path to data storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/beaver_habits/data</Config>
     <Config Name="iOS Standalone Mode" Target="ENABLE_IOS_STANDALONE" Default="false|true" Description="Experiential feature to enable standalone mode on iOS." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
-    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
