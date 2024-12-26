@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Ganymede</Name>
+    <Repository>ghcr.io/zibbp/ganymede:latest</Repository>
+    <Registry>ghcr.io/zibbp/ganymede</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Zibbp/ganymede/wiki</Support>
+    <Project>https://github.com/Zibbp/ganymede</Project>
+    <Overview>
+        A Twitch VOD and Live Stream archiving platform with a real-time chat experience. Every archive includes a rendered chat for viewing outside of Ganymede. Files are saved in a friendly format allowing for use without Ganymede.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>twitch vod live stream chat archive video communication react gaming</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/Zibbp/ganymede/main/.github/ganymede-logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ganymede.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Zibbp/ganymede/refs/heads/main/.github/landing-demo.jpg</Screenshot>
+    <Video>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ganymede_video_1.mp4</Video>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-12-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database.
+    </Requires>
+    <Config Name="Web UI Port" Target="4000" Default="4000" Mode="tcp" Description="Container Port: 4000" Type="Port" Display="always-hide" Required="true" Mask="false">4000</Config>
+    <Config Name="Twitch - Client ID" Target="TWITCH_CLIENT_ID" Default="" Description="Twitch Client ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Twitch - Client Secret" Target="TWITCH_CLIENT" Default="" Description="Twitch Client Secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Host" Target="DB_HOST" Default="" Description="Postgres host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Port" Target="DB_PORT" Default="5432" Description="Postgres port" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Postgres - Database" Target="DB_NAME" Default="ganymede" Description="Postgres database name" Type="Variable" Display="always-hide" Required="true" Mask="false">ganymede</Config>
+    <Config Name="Postgres - User" Target="DB_USER" Default="" Description="Postgres user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Password" Target="DB_PASS" Default="" Description="Postgres password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Use SSL" Target="DB_SSL" Default="disable|enable" Description="Use SSL for Postgres connection. Details: https://github.com/Zibbp/ganymede/wiki/DB-SSL" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - SSL Root Cert" Target="DB_SSL_ROOT_CERT" Default="" Description="Postgres SSL root certificate. Remove if not needed. Details: https://github.com/Zibbp/ganymede/wiki/DB-SSL" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Require Login" Target="REQUIRE_LOGIN" Default="false|true" Description="Require users to be logged in to view videos." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="OAuth - Enable" Target="OAUTH_ENABLED" Default="false|true" Description="Enable OAuth" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="OAuth - Provider" Target="OAUTH_PROVIDER_URL" Default="" Description="URL for OAuth provider. Details: https://github.com/Zibbp/ganymede/wiki/SSO---OpenID-Connect" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OAuth - Client ID" Target="OAUTH_CLIENT_ID" Default="" Description="OAuth client ID" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OAuth - Client Secret" Target="OAUTH_CLIENT_SECRET" Default="" Description="OAuth client secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="OAuth - Redirect URL" Target="OAUTH_REDIRECT_URL" Default="" Description="OAuth redirect URL. Details: https://github.com/Zibbp/ganymede/wiki/SSO---OpenID-Connect" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OAuth - Enable Sign-in Button" Target="SHOW_SSO_LOGIN_BUTTON" Default="false|true" Description="Show a 'login via sso' button on the login page." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="OAuth - Force SSO" Target="FORCE_SSO_AUTH" Default="false|true" Description="Force users to login via SSO by bypassing the login page." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Limits - Chat Downloads" Target="MAX_CHAT_DOWNLOAD_EXECUTIONS" Default="1" Description="Maximum number of chat downloads that can be running at once. Live streams bypass this limit." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Limits - Chat Renders" Target="MAX_CHAT_RENDER_EXECUTIONS" Default="1" Description="Maximum number of chat renders that can be running at once." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Limits - Video Downloads" Target="MAX_VIDEO_DOWNLOAD_EXECUTIONS" Default="1" Description="Maximum number of video downloads that can be running at once. Live streams bypass this limit." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Limits - Video Conversions" Target="MAX_VIDEO_CONVERT_EXECUTIONS" Default="1" Description="Maximum number of video conversions that can be running at once." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Video Path" Target="/data/videos" Default="" Description="Mount for video storage" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Debug" Target="DEBUG" Default="false|true" Description="Enable debug logging" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Videos Path" Target="VIDEOS_DIR" Default="/data/videos" Description="Internal path to videos. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/data/videos</Config>
+    <Config Name="Internal Temporary Data Path" Target="TEMP_DIR" Default="/data/temp" Description="Internal path to temporary data. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/data/temp</Config>
+    <Config Name="Internal Logs Path" Target="LOGS_DIR" Default="/data/logs" Description="Internal path to logs. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/data/logs</Config>
+    <Config Name="Internal Config Path" Target="CONFIG_DIR" Default="/data/config" Description="Internal path to config. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/data/config</Config>
+    <Config Name="Path Migration at Startup" Target="PATH_MIGRATION_ENABLED" Default="true|false" Description="Enable path migration at startup" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/data/config" Default="/mnt/user/appdata/ganymede/config" Description="Mount for config storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ganymede/config</Config>
+    <Config Name="Logs Path" Target="/data/logs" Default="/mnt/user/appdata/ganymede/logs" Description="Mount for log storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ganymede/logs</Config>
+    <Config Name="Temp Data Path" Target="/data/temp" Default="/mnt/user/appdata/ganymede/temp" Description="Mount to store temporary files during the archive process." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ganymede/temp</Config>
+</Container>
