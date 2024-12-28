@@ -32,15 +32,22 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-12-28
+
+        Add missing environment variables, remove .env file
+
         ### 2024-12-27
 
         Initial release
     </Changes>
     <Requires>
-        Expects an .env file to exist at the Env File path and an app.db file to exist at the Database Path before container is started. See the README for more information: https://gitea.baerentsen.space/FrederikBaerentsen/BrickTracker#setup-using-pre-build-docker-image
+        Expects an app.db file to exist at the Database Path before container is started. See the README for more information: https://gitea.baerentsen.space/FrederikBaerentsen/BrickTracker#setup-using-pre-build-docker-image
     </Requires>
     <Config Name="Web UI Port" Target="3333" Default="3333" Mode="tcp" Description="Container Port: 3333" Type="Port" Display="always-hide" Required="true" Mask="false">3333</Config>
-    <Config Name="Env File" Target="/app/.env" Default="/mnt/user/appdata/brick_tracker/.env" Description="Path to the .env file. File must exist BEFORE running container for the first time." Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/brick_tracker/.env</Config>
+    <Config Name="Rebrickable API Key" Target="REBRICKABLE_API_KEY" Default="" Description="API key for Rebrickable. Get one at https://rebrickable.com/api/" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Domain Name" Target="DOMAIN_NAME" Default="http://IP_ADDRESS:3333" Description="Domain name for the application. Replace with local IP address or domain name." Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3333</Config>
+    <Config Name="Rebrickable Links" Target="LINKS" Default="False|True" Description="Enables set numbers to be Rebrickable links on the front page" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Random Homepage" Target="RANDOM" Default="False|True" Description="Shuffle front page on load" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Parts Storage Path" Target="/app/static/parts" Default="/mnt/user/appdata/brick_tracker/parts" Description="Path to store part images" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/brick_tracker/parts</Config>
     <Config Name="Instructions Storage Path" Target="/app/static/instructions" Default="/mnt/user/appdata/brick_tracker/instructions" Description="Path to store instruction images" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/brick_tracker/instructions</Config>
     <Config Name="Sets Storage Path" Target="/app/static/sets" Default="/mnt/user/appdata/brick_tracker/sets" Description="Path to store set images" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/brick_tracker/sets</Config>
