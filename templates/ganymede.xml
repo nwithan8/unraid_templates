@@ -26,6 +26,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2024-12-29
+
+        - Fix TWITCH_CLIENT_SECRET environmental variable
+        - Fix internal path environmental variables
+
         ### 2024-12-26
 
         Initial release
@@ -35,7 +40,7 @@
     </Requires>
     <Config Name="Web UI Port" Target="4000" Default="4000" Mode="tcp" Description="Container Port: 4000" Type="Port" Display="always-hide" Required="true" Mask="false">4000</Config>
     <Config Name="Twitch - Client ID" Target="TWITCH_CLIENT_ID" Default="" Description="Twitch Client ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Twitch - Client Secret" Target="TWITCH_CLIENT" Default="" Description="Twitch Client Secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Twitch - Client Secret" Target="TWITCH_CLIENT_SECRET" Default="" Description="Twitch Client Secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Postgres - Host" Target="DB_HOST" Default="" Description="Postgres host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Postgres - Port" Target="DB_PORT" Default="5432" Description="Postgres port" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
     <Config Name="Postgres - Database" Target="DB_NAME" Default="ganymede" Description="Postgres database name" Type="Variable" Display="always-hide" Required="true" Mask="false">ganymede</Config>
@@ -55,14 +60,14 @@
     <Config Name="Limits - Chat Renders" Target="MAX_CHAT_RENDER_EXECUTIONS" Default="1" Description="Maximum number of chat renders that can be running at once." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
     <Config Name="Limits - Video Downloads" Target="MAX_VIDEO_DOWNLOAD_EXECUTIONS" Default="1" Description="Maximum number of video downloads that can be running at once. Live streams bypass this limit." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
     <Config Name="Limits - Video Conversions" Target="MAX_VIDEO_CONVERT_EXECUTIONS" Default="1" Description="Maximum number of video conversions that can be running at once." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
-    <Config Name="Video Path" Target="/data/videos" Default="" Description="Mount for video storage" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Video Path" Target="/data/videos" Default="" Description="Mount for video storage" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Debug" Target="DEBUG" Default="false|true" Description="Enable debug logging" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Internal Videos Path" Target="VIDEOS_DIR" Default="/data/videos" Description="Internal path to videos. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/data/videos</Config>
-    <Config Name="Internal Temporary Data Path" Target="TEMP_DIR" Default="/data/temp" Description="Internal path to temporary data. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/data/temp</Config>
-    <Config Name="Internal Logs Path" Target="LOGS_DIR" Default="/data/logs" Description="Internal path to logs. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/data/logs</Config>
-    <Config Name="Internal Config Path" Target="CONFIG_DIR" Default="/data/config" Description="Internal path to config. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/data/config</Config>
+    <Config Name="Internal Videos Path" Target="VIDEOS_DIR" Default="/data/videos" Description="Internal path to videos. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data/videos</Config>
+    <Config Name="Internal Temporary Data Path" Target="TEMP_DIR" Default="/data/temp" Description="Internal path to temporary data. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data/temp</Config>
+    <Config Name="Internal Logs Path" Target="LOGS_DIR" Default="/data/logs" Description="Internal path to logs. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data/logs</Config>
+    <Config Name="Internal Config Path" Target="CONFIG_DIR" Default="/data/config" Description="Internal path to config. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data/config</Config>
     <Config Name="Path Migration at Startup" Target="PATH_MIGRATION_ENABLED" Default="true|false" Description="Enable path migration at startup" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Config Path" Target="/data/config" Default="/mnt/user/appdata/ganymede/config" Description="Mount for config storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ganymede/config</Config>
-    <Config Name="Logs Path" Target="/data/logs" Default="/mnt/user/appdata/ganymede/logs" Description="Mount for log storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ganymede/logs</Config>
-    <Config Name="Temp Data Path" Target="/data/temp" Default="/mnt/user/appdata/ganymede/temp" Description="Mount to store temporary files during the archive process." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ganymede/temp</Config>
+    <Config Name="Config Path" Target="/data/config" Default="/mnt/user/appdata/ganymede/config" Description="Mount for config storage" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ganymede/config</Config>
+    <Config Name="Logs Path" Target="/data/logs" Default="/mnt/user/appdata/ganymede/logs" Description="Mount for log storage" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ganymede/logs</Config>
+    <Config Name="Temp Data Path" Target="/data/temp" Default="/mnt/user/appdata/ganymede/temp" Description="Mount to store temporary files during the archive process." Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ganymede/temp</Config>
 </Container>
