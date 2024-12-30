@@ -9,6 +9,7 @@
     </Branch>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
+    <ExtraParams>-it</ExtraParams>
     <Support>https://github.com/Dark-Alex-17/managarr/issues</Support>
     <Project>https://github.com/Dark-Alex-17/managarr</Project>
     <Overview>
