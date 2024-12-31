@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Dawarich</Name>
+    <Repository>freikin/dawarich:latest</Repository>
+    <Registry>https://hub.docker.com/r/freikin/dawarich</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://dawarich.app/docs/intro</Support>
+    <Project>https://dawarich.app</Project>
+    <Overview>
+        A self-hosted web app designed to replace Google Timeline (aka Google Location History). Visualize your data on an interactive map, import your location history from Google Maps Timeline and Owntracks, and explore statistics like the number of countries and cities visited, total distance traveled, and more!
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>photo album share image gallery timeline location history google maps owntracks immich</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dawarich-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dawarich.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Freika/dawarich/master/screenshots/map.jpeg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Freika/dawarich/master/screenshots/stats.jpeg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Freika/dawarich/master/screenshots/imports.jpeg</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-12-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate Redis and PostgreSQL containers. See the [documentation](https://dawarich.app/docs/environment-variables-and-settings) for more information.
+    </Requires>
+    <PostArgs>bin/dev</PostArgs>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Imports Path" Target="/var/app/tmp/imports/watched" Default="/mnt/user/appdata/dawarich/imports" Description="Path to watch for imports" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/imports</Config>
+    <Config Name="Redis - URL" Target="REDIS_URL" Default="redis://IP_ADDRESS:6379/0" Description="URL of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://IP_ADDRESS:6379/0</Config>
+    <Config Name="Postgres - Host" Target="DATABASE_HOST" Default="" Description="Host of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Username" Target="DATABASE_USERNAME" Default="" Description="Username of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Password" Target="DATABASE_PASSWORD" Default="" Description="Password of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Database" Target="DATABASE_NAME" Default="" Description="Name of the PostgreSQL database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Timezone" Target="TIME_ZONE" Default="UTC" Description="Timezone of the application" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Distance Units" Target="DISTANCE_UNIT" Default="km|mi" Description="Units for distance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Photon API - Host" Target="PHOTON_API_HOST" Default="photon.komoot.io" Description="Host of the Photon API" Type="Variable" Display="always-hide" Required="true" Mask="false">photon.komoot.io</Config>
+    <Config Name="Photon API - Use HTTPS" Target="PHOTON_API_USE_HTTPS" Default="true|false" Description="Use HTTPS for the Photon API" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Prometheus Exporter - Enable" Target="PROMETHEUS_EXPORTER_ENABLED" Default="false|true" Description="Enable the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Prometheus Exporter - Host" Target="PROMETHEUS_EXPORTER_HOST" Default="0.0.0.0" Description="Host of the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Prometheus Exporter - Port" Target="PROMETHEUS_EXPORTER_PORT" Default="3001" Description="Port of the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false">9394</Config>
+    <Config Name="Enable Telemetry" Target="ENABLE_TELEMETRY" Default="false|true" Description="Enable telemetry" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Web Files Path" Target="/var/app/public" Default="/mnt/user/appdata/dawarich/wwwroot" Description="Path to web files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/wwwroot</Config>
+    <Config Name="Ruby Gems Path" Target="/usr/local/bundle/gems" Default="/mnt/user/appdata/dawarich/gems" Description="Path to Ruby gems" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/gems</Config>
+    <Config Name="Rails Environment" Target="RAILS_ENV" Default="development" Description="Rails environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">development</Config>
+    <Config Name="Application Host" Target="APPLICATION_HOST" Default="localhost" Description="Host of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Application Hosts" Target="APPLICATION_HOSTS" Default="localhost" Description="Hosts of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Background Processing Concurrency" Target="BACKGROUND_PROCESSING_CONCURRENCY" Default="10" Description="Number of background processing threads" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Application Protocol" Target="APPLICATION_PROTOCOL" Default="http" Description="Protocol of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http</Config>
+</Container>
