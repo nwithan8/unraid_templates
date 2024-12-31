@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>TextBee - API</Name>
+    <Repository>ghcr.io/vernu/textbee/api:latest</Repository>
+    <Registry>ghcr.io/vernu/textbee/api</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://textbee.dev</Support>
+    <Project>https://textbee.dev</Project>
+    <Overview>
+        A simple SMS gateway that allows users to send SMS messages from a web interface or from their application via a REST API. It utilizes android phones as SMS gateways.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Messenger Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>sms text message gateway api web interface ui twilio</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/textbee-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/textbee_api.xml</TemplateURL>
+    <Screenshot>hhttps://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/textbee_demo_1.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-12-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MongoDB database.
+    </Requires>
+    <Config Name="API Port" Target="3005" Default="3005" Mode="tcp" Description="Container Port: 3005" Type="Port" Display="always-hide" Required="true" Mask="false">3005</Config>
+    <Config Name="MongoDB URL" Target="MONGO_URI" Default="mongodb://localhost:27017/textbee" Description="URL of the MongoDB database" Type="Variable" Display="always-hide" Required="true" Mask="false">mongodb://localhost:27017/textbee</Config>
+    <Config Name="JWT Secret" Target="JWT_SECRET" Default="changeme" Description="Secret key for JWT" Type="Variable" Display="always-hide" Required="true" Mask="true">changeme</Config>
+    <Config Name="Firebase - Project ID" Target="FIREBASE_PROJECT_ID" Default="" Description="Firebase Project ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Firebase - Private Key ID" Target="FIREBASE_PRIVATE_KEY_ID" Default="" Description="Firebase Private Key ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Firebase - Private Key" Target="FIREBASE_PRIVATE_KEY" Default="" Description="Firebase Private Key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Firebase - Client Email" Target="FIREBASE_CLIENT_EMAIL" Default="" Description="Firebase Client Email" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Firebase - Client ID" Target="FIREBASE_CLIENT_ID" Default="" Description="Firebase Client ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Firebase - Client C509 Cert URL" Target="FIREBASE_CLIENT_C509_CERT_URL" Default="" Description="Firebase Client C509 Cert URL" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Web URL" Target="FRONTEND_URL" Default="http://localhost:3000" Description="URL of the web interface. Needed for password reset links" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Email - Host" Target="MAIL_HOST" Default="" Description="Email Host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Port" Target="MAIL_PORT" Default="" Description="Email Port" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - User" Target="MAIL_USER" Default="" Description="Email User" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Password" Target="MAIL_PASS" Default="" Description="Email Password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Email - From" Target="MAIL_FROM" Default="" Description="Email From" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Reply To" Target="MAIL_REPLY_TO" Default="" Description="Email Reply To" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Internal API Port" Target="PORT" Default="3005" Description="Internal API Port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3005</Config>
+    <Config Name="JWT Expiration Time" Target="JWT_EXPIRATION" Default="60d" Description="JWT Expiration Time" Type="Variable" Display="advanced-hide" Required="true" Mask="false">60d</Config>
+</Container>

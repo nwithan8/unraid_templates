@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>TextBee - Web</Name>
+    <Repository>ghcr.io/vernu/textbee/web:latest</Repository>
+    <Registry>ghcr.io/vernu/textbee/web</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://textbee.dev</Support>
+    <Project>https://textbee.dev</Project>
+    <Overview>
+        A simple SMS gateway that allows users to send SMS messages from a web interface or from their application via a REST API. It utilizes android phones as SMS gateways.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Messenger Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>sms text message gateway api web interface ui twilio</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/textbee-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/textbee_web.xml</TemplateURL>
+    <Screenshot>hhttps://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/textbee_demo_1.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-12-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate TextBee API container (and corresponding MongoDB container) to function.
+    </Requires>
+    <PostArgs>pnpm start</PostArgs>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="API URL" Target="NEXT_PUBLIC_API_BASE_URL" Description="URL of the TextBee API" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Auth Secret" Target="AUTH_SECRET" Default="changeme" Description="Secret key for NextAuth. Generate at https://generate-secret.vercel.app/32" Type="Variable" Display="always-hide" Required="true" Mask="true">changeme</Config>
+    <Config Name="MongoDB URL" Target="DATABASE_URL" Default="mongodb://localhost:27017/textbee" Description="URL of the MongoDB database" Type="Variable" Display="always-hide" Required="true" Mask="false">mongodb://localhost:27017/textbee</Config>
+    <Config Name="Email - Host" Target="MAIL_HOST" Default="" Description="Email Host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Port" Target="MAIL_PORT" Default="" Description="Email Port" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - User" Target="MAIL_USER" Default="" Description="Email User" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Password" Target="MAIL_PASS" Default="" Description="Email Password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Email - From" Target="MAIL_FROM" Default="" Description="Email From" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Admin Email" Target="ADMIN_EMAIL" Default="" Description="Admin Email" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+
+    <Config Name="Auth URL" Target="NEXTAUTH_URL" Default="http://localhost:3000" Description="URL of the web interface. Needed for password reset links" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Google Client ID (OAuth)" Target="NEXT_PUBLIC_GOOGLE_CLIENT_ID" Default="" Description="Google Client ID for OAuth" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Tawk.to Embed URL" Target="NEXT_PUBLIC_TAWKTO_EMBED_URL" Default="" Description="Tawk.to embed URL" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
