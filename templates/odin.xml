@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Odin</Name>
+    <Repository>ghcr.io/ad-on-is/odin:latest</Repository>
+    <Registry>ghcr.io/ad-on-is/odin</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:6060]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ad-on-is/odin-server/issues</Support>
+    <Project>https://github.com/ad-on-is/odin-server</Project>
+    <Overview>
+        A self-hosted streaming service to stream from RealDebrid or AllDebrid to the Android app. &#xD;
+        [br]
+        Follow configuration instructions on the GitHub page: https://github.com/ad-on-is/odin-server#1%EF%B8%8F%E2%83%A3-first-steps
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>debrid realdebrid alldebrid streaming video movies tv shows plex jellyfin kodi app android</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/odin-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/odin.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/ad-on-is/odin-server/main/screenshots/odin-screenshot.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/ad-on-is/odin-server/main/screenshots/odin-screenshot2.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-01
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Jackett server.
+    </Requires>
+    <Config Name="Web UI Port" Target="6060" Default="6060" Mode="tcp" Description="Container Port: 6060" Type="Port" Display="always-hide" Required="true" Mask="false">6060</Config>
+    <Config Name="Jackett - URL" Target="JACKETT_URL" Default="http://jackett:9117" Description="URL of the Jackett server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://jackett:9117</Config>
+    <Config Name="Jackett - API Key" Target="JACKETT_KEY" Default="" Description="API key of the Jackett server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="TMDb - API Key" Target="TMDB_KEY" Default="" Description="API key for The Movie Database" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Trakt - Client ID" Target="TRAKT_CLIENTID" Default="" Description="Client ID for Trakt" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Trakt - Client Secret" Target="TRAKT_SECRET" Default="" Description="Client secret for Trakt" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="AllDebrid - API Key" Target="ALLDEBRID_KEY" Default="" Description="API key for AllDebrid. Remove if you don't use AllDebrid" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|debug|warn|error" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Data Path" Target="/pb_data" Default="/mnt/user/appdata/odin/data" Description="Path to store data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/odin/data</Config>
+</Container>
