@@ -13,7 +13,9 @@
     <Support>https://github.com/Sathvik-Rao/ClipCascade/issues</Support>
     <Project>https://github.com/Sathvik-Rao/ClipCascade</Project>
     <Overview>
-        Automatically sync your clipboard across multiple devices, no key press required. Ensures seamless clipboard sharing between devices, prioritizing privacy with end-to-end encryption.
+        Automatically sync your clipboard across multiple devices, no key press required. Ensures seamless clipboard sharing between devices, prioritizing privacy with end-to-end encryption. &#xD;
+        [br]
+        See documentation for set-up details: https://github.com/Sathvik-Rao/ClipCascade?tab=readme-ov-file#%EF%B8%8F-advanced-details
     </Overview>
     <Beta>False</Beta>
     <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
@@ -23,12 +25,18 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-01-03
+
+        Update environmental variables and paths for v2
+
         ### 2024-09-23
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
-    <Config Name="Username" Target="CC_USERNAME" Default="" Description="Username for sync" Type="Variable" Display="always" Required="true" Mask="false"/>
-    <Config Name="Password" Target="CC_PASSWORD" Default="" Description="Password for sync" Type="Variable" Display="always" Required="true" Mask="true"/>
-    <Config Name="Max Message Size" Target="CC_MAX_MESSAGE_SIZE" Default="1" Description="Maximum message size, in MB. Recommend less than 25 for desktop, approx. 1 for mobile" Type="Variable" Display="always" Required="true" Mask="false">1</Config>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Database Password" Target="CC_SERVER_DB_PASSWORD" Default="QjuGlhE3uwylBBANMkX1 o2MdEoFgbU5XkFvTftky" Description="Sets a password for encrypting the user database. Once set, you must use the same password whenever you migrate the database. Pattern: <file password> <user password>" Type="Variable" Display="always-hide" Required="true" Mask="true">QjuGlhE3uwylBBANMkX1 o2MdEoFgbU5XkFvTftky</Config>
+    <Config Name="Max Message Size" Target="CC_MAX_MESSAGE_SIZE_IN_MiB" Default="1" Description="Maximum message size, in MB. Recommend less than 25 for desktop, approx. 1 for mobile" Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Allowed Origins" Target="CC_ALLOWED_ORIGINS" Default="" Description="Specifies which domains are allowed to connect to the WebSocket (CORS policy). Replace with your domain. If not set, all origins are allowed by default, which may be less secure." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Logging Level" Target="CC_SERVER_LOGGING_LEVEL" Default="INFO|DEBUG|WARN|ERROR|TRACE|FATAL|OFF" Description="Sets the logging level for the server." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Database Path" Target="/database" Default="/mnt/user/appdata/clipcascade/database" Description="Path to the database file" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/clipcascade/database</Config>
 </Container>
