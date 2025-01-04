@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>PdfDing</Name>
+    <Repository>mrmn/pdfding:latest</Repository>
+    <Registry>https://hub.docker.com/r/mrmn/pdfding</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/mrmn2/PdfDing/issues</Support>
+    <Project>https://github.com/mrmn2/PdfDing</Project>
+    <Overview>
+        Self-hosted PDF manager, viewer and editor offering a seamless user experience on multiple devices.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>pdf manager viewer editor server devices</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pdfding-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pdfding.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/mrmn2/PdfDing-Screenshots/master/screenshots/pdf_overview_dark_green.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        Optionally can use a separate Postgres database container, or a built-in SQLite database.
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+
+    <Config Name="Media Path" Target="/home/nonroot/pdfding/media" Default="" Description="Path to the media folder" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+
+    <Config Name="Theme" Target="DEFAULT_THEME" Default="dark|light" Description="Theme" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Theme Color" Target="DEFAULT_THEME_COLOR" Default="green|blue|red|pink|orange|gray" Description="Theme color" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Used for securing signed data. Should be to a large random value." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Host Name" Target="HOST_NAME" Default="127.0.0.1" Description="The host/domain name where PdfDing will be reachable." Type="Variable" Display="always-hide" Required="true" Mask="false">127.0.0.1</Config>
+    <Config Name="Require User Email Verification" Target="ACCOUNT_EMAIL_VERIFICATION" Default="TRUE|FALSE" Description="Block users until they have verified their email address." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disable User Signups" Target="DISABLE_USER_SIGNUPS" Default="FALSE|TRUE" Description="Disable user signups" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Type" Target="DATABASE_TYPE" Default="SQLITE|POSTGRES" Description="Database type" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Host" Target="POSTGRES_HOST" Default="" Description="Postgres database host. Remove if using SQLite." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Database - Port" Target="POSTGRES_PORT" Default="5432" Description="Postgres database port. Remove if using SQLite." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Database - Password" Target="POSTGRES_PASSWORD" Default="" Description="Postgres database password. Remove if using SQLite." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="OIDC - Enable" Target="OIDC_ENABLE" Default="FALSE|TRUE" Description="Enable OpenID Connect" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="OIDC - Provider Name" Target="OIDC_PROVIDER_NAME" Default="" Description="OpenID Connect provider name" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OIDC - Client ID" Target="OIDC_CLIENT_ID" Default="" Description="OpenID Connect client ID" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="OIDC - Client Secret" Target="OIDC_CLIENT_SECRET" Default="" Description="OpenID Connect client secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="OIDC - Auth URL" Target="OIDC_AUTH_URL" Default="" Description="OpenID Connect authorization URL" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OIDC - Enforce" Target="OIDC_ONLY" Default="FALSE|TRUE" Description="Require users to use OIDC" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - Backend" Target="EMAIL_BACKEND" Default="CONSOLE|SMTP" Description="Whether to send account related emails, e.g a password reset or account verification, to the console or via an SMTP server." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - SMTP Host" Target="SMTP_HOST" Default="" Description="SMTP server host. Remove if using the console backend." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP Port" Target="SMTP_PORT" Default="25" Description="SMTP server port. Remove if using the console backend." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP User" Target="SMTP_USER" Default="" Description="SMTP server user. Remove if using the console backend." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP Password" Target="SMTP_PASSWORD" Default="" Description="SMTP server password. Remove if using the console backend." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Email - SMTP TLS" Target="SMTP_USE_TLS" Default="FALSE|TRUE" Description="Secure the connection to the SMTP server with TLS. Remove if using the console backend." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP SSL" Target="SMTP_USE_SSL" Default="FALSE|TRUE" Description="Secure the connection to the SMTP server with SSL. Remove if using the console backend." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Consumption - Enable" Target="CONSUME_ENABLE" Default="FALSE|TRUE" Description="Enable the consumption folder as an alternative way for adding PDFs." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Consumption - Skip Existing" Target="CONSUME_SKIP_EXISTING" Default="TRUE|FALSE" Description="Skip the addition PDF files if the user already has PDF with the same name and file size." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Consumption - Tags" Target="CONSUME_TAGS" Default="" Description="Comma separated list of tags to add to the PDFs added via the consumption folder." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Backups - Enable" Target="BACKUP_ENABLE" Default="FALSE|TRUE" Description="Enable periodic backups to S3 compatible storage." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Backups - S3 Endpoint" Target="BACKUP_ENDPOINT" Default="" Description="S3 compatible storage endpoint. Remove if not using backups." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Backups - S3 Access Key" Target="BACKUP_ACCESS_KEY" Default="" Description="S3 compatible storage access key. Remove if not using backups." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Backups - S3 Secret Key" Target="BACKUP_SECRET_KEY" Default="" Description="S3 compatible storage secret key. Remove if not using backups." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Backups - S3 Bucket" Target="BACKUP_BUCKET_NAME" Default="" Description="S3 compatible storage bucket. Remove if not using backups." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Backups - Schedule" Target="BACKUP_SCHEDULE" Default="0 0 * * *" Description="Cron schedule for the backups. Default is midnight every day." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Backups - Secure" Target="BACKUP_SECURE" Default="FALSE|TRUE" Description="Secure the connection to the S3 compatible storage with TLS." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Backups - Encryption" Target="BACKUP_ENCRYPTION_ENABLE" Default="FALSE|TRUE" Description="Encrypt the backups before uploading them to the S3 compatible storage." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Backups - Encryption Password" Target="BACKUP_ENCRYPTION_PASSWORD" Default="" Description="Password to encrypt the backups. Remove if not using encryption." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Backups - Encryption Salt" Target="BACKUP_ENCRYPTION_SALT" Default="" Description="Salt to encrypt the backups. Remove if not using encryption." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+
+    <Config Name="Database Path" Target="/home/nonroot/pdfding/db" Default="/mnt/user/appdata/pdfding/db" Description="Path to the SQLite database folder. Remove if using Postgres." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pdfding/db</Config>
+
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="ERROR|WARN|INFO|DEBUG" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Secure CSRF Cookie" Target="CSRF_COOKIE_SECURE" Default="TRUE|FALSE" Description="Set this to TRUE to avoid transmitting the CSRF cookie over HTTP accidentally." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Secure Session Cookie" Target="SESSION_COOKIE_SECURE" Default="TRUE|FALSE" Description="Set this to TRUE to avoid transmitting the session cookie over HTTP accidentally." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Secure SSL Redirects" Target="SECURE_SSL_REDIRECT" Default="FALSE|TRUE" Description="Redirects all non-HTTPS requests to HTTPS. If PdfDing is running behind a reverse proxy this can cause infinite redirects." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Secure HSTS Seconds" Target="SECURE_HSTS_SECONDS" Default="" Description="See details: https://github.com/mrmn2/PdfDing/blob/master/docs/configuration.md#secure_hsts_seconds" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Default Protocol for Account" Target="ACCOUNT_DEFAULT_HTTP_PROTOCOL" Default="https|http" Description="The default protocol for account related URLs, e.g. for the password forgotten procedure." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Server Port" Target="HOST_PORT" Default="8000" Description="The port where the internal server is reachable. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8000</Config>
+</Container>
