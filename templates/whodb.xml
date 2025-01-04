@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>WhoDB</Name>
+    <Repository>clidey/whodb:latest</Repository>
+    <Registry>https://hub.docker.com/r/clidey/whodb</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://whodb.clidey.com/docs/</Support>
+    <Project>https://whodb.clidey.com/</Project>
+    <Overview>
+        A lightweight, powerful, and user-friendly database management tool designed to streamline your database administration tasks. Combining the simplicity of Adminer with enhanced UX and performance, WhoDB is built with GoLang to deliver optimal speed and efficiency. With features like interactive schema visualization and inline editing, WhoDB caters to both small projects and complex enterprise systems.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>database admin adminer db management administrator admin golang go visualization</ExtraSearchTerms>
+    <Icon>https://whodb.clidey.com/docs/img/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/whodb.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/clidey/whodb/refs/heads/main/docs/images/trailer.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-03
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+
+    <Config Name="Ollama - Host" Target="WHODB_OLLAMA_HOST" Default="" Description="Hostname of the remote Ollama server. Remove if not using Ollama" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Ollama - Port" Target="WHODB_OLLAMA_PORT" Default="11434" Description="Port of the remote Ollama server. Remove if not using Ollama" Type="Variable" Display="always" Required="true" Mask="false">11434</Config>
+</Container>
