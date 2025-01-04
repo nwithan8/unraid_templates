@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>WoLi WebGUI</Name>
+    <Repository>remyfv/woli-webgui:latest</Repository>
+    <Registry>https://hub.docker.com/r/remyfv/woli-webgui</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/RemyFV/WoLi-webgui/issues</Support>
+    <Project>https://github.com/RemyFV/WoLi-webgui</Project>
+    <Overview>
+        An extremely lightweight container image for sending WoL Magic Packets easily to a public WoL proxy of your choice.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Network:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>wake lan wol magic packet proxy command</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/woli-webgui-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/woli_webgui.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/RemyFV/WoLi-webgui/main/doc/screenshot.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-03
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="8783" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8783</Config>
+</Container>
