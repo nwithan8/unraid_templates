@@ -5,7 +5,7 @@
     <Registry>ghcr.io/notifiarr/starrproxy</Registry>
     <Branch>
         <Tag>main</Tag>
-        <TagDescription>Latest nightly release</TagDescription>
+        <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Branch>
         <Tag>develop</Tag>
@@ -31,7 +31,7 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
-        ### 2025-0105
+        ### 2025-01-05
 
         Initial release
     </Changes>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Dockwatch</Name>
+    <Repository>ghcr.io/notifiarr/dockwatch:main</Repository>
+    <Registry>ghcr.io/notifiarr/dockwatch</Registry>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest develop release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>nightly</Tag>
+        <TagDescription>Latest nightly release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/Notifiarr/dockwatch/issues</Support>
+    <Project>https://dockwatch.wiki/</Project>
+    <Overview>
+        Simple UI driven way to manage updates and notifications for Docker containers.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Management Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>notifiarr dockwatch docker containers updates notifications images</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dockwatch-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dockwatch.xml</TemplateURL>
+    <Screenshot>https://dockwatch.wiki/en/latest/assets/screenshots/interface/overview.png</Screenshot>
+    <Screenshot>https://dockwatch.wiki/en/latest/assets/screenshots/interface/containers.png</Screenshot>
+    <Screenshot>https://dockwatch.wiki/en/latest/assets/screenshots/interface/orphans.png</Screenshot>
+    <Screenshot>https://dockwatch.wiki/en/latest/assets/screenshots/interface/notifications.png</Screenshot>
+    <Screenshot>https://dockwatch.wiki/en/latest/assets/screenshots/interface/settings.png</Screenshot>
+    <Screenshot>https://dockwatch.wiki/en/latest/assets/screenshots/interface/tasks.png</Screenshot>
+    <Screenshot>https://dockwatch.wiki/en/latest/assets/screenshots/interface/commands.png</Screenshot>
+    <Screenshot>https://dockwatch.wiki/en/latest/assets/screenshots/interface/logs.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-05
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="9999" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">9999</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/dockwatch/config" Description="Path to configuration files" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dockwatch/config</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="PUID" Target="PUID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
+    <Config Name="PGID" Target="PGID" Default="999" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">999</Config>
+</Container>
