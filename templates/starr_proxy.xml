@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Starr Proxy</Name>
+    <Repository>ghcr.io/notifiarr/starrproxy:main</Repository>
+    <Registry>ghcr.io/notifiarr/starrproxy</Registry>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest nightly release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest develop release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Notifiarr/starrproxy/issues</Support>
+    <Project>https://github.com/Notifiarr/starrproxy</Project>
+    <Overview>
+        Provide access scoped API keys and stop letting every 3rd party app and script have full access to your starr instance(s)!
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Network:Management Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>notifiarr starr api key proxy apps templates</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/Notifiarr/starrproxy/main/root/app/www/public/images/logo-64.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/starr_proxy.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Notifiarr/starrproxy/main/root/app/www/public/images/screenshots/apps.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Notifiarr/starrproxy/main/root/app/www/public/images/screenshots/endpointUsage.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Notifiarr/starrproxy/main/root/app/www/public/images/screenshots/stats.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-0105
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="9090" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">9090</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/starr_proxy/config" Description="Path to configuration files" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/starr_proxy/config</Config>
+</Container>
