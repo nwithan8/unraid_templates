@@ -1,15 +1,11 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>ebook2audiobook</Name>
-    <Repository>athomasson2/ebook2audiobookxtts:huggingface</Repository>
+    <Repository>athomasson2/ebook2audiobookxtts:latest</Repository>
     <Registry>https://hub.docker.com/r/athomasson2/ebook2audiobookxtts</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
-    </Branch>
-    <Branch>
-        <Tag>huggingface</Tag>
-        <TagDescription>Latest stable release with HuggingFace integration</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:7860]</WebUI>
@@ -31,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-01-05
+
+        Remove unsupported branch
+
         ### 2024-12-27
 
         Initial release
