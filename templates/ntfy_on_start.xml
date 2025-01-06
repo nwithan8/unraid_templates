@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Ntfy-On-Start</Name>
+    <Repository>nwithan8/ntfy-on-start:latest</Repository>
+    <Registry>https://hub.docker.com/r/nwithan8/ntfy-on-start</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/nwithan8/docker-ntfy-on-start/issues</Support>
+    <Project>https://github.com/nwithan8/docker-ntfy-on-start</Project>
+    <Overview>
+        This is a simple container that sends a message when the container is started (needed this for a headless machine to know when I can connect or better speaking start up the VM's with WOL).
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Tools:Utilities Other: Status:Stable</Category>
+    <ExtraSearchTerms>notification notify message ntfy alert</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/ich777/docker-templates/master/ich777/images/donegear.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ntfy_on_start.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-06
+
+        Initial release
+    </Changes>
+    <Config Name="ntfy URL" Target="NTFY_URL" Default="https://ntfy.sh" Description="URL of the ntfy server" Type="Variable" Display="always-hide" Required="true" Mask="false">https://ntfy.sh</Config>
+    <Config Name="ntfy Access Token" Target="NTFY_ACCESS_TOKEN" Default="" Description="Access token for the ntfy server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="ntfy Topic" Target="NTFY_TOPIC" Default="server" Description="Topic of the ntfy message" Type="Variable" Display="always-hide" Required="true" Mask="false">server</Config>
+    <Config Name="ntfy Title" Target="NTFY_TITLE" Default="Startup Complete" Description="Title of the ntfy message" Type="Variable" Display="always-hide" Required="true" Mask="false">Startup Complete</Config>
+    <Config Name="ntfy Message" Target="NTFY_MESSAGE" Default="Server is now Online!" Description="Body of the ntfy message" Type="Variable" Display="always-hide" Required="true" Mask="false">Server is now Online!</Config>
+    <Config Name="ntfy Priority" Target="NTFY_PRIORITY" Default="default|low|high|min|max" Description="Priority of the ntfy message" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+</Container>
