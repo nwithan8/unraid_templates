@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Slink</Name>
+    <Repository>anirdev/slink:latest</Repository>
+    <Registry>https://hub.docker.com/r/anirdev/slink</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/andrii-kryvoviaz/slink/issues</Support>
+    <Project>https://github.com/andrii-kryvoviaz/slink</Project>
+    <Overview>
+        A self-hosted image sharing platform built with Symfony and SvelteKit️.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>photo album share image gallery pictures link</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/slink-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/slink.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/andrii-kryvoviaz/slink/main/screens/e98ea79e-01bb-4e23-98ba-b18841d09c9b.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/andrii-kryvoviaz/slink/main/screens/d3905318-f8ad-48d5-bb9a-09e1e45dbb8e.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/andrii-kryvoviaz/slink/main/screens/ff1faa4a-f764-4dc4-a6b2-3e835fbf26b1.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-05
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Require User Approval" Target="USER_APPROVAL_REQUIRED" Default="true|false" Description="Whether to require user approval before they can upload images" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Unauthenticated Users" Target="USER_ALLOW_UNAUTHENTICATED_ACCESS" Default="true|false" Description="Whether to allow unauthenticated users to access public routes" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Minimum Password Length" Target="USER_PASSWORD_MIN_LENGTH" Default="6" Description="Minimum password length required for users" Type="Variable" Display="always-hide" Required="true" Mask="false">6</Config>
+    <Config Name="User Password Requirements" Target="USER_PASSWORD_REQUIREMENTS" Default="15" Description="Bitmask of password requirements. Sum of the following options: 1 (numbers), 2 (lowercase), 4 (uppercase), 8 (special characters)." Type="Variable" Display="always-hide" Required="true" Mask="false">15</Config>
+    <Config Name="Maximum Image Size" Target="IMAGE_MAX_SIZE" Default="15M" Description="Maximum image size allowed to be uploaded, in MB. Cannot be more than 50M." Type="Variable" Display="always-hide" Required="true" Mask="false">15M</Config>
+    <Config Name="Strip EXIF Data" Target="IMAGE_STRIP_EXIF_METADATA" Default="true|false" Description="Whether to strip EXIF metadata from the uploaded images" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Storage Provider" Target="STORAGE_PROVIDER" Default="local|smb|s3" Description="Storage provider to use for storing images" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Local Storage - Image Path" Target="/app/slink/images" Default="" Description="Path to store images. Remove if not using local storage." Type="Path" Mode="rw" Display="always" Required="false" Mask="false"/>
+    <Config Name="SMB Storage - Host" Target="SMB_HOST" Default="" Description="SMB host to connect to. Remove if not using SMB storage." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SMB Storage - Share" Target="SMB_SHARE" Default="" Description="SMB share to connect to. Remove if not using SMB storage." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SMB Storage - Username" Target="SMB_USERNAME" Default="" Description="SMB username to connect with. Remove if not using SMB storage." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SMB Storage - Password" Target="SMB_PASSWORD" Default="" Description="SMB password to connect with. Remove if not using SMB storage." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="S3 Storage - Region" Target="AMAZON_S3_REGION" Default="" Description="Amazon S3 region to connect to. Remove if not using S3 storage." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="S3 Storage - Bucket" Target="AMAZON_S3_BUCKET" Default="" Description="Amazon S3 bucket to connect to. Remove if not using S3 storage." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="S3 Storage - Access Key ID" Target="AMAZON_S3_ACCESS_KEY_ID" Default="" Description="Amazon S3 access key ID to connect with. Remove if not using S3 storage." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="S3 Storage - Secret Access Key" Target="AMAZON_S3_SECRET_ACCESS_KEY" Default="" Description="Amazon S3 secret access key to connect with. Remove if not using S3 storage." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Database Path" Target="/app/var/data" Default="/mnt/user/appdata/slink/data" Description="Path to the database" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/slink/data</Config>
+    <Config Name="Origin" Target="ORIGIN" Default="http://localhost:3000" Description="Origin of the app" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Swoole Worker Count" Target="SWOOLE_WORKER_NUM" Default="4" Description="Number of Swoole workers" Type="Variable" Display="advanced-hide" Required="true" Mask="false">4</Config>
+    <Config Name="API Enabled" Target="API_ENABLED" Default="true|false" Description="Whether to enable the API" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
