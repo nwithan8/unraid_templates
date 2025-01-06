@@ -10,8 +10,8 @@
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3000]/</WebUI>
     <Privileged>false</Privileged>
-    <Support>https://github.com/andrii-kryvoviaz/slink/issues</Support>
-    <Project>https://github.com/andrii-kryvoviaz/slink</Project>
+    <Support>https://docs.slinkapp.io/getting-started/01-introduction/</Support>
+    <Project>https://docs.slinkapp.io/</Project>
     <Overview>
         A self-hosted image sharing platform built with Symfony and SvelteKit️.
     </Overview>
