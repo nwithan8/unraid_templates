@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>MeTube</Name>
+    <Repository>ghcr.io/alexta69/metube:latest</Repository>
+    <Registry>ghcr.io/alexta69/metube</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8081]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/alexta69/metube/issues</Support>
+    <Project>https://github.com/alexta69/metube</Project>
+    <Overview>
+        Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>youtube-dl yt-dlp youtube video download playlist</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/metube-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/metube.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/alexta69/metube/master/screenshot.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-06
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8081" Default="8081" Mode="tcp" Description="Container Port: 8081" Type="Port" Display="always-hide" Required="true" Mask="false">8081</Config>
+    <Config Name="Downloads path" Target="/downloads" Default="" Description="Storage for downloaded files" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Theme" Target="DEFAULT_THEME" Default="auto|light|dark" Description="Default theme for the web interface" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Output Template" Target="OUTPUT_TEMPLATE" Default="%(title)s.%(ext)s" Description="Output template for the downloaded files" Type="Variable" Display="always-hide" Required="true" Mask="false">%(title)s.%(ext)s</Config>
+    <Config Name="Output Template - Chapters" Target="OUTPUT_TEMPLATE_CHAPTERS" Default="%(title)s - %(section_number)s %(section_title)s.%(ext)s" Description="Output template for the downloaded chapters. Default to OUTPUT_TEMPLATE if empty." Type="Variable" Display="always-hide" Required="false" Mask="false">%(title)s - %(section_number)s %(section_title)s.%(ext)s</Config>
+    <Config Name="Output Template - Playlist" Target="OUTPUT_TEMPLATE_PLAYLIST" Default="%(playlist_title)s/%(title)s.%(ext)s" Description="Output template for the downloaded playlist. Default to OUTPUT_TEMPLATE if empty." Type="Variable" Display="always-hide" Required="false" Mask="false">%(playlist_title)s/%(title)s.%(ext)s</Config>
+    <Config Name="Internal Download Directory" Target="DOWNLOAD_DIR" Default="/downloads" Description="Directory where the downloads are stored inside the container" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/downloads</Config>
+    <Config Name="Internal Audio Download Directory" Target="AUDIO_DOWNLOAD_DIR" Default="/downloads" Description="Directory where the audio downloads are stored inside the container" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/downloads</Config>
+    <Config Name="Indexable Download Directories" Target="DOWNLOAD_DIRS_INDEXABLE" Default="false|true" Description="If true, the download dirs (DOWNLOAD_DIR and AUDIO_DOWNLOAD_DIR) are indexable on the webserver." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Enable Custom Directory Selection" Target="CUSTOM_DIRS" Default="true|false" Description="When enabled, a drop-down appears next to the Add button to specify the download directory." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Create Custom Directories" Target="CREATE_CUSTOM_DIRS" Default="true|false" Description="Automatically create custom directories if they do not exist. When enabled, the download directory selector becomes supports free-text input, and the specified directory will be created recursively." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal State Directory" Target="STATE_DIR" Default="/downloads/.metube" Description="Where the queue persistence files will be saved" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/downloads/.metube</Config>
+    <Config Name="Internal Temp Directory" Target="TEMP_DIR" Default="/downloads" Description="Where temporary files will be saved" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/downloads</Config>
+    <Config Name="Delete From Filesystem" Target="DELETE_FILE_ON_TRASHCAN" Default="false|true" Description="Delete the file from the filesystem when it is removed from the 'Completed' section on the UI." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="URL Prefix" Target="URL_PREFIX" Default="/" Description="Base path for the web server (for use when hosting behind a reverse proxy)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/</Config>
+    <Config Name="Public Host URL" Target="PUBLIC_HOST_URL" Default="" Description="Base URL for the download links shown in the UI for completed files. By default MeTube serves them under its own URL. If your download directory is accessible on another URL and you want the download links to be based there, use this variable to set it." Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Use SSL" Target="HTTPS" Default="false|true" Description="Enable HTTPS" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="SSL Certificate" Target="CERTFILE" Default="" Description="Path to the SSL certificate. Required if HTTPS enabled." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="SSL Key" Target="KEYFILE" Default="" Description="Path to the SSL key. Required if HTTPS enabled." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Public Host URL (Audio)" Target="PUBLIC_HOST_AUDIO_URL" Default="" Description="Base URL for the audio download links shown in the UI for completed files. By default MeTube serves them under its own URL. If your audio download directory is accessible on another URL and you want the download links to be based there, use this variable to set it." Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Strict Playlist Mode" Target="DEFAULT_OPTION_PLAYLIST_STRICT_MODE" Default="false|true" Description="If true, the 'Strict Playlist mode' switch will be enabled by default. In this mode the playlists will be downloaded only if the URL strictly points to a playlist. URLs to videos inside a playlist will be treated same as direct video URL." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Max Number of Playlist Items" Target="DEFAULT_OPTION_PLAYLIST_ITEM_LIMIT" Default="0" Description="Maximum number of items to download from a playlist. 0 means no limit." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0</Config>
+    <Config Name="YTDL Options" Target="YTDL_OPTIONS" Default="{}" Description="Additional options to pass to youtube-dl" Type="Variable" Display="advanced-hide" Required="false" Mask="false">{}</Config>
+    <Config Name="YTDL Options File" Target="YTDL_OPTIONS_FILE" Default="" Description="Path to a file containing additional options to pass to youtube-dl" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Robots.txt File" Target="ROBOTS_TXT" Default="" Description="Path to a file containing the robots.txt content" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
