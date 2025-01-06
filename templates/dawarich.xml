@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-01-05
+
+        Add missing environment variables
+
         ### 2024-12-30
 
         Initial release
@@ -39,11 +43,13 @@
     <Config Name="Imports Path" Target="/var/app/tmp/imports/watched" Default="/mnt/user/appdata/dawarich/imports" Description="Path to watch for imports" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/imports</Config>
     <Config Name="Redis - URL" Target="REDIS_URL" Default="redis://IP_ADDRESS:6379/0" Description="URL of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://IP_ADDRESS:6379/0</Config>
     <Config Name="Postgres - Host" Target="DATABASE_HOST" Default="" Description="Host of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Port" Target="DATABASE_PORT" Default="5432" Description="Port of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
     <Config Name="Postgres - Username" Target="DATABASE_USERNAME" Default="" Description="Username of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Postgres - Password" Target="DATABASE_PASSWORD" Default="" Description="Password of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Postgres - Database" Target="DATABASE_NAME" Default="" Description="Name of the PostgreSQL database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Timezone" Target="TIME_ZONE" Default="UTC" Description="Timezone of the application" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Distance Units" Target="DISTANCE_UNIT" Default="km|mi" Description="Units for distance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Minimum City Minutes" Target="MIN_MINUTES_SPENT_IN_CITY" Default="60" Description="Minimum minutes spent in a city to be considered a visit" Type="Variable" Display="always-hide" Required="true" Mask="false">60</Config>
     <Config Name="Photon API - Host" Target="PHOTON_API_HOST" Default="photon.komoot.io" Description="Host of the Photon API" Type="Variable" Display="always-hide" Required="true" Mask="false">photon.komoot.io</Config>
     <Config Name="Photon API - Use HTTPS" Target="PHOTON_API_USE_HTTPS" Default="true|false" Description="Use HTTPS for the Photon API" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Prometheus Exporter - Enable" Target="PROMETHEUS_EXPORTER_ENABLED" Default="false|true" Description="Enable the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
