@@ -16,7 +16,7 @@
         A UI for DAPS (Drazzilb's Arr PMM Scripts)
     </Overview>
     <Beta>True</Beta>
-    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other:</Category>
     <ExtraSearchTerms>DAPS UI PMM Kometa Arr</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/daps-ui-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/daps_ui.xml</TemplateURL>
