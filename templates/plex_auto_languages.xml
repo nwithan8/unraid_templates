@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Plex Auto Languages</Name>
+    <Repository>remirigal/plex-auto-languages:latest</Repository>
+    <Registry>https://hub.docker.com/r/remirigal/plex-auto-languages</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/RemiRigal/Plex-Auto-Languages/issues</Support>
+    <Project>https://github.com/RemiRigal/Plex-Auto-Languages</Project>
+    <Overview>
+        Automated language selection for Plex TV shows. Lets you have a Netflix-like experience by auto-updating the language of your Plex TV Show episodes based on the current language you are using without messing with your existing language preferences.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Plex auto language TV show episode Netflix automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/plex-auto-languages-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/plex_auto_languages.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-06
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a config.yaml file in the Config Path: https://github.com/RemiRigal/Plex-Auto-Languages?tab=readme-ov-file#configuration
+    </Requires>
+    <Config Name="Plex - URL" Target="PLEX_URL" Default="http://IP_ADDRESS:32400" Description="URL of your Plex server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:32400</Config>
+    <Config Name="Plex - Token" Target="PLEX_TOKEN" Default="" Description="Token of your Plex server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/plex_auto_languages/config" Description="Path to configuration files" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plex_auto_languages/config</Config>
+</Container>
