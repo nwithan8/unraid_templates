@@ -30,6 +30,9 @@
 
         Initial release
     </Changes>
+    <Requires>
+        Requires a separate Paperless-ngx instance (and optional Ollama) to function.
+    </Requires>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/paperless-ai" Description="Path to app data" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/paperless-ai</Config>
 </Container>
