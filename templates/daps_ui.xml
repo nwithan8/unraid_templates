@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>daps-ui</Name>
+    <Repository>monster117/daps-ui:develop</Repository>
+    <Registry>https://hub.docker.com/r/monster117/daps-ui</Registry>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/zarskie/daps-ui/issues</Support>
+    <Project>https://github.com/zarskie/daps-ui</Project>
+    <Overview>
+        A UI for DAPS (Drazzilb's Arr PMM Scripts)
+    </Overview>
+    <Beta>True</Beta>
+    <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>DAPS UI PMM Kometa Arr</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/daps-ui-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/daps_ui.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-06
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Posters Path" Target="/posters" Default="" Description="Path to posters" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Kometa Assets Path" Target="/assets" Default="" Description="Path to Kometa assets" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/daps-ui/config" Description="Path to configuration files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/daps-ui/config</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="App Mode" Target="APP_MODE" Default="web" Description="App mode. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">web</Config>
+</Container>
