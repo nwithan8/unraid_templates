@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Paperless-AI</Name>
+    <Repository>clusterzx/paperless-ai:latest</Repository>
+    <Registry>https://hub.docker.com/r/clusterzx/paperless-ai</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/clusterzx/paperless-ai/issues</Support>
+    <Project>https://github.com/clusterzx/paperless-ai</Project>
+    <Overview>
+        An automated document analyzer for Paperless-ngx using OpenAI API and Ollama (Mistral, llama, phi 3, gemma 2) to automatically analyze and tag your documents.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Cloud: MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>paperless-ngx AI paperless document analyzer llama ollama openai chatgpt</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/paperless-ai-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/paperless_ai.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/clusterzx/paperless-ai/main/dashboard.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/clusterzx/paperless-ai/main/setup.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-07
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/paperless-ai" Description="Path to app data" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/paperless-ai</Config>
+</Container>
