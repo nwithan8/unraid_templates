@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Openbooks</Name>
+    <Repository>evanbuss/openbooks:latest</Repository>
+    <Registry>https://hub.docker.com/r/evanbuss/openbooks</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>edge</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://evan-buss.github.io/openbooks/configuration/</Support>
+    <Project>https://evan-buss.github.io/openbooks/</Project>
+    <Overview>
+        Provides a convenient user interface over IRC Highway's #ebook channel. It streamlines the process of connecting, searching for, and downloading books.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Books MediaServer:Books Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>books reading library irc highway download search ebook chat</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/openbooks-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/openbooks.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/evan-buss/openbooks/refs/heads/master/.github/home_v3.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-06
+
+        Initial release
+    </Changes>
+    <Requires>
+        In **Post Arguments**, replace $NAME with your IRC username. Optionally, change the server and searchbot.
+    </Requires>
+    <PostArgs>--name $NAME --server irc.irchighway.net:6697 --searchbot search --persist true --dir /books</PostArgs>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Books Storage Path" Target="/books" Default="" Description="Directory where search results and eBooks are saved." Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false"/>
+</Container>
