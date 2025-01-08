@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>CaddyGen</Name>
+    <Repository>wardy784/caddygen:latest</Repository>
+    <Registry>https://hub.docker.com/r/wardy784/caddygen</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/DeanWard/CaddyGen/issues</Support>
+    <Project>https://caddygen.site/</Project>
+    <Overview>
+        A user-friendly web interface for generating Caddy server configurations. Easily create and manage reverse proxy and file server configurations with support for SSL, compression, security headers, and more.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>reverse proxy caddy server configuration ssl compression security headers config edit editor</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/caddy-gen-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/caddy_gen.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-07
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+</Container>
