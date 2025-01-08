@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Kaizoku</Name>
+    <Repository>ghcr.io/oae/kaizoku:latest</Repository>
+    <Registry>ghcr.io/oae/kaizoku</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/oae/kaizoku/issues</Support>
+    <Project>https://kaizoku.app/</Project>
+    <Overview>
+        A self-hosted manga downloader.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Books MediaServer:Books Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>manga downloader comics anime hentai Japan book</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/oae/kaizoku/main/public/kaizoku.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kaizoku.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kaizoku_home.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kaizoku_details.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kaizoku_search.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate PostgreSQL database and Redis instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Library Path" Target="/data" Default="" Description="Path to store downloaded files" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Database URL" Target="DATABASE_URL" Default="postgresql://kaizoku:kaizoku@db:5432/kaizoku" Description="Postgres database URL" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://kaizoku:kaizoku@db:5432/kaizoku</Config>
+    <Config Name="Redis - Host" Target="REDIS_HOST" Default="" Description="Redis host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="Redis port" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/kaizoku/config" Description="Path to store configuration files" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/kaizoku/config</Config>
+    <Config Name="Logs Path" Target="/logs" Default="/mnt/user/appdata/kaizoku/logs" Description="Path to store logs" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/kaizoku/logs</Config>
+    <Config Name="Internal Port" Target="KAIZOKU_PORT" Default="3000" Description="Internal port for Kaizoku. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
