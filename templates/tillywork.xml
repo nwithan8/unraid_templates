@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>tillywork</Name>
+    <Repository>tillywork/tillywork:latest</Repository>
+    <Registry>https://hub.docker.com/r/tillywork/tillywork</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.tilly.work/</Support>
+    <Project>https://tilly.work/</Project>
+    <Overview>
+        An open-source work management software with support for project management, sales CRM and agile projects.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>work management project sales crm agile Monday Jira workboard board ticket YouTrack Trello</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tillywork-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tillywork.xml</TemplateURL>
+    <Screenshot>https://cdn.tilly.work/TWDemo.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tillywork_demo.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate PostgreSQL database and Redis instance.
+    </Requires>
+    <PostArgs>/start.sh</PostArgs>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">80</Config>
+    <Config Name="API Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Postgres - Host" Target="TW_DB_HOST" Default="" Description="Postgres database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Port" Target="TW_DB_PORT" Default="5432" Description="Postgres database port" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Postgres - Database Name" Target="TW_DB_NAME" Default="tillywork" Description="Postgres database name" Type="Variable" Display="always-hide" Required="true" Mask="false">tillywork</Config>
+    <Config Name="Postgres - User" Target="TW_DB_USERNAME" Default="postgres" Description="Postgres database user" Type="Variable" Display="always-hide" Required="true" Mask="false">postgres</Config>
+    <Config Name="Postgres - Password" Target="TW_DB_PASSWORD" Default="" Description="Postgres database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Use SSL" Target="TW_DB_ENABLE_SSL" Default="false|true" Description="Use SSL for Postgres connection" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis - Host" Target="TW_REDIS_HOST" Default="" Description="Redis host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis - Port" Target="TW_REDIS_PORT" Default="6379" Description="Redis port" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Secret Key" Target="TW_SECRET_KEY" Default="" Description="Secret key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Mail - Enable" Target="TW_MAIL_ENABLE" Default="false|true" Description="Enable mail" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Mail - SMTP Host" Target="TW_MAIL_HOST" Default="" Description="SMTP host. Remove if mail not enabled." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Mail - SMTP Port" Target="TW_MAIL_PORT" Default="587" Description="SMTP port. Remove if mail not enabled." Type="Variable" Display="always" Required="true" Mask="false">587</Config>
+    <Config Name="Mail - Use SSL" Target="TW_MAIL_SECURE" Default="false|true" Description="Use SSL for SMTP connection. Remove if mail not enabled." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Mail - User" Target="TW_MAIL_USER" Default="" Description="SMTP user. Remove if mail not enabled." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Mail - Password" Target="TW_MAIL_PASS" Default="" Description="SMTP password. Remove if mail not enabled." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Storage - Type" Target="TW_FILE_STORAGE_TYPE" Default="local|s3|azure" Description="Storage type" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Storage - Local - Path" Target="/app/uploads" Default="" Description="Path for local files. Remove if not using local storage." Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Storage - S3 - Access Key ID" Target="TW_AWS_ACCESS_KEY_ID" Default="" Description="AWS access key ID. Remove if not using S3 storage." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Storage - S3 - Secret Access Key" Target="TW_AWS_SECRET_ACCESS_KEY" Default="" Description="AWS secret access key. Remove if not using S3 storage." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Storage - S3 - Region" Target="TW_AWS_REGION" Default="" Description="AWS region. Remove if not using S3 storage." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Storage - S3 - Endpoint" Target="TW_AWS_S3_ENDPOINT" Default="" Description="AWS S3 endpoint. Remove if not using S3 storage." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Storage - S3 - Bucket" Target="TW_AWS_S3_BUCKET" Default="" Description="AWS S3 bucket. Remove if not using S3 storage." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Storage - Azure - Connection String" Target="TW_AZURE_CONNECTION_STRING" Default="" Description="Azure connection string. Remove if not using Azure storage." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Storage - Azure - Container Name" Target="TW_AZURE_CONTAINER_NAME" Default="" Description="Azure container. Remove if not using Azure storage." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="CDN URL" Target="TW_CDN_URL" Default="" Description="CDN URL" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Log Queries" Target="TW_ENABLE_QUERY_LOGGING" Default="false|true" Description="Log queries" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Request Bodies" Target="TW_ENABLE_REQ_BODY_LOGGING" Default="false|true" Description="Log request bodies" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Node Environment" Target="NODE_ENV" Default="development|production|test" Description="Node environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal API Port" Target="PORT" Default="3000" Description="Internal API port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3000</Config>
+</Container>
