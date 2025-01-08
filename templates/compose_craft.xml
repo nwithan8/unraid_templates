@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Compose Craft</Name>
+    <Repository>composecraft/composecraft:latest</Repository>
+    <Registry>https://hub.docker.com/r/composecraft/composecraft</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://composecraft.com/docs/</Support>
+    <Project>https://composecraft.com/</Project>
+    <Overview>
+        A tool to help you manage, edit and share docker compose files in a GUI way.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>compose docker-compose docker compose craft editor gui tool</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/compose-craft-icon.jpg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/compose_craft.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/compose_craft_editor.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/compose_craft_graph.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MongoDB instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="App URL" Target="URL" Default="http://IP_ADDRESS:3000" Description="URL of the app" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3000</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Secret key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="MongoDB URL" Target="MONGO_URL" Default="mongodb://USERNAME:PASSWORD@IP_ADDRESS:27017" Description="URL of the MongoDB instance" Type="Variable" Display="always-hide" Required="true" Mask="false">mongodb://USERNAME:PASSWORD@IP_ADDRESS:27017</Config>
+    <Config Name="Core Only" Target="CORE_ONLY" Default="true|false" Description="Only show core services" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
