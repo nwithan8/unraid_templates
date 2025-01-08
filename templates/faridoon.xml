@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Faridoon</Name>
+    <Repository>ghcr.io/jamesread/faridoon:latest</Repository>
+    <Registry>ghcr.io/jamesread/faridoon</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://jamesread.github.io/Faridoon/configuration/</Support>
+    <Project>https://jamesread.github.io/Faridoon/</Project>
+    <Overview>
+        A web app to publish your favourite chat quotes.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>chat quotes text notes publish favorite share</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/faridoon-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/faridoon.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/jamesread/Faridoon/main/var/mockupLaptop.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jamesread/Faridoon/main/var/mockupMobilePhone.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MySQL database.
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="MySQL - Host" Target="DB_HOST" Default="" Description="MySQL host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="MySQL - Name" Target="DB_NAME" Default="faridoon" Description="MySQL database name" Type="Variable" Display="always-hide" Required="true" Mask="false">faridoon</Config>
+    <Config Name="MySQL - User" Target="DB_USER" Default="faridoon" Description="MySQL user" Type="Variable" Display="always-hide" Required="true" Mask="false">faridoon</Config>
+    <Config Name="MySQL - Password" Target="DB_PASS" Default="" Description="MySQL password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Admin Password" Target="ADMIN_PASSWORD" Default="" Description="Admin password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Site Title" Target="SITE_TITLE" Default="Faridoon" Description="Title of the site" Type="Variable" Display="always-hide" Required="true" Mask="false">Faridoon</Config>
+    <Config Name="Enable Voting" Target="ENABLE_VOTING" Default="0|1" Description="Set to 1 to enable voting on quotes." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Enable Syntax Highlighting" Target="ENABLE_SYNTAX_HIGHLIGHTING" Default="0|1" Description="Set to 1 to enable syntax highlighting in quotes." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/faridoon/config" Description="Path to store configuration files" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/faridoon/config</Config>
+</Container>
