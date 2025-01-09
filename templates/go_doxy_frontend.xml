@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>GoDoxy Frontend</Name>
+    <Repository>ghcr.io/yusing/go-proxy-frontend:latest</Repository>
+    <Registry>ghcr.io/yusing/go-proxy-frontend</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/yusing/go-proxy/issues</Support>
+    <Project>https://github.com/yusing/go-proxy</Project>
+    <Overview>
+        A frontend dashboard for GoDoxy.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>proxy network reverse go dashboard godoxy</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/go-doxy-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/go_doxy_frontend.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/yusing/go-proxy/v0.8/screenshots/webui.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-10
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate GoDoxy instance.
+    </Requires>
+    <Config Name="API - Address" Target="GODOXY_API_ADDR" Default="127.0.0.1:8888" Description="API address" Type="Variable" Display="always-hide" Required="true" Mask="false">127.0.0.1:8888</Config>
+</Container>

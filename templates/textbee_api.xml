@@ -19,7 +19,7 @@
     <ExtraSearchTerms>sms text message gateway api web interface ui twilio</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/textbee-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/textbee_api.xml</TemplateURL>
-    <Screenshot>hhttps://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/textbee_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/textbee_demo_1.png</Screenshot>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>

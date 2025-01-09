@@ -11,7 +11,7 @@
     <WebUI>http://[IP]:[PORT:52000]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://superstreamer.xyz/guide/getting-started</Support>
-    <Project>hhttps://superstreamer.xyz</Project>
+    <Project>https://superstreamer.xyz</Project>
     <Overview>
         Superstreamer is here to make video delivery simple. Imagine having everything you need in one platform — starting with your raw video, Superstreamer helps you transcode it, package it into HLS playlists, and upload it to S3 with ease. You can even create custom playlists for each viewer, adding bumpers, ads, or filters on the fly.
     </Overview>

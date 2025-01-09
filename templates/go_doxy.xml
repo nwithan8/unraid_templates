@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>GoDoxy</Name>
+    <Repository>ghcr.io/yusing/go-proxy:latest</Repository>
+    <Registry>ghcr.io/yusing/go-proxy</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/yusing/go-proxy/issues</Support>
+    <Project>https://github.com/yusing/go-proxy</Project>
+    <Overview>
+        A lightweight, easy-to-use, and performant reverse proxy.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>proxy network reverse go</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/go-doxy-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/go_doxy.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-10
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a config file in the Config Path directory: https://github.com/yusing/go-proxy/wiki/Configurations#config-file-example
+    </Requires>
+    <Config Name="API - JWT Secret" Target="GODOXY_API_JWT_SECRET" Default="" Description="Run `openssl rand -base64 32` to generate." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="API - JWT Time To Live" Target="GODOXY_API_JWT_TOKEN_TTL" Default="1h" Description="JWT expiry time" Type="Variable" Display="always-hide" Required="true" Mask="false">1h</Config>
+    <Config Name="API - User" Target="GODOXY_API_USER" Default="admin" Description="API username" Type="Variable" Display="always-hide" Required="true" Mask="false">admin</Config>
+    <Config Name="API - Password" Target="GODOXY_API_PASSWORD" Default="" Description="API password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="API - Address" Target="GODOXY_API_ADDR" Default="127.0.0.1:8888" Description="API address" Type="Variable" Display="always-hide" Required="true" Mask="false">127.0.0.1:8888</Config>
+    <Config Name="HTTP Port" Target="GODOXY_HTTP_ADDR" Default=":80" Mode="tcp" Description="HTTP port" Type="Variable" Display="advanced-hide" Required="true" Mask="false">:80</Config>
+    <Config Name="HTTPS Port" Target="GODOXY_HTTPS_ADDR" Default=":443" Mode="tcp" Description="HTTPS port" Type="Variable" Display="advanced-hide" Required="true" Mask="false">:443</Config>
+    <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/go_doxy/config" Description="Path to the config directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/go_doxy/config</Config>
+    <Config Name="Error Pages Path" Target="/app/error_pages" Default="/mnt/user/appdata/go_doxy/error_pages" Description="Path to the error pages directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/go_doxy/error_pages</Config>
+    <Config Name="Certs Path" Target="/app/certs" Default="/mnt/user/appdata/go_doxy/certs" Description="Path to the certs directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/go_doxy/certs</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Debug" Target="GODOXY_DEBUG" Default="false|true" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Prometheus Address" Target="GODOXY_PROMETHEUS_ADDR" Default="" Description="Prometheus address" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>
