@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>AdventureLog - Frontend</Name>
+    <Repository>ghcr.io/seanmorley15/adventurelog-frontend:latest</Repository>
+    <Registry>https://hub.docker.com/r/ghcr.io/seanmorley15/adventurelog-frontend</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://adventurelog.app/docs/install/getting_started.html</Support>
+    <Project>https://adventurelog.app/</Project>
+    <Overview>
+        Discover new places, track your adventures, and share your experiences with friends and family.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>adventure travel log map itinerary countries regions dashboard Immich</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/adventure-log-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/adventure_log_frontend.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/brand/screenshots/adventures.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/brand/screenshots/details.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/brand/screenshots/edit.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/brand/screenshots/map.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/brand/screenshots/dashboard.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/brand/screenshots/itinerary.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/brand/screenshots/countries.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/brand/screenshots/regions.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-10
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate AdventureLog backend container.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="8015" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">8015</Config>
+    <Config Name="Public Server URL" Target="PUBLIC_SERVER_URL" Default="http://IP_ADDRESS:8000" Description="What the frontend SSR server uses to connect to the backend. Do NOT change the port." Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:8000</Config>
+    <Config Name="Origin" Target="ORIGIN" Default="http://IP_ADDRESS:8015" Description="Match Web UI Port. Not needed if using HTTPS. If not, set it to the domain of what you will access the app from." Type="Variable" Display="always-hide" Required="false" Mask="false">http://IP_ADDRESS:8015</Config>
+    <Config Name="Body Size Limit" Target="BODY_SIZE_LIMIT" Default="Infinity" Description="The maximum upload size to the server. Should be changed to prevent someone from uploading too much! Custom values must be set in kilobytes." Type="Variable" Display="always-hide" Required="true" Mask="false">Infinity</Config>
+</Container>
