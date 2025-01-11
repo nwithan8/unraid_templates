@@ -2,7 +2,7 @@
 <Container version="2">
     <Name>AdventureLog - Backend</Name>
     <Repository>ghcr.io/seanmorley15/adventurelog-backend:latest</Repository>
-    <Registry>https://hub.docker.com/r/ghcr.io/seanmorley15/adventurelog-backend</Registry>
+    <Registry>https://github.com/seanmorley15/AdventureLog/pkgs/container/adventurelog-backend</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
