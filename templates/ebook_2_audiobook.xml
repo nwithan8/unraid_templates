@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-01-10
+
+        Add optional source files mapping to host to cut down on image size bloat.
+
         ### 2025-01-05
 
         Remove unsupported branch
@@ -38,4 +42,5 @@
     <ExtraParams>--platform=linux/amd64</ExtraParams>
     <PostArgs>python app.py</PostArgs>
     <Config Name="Web UI Port" Target="7860" Default="7860" Mode="tcp" Description="Container Port: 7860" Type="Port" Display="always-hide" Required="true" Mask="false">7860</Config>
+    <Config Name="Files Path" Target="/home/user/app" Default="" Mode="rw" Description="Optionally map source files to host. Cuts down on image size. This will include models, so make sure you have enough space." Type="Path" Display="always" Required="false" Mask="false"/>
 </Container>
