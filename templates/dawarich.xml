@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-01-10
+
+        Remove unnecessary gems path
+
         ### 2025-01-05
 
         Add missing environment variables
@@ -57,7 +61,6 @@
     <Config Name="Prometheus Exporter - Port" Target="PROMETHEUS_EXPORTER_PORT" Default="3001" Description="Port of the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false">9394</Config>
     <Config Name="Enable Telemetry" Target="ENABLE_TELEMETRY" Default="false|true" Description="Enable telemetry" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Web Files Path" Target="/var/app/public" Default="/mnt/user/appdata/dawarich/wwwroot" Description="Path to web files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/wwwroot</Config>
-    <Config Name="Ruby Gems Path" Target="/usr/local/bundle/gems" Default="/mnt/user/appdata/dawarich/gems" Description="Path to Ruby gems" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/gems</Config>
     <Config Name="Rails Environment" Target="RAILS_ENV" Default="development" Description="Rails environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">development</Config>
     <Config Name="Application Host" Target="APPLICATION_HOST" Default="localhost" Description="Host of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
     <Config Name="Application Hosts" Target="APPLICATION_HOSTS" Default="localhost" Description="Hosts of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
