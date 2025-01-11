@@ -25,6 +25,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-01-11
+
+        Add PGID and PUID variables for file permission.
+
         ### 2025-01-03
 
         Initial release
@@ -75,6 +79,8 @@
 
     <Config Name="Database Path" Target="/home/nonroot/pdfding/db" Default="/mnt/user/appdata/pdfding/db" Description="Path to the SQLite database folder. Remove if using Postgres. May need to update write permissions." Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pdfding/db</Config>
 
+    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
     <Config Name="Log Level" Target="LOG_LEVEL" Default="ERROR|WARN|INFO|DEBUG" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Secure CSRF Cookie" Target="CSRF_COOKIE_SECURE" Default="TRUE|FALSE" Description="Set this to TRUE to avoid transmitting the CSRF cookie over HTTP accidentally." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Secure Session Cookie" Target="SESSION_COOKIE_SECURE" Default="TRUE|FALSE" Description="Set this to TRUE to avoid transmitting the session cookie over HTTP accidentally." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
