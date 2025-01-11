@@ -73,7 +73,7 @@
     <Config Name="Backups - Encryption Password" Target="BACKUP_ENCRYPTION_PASSWORD" Default="" Description="Password to encrypt the backups. Remove if not using encryption." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Backups - Encryption Salt" Target="BACKUP_ENCRYPTION_SALT" Default="" Description="Salt to encrypt the backups. Remove if not using encryption." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
 
-    <Config Name="Database Path" Target="/home/nonroot/pdfding/db" Default="/mnt/user/appdata/pdfding/db" Description="Path to the SQLite database folder. Remove if using Postgres." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pdfding/db</Config>
+    <Config Name="Database Path" Target="/home/nonroot/pdfding/db" Default="/mnt/user/appdata/pdfding/db" Description="Path to the SQLite database folder. Remove if using Postgres. May need to update write permissions." Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pdfding/db</Config>
 
     <Config Name="Log Level" Target="LOG_LEVEL" Default="ERROR|WARN|INFO|DEBUG" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Secure CSRF Cookie" Target="CSRF_COOKIE_SECURE" Default="TRUE|FALSE" Description="Set this to TRUE to avoid transmitting the CSRF cookie over HTTP accidentally." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
