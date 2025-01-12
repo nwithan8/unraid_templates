@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Obsidian LiveSync CouchDB</Name>
+    <Repository>oleduc/docker-obsidian-livesync-couchdb:latest</Repository>
+    <Registry>https://hub.docker.com/r/oleduc/docker-obsidian-livesync-couchdb</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5984]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://leduccc.medium.com/setup-self-hosted-synchronization-for-obsidian-cba121166d5e</Support>
+    <Project>https://github.com/oleduc/docker-obsidian-livesync-couchdb</Project>
+    <Overview>
+        A docker container for the CouchDB instance required by obsidian-livesync
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>obsidian livesync couchdb notes git web</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/gotanaccount/unraid-templates/refs/heads/master/obsidian-livesync/favicon-96x96.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/obsidian_livesync_couchdb.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-11
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5984" Default="5984" Mode="tcp" Description="Container Port: 5984" Type="Port" Display="always-hide" Required="true" Mask="false">5984</Config>
+    <Config Name="Server Domain" Target="SERVER_DOMAIN" Default="http://example.com" Description="Domain of the CouchDB server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://example.com</Config>
+    <Config Name="Database - User" Target="COUCHDB_USER" Default="user" Description="CouchDB user" Type="Variable" Display="always-hide" Required="true" Mask="false">user</Config>
+    <Config Name="Database - Password" Target="COUCHDB_PASSWORD" Default="password" Description="CouchDB password" Type="Variable" Display="always-hide" Required="true" Mask="true">password</Config>
+    <Config Name="Database - Name" Target="COUCHDB_DATABASE" Default="obsidian" Description="CouchDB database name" Type="Variable" Display="always-hide" Required="true" Mask="false">obsidian</Config>
+</Container>
