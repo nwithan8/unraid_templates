@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Salt Rim</Name>
+    <Repository>barassistant/salt-rim:v3</Repository>
+    <Registry>https://hub.docker.com/r/barassistant/salt-rim</Registry>
+    <Branch>
+        <Tag>v3</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>dev</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.barassistant.app/setup/</Support>
+    <Project>https://barassistant.app/</Project>
+    <Overview>
+        An all-in-one solution for managing your home bar. This is the frontend component.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>bar assistant cocktail drink recipe cache salt rim</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/bar-assistant-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/salt_rim.xml</TemplateURL>
+    <Screenshot>https://barassistant.app/img/cocktails.png</Screenshot>
+    <Screenshot>https://barassistant.app/img/details.png</Screenshot>
+    <Screenshot>https://barassistant.app/img/shelf.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate meilisearch instance, optional Redis instance and optional Bar Assistant frontend instance.
+    </Requires>
+    <Config Name="API Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="API URL" Target="APP_URL" Default="http://IP_ADDRESS:3000/bar" Description="URL of the API. Must match API Port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000/bar</Config>
+    <Config Name="Meilisearch URL" Target="MEILISEARCH_HOST" Default="http://IP_ADDRESS:7700" Description="URL of the Meilisearch instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:7700</Config>
+</Container>

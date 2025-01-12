@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Bar Assistant - Backend</Name>
+    <Repository>barassistant/server:v4</Repository>
+    <Registry>https://hub.docker.com/r/barassistant/server</Registry>
+    <Branch>
+        <Tag>v4</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>dev</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://docs.barassistant.app/setup/</Support>
+    <Project>https://barassistant.app/</Project>
+    <Overview>
+        An all-in-one solution for managing your home bar. This is the backend component.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>bar assistant cocktail drink recipe cache salt rim</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/bar-assistant-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/bar_assistant_backend.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/karlomikus/vue-salt-rim/master/art/logo.png</Screenshot>
+    <Screenshot>https://barassistant.app/img/cocktails.png</Screenshot>
+    <Screenshot>https://barassistant.app/img/details.png</Screenshot>
+    <Screenshot>https://barassistant.app/img/shelf.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Bar Assistant backend instance.
+    </Requires>
+    <Config Name="API Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="API URL" Target="APP_URL" Default="http://IP_ADDRESS:3000/bar" Description="URL of the API. Must match API Port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000/bar</Config>
+    <Config Name="Meilisearch Master Key" Target="MEILISEARCH_KEY" Default="" Description="Master key for Meilisearch" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Meilisearch URL" Target="MEILISEARCH_HOST" Default="http://IP_ADDRESS:7700" Description="URL of the Meilisearch instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:7700</Config>
+    <Config Name="Cache Driver" Target="CACHE_DRIVER" Default="file|redis" Description="Cache driver to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Session Driver" Target="SESSION_DRIVER" Default="file|redis" Description="Session driver to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis Host" Target="REDIS_HOST" Default="localhost" Description="Host of the Redis instance. Remove if not using Redis." Type="Variable" Display="always" Required="true" Mask="false">localhost</Config>
+    <Config Name="Data path" Target="/var/www/cocktails/storage/bar-assistant" Default="/mnt/user/appdata/bar_assistant/data" Description="Path to data files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/bar_assistant/data</Config>
+</Container>
