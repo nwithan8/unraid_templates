@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Txtify</Name>
+    <Repository>lkmeta/txtify:latest</Repository>
+    <Registry>https://hub.docker.com/r/lkmeta/txtify</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8010]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/lkmeta/txtify/issues</Support>
+    <Project>https://txtify-web.vercel.app</Project>
+    <Overview>
+        An open-source web application that transcribes and translates audio from YouTube videos or uploaded media files. Leveraging the stable-ts library and the whisper models, Txtify offers enhanced transcription accuracy and performance.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: MediaApp:Music MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>transcribe translate audio video youtube media whisper AI stable-ts OpenAI voice</ExtraSearchTerms>
+    <Banner>https://raw.githubusercontent.com/lkmeta/txtify/main/static/txtify_github_logo.png</Banner>
+    <Icon>https://raw.githubusercontent.com/lkmeta/txtify/main/static/txtify_github_logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/txtify.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-13
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8010" Default="8010" Mode="tcp" Description="Container Port: 8010" Type="Port" Display="always-hide" Required="true" Mask="false">8010</Config>
+    <Config Name="DeepL API Key" Target="DEEPL_API_KEY" Default="" Description="Sign up at https://www.deepl.com/en/pro#developer to get your API key." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Run Locally" Target="RUNNING_LOCALLY" Default="True|False" Description="Set this to False if you want to enable the email sending feature for the contact form." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Resend API Key" Target="RESEND_API_KEY" Default="" Description="Used to send emails if Run Locally set to False. Sign up and get your API key at https://resend.com/api-keys." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+</Container>
