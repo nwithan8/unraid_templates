@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>ngrok</Name>
+    <Repository>ngrok/ngrok:latest</Repository>
+    <Registry>https://hub.docker.com/r/ngrok/ngrok</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://ngrok.com/docs</Support>
+    <Project>https://ngrok.com/</Project>
+    <Overview>
+        All-in-one API gateway, Kubernetes Ingress, DDoS protection, firewall, and global load balancing as a service.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>api gateway kubernetes ingress ddos protection firewall load balancing</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ngrok-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ngrok.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-15
+
+        Initial release
+    </Changes>
+    <PostArgs>http 80</PostArgs>
+    <Config Name="Auth Token" Target="NGROK_AUTHTOKEN" Default="" Description="Your ngrok auth token" Type="Variable" Display="always" Required="false" Mask="true"/>
+</Container>
