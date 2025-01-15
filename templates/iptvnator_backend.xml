@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>IPTVnator - Backend</Name>
+    <Repository>4gray/iptvnator-backend:latest</Repository>
+    <Registry>https://hub.docker.com/r/4gray/iptvnator-backend</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/4gray/iptvnator/issues</Support>
+    <Project>https://iptvnator.vercel.app/</Project>
+    <Overview>
+        A video player application that provides support for IPTV playlist playback (m3u, m3u8). This is the backend component.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>IPTV playlist m3u m3u8 video player</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/4gray/iptvnator/electron/src/assets/icons/favicon.256x256.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/iptvnator_backend.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/4gray/iptvnator/electron/iptv-dark-theme.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/4gray/iptvnator/electron/playlists.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/4gray/iptvnator/electron/iptv-main.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/4gray/iptvnator/electron/iptv-upload.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/4gray/iptvnator/electron/upload-via-url.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/4gray/iptvnator/electron/iptv-epg.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/4gray/iptvnator/electron/iptv-settings.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/4gray/iptvnator/electron/iptv-playlist-settings.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-15
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate IPTVnator - Frontend container.
+    </Requires>
+    <Config Name="Communication Port" Target="3000" Default="7333" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">7333</Config>
+    <Config Name="Frontend URL" Target="CLIENT_URL" Default="http://localhost:4333" Description="URL of the frontend component" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:4333</Config>
+</Container>
