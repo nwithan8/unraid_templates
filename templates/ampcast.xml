@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Ampcast</Name>
+    <Repository>ghcr.io/rekkyrosso/ampcast:latest</Repository>
+    <Registry>ghcr.io/rekkyrosso/ampcast</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/rekkyrosso/ampcast/issues</Support>
+    <Project>https://ampcast.app/</Project>
+    <Overview>
+        A music player inspired by Winamp.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Apple Spotify music playlist player web WinAmp Plexamp Plex Emby Jellyfin Subsonic Navidrome YouTube visualizers</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ampcast-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ampcast.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-15
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Single Streaming Service" Target="SINGLE_STREAMING_SERVICE" Default="false|true" Description="Only allow one streaming service to be selected" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Apple Music - Dev Token" Target="AM_DEV_TOKEN" Default="" Description="Apple Music Developer Token" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Last.fm - API Key" Target="LF_API_KEY" Default="" Description="Last.fm API Key" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Last.fm - API Secret" Target="LF_API_SECRET" Default="" Description="Last.fm API Secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Spotify - Disabled" Target="SPOTIFY_DISABLED" Default="false|true" Description="Disable Spotify as a selectable service" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Spotify - Client ID" Target="SP_CLIENT_ID" Default="" Description="Spotify Client ID" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Tidal - Disabled" Target="TIDAL_DISABLED" Default="false|true" Description="Disable Tidal as a selectable service" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Tidal - Client ID" Target="TD_CLIENT_ID" Default="" Description="Tidal Client ID" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="YouTube - Disabled" Target="YOUTUBE_DISABLED" Default="false|true" Description="Disable YouTube as a selectable service" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="YouTube - API Key" Target="YT_CLIENT_ID" Default="" Description="YouTube Client ID" Type="Variable" Display="always" Required="false" Mask="true"/>
+</Container>
