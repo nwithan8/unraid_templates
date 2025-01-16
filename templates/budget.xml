@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Budget</Name>
+    <Repository>rangeofmotion/budget:0.19.0</Repository>
+    <Registry>https://hub.docker.com/r/rangeofmotion/budget</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/rangeofmotion/budget/issues</Support>
+    <Project>https://usebudget.com/</Project>
+    <Overview>
+        An open-source web application that helps you keep track of your finances.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>budget money finance personal transactions receipts currency</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/budget-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/budget.xml</TemplateURL>
+    <Screenshot>https://user-images.githubusercontent.com/9268822/46098425-a8877300-c1c4-11e8-9293-f43ceb9d6f97.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-15
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MySQL database and Redis server.
+    </Requires>
+    <Config Name="Web UI Port" Target="80" Default="8000" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="App Name" Target="APP_NAME" Default="Budget" Description="Name of the app" Type="Variable" Display="always-hide" Required="true" Mask="false">Budget</Config>
+    <Config Name="App Key" Target="APP_KEY" Default="" Description="Key for the app" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="App URL" Target="APP_URL" Default="http://localhost:8000" Description="URL of the app. Must match Web UI Port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000</Config>
+    <Config Name="Database - Type" Target="DB_CONNECTION" Default="mysql" Description="Type of database" Type="Variable" Display="always-hide" Required="true" Mask="false">mysql</Config>
+    <Config Name="Database - Host" Target="DB_HOST" Default="localhost" Description="Host of the database" Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Database - Port" Target="DB_PORT" Default="3306" Description="Port of the database" Type="Variable" Display="always-hide" Required="true" Mask="false">3306</Config>
+    <Config Name="Database - Name" Target="DB_DATABASE" Default="budget" Description="Name of the database" Type="Variable" Display="always-hide" Required="true" Mask="false">budget</Config>
+    <Config Name="Database - Username" Target="DB_USERNAME" Default="" Description="Username of the database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Password" Target="DB_PASSWORD" Default="" Description="Password of the database" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Redis - Host" Target="REDIS_HOST" Default="127.0.0.1" Description="Host of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">127.0.0.1</Config>
+    <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="Port of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Redis - Password" Target="REDIS_PASSWORD" Default="null" Description="Password of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="true">null</Config>
+    <Config Name="Mail - Driver" Target="MAIL_DRIVER" Default="smtp" Description="Mail driver" Type="Variable" Display="always-hide" Required="true" Mask="false">smtp</Config>
+    <Config Name="Mail - Host" Target="MAIL_HOST" Default="smtp.mailtrap.io" Description="Host of the mail server" Type="Variable" Display="always-hide" Required="true" Mask="false">smtp.mailtrap.io</Config>
+    <Config Name="Mail - Port" Target="MAIL_PORT" Default="2525" Description="Port of the mail server" Type="Variable" Display="always-hide" Required="true" Mask="false">2525</Config>
+    <Config Name="Mail - Username" Target="MAIL_USERNAME" Default="null" Description="Username of the mail server" Type="Variable" Display="always-hide" Required="true" Mask="false">null</Config>
+    <Config Name="Mail - Password" Target="MAIL_PASSWORD" Default="null" Description="Password of the mail server" Type="Variable" Display="always-hide" Required="true" Mask="true">null</Config>
+    <Config Name="Mail - Encryption" Target="MAIL_ENCRYPTION" Default="null" Description="Encryption of the mail server" Type="Variable" Display="always-hide" Required="true" Mask="false">null</Config>
+    <Config Name="Pusher - App ID" Target="PUSHER_APP_ID" Default="" Description="App ID of the Pusher server" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Pusher - App Key" Target="PUSHER_APP_KEY" Default="" Description="App key of the Pusher server" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Pusher - App Secret" Target="PUSHER_APP_SECRET" Default="" Description="App secret of the Pusher server" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="App Environment" Target="APP_ENV" Default="production" Description="Environment of the app" Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+    <Config Name="Debug" Target="APP_DEBUG" Default="false|true" Description="Debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Level" Target="APP_LOG_LEVEL" Default="debug|error|info" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Broadcast Driver" Target="BROADCAST_DRIVER" Default="log" Description="Broadcast driver" Type="Variable" Display="advanced-hide" Required="true" Mask="false">log</Config>
+    <Config Name="Cache Driver" Target="CACHE_DRIVER" Default="file" Description="Cache driver" Type="Variable" Display="advanced-hide" Required="true" Mask="false">file</Config>
+    <Config Name="Session Driver" Target="SESSION_DRIVER" Default="file" Description="Session driver" Type="Variable" Display="advanced-hide" Required="true" Mask="false">file</Config>
+    <Config Name="Queue Connection" Target="QUEUE_CONNECTION" Default="database" Description="Queue connection" Type="Variable" Display="advanced-hide" Required="true" Mask="false">database</Config>
+</Container>
