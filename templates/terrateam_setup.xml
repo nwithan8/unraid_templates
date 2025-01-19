@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Terrateam - Setup</Name>
+    <Repository>ghcr.io/terrateamio/terrateam-setup:latest</Repository>
+    <Registry>ghcr.io/terrateamio/terrateam-setup</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.terrateam.io/self-hosted/overview/</Support>
+    <Project>https://terrateam.io/</Project>
+    <Overview>
+        Terrateam is an open-source GitOps CI/CD platform for automating infrastructure workflows. It integrates with GitHub to orchestrate Terraform, OpenTofu, CDKTF, Terragrunt, and Pulumi operations via pull requests.  &#xD;
+        [br]
+        This container is used to build the configuration needed to set up Terrateam.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>gitops ci/cd terraform terragrunt pulumi cdktf opentofu github</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/terrateam-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/terrateam_setup.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-18
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="GitHub Organization" Target="GH_ORG" Default="" Description="Name of the GitHub Organization" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="GitHub Enterprise Server" Target="GHE_HOST" Default="" Description="GitHub Enterprise Server URL. Remove if not using GitHub Enterprise." Type="Variable" Display="always" Required="true" Mask="false"/>
+</Container>
