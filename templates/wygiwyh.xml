@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>WYGIWYH</Name>
+    <Repository>eitchtee/wygiwyh:latest</Repository>
+    <Registry>https://hub.docker.com/r/eitchtee/wygiwyh</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>https://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/eitchtee/WYGIWYH/issues</Support>
+    <Project>https://github.com/eitchtee/WYGIWYH</Project>
+    <Overview>
+        WYGIWYH (What You Get Is What You Have) is a powerful, principles-first finance tracker designed for people who prefer a no-budget, straightforward approach to managing their money. With features like multi-currency support, customizable transactions, and a built-in dollar-cost averaging tracker, WYGIWYH helps you take control of your finances with simplicity and flexibility.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Crypto: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>finance tracker budget money management money currency transaction dollar statistic calculate</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/eitchtee/WYGIWYH/main/.github/img/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/wygiwyh.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/eitchtee/WYGIWYH/main/.github/img/readme_transaction.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/eitchtee/WYGIWYH/main/.github/img/readme_installment_plan.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/eitchtee/WYGIWYH/main/.github/img/readme_recurring_transaction.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/eitchtee/WYGIWYH/main/.github/img/readme_transfer.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/eitchtee/WYGIWYH/main/.github/img/readme_balance.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/eitchtee/WYGIWYH/main/.github/img/readme_calculator.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/eitchtee/WYGIWYH/main/.github/img/readme_dca_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/eitchtee/WYGIWYH/main/.github/img/readme_unit_price_calculator.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate WYGIWYH Procrastinate container and optional PostgreSQL database.
+    </Requires>
+    <PostArgs>/start</PostArgs>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Domain" Target="URL" Default="https://IP_ADDRESS:9000" Description="URL to connect to the app. Must match Web UI Port." Type="Variable" Display="always-hide" Required="true" Mask="false">https://IP_ADDRESS:9000</Config>
+    <Config Name="Database - Engine" Target="SQL_ENGINE" Default="django.db.backends.postgresql|django.db.backends.sqlite3" Description="Database engine" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Host" Target="SQL_HOST" Default="localhost" Description="Database host. Remove if using SQLite3" Type="Variable" Display="always" Required="true" Mask="false">localhost</Config>
+    <Config Name="Database - Port" Target="SQL_PORT" Default="5432" Description="Database port. Remove if using SQLite3" Type="Variable" Display="always" Required="true" Mask="false">5432</Config>
+    <Config Name="Database - Name" Target="SQL_DATABASE" Default="wygiwyh" Description="Database name. Remove if using SQLite3" Type="Variable" Display="always-hide" Required="true" Mask="false">wygiwyh</Config>
+    <Config Name="Database - User" Target="SQL_USER" Default="wygiwyh" Description="Database user." Type="Variable" Display="always-hide" Required="true" Mask="false">wygiwyh</Config>
+    <Config Name="Database - Password" Target="SQL_PASSWORD" Default="wygiwyh" Description="Database password." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Secure secret key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Debug" Target="DEBUG" Default="false|true" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="HTTPS Enabled" Target="HTTPS_ENABLED" Default="true|false" Description="Enable HTTPS" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Django Allowed Hosts" Target="DJANGO_ALLOWED_HOSTS" Default="localhost 127.0.0.1 [::1]" Description="Django allowed hosts" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost 127.0.0.1 [::1]</Config>
+    <Config Name="Web Concurrency" Target="WEB_CONCURRENCY" Default="4" Description="Number of web server workers" Type="Variable" Display="advanced-hide" Required="true" Mask="false">4</Config>
+</Container>
