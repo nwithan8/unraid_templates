@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Bluesky PDS</Name>
+    <Repository>gravityfargo/bluesky-pds:latest</Repository>
+    <Registry>https://hub.docker.com/r/gravityfargo/bluesky-pds</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.modernleft.org/Docker-Images/bluesky-pds</Support>
+    <Project>https://atproto.com/guides/self-hosting</Project>
+    <Overview>
+        A Bluesky PDS (Personal Data Server) allows you to run your own server that is capable of federating with the wider Bluesky social network.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>bluesky social network pds personal data server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/bluesky-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/bluesky_pds.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-19
+
+        Initial release
+    </Changes>
+    <ExtraParams>--hostname example.com --add-host example.com:0.0.0.0</ExtraParams>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="JWT Secret" Target="PDS_JWT_SECRET" Default="" Description="Secret key for JWT tokens. Run 'openssl rand --hex 16'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Admin Password" Target="PDS_ADMIN_PASSWORD" Default="" Description="Password for the admin user" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="PLC Rotation Key" Target="PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX" Default="" Description="Private key for PLC rotation. Run 'openssl ecparam --name secp256k1 --genkey --noout --outform DER | tail --bytes=+8 | head --bytes=32 | xxd --plain --cols 32'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Domain Name" Target="PDS_HOSTNAME" Default="example.com" Description="Domain name for the PDS. Edit Extra Params accordingly (via Advanced View)" Type="Variable" Display="always-hide" Required="true" Mask="false">example.com</Config>
+    <Config Name="Email - SMTP URL" Target="PDS_EMAIL_SMTP_URL" Default="smtps://resend:API_KEY_HERE@smtp.resend.com:465/" Description="SMTP URL for sending emails" Type="Variable" Display="always-hide" Required="true" Mask="false">smtps://resend:API_KEY_HERE@smtp.resend.com:465/</Config>
+    <Config Name="Email - From Address" Target="PDS_EMAIL_FROM_ADDRESS" Default="admin@example.com" Description="Email address to send emails from" Type="Variable" Display="always-hide" Required="true" Mask="false">admin@example.com</Config>
+    <Config Name="Data Path" Target="/pds" Default="/mnt/user/appdata/bluesky_pds/data" Description="Path to store data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/bluesky_pds/data</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="1001" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1001</Config>
+</Container>
