@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Tinyauth</Name>
+    <Repository>ghcr.io/steveiliop56/tinyauth:latest</Repository>
+    <Registry>ghcr.io/steveiliop56/tinyauth</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/steveiliop56/tinyauth/issues</Support>
+    <Project>https://github.com/steveiliop56/tinyauth</Project>
+    <Overview>
+        Tinyauth is an extremely simple Traefik forward auth proxy that adds a login screen to all of your apps that are using the Traefik reverse proxy. Tinyauth is configurable through environment variables and it is only 20MB in size.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Security: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>traefik auth proxy login security</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tinyauth-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tinyauth.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/login.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/logout.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/continue.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/not-found.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-19
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Secret Key" Target="SECRET" Default="" Description="A 32 character long string used for the sessions." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Root URL" Target="ROOT_URL" Default="https://example.com" Description="The base URL of your domain." Type="Variable" Display="always-hide" Required="true" Mask="false">https://example.com</Config>
+    <Config Name="App URL" Target="APP_URL" Default="https://tinyauth.example.com" Description="The URL of the Tinyauth instance." Type="Variable" Display="always-hide" Required="true" Mask="false">https://tinyauth.example.com</Config>
+    <Config Name="Users and Passwords" Target="USERS" Default="" Description="A comma-separated list of users names and their bcrypt hashed passwords, in pattern 'user:hashed_password'" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Traefik - Enable" Target="traefik.enable" Default="true|false" Description="Enable Traefik proxy" Type="Label" Display="always" Required="true" Mask="false"/>
+    <Config Name="Traefik - Rule" Target="traefik.http.routers.tinyauth.rule" Default="Host(`tinyauth.example.com`)" Description="Traefik rule. Change based on your domain." Type="Label" Display="always" Required="true" Mask="false">Host(`tinyauth.example.com`)</Config>
+    <Config Name="Traefik - Server Port" Target="traefik.http.services.tinyauth.loadbalancer.server.port" Default="3000" Description="Server port for Tinyauth. Change as needed." Type="Label" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Internal Port" Target="PORT" Default="3000" Description="Internal server port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Internal Address" Target="ADDRESS" Default="0.0.0.0" Description="The internal address to bind to. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+</Container>
