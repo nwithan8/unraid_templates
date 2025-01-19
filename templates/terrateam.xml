@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Terrateam</Name>
+    <Repository>ghcr.io/terrateamio/terrateam-oss:latest</Repository>
+    <Registry>ghcr.io/terrateamio/terrateam-oss</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://docs.terrateam.io/self-hosted/overview/</Support>
+    <Project>https://terrateam.io/</Project>
+    <Overview>
+        Terrateam is an open-source GitOps CI/CD platform for automating infrastructure workflows. It integrates with GitHub to orchestrate Terraform, OpenTofu, CDKTF, Terragrunt, and Pulumi operations via pull requests.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>gitops ci/cd terraform terragrunt pulumi cdktf opentofu github</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/terrateam-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/terrateam.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Ngrok instance and PostgreSQL instance. Use a Terrateam - Setup container to configure Terrateam.
+    </Requires>
+    <Config Name="Ngrok Endpoint" Target="NGROK_ENDPOINT" Default="http://IP_ADDRESS:4040" Description="Ngrok endpoint for Terrateam" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Host" Target="DB_HOST" Default="IP_ADDRESS" Description="PosgreSQL database host" Type="Variable" Display="always-hide" Required="true" Mask="false">IP_ADDRESS</Config>
+    <Config Name="Database - Port" Target="DB_PORT" Default="5432" Description="PosgreSQL database port" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Database - Name" Target="DB_NAME" Default="terrateam" Description="PosgreSQL database name" Type="Variable" Display="always-hide" Required="true" Mask="false">terrateam</Config>
+    <Config Name="Database - User" Target="DB_USER" Default="terrateam" Description="PosgreSQL database user" Type="Variable" Display="always-hide" Required="true" Mask="false">terrateam</Config>
+    <Config Name="Database - Password" Target="DB_PASS" Default="" Description="PosgreSQL database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="GitHub - Webhook Secret" Target="GITHUB_WEBHOOK_SECRET" Default="" Description="GitHub webhook secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="GitHub - App Client ID" Target="GITHUB_APP_CLIENT_ID" Default="" Description="GitHub app client ID" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="GitHub - App Client Secret" Target="GITHUB_APP_CLIENT_SECRET" Default="" Description="GitHub app client secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="GitHub - App ID" Target="GITHUB_APP_ID" Default="" Description="GitHub app ID" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="GitHub - App PEM Key" Target="GITHUB_APP_PEM" Default="" Description="GitHub app PEM key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+</Container>
