@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>SuperTokens - MySQL</Name>
+    <Repository>registry.supertokens.io/supertokens/supertokens-mysql:latest</Repository>
+    <Registry>registry.supertokens.io/supertokens/supertokens-mysql</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3567]/hello</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://supertokens.com/docs/deployment/self-hosting/with-docker</Support>
+    <Project>https://supertokens.com/</Project>
+    <Overview>
+        Open source alternative to Auth0 / Firebase Auth / AWS Cognito. Add secure login and session management to your apps.  &#xD;
+        [br]
+        Additional options can be added via environmental variables or a mounted config file: https://github.com/supertokens/supertokens-docker-mysql/blob/master/README.md
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Security: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>MySQL PostgreSQL MongoDB auth authentication login session security SDK tool firebase Auth0 AWS OIDC provider token</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/supertokens-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/supertokens/supertokens-logo/master/images/Artboard%20%E2%80%93%2027%402x.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/supertokens_mysql.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/supertokens-diagram.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/supertokens/supertokens-core/master/.github/list-user.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/supertokens/supertokens-core/refs/heads/master/.github/user-info.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MySQL server: https://supertokens.com/docs/deployment/self-hosting/database-setup/mysql
+    </Requires>
+    <Config Name="API Port" Target="3567" Default="3567" Mode="tcp" Description="Container Port: 3567" Type="Port" Display="always-hide" Required="true" Mask="false">3567</Config>
+    <Config Name="MySQL Connection URI" Target="MYSQL_CONNECTION_URI" Default="mysql://supertokens_user:somePassword@IP_ADDRESS:3306/supertokens" Description="Connection URL for MySQL" Type="Variable" Display="always-hide" Required="true" Mask="false">mysql://supertokens_user:somePassword@IP_ADDRESS:3306/supertokens</Config>
+</Container>
