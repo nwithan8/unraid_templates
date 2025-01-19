@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>ParadeDB</Name>
+    <Repository>paradedb/paradedb:latest</Repository>
+    <Registry>https://hub.docker.com/r/paradedb/paradedb</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://docs.paradedb.com/</Support>
+    <Project>https://paradedb.com</Project>
+    <Overview>
+        ParadeDB is an Elasticsearch alternative built on Postgres. We’re modernizing the features of Elasticsearch, starting with real-time search and analytics.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>elasticsearch postgres search analytics database sql</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/paradedb-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/paradedb/paradedb/dev/docs/logo/readme.svg</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/parade_db.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-19
+
+        Initial release
+    </Changes>
+    <Config Name="Database Port" Target="5432" Default="5432" Mode="tcp" Description="Container Port: 5432" Type="Port" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Postgres User" Target="POSTGRES_USER" Default="" Description="Postgres user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="" Description="Postgres password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres Database" Target="POSTGRES_DB" Default="" Description="Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Data path" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/paradedb/data" Description="Path to store the database data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/paradedb/data</Config>
+</Container>
