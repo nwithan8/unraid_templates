@@ -18,7 +18,7 @@
     <Network>bridge</Network>
     <Privileged>false</Privileged>
     <Support>https://github.com/eliasbenb/PlexAniBridge/issues</Support>
-    <Project>https://github.com/eliasbenb/PlexAniBridge</Project>
+    <Project>https://plexanibridge.elias.eu.org</Project>
     <Overview>
         A synchronization tool that automatically keeps your AniList profile up-to-date based on your Plex watching activity. &#xD;
         [br]

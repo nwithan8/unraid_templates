@@ -13,7 +13,9 @@
     <Support>https://github.com/calcom/docker/issues</Support>
     <Project>https://cal.com</Project>
     <Overview>
-        The open-source Calendly alternative
+        The open-source Calendly alternative. &#xD;
+        [br]
+        Add `npx prisma studio` to the PostArgs field to enable Prisma Studio.
     </Overview>
     <Beta>False</Beta>
     <Category>Cloud: Network:Privacy Productivity: Tools: Other: Status:Stable</Category>
