@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Episodes</Name>
+    <Repository>bryangerlach/episodes:latest</Repository>
+    <Registry>https://hub.docker.com/r/bryangerlach/episodes</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/bryangerlach/Episodes/issues</Support>
+    <Project>https://github.com/bryangerlach/Episodes</Project>
+    <Overview>
+        Self-hosted TV show episode tracker allowing you to keep track of your favourite TV shows either continuing or ending.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>tv shows tracker episode season series django bootstrap</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/episodes-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/episodes.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/bryangerlach/Episodes/master/1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/bryangerlach/Episodes/master/2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/bryangerlach/Episodes/master/3.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-20
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Generate with Python command: python3 -c 'import secrets; print(secrets.token_hex(100))'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="CSRF Trusted Domains" Target="CSRF_TRUSTED_ORIGINS" Default="http://localhost:3000 http://IP_ADDRESS:3000 https://example.com" Description="Space-separated list of trusted domains for CSRF protection" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000 https://example.com</Config>
+    <Config Name="App Data" Target="/app/db" Default="/mnt/user/appdata/episodes/db" Description="Path to app data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/episodes/db</Config>
+    <Config Name="Debug" Target="DEBUG" Default="False|True" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
