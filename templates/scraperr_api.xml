@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Scraperr - API</Name>
+    <Repository>jpyles0524/scraperr_api:latest</Repository>
+    <Registry>https://hub.docker.com/r/jpyles0524/scraperr_api</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>true</Privileged>
+    <Support>https://scraperr-docs.pages.dev</Support>
+    <Project>https://github.com/jaypyles/Scraperr</Project>
+    <Overview>
+        A self-hosted web application that allows users to scrape data from web pages by specifying elements via XPath. Users can submit URLs and the corresponding elements to be scraped, and the results will be displayed in a table.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>web scrape spider crawl data tool xpath url html</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/scraperr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/scraperr_api.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/jaypyles/Scraperr/master/docs/main_page.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jaypyles/Scraperr/master/docs/job_page.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jaypyles/Scraperr/master/docs/log_page.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jaypyles/Scraperr/master/docs/stats_page.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jaypyles/Scraperr/master/docs/chat_page.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jaypyles/Scraperr/master/docs/docs_page.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-20
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Used to encode authentication tokens, can be a random string" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="App Data" Target="/project/data" Default="/mnt/user/appdata/scraperr/api_data" Description="Path to store application data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/scraperr/api_data</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|DEBUG|ERROR" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Auth Token Algorithm" Target="ALGORITHM" Default="HS256" Description="Algorithm used to encode authentication tokens" Type="Variable" Display="advanced-hide" Required="true" Mask="false">HS256</Config>
+    <Config Name="Access Token Expiry Time" Target="ACCESS_TOKEN_EXPIRE_MINUTES" Default="600" Description="Time in minutes before access tokens expire" Type="Variable" Display="advanced-hide" Required="true" Mask="false">600</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
