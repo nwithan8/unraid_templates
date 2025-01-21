@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>DOODS</Name>
+    <Repository>snowzach/doods2:latest</Repository>
+    <Registry>https://hub.docker.com/r/snowzach/doods2</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>amd64-gpu</Tag>
+        <TagDescription>Latest stable release with GPU support</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/snowzach/doods2/issues</Support>
+    <Project>https://github.com/snowzach/doods2</Project>
+    <Overview>
+        DOODS (Dedicated Open Object Detection Service) is a REST service that detects objects in images or video streams. It also supports GPUs and EdgeTPU hardware acceleration. &#xD;
+        [br]
+        For Nvidia GPU support, add "--gpus all" to the Extra Parameters field under Advanced. &#xD;
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>AI object detection image video gpu edgetpu nvidia</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/doods-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/doods.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-20
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+</Container>
