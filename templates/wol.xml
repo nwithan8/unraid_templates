@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>wol</Name>
+    <Repository>ghcr.io/trugamr/wol:latest</Repository>
+    <Registry>ghcr.io/trugamr/wol</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <WebUI>http://[IP]:[PORT:7777]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Trugamr/wol/issues</Support>
+    <Project>https://github.com/Trugamr/wol</Project>
+    <Overview>
+        A CLI tool to send Wake-On-LAN (WOL) magic packets to wake up devices on your network. Features both CLI commands and a web interface. &#xD;
+        [br]
+        Requires a config file at the Config File path BEFORE application is started: https://github.com/Trugamr/wol?tab=readme-ov-file#configuration
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Management Network:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>wake lan magic packet network device web gui cli tool interface</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/wol-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/wol.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Trugamr/wol/main/assets/images/web.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-21
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yaml` file at the Config File path BEFORE application is started: https://github.com/Trugamr/wol?tab=readme-ov-file#configuration
+    </Requires>
+    <PostArgs>serve</PostArgs>
+    <Config Name="Web UI Port" Target="7777" Default="7777" Mode="tcp" Description="Container Port: 7777" Type="Port" Display="always-hide" Required="true" Mask="false">7777</Config>
+    <Config Name="Config File" Target="/etc/wol/config.yaml" Default="/mnt/user/appdata/wol/config.yaml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/wol/config.yaml</Config>
+</Container>
