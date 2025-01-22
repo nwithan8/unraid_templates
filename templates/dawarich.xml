@@ -40,7 +40,7 @@
         Initial release
     </Changes>
     <Requires>
-        Requires separate Redis and PostgreSQL containers. See the documentation for more information: https://dawarich.app/docs/environment-variables-and-settings
+        Requires separate Redis, PostgreSQL and Dawarich Sidekiq containers. See the documentation for more information: https://dawarich.app/docs/environment-variables-and-settings
     </Requires>
     <PostArgs>bin/dev</PostArgs>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>

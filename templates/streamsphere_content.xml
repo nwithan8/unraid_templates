@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Streamsphere - Content</Name>
+    <Repository>streamsphere/streamsphere-content:latest</Repository>
+    <Registry>https://hub.docker.com/r/streamsphere/streamsphere-content</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/rs-anantmishra/streamsphere/issues</Support>
+    <Project>https://github.com/rs-anantmishra/streamsphere</Project>
+    <Overview>
+        It is a media library. It supports channels, playlists and videos. The primary goal of this application is to provide complete functionality of a media library, while being as lightweight as possible.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>video channels playlists media library server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/rs-anantmishra/streamsphere/refs/heads/master/ui/public/assets/favicon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/streamsphere.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamsphere-screenshot.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-22
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="3500" Default="3500" Mode="tcp" Description="Container Port: 3500" Type="Port" Display="always-hide" Required="true" Mask="false">3500</Config>
+    <Config Name="Content Path" Target="/app/content" Default="" Description="Path to content files. Must match Streamsphere Content content path." Type="Path" Display="always-hide" Required="true" Mask="false"/>
+</Container>

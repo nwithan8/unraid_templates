@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Streamsphere</Name>
+    <Repository>streamsphere/streamsphere:latest</Repository>
+    <Registry>https://hub.docker.com/r/streamsphere/streamsphere</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/rs-anantmishra/streamsphere/issues</Support>
+    <Project>https://github.com/rs-anantmishra/streamsphere</Project>
+    <Overview>
+        It is a media library. It supports channels, playlists and videos. The primary goal of this application is to provide complete functionality of a media library, while being as lightweight as possible.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>video channels playlists media library server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/rs-anantmishra/streamsphere/refs/heads/master/ui/public/assets/favicon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/streamsphere.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamsphere-screenshot.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-22
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Streamsphere Content instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Host IP Address" Target="HOST_IP" Default="" Description="The IP or hostname of the machine on the network you want to host it on." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="External Port" Target="APPLICATION_PORT" Default="3000" Description="Use save value as Web UI Port" Type="Variable" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Content Port" Target="CONTENT_PORT" Default="3500" Description="Port of Streamsphere Content instance" Type="Variable" Display="always-hide" Required="true" Mask="false">3500</Config>
+    <Config Name="Content Path" Target="/app/content" Default="" Description="Path to content files. Must match Streamsphere Content content path." Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database Path" Target="/app/database/db" Default="/mnt/user/appdata/streamsphere/db" Description="Path to database files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/streamsphere/db</Config>
+</Container>
