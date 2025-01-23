@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Diun</Name>
+    <Repository>crazymax/diun:latest</Repository>
+    <Registry>https://hub.docker.com/r/crazymax/diun</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>true</Privileged>
+    <Support>https://crazymax.dev/diun/install/docker</Support>
+    <Project>https://crazymax.dev/diun</Project>
+    <Overview>
+        Diun is a CLI application to receive notifications when a Docker image is updated on a Docker registry. &#xD;
+        [br]
+        Requires a configuration file at the Config File path: https://crazymax.dev/diun/config/#configuration-file
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>docker update registry hub notification discord check webhook ntfy matrix slack teams telegram mqtt pushover mail email amqp gotify rocketchat signal script kubernetes automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/crazy-max/diun/master/.res/diun.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/diun.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/crazy-max/diun/master/.res/screenshot.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-23
+
+        Initial release
+    </Changes>
+    <Requires>
+        A `diun.yml` configuration file must be present at the Config File path BEFORE starting the container: https://crazymax.dev/diun/config/#configuration-file
+    </Requires>
+    <Config Name="Config File" Target="/diun.yml" Default="/mnt/user/appdata/diun/diun.yml" Description="Path to the Diun configuration file" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/diun/diun.yml</Config>
+    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/diun/data" Description="Path where Diun should store its data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/diun/data</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|error|debug" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log JSON" Target="LOG_JSON" Default="false|true" Description="Enable JSON logging" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
