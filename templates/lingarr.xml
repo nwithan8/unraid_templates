@@ -16,8 +16,8 @@
         Lingarr is an application that leverages translation technologies to automatically translate subtitle files to your desired target language. With support for both LibreTranslate, DeepL and AI Lingarr offers a flexible solution for all your subtitle translation needs.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Video MediaApp:Music Productivity: Tools: Other: Status:Stable</Category>
-    <ExtraSearchTerms>subtitle translation video movie tv show files convert radarr sonarr arr</ExtraSearchTerms>
+    <Category>AI: MediaApp:Video MediaApp:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>subtitle translation video movie tv show files convert radarr sonarr arr libretranslate openai anthropic deepl localai</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/lingarr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/lingarr.xml</TemplateURL>
     <Video>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/lingarr_demo.mp4</Video>
