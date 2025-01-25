@@ -20,10 +20,8 @@
     <ExtraSearchTerms>traefik auth proxy login security</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/steveiliop56/tinyauth/main/site/public/logo.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tinyauth.xml</TemplateURL>
-    <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/login.png</Screenshot>
-    <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/logout.png</Screenshot>
-    <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/continue.png</Screenshot>
-    <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/not-found.png</Screenshot>
+    <Screenshot>https://tinyauth.doesmycode.work/screenshots/login.png</Screenshot>
+    <Screenshot>https://tinyauth.doesmycode.work/screenshots/logout.png</Screenshot>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
