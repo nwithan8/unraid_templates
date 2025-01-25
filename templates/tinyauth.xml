@@ -10,8 +10,8 @@
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3000]/</WebUI>
     <Privileged>false</Privileged>
-    <Support>https://github.com/steveiliop56/tinyauth/issues</Support>
-    <Project>https://github.com/steveiliop56/tinyauth</Project>
+    <Support>https://tinyauth.doesmycode.work/docs/getting-started.html</Support>
+    <Project>https://tinyauth.doesmycode.work/</Project>
     <Overview>
         Tinyauth is an extremely simple Traefik forward auth proxy that adds a login screen to all of your apps that are using the Traefik reverse proxy. Tinyauth is configurable through environment variables and it is only 20MB in size.
     </Overview>
