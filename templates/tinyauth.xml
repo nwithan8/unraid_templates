@@ -18,7 +18,7 @@
     <Beta>False</Beta>
     <Category>Network:Proxy Security: Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>traefik auth proxy login security</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tinyauth-icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/steveiliop56/tinyauth/main/site/public/logo.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tinyauth.xml</TemplateURL>
     <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/login.png</Screenshot>
     <Screenshot>https://raw.githubusercontent.com/steveiliop56/tinyauth/master/screenshots/logout.png</Screenshot>
