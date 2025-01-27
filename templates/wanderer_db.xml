@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Wanderer - Database</Name>
+    <Repository>flomp/wanderer-db:latest</Repository>
+    <Registry>https://hub.docker.com/r/flomp/wanderer-db</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Flomp/wanderer/issues</Support>
+    <Project>https://github.com/Flomp/wanderer</Project>
+    <Overview>
+        A self-hosted trail database. You can upload your recorded tracks or create new ones and add various metadata to build an easily searchable catalogue. &#xD;
+        [br]
+        This is the database component.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>trail hike database path track metadata catalogue search meilisearch</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/Flomp/wanderer/refs/heads/main/web/static/favicon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/wanderer_db.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Flomp/wanderer/main/docs/src/assets/hero.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-26
+
+        Initial release
+    </Changes>
+    <Config Name="Connection Port" Target="8090" Default="8090" Mode="tcp" Description="Container Port: 8090" Type="Port" Display="always-hide" Required="true" Mask="false">8090</Config>
+    <Config Name="Meilisearch - URL" Target="MEILI_URL" Default="http://meilisearch:7700" Description="URL of the Meilisearch instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://meilisearch:7700</Config>
+    <Config Name="Meilisearch - Master Key" Target="MEILI_MASTER_KEY" Default="" Description="Master key for the Meilisearch instance" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Database Storage Path" Target="/pb_data" Default="/mnt/user/appdata/wanderer/db" Description="Path to store the database" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/wanderer/db</Config>
+</Container>
