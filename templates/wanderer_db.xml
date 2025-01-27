@@ -33,5 +33,5 @@
     <Config Name="Connection Port" Target="8090" Default="8090" Mode="tcp" Description="Container Port: 8090" Type="Port" Display="always-hide" Required="true" Mask="false">8090</Config>
     <Config Name="Meilisearch - URL" Target="MEILI_URL" Default="http://meilisearch:7700" Description="URL of the Meilisearch instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://meilisearch:7700</Config>
     <Config Name="Meilisearch - Master Key" Target="MEILI_MASTER_KEY" Default="" Description="Master key for the Meilisearch instance" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
-    <Config Name="Database Storage Path" Target="/pb_data" Default="/mnt/user/appdata/wanderer/db" Description="Path to store the database" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/wanderer/db</Config>
+    <Config Name="Database Storage Path" Target="/pb_data" Default="/mnt/user/appdata/wanderer/db" Description="Path to store the database" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/wanderer/db</Config>
 </Container>

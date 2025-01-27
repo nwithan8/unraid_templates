@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Nominatim</Name>
+    <Repository>mediagis/nominatim:4.5</Repository>
+    <Registry>https://hub.docker.com/r/mediagis/nominatim</Registry>
+    <Branch>
+        <Tag>4.5</Tag>
+        <TagDescription>v4.5</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://nominatim.org/release-docs/latest/</Support>
+    <Project>https://nominatim.org/</Project>
+    <Overview>
+        A tool to search OpenStreetMap data by name and address (geocoding) and to generate synthetic addresses of OSM points (reverse geocoding). &#xD;
+        [br]
+        See all available configuration options: https://github.com/mediagis/nominatim-docker/blob/master/4.5/README.md#general-parameters
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>openstreetmap geocoding reverse geocoding map world pbf OSM address data</ExtraSearchTerms>
+    <Icon>https://nominatim.openstreetmap.org/ui/theme/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/nominatim.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-26
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="PBF File URL" Target="PBF_URL" Default="https://download.geofabrik.de/north-america/us-latest.osm.pbf" Description="URL of the OpenStreetMaps data extract (.pbf file) to import. See https://github.com/mediagis/nominatim-docker/tree/master/4.5#openstreetmap-data-extracts" Type="Variable" Display="always-hide" Required="true" Mask="false">https://download.geofabrik.de/north-america/us-latest.osm.pbf</Config>
+    <Config Name="Replication URL" Target="REPLICATION_URL" Default="https://download.geofabrik.de/north-america/us-updates/" Description="URL of where to get updates from" Type="Variable" Display="always-hide" Required="true" Mask="false">https://download.geofabrik.de/north-america/us-updates/</Config>
+    <Config Name="Password" Target="NOMINATIM_PASSWORD" Default="" Description="Password for the nominatim user" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Data Storage Path" Target="/var/lib/postgresql/16/main" Default="/mnt/user/appdata/nominatim/data" Description="Path to store the app data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/nominatim/data</Config>
+</Container>

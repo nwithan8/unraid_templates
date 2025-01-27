@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Valhalla</Name>
+    <Repository>gisops/valhalla:latest</Repository>
+    <Registry>https://hub.docker.com/r/gisops/valhalla</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://valhalla.github.io/valhalla</Support>
+    <Project>https://github.com/valhalla/valhalla</Project>
+    <Overview>
+        An open source routing engine and accompanying libraries for use with OpenStreetMap data. Valhalla also includes tools like time+distance matrix computation, isochrones, elevation sampling, map matching and tour optimization (Travelling Salesman).
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>routing openstreetmap osm map matching isochrones elevation matrix calculation traveling salesman time distance tour optimization route plan</ExtraSearchTerms>
+    <Icon>https://valhalla.github.io/valhalla/images/valhalla.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/valhalla.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-28
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="8002" Default="8002" Mode="tcp" Description="Container Port: 8002" Type="Port" Display="always-hide" Required="true" Mask="false">8002</Config>
+    <Config Name="Tile URLs" Target="tile_urls" Default="https://download.geofabrik.de/europe/andorra-latest.osm.pbf" Description="Space-separated list of URLs. Remove if Use Local Tiles is enabled." Type="Variable" Display="always" Required="true" Mask="false">https://download.geofabrik.de/europe/andorra-latest.osm.pbf</Config>
+    <Config Name="Use Local Tiles" Target="use_tiles_ignore_pbf" Default="False|True" Description="Use a local tile.tar file instead of downloading and building" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Build Tar" Target="build_tar" Default="True|Force|False" Description="True creates a tarball of the tiles including an index which allows for extremely faster graph loading after reboots. Force will do the same, but first delete the existing tarball." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Force Rebuild" Target="force_rebuild" Default="False|True" Description="Force a rebuild of the routing tiles and sets (overrides Build Tar)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Build Elevation" Target="build_elevation" Default="False|True|Force" Description="True downloads elevation tiles which are covering the routing graph. Force will do the same, but first delete any existing elevation tiles." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Build Admins" Target="build_admins" Default="False|True|Force" Description="True builds the admin database needed for things like border-crossing penalties and detailed routing responses. Force will do the same, but first delete the existing database." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Build Time Zones" Target="build_time_zones" Default="False|True|Force" Description="True builds the timezone database which is needed for time-dependent routing. Force will do the same, but first delete the existing database." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Build Transit" Target="build_transit" Default="False|True|Force" Description="True will attempt to build transit tiles if none exist yet. Force will remove existing transit and routing tiles." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Custom Files" Target="/custom_files" Default="/mnt/user/appdata/valhalla/custom_files" Description="Path to custom files." Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/valhalla/custom_files</Config>
+    <Config Name="GTFS Feeds" Target="/gtfs_feeds" Default="/mnt/user/appdata/valhalla/gtfs_feeds" Description="Path to GTFS feeds. Remove if Build Transit is disabled." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/valhalla/gtfs_feeds</Config>
+    <Config Name="Tileset Name" Target="tileset_name" Default="valhalla_tiles" Description="The name of the resulting graph on disk. Very useful in case you want to build multiple datasets in the same directory." Type="Variable" Display="advanced-hide" Required="true" Mask="false">valhalla_tiles</Config>
+    <Config Name="Traffic Name" Target="traffic_name" Default="traffic.tar" Description="The name of the traffic.tar. Again, useful for serving multiple traffic archives from the same directory. If empty, no traffic archive will be built." Type="Variable" Display="advanced-hide" Required="false" Mask="false">traffic.tar</Config>
+    <Config Name="Path Extensions" Target="path_extension" Description="This path will be appended to the custom_files path and will be the directory where all files will be created. Can be very useful in certain deployment scenarios. No leading/trailing path separator allowed." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Update Existing Config" Target="update_existing_config" Default="True|False" Description="True updates missing keys in existing valhalla.json. Useful for updating stale config files to include newly introduced config parameters." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Use Default Speed Config" Target="use_default_speeds_config" Default="False|True" Description="True loads a JSON file used to enhance default speeds (or falls back to an existing custom_files/default_speeds.json) and sets the respective config entry. More details: https://github.com/OpenStreetMapSpeeds/schema" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Default Speed Config URL" Target="default_speeds_config_url" Default="https://raw.githubusercontent.com/OpenStreetMapSpeeds/schema/master/default_speeds.json" Description="Remote location of the default_speeds_config JSON." Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://raw.githubusercontent.com/OpenStreetMapSpeeds/schema/master/default_speeds.json</Config>
+    <Config Name="Serve Tiles" Target="serve_tiles" Default="True|False" Description="Serve tiles from the container. If false, only build the graph." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Server Threads" Target="server_threads" Default="2" Description="Number of threads to use for the server" Type="Variable" Display="advanced-hide" Required="true" Mask="false">2</Config>
+</Container>
