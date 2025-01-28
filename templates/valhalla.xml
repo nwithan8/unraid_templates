@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Valhalla</Name>
-    <Repository>gisops/valhalla:latest</Repository>
-    <Registry>https://hub.docker.com/r/gisops/valhalla</Registry>
+    <Repository>ghcr.io/valhalla/valhalla:latest</Repository>
+    <Registry>ghcr.io/valhalla/valhalla</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
