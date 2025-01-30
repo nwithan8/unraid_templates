@@ -32,6 +32,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-01-30
+
+        - Remove separate procrastinate requirement
+        - Add all available enviroment variables
+
         ### 2025-01-26
 
         - Remove database type selection
@@ -42,21 +47,23 @@
         Initial release
     </Changes>
     <Requires>
-        Requires a separate WYGIWYH Procrastinate container and optional PostgreSQL database.
+        Requires a PostgreSQL database.
     </Requires>
-    <PostArgs>/start</PostArgs>
+    <PostArgs>/start-single</PostArgs>
     <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
-    <Config Name="Domain" Target="URL" Default="https://IP_ADDRESS:9000" Description="URL to connect to the app. Must match Web UI Port." Type="Variable" Display="always-hide" Required="true" Mask="false">https://IP_ADDRESS:9000</Config>
+    <Config Name="Domain" Target="URL" Default="https://IP_ADDRESS:8000" Description="URL to connect to the app. Must match Web UI Port." Type="Variable" Display="always-hide" Required="true" Mask="false">https://IP_ADDRESS:8000</Config>
     <Config Name="Database - Host" Target="SQL_HOST" Default="localhost" Description="Database host." Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
     <Config Name="Database - Port" Target="SQL_PORT" Default="5432" Description="Database port." Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
     <Config Name="Database - Name" Target="SQL_DATABASE" Default="wygiwyh" Description="Database name." Type="Variable" Display="always-hide" Required="true" Mask="false">wygiwyh</Config>
     <Config Name="Database - User" Target="SQL_USER" Default="wygiwyh" Description="Database user." Type="Variable" Display="always-hide" Required="true" Mask="false">wygiwyh</Config>
-    <Config Name="Database - Password" Target="SQL_PASSWORD" Default="wygiwyh" Description="Database password." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Secure secret key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Soft Delete" Target="ENABLE_SOFT_DELETE" Default="false|true" Description="If enabled, deleted transactions are kept in the database. Useful for imports and API interactions." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Keep Deleted Transactions Days" Target="KEEP_DELETED_TRANSACTIONS_FOR" Default="365" Description=" If Soft Delete is enabled, will automatically delete any transactions deleted for more than X days. Set to 0 to keep all." Type="Variable" Display="advanced-hide" Required="true" Mask="false">365</Config>
-    <Config Name="Debug" Target="DEBUG" Default="false|true" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="HTTPS Enabled" Target="HTTPS_ENABLED" Default="true|false" Description="Enable HTTPS" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Django Allowed Hosts" Target="DJANGO_ALLOWED_HOSTS" Default="localhost 127.0.0.1 [::1]" Description="Django allowed hosts" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost 127.0.0.1 [::1]</Config>
+    <Config Name="Database - Password" Target="SQL_PASSWORD" Default="wygiwyh" Description="Database password." Type="Variable" Display="always-hide" Required="true" Mask="true">wygiwyh</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Secure secret key. Unique, unpredictable value for cryptographic signing" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Soft Delete" Target="ENABLE_SOFT_DELETE" Default="false|true" Description="If enabled, deleted transactions are kept in the database. Useful for imports and API interactions." Type="Variable" Display="advanced-hide" Required="true" Mask="false" />
+    <Config Name="Keep Deleted Transactions Days" Target="KEEP_DELETED_TRANSACTIONS_FOR" Default="365" Description="Days to keep soft deleted transactions for (0 for indefinitely)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">365</Config>
+    <Config Name="Debug" Target="DEBUG" Default="false|true" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="false" Mask="false">false</Config>
+    <Config Name="HTTPS Enabled" Target="HTTPS_ENABLED" Default="true|false" Description="Whether to use secure cookies" Type="Variable" Display="advanced-hide" Required="false" Mask="false">false</Config>
+    <Config Name="Allowed Hosts" Target="DJANGO_ALLOWED_HOSTS" Default="localhost 127.0.0.1 [::1]" Description="Space separated list of allowed domains/IPs without the protocol" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost 127.0.0.1 [::1]</Config>
+    <Config Name="Session Expiry Time" Target="SESSION_EXPIRY_TIME" Default="2678400" Description="Session cookie age in seconds" Type="Variable" Display="advanced-hide" Required="true" Mask="false">2678400</Config>
     <Config Name="Web Concurrency" Target="WEB_CONCURRENCY" Default="4" Description="Number of web server workers" Type="Variable" Display="advanced-hide" Required="true" Mask="false">4</Config>
+    <Config Name="Task Workers" Target="TASK_WORKERS" Default="1" Description="Number of workers for async tasks" Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
 </Container>
