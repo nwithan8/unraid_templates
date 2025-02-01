@@ -19,6 +19,7 @@
     <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>bark server push notification ios apple android iphone sms apprise</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/bark-icon.jpg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/bark.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>

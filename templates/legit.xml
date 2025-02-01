@@ -19,6 +19,7 @@
     <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>git web frontend code source repository browser explorer</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/legit-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/legit.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>

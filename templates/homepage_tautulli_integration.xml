@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Homepage Tautulli Integration</Name>
+    <Repository>ghcr.io/10mfox/gethomepage-tautulli-custom-api:latest</Repository>
+    <Registry>ghcr.io/10mfox/gethomepage-tautulli-custom-api</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3008]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/10mfox/Gethomepage-Tautulli-Custom-Api/issues</Support>
+    <Project>https://github.com/10mfox/Gethomepage-Tautulli-Custom-Api</Project>
+    <Overview>
+        A custom API proxy service designed to work with Homepage to display recent media from Tautulli in a formatted way. This service provides endpoints for recently added TV shows and movies from your Plex server via Tautulli.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>homepage tautulli plex api proxy dashboard recent recently media added tv movie integration connection</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/homepage-tautulli-integration-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/homepage_tautulli_integration.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/tauticord/master/documentation/images/homepage_tautulli_screenshot.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-01
+
+        Initial release
+    </Changes>
+    <Requires>
+        Meant to work with the Homepage application.
+    </Requires>
+    <Config Name="Web UI Port" Target="3008" Default="3008" Mode="tcp" Description="Container Port: 3008" Type="Port" Display="always-hide" Required="true" Mask="false">3008</Config>
+    <Config Name="Tautulli - Base URL" Target="TAUTULLI_BASE_URL" Default="http://IP_ADDRESS:8181/api/v2" Description="Base URL for Tautulli API" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:8181/api/v2</Config>
+    <Config Name="Tautulli - API Key" Target="TAUTULLI_API_KEY" Default="" Description="API Key for Tautulli" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Web Port" Target="TAUTULLI_API_PORT" Default="3008" Description="Internal port for web server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3008</Config>
+    <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/homepage_tautulli/config" Description="Path to config files" Type="Path" Display="advanced-hide" Mask="false" Required="true">/mnt/user/appdata/homepage_tautulli/config</Config>
+</Container>
