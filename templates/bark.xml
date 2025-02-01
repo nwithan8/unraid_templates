@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Bark Server</Name>
+    <Repository>finab/bark-server:latest</Repository>
+    <Registry>https://hub.docker.com/r/finab/bark-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Finb/bark-server/issues</Support>
+    <Project>https://bark.day.app</Project>
+    <Overview>
+        Backend for Bark, an iOS app to receive custom push notifications
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>bark server push notification ios apple android iphone sms apprise</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/bark-icon.jpg</Icon>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-31
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/bark/data" Description="Path to data files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/bark/data</Config>
+</Container>
