@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Container Port Manager</Name>
+    <Repository>ghcr.io/smashingtags/container-port-manager:nightly</Repository>
+    <Registry>ghcr.io/smashingtags/container-port-manager</Registry>
+    <Branch>
+        <Tag>nightly</Tag>
+        <TagDescription>Latest nightly release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4173]/</WebUI>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/smashingtags/container-port-manager/issues</Support>
+    <Project>https://github.com/smashingtags/container-port-manager</Project>
+    <Overview>
+        Container Port Manager
+    </Overview>
+    <Beta>True</Beta>
+    <Category>Productivity: Tools: Other:</Category>
+    <ExtraSearchTerms>container port manager mapping docker management</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/container-port-manager-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/container_port_manager.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-02
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="4173" Default="4173" Mode="tcp" Description="Container Port: 4173" Type="Port" Display="always-hide" Required="true" Mask="false">4173</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Node Environment" Target="NODE_ENV" Default="production" Description="Node environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+</Container>

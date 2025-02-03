@@ -35,7 +35,7 @@
     </Requires>
     <ExtraParams>--group-add 999</ExtraParams>
     <Config Name="API Port" Target="3001" Default="3001" Mode="tcp" Description="Container Port: 3001" Type="Port" Display="always-hide" Required="true" Mask="false">3001</Config>
-    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
     <Config Name="Node Environment" Target="NODE_ENV" Default="production" Description="Node environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
     <Config Name="CORS Origin" Target="CORS_ORIGIN" Default="*" Description="CORS origin." Type="Variable" Display="advanced-hide" Required="true" Mask="false">*</Config>
     <Config Name="Internal API Port" Target="PORT" Default="3001" Description="Internal API port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3001</Config>
