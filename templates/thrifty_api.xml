@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>Thrify - API</Name>
+    <Name>Thrifty - API</Name>
     <Repository>tiehfood/thrifty-api:latest</Repository>
     <Registry>https://hub.docker.com/r/tiehfood/thrifty-api</Registry>
     <Branch>
