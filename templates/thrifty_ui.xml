@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Thrify - UI</Name>
+    <Repository>tiehfood/thrifty-ui:latest</Repository>
+    <Registry>https://hub.docker.com/r/tiehfood/thrifty-ui</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/tiehfood/thrifty/issues</Support>
+    <Project>https://github.com/tiehfood/thrifty</Project>
+    <Overview>
+        A simple web application that helps you manage your income and expenses. It's focused on simplicity and is not aimed to track every single penny you spend. The idea is to get a rough overview of your monthly cash flow and what's left to spend. &#xD;
+        [br]
+        This is the frontend component of the Thrifty stack. It is designed to be used in conjunction with the Thrifty API.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>finance budget money income expense cash flow balance calculate track tracker penny spending</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/thrifty-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/thrifty_ui.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/tiehfood/thrifty/main/doc/screenshot_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/tiehfood/thrifty/main/doc/screenshot_2.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Thrifty API container.
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="API Port" Target="LOCAL_API_PORT" Default="8081" Description="Port of the API container" Type="Variable" Display="always-hide" Required="true" Mask="false">8081</Config>
+    <Config Name="Currency" Target="CURRENCY_ISO" Default="USD" Description="Currency ISO code (e.g. USD, EUR)" Type="Variable" Display="always-hide" Required="true" Mask="false">USD</Config>
+</Container>
