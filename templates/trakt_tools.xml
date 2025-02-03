@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Trakt Tools</Name>
+    <Repository>xbgmsharp/docker-trakt-tools:latest</Repository>
+    <Registry>https://hub.docker.com/r/xbgmsharp/docker-trakt-tools</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/xbgmsharp/trakt/issues</Support>
+    <Project>https://github.com/xbgmsharp/trakt</Project>
+    <Overview>
+        A CLI tool to import and export Trakt.tv, Kodi and CouchPotato data to/from CSV files.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>trakt.tv trakt list import export csv cli tool movies shows letterboxd kodi xbmc couchpotato radarr traktarr plaxt sync</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/trakt-tools-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/trakt_tools.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool. Open a Console in the container and run `python export_trakt.py` or `python import_trakt.py` to use it. &#xD;
+        [br]
+        User will need to create a `config.ini` file in the Config Path: https://github.com/xbgmsharp/trakt?tab=readme-ov-file#configuration
+    </Requires>
+    <Config Name="Config path" Target="/trakt/config" Default="/mnt/user/appdata/trakt_tools/config" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/trakt_tools/config</Config>
+    <Config Name="Export path" Target="/trakt/export" Default="/mnt/user/appdata/trakt_tools/export" Description="Path to export files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/trakt_tools/export</Config>
+</Container>
