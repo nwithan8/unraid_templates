@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>ASCII Telnet Server</Name>
+    <Repository>rohan/ascii-telnet-server:latest</Repository>
+    <Registry>https://hub.docker.com/r/rohan/ascii-telnet-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/nitram509/ascii-telnet-server/issues</Support>
+    <Project>https://github.com/nitram509/ascii-telnet-server</Project>
+    <Overview>
+        Host ASCII movies that can be streamed over telnet. Run `telnet [IP] [PORT]` to connect.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ascii art movie telnet stream starwars animation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ascii-telnet-server-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ascii_telnet_server.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nitram509/ascii-telnet-server/master/screenshots/example.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-02
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `video.txt` file to be present in the specified path before starting the container: https://github.com/nitram509/ascii-telnet-server/tree/master/sample_movies
+    </Requires>
+    <PostArgs>--standalone -i 0.0.0.0 -p 23 -f /video.txt</PostArgs>
+    <Config Name="Telnet Port" Target="23" Default="23" Mode="tcp" Description="Container Port: 23" Type="Port" Display="always-hide" Required="true" Mask="false">23</Config>
+    <Config Name="Video File" Target="/video.txt" Default="/mnt/user/appdata/ascii_telnet/video.txt" Description="Path to video file to stream" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/ascii_telnet/video.txt</Config>
+</Container>
