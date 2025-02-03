@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>docker.vim</Name>
+    <Repository>skanehira/docker.vim:latest</Repository>
+    <Registry>https://hub.docker.com/r/skanehira/docker.vim</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/skanehira/docker.vim/issues</Support>
+    <Project>https://github.com/skanehira/docker.vim</Project>
+    <Overview>
+        Manage docker images, containers in Vim.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>vim editor text cli command docker compose terminal ui management manager app command</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/docker-vim-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/docker_vim.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/docker-vim-demo.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-02
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool. Open a Console in the container and run `vim` to use it.
+    </Requires>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
