@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>RetroReplay</Name>
+    <Repository>ghcr.io/d3mystified/retroreplay:main</Repository>
+    <Registry>ghcr.io/d3mystified/retroreplay</Registry>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/d3mystified/RetroReplay/issues</Support>
+    <Project>https://github.com/d3mystified/RetroReplay</Project>
+    <Overview>
+        Highlight your Plex media that originally aired in the past during the current week or month. Automatically maintain lists on TMDb that can be used with Kometa to create collections on Plex.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>kometa plex meta manager collection retro replay history tmdb imdb anilist</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/retro-replay-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/retro_replay.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/retro_replay_screenshot.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a `config.yml` file in the Config Path folder: https://github.com/d3mystified/RetroReplay?tab=readme-ov-file#how-to-use
+    </Requires>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/retro_replay/config" Description="Path to the config folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/retro_replay/config</Config>
+    <Config Name="Schedule" Target="RUN_AT" Default="00:00" Description="24-hour time to run the script" Type="Variable" Display="always-hide" Required="true" Mask="false">0:00</Config>
+    <Config Name="Internal Config FIle" Target="CONFIG_FILE" Default="/config/config.yml" Description="Path to the internal config file" Type="Path" Display="advanced" Required="true" Mask="false">/config/config.yml</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
