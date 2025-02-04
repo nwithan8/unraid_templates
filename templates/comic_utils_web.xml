@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Comic Library Utils</Name>
+    <Repository>allaboutduncan/comic-utils-web:latest</Repository>
+    <Registry>https://hub.docker.com/r/allaboutduncan/comic-utils-web</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5577]/</WebUI>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/allaboutduncan/comic-utils/issues</Support>
+    <Project>https://github.com/allaboutduncan/comic-utils</Project>
+    <Overview>
+        A set of utilities for managing and bulk-editing comic book files.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Books MediaServer:Books Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>comic book manga cbz cbr bulk rename edit script komga kavita library</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/comic-utils-web-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/comic_utils_web.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/allaboutduncan/comic-utils/main/images/home.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/allaboutduncan/comic-utils/main/images/home-single.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/allaboutduncan/comic-utils/main/images/path.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/allaboutduncan/comic-utils/main/images/single.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-04
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5577" Default="5577" Mode="tcp" Description="Container Port: 5577" Type="Port" Display="always-hide" Required="true" Mask="false">5577</Config>
+    <Config Name="Comic Storage" Target="/data" Default="" Description="Path to comic book storage. Should match Komga." Display="always-hide" Type="Path" Required="true" Mask="false"/>
+    <Config Name="Enable Folder Monitoring" Target="MONITOR" Default="no|yes" Description="Enable folder monitoring" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Monitored Import Folder" Target="/monitored" Default="" Description="Path to monitored import folder. Required regardless of Enable Folder Monitoring." Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Monitored Processed Folder" Target="/processed" Default="" Description="Path to monitored processed folder. Required regardless of Enable Folder Monitoring." Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Ignore Patterns" Target="IGNORE" Default='"Annual","(Director Cut)"' Description="Comma-separated list of patterns to ignore" Type="Variable" Display="always-hide" Required="true" Mask="false">"Annual","(Director's Cut)"</Config>
+    <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Internal Monitored Import Folder" Target="WATCH" Default="/monitored" Description="Path to the monitored folder inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/monitored</Config>
+    <Config Name="Internal Monitored Processed Folder" Target="TARGET" Default="/processed" Description="Path to the processed folder inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/processed</Config>
+    <Config Name="Flask Environment" Target="FLASK_ENV" Default="development" Description="Flask environment" Type="Variable" Display="advanced-hide" Required="true" Mask="false">development</Config>
+</Container>
