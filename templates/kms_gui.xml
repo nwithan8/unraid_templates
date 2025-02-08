@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>KMS UI</Name>
+    <Repository>11notes/kms-gui:latest</Repository>
+    <Registry>https://hub.docker.com/r/11notes/kms-gui</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>stable</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/11notes/docker-kms-gui/issues</Support>
+    <Project>https://github.com/11notes/docker-kms-gui</Project>
+    <Overview>
+        A KMS server for Windows and Office activation. This is a web UI for the KMS server.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>kms mas windows office activation software key</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kms-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kms_gui.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-07
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Temp Data Path" Target="/kms/var" Default="/mnt/user/appdata/kms/data" Description="Path to temp data path" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/kms/data</Config>
+    <Config Name="Debug" Target="DEBUG" Default="false|true" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>

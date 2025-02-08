@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>KMS</Name>
+    <Repository>11notes/kms:latest</Repository>
+    <Registry>https://hub.docker.com/r/11notes/kms</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>stable</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/11notes/docker-kms/issues</Support>
+    <Project>https://github.com/11notes/docker-kms</Project>
+    <Overview>
+        A KMS server for Windows and Office activation.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>kms mas windows office activation software key</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kms-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kms.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-07
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="1688" Default="1688" Mode="tcp" Description="Container Port: 1688" Type="Port" Display="always-hide" Required="true" Mask="false">1688</Config>
+    <Config Name="Temp Data Path" Target="/kms/var" Default="/mnt/user/appdata/kms/data" Description="Path to temp data path" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/kms/data</Config>
+    <Config Name="Debug" Target="DEBUG" Default="false|true" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
