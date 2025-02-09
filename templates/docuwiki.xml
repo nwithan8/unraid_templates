@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>DocuWiki</Name>
+    <Repository>dokuwiki/dokuwiki:stable</Repository>
+    <Registry>https://hub.docker.com/r/dokuwiki/dokuwiki</Registry>
+    <Branch>
+        <Tag>stable</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://www.dokuwiki.org/install</Support>
+    <Project>https://www.dokuwiki.org/dokuwiki</Project>
+    <Overview>
+        A simple to use and highly versatile Open Source wiki software that doesn't require a database. It is loved by users for its clean and readable syntax. The ease of maintenance, backup and integration makes it an administrator's favorite. Built in access controls and authentication connectors make DokuWiki especially useful in the enterprise context and the large number of plugins contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>wiki documentation image gallery notes writing</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/docuwiki-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/docuwiki.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-09
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="PHP Timezone" Target="PHP_TIMEZONE" Default="UTC" Description="Timezone used by PHP." Type="Variable" Display="always-hide" Required="true" Mask="false">UTC</Config>
+    <Config Name="PHP Memory Limit" Target="PHP_MEMORYLIMIT" Default="256M" Description="Maximum amount of memory a script may consume." Type="Variable" Display="advanced-hide" Required="true" Mask="false">256M</Config>
+    <Config Name="PHP Upload Limit" Target="PHP_UPLOADLIMIT" Default="128M" Description="Maximum size of an uploaded file." Type="Variable" Display="advanced-hide" Required="true" Mask="false">128M</Config>
+    <Config Name="Storage path" Target="/storage" Default="/mnt/user/appdata/docuwiki/storage" Description="Path to stored files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/docuwiki/storage</Config>
+</Container>
