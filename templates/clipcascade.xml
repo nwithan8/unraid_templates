@@ -11,7 +11,7 @@
     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/Sathvik-Rao/ClipCascade/issues</Support>
-    <Project>https://github.com/Sathvik-Rao/ClipCascade</Project>
+    <Project>https://clipcascade.sathvik.dev</Project>
     <Overview>
         Automatically sync your clipboard across multiple devices, no key press required. Ensures seamless clipboard sharing between devices, prioritizing privacy with end-to-end encryption. &#xD;
         [br]
@@ -25,6 +25,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-02-09
+
+        Update environmental variables and paths for v3
+
         ### 2025-01-03
 
         Update environmental variables and paths for v2
@@ -34,9 +38,38 @@
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
-    <Config Name="Database Password" Target="CC_SERVER_DB_PASSWORD" Default="QjuGlhE3uwylBBANMkX1 o2MdEoFgbU5XkFvTftky" Description="Sets a password for encrypting the user database. Once set, you must use the same password whenever you migrate the database. Pattern: FILE_PASSWORD USER_PASSWORD" Type="Variable" Display="always-hide" Required="true" Mask="true">QjuGlhE3uwylBBANMkX1 o2MdEoFgbU5XkFvTftky</Config>
-    <Config Name="Max Message Size" Target="CC_MAX_MESSAGE_SIZE_IN_MiB" Default="1" Description="Maximum message size, in MB. Recommend less than 25 for desktop, approx. 1 for mobile" Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Database - Driver" Target="CC_SERVER_DB_DRIVER" Default="org.h2.Driver" Description="The database driver. Default uses H2 file mode. Example for PostgreSQL: org.postgresql.Driverset" Type="Variable" Display="always-hide" Required="true" Mask="false">org.h2.Driver</Config>
+    <Config Name="Database - Dialect" Target="CC_SERVER_DB_HIBERNATE_DIALECT" Default="org.hibernate.dialect.H2Dialect" Description="The database dialect. Default uses H2 file mode. Example for PostgreSQL: org.hibernate.dialect.PostgreSQLDialect" Type="Variable" Display="always-hide" Required="true" Mask="false">org.hibernate.dialect.H2Dialect</Config>
+    <Config Name="Database - URL" Target="CC_SERVER_DB_URL" Default="jdbc:h2:file:./database/clipcascade;CIPHER=AES;MODE=PostgreSQL" Description="The database URL. Default uses H2 file mode. Example for PostgreSQL: jdbc:postgresql://localhost:5432/clipcascade" Type="Variable" Display="always-hide" Required="true" Mask="false">jdbc:h2:file:./database/clipcascade;CIPHER=AES;MODE=PostgreSQL</Config>
+    <Config Name="Database - Username" Target="CC_SERVER_DB_USERNAME" Default="clipcascade" Description="The database username. Default uses H2 file mode. Once set, you must use the same username whenever you migrate the database." Type="Variable" Display="always-hide" Required="true" Mask="false">clipcascade</Config>
+    <Config Name="Database - Password" Target="CC_SERVER_DB_PASSWORD" Default="QjuGlhE3uwylBBANMkX1the maximum number of user accounts that can be created on the server. o2MdEoFgbU5XkFvTftky" Description="Sets a password for encrypting the user database. Once set, you must use the same password whenever you migrate the database. Pattern: FILE_PASSWORD USER_PASSWORD" Type="Variable" Display="always-hide" Required="true" Mask="true">QjuGlhE3uwylBBANMkX1 o2MdEoFgbU5XkFvTftky</Config>
+    <Config Name="Allow Signups" Target="CC_SIGNUP_ENABLED" Default="false|true" Description="Toggle to enable or disable the signup feature/page for public users." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Max Accounts" Target="CC_MAX_USER_ACCOUNTS" Default="-1" Description="Sets the maximum number of user accounts that can be created on the server. Set to -1 for unlimited." Type="Variable" Display="always-hide" Required="true" Mask="false">-1</Config>
+    <Config Name="Enable Donations" Target="CC_DONATIONS_ENABLED" Default="false|true" Description="Enables or disables the donations feature." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="External Broker - Enable" Target="CC_EXTERNAL_BROKER_ENABLED" Default="false|true" Description="Enables or disables the external STOMP broker feature for P2S mode." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="External Broker - Host" Target="CC_BROKER_HOST" Default="localhost" Description="The external STOMP broker URL for P2S mode." Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="External Broker - Port" Target="CC_BROKER_PORT" Default="61613" Description="The external STOMP broker port for P2S mode." Type="Variable" Display="always-hide" Required="true" Mask="false">61613</Config>
+    <Config Name="External Broker - Username" Target="CC_BROKER_USERNAME" Default="admin" Description="The external STOMP broker username for P2S mode." Type="Variable" Display="always-hide" Required="true" Mask="false">admin</Config>
+    <Config Name="External Broker - Password" Target="CC_BROKER_PASSWORD" Default="admin" Description="The external STOMP broker password for P2S mode." Type="Variable" Display="always-hide" Required="true" Mask="true">admin</Config>
+    <Config Name="Inactive Account Purge Time" Target="CC_ACCOUNT_PURGE_TIMEOUT_SECONDS" Default="-1" Description="Purge/delete inactive accounts after a specified number of seconds. Set to -1 to disable this feature." Type="Variable" Display="advanced-hide" Required="true" Mask="false">-1</Config>
+    <Config Name="Max Message Size" Target="CC_MAX_MESSAGE_SIZE_IN_BYTES" Default="1048576" Description="Maximum message size, in bytes. Recommend less than 25 for desktop, approx. 1 for mobile" Type="Variable" Display="advanced-hide" Required="true" Mask="false">1048576</Config>
+    <Config Name="Enable Peer-To-Peer" Target="CC_P2P_ENABLED" Default="false|true" Description="This feature decrease the load on the server and allows unlimited data transfer. If enabled, the Max Message Size value is ignored. NOTE: Some networks may not support Peer-to-Peer." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="P2P STUN URL" Target="CC_P2P_STUN_URL" Default="stun:stun.l.google.com:19302" Description="STUN server URL for Peer-to-Peer connections. Required if P2P is enabled. Only change if you know what this is." Type="Variable" Display="advanced-hide" Required="true" Mask="false">stun:stun.l.google.com:19302</Config>
     <Config Name="Allowed Origins" Target="CC_ALLOWED_ORIGINS" Default="" Description="Specifies which domains are allowed to connect to the WebSocket (CORS policy). Replace with your domain. If not set, all origins are allowed by default, which may be less secure." Type="Variable" Display="advanced" Required="false" Mask="false"/>
-    <Config Name="Logging Level" Target="CC_SERVER_LOGGING_LEVEL" Default="INFO|DEBUG|WARN|ERROR|TRACE|FATAL|OFF" Description="Sets the logging level for the server." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Database Path" Target="/database" Default="/mnt/user/appdata/clipcascade/database" Description="Path to the database file" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/clipcascade/database</Config>
+    <Config Name="Session Timeout" Target="CC_SESSION_TIMEOUT" Default="525960m" Description="Sets the session timeout duration." Type="Variable" Display="advanced-hide" Required="true" Mask="false">525960m</Config>
+    <Config Name="Brute Force Protection - Max Unique IPs" Target="CC_MAX_UNIQUE_IP_ATTEMPTS" Default="15" Description="The maximum number of attempts from different IP addresses before an account is blocked for a given timeout." Type="Variable" Display="advanced-hide" Required="true" Mask="false">15</Config>
+    <Config Name="Brute Force Protection - Max Attempts Per IP" Target="CC_MAX_ATTEMPTS_PER_IP" Default="30" Description="The maximum number of attempts per IP address before blocking the IP address for a given timeout and will scale if continued." Type="Variable" Display="advanced-hide" Required="true" Mask="false">30</Config>
+    <Config Name="Brute Force Protection - Timeout" Target="CC_LOCK_TIMEOUT_SECONDS" Default="60" Description="The lockout timeout for failed login attempts." Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
+    <Config Name="Brute Force Protection - Timeout Scaling" Target="CC_LOCK_TIMEOUT_SCALING_FACTOR" Default="2" Description="The scaling factor for the lockout timeout. Determines how the lockout duration increases with each repeated failed attempt." Type="Variable" Display="advanced-hide" Required="true" Mask="false">2</Config>
+    <Config Name="Brute Force Protection - Tracker Cache" Target="CC_BFA_CACHE_ENABLED" Default="false|true" Description="Enables or disables caching for the BFA tracker. If enabled, the server caches BFA tracker data in memory and disk." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Brute Force Protection - Tracker Cache Max Entries" Target="CC_BFA_TRACKER_CACHE_MAX_JVM_ENTRIES" Default="50" Description="The maximum number of entries in the BFA tracker cache (JVM RAM)." Type="Variable" Display="advanced-hide" Required="true" Mask="false">50</Config>
+    <Config Name="Brute Force Protection - Tracker Cache RAM Percentage" Target="CC_BFA_TRACKER_CACHE_RAM_PERCENTAGE" Default="0" Description="The percentage of the BFA tracker cache allocated to off-heap RAM." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Brute Force Protection - Tracker Cache Disk Percentage" Target="CC_BFA_TRACKER_CACHE_DISK_PERCENTAGE" Default="40" Description="The percentage of the BFA tracker cache allocated to disk storage." Type="Variable" Display="advanced-hide" Required="true" Mask="false">40</Config>
+    <Config Name="Brute Force Protection - Tracker Logging" Target="CC_LOG_BRUTE_FORCE_TRACKER_ENABLED" Default="false|true" Description="Enables or disables logging of the BFA tracker." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Logging Level" Target="CC_SERVER_LOGGING_LEVEL" Default="INFO|DEBUG|TRACE" Description="Sets the logging level for the server." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Retention" Target="CC_SERVER_LOG_HISTORY_MAX_DAYS" Default="30" Description="The maximum number of days to retain server logs." Type="Variable" Display="advanced-hide" Required="true" Mask="false">30</Config>
+    <Config Name="Log Capacity" Target="CC_SERVER_LOG_MAX_CAPACITY" Default="1GB" Description="The maximum capacity of server logs." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1GB</Config>
+    <Config Name="Internal Server Port" Target="CC_PORT" Default="8080" Description="Internal port for the server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Database Path" Target="/database" Default="/mnt/user/appdata/clipcascade/database" Description="Path to the database fi5259600000mle" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/clipcascade/database</Config>
+    <Config Name="Logs Path" Target="/logs" Default="/mnt/user/appdata/clipcascade/logs" Description="Path to the logs directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/clipcascade/logs</Config>
 </Container>
