@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Kiwix Server</Name>
+    <Repository>ghcr.io/kiwix/kiwix-serve:latest</Repository>
+    <Registry>ghcr.io/kiwix/kiwix-serve</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://library.kiwix.org</Support>
+    <Project>https://kiwix.org</Project>
+    <Overview>
+        Kiwix Server is a .zim compatible web server: it allows you to deliver .zim files over the HTTP protocol within your local network. Simply start the server on your machine, and your content will be available for anybody through their web browser.&#xD;
+        [br]
+        ZIM files can be downloaded here: https://wiki.kiwix.org/wiki/Content
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>wikipedia offline library zim web server internet wiktionary</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kiwix-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kiwix_server.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-09
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects ZIM files to be stored in the ZIM Data Path. Can be downloaded from https://wiki.kiwix.org/wiki/Content
+    </Requires>
+    <PostArgs>'*.zim'</PostArgs>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="ZIM Data Path" Target="/data" Default="" Description="Path to ZIM files to serve" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+</Container>
