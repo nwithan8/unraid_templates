@@ -43,6 +43,7 @@
     <Config Name="Database - Password" Target="DB_PASS" Default="" Description="Password for database" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Downloads Path" Target="/opt/pinepods/downloads" Default="/mnt/user/appdata/pinepods/downloads" Mode="rw" Description="Path to downloads folder" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Search API URL" Target="SEARCH_API_URL" Default="https://search.pinepods.online/api/search" Description="URL of podcast search API" Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://search.pinepods.online/api/search</Config>
+    <Config Name="People API URL" Target="PEOPLE_API_URL" Default="https://people.pinepods.online" Description="URL of people API" Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://people.pinepods.online</Config>
     <Config Name="Debug Mode" Target="DEBUG" Default="False|True" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Backups Path" Target="/opt/pinepods/backups" Default="/mnt/user/appdata/pinepods/backups" Mode="rw" Description="Path to backups folder" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
