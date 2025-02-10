@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>PodPeopleDB</Name>
+    <Repository>madeofpendletonwool/podpeople_db:latest</Repository>
+    <Registry>https://hub.docker.com/r/madeofpendletonwool/podpeople_db</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8085]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://people.pinepods.online/docs/what-is-this-for</Support>
+    <Project>https://people.pinepods.online</Project>
+    <Overview>
+        PodPeopleDB is an open-source database for podcast hosts and guests, serving as the IMDB of podcasting. It automatically indexes podcast host information from podcast feeds and allows manual submissions of host/guest information.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>podcast database podcasting podcaster podcast host guest index imdp imdb people information api pinepod</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pod-people-db-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pod_people_db.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-09
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8085" Default="8085" Mode="tcp" Description="Container Port: 8085" Type="Port" Display="always-hide" Required="true" Mask="false">8085</Config>
+    <Config Name="Admin - Username" Target="ADMIN_USERNAME" Default="admin" Description="Username for the admin account" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Admin - Password" Target="ADMIN_PASSWORD" Default="password" Description="Password for the admin account" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="ntfy - URL" Target="NTFY_URL" Default="https://ntfy.sh" Description="URL of the ntfy server to send notifications to" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="ntfy - Topic" Target="NTFY_TOPIC" Default="" Description="Topic to send notifications to" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Search API" Target="SEARCH_API_URL" Default="https://search.pinepods.online" Description="URL of the search API to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Data path" Target="/app/podpeople-data" Default="/mnt/user/appdata/pod_people_db/data" Description="Path to data files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pod_people_db/data</Config>
+</Container>
