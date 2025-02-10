@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>UglyFeed</Name>
+    <Repository>fabriziosalmi/uglyfeed:latest</Repository>
+    <Registry>https://hub.docker.com/r/fabriziosalmi/uglyfeed</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8501]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/fabriziosalmi/UglyFeed/issues</Support>
+    <Project>https://github.com/fabriziosalmi/UglyFeed</Project>
+    <Overview>
+        Retrieve, aggregate, filter, evaluate, rewrite and serve RSS feeds using Large Language Models for fun, research and learning purposes
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: MediaApp:Books Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>rss lms ai gpt openai chatgpt feed reader aggregator ollama gpt</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/fabriziosalmi/UglyFeed/main/docs/UglyFeed.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ugly_feed.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-09
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a config.yaml file at the Config File path: https://github.com/fabriziosalmi/UglyFeed/blob/main/docs/README.md#-configuration &#xD;
+        [br]
+        Expects a feeds.txt file in the Input Path.
+    </Requires>
+    <Config Name="Web UI Port" Target="8501" Default="8501" Mode="tcp" Description="Container Port: 8501" Type="Port" Display="always-hide" Required="true" Mask="false">8501</Config>
+    <Config Name="API Port" Target="8001" Default="8001" Mode="tcp" Description="Container Port: 8001" Type="Port" Display="always-hide" Required="true" Mask="false">8001</Config>
+    <Config Name="Config File" Target="/app/config.yaml" Default="/mnt/user/appdata/uglyfeed/config.yaml" Description="Path to config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/uglyfeed/config.yaml</Config>
+    <Config Name="Input Path" Target="/app/input" Default="/mnt/user/appdata/uglyfeed/input" Description="Path to input files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/uglyfeed/input</Config>
+    <Config Name="Output Path" Target="/app/output" Default="/mnt/user/appdata/uglyfeed/output" Description="Path to output files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/uglyfeed/output</Config>
+    <Config Name="Rewritten Path" Target="/app/rewritten" Default="/mnt/user/appdata/uglyfeed/rewritten" Description="Path to rewritten files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/uglyfeed/rewritten</Config>
+</Container>
