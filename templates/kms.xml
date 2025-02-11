@@ -27,11 +27,18 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-02-11
+
+        Add note regarding database initialization
+
         ### 2025-02-07
 
         Initial release
     </Changes>
+    <Requires>
+        Before starting the container, run `touch kms.db` in the Temp Data Path to initialize the database.
+    </Requires>
     <Config Name="API Port" Target="1688" Default="1688" Mode="tcp" Description="Container Port: 1688" Type="Port" Display="always-hide" Required="true" Mask="false">1688</Config>
-    <Config Name="Temp Data Path" Target="/kms/var" Default="/mnt/user/appdata/kms/data" Description="Path to temp data path" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/kms/data</Config>
+    <Config Name="Temp Data Path" Target="/kms/var" Default="/mnt/user/appdata/kms/data" Description="Path to temp data path. Run `touch kms.db` before running the container." Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/kms/data</Config>
     <Config Name="Debug" Target="DEBUG" Default="false|true" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
