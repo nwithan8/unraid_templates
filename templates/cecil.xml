@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Cecil</Name>
+    <Repository>madeofpendletonwool/cecil:latest</Repository>
+    <Registry>https://hub.docker.com/r/madeofpendletonwool/cecil</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:38355]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/madeofpendletonwool/cecil/issues</Support>
+    <Project>https://github.com/madeofpendletonwool/cecil</Project>
+    <Overview>
+        An ever-growing notification platform that can be used for all notification needs. It pairs perfectly with ntfy.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>apprise notification ntfy webhook python flutter system alert unifiedpush</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/madeofpendletonwool/cecil/main/images/Cecil-logos.jpeg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/cecil.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-10
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="38355" Default="38355" Mode="tcp" Description="Container Port: 38355" Type="Port" Display="always-hide" Required="true" Mask="false">38355</Config>
+    <Config Name="GitHub - Client ID" Target="CLIENT_ID" Default="" Description="GitHub Client ID" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="GitHub - Client Secret" Target="CLIENT_SECRET" Default="" Description="GitHub Client Secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="GitHub - Oauth URL" Target="AUTH_URL" Default="http://localhost:38355/api/oauth/redirect" Description="The auth URL is the url that you are using to connect to the app." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Config path" Target="/opt/cecil" Default="/mnt/user/appdata/cecil/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/cecil/config</Config>
+</Container>
