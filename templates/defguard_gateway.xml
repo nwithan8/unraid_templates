@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>defguard - Gateway</Name>
+    <Repository>ghcr.io/defguard/gateway:latest</Repository>
+    <Registry>ghcr.io/defguard/gateway</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
+    <Support>https://docs.defguard.net/</Support>
+    <Project>https://defguard.net/</Project>
+    <Overview>
+        defguard is a true Zero-Trust WireGuard® VPN with 2FA/Multi-Factor Authentication, as each connection requires MFA (and not only when logging in into the client application like other solutions). &#xD
+        [br]
+        This is the gateway component of defguard.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Network:VPN Network:Privacy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>wireguard vpn openvpn security multi factor mfa 2fa privacy authentication zero trust</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/defguard_gateway.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_4.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_5.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_6.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a defguard - Core container to be running.
+    </Requires>
+    <Config Name="WireGuard Port" Target="50051" Default="50051" Mode="udp" Description="Container Port: 50051" Type="Port" Display="always-hide" Required="true" Mask="false">50051</Config>
+    <Config Name="defguard Core gRPC URL" Target="DEFGUARD_GRPC_URL" Default="http://IP_ADDRESS:50055" Description="gRPC URL of defguard Core instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:50055</Config>
+    <Config Name="defguard Token" Target="DEFGUARD_TOKEN" Default="" Description="Token received on defguard after completing network wizard" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Stats Period" Target="DEFGUARD_STATS_PERIOD" Default="60" Description="How often, in seconds, to send interface statistics to the defguard server" Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
+    <Config Name="Log Level" Target="RUST_LOG" Default="info|debug" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>

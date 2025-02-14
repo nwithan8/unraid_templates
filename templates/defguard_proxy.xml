@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>defguard - Proxy</Name>
+    <Repository>ghcr.io/defguard/defguard-proxy:latest</Repository>
+    <Registry>ghcr.io/defguard/defguard-proxy</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
+    <Support>https://docs.defguard.net/</Support>
+    <Project>https://defguard.net/</Project>
+    <Overview>
+        defguard is a true Zero-Trust WireGuard® VPN with 2FA/Multi-Factor Authentication, as each connection requires MFA (and not only when logging in into the client application like other solutions). &#xD
+        [br]
+        This is the proxy component of defguard.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Network:VPN Network:Privacy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>wireguard vpn openvpn security multi factor mfa 2fa privacy authentication zero trust</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/defguard_gateway.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_4.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_5.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_6.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a defguard - Core container to be running.
+    </Requires>
+    <Config Name="Proxy Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="gRPCS Port" Target="DEFGUARD_PROXY_GRPC_PORT" Default="50051" Description="Port for gRPCS server to listen on" Type="Variable" Display="always-hide" Required="true" Mask="false">50051</Config>
+    <Config Name="Rust Traceback" Target="RUST_BACKTRACE" Default="1" Description="Enable Rust backtraces" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>

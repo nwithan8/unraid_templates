@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>defguard - Core</Name>
+    <Repository>ghcr.io/defguard/defguard:latest</Repository>
+    <Registry>ghcr.io/defguard/defguard</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.defguard.net/</Support>
+    <Project>https://defguard.net/</Project>
+    <Overview>
+        defguard is a true Zero-Trust WireGuard® VPN with 2FA/Multi-Factor Authentication, as each connection requires MFA (and not only when logging in into the client application like other solutions). &#xD
+        [br]
+        This is the core component of defguard, which may required for the other components to work (gateway, proxy)
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Network:VPN Network:Privacy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>wireguard vpn openvpn security multi factor mfa 2fa privacy authentication zero trust</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/defguard_core.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_4.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_5.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/defguard_screenshot_6.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database container. Requires either a separate defguard - Gateway, defguard - Proxy container or openldap container.
+    </Requires>
+    <Config Name="API Port" Target="127.0.0.1:8000" Default="8000" Mode="tcp" Description="Container Port: 127.0.0.1:8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="gRPC Port" Target="50055" Default="50055" Mode="tcp" Description="Container Port: 50055" Type="Port" Display="always-hide" Required="true" Mask="false">50055</Config>
+    <Config Name="Postgres - Host" Target="DEFGUARD_DB_HOST" Default="" Description="Postgres database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Port" Target="DEFGUARD_DB_PORT" Default="5432" Description="Postgres database port" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Postgres - User" Target="DEFGUARD_DB_USER" Default="" Description="Postgres database user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Password" Target="DEFGUARD_DB_PASSWORD" Default="" Description="Postgres database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Database" Target="DEFGUARD_DB_NAME" Default="defguard" Description="Postgres database name" Type="Variable" Display="always-hide" Required="true" Mask="false">defguard</Config>
+    <Config Name="Secret Key" Target="DEFGUARD_SECRET_KEY" Default="" Description="Used to encrypt private cookies. Run `openssl rand -base64 55 | tr -d '=+/' | tr -d '\n' | cut -c1-64` to generate a random key." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Auth Secret" Target="DEFGUARD_AUTH_SECRET" Default="" Description="Used to encrypt user tokens. Run `openssl rand -base64 55 | tr -d '=+/' | tr -d '\n' | cut -c1-64` to generate a random key." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Gateway Secret" Target="DEFGUARD_GATEWAY_SECRET" Default="" Description="Used to encrypt gateway tokens. Run `openssl rand -base64 55 | tr -d '=+/' | tr -d '\n' | cut -c1-64` to generate a random key." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="YubiBridge Secret" Target="DEFGUARD_YUBIBRIDGE_SECRET" Default="" Description="Used to encrypt YubiBridge tokens. Run `openssl rand -base64 55 | tr -d '=+/' | tr -d '\n' | cut -c1-64` to generate a random key." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="URL" Target="DEFGUARD_URL" Default="http://localhost:8000" Description="Publicly-accessible URL of defguard instance." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000</Config>
+    <Config Name="Default Admin Password" Target="DEFGUARD_DEFAULT_ADMIN_PASSWORD" Default="pass123" Description="Default password for the admin user." Type="Variable" Display="always-hide" Required="true" Mask="true">pass123</Config>
+
+    <Config Name="Proxy - Proxy URL" Target="DEFGUARD_PROXY_URL" Default="http://IP_ADDRESS:50051" Description="Proxy URL of defguard instance. Delete if not using defguard proxy." Type="Variable" Display="always" Required="true" Mask="false">http://IP_ADDRESS:50051</Config>
+    <Config Name="Proxy - Cookie Domain" Target="DEFGUARD_COOKIE_DOMAIN" Default="localhost" Description="Set the domain for auth cookies. By default, it's the domain from DEFGUARD_URL. Must be changed to base URL if you want to use forward auth. Delete if not using defguard proxy." Type="Variable" Display="always" Required="true" Mask="false">localhost</Config>
+
+    <Config Name="LDAP - URL" Target="DEFGUARD_LDAP_URL" Default="ldap://IP_ADDRESS:1389" Description="URL of LDAP server. Delete if not using LDAP." Type="Variable" Display="always" Required="true" Mask="false">ldap://IP_ADDRESS:1389</Config>
+    <Config Name="LDAP - Bind Username" Target="DEFGUARD_LDAP_BIND_USERNAME" Default="cn=user,ou=users,dc=example,dc=org" Description="Bind username for LDAP server. Delete if not using LDAP." Type="Variable" Display="always" Required="true" Mask="false">cn=user,ou=users,dc=example,dc=org</Config>
+    <Config Name="LDAP - Bind Password" Target="DEFGUARD_LDAP_BIND_PASSWORD" Default="user" Description="Bind password for LDAP server. Delete if not using LDAP." Type="Variable" Display="always" Required="true" Mask="true">user</Config>
+    <Config Name="LDAP - User Search Base" Target="DEFGUARD_LDAP_USER_SEARCH_BASE" Default="ou=users,dc=example,dc=org" Description="User search base for LDAP server. Delete if not using LDAP." Type="Variable" Display="always" Required="true" Mask="false">ou=users,dc=example,dc=org</Config>
+    <Config Name="LDAP - Group Search Base" Target="DEFGUARD_LDAP_GROUP_SEARCH_BASE" Default="ou=groups,dc=example,dc=org" Description="Group search base for LDAP server. Delete if not using LDAP." Type="Variable" Display="always" Required="true" Mask="false">ou=groups,dc=example,dc=org</Config>
+
+    <Config Name="Cookie Insecure" Target="DEFGUARD_COOKIE_INSECURE" Default="false|true" Description="Allow access via HTTP" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Rust Traceback" Target="RUST_BACKTRACE" Default="1" Description="Enable Rust backtraces" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Level" Target="DEFGUARD_LOG_LEVEL" Default="info|debug" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
