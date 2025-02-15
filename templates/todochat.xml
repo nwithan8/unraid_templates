@@ -33,7 +33,7 @@
     <Config Name="Gemini API Key" Target="GEMINI_API_KEY" Default="" Description="Gemini API Key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Secret Switch" Target="TODO_SECRET" Default="" Description="Secret to-do item to switch to chat mode" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="API Base URL" Target="API_BASE_URL" Default="" Description="Custom base URL for the Gemini API" Type="Variable" Display="advanced" Required="false" Mask="false"/>
-    <Config Name="Head Scripts" Target="HEAD_SCRIPTS" Default="" Description="Custom scripts to include in the </head> of the page" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Head Scripts" Target="HEAD_SCRIPTS" Default="" Description="Custom scripts to include in the head of the page" Type="Variable" Display="advanced" Required="false" Mask="false"/>
     <Config Name="Public Secret Key" Target="PUBLIC_SECRET_KEY" Default="" Description="Public secret key to generate signatures for API calls" Type="Variable" Display="advanced" Required="false" Mask="true"/>
     <Config Name="Site Password" Target="SITE_PASSWORD" Default="" Description="Comma-separated list of passwords to access the site. If not provided, site will be public." Type="Variable" Display="advanced" Required="false" Mask="true"/>
 </Container>
