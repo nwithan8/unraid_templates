@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Hoppscotch</Name>
+    <Repository>hoppscotch/hoppscotch:latest</Repository>
+    <Registry>https://hub.docker.com/r/hoppscotch/hoppscotch</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3100]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.hoppscotch.io/</Support>
+    <Project>https://hoppscotch.io/</Project>
+    <Overview>
+        Open source API development ecosystem, alternative to Postman and Insomnia.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>api development postman insomnia rest curl tool graphql ui gui http query</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/hoppscotch-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/hoppscotch.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/packages/hoppscotch-common/public/images/banner-dark.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database.
+    </Requires>
+    <Config Name="Admin UI Port" Target="3100" Default="3100" Mode="tcp" Description="Container Port: 3100" Type="Port" Display="always-hide" Required="true" Mask="false">3100</Config>
+    <Config Name="Frontend Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Backend Port" Target="3170" Default="3170" Mode="tcp" Description="Container Port: 3170" Type="Port" Display="always-hide" Required="true" Mask="false">3170</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="postgresql://username:password@url:5432/dbname" Description="Postgres database URL" Type="Variable" Display="always-hide" Required="true" Mask="true">postgresql://username:password@url:5432/dbname</Config>
+    <Config Name="Auth Tokens - JWT Secret" Target="JWT_SECRET" Default="" Description="JWT secret for authentication tokens" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Auth Tokens - Session Secret" Target="SESSION_SECRET" Default="" Description="Session secret for authentication tokens" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Data Encryption Key" Target="DATA_ENCRYPTION_KEY" Default="" Description="Key for data encryption in database. Must be 32 characters." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Redirect URL" Target="REDIRECT_URL" Default="http://localhost:3000" Description="Redirect URL for authentication" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Whitelisted Origins" Target="WHITELISTED_ORIGINS" Default="http://localhost:3000,http://localhost:3100,http://localhost:3170" Description="Comma-separated list of whitelisted URLs for authentication. Include three ports used by Hoppscotch." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000,http://localhost:3100,http://localhost:3170</Config>
+    <Config Name="Enabled Auth Providers" Target="VITE_ALLOWED_AUTH_PROVIDERS" Default="" Description="Comma-separated list of enabled authentication providers. Options: GOOGLE, GITHUB, MICROSOFT, EMAIL" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Google Auth - Client ID" Target="GOOGLE_CLIENT_ID" Default="" Description="Google OAuth client ID. Delete if not using Google authentication." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Google Auth - Client Secret" Target="GOOGLE_CLIENT_SECRET" Default="" Description="Google OAuth client secret. Delete if not using Google authentication." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Google Auth - Callback URL" Target="GOOGLE_CALLBACK_URL" Default="http://localhost:3170/v1/auth/google/callback" Description="Google OAuth callback URL. Delete if not using Google authentication." Type="Variable" Display="always" Required="true" Mask="false">http://localhost:3170/v1/auth/google/callback</Config>
+    <Config Name="Google Auth - Scope" Target="GOOGLE_SCOPE" Default="email,profile" Description="Google OAuth scope. Delete if not using Google authentication." Type="Variable" Display="always" Required="true" Mask="false">email,profile</Config>
+    <Config Name="GitHub Auth - Client ID" Target="GITHUB_CLIENT_ID" Default="" Description="GitHub OAuth client ID. Delete if not using GitHub authentication." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="GitHub Auth - Client Secret" Target="GITHUB_CLIENT_SECRET" Default="" Description="GitHub OAuth client secret. Delete if not using GitHub authentication." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="GitHub Auth - Callback URL" Target="GITHUB_CALLBACK_URL" Default="http://localhost:3170/v1/auth/github/callback" Description="GitHub OAuth callback URL. Delete if not using GitHub authentication." Type="Variable" Display="always" Required="true" Mask="false">http://localhost:3170/v1/auth/github/callback</Config>
+    <Config Name="GitHub Auth - Scope" Target="GITHUB_SCOPE" Default="user:email" Description="GitHub OAuth scope. Delete if not using GitHub authentication." Type="Variable" Display="always" Required="true" Mask="false">user:email</Config>
+    <Config Name="Microsoft Auth - Client ID" Target="MICROSOFT_CLIENT_ID" Default="" Description="Microsoft OAuth client ID. Delete if not using Microsoft authentication." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Microsoft Auth - Client Secret" Target="MICROSOFT_CLIENT_SECRET" Default="" Description="Microsoft OAuth client secret. Delete if not using Microsoft authentication." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Microsoft Auth - Callback URL" Target="MICROSOFT_CALLBACK_URL" Default="http://localhost:3170/v1/auth/microsoft/callback" Description="Microsoft OAuth callback URL. Delete if not using Microsoft authentication." Type="Variable" Display="always" Required="true" Mask="false">http://localhost:3170/v1/auth/microsoft/callback</Config>
+    <Config Name="Microsoft Auth - Scope" Target="MICROSOFT_SCOPE" Default="user.read" Description="Microsoft OAuth scope. Delete if not using Microsoft authentication." Type="Variable" Display="always" Required="true" Mask="false">user.read</Config>
+    <Config Name="Microsoft Auth - Tenant" Target="MICROSOFT_TENANT" Default="common" Description="Microsoft OAuth tenant. Delete if not using Microsoft authentication." Type="Variable" Display="always" Required="true" Mask="false">common</Config>
+    <Config Name="Mailer - Enable" Target="MAILER_SMTP_ENABLE" Default="false|true" Description="Enable email sending for authentication." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Mailer- Use Custom Configs" Target="MAILER_USE_CUSTOM_CONFIGS" Default="false|true" Description="Use custom SMTP configurations." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Mailer - From Address" Target="MAILER_ADDRESS_FROM" Default="from@example.com" Description="Sender email address." Type="Variable" Display="always" Required="true" Mask="false">from@example.com</Config>
+    <Config Name="Mailer - SMTP URL" Target="MAILER_SMTP_URL" Default="smtps://user@domain.com:pass@smtp.domain.com" Description="SMTP server URL." Type="Variable" Display="always" Required="true" Mask="false">smtps://user@domain.com:pass@smtp.domain.com</Config>
+    <Config Name="Mailer - SMTP Host" Target="MAILER_SMTP_HOST" Default="smtp.domain.com" Description="SMTP server host if custom configs is enabled." Type="Variable" Display="always" Required="true" Mask="false">smtp.domain.com</Config>
+    <Config Name="Mailer - SMTP Port" Target="MAILER_SMTP_PORT" Default="587" Description="SMTP server port if custom configs is enabled." Type="Variable" Display="always" Required="true" Mask="false">587</Config>
+    <Config Name="Mailer - SMTP Secure" Target="MAILER_SMTP_SECURE" Default="true|false" Description="SMTP secure connection if custom configs is enabled." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Mailer - SMTP Username" Target="MAILER_SMTP_USER" Default="user@domain.com" Description="SMTP username if custom configs is enabled." Type="Variable" Display="always" Required="true" Mask="false">user@domain.com</Config>
+    <Config Name="Mailer - SMTP Password" Target="MAILER_SMTP_PASS" Default="" Description="SMTP password if custom configs is enabled." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Mailer - TLS Reject Unauthorized" Target="MAILER_TLS_REJECT_UNAUTHORIZED" Default="true|false" Description="Reject unauthorized TLS connections if custom configs is enabled." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Frontend - Base URL" Target="VITE_BASE_URL" Default="http://IP_ADDRESS:3000" Description="Base URL for the application" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3000</Config>
+    <Config Name="Frontend - Shortcode Base URL" Target="VITE_SHORTCODE_BASE_URL" Default="http://IP_ADDRESS:3000" Description="Base URL for shortcode sharing, can be the same as Base URL." Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3000</Config>
+    <Config Name="Frontend - Admin URL" Target="VITE_ADMIN_URL" Default="http://IP_ADDRESS:3100" Description="Admin URL for the application" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3100</Config>
+    <Config Name="Backend - GraphQL URL" Target="VITE_BACKEND_GQL_URL" Default="http://IP_ADDRESS:3170/graphql" Description="GraphQL URL for the application" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3170/graphql</Config>
+    <Config Name="Backend - WebSockets URL" Target="VITE_BACKEND_WS_URL" Default="wss://IP_ADDRESS:3170/graphql" Description="WebSockets URL for the application" Type="Variable" Display="always-hide" Required="true" Mask="false">wss://IP_ADDRESS:3170/graphql</Config>
+    <Config Name="Backend - API URL" Target="VITE_BACKEND_API_URL" Default="http://IP_ADDRESS:3170/v1" Description="API URL for the application" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3170/v1</Config>
+    <Config Name="Rate Limit - TTL" Target="RATE_LIMIT_TTL" Default="60" Description="Time, in seconds, it takes to refresh the maximum number of requests being received" Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
+    <Config Name="Rate Limit - Max Requests" Target="RATE_LIMIT_MAX" Default="100" Description="Maximum number of requests per IP under the TTL" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+    <Config Name="Auth Tokens - Salt Complexity" Target="TOKEN_SALT_COMPLEXITY" Default="10" Description="Salt complexity for authentication tokens" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Auth Tokens - Magic Link Token Validity" Target="MAGIC_LINK_TOKEN_VALIDITY" Default="3" Description="Duration, in days, for magic link tokens" Type="Variable" Display="advanced-hide" Required="true" Mask="false">3</Config>
+    <Config Name="Auth Tokens - Refresh Token Validity" Target="REFRESH_TOKEN_VALIDITY" Default="604800000" Description="Duration, in milliseconds, for refresh tokens" Type="Variable" Display="advanced-hide" Required="true" Mask="false">604800000</Config>
+    <Config Name="Auth Tokens - Access Token Validity" Target="ACCESS_TOKEN_VALIDITY" Default="86400000" Description="Duration, in milliseconds, for access tokens" Type="Variable" Display="advanced-hide" Required="true" Mask="false">86400000</Config>
+    <Config Name="Allow Secure Cookies" Target="ALLOW_SECURE_COOKIES" Default="false|true" Description="Set to false if using http. Some auth providers may not support http requests and may stop working when set to false." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Subpath Access Mode Port" Target="HOPP_AIO_ALTERNATE_PORT" Default="80" Description="This is an optional variable that lets you specify an alternate port for the container’s endpoint when operating in subpath access mode. By default, this endpoint is exposed on port 80." Type="Variable" Display="advanced-hide" Required="true" Mask="false">80</Config>
+    <Config Name="Terms of Service Link" Target="VITE_APP_TOS_LINK" Default="https://docs.hoppscotch.io/support/terms" Description="Terms of service link" Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://docs.hoppscotch.io/support/terms</Config>
+    <Config Name="Privacy Policy Link" Target="VITE_APP_PRIVACY_POLICY_LINK" Default="https://docs.hoppscotch.io/support/privacy" Description="Privacy policy link" Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://docs.hoppscotch.io/support/privacy</Config>
+
+
+
+
+
+
+
+
+
+    <Config Name="App Title" Target="TITLE" Default="Wedding Share" Description="Title of the app" Type="Variable" Display="always-hide" Required="true" Mask="false">Wedding Share</Config>
+    <Config Name="Logo URL" Target="LOGO" Default="https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/wedding-share-icon.png" Description="URL of the logo" Type="Variable" Display="always-hide" Required="true" Mask="false">https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/wedding-share-icon.png</Config>
+    <Config Name="Gallery Column Count" Target="GALLERY_COLUMNS" Default="4" Description="Number of columns in the gallery" Type="Variable" Display="always-hide" Required="true" Mask="false">4</Config>
+    <Config Name="Allowed File Types" Target="ALLOWED_FILE_TYPES" Default=".jpg,.jpeg,.png" Description="Comma separated list of allowed file types" Type="Variable" Display="always-hide" Required="true" Mask="false">.jpg,.jpeg,.png</Config>
+    <Config Name="Max File Size" Target="MAX_FILE_SIZE_MB" Default="10" Description="Maximum file size in MB" Type="Variable" Display="always-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Secret key to combat strangers uploading. Optional, but recommended." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Disable Upload" Target="DISABLE_UPLOAD" Default="false|true" Description="Disable the ability to upload files" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disable QR Code" Target="DISABLE_QR_CODE" Default="false|true" Description="Disable the sharable QR code" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Hide Secret Key from QR Code" Target="HIDE_KEY_FROM_QR_CODE" Default="false|true" Description="Hide the secret key from the QR code" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disable Home Link" Target="DISABLE_HOME_LINK" Default="false|true" Description="Disable the home link" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Uploads path" Target="/app/wwwroot/uploads" Default="/mnt/user/appdata/wedding_share/uploads" Description="Path to uploaded files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/wedding_share/uploads</Config>
+</Container>
