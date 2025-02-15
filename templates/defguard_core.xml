@@ -13,7 +13,7 @@
     <Support>https://docs.defguard.net/</Support>
     <Project>https://defguard.net/</Project>
     <Overview>
-        defguard is a true Zero-Trust WireGuard® VPN with 2FA/Multi-Factor Authentication, as each connection requires MFA (and not only when logging in into the client application like other solutions). &#xD
+        defguard is a true Zero-Trust WireGuard® VPN with 2FA/Multi-Factor Authentication, as each connection requires MFA (and not only when logging in into the client application like other solutions). &#xD;
         [br]
         This is the core component of defguard, which may required for the other components to work (gateway, proxy)
     </Overview>
