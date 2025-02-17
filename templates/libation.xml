@@ -26,11 +26,19 @@
         Expects present files prior to installation: https://github.com/rmcrackan/Libation/blob/master/Documentation/Docker.md#setup
     </Requires>
     <Changes>
+        ### 2025-02-16
+
+        Explicitly use user:group 99:100 for in-container user
+
         ### 2024-05-09
 
         Initial release
     </Changes>
-    <Config Name="Sleep time" Target="SLEEP_TIME" Default="30m" Description="The time to sleep between checks" Type="Variable" Display="advanced" Required="true" Mask="false"/>
-    <Config Name="Config path" Target="/config" Default="/mnt/user/appdata/libation/config" Mode="rw" Description="Path to configuration files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/libation/config</Config>
-    <Config Name="Books path" Target="/data" Default="/mnt/user/appdata/libation/books" Mode="rw" Description="Path to book files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/libation/books</Config>
+    <ExtraParams>-u 99:100</ExtraParams>
+    <Config Name="Sleep Time" Target="SLEEP_TIME" Default="30m" Description="The time to sleep between checks" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/libation/config" Mode="rw" Description="Path to configuration files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/libation/config</Config>
+    <Config Name="Books Path" Target="/data" Default="/mnt/user/appdata/libation/books" Mode="rw" Description="Path to book files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/libation/books</Config>
+    <Config Name="Internal Config Path" Target="LIBATION_CONFIG_DIR" Default="/config" Description="Internal path to configuration files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config</Config>
+    <Config Name="Internal Books Path" Target="LIBATION_BOOKS_DIR" Default="/data" Description="Internal path to book files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data</Config>
+    <Config Name="Create Database If Missing" Target="LIBATION_CREATE_DB" Default="true|false" Description="Whether or not the image should create a database file if none are found." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
