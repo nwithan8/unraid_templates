@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Transfer.sh</Name>
+    <Repository>dutchcoders/transfer.sh:edge</Repository>
+    <Registry>https://hub.docker.com/r/dutchcoders/transfer.sh</Registry>
+    <Branch>
+        <Tag>nightly</Tag>
+        <TagDescription>Latest nightly release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>edge</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dutchcoders/transfer.sh</Support>
+    <Project>https://transfer.sh</Project>
+    <Overview>
+        Easy and fast file sharing from the command-line. Transfer.sh currently supports the s3 (Amazon S3), gdrive (Google Drive), storj (Storj) providers, and local file system (local).
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>pastebin paste file transfer upload share</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/transfer-sh-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/transfer_sh.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is pre-configured to work with local storage. Please see documentation and edit `Post Arguments` to use a different storage backend.
+    </Requires>
+    <PostArgs>--provider local --basedir /tmp/</PostArgs>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Storage" Target="/tmp" Default="" Description="Path to storage location" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Purge Days" Target="PURGE_DAYS" Default="7" Description="Number of days to keep files" Type="Variable" Display="advanced-hide" Required="true" Mask="false">7</Config>
+    <Config Name="Purge Interval" Target="PURGE_INTERVAL" Default="6" Description="Interval, in hours, to check for files to purge" Type="Variable" Display="advanced-hide" Required="true" Mask="false">6</Config>
+    <Config Name="Max File Size" Target="MAX_UPLOAD_SIZE" Default="10485761" Description="Maximum file size, in bytes, to allow for upload" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10485761</Config>
+</Container>
