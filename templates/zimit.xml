@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Zimit</Name>
+    <Repository>ghcr.io/openzim/zimit:latest</Repository>
+    <Registry>ghcr.io/openzim/zimit</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>dev</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/openzim/zimit/issues</Support>
+    <Project>https://openzim.org</Project>
+    <Overview>
+        Zimit is a scraper allowing to create ZIM file from any website. &#xD;
+        [br]
+        This is a CLI application.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Backup: Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>zim archive web scraper</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/zimit-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/zimit.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI application. Please edit the "Post Arguments" to control the behavior of the scraper: https://github.com/openzim/zimit?tab=readme-ov-file#usage
+    </Requires>
+    <PostArgs/>
+</Container>
