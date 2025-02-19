@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>SOSSE</Name>
+    <Repository>biolds/sosse:latest</Repository>
+    <Registry>https://hub.docker.com/r/biolds/sosse</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://sosse.readthedocs.io/en/stable/install/docker.html</Support>
+    <Project>https://sosse.readthedocs.io</Project>
+    <Overview>
+        SOSSE (Selenium Open Source Search Engine) is a web archiving software, crawler, and search engine
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Backup: Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>web archive search engine crawler selenium python</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/sosse-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/sosse.xml</TemplateURL>
+    <Screenshot>https://sosse.readthedocs.io/en/stable/_images/search.png</Screenshot>
+    <Screenshot>https://sosse.readthedocs.io/en/stable/_images/guide_download_archive_html.png</Screenshot>
+    <Screenshot>https://sosse.readthedocs.io/en/stable/_images/archive_download.png</Screenshot>
+    <Screenshot>https://sosse.readthedocs.io/en/stable/_images/analytics.png</Screenshot>
+    <Screenshot>https://sosse.readthedocs.io/en/stable/_images/history.png</Screenshot>
+    <Screenshot>https://sosse.readthedocs.io/en/stable/_images/crawl_queue.png</Screenshot>
+    <Screenshot>https://sosse.readthedocs.io/en/stable/_images/crawl_policy_decision_no_hilight.png</Screenshot>
+    <Screenshot>https://sosse.readthedocs.io/en/stable/_images/browsable_home.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-18
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="8005" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8005</Config>
+    <Config Name="Storage Path" Target="/var/lib/sosse" Default="" Description="Path to store downloaded files" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/etc/sosse" Default="/mnt/user/appdata/sosse/config" Description="Path to store the configuration" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/sosse/config</Config>
+    <Config Name="Logs Path" Target="/var/log/sosse" Default="/mnt/user/appdata/sosse/logs" Description="Path to store the logs" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/sosse/logs</Config>
+</Container>
