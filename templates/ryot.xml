@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Ryot</Name>
+    <Repository>ignisda/ryot:latest</Repository>
+    <Registry>https://hub.docker.com/r/ignisda/ryot</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.ryot.io</Support>
+    <Project>https://ryot.io</Project>
+    <Overview>
+        A self-hosted platform for tracking various facets of your life - media, fitness etc.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>tracker media fitness video games music podcasts anime manga download books movies shows tv series audiobooks twitch itunes tmdb server audible mal anilist google</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ryot-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ryot.xml</TemplateURL>
+    <Screenshot>https://ryot.io/cta-image.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-21
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database.
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Server - Admin Access Token" Target="SERVER_ADMIN_ACCESS_TOKEN" Default="" Description="An access token that can be used for admin operations." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Server - Pro Key" Target="SERVER_PRO_KEY" Default="" Description="Key to activate pro features. If left blank, will default to community edition." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Server - SMTP - Address" Target="SERVER_SMTP_MAILBOX" Default="" Description="The email address to send emails from." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Server - SMTP - Host" Target="SERVER_SMTP_SERVER" Default="" Description="The SMTP host to send emails from." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Server - SMTP - User" Target="SERVER_SMTP_USER" Default="" Description="The SMTP user to send emails from." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Server - SMTP - Password" Target="SERVER_SMTP_PASSWORD" Default="" Description="The SMTP password to send emails from." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="UI - URL" Target="FRONTEND_URL" Default="http://localhost:8000" Description="Used as the base URL when generating item links for the frontend." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Security - Allow Registration" Target="USERS_ALLOW_REGISTRATION" Default="true|false" Description="Allow users to register for an account." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Security - JWT Token Secret" Target="USERS_JWT_SECRET" Default="" Description="The secret used for generating JWT tokens." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Security - Disable Local Auth" Target="USERS_DISABLE_LOCAL_AUTH" Default="false|true" Description="Whether to disable local user authentication completely." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Security - OIDC - Client ID" Target="SERVER_OIDC_CLIENT_ID" Default="" Description="The client ID for OIDC authentication." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Security - OIDC - Client Secret" Target="SERVER_OIDC_CLIENT_SECRET" Default="" Description="The client secret for OIDC authentication." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Security - OIDC - Issuer URL" Target="SERVER_OIDC_ISSUER_URL" Default="" Description="The issuer URL for OIDC authentication." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Database - URL" Target="DATABASE_URL" Default="postgres://USERNAME:PASSWORD@HOST:5432/DATABASE_NAME" Description="URL of the Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="File Storage - S3 - Access Key ID" Target="FILE_STORAGE_S3_ACCESS_KEY_ID" Default="" Description="The access key ID for the S3 compatible file storage. Required to enable file storage." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="File Storage - S3 - Secret Access Key" Target="FILE_STORAGE_S3_SECRET_ACCESS_KEY" Default="" Description="The secret access key for the S3 compatible file storage. Required to enable file storage." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="FIle Storage - S3 - URL" Target="FILE_STORAGE_S3_URL" Default="" Description="The URL for the S3 compatible file storage. Required to enable file storage." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="File Storage - S3 - Region" Target="FILE_STORAGE_S3_REGION" Default="" Description="The region for the S3 compatible file storage. Required to enable file storage." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="File Storage - S3 - Bucket" Target="FILE_STORAGE_S3_BUCKET_NAME" Default="" Description="The bucket name for the S3 compatible file storage. Required to enable file storage." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Media - Monitoring Length" Target="MEDIA_MONITORING_REMOVE_AFTER_DAYS" Default="30" Description="Number of days after which a media should be removed from the Monitoring collection." Type="Variable" Display="always-hide" Required="true" Mask="false">30</Config>
+    <Config Name="Anime/Manga - Anilist - Preferred Language" Target="ANIME_AND_MANGA_ANILIST_PREFERRED_LANGUAGE" Default="native" Description="The preferred language for Anilist data." Type="Variable" Display="always-hide" Required="true" Mask="false">native</Config>
+    <Config Name="Anime/Manga - MAL - Client ID" Target="ANIME_AND_MANGA_MAL_CLIENT_ID" Default="" Description="The client ID issued by MAL." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Audiobooks - Audible - Locale" Target="AUDIO_BOOKS_AUDIBLE_LOCALE" Default="us" Description="The locale for Audible data." Type="Variable" Display="always-hide" Required="true" Mask="false">us</Config>
+    <Config Name="Books - Google Books - API Key" Target="BOOKS_GOOGLE_BOOKS_API_KEY" Default="" Description="The API key issued by Google Books." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Books - Google Books - Pass Raw Query" Target="BOOKS_GOOGLE_BOOKS_PASS_RAW_QUERY" Default="false|true" Description="Whether to pass the raw query string to the search API." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Books - Hardcover - API Key" Target="BOOKS_HARDCOVER_API_KEY" Default="" Description="The API key issued by Hardcover." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Books - Openlibrary - Cover Image Size" Target="BOOKS_OPENLIBRARY_COVER_IMAGE_SIZE" Default="M" Description="The size of the cover image to fetch from Openlibrary." Type="Variable" Display="always-hide" Required="true" Mask="false">M</Config>
+    <Config Name="Movies/Shows - TMDB - Access Token" Target="MOVIES_AND_SHOWS_TMDB_ACCESS_TOKEN" Default="" Description="The access token issued by TMDB." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Movies/Shows - TMDB - Locale" Target="MOVIES_AND_SHOWS_TMDB_LOCALE" Default="en" Description="The preferred language for TMDB data." Type="Variable" Display="always-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Podcasts - iTunes - Locale" Target="PODCASTS_ITUNES_LOCALE" Default="en_us" Description="The locale for iTunes data." Type="Variable" Display="always-hide" Required="true" Mask="false">en_us</Config>
+    <Config Name="Podcasts - Listennotes - API Token" Target="PODCASTS_LISTENNOTES_API_TOKEN" Default="" Description="The API token issued by Listennotes." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Video Games - IGDB - Image Size" Target="VIDEO_GAMES_IGDB_IMAGE_SIZE" Default="t_original" Description="The size of the cover image to fetch from IGDB." Type="Variable" Display="always-hide" Required="true" Mask="false">t_original</Config>
+    <Config Name="Video Games - Twitch - Client ID" Target="VIDEO_GAMES_TWITCH_CLIENT_ID" Default="" Description="The client ID issued by Twitch. Required to enable video games tracking." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Video Games - Twitch - Client Secret" Target="VIDEO_GAMES_TWITCH_CLIENT_SECRET" Default="" Description="The client secret issued by Twitch. Required to enable video games tracking." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Internal Port" Target="PORT" Default="8000" Description="Internal port of the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Server - CORS Origins" Target="SERVER_CORS_ORIGINS" Default="" Description="An array of URLs for CORS origins." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Server - Disable Background Jobs" Target="SERVER_DISABLE_BACKGROUND_JOBS" Default="false|true" Description="Disable background jobs" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Server - Progress Update Threshold" Target="SERVER_PROGRESS_UPDATE_THRESHOLD" Default="2" Description="The hours in which a media can be marked as seen again for a user. This is used so that the same media can not be used marked as started when it has been already marked as seen in the last `n` hours." Type="Variable" Display="advanced-hide" Required="true" Mask="false">2</Config>
+    <Config Name="Server - Enable GraphQL Playground" Target="SERVER_GRAPHQL_PLAYGROUND_ENABLED" Default="true|false" Description="Enable the GraphQL playground" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Server - Enable Demo Mode" Target="SERVER_IS_DEMO_INSTANCE" Default="false|true" Description="Enable demo mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Server - Max File Size" Target="SERVER_MAX_FILE_SIZE_MB" Default="70" Description="The maximum file size, in MB, for user uploads." Type="Variable" Display="advanced-hide" Required="true" Mask="false">70</Config>
+    <Config Name="Server - Startup Sleep" Target="SERVER_SLEEP_BEFORE_STARTUP_SECONDS" Default="0" Description="The number of seconds to sleep before starting the server." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0</Config>
+    <Config Name="UI - Dashboard Message" Target="FRONTEND_DASHBOARD_MESSAGE" Default="" Description="A message to be displayed on the dashboard." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="UI - OIDC Button" Target="FRONTEND_OIDC_BUTTON_LABEL" Default="Continue with OpenID Connect" Description="The button label for OIDC authentication." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Security - User Token Validity" Target="USERS_TOKEN_VALID_FOR_DAYS" Default="90" Description="The number of days till login authentication token is valid." Type="Variable" Display="advanced-hide" Required="true" Mask="false">90</Config>
+    <Config Name="Analytics - Disable Telemetry" Target="DISABLE_TELEMETRY" Default="true|false" Description="Opt out of telemetry metrics" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Analytics - Domain Names" Target="FRONTEND_UMAMI_DOMAINS" Default="" Description="Comma separated list of domain names to provide in analytics" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Analytics - Script URL" Target="FRONTEND_UMAMI_SCRIPT_URL" Default="" Description="URL of the Umami analytics script. For example: https://umami.is/script.js" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Analytics - Website ID" Target="FRONTEND_UMAMI_WEBSITE_ID" Default="" Description="The website ID for Umami analytics" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Integrations - Sync Time" Target="INTEGRATION_SYNC_EVERY_MINUTES" Default="5" Description="Sync data from push and yank based integrations every `n` minutes." Type="Variable" Display="advanced-hide" Required="true" Mask="false">5</Config>
+</Container>
