@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Speech-To-Phrase</Name>
+    <Repository>rhasspy/wyoming-speech-to-phrase:latest</Repository>
+    <Registry>https://hub.docker.com/r/rhasspy/wyoming-speech-to-phrase</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/OHF-voice/speech-to-phrase/issues</Support>
+    <Project>https://github.com/OHF-voice/speech-to-phrase</Project>
+    <Overview>
+        A fast and local speech-to-text system that is personalized with your Home Assistant device and area names.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: HomeAutomation: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>speech recognition voice command home assistant</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/OHF-Voice/speech-to-phrase/main/icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/speech_to_phrase.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-02-22
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a Home Assistant instance. Edit "Post Arguments" to include the URL of your Home Assistant instance.
+    </Requires>
+    <PostArgs>--hass-websocket-uri 'ws://homeassistant.local:8123/api/websocket' --hass-token 'YOUR_LONG_LIVED_ACCESS_TOKEN' --retrain-on-start</PostArgs>
+    <Config Name="API Port" Target="10300" Default="10300" Mode="tcp" Description="Container Port: 10300" Type="Port" Display="always-hide" Required="true" Mask="false">10300</Config>
+    <Config Name="Models Path" Target="/models" Default="" Description="Path to the models directory" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Training Path" Target="/train" Default="" Description="Path to the training directory" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+</Container>
