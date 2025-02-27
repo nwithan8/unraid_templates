@@ -32,7 +32,6 @@
         Initial release
     </Changes>
     <ExtraParams>--platform=linux/amd64</ExtraParams>
-    <PostArgs>python app.py</PostArgs>
     <Config Name="Web UI Port" Target="7860" Default="7860" Mode="tcp" Description="Container Port: 7860" Type="Port" Display="always-hide" Required="true" Mask="false">7860</Config>
     <Config Name="Temp Path" Target="/home/user/app/tmp" Default="" Mode="rw" Description="Path to temporary files." Type="Path" Display="always" Required="false" Mask="false"/>
     <Config Name="Audiobooks Path" Target="/home/user/app/audiobooks" Default="" Mode="rw" Description="Path to audiobooks." Type="Path" Display="always" Required="false" Mask="false"/>
