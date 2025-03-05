@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-03-04
+
+        Fix post arguments
+
         ### 2025-01-10
 
         Remove unnecessary gems path
@@ -42,7 +46,7 @@
     <Requires>
         Requires separate Redis, PostgreSQL and Dawarich Sidekiq containers. See the documentation for more information: https://dawarich.app/docs/environment-variables-and-settings
     </Requires>
-    <PostArgs>bin/dev</PostArgs>
+    <PostArgs>bin/rails server -p 3000 -b ::</PostArgs>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="Imports Path" Target="/var/app/tmp/imports/watched" Default="/mnt/user/appdata/dawarich/imports" Description="Path to watch for imports" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/imports</Config>
     <Config Name="Redis - URL" Target="REDIS_URL" Default="redis://IP_ADDRESS:6379/0" Description="URL of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://IP_ADDRESS:6379/0</Config>
