@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Pocket ID</Name>
-    <Repository>stonith404/pocket-id:latest</Repository>
-    <Registry>https://hub.docker.com/r/stonith404/pocket-id</Registry>
+    <Repository>ghcr.io/pocket-id/pocket-id:latest</Repository>
+    <Registry>ghcr.io/pocket-id/pocket-id</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-03-14
+
+        Image moved from Docker Hub to GitHub Container Registry
+
         ### 2024-08-21
 
         Fix port mapping
