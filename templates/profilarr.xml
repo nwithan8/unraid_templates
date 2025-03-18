@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Profilarr</Name>
+    <Repository>santiagosayshey/profilarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/santiagosayshey/profilarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>beta</Tag>
+        <TagDescription>Latest beta release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:6868]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://dictionarry.dev/wiki/profilarr-setup</Support>
+    <Project>https://github.com/Dictionarry-Hub/profilarr</Project>
+    <Overview>
+        A custom format / quality profile management tool that acts as a middleman between a configuration database and your Radarr/Sonarr installations
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex sonarr radarr tool quality profile management web gui</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/profilarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/profilarr.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Dictionarry-Hub/profilarr/main/.github/images/preview.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-03-17
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="6868" Default="6868" Mode="tcp" Description="Container Port: 6868" Type="Port" Display="always-hide" Required="true" Mask="false">6868</Config>
+    <Config Name="Config path" Target="/config" Default="/mnt/user/appdata/profilarr/config" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/profilarr/config</Config>
+</Container>
