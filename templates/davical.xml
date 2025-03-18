@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>DAViCal</Name>
+    <Repository>fintechstudios/davical:latest</Repository>
+    <Registry>https://hub.docker.com/r/fintechstudios/davical</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>nightly</Tag>
+        <TagDescription>Latest nightly build</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/fintechstudios/davical-docker/issues</Support>
+    <Project>https://davical.org</Project>
+    <Overview>
+        DAViCal is a server for calendar sharing. It is an implementation of the CalDAV protocol which is designed for storing calendaring resources (in iCalendar format) on a remote shared server.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ical dav caldav calendar share protocol nextcloud google icloud radicale agendav</ExtraSearchTerms>
+    <Icon>https://davical.org/images/logo.gif</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/davical.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-03-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database.
+    </Requires>
+    <Config Name="Web UI Port" Target="80" Default="4080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">4080</Config>
+    <Config Name="Postgres - Host" Target="PGHOST" Default="localhost" Description="Postgres host" Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Postgres - Port" Target="PGPORT" Default="5432" Description="Postgres port" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Postgres - User" Target="PGUSER" Default="davical_app" Description="Postgres user" Type="Variable" Display="always-hide" Required="true" Mask="false">davical_app</Config>
+    <Config Name="Postgres - Password" Target="PGPASSWORD" Default="" Description="Postgres password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Postgres - Database" Target="PGDATABASE" Default="davical" Description="Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false">davical</Config>
+    <Config Name="Apache ServerName" Target="HOST_NAME" Default="localhost" Description="Used as Apache ServerName." Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Admin Email" Target="ADMIN_EMAIL" Default="admin@davical.example.com" Description="Displayed on login page and in 'From' for password reset emails." Type="Variable" Display="advanced-hide" Required="true" Mask="false">admin@davical.example.com</Config>
+    <Config Name="Database Migrations - Run Migrations on Startup" Target="RUN_MIGRATIONS_AT_STARTUP" Default="false|true" Description="Run database migrations on startup." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Database Migrations - Root User" Target="ROOT_PGUSER" Default="davical" Description="Postgres user with permissions to create users and databases. Remove if not used." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Database Migrations - Root Password" Target="ROOT_PGPASSWORD" Default="" Description="Postgres password for the root user. Remove if not used." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Database Migrations - Admin Password" Target="DAVICAL_ADMIN_PASS" Default="" Description="Password you would like to use for DAViCal admin user. Remove if not used." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Database Migrations - DAViCal Superuser Username" Target="DBA_PGUSER" Default="davical_dba" Description="The Postgres (super)user used by DAViCal for database operations." Type="Variable" Display="advanced" Required="false" Mask="false">davical_dba</Config>
+    <Config Name="Database Migrations - DAViCal Superuser Password" Target="DBA_PGPASSWORD" Default="" Description="Password for the DAViCal superuser." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+</Container>
