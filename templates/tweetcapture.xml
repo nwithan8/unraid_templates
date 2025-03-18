@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>TweetCapture</Name>
+    <Repository>xacnio/tweetcapture:latest</Repository>
+    <Registry>https://hub.docker.com/r/xacnio/tweetcapture</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/xacnio/tweetcapture/issues</Support>
+    <Project>https://github.com/xacnio/tweetcapture</Project>
+    <Overview>
+        Easily take screenshots of tweets, mentions, and full threads.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>twitter x threads tweet screenshot capture CLI tool</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tweetcapture-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tweetcapture.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-03-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI application. Run it manually from a terminal via `docker run`: https://github.com/xacnio/tweetcapture?tab=readme-ov-file#docker-usage
+    </Requires>
+</Container>
