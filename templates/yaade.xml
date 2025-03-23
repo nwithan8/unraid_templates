@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Yaade</Name>
+    <Repository>esperotech/yaade:latest</Repository>
+    <Registry>https://hub.docker.com/r/esperotech/yaade</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9339]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.yaade.io/</Support>
+    <Project>https://github.com/EsperoTech/yaade</Project>
+    <Overview>
+        An open-source, self-hosted, collaborative API development environment.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>API tool development environment hoppscotch postman requests https software</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/EsperoTech/yaade/main/assets/YaadeIcon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/yaade.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/EsperoTech/yaade/main/assets/dark-mode.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/EsperoTech/yaade/main/assets/light-mode.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/EsperoTech/yaade/main/assets/documentation.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/EsperoTech/yaade/main/assets/environments.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/EsperoTech/yaade/main/assets/scripts.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/EsperoTech/yaade/main/assets/user-management.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-03-23
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="9339" Default="9339" Mode="tcp" Description="Container Port: 9339" Type="Port" Display="always-hide" Required="true" Mask="false">9339</Config>
+    <Config Name="Admin Username" Target="YAADE_ADMIN_USERNAME" Default="" Description="Username for admin login" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Base Path" Target="YAADE_BASE_PATH" Default="/" Description="Base path for the application. Useful if behind reverse proxy." Type="Variable" Display="always-hide" Required="true" Mask="false">/</Config>
+    <Config Name="Config Data" Target="/app/data" Default="/mnt/user/appdata/yaade/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/yaade/config</Config>
+</Container>
