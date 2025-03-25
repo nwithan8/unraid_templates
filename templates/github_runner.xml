@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Docker Github Actions Runner</Name>
+    <Repository>myoung34/github-runner:latest</Repository>
+    <Registry>https://hub.docker.com/r/myoung34/github-runner</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/myoung34/docker-github-actions-runner/wiki</Support>
+    <Project>https://github.com/myoung34/docker-github-actions-runner</Project>
+    <Overview>
+        A self-hosted GitHub Actions runner.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>github code runner ci cd actions self-hosted</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/github-runner-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/github_runner.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-03-25
+
+        Initial release
+    </Changes>
+    <Config Name="Repository URL" Target="REPO_URL" Default="https://github.com/example/repo" Description="URL of the GitHub repository" Type="Variable" Display="always-hide" Required="true" Mask="false">https://github.com/example/repo</Config>
+    <Config Name="Runner Name" Target="RUNNER_NAME" Default="" Description="Name of the runner" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Runner Token" Target="RUNNER_TOKEN" Default="" Description="Token for the runner" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Runner Group" Target="RUNNER_GROUP" Default="" Description="Group for the runner (GitHub Enterprise Only)" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Runner Scope" Target="RUNNER_SCOPE" Default="repo" Description="Scope for the runner" Type="Variable" Display="always-hide" Required="true" Mask="false">repo</Config>
+    <Config Name="Labels" Target="LABELS" Default="" Description="Comma-separated list of labels for the runner" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Runner Working Directory" Target="RUNNER_WORKDIR" Default="/" Description="Working directory for the runner" Type="Variable" Display="always-hide" Required="true" Mask="false">/</Config>
+    <Config Name="Runner Labels" Target="RUNNER_LABELS" Default="" Description="Labels for the runner" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Runner Temp Data Path" Target="/tmp/runner" Default="/tmp/runner" Description="Path to temporary data. This MUST be the same on both the host and inside the container!" Type="Path" Display="always-hide" Required="true" Mask="false">/tmp/runner</Config>
+    <Config Name="Persistent Files" Target="/runner/persistent_files" Default="/mnt/user/appdata/github_runner/persistent_files" Description="Path to persistent files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/github_runner/persistent_files</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Persistent Files Internal Path" Target="CONFIGURED_ACTIONS_RUNNER_FILES_DIR" Default="/runner/persistent_files" Description="Internal path to the persistent files directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/runner/persistent_files</Config>
+</Container>
