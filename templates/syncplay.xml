@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Syncplay</Name>
+    <Repository>dnomd343/syncplay:latest</Repository>
+    <Registry>https://hub.docker.com/r/nomd343/syncplay</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dnomd343/syncplay-docker/issues</Support>
+    <Project>https://syncplay.pl/</Project>
+    <Overview>
+        Pausing, unpausing and seeking are synchronized over the Internet, giving everyone playing the same file in the same virtual room a shared viewing experience.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Other: Status:Stable</Category>
+    <ExtraSearchTerms>syncplay sync play watch together plex netflix</ExtraSearchTerms>
+    <Icon>https://syncplay.pl/wp-content/uploads/2019/02/new_syncplay_logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/syncplay.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-03-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yml` file in the App Data directory. See documentation: https://github.com/dnomd343/syncplay-docker?tab=readme-ov-file#configure-file
+    </Requires>
+    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/syncplay/data" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/syncplay/data</Config>
+</Container>
