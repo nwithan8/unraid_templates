@@ -1,0 +1,67 @@
+name: New Template Request
+description: A request for a new Unraid template.
+title: "[NEW TEMPLATE] - <APPLICATION_NAME_HERE>"
+labels: [ "new template", "research" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for opening an Unraid template request. Please fill out the information below.
+        
+        Please replace `APPLICATION_NAME_HERE` in the title with the name of the template you are requesting.
+  - type: checkboxes
+    id: new_app
+    attributes:
+      label: Application does not already exist
+      description: |
+        To avoid adding duplicate applications to Community Apps, please verify that the application does not already exist. You can search the Community Apps store [here](https://unraid.net/community/apps).
+      options:
+        - label: I have verified that the requested application template does not already exist in Community Apps, or that the existing Community App template is out of date and no longer maintained.
+          required: true
+  - type: checkboxes
+    id: app_maintained
+    attributes:
+      label: Application is actively supported
+      description: |
+        To keep Community Apps clean, we only support applications that are actively maintained and updated. Applications that are no longer being developed will not be added.
+      options:
+        - label: I have verified that the requested application is actively maintained.
+          required: true
+  - type: input
+    id: docker_link
+    attributes:
+      label: Link to Docker Hub or GitHub Container Registry
+      description: |
+        Please provide a link to the application's Docker Hub or GitHub Container Registry page.
+        
+        Please note, Community Apps cannot be built from source, and must have an image available for download from a registry such as Docker Hub.
+    validations:
+      required: false
+  - type: input
+    id: doc_link
+    attributes:
+      label: Link to documentation
+      description: |
+        Please provide a link to the application's documentation. This will help contributors research the information necessary to write a template.
+    validations:
+      required: false
+  - type: input
+    id: source_link
+    attributes:
+      label: Link to source code
+      description: |
+        Please provide a link to the application's source code repository (e.g. GitHub, GitLab). This will help contributors research the information necessary to write a template.
+    validations:
+      required: false
+  - type: input
+    id: compose_link
+    attributes:
+      label: Link to Docker Compose file
+      description: |
+        If available, please provide a link to the application's Docker Compose file. This will help contributors research the information necessary to write a template.
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting your request. We will review the information provided and respond as soon as possible.
