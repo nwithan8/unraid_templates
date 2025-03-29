@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>PlexWatch</Name>
+    <Repository>ghcr.io/nichtlegacy/plexwatch:latest</Repository>
+    <Registry>ghcr.io/nichtlegacy/plexwatch</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/nichtlegacy/PlexWatch/issues</Support>
+    <Project>https://github.com/nichtlegacy/PlexWatch</Project>
+    <Overview>
+        PlexWatch is a Discord bot that brings your Plex media server to life with a real-time dashboard. Monitor active streams, track SABnzbd downloads, and check server uptime—all directly in your Discord server.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>automation bot discord plex monitoring server sabnzbd</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/plex-watch-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/plex_watch.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/plex_watch_screenshot_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/plex_watch_screenshot_2.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-03-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        Bot is configured via `config.json` file in App Data path. See documentation: https://github.com/nichtlegacy/PlexWatch?tab=readme-ov-file#configuration
+    </Requires>
+    <Config Name="Discord - Bot Token" Target="DISCORD_TOKEN" Default="" Description="Discord bot token" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Discord - Authorized User IDs" Target="DISCORD_AUTHORIZED_USERS" Default="" Description="Comma-separated list of Discord user IDs authorized to admin the bot" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Discord - Channel ID" Target="CHANNEL_ID" Default="" Description="Discord channel ID to send messages to" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex - Server URL" Target="PLEX_URL" Default="" Description="URL of your Plex server (e.g., http://plex-server:32400)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex - Server Token" Target="PLEX_TOKEN" Default="" Description="Plex server token for authentication" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="SABnzbd - URL" Target="SABNZBD_URL" Default="" Description="Optional, SABnzbd URL (e.g., http://sabnzbd:8080) for integration" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SABnzbd - API Key" Target="SABNZBD_API_KEY" Default="" Description="Optional, SABnzbd API key for integration" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Uptime Kuma - URL" Target="UPTIME_URL" Default="" Description="Optional, Uptime Kuma URL (e.g., http://uptime-kuma:3001) for integration" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Uptime Kuma - Username" Target="UPTIME_USERNAME" Default="" Description="Optional, Uptime Kuma username for authentication" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Uptime Kuma - Password" Target="UPTIME_PASSWORD" Default="" Description="Optional, Uptime Kuma password for authentication" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Uptime Kuma - Monitor ID" Target="UPTIME_MONITOR_ID" Default="" Description="Optional, Uptime Kuma monitor ID for integration" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/plex_watch/data" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plex_watch/data</Config>
+    <Config Name="Logs Directory" Target="/app/logs" Default="/mnt/user/appdata/plex_watch/logs" Description="Path to logs directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plex_watch/logs</Config>
+    <Config Name="Running In Docker" Target="RUNNING_IN_DOCKER" Default="true" Description="Required for Docker running, do not change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">true</Config>
+</Container>
