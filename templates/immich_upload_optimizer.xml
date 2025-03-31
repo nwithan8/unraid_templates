@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Immich Upload Optimizer</Name>
+    <Repository>ghcr.io/miguelangel-nubla/immich-upload-optimizer:latest</Repository>
+    <Registry>ghcr.io/miguelangel-nubla/immich-upload-optimizer</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/miguelangel-nubla/immich-upload-optimizer/issues</Support>
+    <Project>https://github.com/miguelangel-nubla/immich-upload-optimizer</Project>
+    <Overview>
+        Immich Upload Optimizer is a proxy designed to be placed in front of the Immich server. It intercepts file uploads and uses an external CLI program (by default JPEG-XL, Caesium and HandBrake) to optimize, resize, or compress images and videos before they are stored on the Immich server. This helps save storage space on the Immich server by reducing the size of uploaded files.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>photo album share image gallery pictures immich upload optimizer proxy storage resize compress</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/immich-upload-optimizer-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/immich_upload_optimizer.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-03-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `tasks.yaml` file in the Tasks Config Path folder. See documentation: https://github.com/miguelangel-nubla/immich-upload-optimizer/blob/main/TASKS.md
+    </Requires>
+    <Config Name="Proxy Port" Target="2283" Default="2283" Mode="tcp" Description="Container Port: 2283" Type="Port" Display="always-hide" Required="true" Mask="false">2283</Config>
+    <Config Name="Immich Server URL" Target="IUO_UPSTREAM" Default="http://IMMICH_SERVER_IP:2283" Description="URL of the Immich server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IMMICH_SERVER_IP:2283</Config>
+    <Config Name="Tasks Config Path" Target="/config" Default="/mnt/user/appdata/immich-upload-optimizer/config" Description="Path to a folder containing the tasks config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/immich-upload-optimizer/config</Config>
+    <Config Name="Internal Task File Path" Target="IUO_TASKS_FILE" Default="/config/tasks.yaml" Description="Path to the tasks config file inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config/tasks.yaml</Config>
+    <Config Name="Internal Listen Address" Target="IUO_LISTEN" Default=":2283" Description="Address to listen on inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">:2283</Config>
+</Container>
