@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Bitwarden Portal</Name>
+    <Repository>reaper0x1/bitwarden-portal:latest</Repository>
+    <Registry>https://hub.docker.com/r/reaper0x1/bitwarden-portal</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Reaper0x1/bitwarden-portal/issues</Support>
+    <Project>https://github.com/Reaper0x1/bitwarden-portal</Project>
+    <Overview>
+        Automate backup and restore between Bitwarden and/or Vaultwarden vault.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>passwords bitwarden vaultwarden sync server backup restore</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/Reaper0x1/bitwarden-portal/refs/heads/main/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/bitwarden_portal.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-03-30
+
+        Initial release
+    </Changes>
+    <Config Name="Backup Cron Schedule" Target="CRON_SCHEDULE" Default="0 0 * * *" Description="Cron schedule for backup and restore tasks" Type="Variable" Display="always-hide" Required="true" Mask="false">0 0 * * *</Config>
+    <Config Name="Encryption Password" Target="ENCRYPTION_PASSWORD" Default="" Description="This is the password used to encrypt and decrypt the backup files during the sync process." Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Source - URL" Target="SOURCE_SERVER" Default="https://vault.bitwarden.com" Description="The URL of the source Bitwarden/Vaultwarden server." Type="Variable" Display="always-hide" Required="true" Mask="false">https://vault.bitwarden.com</Config>
+    <Config Name="Source - Username" Target="SOURCE_ACCOUNT" Default="" Description="The username of the source Bitwarden/Vaultwarden account." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Source - Password" Target="SOURCE_PASSWORD" Default="" Description="The password of the source Bitwarden/Vaultwarden account." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Source - Client ID" Target="SOURCE_CLIENT_ID" Default="" Description="The client ID of the source Bitwarden/Vaultwarden account, found in Account Settings -> Security -> Keys" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Source - Client Secret" Target="SOURCE_CLIENT_SECRET" Default="" Description="The client secret of the source Bitwarden/Vaultwarden account, found in Account Settings -> Security -> Keys" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Destination - URL" Target="DEST_SERVER" Default="https://vault.bitwarden.com" Description="The URL of the destination Bitwarden/Vaultwarden server." Type="Variable" Display="always-hide" Required="true" Mask="false">https://vault.bitwarden.com</Config>
+    <Config Name="Destination - Username" Target="DEST_ACCOUNT" Default="" Description="The username of the destination Bitwarden/Vaultwarden account." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Destination - Password" Target="DEST_PASSWORD" Default="" Description="The password of the destination Bitwarden/Vaultwarden account." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Destination - Client ID" Target="DEST_CLIENT_ID" Default="" Description="The client ID of the destination Bitwarden/Vaultwarden account, found in Account Settings -> Security -> Keys" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Destination - Client Secret" Target="DEST_CLIENT_SECRET" Default="" Description="The client secret of the destination Bitwarden/Vaultwarden account, found in Account Settings -> Security -> Keys" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Enable Pruning" Target="ENABLE_PRUNING" Default="true|false" Description="Enable pruning of old backups." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Retention Days" Target="RETENTION_DAYS" Default="30" Description="Retention policy for backup files. Backups older than this value will be deleted." Type="Variable" Display="advanced-hide" Required="true" Mask="false">30</Config>
+    <Config Name="Minimum File Count" Target="MIN_FILES" Default="10" Description="If all backups are older than the retention day setting, keep the following minimum files." Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Backups Path" Target="/app/backups" Default="/mnt/user/appdata/bitwarden_portal/backups" Description="Path to backup files." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/bitwarden_portal/backups</Config>
+</Container>
