@@ -1,0 +1,90 @@
+name: Process Template Changes (Added or Deprecated)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  determine_new_templates:
+    runs-on: ubuntu-latest
+    name: Determine new templates
+    outputs:
+      new_templates_list: ${{ steps.prepare-new-files-list.outputs.new_templates_list }}
+      new_files_exist: ${{ steps.prepare-new-files-list.outputs.new_files_exist }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 10  # OR "2" -> To retrieve the preceding commit.
+      - name: Get new files
+        id: determine-new-files
+        uses: tj-actions/changed-files@823fcebdb31bb35fdf2229d9f769b400309430d0 # v46
+        with:
+          since_last_remote_commit: 'true' # OR "false" -> To retrieve the preceding commit.
+          files: 'templates/*.xml'
+      - name: Prepare new files list
+        id: prepare-new-files-list
+        run: |
+          echo "Preparing new files list..."
+          new_files_count=$(echo "${{ steps.determine-new-files.outputs.added_files_count }}")
+          new_files=$(echo "${{ steps.determine-new-files.outputs.added_files }}" | jq -R -s -c 'split("\n")[:-1]')
+          echo "new_templates_list=$new_files" >> $GITHUB_OUTPUT
+          if [ $new_files_count == '0' ]; then
+              echo "No new files found."
+              echo "new_files_exist=false" >> $GITHUB_OUTPUT
+          else
+              echo "New files found: $new_files"
+              echo "new_files_exist=true" >> $GITHUB_OUTPUT
+          fi
+
+  create_new_discussion_thread:
+    runs-on: ubuntu-latest
+    name: Create a Discussion thread for each newly-added template
+    needs: determine_new_templates
+    if: ${{ needs.determine_new_templates.outputs.new_files_exist == 'true' }}
+    strategy:
+      matrix:
+        new_templates: ${{ fromJson(needs.determine_new_templates.outputs.new_templates_list) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+      - name: Parse template name from XML file
+        id: parse-template-name
+        uses: mavrosxristoforos/get-xml-info@1.0
+        with:
+          xml-file: "${{ matrix.new_templates }}"
+          xpath: '//Container/Name'
+      - name: Parse template overview from XML file
+        id: parse-template-overview
+        uses: mavrosxristoforos/get-xml-info@1.0
+        with:
+          xml-file: "${{ matrix.new_templates }}"
+          xpath: '//Container/Overview'
+      - name: Parse template project link from XML file
+        id: parse-template-project-link
+        uses: mavrosxristoforos/get-xml-info@1.0
+        with:
+          xml-file: "${{ matrix.new_templates }}"
+          xpath: '//Container/Project'
+      - name: Parse template support link from XML file
+        id: parse-template-support-link
+        uses: mavrosxristoforos/get-xml-info@1.0
+        with:
+          xml-file: "${{ matrix.new_templates }}"
+          xpath: '//Container/Support'
+      - name: Create GitHub Discussion
+        id: create-discussion
+        uses: abirismyname/create-discussion@main
+        with:
+          title: ${{ steps.parse-template-name.outputs.info }}
+          body: |
+            **Overview:** ${{ steps.parse-template-overview.outputs.info }}
+            **Project Link:** ${{ steps.parse-template-project-link.outputs.info }}
+            **Support Link:** ${{ steps.parse-template-support-link.outputs.info }}
+            **File Path:** ${{ matrix.new_templates }}
+          category-name: Templates # optional, defaults to "General"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
