@@ -22,6 +22,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-03-30
+
+        Update environmental variables
+
         ### 2024-10-14
 
         Initial release
@@ -32,14 +36,13 @@
         This container requires a separate Redis database.
     </Requires>
     <Config Name="Application Port" Target="52001" Default="52001" Mode="tcp" Description="Port over which other containers will communicate with this container" Type="Port" Display="always-hide" Required="true" Mask="false">52001</Config>
-    <Config Name="Redis - Host" Target="REDIS_HOST" Default="" Description="Hostname of the Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="Port of the Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
-    <Config Name="Public API Endpoint" Target="PUBLIC_API_ENDPOINT" Default="http://localhost:520001" Description="Publicly accessible URL for Superstreamer API container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52001</Config>
-    <Config Name="Public Stitcher Endpoint" Target="PUBLIC_STITCHER_ENDPOINT" Default="http://localhost:52002" Description="Publicly accessible URL for Superstreamer Stitcher container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52002</Config>
-    <Config Name="Public AWS S3 Endpoint" Target="PUBLIC_S3_ENDPOINT" Default="" Description="Publicly accessible URL for S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="AWS S3 Endpoint" Target="S3_ENDPOINT" Default="" Description="URL for S3 storage bucket (minus bucket name) used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="AWS S3 Bucket" Target="S3_BUCKET" Default="" Description="Name of the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="AWS S3 Region" Target="S3_REGION" Default="us-east-1" Description="Region of the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false">us-east-1</Config>
-    <Config Name="AWS S3 Access Key" Target="S3_ACCESS_KEY" Default="" Description="Access key for the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="AWS S3 Secret Key" Target="S3_SECRET_KEY" Default="" Description="Secret key for the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Redis - URI" Target="REDIS_URI" Default="redis://localhost:6379" Description="URI of the Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://localhost:6379</Config>
+    <Config Name="Database - URI" Target="DATABASE_URI" Default="" Description="URI of the database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Secret" Target="SUPER_SECRET" Default="" Description="Secret key for the API" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="AWS S3 - Endpoint" Target="S3_ENDPOINT" Default="" Description="URL for S3 storage bucket (minus bucket name) used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AWS S3 - Bucket" Target="S3_BUCKET" Default="" Description="Name of the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AWS S3 - Region" Target="S3_REGION" Default="us-east-1" Description="Region of the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false">us-east-1</Config>
+    <Config Name="AWS S3 - Access Key" Target="S3_ACCESS_KEY" Default="" Description="Access key for the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AWS S3 - Secret Key" Target="S3_SECRET_KEY" Default="" Description="Secret key for the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Internal App Port" Target="PORT" Default="52001" Mode="tcp" Description="Internal port for container. Not recommended to change." Type="Port" Display="advanced-hide" Required="true" Mask="false">52001</Config>
 </Container>
