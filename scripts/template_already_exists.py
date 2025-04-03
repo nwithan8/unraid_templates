@@ -2,9 +2,10 @@
 
 import argparse
 import requests
+from typing import Tuple
 from bs4 import BeautifulSoup as bs
 
-def check_template_exists(template_name: str):
+def check_template_exists(template_name: str) -> Tuple[bool, str]:
     """
     Check if a template already exists on the Community Apps store page.
     :param template_name: The name of the template to check.
@@ -15,7 +16,7 @@ def check_template_exists(template_name: str):
 
     # If no response, return False
     if not response:
-        return False
+        return False, url
 
     # Check if response HTML has at least one "article" element with a "h3" element containing the template name in it
     soup: bs4.BeautifulSoup = bs(response.content, 'html.parser')
@@ -23,7 +24,7 @@ def check_template_exists(template_name: str):
 
     # If no articles, return False
     if not articles:
-        return False
+        return False, url
 
     # Check if any article has a h3 element with the template name in it
     for article in articles:
@@ -34,10 +35,10 @@ def check_template_exists(template_name: str):
 
         # Check if the template name is in the h3 element
         if template_name.lower() in h3.text.lower():
-            return True
+            return True, url
 
     # If no article has the template name in it, return False
-    return False
+    return False, url
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser(description="Check if a template already exists on the Community Apps store page.")
@@ -45,7 +46,9 @@ if __name__ == "__main__":
     args = args.parse_args()
 
     # Check if the template already exists
-    exists = check_template_exists(args.template_name)
+    exists, url = check_template_exists(args.template_name)
+
+    print(f"{url}\n")
 
     if exists:
         print(f"TRUE. The template '{args.template_name}' already exists.")
