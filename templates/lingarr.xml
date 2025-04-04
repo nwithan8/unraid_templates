@@ -25,6 +25,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-03
+
+        Clarify target path matching requirements for Radarr/Sonarr, remove defaults
+
         ### 2025-01-22
 
         Initial release
@@ -35,10 +39,10 @@
         Requires an optional separate LibreTranslate container if using self-hosted LibreTranslate as the translation service. &#xD;
     </Requires>
     <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
-    <Config Name="Radarr - Movie Path" Target="/movies" Default="" Description="Path to movies. Match with Radarr." Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Radarr - Movie Path" Target="" Default="" Description="Path to movies. The target path MUST match with the target path for Radarr." Type="Path" Display="always" Required="true" Mask="false"/>
     <Config Name="Radarr - URL" Target="RADARR_URL" Default="http://localhost:7878" Description="Radarr URL" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:7878</Config>
     <Config Name="Radarr - API Key" Target="RADARR_API_KEY" Default="" Description="Radarr API Key" Type="Variable" Display="always" Required="true" Mask="true"/>
-    <Config Name="Sonarr - TV Show Path" Target="/tv" Default="" Description="Path to TV shows. Match with Sonarr." Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Sonarr - TV Show Path" Target="" Default="" Description="Path to TV shows. The target path MUST match with the target path for Sonarr." Type="Path" Display="always" Required="true" Mask="false"/>
     <Config Name="Sonarr - URL" Target="SONARR_URL" Default="http://localhost:8989" Description="Sonarr URL" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8989</Config>
     <Config Name="Sonarr - API Key" Target="SONARR_API_KEY" Default="" Description="Sonarr API Key" Type="Variable" Display="always" Required="true" Mask="true"/>
     <Config Name="Database Type" Target="DB_CONNECTION" Default="sqlite|mysql" Description="Database type" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
