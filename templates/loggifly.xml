@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Loggifly</Name>
+    <Repository>ghcr.io/clemcer/loggifly:latest</Repository>
+    <Registry>ghcr.io/clemcer/loggifly</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/clemcer/loggifly/issues</Support>
+    <Project>https://github.com/clemcer/loggifly</Project>
+    <Overview>
+        Monitor Docker logs and send notifications
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>docker logs monitor notification ntfy apprise discord webhook</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/clemcer/loggifly/main/images/icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/loggifly.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/clemcer/loggifly/main/images/abs_login.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/clemcer/loggifly/main/images/abs_download.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/clemcer/loggifly/main/images/vault_failed_login.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/clemcer/loggifly/main/images/ebook2audiobook.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-05
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yaml` file at the Config File path before starting. See documentation: https://github.com/clemcer/loggifly#-Configuration-Deep-Dive
+    </Requires>
+    <Config Name="Config File" Target="/app/config.yaml" Default="/mnt/user/appdata/loggifly/config.yaml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/loggifly/config.yaml</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
