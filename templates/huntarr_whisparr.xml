@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Huntarr-Whisparr</Name>
+    <Repository>huntarr/4whisparr:latest</Repository>
+    <Registry>https://hub.docker.com/r/huntarr/4whisparr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/plexguide/Huntarr-Whisparr/issues</Support>
+    <Project>https://github.com/plexguide/Huntarr-Whisparr</Project>
+    <Overview>
+        Huntarr (Whisparr Edition) continually searches your Whisparr library for missing items or items that need quality upgrades. It automatically triggers searches for both missing items and items below your quality cutoff. It's designed to run continuously while being gentle on your indexers, helping you gradually complete your collection with the best available quality.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>sonarr radarr lidarr readarr whisparr huntarr media tv show movies music books files anime search indexer torrent usenet plex jellyfin emby content upgrade profile quality download</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr-whisparr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huntarr_whisparr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-06
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Whisparr v3 instance.
+    </Requires>
+    <Config Name="Whisparr - URL" Target="API_URL" Default="http://localhost:6969" Description="URL of your Whisparr instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:6969</Config>
+    <Config Name="Whisparr - API Key" Target="API_KEY" Default="" Description="API key for your Whisparr instance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Whisparr - Monitored Only" Target="MONITORED_ONLY" Default="true|false" Description="Only process monitored items" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Whisparr - Skip Future Releases" Target="SKIP_FUTURE_RELEASES" Default="true|false" Description="Skip processing items with release dates in the future" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Huntarr - Missing Items Per Cycle" Target="HUNT_MISSING_SCENES" Default="1" Description="Maximum missing items to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Huntarr - Upgrade Items Per Cycle" Target="HUNT_UPGRADE_SCENES" Default="0" Description="Maximum upgrade items to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Huntarr - Use Random Selection" Target="RANDOM_SELECTION" Default="false|true" Description="Use random selection for processing if enabled, or sequential if disabled." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Huntarr - Minimum Queue Size" Target="MINIMUM_DOWNLOAD_QUEUE_SIZE" Default="-1" Description="Minimum number of items in the download queue before starting a hunt. Set to -1 to disable." Type="Variable" Display="always-hide" Required="true" Mask="false">-1</Config>
+    <Config Name="Huntarr - Refresh Performer Metadata" Target="REFRESH_PERFORMER" Default="true|false" Description="Refresh performer metadata before processing book" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Whisparr - API Timeout" Target="API_TIMEOUT" Default="60" Description="Timeout for API requests in seconds." Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
+    <Config Name="Huntarr - Sleep Duration" Target="SLEEP_DURATION" Default="900" Description="Duration, in seconds, to wait between cycles." Type="Variable" Display="advanced-hide" Required="true" Mask="false">900</Config>
+    <Config Name="Huntarr - Reset Interval" Target="STATE_RESET_INTERVAL_HOURS" Default="168" Description="Interval, in hours, after which to reset the processed state files. Set to 0 to disable." Type="Variable" Display="advanced-hide" Required="true" Mask="false">168</Config>
+    <Config Name="Debug Mode" Target="DEBUG_MODE" Default="false|true" Description="Enable debug mode for detailed logging." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Command Status - Wait Time" Target="COMMAND_WAIT_DELAY" Default="1" Description="Delay in seconds between checking for command status" Display="advanced-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Command Status - Max Attempts" Target="COMMAND_WAIT_ATTEMPTS" Default="600" Description="Maximum number of attempts to check for command status" Display="advanced-hide" Required="true" Mask="false">600</Config>
+</Container>

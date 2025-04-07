@@ -34,7 +34,6 @@
     <Config Name="Readarr - API Key" Target="API_KEY" Default="" Description="API key for your Readarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Readarr - Monitored Only" Target="MONITORED_ONLY" Default="true|false" Description="Only process monitored items" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Readarr - Skip Future Releases" Target="SKIP_FUTURE_RELEASES" Default="true|false" Description="Skip processing books with release dates in the future" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Huntarr - Mode" Target="HUNT_MISSING_MODE" Default="artist|album|both" Description="Which level to search for new releases at." Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Huntarr - Missing Books Per Cycle" Target="HUNT_MISSING_BOOKS" Default="1" Description="Maximum missing books to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">1</Config>
     <Config Name="Huntarr - Upgrade Books Per Cycle" Target="HUNT_UPGRADE_BOOKS" Default="0" Description="Maximum upgrade books to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">0</Config>
     <Config Name="Huntarr - Use Random Selection" Target="RANDOM_SELECTION" Default="false|true" Description="Use random selection for processing if enabled, or sequential if disabled." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
