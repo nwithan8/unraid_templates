@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Runitor</Name>
+    <Repository>runitor/runitor:latest</Repository>
+    <Registry>https://hub.docker.com/r/runitor/runitor</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/bdd/runitor/issues</Support>
+    <Project>https://github.com/bdd/runitor</Project>
+    <Overview>
+        Runitor runs the supplied command, captures its output, and based on its exit code reports successful or failed execution to https://healthchecks.io or your private instance. &#xD;
+        [br]
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://pkg.go.dev/bdd.fi/x/runitor#readme-usage
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>command line runner cli tool healthchecks.io status</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/runitor-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/runitor.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool; edit **Post Arguments** accordingly. See documentation: https://pkg.go.dev/bdd.fi/x/runitor#readme-usage &#xD;
+        [br]
+        Requires a healthchecks.io account or private instance. &#xD;
+    </Requires>
+    <Config Name="HealthChecks - API URL" Target="HC_API_URL" Default="https://healthchecks.io/ping" Description="URL of the healthchecks.io instance API" Type="Variable" Display="always-hide" Required="true" Mask="false">https://healthchecks.io/ping</Config>
+    <Config Name="HealthChecks - Ping Key" Target="HC_PING_KEY" Default="" Description="See documentation: https://github.com/bdd/runitor?tab=readme-ov-file#repository-maintenance" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Check UUID" Target="CHECK_UUID" Default="See documentation: https://github.com/bdd/runitor?tab=readme-ov-file#certificate-renewal" Description="Check UUID" Display="always" Required="true" Mask="true"/>
+    <Config Name="Check Slug" Target="CHECK_SLUG" Default="" Description="Check slug" Display="always" Required="true" Mask="false"/>
+</Container>
