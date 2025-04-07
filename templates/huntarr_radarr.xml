@@ -16,7 +16,7 @@
     </Overview>
     <Beta>False</Beta>
     <Category>Downloaders: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
-    <ExtraSearchTerms>sonarr radarr lidarr readarr whisparr huntarr media tv show movies files anime search indexer torrent usenet plex jellyfin emby content upgrade profile quality download</ExtraSearchTerms>
+    <ExtraSearchTerms>sonarr radarr lidarr readarr whisparr huntarr media tv show movies music books files anime search indexer torrent usenet plex jellyfin emby content upgrade profile quality download</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr-radarr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huntarr_radarr.xml</TemplateURL>
     <Maintainer>

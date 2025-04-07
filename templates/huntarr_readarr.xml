@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>Huntarr-Lidarr</Name>
-    <Repository>huntarr/4lidarr:latest</Repository>
-    <Registry>https://hub.docker.com/r/huntarr/4lidarr</Registry>
+    <Name>Huntarr-Readarr</Name>
+    <Repository>huntarr/4readarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/huntarr/4readarr</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
-    <Support>https://github.com/plexguide/Huntarr-Lidarr/issues</Support>
-    <Project>https://github.com/plexguide/Huntarr-Lidarr</Project>
+    <Support>https://github.com/plexguide/Huntarr-Readarr/issues</Support>
+    <Project>https://github.com/plexguide/Huntarr-Readarr</Project>
     <Overview>
-        Huntarr (Lidarr Edition) continually searches your Lidarr library for missing music or music that need quality upgrades. It automatically triggers searches for both missing music and music below your quality cutoff. It's designed to run continuously while being gentle on your indexers, helping you gradually complete your music collection with the best available quality.
+        Huntarr (Readarr Edition) continually searches your Readarr library for missing books or books that need quality upgrades. It automatically triggers searches for both missing books and books below your quality cutoff. It's designed to run continuously while being gentle on your indexers, helping you gradually complete your book collection with the best available quality.
     </Overview>
     <Beta>False</Beta>
     <Category>Downloaders: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>sonarr radarr lidarr readarr whisparr huntarr media tv show movies music books files anime search indexer torrent usenet plex jellyfin emby content upgrade profile quality download</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr-lidarr-icon.png</Icon>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huntarr_lidarr.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr-readarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huntarr_readarr.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
@@ -28,17 +28,19 @@
         Initial release
     </Changes>
     <Requires>
-        Requires a separate Lidarr v1 instance.
+        Requires a separate Readarr v1 instance.
     </Requires>
-    <Config Name="Lidarr - URL" Target="API_URL" Default="http://localhost:8686" Description="URL of your Lidarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8686</Config>
-    <Config Name="Lidarr - API Key" Target="API_KEY" Default="" Description="API key for your Lidarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Lidarr - Monitored Only" Target="MONITORED_ONLY" Default="true|false" Description="Only process monitored items" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Readarr - URL" Target="API_URL" Default="http://localhost:8787" Description="URL of your Readarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8787</Config>
+    <Config Name="Readarr - API Key" Target="API_KEY" Default="" Description="API key for your Readarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Readarr - Monitored Only" Target="MONITORED_ONLY" Default="true|false" Description="Only process monitored items" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Readarr - Skip Future Releases" Target="SKIP_FUTURE_RELEASES" Default="true|false" Description="Skip processing books with release dates in the future" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Huntarr - Mode" Target="HUNT_MISSING_MODE" Default="artist|album|both" Description="Which level to search for new releases at." Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Huntarr - Missing Items Per Cycle" Target="HUNT_MISSING_ITEMS" Default="1" Description="Maximum missing items to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">1</Config>
-    <Config Name="Huntarr - Upgrade Albums Per Cycle" Target="HUNT_UPGRADE_ALBUMS" Default="0" Description="Maximum upgrade albums to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Huntarr - Missing Books Per Cycle" Target="HUNT_MISSING_BOOKS" Default="1" Description="Maximum missing books to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Huntarr - Upgrade Books Per Cycle" Target="HUNT_UPGRADE_BOOKS" Default="0" Description="Maximum upgrade books to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">0</Config>
     <Config Name="Huntarr - Use Random Selection" Target="RANDOM_SELECTION" Default="false|true" Description="Use random selection for processing if enabled, or sequential if disabled." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Huntarr - Minimum Queue Size" Target="MINIMUM_DOWNLOAD_QUEUE_SIZE" Default="-1" Description="Minimum number of items in the download queue before starting a hunt. Set to -1 to disable." Type="Variable" Display="always-hide" Required="true" Mask="false">-1</Config>
-    <Config Name="Lidarr - API Timeout" Target="API_TIMEOUT" Default="60" Description="Timeout for API requests in seconds." Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
+    <Config Name="Huntarr - Refresh Author Metadata" Target="REFRESH_AUTHOR" Default="true|false" Description="Refresh author metadata before processing book" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Readarr - API Timeout" Target="API_TIMEOUT" Default="60" Description="Timeout for API requests in seconds." Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
     <Config Name="Huntarr - Sleep Duration" Target="SLEEP_DURATION" Default="900" Description="Duration, in seconds, to wait between cycles." Type="Variable" Display="advanced-hide" Required="true" Mask="false">900</Config>
     <Config Name="Huntarr - Reset Interval" Target="STATE_RESET_INTERVAL_HOURS" Default="168" Description="Interval, in hours, after which to reset the processed state files. Set to 0 to disable." Type="Variable" Display="advanced-hide" Required="true" Mask="false">168</Config>
     <Config Name="Debug Mode" Target="DEBUG_MODE" Default="false|true" Description="Enable debug mode for detailed logging." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
