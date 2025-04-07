@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Crontab UI</Name>
+    <Repository>alseambusher/crontab-ui:latest</Repository>
+    <Registry>https://hub.docker.com/r/alseambusher/crontab-ui</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/alseambusher/crontab-ui/issues</Support>
+    <Project>https://github.com/alseambusher/crontab-ui</Project>
+    <Overview>
+        Editing the plain text crontab is error-prone for managing jobs, e.g., adding jobs, deleting jobs, or pausing jobs. A small mistake can easily bring down all the jobs and might cost you a lot of time. With Crontab UI, it is very easy to manage crontab.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>cron crontab editor ui gui scheduler</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/crontab-ui-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/crontab_ui.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/alseambusher/crontab-ui/gh-pages/screenshots/flow.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/alseambusher/crontab-ui/gh-pages/screenshots/main.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/alseambusher/crontab-ui/gh-pages/screenshots/import.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/alseambusher/crontab-ui/gh-pages/screenshots/backup.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/alseambusher/crontab-ui/gh-pages/screenshots/import_db.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/alseambusher/crontab-ui/gh-pages/screenshots/log.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-06
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Authentication - Username" Target="BASIC_AUTH_USER" Default="admin" Description="Username for authentication. Remove to disable authentication." Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
+    <Config Name="Authentication - Password" Target="BASIC_AUTH_PWD" Default="" Description="Password for authentication. Remove to disable authentication." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Host Crontab Passthrough" Target="/etc/crontabs" Default="" Description="Path to host crontab files. Remove to skip modifying host machine crontabs." Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Auto-Save" Target="ENABLE_AUTOSAVE" Default="false|true" Description="Enable autosave of edited files. Proceed with caution." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="App Data" Target="/crontab-ui/crontabs" Default="/mnt/user/appdata/crontab-ui" Description="Path to app data (logs and crontabs)" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/crontab-ui</Config>
+</Container>
