@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <Container version="2">
-    <Name>Huntarr-Sonarr</Name>
-    <Repository>huntarr/4sonarr:latest</Repository>
-    <Registry>https://hub.docker.com/r/huntarr/4sonarr</Registry>
+    <Name>Huntarr-Radarr</Name>
+    <Repository>huntarr/4radarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/huntarr/4radarr</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
-    <Support>https://github.com/plexguide/Huntarr-Sonarr/issues</Support>
-    <Project>https://github.com/plexguide/Huntarr-Sonarr</Project>
+    <Support>https://github.com/plexguide/Huntarr-Radarr/issues</Support>
+    <Project>https://github.com/plexguide/Huntarr-Radarr</Project>
     <Overview>
-        Huntarr (Sonarr Edition) continually searches your Sonarr library for shows with missing episodes and episodes that need quality upgrades. It automatically triggers searches for both missing episodes and episodes below your quality cutoff. It's designed to run continuously while being gentle on your indexers, helping you gradually complete your TV show collection with the best available quality.
+        Huntarr (Radarr Edition) continually searches your Radarr library for missing movies or movies that need quality upgrades. It automatically triggers searches for both missing movies and movies below your quality cutoff. It's designed to run continuously while being gentle on your indexers, helping you gradually complete your movie collection with the best available quality.
     </Overview>
     <Beta>False</Beta>
     <Category>Downloaders: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>sonarr radarr lidarr readarr whisparr huntarr media tv show movies files anime search indexer torrent usenet plex jellyfin emby content upgrade profile quality download</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr-sonarr-icon.png</Icon>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huntarr_sonnar.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr-radarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huntarr_radarr.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
@@ -28,16 +28,17 @@
         Initial release
     </Changes>
     <Requires>
-        Requires a separate Sonarr v5 instance.
+        Requires a separate Radarr v4 instance.
     </Requires>
-    <Config Name="Sonarr - URL" Target="API_URL" Default="http://localhost:8989" Description="URL of your Sonarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8989</Config>
-    <Config Name="Sonarr - API Key" Target="API_KEY" Default="" Description="API key for your Sonarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Sonarr - Monitored Only" Target="MONITORED_ONLY" Default="true|false" Description="Only process monitored shows and episodes" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Huntarr - Missing Shows Per Cycle" Target="HUNT_MISSING_SHOWS" Default="1" Description="Maximum missing shows to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">1</Config>
-    <Config Name="Huntarr - Upgrade Episodes Per Cycle" Target="HUNT_UPGRADE_EPISODES" Default="0" Description="Maximum upgrade episodes to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Radarr - URL" Target="API_URL" Default="http://localhost:7878" Description="URL of your Radarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:7878</Config>
+    <Config Name="Radarr - API Key" Target="API_KEY" Default="" Description="API key for your Radarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Radarr - Monitored Only" Target="MONITORED_ONLY" Default="true|false" Description="Only process monitored movies" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Radarr - Skip Future Releases" Target="SKIP_FUTURE_RELEASES" Default="true|false" Description="Skip processing movies with release dates in the future" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Huntarr - Missing Movies Per Cycle" Target="HUNT_MISSING_MOVIES" Default="1" Description="Maximum missing movies to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Huntarr - Upgrade Movies Per Cycle" Target="HUNT_UPGRADE_MOVIES" Default="0" Description="Maximum upgrade movies to process per cycle. Set to 0 to disable." Display="always-hide" Required="true" Mask="false">0</Config>
     <Config Name="Huntarr - Use Random Selection" Target="RANDOM_SELECTION" Default="false|true" Description="Use random selection for processing if enabled, or sequential if disabled." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Huntarr - Minimum Queue Size" Target="MINIMUM_DOWNLOAD_QUEUE_SIZE" Default="-1" Description="Minimum number of items in the download queue before starting a hunt. Set to -1 to disable." Type="Variable" Display="always-hide" Required="true" Mask="false">-1</Config>
-    <Config Name="Sonarr - API Timeout" Target="API_TIMEOUT" Default="60" Description="Timeout for API requests in seconds." Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
+    <Config Name="Radarr - API Timeout" Target="API_TIMEOUT" Default="60" Description="Timeout for API requests in seconds." Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
     <Config Name="Huntarr - Sleep Duration" Target="SLEEP_DURATION" Default="900" Description="Duration, in seconds, to wait between cycles." Type="Variable" Display="advanced-hide" Required="true" Mask="false">900</Config>
     <Config Name="Huntarr - Reset Interval" Target="STATE_RESET_INTERVAL_HOURS" Default="168" Description="Interval, in hours, after which to reset the processed state files. Set to 0 to disable." Type="Variable" Display="advanced-hide" Required="true" Mask="false">168</Config>
     <Config Name="Debug Mode" Target="DEBUG_MODE" Default="false|true" Description="Enable debug mode for detailed logging." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
