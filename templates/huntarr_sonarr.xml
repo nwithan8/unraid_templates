@@ -8,6 +8,7 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8988]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/plexguide/Huntarr-Sonarr/issues</Support>
     <Project>https://github.com/plexguide/Huntarr-Sonarr</Project>
@@ -23,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-08
+
+        Add new environmental variables and volumes, fix missing Types
+
         ### 2025-04-06
 
         Initial release
@@ -30,16 +35,22 @@
     <Requires>
         Requires a separate Sonarr v5 instance.
     </Requires>
+    <Config Name="Enable Web UI" Target="ENABLE_WEBUI" Default="true|false" Description="Enable the web UI for Huntarr" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Web UI Port" Target="8988" Default="8988" Mode="tcp" Description="Container Port: 8988" Type="Port" Display="always-hide" Required="true" Mask="false">8988</Config>
     <Config Name="Sonarr - URL" Target="API_URL" Default="http://localhost:8989" Description="URL of your Sonarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8989</Config>
     <Config Name="Sonarr - API Key" Target="API_KEY" Default="" Description="API key for your Sonarr instance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Sonarr - Monitored Only" Target="MONITORED_ONLY" Default="true|false" Description="Only process monitored shows and episodes" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Sonarr - Skip Future Episodes" Target="SKIP_FUTURE_EPISODES" Default="true|false" Description="Skip processing episodes with release dates in the future" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Sonarr - Skip Metadata Refresh" Target="SKIP_SERIES_REFRESH" Default="true|false" Description="Skip refreshing metadata for series before searching." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Huntarr - Missing Shows Per Cycle" Target="HUNT_MISSING_SHOWS" Default="1" Description="Maximum missing shows to process per cycle. Set to 0 to disable." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
     <Config Name="Huntarr - Upgrade Episodes Per Cycle" Target="HUNT_UPGRADE_EPISODES" Default="0" Description="Maximum upgrade episodes to process per cycle. Set to 0 to disable." Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
-    <Config Name="Huntarr - Use Random Selection" Target="RANDOM_SELECTION" Default="false|true" Description="Use random selection for processing if enabled, or sequential if disabled." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Huntarr - Minimum Queue Size" Target="MINIMUM_DOWNLOAD_QUEUE_SIZE" Default="-1" Description="Minimum number of items in the download queue before starting a hunt. Set to -1 to disable." Type="Variable" Display="always-hide" Required="true" Mask="false">-1</Config>
+    <Config Name="Huntarr - Use Random Selection for Missing" Target="RANDOM_MISSING" Default="true|false" Description="Use random selection for processing missing shows if enabled, or sequential if disabled." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Huntarr - Use Random Selection for Upgrade" Target="RANDOM_UPGRADES" Default="true|false" Description="Use random selection for processing upgrade episodes if enabled, or sequential if disabled." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Data" Target="/config" Default="/mnt/user/appdata/huntarr-sonarr/config" Description="Path to config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/huntarr-sonarr/config</Config>
     <Config Name="Sonarr - API Timeout" Target="API_TIMEOUT" Default="60" Description="Timeout for API requests in seconds." Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
     <Config Name="Huntarr - Sleep Duration" Target="SLEEP_DURATION" Default="900" Description="Duration, in seconds, to wait between cycles." Type="Variable" Display="advanced-hide" Required="true" Mask="false">900</Config>
     <Config Name="Huntarr - Reset Interval" Target="STATE_RESET_INTERVAL_HOURS" Default="168" Description="Interval, in hours, after which to reset the processed state files. Set to 0 to disable." Type="Variable" Display="advanced-hide" Required="true" Mask="false">168</Config>
+    <Config Name="Huntarr - Minimum Queue Size" Target="MINIMUM_DOWNLOAD_QUEUE_SIZE" Default="-1" Description="Minimum number of items in the download queue before starting a hunt. Set to -1 to disable." Type="Variable" Display="advanced-hide" Required="true" Mask="false">-1</Config>
     <Config Name="Debug Mode" Target="DEBUG_MODE" Default="false|true" Description="Enable debug mode for detailed logging." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Command Status - Wait Time" Target="COMMAND_WAIT_DELAY" Default="1" Description="Delay in seconds between checking for command status" Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
     <Config Name="Command Status - Max Attempts" Target="COMMAND_WAIT_ATTEMPTS" Default="600" Description="Maximum number of attempts to check for command status" Type="Variable" Display="advanced-hide" Required="true" Mask="false">600</Config>
