@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Posterizarr</Name>
-    <Repository>ghcr.io/fscorrupt/docker-posterizarr</Repository>
-    <Registry>https://github.com/fscorrupt/Posterizarr/pkgs/container/docker-posterizarr</Registry>
+    <Repository>ghcr.io/fscorrupt/posterizarr:latest</Repository>
+    <Registry>ghcr.io/fscorrupt/posterizarr</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -10,19 +10,25 @@
     <Network>bridge</Network>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
+    <Support>https://github.com/fscorrupt/Posterizarr/issues</Support>
     <Project>https://github.com/fscorrupt/Posterizarr</Project>
     <Overview>
-        Automated poster maker for Plex.
+        Automated poster maker for Plex/Jellyfin/Emby.
     </Overview>
     <Beta>False</Beta>
     <Category>Tools: MediaServer Other: Status:Stable</Category>
+    <ExtraSearchTerms>poster media art automation plex jellyfin emby</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/posterizarr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/posterizarr.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-08
+
+        - Remove PUID/PGID in favor of --user 1000:1000
+        - Change Docker image source
+
         ### 2024-11-08
 
         Add additional paths
@@ -43,13 +49,12 @@
 
         Initial release
     </Changes>
-    <Config Name="Run time" Target="RUN_TIME" Default="00:00" Description="Comma-separated list of times to run the script. Format: HH:MM (24-hour time)" Type="Variable" Display="always" Required="true" Mask="false">00:00</Config>
-    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
-    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <ExtraParams>--user 1000:1000</ExtraParams>
+    <Config Name="Run time" Target="RUN_TIME" Default="00:00" Description="Comma-separated list of times to run the script. Format: HH:MM (24-hour time)" Type="Variable" Display="always-hide" Required="true" Mask="false">00:00</Config>
     <Config Name="UMASK" Target="UMASK" Default="002" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">002</Config>
     <Config Name="TERM" Target="TERM" Default="xterm" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">xterm</Config>
-    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/posterizarr" Mode="rw" Description="Storage for config files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr</Config>
-    <Config Name="Asset Path" Target="/assets" Default="/mnt/user/appdata/posterizarr/assets" Mode="rw" Description="Storage for assets" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr/assets</Config>
-    <Config Name="Manual Asset Path" Target="/manualassets" Default="/mnt/user/appdata/posterizarr/manualassets" Mode="rw" Description="Storage for manual assets" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr/manualassets</Config>
-    <Config Name="Backup Path" Target="/assetsbackup" Default="/mnt/user/appdata/posterizarr/assetsbackup" Mode="rw" Description="Storage for asset backups" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/posterizarr/assetsbackup</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/posterizarr" Mode="rw" Description="Storage for config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/posterizarr</Config>
+    <Config Name="Asset Path" Target="/assets" Default="/mnt/user/appdata/posterizarr/assets" Mode="rw" Description="Storage for assets" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/posterizarr/assets</Config>
+    <Config Name="Manual Asset Path" Target="/manualassets" Default="/mnt/user/appdata/posterizarr/manualassets" Mode="rw" Description="Storage for manual assets" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/posterizarr/manualassets</Config>
+    <Config Name="Backup Path" Target="/assetsbackup" Default="/mnt/user/appdata/posterizarr/assetsbackup" Mode="rw" Description="Storage for asset backups" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/posterizarr/assetsbackup</Config>
 </Container>
