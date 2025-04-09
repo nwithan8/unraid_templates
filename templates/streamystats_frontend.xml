@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Streamystats - Frontend</Name>
+    <Repository>fredrikburmester/streamystats-nextjs:edge</Repository>
+    <Registry>https://hub.docker.com/r/fredrikburmester/streamystats-nextjs</Registry>
+    <Branch>
+        <Tag>edge</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/fredrikburmester/streamystats/issues</Support>
+    <Project>https://github.com/fredrikburmester/streamystats</Project>
+    <Overview>
+        Streamystats is a statistics service for Jellyfin, providing analytics and data visualization. &#xD;
+        [br]
+        This is the frontend container.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>jellyfin emby plex tautulli embystats statistics analytics dashboard stats</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamystats-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/streamystats_frontend.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamystats_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamystats_demo_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamystats_demo_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamystats_demo_4.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamystats_demo_5.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamystats_demo_6.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/streamystats_demo_7.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-08
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate Streamystats - Backend and Postgres containers.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="API URL" Target="API_URL" Default="http://IP_ADDRESS:4000/api" Description="URL for the backend API" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:4000/api</Config>
+</Container>
