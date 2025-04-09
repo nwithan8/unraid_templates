@@ -26,7 +26,7 @@
     <Changes>
         ### 2025-04-08
 
-        - Remove PUID/PGID in favor of --user 1000:1000
+        - Remove PUID/PGID in favor of --user 099:100
         - Change Docker image source
 
         ### 2024-11-08
@@ -49,7 +49,7 @@
 
         Initial release
     </Changes>
-    <ExtraParams>--user 1000:1000</ExtraParams>
+    <ExtraParams>--user 099:100</ExtraParams>
     <Config Name="Run time" Target="RUN_TIME" Default="00:00" Description="Comma-separated list of times to run the script. Format: HH:MM (24-hour time)" Type="Variable" Display="always-hide" Required="true" Mask="false">00:00</Config>
     <Config Name="UMASK" Target="UMASK" Default="002" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">002</Config>
     <Config Name="TERM" Target="TERM" Default="xterm" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">xterm</Config>
