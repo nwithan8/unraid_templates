@@ -20,6 +20,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
 	<Changes>
+        ### 2025-04-12
+
+        Fix environmental variables
+
         ### 2024-12-31
 
         Fix environmental variables
@@ -83,7 +87,8 @@
     <Config Name="Stripe Secret Key" Target="STRIPE_SECRET_KEY" Default="" Description="Stripe secret key" Type="Variable" Display="advanced" Required="false" Mask="true"/>
     <Config Name="Stripe Signing Key" Target="STRIPE_SIGNING_KEY" Default="" Description="Stripe signing key" Type="Variable" Display="advanced" Required="false" Mask="true"/>
     <Config Name="Stripe Signing Key Connect" Target="STRIPE_SIGNING_KEY_CONNECT" Default="" Description="Stripe signing key connect" Type="Variable" Display="advanced" Required="false" Mask="true"/>
-    <Config Name="Internal Backend URL" Target="BACKEND_INTERNAL_URL" Default="http://localhost:3000" Description="Internal URL used for backend communication. Do not change." Display="advanced-hide" Required="true" Mask="false">http://localhost:3000</Config>
-    <Config Name="Is Self-Hosted" Target="IS_GENERAL" Default="true|false" Description="Enable for self-hosted instances. Do not change." Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Internal Upload Directory" Target="NEXT_PUBLIC_UPLOAD_DIRECTORY" Default="/uploads" Description="Internal upload directory. Do not change." Display="advanced-hide" Required="true" Mask="false">/uploads</Config>
+    <Config Name="Use HTTP" Target="NOT_SECURED" Default="false|true" Description="Use HTTP instead of HTTPS. Not recommended." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Backend URL" Target="BACKEND_INTERNAL_URL" Default="http://localhost:3000" Description="Internal URL used for backend communication. Do not change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Is Self-Hosted" Target="IS_GENERAL" Default="True|False" Description="Enable for self-hosted instances. Do not change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Upload Directory" Target="NEXT_PUBLIC_UPLOAD_DIRECTORY" Default="/uploads" Description="Internal upload directory. Do not change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/uploads</Config>
 </Container>
