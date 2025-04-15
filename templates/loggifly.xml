@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-14
+
+        Change config path
+
         ### 2025-04-05
 
         Initial release
@@ -34,6 +38,6 @@
     <Requires>
         Expects a `config.yaml` file at the Config File path before starting. See documentation: https://github.com/clemcer/loggifly#-Configuration-Deep-Dive
     </Requires>
-    <Config Name="Config File" Target="/app/config.yaml" Default="/mnt/user/appdata/loggifly/config.yaml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/loggifly/config.yaml</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/loggifly" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/loggifly</Config>
     <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
 </Container>
