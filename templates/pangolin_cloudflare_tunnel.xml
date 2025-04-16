@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Pangolin Cloudflare Tunnel</Name>
+    <Repository>hhftechnology/pangolin-cloudflare-tunnel:latest</Repository>
+    <Registry>https://hub.docker.com/r/hhftechnology/pangolin-cloudflare-tunnel</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>pangolin_network</Network>
+    <Privileged>false</Privileged>
+    <Support>https://forum.hhf.technology/t/setting-up-cloudflare-tunnels-with-pangolin/</Support>
+    <Project>https://github.com/hhftechnology/pangolin-cloudflare-tunnel</Project>
+    <Overview>
+        A bridge between Traefik and Cloudflare Zero-Trust tunnels that enables Pangolin users to leverage Cloudflare's global network alongside WireGuard tunnels.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>pangolin cloudflare tunnel wireguard vpn zero trust traefik</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pangolin-cloudflare-tunnel-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pangolin_cloudflare_tunnel.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires running on the same Docker network as Pangolin
+    </Requires>
+    <Config Name="Cloudflare - API Token" Target="CLOUDFLARE_API_TOKEN" Default="" Description="Cloudflare API Token with permissions to manage tunnels" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Cloudflare - Account ID" Target="CLOUDFLARE_ACCOUNT_ID" Default="" Description="Cloudflare Account ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Cloudflare - Tunnel ID" Target="CLOUDFLARE_TUNNEL_ID" Default="" Description="Cloudflare Tunnel ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Cloudflare - Zone ID" Target="CLOUDFLARE_ZONE_ID" Default="" Description="Cloudflare Zone ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Traefik - Service Endpoint" Target="TRAEFIK_SERVICE_ENDPOINT" Default="https://TRAEFIK_IP_ADDRESS:443" Description="Traefik service endpoint" Type="Variable" Display="always-hide" Required="true" Mask="false">https://TRAEFIK_IP_ADDRESS:443</Config>
+    <Config Name="Traefik - API Endpoint" Target="TRAEFIK_API_ENDPOINT" Default="http://TRAEFIK_IP_ADDRESS:8080" Description="Traefik API endpoint" Type="Variable" Display="always-hide" Required="true" Mask="false">http://TRAEFIK_IP_ADDRESS:8080</Config>
+    <Config Name="Traefik - Entrypoints" Target="TRAEFIK_ENTRYPOINTS" Default="web,websecure" Description="Comma-separated list of Traefik entrypoints" Type="Variable" Display="always-hide" Required="true" Mask="false">web,websecure</Config>
+    <Config Name="Poll Interval" Target="POLL_INTERVAL" Default="10s" Description="Interval to poll Traefik for changes" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10s</Config>
+    <Config Name="Skip TLS Routes" Target="SKIP_TLS_ROUTES" Default="false|true" Description="Skip TLS routes when creating tunnels" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|debug|warn|error" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
