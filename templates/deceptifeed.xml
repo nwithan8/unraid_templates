@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Deceptifeed</Name>
+    <Repository>deceptifeed/server:latest</Repository>
+    <Registry>https://hub.docker.com/r/deceptifeed/server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/r-smith/deceptifeed/issues</Support>
+    <Project>https://github.com/r-smith/deceptifeed</Project>
+    <Overview>
+        Deceptifeed is a honeypot and threat feed server. It runs multiple deceptive network services (honeypots), while the threat feed lists IP addresses that have interacted with the honeypots. Additionally, Deceptifeed provides real-time visibility into honeypot activity, allowing you to monitor logs and interactions as they occur.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ssh honeypot honeypots threat feed deception security test</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/deceptifeed-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/deceptifeed.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/r-smith/deceptifeed/refs/heads/main/assets/diagram-dark.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/r-smith/deceptifeed/refs/heads/main/assets/screenshot-webfeed.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/r-smith/deceptifeed/refs/heads/main/assets/screenshot-live.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-15
+
+        Initial release
+    </Changes>
+    <PostArgs>--config /data/config.xml</PostArgs>
+    <Requires>
+        Expects a `config.xml` file in the Config Path. See documentation: https://raw.githubusercontent.com/r-smith/deceptifeed/main/configs/docker-config.xml
+    </Requires>
+    <Config Name="Web UI Port" Target="9000" Default="9000" Mode="tcp" Description="Container Port: 9000" Type="Port" Display="always-hide" Required="true" Mask="false">9000</Config>
+    <Config Name="HTTP Honeypot Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="HTTPS Honeypot Port" Target="8443" Default="8443" Mode="tcp" Description="Container Port: 8443" Type="Port" Display="always-hide" Required="true" Mask="false">8443</Config>
+    <Config Name="SSH Honeyport Port" Target="2222" Default="2222" Mode="tcp" Description="Container Port: 2222" Type="Port" Display="always-hide" Required="true" Mask="false">2222</Config>
+    <Config Name="Config Path" Target="/data" Default="/mnt/user/appdata/deceptifeed/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/deceptifeed/config</Config>
+</Container>
