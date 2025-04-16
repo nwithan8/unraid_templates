@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Erugo</Name>
+    <Repository>wardy784/erugo:latest</Repository>
+    <Registry>https://hub.docker.com/r/wardy784/erugo</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://erugo.app/getting-started/#getting-started-with-erugo</Support>
+    <Project>https://erugo.app</Project>
+    <Overview>
+        Erugo is a powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend. It offers secure, customisable file-transfer capabilities through an elegant user interface, giving you complete control over your data while providing a seamless experience for both senders and recipients.    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>file sharing file transfer self-hosted php vue laravel airdrop send</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/erugo-icon.png</Icon>
+    <Banner>https://erugo.app/content/images/2025/03/erugo-site-logo-1.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/erugo.xml</TemplateURL>
+    <Screenshot>https://erugo.app/content/images/size/w1075h650/2025/03/CyberNeon-1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/ErugoOSS/Erugo/main/.github/images/screenshots/main-screen-with-files.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/ErugoOSS/Erugo/main/.github/images/screenshots/main-screen-with-password-form.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/ErugoOSS/Erugo/main/.github/images/screenshots/main-screen-with-reverse-share-req.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/ErugoOSS/Erugo/main/.github/images/screenshots/login-screen-with-external-providers.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-15
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="9998" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">9998</Config>
+    <Config Name="Storage Path" Target="/var/www/html/storage" Default="/mnt/user/appdata/erugo/storage" Description="Path to storage files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/erugo/storage</Config>
+</Container>

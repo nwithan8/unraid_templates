@@ -19,6 +19,7 @@
     <Category>Network: Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>ssh honeypot honeypots threat feed deception security test</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/deceptifeed-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/r-smith/deceptifeed/main/assets/logo-dark.svg</Banner>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/deceptifeed.xml</TemplateURL>
     <Screenshot>https://raw.githubusercontent.com/r-smith/deceptifeed/refs/heads/main/assets/diagram-dark.png</Screenshot>
     <Screenshot>https://raw.githubusercontent.com/r-smith/deceptifeed/refs/heads/main/assets/screenshot-webfeed.png</Screenshot>
