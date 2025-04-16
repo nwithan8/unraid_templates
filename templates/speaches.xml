@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Speaches</Name>
+    <Repository>ghcr.io/speaches-ai/speaches:latest-cpu</Repository>
+    <Registry>ghcr.io/speaches-ai/speaches</Registry>
+    <Branch>
+        <Tag>latest-cpu</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-cuda</Tag>
+        <Tag>Latest stable release with CUDA support</Tag>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://speaches.ai/configuration/</Support>
+    <Project>https://speaches.ai/</Project>
+    <Overview>
+        speaches is an OpenAI API-compatible server supporting streaming transcription, translation, and speech generation. Speach-to-Text is powered by faster-whisper and for Text-to-Speech piper and Kokoro are used. This project aims to be Ollama, but for TTS/STT models. &#xD;
+        [br]
+        **Nvidia GPU Use:**&#xD;
+        Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and add **--runtime=nvidia --gpus=all** to [b]"extra parameters"[/b] (switch on advanced view) &#xD;
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>whisper speech text voice generator piper faster openai gpu cuda nvidia tts stt</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/speaches-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/speaches.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-16
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Cache Directory" Target="/home/ubuntu/.cache/huggingface/hub" Default="/mnt/user/appdata/speaches/cache" Description="Path to the cache directory. This is where models will be stored, which can be quite large." Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/speaches/cache</Config>
+</Container>
