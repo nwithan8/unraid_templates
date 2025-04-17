@@ -26,6 +26,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-17
+
+        - Add SELF_HOSTED environmental variable
+        - Add Storage Path path
+
         ### 2025-01-11
 
         Initial release
@@ -35,6 +40,7 @@
     </Requires>
     <PostArgs>sidekiq</PostArgs>
     <Config Name="Imports Path" Target="/var/app/tmp/imports/watched" Default="/mnt/user/appdata/dawarich/imports" Description="Path to watch for imports" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/imports</Config>
+    <Config Name="Storage Path" Target="/var/app/storage" Default="/mnt/user/appdata/dawarich/storage" Description="Path to store application data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/storage</Config>
     <Config Name="Redis - URL" Target="REDIS_URL" Default="redis://IP_ADDRESS:6379/0" Description="URL of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://IP_ADDRESS:6379/0</Config>
     <Config Name="Postgres - Host" Target="DATABASE_HOST" Default="" Description="Host of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Postgres - Port" Target="DATABASE_PORT" Default="5432" Description="Port of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
@@ -56,4 +62,5 @@
     <Config Name="Application Hosts" Target="APPLICATION_HOSTS" Default="localhost" Description="Hosts of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
     <Config Name="Background Processing Concurrency" Target="BACKGROUND_PROCESSING_CONCURRENCY" Default="10" Description="Number of background processing threads" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
     <Config Name="Application Protocol" Target="APPLICATION_PROTOCOL" Default="http" Description="Protocol of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http</Config>
+    <Config Name="Is Self-Hosted" Target="SELF_HOSTED" Default="true|false" Description="Is the application self-hosted?" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
