@@ -36,6 +36,6 @@ jobs:
           add: '.'
           default_author: github_actions
           message: "App Check Completed"
-          push: true
+          push: '--force'
           pull: ''
           new_branch: ''
