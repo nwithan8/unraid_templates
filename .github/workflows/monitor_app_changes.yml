@@ -1,0 +1,40 @@
+name: Check Apps For Potential Changes
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r automation/change_monitoring/requirements.txt
+
+      - name: Run Python script to check for app git updates
+        run: python automation/change_monitoring/check_git_changes.py 
+          --data_file automation/change_monitoring/data.json
+          --ntfy-url ${{ secrets.NTFY_URL }}
+          --ntfy-topic ${{ secrets.NTFY_TOPIC }}
+          --ntfy-token ${{ secrets.NTFY_TOKEN }}
+          --repo-url ${{ secrets.REPO_URL }}
+
+      - name: Commit new app data JSON file
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: '.'
+          default_author: github_actions
+          message: "App Check Completed"
+          push: true
+          pull: ''
+          new_branch: ''
