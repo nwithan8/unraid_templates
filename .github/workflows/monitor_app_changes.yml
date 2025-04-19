@@ -2,7 +2,7 @@ name: Check Apps For Potential Changes
 
 on:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 8 * * *" # UTC
 
 jobs:
   update:
