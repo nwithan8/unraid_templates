@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Jellystat</Name>
+    <Repository>cyfershepard/jellystat:latest</Repository>
+    <Registry>https://hub.docker.com/r/cyfershepard/jellystat</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/CyferShepard/Jellystat/issues</Support>
+    <Project>https://github.com/CyferShepard/Jellystat</Project>
+    <Overview>
+        Jellystat is a free and open source Statistics App for Jellyfin.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>jellyfin emby plex tautulli stat statistic monitor</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/jellystat-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/jellystat.xml</TemplateURL>
+    <Screenshot>hhttps://raw.githubusercontent.com/CyferShepard/Jellystat/refs/heads/main/screenshots/Activity.PNG</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/CyferShepard/Jellystat/refs/heads/main/screenshots/Home.PNG</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/CyferShepard/Jellystat/refs/heads/main/screenshots/Libraries.PNG</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/CyferShepard/Jellystat/refs/heads/main/screenshots/Users.PNG</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/CyferShepard/Jellystat/refs/heads/main/screenshots/settings.PNG</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/CyferShepard/Jellystat/refs/heads/main/screenshots/stats.PNG</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-19
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Database - User" Target="POSTGRES_USER" Default="" Description="Database user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Password" Target="POSTGRES_PASSWORD" Default="" Description="Database password" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Host" Target="POSTGRES_IP" Default="" Description="Database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Port" Target="POSTGRES_PORT" Default="5432" Description="Database port" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Database - Name" Target="POSTGRES_DB" Default="" Description="Database name" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Secret Token" Target="JWT_SECRET" Default="" Description="JWT Key to be used to encrypt JWT tokens for authentication" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Geolite - Account ID" Target="JS_GEOLITE_ACCOUNT_ID" Default="" Description="maxmind.com user id to be used for Geolocating IP Addresses" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Geolite - License Key" Target="JS_GEOLITE_LICENSE_KEY" Default="" Description="maxmind.com license key to be used for Geolocating IP Addresses" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Minimum Seconds for Playback" Target="MINIMUM_SECONDS_TO_INCLUDE_PLAYBACK" Default="1" Description="The minimum time (in seconds) to include a playback record, which can be used to exclude short playbacks" Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Use Emby" Target="IS_EMBY_API" Default="false|true" Description="Connect to an Emby server instead of Jellyfin" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Backup Path" Target="/app/backend/backup-data" Default="/mnt/user/appdata/jellystat/backup-data" Description="Path to backup data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/jellystat/backup-data</Config>
+    <Config Name="Listen IP" Target="JS_LISTEN_IP" Default="0.0.0.0" Description="Internal listening IP" Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Base URL" Target="JS_BASE_URL" Default="/" Description="Base URL for the app" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/</Config>
+    <Config Name="Override User" Target="JS_USER" Default="" Description="Master Override User in case username or password used during setup is forgotten." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Override Password" Target="JS_PASSWORD" Default="" Description="Master Override Password in case username or password used during setup is forgotten" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Reject Self-Signed Certs" Target="REJECT_SELF_SIGNED_CERTIFICATES" Default="true|false" Description="Deny self signed SSL certificates" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
