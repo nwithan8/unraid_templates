@@ -1,13 +1,40 @@
 [
-    {
-        "app_name": "nwithan8 Unraid Templates",
-        "git_url": "https://github.com/nwithan8/unraid_templates.git",
-        "files_to_check": [
-            {
-                "file_path": "README.md",
-                "commit_hash": "41b7d0f2a1dbda566c8f99cb049c895f44ece92c",
-                "commit_message": "- Point users to Discussions on GitHub\n"
-            }
-        ]
-    }
+  {
+    "app_name": "nwithan8 Unraid Templates",
+    "git_url": "https://github.com/nwithan8/unraid_templates.git",
+    "files_to_check": [
+      {
+        "file_path": "README.md",
+        "commit_hash": "41b7d0f2a1dbda566c8f99cb049c895f44ece92c",
+        "commit_message": "- Point users to Discussions on GitHub\n"
+      }
+    ]
+  },
+  {
+    "app_name": "Dawarich",
+    "git_url": "https://github.com/Freika/dawarich.git",
+    "files_to_check": [
+      {
+        "file_path": "docker/docker-compose.yml",
+        "commit_hash": "dae1733320bc05e6ebc87cc40f8a687afe45ecb5",
+        "commit_message": ""
+      },
+      {
+        "file_path": "docker/docker-compose.production.yml",
+        "commit_hash": "0ed6fb7ea80c83dac2babec1a43539bdf3a9dabd",
+        "commit_message": ""
+      }
+    ]
+  },
+  {
+    "app_name": "Loggifly",
+    "git_url": "https://github.com/clemcer/loggifly.git",
+    "files_to_check": [
+      {
+        "file_path": "docker-compose.yaml",
+        "commit_hash": "4d8afb0cc594b8532a1b694a205bec93d44f8cb2",
+        "commit_message": ""
+      }
+    ]
+  }
 ]
