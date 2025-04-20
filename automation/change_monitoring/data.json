@@ -1,13 +1,13 @@
 [
-  {
-    "app_name": "nwithan8 Unraid Templates",
-    "git_url": "https://github.com/nwithan8/unraid_templates.git",
-    "files_to_check": [
-      {
-        "file_path": "README.md",
-        "commit_hash": "e84088ef577420a3d2ba308fe3883a5a1e2940f8",
-        "commit_message": ""
-      }
-    ]
-  }
+    {
+        "app_name": "nwithan8 Unraid Templates",
+        "git_url": "https://github.com/nwithan8/unraid_templates.git",
+        "files_to_check": [
+            {
+                "file_path": "README.md",
+                "commit_hash": "41b7d0f2a1dbda566c8f99cb049c895f44ece92c",
+                "commit_message": "- Point users to Discussions on GitHub\n"
+            }
+        ]
+    }
 ]
