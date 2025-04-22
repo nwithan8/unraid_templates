@@ -16,6 +16,7 @@
         [br]
         This is a CLI tool.
     </Overview>
+    <ExtraSearchTerms>Immich photo picture cli tool upload command line console utility</ExtraSearchTerms>
     <Category>MediaApp:Photos MediaServer:Photos Tools: Other: Status:Stable</Category>
     <Icon>https://immich.app/img/logomark-light.svg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/immich_cli.xml</TemplateURL>
