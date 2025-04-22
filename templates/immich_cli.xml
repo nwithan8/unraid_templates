@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Immich CLI</Name>
+    <Repository>ghcr.io/immich-app/immich-cli:latest</Repository>
+    <Registry>ghcr.io/immich-app/immich-cli</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://immich.app/docs/features/command-line-interface/</Support>
+    <Project>https://immich.app/</Project>
+    <Overview>
+        A CLI tool to upload images to Immich. &#xD;
+        [br]
+        This is a CLI tool.
+    </Overview>
+    <Category>MediaApp:Photos MediaServer:Photos Tools: Other: Status:Stable</Category>
+    <Icon>https://immich.app/img/logomark-light.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/immich_cli.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-21
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool. Open a Console in the container and run `immich` to use it.
+    </Requires>
+    <Config Name="Import Path" Target="/import" Default="" Mode="ro" Description="Path to folder with items to upload." Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Server URL" Target="IMMICH_INSTANCE_URL" Default="http://immich/api" Description="The URL to the Immich Server API" Type="Variable" Display="always-hide" Required="true" Mask="false">http://immich/api</Config>
+    <Config Name="Server API Key" Target="IMMICH_API_KEY" Default="" Description="The API key for your Immich server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+</Container>
