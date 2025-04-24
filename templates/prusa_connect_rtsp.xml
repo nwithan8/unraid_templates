@@ -16,6 +16,7 @@
     </Overview>
     <Beta>False</Beta>
     <Category>MediaApp:Photos Tools: Productivity: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/prusa-connect-rtsp-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/prusa_connect_rtsp.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

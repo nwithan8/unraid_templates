@@ -16,6 +16,7 @@
     <Overview>Companion app for mdblist.com for Radarr and Sonarr integration</Overview>
     <Beta>False</Beta>
     <Category>Tools:Utilities MediaServer Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mdblistarr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mdblistarr.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

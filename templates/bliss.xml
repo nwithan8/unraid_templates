@@ -18,6 +18,7 @@
     <Beta>False</Beta>
     <Category>MediaApp:Music MediaServer:Music Other: Tools: Status:Stable</Category>
     <ExtraSearchTerms>Headphones Lidarr Plex music Jellyfin Emby audiobooks</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/bliss-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/bliss.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

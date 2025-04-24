@@ -17,8 +17,8 @@
     <Beta>False</Beta>
     <Category>Downloaders MediaApp:Video MediaServer:Video MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>Usenet Sonarr Radarr Lidarr Readarr plugin search content indexer</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/newznabarr-icon.png</Icon>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/newznabarr.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/newnzabarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/newnzabarr.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>

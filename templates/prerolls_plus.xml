@@ -19,7 +19,7 @@
     <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>plex prerolls preroll video random sequence dynamic manager schedule</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/preroll-plus-icon.png</Icon>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/preroll_plus.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/prerolls_plus.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>

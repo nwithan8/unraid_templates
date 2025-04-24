@@ -21,6 +21,7 @@
     </Overview>
     <Beta>False</Beta>
     <Category>MediaApp:Video MediaApp:Books MediaApp:Other Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/yamtrack-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/yamtrack.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

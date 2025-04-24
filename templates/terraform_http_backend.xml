@@ -13,6 +13,7 @@
     </Overview>
     <Beta>False</Beta>
     <Category>MediaApp:Other Tools: Productivity: Other: Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/terraform-http-backend-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/terraform_http_backend.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
