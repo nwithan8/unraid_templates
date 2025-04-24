@@ -47,5 +47,16 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Operational",
+        "git_url": "https://github.com/operational-co/operational.co.git",
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "bd00a8f9ee3b1c76d4613e19880844cedfb2f902",
+                "commit_message": null
+            }
+        ]
     }
 ]
