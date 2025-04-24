@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>photon</Name>
+    <Repository>tonsnoei/docker-photon:latest</Repository>
+    <Registry>https://hub.docker.com/r/tonsnoei/docker-photon</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:2322]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/tonsnoei/photon-docker/issues</Support>
+    <Project>https://photon.komoot.io/</Project>
+    <Overview>
+        photon is an open source geocoder built for OpenStreetMap data. It is based on elasticsearch - an efficient, powerful and highly scalable search platform.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>location geocoder coordinates geography maps openstreetmaps osm</ExtraSearchTerms>
+    <Icon>https://photon.komoot.io/static/img/photon_logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/photon.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-24
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="2322" Default="2322" Mode="tcp" Description="Container Port: 2322" Type="Port" Display="always-hide" Required="true" Mask="false">2322</Config>
+</Container>
