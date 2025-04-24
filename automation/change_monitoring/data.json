@@ -58,5 +58,16 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Workout Tracker",
+        "git_url": "https://github.com/jovandeginste/workout-tracker.git",
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.sqlite.yaml",
+                "commit_hash": "c1065d351c4f35add7653f376039063aa3621f58",
+                "commit_message": null
+            }
+        ]
     }
 ]

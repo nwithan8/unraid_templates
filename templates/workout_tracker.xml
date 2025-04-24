@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Workout Tracker</Name>
+    <Repository>ghcr.io/jovandeginste/workout-tracker:latest</Repository>
+    <Registry>ghcr.io/jovandeginste/workout-tracker</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>master</Tag>
+        <TagDescription>Latest edge release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/jovandeginste/workout-tracker/issues</Support>
+    <Project>https://github.com/jovandeginste/workout-tracker</Project>
+    <Overview>
+        A workout tracking web application for personal use (or family, friends), geared towards running and other GPX-based activities.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>workout tracker running gpx activity fitness track</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/workout-tracker-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/workout_tracker.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/login.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/dashboard.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/workout_overview.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/single_workout-dark.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/track.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/upload_workouts.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/upload_workouts_manual.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/statistics.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/heatmap.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/daily_overview.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/login-nl.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/profile.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/responsive.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/docs/single_workout-theme.jpg</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-24
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `workout-tracker.yaml` file to be present in the Data Path before starting the container. See documentation for more details: https://github.com/jovandeginste/workout-tracker#configuration
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Data path" Target="/data" Default="/mnt/user/appdata/workout_tracker/data" Description="Path to data files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/workout_tracker/data</Config>
+</Container>
