@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Coming Soon</Name>
+    <Repository>chadwpalm/coming-soon:latest</Repository>
+    <Registry>https://hub.docker.com/r/chadwpalm/coming-soon</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/chadwpalm/coming-soon/issues</Support>
+    <Project>https://github.com/chadwpalm/coming-soon</Project>
+    <Overview>
+        This is a Python script for generating a "Coming Soon" pre-roll using iCAL data from Radarr or Sonarr.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>schedule ical sonarr radarr plex jellyfin emby coming soon poster python</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/coming-soon-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/coming_soon.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-24
+
+        Initial release
+    </Changes>
+    <Config Name="Cron Schedule" Target="CRON_SCHEDULE" Default="0 0 * * *" Description="Cron schedule for when to run the script." Type="Variable" Display="always-hide" Required="true" Mask="false">0 0 * * *</Config>
+    <Config Name="Template - Video File" Target="INPUT_FILE" Default="ComingSoon.mp4" Description="A video file that the text will be overlaid onto. This file must exist in the Config Path directory." Display="always-hide" Required="true" Mask="false">ComingSoon.mp4</Config>
+    <Config Name="Template - Font File" Target="FONT_FILE" Default="MyFont.ttf" Description="A font file that the text will be overlaid onto. This file must exist in the Config Path directory. Remove this to use the default font (Arial)." Display="always" Required="true" Mask="false">MyFont.ttf</Config>
+    <Config Name="Template - Font Size" Target="FONT_SIZE" Default="70" Description="Font size of the text overlay." Type="Variable" Display="always-hide" Required="true" Mask="false">70</Config>
+    <Config Name="Template - Font Color" Target="FONT_COLOR" Default="white" Description="Font color of the text overlay. Allowed values: https://ffmpeg.org/ffmpeg-utils.html#color-syntax" Type="Variable" Display="always-hide" Required="true" Mask="false">white</Config>
+    <Config Name="Template - Text Location (X)" Target="X_COORD" Default="300" Description="X coordinate of the top-left-most pixel for the text overlay." Type="Variable" Display="always-hide" Required="true" Mask="false">300</Config>
+    <Config Name="Template - Text Location (Y)" Target="Y_COORD" Default="150" Description="Y coordinate of the top-left-most pixel for the text overlay." Type="Variable" Display="always-hide" Required="true" Mask="false">150</Config>
+    <Config Name="Template - Center Text" Target="CENTER_TEXT" Default="false|true" Description="Center the text overlay on the screen. Will override X and Y positions." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Template - Line Spacing" Target="LINE_SPACING" Default="10" Description="Line spacing of the text overlay." Type="Variable" Display="always-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Template - Text Start Time" Target="START_TIME" Default="5" Description="How many seconds into the video to start the text overlay." Type="Variable" Display="always-hide" Required="true" Mask="false">5</Config>
+    <Config Name="Template - Text End Time" Target="END_TIME" Default="13" Description="How many seconds into the video to end the text overlay." Type="Variable" Display="always-hide" Required="true" Mask="false">13</Config>
+    <Config Name="Schedule - Radarr iCal URL" Target="ICAL_URL_RADARR" Default="http://IP_ADDRESS:7878/feed/v3/calendar/Radarr.ics?apikey=thisismyapikey" Description="URL to Radarr's iCal calendar" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:7878/feed/v3/calendar/Radarr.ics?apikey=thisismyapikey</Config>
+    <Config Name="Schedule - Sonarr iCal URL" Target="ICAL_URL_SONARR" Default="http://IP_ADDRESS:8989/feed/v3/calendar/Sonarr.ics?apikey=thisismyapikey" Description="URL to Sonarr's iCal calendar" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:8989/feed/v3/calendar/Sonarr.ics?apikey=thisismyapikey</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/coming_soon/config" Description="Path to the config directory. This is where the script will look for the input file." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/coming_soon/config</Config>
+    <Config Name="Output Path" Target="/output" Default="/mnt/user/appdata/coming_soon/output" Description="Path to the output directory. This is where the generated video will be saved." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/coming_soon/output</Config>
+    <Config Name="UID" Target="UID" Default="1000" Description="User ID for the container" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="GID" Target="GID" Default="1000" Description="Group ID for the container" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+</Container>
