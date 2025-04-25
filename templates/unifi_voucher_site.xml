@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>UniFi Voucher Site</Name>
+    <Repository>glenndehaan/unifi-voucher-site:latest</Repository>
+    <Registry>https://hub.docker.com/r/glenndehaan/unifi-voucher-site</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/glenndehaan/unifi-voucher-site/issues</Support>
+    <Project>https://github.com/glenndehaan/unifi-voucher-site</Project>
+    <Overview>
+        UniFi Voucher Site is a web-based platform for generating and managing UniFi network guest vouchers.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Management Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>unifi voucher site guest network management wifi password qr code</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/unifi-voucher-site-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/unifi_voucher_site.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/pdf_example.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/escpos_example.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/email_example.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/kiosk_example.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/desktop_0.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/desktop_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/desktop_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/desktop_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/mobile_0.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/mobile_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/mobile_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/mobile_3.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-25
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="UniFi OS Console - IP Address" Target="UNIFI_IP" Default="" Description="IP address of the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="UniFi OS Console - Port" Target="UNIFI_PORT" Default="443" Description="Port of the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false">443</Config>
+    <Config Name="UniFi OS Console - Username" Target="UNIFI_USERNAME" Default="" Description="Username for the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="UniFi OS Console - Password" Target="UNIFI_PASSWORD" Default="" Description="Password for the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="UniFi OS Console - Site ID" Target="UNIFI_SITE_ID" Default="default" Description="Site ID for the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false">default</Config>
+    <Config Name="UniFi OS Console - SSID" Target="UNIFI_SSID" Default="" Description="The UniFi SSID where guests need to connect to (Used within templating and 'Scan to Connect')" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="UniFi OS Console - SSID Password" Target="UNIFI_SSID_PASSWORD" Default="" Description="The UniFi SSID WPA/WPA2/WPA3 Password (Can be ignored for 'Open' networks) (Used within templating and 'Scan to Connect')" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Authentication - Web UI - Enable" Target="AUTH_INTERNAL_ENABLED" Default="true|false" Description="Enable internal authentication for the voucher portal web UI" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Authentication - Web UI - Password" Target="AUTH_INTERNAL_PASSWORD" Default="" Description="Password for internal authentication for the voucher portal web UI" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Authentication - OIDC - Enable" Target="AUTH_OIDC_ENABLED" Default="false|true" Description="Enable OpenID Connect authentication for the voucher portal web UI" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Authentication - OIDC - Issuer Base URL" Target="AUTH_OIDC_ISSUER_BASE_URL" Default="" Description="OIDC issuer base url provided by oauth provider. Example: https://auth.example.com/.well-known/openid-configuration" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Authentication - OIDC - App Base URL" Target="AUTH_OIDC_APP_BASE_URL" Default="" Description="OIDC UniFi Voucher base url (This application). Example: https://voucher.example.com" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Authentication - OIDC - Client ID" Target="AUTH_OIDC_CLIENT_ID" Default="" Description="OIDC client id provided by oauth provider" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Authentication - OIDC - Client Secret" Target="AUTH_OIDC_CLIENT_SECRET" Default="" Description="OIDC client secret provided by oauth provider" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Authentication - API - Bearer Token" Target="AUTH_INTERNAL_BEARER_TOKEN" Default="" Description="The bearer token used for the API" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Voucher Types" Target="VOUCHER_TYPES" Default="480,1,,,;" Description="A semi-colon-separated list of voucher types in the following format: expiration in minutes (required),single-use or multi-use vouchers value - '0' is for multi-use (unlimited) - '1' is for single-use - 'N' is for multi-use (Nx) (optional),upload speed limit in kbps (optional),download speed limit in kbps (optional),data transfer limit in MB (optional)" Type="Variable" Display="always-hide" Required="true" Mask="false">480,1,,,;</Config>
+    <Config Name="Allow Custom Voucher Types" Target="VOUCHER_CUSTOM" Default="false|true" Description="Allow users to create custom vouchers types within the UI" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Printing - File Format" Target="PRINTER_TYPE" Default="" Description="Enable/disable the printer and set the preferred type, currently supported types: pdf, escpos" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Printing - Printer IP" Target="PRINTER_IP" Default="" Description="IP address to your network enabled ESC/POS compatible printer (Only required when using File Format set to 'escpos')" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Email - From Address" Target="SMTP_FROM" Default="" Description="The email address that will be used as the sender of the emails" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP Host" Target="SMTP_HOST" Default="" Description="The SMTP host to use for sending emails" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP Port" Target="SMTP_PORT" Default="587" Description="The SMTP port to use for sending emails" Type="Variable" Display="always-hide" Required="false" Mask="false">587</Config>
+    <Config Name="Email - Use TLS" Target="SMTP_SECURE" Default="false|true" Description="Use TLS for the SMTP connection" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - SMTP Username" Target="SMTP_USERNAME" Default="" Description="The SMTP username to use for sending emails" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP Password" Target="SMTP_PASSWORD" Default="" Description="The SMTP password to use for sending emails" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Kiosk - Enable" Target="KIOSK_ENABLED" Default="false|true" Description="Enable/disable the kiosk page on /kiosk" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Kiosk - Voucher Type" Target="KIOSK_VOUCHER_TYPE" Default="480,1,,,;" Description="A semi-colon-separated list of voucher types in the following format: expiration in minutes (required),single-use or multi-use vouchers value - '0' is for multi-use (unlimited) - '1' is for single-use - 'N' is for multi-use (Nx) (optional),upload speed limit in kbps (optional),download speed limit in kbps (optional),data transfer limit in MB (optional)" Type="Variable" Display="always-hide" Required="true" Mask="false">480,1,,,;</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|error|debug" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Authentication - Disable" Target="AUTH_DISABLE" Default="false|true" Description="Disable all authentication methods" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Enable Web UI" Target="SERVICE_WEB" Default="true|false" Description="Enable the web UI" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Enable API" Target="SERVICE_API" Default="true|false" Description="Enable the API" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Translation - Default Language" Target="TRANSLATION_DEFAULT" Default="en" Description="Sets the default translation for dropdowns" Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Translation - Debug" Target="TRANSLATION_DEBUG" Default="false|true" Description="Enables/disables translation debugging, when enabled only translation keys are shown" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Enable UI Back Button" Target="UI_BACK_BUTTON" Default="false|true" Description="Enables/disables a back-button next to the logo to go back 1 page in history (Could be used with multi-page kiosks)" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>

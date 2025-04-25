@@ -118,5 +118,16 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "UniFi Voucher Site",
+        "git_url": "https://github.com/glenndehaan/unifi-voucher-site.git",
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "30ef63f277b1d28530e7fdf0b50a7ff052ee3e62",
+                "commit_message": null
+            }
+        ]
     }
 ]
