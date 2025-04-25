@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Kokoro FastAPI - CPU</Name>
+    <Repository>ghcr.io/remsky/kokoro-fastapi-cpu:latest</Repository>
+    <Registry>ghcr.io/remsky/kokoro-fastapi-cpu</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8880]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/remsky/Kokoro-FastAPI/issues</Support>
+    <Project>https://github.com/remsky/Kokoro-FastAPI</Project>
+    <Overview>
+        Dockerized FastAPI wrapper for Kokoro-82M text-to-speech model w/CPU ONNX and NVIDIA GPU PyTorch support, handling, and auto-stitching. &#xD;
+        [br]
+        This is a version meant for running on CPUs. It is not recommended to run this on a CPU unless you have a very powerful CPU, as it will be slow. If you have a GPU, please use the GPU version of this container.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ai docker fastapi kokoro text-to-speech tts speech synthesis voice generation onnx cpu gpu nvidia</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kokoro-fastapi-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/remsky/Kokoro-FastAPI/master/githubbanner.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kokoro_fastapi_cpu.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/remsky/Kokoro-FastAPI/master/assets/docs-screenshot.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/remsky/Kokoro-FastAPI/master/assets/webui-screenshot.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-25
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8880" Default="8880" Mode="tcp" Description="Container Port: 8880" Type="Port" Display="always-hide" Required="true" Mask="false">8880</Config>
+</Container>

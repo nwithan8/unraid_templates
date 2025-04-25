@@ -80,5 +80,21 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Kokoro FastAPI",
+        "git_url": "https://github.com/remsky/Kokoro-FastAPI.git",
+        "files_to_check": [
+            {
+                "file_path": "docker/cpu/docker-compose.yml",
+                "commit_hash": "6a2d3a54cf9adacebccfdec4ebe294974694146c",
+                "commit_message": null
+            },
+            {
+                "file_path": "docker/gpu/docker-compose.yml",
+                "commit_hash": "6a2d3a54cf9adacebccfdec4ebe294974694146c",
+                "commit_message": null
+            }
+        ]
     }
 ]
