@@ -16,8 +16,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "dae1733320bc05e6ebc87cc40f8a687afe45ecb5",
-                "commit_message": ""
+                "commit_hash": "a104bb083f607e79fcbab19b0188c35665347825",
+                "commit_message": "Fix database creation on startup\n"
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
