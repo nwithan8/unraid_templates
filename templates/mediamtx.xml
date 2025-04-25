@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>MediaMTX</Name>
+    <Repository>bluenviron/mediamtx:latest</Repository>
+    <Registry>https://hub.docker.com/r/bluenviron/mediamtx</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/bluenviron/mediamtx/issues</Support>
+    <Project>https://github.com/bluenviron/mediamtx</Project>
+    <Overview>
+        MediaMTX is a ready-to-use and zero-dependency real-time media server and media proxy that allows to publish, read, proxy, record and playback video and audio streams. It has been conceived as a "media router" that routes media streams from one end to the other.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>media server streaming video audio playback publish proxy record router route srt rtmp rtsp webrtc</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mediamtx-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/bluenviron/mediamtx/main/logo.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mediamtx.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-25
+
+        Initial release
+    </Changes>
+    <Config Name="RTP Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+    <Config Name="RTCP Port" Target="8001" Default="8001" Mode="tcp" Description="Container Port: 8001" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
+    <Config Name="Multicast RTP Port" Target="8002" Default="8002" Mode="tcp" Description="Container Port: 8002" Type="Port" Display="always" Required="true" Mask="false">8002</Config>
+    <Config Name="Multicast RTCP Port" Target="8003" Default="8003" Mode="tcp" Description="Container Port: 8003" Type="Port" Display="always" Required="true" Mask="false">8003</Config>
+    <Config Name="RTSP Port" Target="8554" Default="8554" Mode="tcp" Description="Container Port: 8554" Type="Port" Display="always" Required="true" Mask="false">8554</Config>
+    <Config Name="RTSPS Port" Target="8322" Default="8322" Mode="tcp" Description="Container Port: 8322" Type="Port" Display="always" Required="true" Mask="false">8322</Config>
+    <Config Name="RTMP Port" Target="1935" Default="1935" Mode="tcp" Description="Container Port: 1935" Type="Port" Display="always" Required="true" Mask="false">1935</Config>
+    <Config Name="RTMPS Port" Target="1936" Default="1936" Mode="tcp" Description="Container Port: 1936" Type="Port" Display="always" Required="true" Mask="false">1936</Config>
+    <Config Name="HLS Port" Target="8888" Default="8888" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always" Required="true" Mask="false">8888</Config>
+    <Config Name="WebRTC Port" Target="8889" Default="8889" Mode="tcp" Description="Container Port: 8889" Type="Port" Display="always" Required="true" Mask="false">8889</Config>
+    <Config Name="WebRTC Local UDP Port" Target="8189" Mode="udp" Description="Container Port: 8189" Type="Port" Display="always" Required="true" Mask="false">8189</Config>
+    <Config Name="SRT Port" Target="8890" Default="8890" Mode="udp" Description="Container Port: 8890" Type="Port" Display="always" Required="true" Mask="false">8890</Config>
+    <Config Name="Playback Port" Target="9996" Default="9996" Mode="tcp" Description="Container Port: 9996" Type="Port" Display="always" Required="true" Mask="false">9996</Config>
+    <Config Name="API Port" Target="9997" Default="9997" Mode="tcp" Description="Container Port: 9997" Type="Port" Display="always" Required="true" Mask="false">9997</Config>
+    <Config Name="Metrics Port" Target="9998" Default="9998" Mode="tcp" Description="Container Port: 9998" Type="Port" Display="always" Required="true" Mask="false">9998</Config>
+    <Config Name="PPROF Port" Target="9999" Default="9999" Mode="tcp" Description="Container Port: 9999" Type="Port" Display="always" Required="true" Mask="false">9999</Config>
+    <Config Name="Hosts" Target="MTX_WEBRTCADDITIONALHOSTS" Default="SERVER_IP_ADDRESS" Description="Add your server's IP address here." Type="Variable" Display="always-hide" Required="true" Mask="false">SERVER_IP_ADDRESS</Config>
+    <Config Name="RTSP Transport Protocol" Target="MTX_RTSPTRANSPORTS" Default="tcp" Description="Transport protocol for RTSP. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">tcp</Config>
+</Container>
