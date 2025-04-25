@@ -107,5 +107,16 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "conduwuit",
+        "git_url": "https://github.com/girlbossceo/conduwuit.git",
+        "files_to_check": [
+            {
+                "file_path": "docs/deploying/docker-compose.yml",
+                "commit_hash": "9dcf289c7a1f57bfb512f406ddcfb22895e30846",
+                "commit_message": null
+            }
+        ]
     }
 ]
