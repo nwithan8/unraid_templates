@@ -29,7 +29,7 @@ jobs:
         run: |
           echo "Preparing new files list..."
           new_files_count=$(echo "${{ steps.determine-new-files.outputs.added_files_count }}")
-          new_files=$(echo "${{ steps.determine-new-files.outputs.added_files }}" | jq -R -s -c 'split("\n")[:-1]')
+          new_files=$(echo -n "${{ steps.determine-new-files.outputs.added_files }}" | jq -R -s -c 'split(" ")')
           echo "new_templates_list=$new_files" >> $GITHUB_OUTPUT
           if [ $new_files_count == '0' ]; then
               echo "No new files found."

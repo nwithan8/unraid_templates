@@ -22,7 +22,7 @@
     <ExtraSearchTerms>ai docker fastapi kokoro text-to-speech tts speech synthesis voice generation onnx cpu gpu nvidia</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kokoro-fastapi-icon.png</Icon>
     <Banner>https://raw.githubusercontent.com/remsky/Kokoro-FastAPI/master/githubbanner.png</Banner>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kokoro_fastapi_cpu.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kokoro_fastapi_gpu.xml</TemplateURL>
     <Screenshot>https://raw.githubusercontent.com/remsky/Kokoro-FastAPI/master/assets/docs-screenshot.png</Screenshot>
     <Screenshot>https://raw.githubusercontent.com/remsky/Kokoro-FastAPI/master/assets/webui-screenshot.png</Screenshot>
     <Maintainer>
