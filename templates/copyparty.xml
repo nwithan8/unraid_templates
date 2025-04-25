@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>copyparty</Name>
+    <Repository>copyparty/ac:latest</Repository>
+    <Registry>https://hub.docker.com/r/copyparty/ac</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3923]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/9001/copyparty/issues</Support>
+    <Project>https://github.com/9001/copyparty</Project>
+    <Overview>
+        Portable file server with accelerated resumable uploads, dedup, WebDAV, FTP, TFTP, zeroconf, media indexer, thumbnails++ all in one file
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>photo album share image gallery pictures wedding event party</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/9001/copyparty/hovudstraum/docs/logo.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/copyparty.xml</TemplateURL>
+    <Screenshot>https://user-images.githubusercontent.com/241032/129636211-abd20fa2-a953-4366-9423-1c88ebb96ba9.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/129635374-e5136e01-470a-49b1-a762-848e8a4c9cdc.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/129635371-48fc54ca-fa91-48e3-9b1d-ba413e4b68cb.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/129635361-c79286f0-b8f1-440e-aaf4-6e929428fac9.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/129635368-3afa6634-c20f-418c-90dc-ec411f3b3897.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/128434204-eb136680-3c07-4ec7-92e0-ae86af20c241.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/115978057-66419080-a57d-11eb-8539-d2be843991aa.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/129635365-c0ff2a9f-0ee5-4fc3-8bb6-006033cf67b8.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/165867551-fceb35dd-38f0-42bb-bef3-25ba651ca69b.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/168644404-8e1a2fdc-6e59-4c41-905e-ba5399ed686f.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/165867560-aa834aef-58dc-4abe-baef-7e562b647945.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/165867555-080b73b6-6d85-41bb-a7c6-ad277c608365.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/168645280-f0662b3c-9764-4875-a2e2-d91cc8199b23.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/165867562-f3003d45-dd2a-4564-8aae-fed44c1ae064.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/118192791-fb31fe00-b446-11eb-9647-898ea8efc1f7.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/241032/221445946-1e328e56-8c5b-44a9-8b9f-dee84d942535.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-11-19
+
+        Initial release
+    </Changes>
+    <ExtraParams>--user 099:100</ExtraParams>
+    <Config Name="Web UI Port" Target="3923" Default="3923" Mode="tcp" Description="Container Port: 3923" Type="Port" Display="always-hide" Required="true" Mask="false">3923</Config>
+    <Config Name="File Storage" Target="/w" Default="/mnt/user/appdata/copyparty/files" Description="Path to file storage" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/copyparty/files</Config>
+    <Config Name="Config Path" Target="/cfg" Default="/mnt/user/appdata/copyparty/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/copyparty/config</Config>
+    <Config Name="Preload" Target="LD_PRELOAD" Default="/usr/lib/libmimalloc-secure.so.NOPE|/usr/lib/libmimalloc-secure.so.2" Description="Switch to preload mimalloc secure library at the expense of RAM usage." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>

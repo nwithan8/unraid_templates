@@ -129,5 +129,16 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "copyparty",
+        "git_url": "https://github.com/9001/copyparty.git",
+        "files_to_check": [
+            {
+                "file_path": "docs/examples/docker/basic-docker-compose/docker-compose.yml",
+                "commit_hash": "d5a9bd80b2bdc4ecb10a99d3db6f5441258acce7",
+                "commit_message": null
+            }
+        ]
     }
 ]
