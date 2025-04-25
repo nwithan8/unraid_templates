@@ -13,6 +13,8 @@
     <Support>https://github.com/plexguide/Huntarr-Sonarr/issues</Support>
     <Project>https://github.com/plexguide/Huntarr-Sonarr</Project>
     <Overview>
+        DEPRECATED: Use Huntarr instead. &#xD;
+        [br]
         Huntarr (Sonarr Edition) continually searches your Sonarr library for shows with missing episodes and episodes that need quality upgrades. It automatically triggers searches for both missing episodes and episodes below your quality cutoff. It's designed to run continuously while being gentle on your indexers, helping you gradually complete your TV show collection with the best available quality.
     </Overview>
     <Beta>False</Beta>
@@ -24,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-24
+
+        Deprecated in favor of Huntarr.
+
         ### 2025-04-08
 
         Add new environmental variables and volumes, fix missing Types

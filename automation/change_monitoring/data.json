@@ -69,5 +69,16 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Huntarr",
+        "git_url": "https://github.com/plexguide/Huntarr.io.git",
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "b8f79769d1a27ed90ca4b3f67fc5665776642a5d",
+                "commit_message": null
+            }
+        ]
     }
 ]

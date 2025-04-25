@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Huntarr</Name>
+    <Repository>huntarr/huntarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/huntarr/huntarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9705]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/plexguide/Huntarr.io/issues</Support>
+    <Project>https://huntarr.io</Project>
+    <Overview>
+        A specialized utility that automates discovering missing and upgrading your media collection!
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>sonarr radarr lidarr readarr whisparr huntarr media tv show movies music audio video books files anime search indexer torrent usenet plex jellyfin emby content upgrade profile quality download missing arrs</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/plexguide/Huntarr.io/main/frontend/static/logo/512.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huntarr.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr_demo_2.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2024-04-24
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="9705" Default="9705" Mode="tcp" Description="Container Port: 9705" Type="Port" Display="always-hide" Required="true" Mask="false">9705</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/huntarr/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/huntarr/config</Config>
+</Container>

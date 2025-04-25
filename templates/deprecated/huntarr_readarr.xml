@@ -12,6 +12,8 @@
     <Support>https://github.com/plexguide/Huntarr-Readarr/issues</Support>
     <Project>https://github.com/plexguide/Huntarr-Readarr</Project>
     <Overview>
+        DEPRECATED: Use Huntarr instead. &#xD;
+        [br]
         Huntarr (Readarr Edition) continually searches your Readarr library for missing books or books that need quality upgrades. It automatically triggers searches for both missing books and books below your quality cutoff. It's designed to run continuously while being gentle on your indexers, helping you gradually complete your book collection with the best available quality.
     </Overview>
     <Beta>False</Beta>
@@ -23,6 +25,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-24
+
+        Deprecated in favor of Huntarr.
+
         ### 2025-04-06
 
         Initial release
