@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>RSS-proxy</Name>
+    <Repository>damoeb/rss-proxy:2</Repository>
+    <Registry>https://hub.docker.com/r/damoeb/rss-proxy</Registry>
+    <Branch>
+        <Tag>2</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/damoeb/rss-proxy/issues</Support>
+    <Project>https://rssproxy.migor.org/</Project>
+    <Overview>
+        RSS-proxy allows you to do create an ATOM or JSON feed of any static website or feeds (web to feed), just by analyzing just the HTML structure.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>rss feed proxy atom json web html combine</ExtraSearchTerms>
+    <Icon>https://rssproxy.migor.org/assets/rss_icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/rss_proxy.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/damoeb/rss-proxy/master/docs/rssproxy-candidates.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-25
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Public URL" Target="APP_API_GATEWAY_URL" Default="https://mydomain.com" Description="Public URL of the app" Type="Variable" Display="always-hide" Required="true" Mask="false">https://mydomain.com</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|error|warn|debug" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
