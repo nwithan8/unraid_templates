@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>conduwuit</Name>
+    <Repository>girlbossceo/conduwuit:latest</Repository>
+    <Registry>https://hub.docker.com/r/girlbossceo/conduwuit</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:6167]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/girlbossceo/conduwuit/issues</Support>
+    <Project>https://conduwuit.puppyirl.gay/</Project>
+    <Overview>
+        A very cool, featureful fork of conduit (Rust matrix homeserver)
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>rust matrix server features fork conduit conduwuit</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/conduwuit-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/conduwuit.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-25
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="6167" Default="6167" Mode="tcp" Description="Container Port: 6167" Type="Port" Display="always-hide" Required="true" Mask="false">6167</Config>
+    <Config Name="Server Name" Target="CONDUWUIT_SERVER_NAME" Default="your.server.name" Description="The server name" Type="Variable" Display="always-hide" Required="true" Mask="false">your.server.name</Config>
+    <Config Name="Allow Registration" Target="CONDUWUIT_ALLOW_REGISTRATION" Default="false|true" Description="Allow registration of new users" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Are You Sure You Want to Allow Registrations?" Target="CONDUWUIT_YES_I_AM_VERY_VERY_SURE_I_WANT_AN_OPEN_REGISTRATION_SERVER_PRONE_TO_ABUSE" Default="false|true" Description="Registration is prone to abuse." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Registration Token" Target="CONDUWUIT_REGISTRATION_TOKEN" Default="" Description="Token for registration. Required if registration is enabled. Delete if disabled." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Allow Federation" Target="CONDUWUIT_ALLOW_FEDERATION" Default="false|true" Description="Allow federation with other matrix servers" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Update Checks" Target="CONDUWUIT_ALLOW_CHECK_FOR_UPDATES" Default="false|true" Description="Allow the server to check for updates" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Trusted Servers" Target="CONDUWUIT_TRUSTED_SERVERS" Default="['matrix.org']" Description="List of trusted servers." Type="Variable" Display="always-hide" Required="true" Mask="false">['matrix.org']</Config>
+    <Config Name="Database Path" Target="/var/lib/conduwuit" Default="/mnt/user/appdata/conduwuit/database" Description="Path to database files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/conduwuit/database</Config>
+    <Config Name="Internal Database Path" Target="CONDUWUIT_DATABASE_PATH" Default="/var/lib/conduwuit" Description="Path to database files inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/var/lib/conduwuit</Config>
+    <Config Name="Internal Port" Target="CONDUWUIT_PORT" Default="6167" Description="Port inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">6167</Config>
+    <Config Name="Max Request Size" Target="CONDUWUIT_MAX_REQUEST_SIZE" Default="20000000" Description="Size, in bytes, of the maximum request size. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">20000000</Config>
+    <Config Name="Server Address" Target="CONDUWUIT_ADDRESS" Default="0.0.0.0" Description="Internal address of the server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+</Container>
