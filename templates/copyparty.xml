@@ -17,7 +17,7 @@
     </Overview>
     <Beta>False</Beta>
     <Category>MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
-    <ExtraSearchTerms>photo album share image gallery pictures wedding event party</ExtraSearchTerms>
+    <ExtraSearchTerms>copy file ishare share upload image gallery pictures wedding event party webdav ftp tftp zeroconf thumbnails</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/9001/copyparty/hovudstraum/docs/logo.svg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/copyparty.xml</TemplateURL>
     <Screenshot>https://user-images.githubusercontent.com/241032/129636211-abd20fa2-a953-4366-9423-1c88ebb96ba9.png</Screenshot>
@@ -40,7 +40,7 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
-        ### 2024-11-19
+        ### 2025-04-25
 
         Initial release
     </Changes>
