@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Chibisafe - Frontend</Name>
+    <Repository>chibisafe/chibisafe-server:latest</Repository>
+    <Registry>https://hub.docker.com/r/chibisafe/chibisafe-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8001]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://chibisafe.app/docs/installation/running-with-docker</Support>
+    <Project>https://chibisafe.app/</Project>
+    <Overview>
+        A modern and self-hosted take on file uploading services that can handle anything you throw at it thanks to its robust and fast API, chunked uploads support and more. &#xD;
+        [br]
+        This is the backend server. You will need to install Chibisafe - Backend as well.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>chibisafe file upload image share upload server ishare media</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/chibisafe-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/chibisafe_frontend.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/chibisafe_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/chibisafe_demo_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/chibisafe_demo_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/chibisafe_demo_4.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-25
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate installation of Chibisafe - Backend and Caddy.
+    </Requires>
+    <Config Name="Web UI Port" Target="8001" Default="8001" Mode="tcp" Description="Container Port: 8001" Type="Port" Display="always-hide" Required="true" Mask="false">8001</Config>
+    <Config Name="Backend URL" Target="BASE_API_URL" Default="http://chibisafe_server:8000" Description="URL of the backend server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://chibisafe_server:8000</Config>
+</Container>

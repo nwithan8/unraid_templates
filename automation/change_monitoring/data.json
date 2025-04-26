@@ -162,5 +162,16 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Chibisafe",
+        "git_url": "https://github.com/chibisafe/chibisafe.git",
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.example.yml",
+                "commit_hash": "43eeade79c6b5b01ed81c9378e2afd92e0bcdef8",
+                "commit_message": null
+            }
+        ]
     }
 ]
