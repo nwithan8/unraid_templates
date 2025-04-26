@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Overr-Syncerr</Name>
+    <Repository>gsariev/overr-syncerr:latest</Repository>
+    <Registry>https://hub.docker.com/r/gsariev/overr-syncerr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/gssariev/overr-syncerr/issues</Support>
+    <Project>https://github.com/gssariev/overr-syncerr</Project>
+    <Overview>
+        Webhook handler for subtitle management with Bazarr, Radarr, and Sonarr integration. Supports both Overseerr and Jellyseerr.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>subtitle bazarr radarr sonarr overseerr jellyseerr jellyfin plex emby video media</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/overr-syncerr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/overr_syncerr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-25
+
+        Initial release
+    </Changes>
+    <Requires>
+        Enabling Kometa integration will attempt to communicate with a Kometa Docker container running on the same machine.
+    </Requires>
+    <Config Name="Webhook Port" Target="8089" Default="8089" Mode="tcp" Description="Container Port: 8089" Type="Port" Display="always-hide" Required="false" Mask="false">8089</Config>
+    <Config Name="Bazarr - URL" Target="BAZARR_URL" Default="http://IP_ADDRESS:PORT/api" Description="URL to Bazarr API" Type="Variable" Display="always-hide" Required="false" Mask="false">http://IP_ADDRESS:PORT/api</Config>
+    <Config Name="Bazarr - API Key" Target="BAZARR_API_KEY" Default="" Description="API key for Bazarr" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Bazarr (4K) - URL" Target="BAZARR_4K_URL" Default="http://IP_ADDRESS:PORT/api" Description="URL to Bazarr API for 4K" Type="Variable" Display="always-hide" Required="false" Mask="false">http://IP_ADDRESS:PORT/api</Config>
+    <Config Name="Bazarr (4K) - API Key" Target="BAZARR_4K_API_KEY" Default="" Description="API key for Bazarr (4K)" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Radarr - URL" Target="RADARR_URL" Default="http://IP_ADDRESS:PORT/api" Description="URL to Radarr API" Type="Variable" Display="always-hide" Required="false" Mask="false">http://IP_ADDRESS:PORT/api/v3</Config>
+    <Config Name="Radarr - API Key" Target="RADARR_API_KEY" Default="" Description="API key for Radarr" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Radarr (4K) - URL" Target="RADARR_4K_URL" Default="http://IP_ADDRESS:PORT/api/v3" Description="URL to Radarr API for 4K" Type="Variable" Display="always-hide" Required="false" Mask="false">http://IP_ADDRESS:PORT/api/v3</Config>
+    <Config Name="Radarr (4K) - API Key" Target="RADARR_4K_API_KEY" Default="" Description="API key for Radarr (4K)" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Sonarr - URL" Target="SONARR_URL" Default="http://IP_ADDRESS:PORT/api/v3" Description="URL to Sonarr API" Type="Variable" Display="always-hide" Required="false" Mask="false">http://IP_ADDRESS:PORT/api/v3</Config>
+    <Config Name="Sonarr - API Key" Target="SONARR_API_KEY" Default="" Description="API key for Sonarr" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Sonarr (4K) - URL" Target="SONARR_4K_URL" Default="http://IP_ADDRESS:PORT/api/v3" Description="URL to Sonarr API for 4K" Type="Variable" Display="always-hide" Required="false" Mask="false">http://IP_ADDRESS:PORT/api/v3</Config>
+    <Config Name="Sonarr (4K) - API Key" Target="SONARR_4K_API_KEY" Default="" Description="API key for Sonarr (4K)" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Sonarr - Episode Tracking" Target="SONARR_EP_TRACKING" Default="false|true" Description="Enable to use Sonarr webhook; disables TV logic from being executed via Media Available" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Sonarr - Track Delay Time" Target="SONARR_TRACK_DELAY_SECONDS" Default="10" Description="Delay (in seconds) before triggering audio and subtitle track preferences to ensure that Plex metadata is refreshed" Type="Variable" Display="always-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Overseerr - URL" Target="OVERSEERR_URL" Default="http://IP_ADDRESS:PORT/api/v1" Description="URL to Overseerr (or Jellyseer) API" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:PORT/api/v1</Config>
+    <Config Name="Overseerr - API Key" Target="OVERSEERR_API_KEY" Default="" Description="API key for Overseerr (or Jellyseer)" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Plex - Host" Target="PLEX_HOST" Default="http://IP_ADDRESS:PORT" Description="URL to Plex instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:PORT</Config>
+    <Config Name="Plex - Token" Target="PLEX_TOKEN" Default="" Description="Plex token for authentication" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex - Client ID" Target="SERVER_CLIENTID" Default="" Description="Plex client ID for authentication" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex - Anime Library Name" Target="ANIME_LIBRARY_NAME" Default="" Description="Name of the Plex library for anime." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Plex - Movie Library Name" Target="MOVIES_LIBRARY_NAME" Default="" Description="Name of the Plex library for movies." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Plex - TV Library Name" Target="SERIES_LIBRARY_NAME" Default="" Description="Name of the Plex library for TV shows." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="AI - Enable" Target="ENABLE_GPT" Default="false|true" Description="Enable ChatGPT integration." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="AI - Model" Target="MODEL_GPT" Default="gpt-4o" Description="Model to use for ChatGPT integration." Type="Variable" Display="always-hide" Required="false" Mask="false">gpt-4o</Config>
+    <Config Name="AI - API Key" Target="OPEN_AI_API_KEY" Default="" Description="API key for OpenAI." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="AI - Movie Path Mapping" Target="MOVIE_PATH_MAPPING" Default="" Description="Provide the locations Bazarr stores subtitles (relative to Bazarr)" Type="Path" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="AI - Movie Path" Target="/mnt/movies" Default="" Description="Path to the movie directory on the host machine." Type="Path" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="AI - TV Path Mapping" Target="TV_PATH_MAPPING" Default="" Description="Provide the locations Bazarr stores subtitles (relative to Bazarr)" Type="Path" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="AI - TV Path" Target="/mnt/tv" Default="" Description="Path to the TV directory on the host machine." Type="Path" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Kometa - Enable" Target="ENABLE_KOMETA" Default="false|true" Description="Enable Kometa integration." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Kometa - Config Path" Target="/kometa/config" Default="" Description="Path to the Kometa config directory." Type="Path" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Kometa - Enable Media Available Handling" Target="ENABLE_MEDIA_AVAILABLE_HANDLING" Default="false|true" Description="Enable if you want to use auto-label, Kometa overlays or audio preference" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Use User-Specified Audio Preferences" Target="ENABLE_AUDIO_PREF" Default="false|true" Description="Enable if you want to use user specific audio preference" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Monitor Partially-Available Requests" Target="MONITOR_REQUESTS" Default="false|true" Description="Enable if you want to add label or set audio to media that's partially available" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Request Monitoring Interval" Target="CHECK_REQUEST_INTERVAL" Default="10" Description="Interval (in seconds) to check for partially-available requests" Type="Variable" Display="always-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Language Map" Target="LANGUAGE_MAP" Default='{\"da\":\"Danish\",\"en\":\"English\",\"bg\":\"Bulgarian\",\"dansk\":\"Danish\",\"english\":\"English\",\"danske\":\"Danish\",\"eng\":\"English\"}' Description="Map of language keywords" Type="Variable" Display="always-hide" Required="true" Mask="false">{\"da\":\"Danish\",\"en\":\"English\",\"bg\":\"Bulgarian\",\"dansk\":\"Danish\",\"english\":\"English\",\"danske\":\"Danish\",\"eng\":\"English\"}</Config>
+    <Config Name="Sync Words" Target="SYNC_KEYWORDS" Default='[\"sync\", \"out of sync\", \"messed up\", \"synchronization\"]' Description="List of keywords to identify sync issues" Type="Variable" Display="always-hide" Required="true" Mask="false">[\"sync\", \"out of sync\", \"messed up\", \"synchronization\"]</Config>
+    <Config Name="Add Label Words" Target="ADD_LABEL_KEYWORDS" Default='[\"add to library\", \"jeg vil se\", \"tilføj til bibliotek\", \"tilføj\"]' Description="List of keywords to identify requests for adding labels" Type="Variable" Display="always-hide" Required="true" Mask="false">[\"add to library\", \"jeg vil se\", \"tilføj til bibliotek\", \"tilføj\"]</Config>
+    <Config Name="Config Path" Target="/mnt/usr" Default="/mnt/user/appdata/overr-syncerr/config" Description="Path to the config directory." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/overr-syncerr/config</Config>
+    <Config Name="Kometa - Internal Config Path" Target="KOMETA_CONFIG_PATH" Default="/kometa/config" Description="Internal path to the Kometa config directory." Type="Path" Display="advanced-hide" Required="true" Mask="false">/kometa/config</Config>
+    <Config Name="AI - Max Request Size" Target="MAX_REQUEST_BYTES" Default="2000" Description="Maximum request size in bytes." Type="Variable" Display="always-hide" Required="true" Mask="false">2000</Config>
+    <Config Name="AI - Max Tokens" Target="MAX_TOKENS" Default="4000" Description="Maximum number of tokens." Type="Variable" Display="always-hide" Required="true" Mask="false">4000</Config>
+    <Config Name="AI - Chunk Overlay" Target="CHUNK_OVERLAP" Default="2" Description="Number of overlapping chunks." Type="Variable" Display="always-hide" Required="true" Mask="false">2</Config>
+    <Config Name="AI - Request Delay" Target="REQUEST_DELAY" Default="2" Description="Delay between requests in seconds." Type="Variable" Display="always-hide" Required="true" Mask="false">2</Config>
+    <Config Name="Internal Port" Target="PORT" Default="8089" Description="Internal webhook port. Not recommended to change." Type="Variable" Display="always-hide" Required="true" Mask="false">8089</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Path to the Docker socket (for triggering Kometa)" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
