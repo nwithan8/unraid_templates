@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>ADS-B Browser Screenshot</Name>
+    <Repository>tedder42/browser-screenshot-service:latest</Repository>
+    <Registry>https://hub.docker.com/r/tedder42/browser-screenshot-service</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5042]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/tedder/browser-screenshot-service/issues</Support>
+    <Project>https://github.com/tedder/browser-screenshot-service</Project>
+    <Overview>
+        web browser screenshot as a service! Designed for the mikenye ADSB decoding world
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>browser web screenshot screen capture image service adsb decoding asbdlol plane finder tracker</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/adsb-browser-screenshot-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/adsb_browser_screenshot.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-26
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5042" Default="5042" Mode="tcp" Description="Container Port: 5042" Type="Port" Display="always-hide" Required="true" Mask="false">5042</Config>
+    <Config Name="Base URL" Target="BASE_URL" Default="https://globe.adsb.fi/" Description="Base URL to use for the map" Type="Variable" Display="always-hide" Required="true" Mask="false">https://globe.adsb.fi/</Config>
+    <Config Name="Map Arguments" Target="MAP_ARGS" Default="zoom=11&amp;hideSidebar&amp;hideButtons&amp;mapDim=0.3" Description="Arguments to pass to the map" Type="Variable" Display="always-hide" Required="true" Mask="false">zoom=11&amp;hideSidebar&amp;hideButtons&amp;mapDim=0.3</Config>
+    <Config Name="Page Zoom" Target="PAGE_ZOOM" Default="150" Description="Zoom level for the page" Type="Variable" Display="always-hide" Required="true" Mask="false">150</Config>
+    <Config Name="Window Size" Target="WINDOW_SIZE" Default="1200x1200" Description="Size of the window to take a screenshot of" Type="Variable" Display="advanced-hide" Required="true" Mask="false">1200x1200</Config>
+    <Config Name="Max Time" Target="MAXTIME" Default="30" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">30</Config>
+    <Config Name="Disable SHM" Target="DISABLE_SHM" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Disable Visibility" Target="DISABLE_VIZ" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Load Sleep Time" Target="LOAD_SLEEP_TIME" Default="12" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">12</Config>
+</Container>
