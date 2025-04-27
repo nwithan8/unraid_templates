@@ -8,7 +8,7 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <WebUI>http://[IP]:[PORT:1166]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/TheImaginear/dynamiX/issues</Support>
     <Project>https://github.com/TheImaginear/dynamiX</Project>
@@ -20,18 +20,36 @@
     <ExtraSearchTerms>plex automation collection pin unpin Kometa playlist Netflix</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dynamix.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix_demo_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix_demo_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix_demo_4.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix_demo_5.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix_demo_6.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix_demo_7.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix_demo_8.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dynamix_demo_9.png</Screenshot>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-27
+
+        Add support for Dynamix v2.0
+
         ### 2024-12-20
 
         Initial release
     </Changes>
     <Requires>
-        Requires a `config.json` file to be mounted at `/app/config.json` before starting the container. See configuration details: https://github.com/TheImaginear/dynamiX?tab=readme-ov-file#-configuration
+        Requires a `config.json` file to be mounted at `/app/config.json` before starting the container. See configuration details: https://github.com/TheImaginear/dynamiX?tab=readme-ov-file#-configuration &#xD;
+        [br]
+        Requires a number of JSON files to be created on the host system BEFORE the container is started. These files can be created with the `touch` command.
     </Requires>
-    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Web UI Port" Target="1166" Default="1166" Mode="tcp" Description="Container Port: 1166" Type="Port" Display="always-hide" Required="true" Mask="false">1166</Config>
     <Config Name="Config File" Target="/app/config.json" Default="/mnt/user/appdata/dynamix/config.json" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/config.json</Config>
+    <Config Name="User Exemptions File" Target="/app/used_collections.json" Default="/mnt/user/appdata/dynamix/used_collections.json" Description="Path to the user exemptions file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/used_collections.json</Config>
+    <Config Name="Used Collections File" Target="/app/used_collections.json" Default="/mnt/user/appdata/dynamix/used_collections.json" Description="Path to the used collections file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/used_collections.json</Config>
+    <Config Name="Run State File" Target="/app/run_state.json" Default="/mnt/user/appdata/dynamix/run_state.json" Description="Path to the run state file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/run_state.json</Config>
     <Config Name="Log Folder" Target="/app/logs" Default="/mnt/user/appdata/dynamix/logs" Description="Path to the log folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/logs</Config>
 </Container>
