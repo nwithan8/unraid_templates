@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>RTLSDR-Airband</Name>
+    <Repository>ghcr.io/sdr-enthusiasts/docker-rtlsdrairband:latest</Repository>
+    <Registry>ghcr.io/sdr-enthusiasts/docker-rtlsdrairband</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest_nohealthcheck</Tag>
+        <TagDescription>Latest stable release without healthcheck</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/sdr-enthusiasts/docker-rtlsdrairband/issues</Support>
+    <Project>https://github.com/sdr-enthusiasts/docker-rtlsdrairband</Project>
+    <Overview>
+        This container runs an Icecast audio server that RTLSDR-Airband can connect to so that you can use an RTLSDR dongle to listen to Air Traffic Control VHF radio communications, as well some some additional kinds of NFM modulated transmissions (see NFM) via a web browser or audio playback program.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>rtl-sdr rtl sdr airband adsb icecast radio antenna</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/airband-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/airband.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-26
+
+        Initial release
+    </Changes>
+    <ExtraParams>--device=/dev/bus/usb</ExtraParams>
+    <Config Name="API Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="RTLSDR - Dongle" Target="/dev/bus/usb" Default="/dev/bus/usb" Description="USB device to use for the RTLSDR" Type="Device" Mode="ro" Display="always-hide" Required="true" Mask="false">/dev/bus/usb</Config>
+    <Config Name="RTLSDR - Gain" Target="RTLSDRAIRBAND_GAIN" Default="25" Description="Gain to use for the RTLSDR" Type="Variable" Display="always-hide" Required="true" Mask="false">25</Config>
+    <Config Name="RTLSDR - Correction" Target="RTLSDRAIRBAND_CORRECTION" Default="0" Description="Use this if your dongle has a non-zero frequency tuning error, which requires correcting. Put correction value in ppm here. If the dongle tunes too high, this value shall be positive, negative otherwise." Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="RTLSDR - Serial" Target="RTLSDRAIRBAND_SERIAL" Default="" Description="Used to have rtlsdr-airband use the correct dongle if more than one present. Enter the serial of the dongle to be used. Leave empty otherwise." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="RTLSDR - Mode" Target="RTLSDRAIRBAND_MODE" Default="multichannel|scan" Description="If you are tuning a single frequency, set multichannel. If you are tuning more than one, set as scan" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="RTLSDR - Frequency" Target="RTLSDRAIRBAND_FREQS" Default="" Description="If you are setting multichannel for your mode, enter a single frequency. If you are setting mode as scan, enter a comma separated list of frequencies you want to scan." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="RTLSDR - Stream Name" Target="RTLSDRAIRBAND_NAME" Default="Tower" Description="Name of the stream" Type="Variable" Display="always-hide" Required="true" Mask="false">Tower</Config>
+    <Config Name="RTLSDR - Stream Genre" Target="RTLSDRAIRBAND_GENRE" Default="ATC" Description="Genre of the stream" Type="Variable" Display="always-hide" Required="true" Mask="false">ATC</Config>
+    <Config Name="RTLSDR - Stream Description" Target="RTLSDRAIRBAND_DESCRIPTION" Default="Air traffic feed" Description="Description of the stream" Type="Variable" Display="always-hide" Required="true" Mask="false">Air traffic feed</Config>
+    <Config Name="RTLSDR - Show Metadata" Target="RTLSDRAIRBAND_SHOWMETADATA" Default="" Description="If not set, the Icecast server will receive updated metadata (either frequency or a specific label) of the frequency that is being received, and will show in playback clients. It might be advantageous to disable this because updated metadata will clutter up the Icecast server logs. To disable, set to any value. Not applicable to multichannel mode." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="RTLSDR - Labels" Target="RTLSDRAIRBAND_LABELS" Default="" Description="If Show Metadata is set to true, you can set this variable to a comma separated list of labels associated with the frequencies you are listening to. If set, the metadata on the icecast server will be updated to show the label associated with the frequency that is currently being received. If not set, the Icecast metadata will be updated with the frequency." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="RTLSDR - Mount Point" Target="RTLSDRAIRBAND_MOUNTPOINT" Default="GND.mp3" Description="The custom part of the stream URL. Streams will be accessible at serverip:PORT/MOUNTPOINT" Type="Variable" Display="always-hide" Required="true" Mask="false">GND.mp3</Config>
+    <Config Name="Prometheus - Enable" Target="ENABLE_PROMETHEUS" Default="" Description="Set to any value to enable rtlsdr-airband generation of Prometheus formatted channel usage statistics" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Prometheus - Port" Target="PROMETHEUS_PORT" Default="8001" Description="Port for the Prometheus server to listen on" Type="Variable" Display="always-hide" Required="false" Mask="false">8001</Config>
+    <Config Name="Icecast - Disable" Target="ICECAST_DISABLE" Default="" Description="Set to any value to disable Icecast functionality" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Icecast - Hostname" Target="ICECAST_HOSTNAME" Default="localhost" Description="Icecast hostname" Type="Variable" Display="always-hide" Required="false" Mask="false">localhost</Config>
+    <Config Name="Icecast - Admin Username" Target="ICECAST_ADMIN_USERNAME" Default="admin" Description="Icecast admin username" Type="Variable" Display="always-hide" Required="false" Mask="false">admin</Config>
+    <Config Name="Icecast - Admin Password" Target="ICECAST_ADMIN_PASSWORD" Default="rtlsdrairband" Description="Icecast admin password" Type="Variable" Display="always-hide" Required="false" Mask="true">rtlsdrairband</Config>
+    <Config Name="Icecast - Admin Email" Target="ICECAST_ADMIN_EMAIL" Default="" Description="Icecast admin email" Type="Variable" Display="always-hide" Required="false" Mask="false">test@test.com</Config>
+    <Config Name="Icecast - Location" Target="ICECAST_LOCATION" Default="earth" Description="Icecast location" Type="Variable" Display="always-hide" Required="false" Mask="false">earth</Config>
+    <Config Name="RTLSDR - Build Platform" Target="RTLSDRAIRBAND_BUILD_PLATFORM" Default="" Description="On the container's first run, the rtl_airband binary will be built with platform-specific optimisation if this is set. It can be set to rpiv2, generic or native" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="RTLSDR - Radio Type" Target="RTLSDRAIRBAND_RADIO_TYPE" Default="rtlsdr" Description="Type of dongle that is providing the radio tuning" Type="Variable" Display="advanced-hide" Required="true" Mask="false">rtlsdr</Config>
+    <Config Name="RTLSDR - Log Scanned Activity" Target="LOG_SCANNED_ACTIVITY" Default="" Description="rtlsdr-airband can output what frequencies it has received traffic on. Set this to any non-blank value to enable" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="RTLSDR - FFT Size" Target="FFT_SIZE" Default="2048" Description="This value controls the general audio quality. A larger value means increased CPU usage. Accepted values are powers of two in the range of 256-8192, inclusive." Type="Variable" Display="advanced-hide" Required="true" Mask="false">2048</Config>
+    <Config Name="RTLSDR - Sample Rate" Target="SAMPLE_RATE" Default="2.56" Description="Set the sample rate of the audio stream." Type="Variable" Display="advanced-hide" Required="true" Mask="false">2.56</Config>
+    <Config Name="RTLSDR - NFM Support" Target="NFM_MAKE" Default="" Description="Set to any value to build the rtl_airband binary with NFM support." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Icecast - Max Clients" Target="ICECAST_MAX_CLIENTS" Default="100" Description="Max Icecast listeners" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+    <Config Name="Icecast - Max Sources" Target="ICECAST_MAX_SOURCES" Default="4" Description="Maximum number of clients that can provide a stream to the Icecast server" Type="Variable" Display="advanced-hide" Required="false" Mask="false">4</Config>
+</Container>
