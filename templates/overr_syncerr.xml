@@ -23,6 +23,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-27
+
+        Remove JSON data messing with template
+
         ### 2025-04-25
 
         Initial release
@@ -66,9 +70,9 @@
     <Config Name="Use User-Specified Audio Preferences" Target="ENABLE_AUDIO_PREF" Default="false|true" Description="Enable if you want to use user specific audio preference" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Monitor Partially-Available Requests" Target="MONITOR_REQUESTS" Default="false|true" Description="Enable if you want to add label or set audio to media that's partially available" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Request Monitoring Interval" Target="CHECK_REQUEST_INTERVAL" Default="10" Description="Interval (in seconds) to check for partially-available requests" Type="Variable" Display="always-hide" Required="true" Mask="false">10</Config>
-    <Config Name="Language Map" Target="LANGUAGE_MAP" Default='{\"da\":\"Danish\",\"en\":\"English\",\"bg\":\"Bulgarian\",\"dansk\":\"Danish\",\"english\":\"English\",\"danske\":\"Danish\",\"eng\":\"English\"}' Description="Map of language keywords" Type="Variable" Display="always-hide" Required="true" Mask="false">{\"da\":\"Danish\",\"en\":\"English\",\"bg\":\"Bulgarian\",\"dansk\":\"Danish\",\"english\":\"English\",\"danske\":\"Danish\",\"eng\":\"English\"}</Config>
-    <Config Name="Sync Words" Target="SYNC_KEYWORDS" Default='[\"sync\", \"out of sync\", \"messed up\", \"synchronization\"]' Description="List of keywords to identify sync issues" Type="Variable" Display="always-hide" Required="true" Mask="false">[\"sync\", \"out of sync\", \"messed up\", \"synchronization\"]</Config>
-    <Config Name="Add Label Words" Target="ADD_LABEL_KEYWORDS" Default='[\"add to library\", \"jeg vil se\", \"tilføj til bibliotek\", \"tilføj\"]' Description="List of keywords to identify requests for adding labels" Type="Variable" Display="always-hide" Required="true" Mask="false">[\"add to library\", \"jeg vil se\", \"tilføj til bibliotek\", \"tilføj\"]</Config>
+    <Config Name="Language Map" Target="LANGUAGE_MAP" Default='{}' Description="Map of language keywords. See example: https://github.com/gssariev/overr-syncerr/blob/1e68f8bd55bfd7aaeb65192f5ba539dbf2802a6f/docker-compose.yml#L68" Type="Variable" Display="always-hide" Required="true" Mask="false">{}</Config>
+    <Config Name="Sync Words" Target="SYNC_KEYWORDS" Default='[]' Description="List of keywords to identify sync issues. See example: https://github.com/gssariev/overr-syncerr/blob/1e68f8bd55bfd7aaeb65192f5ba539dbf2802a6f/docker-compose.yml#L69" Type="Variable" Display="always-hide" Required="true" Mask="false">[]</Config>
+    <Config Name="Add Label Words" Target="ADD_LABEL_KEYWORDS" Default='[]' Description="List of keywords to identify requests for adding labels. See example: https://github.com/gssariev/overr-syncerr/blob/1e68f8bd55bfd7aaeb65192f5ba539dbf2802a6f/docker-compose.yml#L70" Type="Variable" Display="always-hide" Required="true" Mask="false">[]</Config>
     <Config Name="Config Path" Target="/mnt/usr" Default="/mnt/user/appdata/overr-syncerr/config" Description="Path to the config directory." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/overr-syncerr/config</Config>
     <Config Name="Kometa - Internal Config Path" Target="KOMETA_CONFIG_PATH" Default="/kometa/config" Description="Internal path to the Kometa config directory." Type="Path" Display="advanced-hide" Required="true" Mask="false">/kometa/config</Config>
     <Config Name="AI - Max Request Size" Target="MAX_REQUEST_BYTES" Default="2000" Description="Maximum request size in bytes." Type="Variable" Display="always-hide" Required="true" Mask="false">2000</Config>
