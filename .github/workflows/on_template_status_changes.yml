@@ -18,12 +18,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 10  # OR "2" -> To retrieve the preceding commit.
+
       - name: Get new files
         id: determine-new-files
         uses: tj-actions/changed-files@823fcebdb31bb35fdf2229d9f769b400309430d0 # v46
         with:
           since_last_remote_commit: 'true' # OR "false" -> To retrieve the preceding commit.
           files: 'templates/*.xml'
+
       - name: Prepare new files list
         id: prepare-new-files-list
         run: |
@@ -52,30 +54,40 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+
+      - name: Establish variables
+        id: vars
+        run: |
+          echo "blob_url=https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
+
       - name: Parse template name from XML file
         id: parse-template-name
         uses: mavrosxristoforos/get-xml-info@1.0
         with:
           xml-file: "${{ matrix.new_templates }}"
           xpath: '//Container/Name'
+
       - name: Parse template overview from XML file
         id: parse-template-overview
         uses: mavrosxristoforos/get-xml-info@1.0
         with:
           xml-file: "${{ matrix.new_templates }}"
           xpath: '//Container/Overview'
+
       - name: Parse template project link from XML file
         id: parse-template-project-link
         uses: mavrosxristoforos/get-xml-info@1.0
         with:
           xml-file: "${{ matrix.new_templates }}"
           xpath: '//Container/Project'
+
       - name: Parse template support link from XML file
         id: parse-template-support-link
         uses: mavrosxristoforos/get-xml-info@1.0
         with:
           xml-file: "${{ matrix.new_templates }}"
           xpath: '//Container/Support'
+
       - name: Create GitHub Discussion
         id: create-discussion
         uses: abirismyname/create-discussion@main
@@ -85,6 +97,6 @@ jobs:
             **Overview:** ${{ steps.parse-template-overview.outputs.info }}
             **Project Link:** ${{ steps.parse-template-project-link.outputs.info }}
             **Support Link:** ${{ steps.parse-template-support-link.outputs.info }}
-            **File Path:** ${{ matrix.new_templates }}
+            **File Path:** ${{ steps.vars.outputs.blob_url}}/${{ matrix.new_templates }}
           category-name: Templates # optional, defaults to "General"
           github-token: ${{ secrets.GITHUB_TOKEN }}
