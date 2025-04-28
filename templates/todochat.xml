@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>TodoChat</Name>
-    <Repository>itsluminous/todochat:latest</Repository>
-    <Registry>https://hub.docker.com/r/itsluminous/todochat</Registry>
+    <Repository>ghcr.io/itsluminous/todochat:latest</Repository>
+    <Registry>ghcr.io/itsluminous/todochat</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -25,6 +25,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-27
+
+        Fix image registry
+
         ### 2025-02-07
 
         Initial release

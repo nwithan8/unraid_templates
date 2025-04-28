@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Terrateam</Name>
-    <Repository>ghcr.io/terrateamio/terrateam-oss:latest</Repository>
-    <Registry>ghcr.io/terrateamio/terrateam-oss</Registry>
+    <Repository>ghcr.io/terrateamio/terrat-oss:latest</Repository>
+    <Registry>ghcr.io/terrateamio/terrat-oss</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -23,6 +23,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-04-27
+
+        Fix image repository
+
         ### 2025-01-18
 
         Initial release
