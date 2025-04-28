@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Planefence</Name>
+    <Repository>ghcr.io/sdr-enthusiasts/docker-planefence:latest</Repository>
+    <Registry>ghcr.io/sdr-enthusiasts/docker-planefence</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/kx1t/docker-planefence/issues</Support>
+    <Project>https://github.com/kx1t/docker-planefence</Project>
+    <Overview>
+        Planefence is an add-on to ultrafeeder, readsb, dump1090, or dump1090-fa. Planefence will create a log of aircraft heard by your Feeder Station that are within a "fence", that is, less than a certain distance and lower than a certain altitude from your station. This log is displayed on a website and is also made available in daily CSV files. Furthermore, Planefence can send a notification for every plane in the fence to Mastodon, Discord, and/or Twitter, and with some add-on software/hardware, you will be able to collect noise figures to see how loud the aircraft are that fly above your Feeder Station.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ads-b adsb planefence feeder station aircraft aviation ultrafeeder readsb dump1090 dump1090-fa</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/planefence-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/planefence.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-27
+
+        Initial release
+    </Changes>
+    <Requires>
+        This container requires some post-install steps after initial start. See documentation: https://github.com/kx1t/docker-planefence#planefence-settings-configuration
+    </Requires>
+    <ExtraParams>--tmpfs /run:rw,nosuid,nodev,exec,relatime,size=512M --tmpfs /tmp:rw,nosuid,nodev,noexec,relatime,size=128M</ExtraParams>
+    <Config Name="Web UI Port" Target="80" Default="8088" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8088</Config>
+    <Config Name="Persistent Data Path" Target="/usr/share/planefence/persist" Default="/mnt/user/appdata/planefence/data" Description="Path to persistent data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/planefence/data</Config>
+    <Config Name="HTML Path" Target="/usr/share/planefence/html" Default="/mnt/user/appdata/planefence/html" Description="Path to HTML files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/planefence/html</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|DEBUG|ERROR" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
