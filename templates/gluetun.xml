@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Gluetun</Name>
+    <Repository>qmcgaw/gluetun:latest</Repository>
+    <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/qdm12/gluetun/issues</Support>
+    <Project>https://github.com/qdm12/gluetun</Project>
+    <Overview>
+        VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:VPN Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>openvpn wireguard dns tls proxy vpn client</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/qdm12/gluetun/master/title.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/gluetun.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-27
+
+        Initial release
+    </Changes>
+    <Requires>
+        Add variables based on the specific VPN provider: https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup
+    </Requires>
+    <ExtraParams>--cap-add NET_ADMIN</ExtraParams>
+    <Config Name="HTTP Proxy" Target="8888" Default="8888" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always-hide" Required="true" Mask="false">8888</Config>
+    <Config Name="Shadowsocks TCP" Target="8388" Default="8388" Mode="tcp" Description="Container Port: 8388" Type="Port" Display="always-hide" Required="true" Mask="false">8388</Config>
+    <Config Name="Shadowsocks UDP" Target="8388" Default="8388" Mode="udp" Description="Container Port: 8388" Type="Port" Display="always-hide" Required="true" Mask="false">8388</Config>
+    <Config Name="Data Path" Target="/gluetun" Default="/mnt/user/appdata/gluetun/data" Description="Path to the gluetun data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/gluetun/data</Config>
+</Container>

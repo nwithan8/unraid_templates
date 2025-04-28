@@ -173,5 +173,16 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Planefence",
+        "git_url": "https://github.com/kx1t/docker-planefence.git",
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "18db870a1e18cf40746522bf34fa8a9503286515",
+                "commit_message": null
+            }
+        ]
     }
 ]
