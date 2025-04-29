@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Kometa Quickstart</Name>
+    <Repository>kometateam/quickstart:latest</Repository>
+    <Registry>https://hub.docker.com/r/kometateam/quickstart</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:7171]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Kometa-Team/Quickstart/issues</Support>
+    <Project>https://github.com/Kometa-Team/Quickstart</Project>
+    <Overview>
+        A Web UI tool will guide you through creating a configuration file to use with Kometa.
+    </Overview>
+    <Beta>True</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>kometa plex meta manager collection metadata edit config setup tool</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kometa-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kometa_quickstart.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-04-28
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="7171" Default="7171" Mode="tcp" Description="Container Port: 7171" Type="Port" Display="always-hide" Required="true" Mask="false">7171</Config>
+    <Config Name="Kometa Config Path" Target="/config" Default="" Description="Path to the Kometa configuration directory" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Port" Target="QS_PORT" Default="7171" Description="Internal port for the web UI. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">7171</Config>
+    <Config Name="Enable Debug" Target="QS_DEBUG" Default="0|1" Description="Enable debug mode for the web UI" Type="Variable" Display="advanced-hide" Required="true" Mask="false">0</Config>
+</Container>
