@@ -2,6 +2,9 @@ name: New Template Request
 description: A request for a new Unraid template.
 title: "[NEW TEMPLATE] - <APPLICATION_NAME_HERE>"
 labels: [ "new template", "research" ]
+projects: [ "nwithan8/4" ]
+assignees:
+  - nwithan8
 body:
   - type: markdown
     attributes:
