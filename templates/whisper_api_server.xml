@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Whisper API Server</Name>
+    <Repository>didmar/whisper-api-server</Repository>
+    <Registry>https://hub.docker.com/r/didmar/whisper-api-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/didmar/whisper-api-server/issues</Support>
+    <Project>https://github.com/didmar/whisper-api-server</Project>
+    <Overview>
+        A drop-in replacement for the OpenAI's Whisper API using the same API but running locally.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>whisper text speech openai api server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/whisper-api-server-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/whisper_api_server.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-02
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Cache Directory" Target="/root/.cache" Default="/mnt/user/appdata/whisper_api_server/cache" Description="Path to the cache directory. This is where models will be stored, which can be quite large." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/whisper_api_server/cache</Config>
+</Container>

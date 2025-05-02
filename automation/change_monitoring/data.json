@@ -184,5 +184,16 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Whisper API Server",
+        "git_url": "https://github.com/didmar/whisper-api-server.git",
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "63a7d2677884fecf69b1fb731c00a73487411a73",
+                "commit_message": null
+            }
+        ]
     }
 ]
