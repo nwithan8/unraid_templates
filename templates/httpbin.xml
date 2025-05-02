@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>httpbin</Name>
+    <Repository>kennethreitz/httpbin:latest</Repository>
+    <Registry>https://hub.docker.com/r/kennethreitz/httpbin</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/postmanlabs/httpbin</Support>
+    <Project>https://httpbin.org/</Project>
+    <Overview>
+        HTTP request and response service
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>http bin postman api request response python test dummy data</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/httpbin-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/httpbin.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-02
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+</Container>
