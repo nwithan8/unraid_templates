@@ -1,4 +1,8 @@
-/templates/scratch.xml
+scratch.yml
+**/scratch.xml
 /.idea/
 **/.idea/
-images/wget-log
+wget-log
+**/wget-log
+.DS_Store
+**/.DS_Store

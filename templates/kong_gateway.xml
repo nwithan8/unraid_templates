@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Kong Gateway</Name>
+    <Repository>kong/kong-gateway:latest</Repository>
+    <Registry>https://hub.docker.com/r/kong/kong-gateway</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:28002]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.konghq.com/gateway/3.10.x/install/docker/</Support>
+    <Project>https://konghq.com/products/kong-gateway</Project>
+    <Overview>
+        Lightweight, fast, and flexible cloud native API gateway. &#xD;
+        [br]
+        This is a DB-less version of Kong Gateway. Please refer to "declarative" variants when configuring.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>proxy authentication request http security kong gateway api</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kong-gateway-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kong_gateway.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-02
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a "config.yml" file in the Config Path. See documentation: https://docs.konghq.com/gateway/3.10.x/production/deployment-topologies/db-less-and-declarative-config/#declarative-configuration-format
+    </Requires>
+    <Config Name="Proxy Port - HTTP" Target="28000" Default="28000" Mode="tcp" Description="Container Port: 28000" Type="Port" Display="always-hide" Required="true" Mask="false">28000</Config>
+    <Config Name="Proxy Port - HTTPS" Target="28443" Default="28443" Mode="tcp" Description="Container Port: 28443" Type="Port" Display="always-hide" Required="true" Mask="false">28443</Config>
+    <Config Name="Admin API Port - HTTP" Target="28001" Default="28001" Mode="tcp" Description="Container Port: 28001" Type="Port" Display="always-hide" Required="true" Mask="false">28001</Config>
+    <Config Name="Admin API Port - HTTPS" Target="28444" Default="28444" Mode="tcp" Description="Container Port: 28444" Type="Port" Display="always-hide" Required="true" Mask="false">28444</Config>
+    <Config Name="Admin GUI Port - HTTP" Target="28002" Default="28002" Mode="tcp" Description="Container Port: 28002" Type="Port" Display="always-hide" Required="true" Mask="false">28002</Config>
+    <Config Name="Admin GUI Port - HTTPS" Target="28445" Default="28445" Mode="tcp" Description="Container Port: 28445" Type="Port" Display="always-hide" Required="true" Mask="false">28445</Config>
+    <Config Name="Additional Port 1" Target="28003" Default="28003" Mode="tcp" Description="Container Port: 28003" Type="Port" Display="always-hide" Required="true" Mask="false">28003</Config>
+    <Config Name="Additional Port 2" Target="28004" Default="28004" Mode="tcp" Description="Container Port: 28004" Type="Port" Display="always-hide" Required="true" Mask="false">28004</Config>
+    <Config Name="Admin UI URL" Target="KONG_ADMIN_GUI_URL" Default="http://IP_ADDRESS:28002" Description="URL for the Admin UI" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:28002</Config>
+    <Config Name="Config Path" Target="/kong/declarative" Default="/mnt/user/appdata/kong" Mode="rw" Description="Parent folder for the Kong configuration file" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/kong</Config>
+    <Config Name="Internal Config Path" Target="KONG_DECLARATIVE_CONFIG" Default="/kong/declarative/config.yml" Description="Internal path to the Kong configuration file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/kong/declarative/config.yml</Config>
+    <Config Name="Use Database" Target="KONG_DATABASE" Default="off" Description="Disable using a database. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">off</Config>
+    <Config Name="Internal Proxy Listening Interface" Target="KONG_PROXY_LISTEN" Default="0.0.0.0:28000" Description="Internal interface for the Proxy. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0:28000</Config>
+    <Config Name="Internal Admin API Listening Interface" Target="KONG_ADMIN_LISTEN" Default="0.0.0.0:28001" Description="Internal interface for the Admin API. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0:28001</Config>
+    <Config Name="Internal Admin UI Listening Interface" Target="KONG_ADMIN_GUI_LISTEN" Default="0.0.0.0:28002" Description="Internal interface for the Admin UI. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0:28002</Config>
+    <Config Name="Proxy Logs - Access" Target="KONG_PROXY_ACCESS_LOG" Default="/dev/stdout" Description="Where to send access logs. Default: Print to stdout" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dev/stdout</Config>
+    <Config Name="Proxy Logs - Error" Target="KONG_PROXY_ERROR_LOG" Default="/dev/stderr" Description="Where to send error logs. Default: Print to stderr" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dev/stderr</Config>
+    <Config Name="Admin Logs - Access" Target="KONG_ADMIN_ACCESS_LOG" Default="/dev/stdout" Description="Where to send access logs. Default: Print to stdout" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dev/stdout</Config>
+    <Config Name="Admin Logs - Error" Target="KONG_ADMIN_ERROR_LOG" Default="/dev/stderr" Description="Where to send error logs. Default: Print to stderr" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dev/stderr</Config>
+</Container>
