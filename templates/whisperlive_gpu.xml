@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>WhisperLive - GPU</Name>
+    <Repository>ghcr.io/collabora/whisperlive-gpu:latest</Repository>
+    <Registry>ghcr.io/collabora/whisperlive-gpu</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9090]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/collabora/WhisperLive/issues</Support>
+    <Project>https://github.com/collabora/WhisperLive</Project>
+    <Overview>
+        A real-time transcription application that uses the OpenAI Whisper model to convert speech input into text output. It can be used to transcribe both live audio input from microphone and pre-recorded audio files. &#xD;
+        [br]
+        This version runs on an Nvidia GPU.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>openai whisper model AI voice transcribe subtitles live audio voice sound recognition gpu cpu</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/whisperlive-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/whisperlive_gpu.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-02
+
+        Initial release
+    </Changes>
+    <Requires>
+        The image for this container is quite large.
+    </Requires>
+    <ExtraParams>--runtime=nvidia --gpus all</ExtraParams>
+    <Config Name="API Port" Target="9090" Default="9090" Mode="tcp" Description="Container Port: 9090" Type="Port" Display="always-hide" Required="true" Mask="false">9090</Config>
+</Container>
