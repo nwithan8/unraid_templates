@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Whisper</Name>
+    <Repository>viyh/whisper:0.1.0-alpha</Repository>
+    <Registry>https://hub.docker.com/r/viyh/whisper</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/viyh/whisper/issues</Support>
+    <Project>https://github.com/viyh/whisper</Project>
+    <Overview>
+        Whisper provides a simple way to share secret information with someone else, such as passwords, credentials, keys, or other sensitive data.
+    </Overview>
+    <Beta>True</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>privacy security secret keys credentials share token manager tool</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/whisper-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/whisper.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/viyh/whisper/master/docs/whisper_arch.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yaml` file to be available at the Config File path BEFORE starting the container. See documentation: https://github.com/viyh/whisper#configuration-file
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Config File" Target="/usr/src/app/config.yaml" Default="/mnt/user/appdata/whisper/config.yaml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/whisper/config.yaml</Config>
+    <Config Name="Storage" Target="/tmp/whisper" Default="/mnt/user/appdata/whisper/storage" Description="Path to the storage directory. Remove to use in-memory storage (lost when container restarts)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/whisper/storage</Config>
+</Container>
