@@ -15,6 +15,10 @@
         <Tag>server-rocm</Tag>
         <TagDescription>Latest server release with AMD (ROCm) support</TagDescription>
     </Branch>
+    <Branch>
+        <Tag>server-musa</Tag>
+        <TagDescription>Latest server release with MUSA support</TagDescription>
+    </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8000]/</WebUI>
     <PostArgs>-m /models/model.gguf --port 8000 --host 0.0.0.0 --n-gpu-layers 1</PostArgs>
@@ -38,6 +42,10 @@
         If you are using an Nvidia GPU, add "--gpus all" to the Extra Parameters field under Advanced.
     </Requires>
     <Changes>
+        ### 2025-05-03
+
+        Add MUSA branch
+
         ### 2024-05-07
 
         Initial release
