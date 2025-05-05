@@ -58,7 +58,7 @@
         "branch_override": null,
         "files_to_check": [
             {
-                "file_path": "docker-compose.yml",
+                "file_path": "docker/docker-compose.yml",
                 "commit_hash": "3300a3ec928dd86adcc191dbaa30281dc3a94cf2",
                 "commit_message": "Fixed some pathing bugs, moved docker stuff into its own folder\n"
             }

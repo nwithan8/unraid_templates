@@ -42,9 +42,9 @@
             "id": "#/definitions/appName",
             "type": "string"
         },
-        "gitBranch": {
-            "id": "#/definitions/gitBranch",
-            "type": "string"
+        "branchOverride": {
+            "id": "#/definitions/branchOverride",
+            "$ref": "#/definitions/nullableString"
         },
         "gitUrl": {
             "id": "#/definitions/gitUrl",
@@ -87,7 +87,7 @@
                 },
                 "branch_override": {
                     "description": "The branch to use when checking for changes. If not set, the default branch (main/master) will be used.",
-                    "$ref": "#/definitions/gitBranch"
+                    "$ref": "#/definitions/branchOverride"
                 },
                 "files_to_check": {
                     "description": "The files to check for changes",
