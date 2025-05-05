@@ -133,6 +133,7 @@
     {
         "app_name": "copyparty",
         "git_url": "https://github.com/9001/copyparty.git",
+        "branch_override": "hovudstraum",
         "files_to_check": [
             {
                 "file_path": "docs/examples/docker/basic-docker-compose/docker-compose.yml",
