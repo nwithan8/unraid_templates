@@ -2,6 +2,7 @@
     {
         "app_name": "nwithan8 Unraid Templates",
         "git_url": "https://github.com/nwithan8/unraid_templates.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "README.md",
@@ -13,6 +14,7 @@
     {
         "app_name": "Dawarich",
         "git_url": "https://github.com/Freika/dawarich.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
@@ -29,6 +31,7 @@
     {
         "app_name": "Loggifly",
         "git_url": "https://github.com/clemcer/loggifly.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yaml",
@@ -40,6 +43,7 @@
     {
         "app_name": "Jellystat",
         "git_url": "https://github.com/CyferShepard/Jellystat.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
@@ -51,17 +55,19 @@
     {
         "app_name": "Operational",
         "git_url": "https://github.com/operational-co/operational.co.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "bd00a8f9ee3b1c76d4613e19880844cedfb2f902",
-                "commit_message": null
+                "commit_hash": "3300a3ec928dd86adcc191dbaa30281dc3a94cf2",
+                "commit_message": "Fixed some pathing bugs, moved docker stuff into its own folder\n"
             }
         ]
     },
     {
         "app_name": "Workout Tracker",
         "git_url": "https://github.com/jovandeginste/workout-tracker.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.sqlite.yaml",
@@ -73,6 +79,7 @@
     {
         "app_name": "Huntarr",
         "git_url": "https://github.com/plexguide/Huntarr.io.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
@@ -84,6 +91,7 @@
     {
         "app_name": "Kokoro FastAPI",
         "git_url": "https://github.com/remsky/Kokoro-FastAPI.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker/cpu/docker-compose.yml",
@@ -100,6 +108,7 @@
     {
         "app_name": "RSS-proxy",
         "git_url": "https://github.com/damoeb/rss-proxy.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
@@ -111,6 +120,7 @@
     {
         "app_name": "conduwuit",
         "git_url": "https://github.com/girlbossceo/conduwuit.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docs/deploying/docker-compose.yml",
@@ -122,6 +132,7 @@
     {
         "app_name": "UniFi Voucher Site",
         "git_url": "https://github.com/glenndehaan/unifi-voucher-site.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
@@ -145,6 +156,7 @@
     {
         "app_name": "Lumen",
         "git_url": "https://github.com/ChecksumDev/lumen.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
@@ -156,6 +168,7 @@
     {
         "app_name": "Overr-Syncerr",
         "git_url": "https://github.com/gssariev/overr-syncerr.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
@@ -167,6 +180,7 @@
     {
         "app_name": "Chibisafe",
         "git_url": "https://github.com/chibisafe/chibisafe.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.example.yml",
@@ -178,6 +192,7 @@
     {
         "app_name": "Planefence",
         "git_url": "https://github.com/kx1t/docker-planefence.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
@@ -189,6 +204,7 @@
     {
         "app_name": "Whisper API Server",
         "git_url": "https://github.com/didmar/whisper-api-server.git",
+        "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
