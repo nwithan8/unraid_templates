@@ -51,7 +51,7 @@ class AppDetailsFile(BaseModel):
 class AppDetails(BaseModel):
     app_name: str
     git_url: str
-    override_branch: Optional[str] = None
+    branch_override: Optional[str] = None
     files_to_check: Optional[list[AppDetailsFile]] = None
 
     def has_changed(self, repo: Repo) -> tuple[bool, list[dict], dict]:
@@ -73,7 +73,7 @@ class AppDetails(BaseModel):
         data = {
             "app_name": self.app_name,
             "git_url": self.git_url,
-            "override_branch": self.override_branch,
+            "branch_override": self.branch_override,
             "files_to_check": updated_file_details
         }
 
@@ -129,7 +129,7 @@ def check_app(app_details: AppDetails) -> tuple[bool, list[dict], dict]:
         repo.remotes.origin.fetch()
 
         # Check for changes in the main branch
-        branch = get_branch(repo=repo, branch_name=app_details.override_branch) if app_details.override_branch else get_main_branch(repo=repo)
+        branch = get_branch(repo=repo, branch_name=app_details.branch_override) if app_details.branch_override else get_main_branch(repo=repo)
         if not branch:
             raise ValueError(f"Could not find applicable branch for {app_details.app_name} ({app_details.git_url})")
 
