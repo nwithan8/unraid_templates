@@ -1,104 +1,112 @@
 {
-  "$id": "https://github.com/nwithan8/unraid_templates/automation/change_monitoring/data_schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$comment": "https://github.com/nwithan8/unraid_templates",
-  "title": "App Changes Data Schema",
-  "additionalProperties": true,
-  "definitions": {
-    "emptyString": {
-      "id": "#/definitions/emptyString",
-      "type": "string",
-      "pattern": "^$"
-    },
-    "nullableString": {
-      "id": "#/definitions/nullableString",
-      "oneOf": [
-        {
-          "type": "string",
-          "minLength": 1
+    "$id": "https://github.com/nwithan8/unraid_templates/automation/change_monitoring/data_schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$comment": "https://github.com/nwithan8/unraid_templates",
+    "title": "App Changes Data Schema",
+    "additionalProperties": true,
+    "definitions": {
+        "emptyString": {
+            "id": "#/definitions/emptyString",
+            "type": "string",
+            "pattern": "^$"
         },
-        {
-          "$ref": "#/definitions/emptyString"
+        "nullableString": {
+            "id": "#/definitions/nullableString",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "minLength": 1
+                },
+                {
+                    "$ref": "#/definitions/emptyString"
+                },
+                {
+                    "type": "null"
+                }
+            ]
         },
-        {
-          "type": "null"
+        "filePath": {
+            "id": "#/definitions/filePath",
+            "type": "string"
+        },
+        "commitMessage": {
+            "id": "#/definitions/commitMessage",
+            "$ref": "#/definitions/nullableString"
+        },
+        "commitHash": {
+            "id": "#/definitions/commitHash",
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+        },
+        "appName": {
+            "id": "#/definitions/appName",
+            "type": "string"
+        },
+        "gitBranch": {
+            "id": "#/definitions/gitBranch",
+            "type": "string"
+        },
+        "gitUrl": {
+            "id": "#/definitions/gitUrl",
+            "type": "string",
+            "pattern": "^https?://[a-zA-Z0-9._-]+/[a-zA-Z0-9._-]+/[a-zA-Z0-9._-]+\\.git$"
+        },
+        "appDetailsFile": {
+            "id": "#/definitions/appDetailsFile",
+            "type": "object",
+            "properties": {
+                "file_path": {
+                    "description": "The path to the app details file",
+                    "$ref": "#/definitions/filePath"
+                },
+                "commit_hash": {
+                    "description": "The commit hash to use when pushing changes",
+                    "$ref": "#/definitions/commitHash"
+                },
+                "commit_message": {
+                    "description": "The commit message to use when pushing changes",
+                    "$ref": "#/definitions/commitMessage"
+                }
+            },
+            "required": [
+                "file_path",
+                "commit_hash"
+            ]
+        },
+        "appDetails": {
+            "id": "#/definitions/appDetails",
+            "type": "object",
+            "properties": {
+                "app_name": {
+                    "description": "The name of the app",
+                    "$ref": "#/definitions/appName"
+                },
+                "git_url": {
+                    "description": "The URL of the app",
+                    "$ref": "#/definitions/gitUrl"
+                },
+                "branch_override": {
+                    "description": "The branch to use when checking for changes. If not set, the default branch (main/master) will be used.",
+                    "$ref": "#/definitions/gitBranch"
+                },
+                "files_to_check": {
+                    "description": "The files to check for changes",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/appDetailsFile"
+                    }
+                }
+            },
+            "required": [
+                "app_name",
+                "git_url",
+                "files_to_check"
+            ]
         }
-      ]
     },
-    "filePath": {
-      "id": "#/definitions/filePath",
-      "type": "string"
-    },
-    "commitMessage": {
-      "id": "#/definitions/commitMessage",
-      "$ref": "#/definitions/nullableString"
-    },
-    "commitHash": {
-      "id": "#/definitions/commitHash",
-      "type": "string",
-      "pattern": "^[0-9a-f]{40}$"
-    },
-    "appName": {
-      "id": "#/definitions/appName",
-      "type": "string"
-    },
-    "gitUrl": {
-      "id": "#/definitions/gitUrl",
-      "type": "string",
-      "pattern": "^https?://[a-zA-Z0-9._-]+/[a-zA-Z0-9._-]+/[a-zA-Z0-9._-]+\\.git$"
-    },
-    "appDetailsFile": {
-      "id": "#/definitions/appDetailsFile",
-      "type": "object",
-      "properties": {
-        "file_path": {
-          "description": "The path to the app details file",
-          "$ref": "#/definitions/filePath"
-        },
-        "commit_hash": {
-          "description": "The commit hash to use when pushing changes",
-          "$ref": "#/definitions/commitHash"
-        },
-        "commit_message": {
-          "description": "The commit message to use when pushing changes",
-          "$ref": "#/definitions/commitMessage"
-        }
-      },
-      "required": [
-        "file_path",
-        "commit_hash"
-      ]
-    },
-    "appDetails": {
-      "id": "#/definitions/appDetails",
-      "type": "object",
-      "properties": {
-        "app_name": {
-          "description": "The name of the app",
-          "$ref": "#/definitions/appName"
-        },
-        "git_url": {
-          "description": "The URL of the app",
-          "$ref": "#/definitions/gitUrl"
-        },
-        "files_to_check": {
-          "description": "The files to check for changes",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/appDetailsFile"
-          }
-        }
-      },
-      "required": [
-        "app_name",
-        "git_url",
-        "files_to_check"
-      ]
+    "description": "The apps to monitor for changes",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/appDetails"
     }
-  },
-  "description": "The apps to monitor for changes",
-  "type": "array",
-  "items": {
-    "$ref": "#/definitions/appDetails"
-  }
 }

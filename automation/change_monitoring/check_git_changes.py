@@ -51,6 +51,7 @@ class AppDetailsFile(BaseModel):
 class AppDetails(BaseModel):
     app_name: str
     git_url: str
+    override_branch: Optional[str] = None
     files_to_check: Optional[list[AppDetailsFile]] = None
 
     def has_changed(self, repo: Repo) -> tuple[bool, list[dict], dict]:
@@ -72,20 +73,39 @@ class AppDetails(BaseModel):
         data = {
             "app_name": self.app_name,
             "git_url": self.git_url,
+            "override_branch": self.override_branch,
             "files_to_check": updated_file_details
         }
 
         return changes_detected, changed_files, data
 
 
+def get_branch(repo: Repo, branch_name: str):
+    """
+    Get the branch object for the given branch name.
+    :param repo: The git repository to check against.
+    :param branch_name: The name of the branch to get.
+    :return: The branch object if it exists, None otherwise.
+    """
+    heads = repo.heads
+    for head in heads:
+        if head.name == branch_name:
+            return head
+    return None
+
+
 def get_main_branch(repo: Repo):
     """
     Get the main branch of the repository.
     """
-    heads = repo.heads
-    for head in heads:
-        if head.name == "main" or head.name == "master":
-            return head
+    branch = get_branch(repo=repo, branch_name="main")
+    if branch is not None:
+        return branch
+
+    branch = get_branch(repo=repo, branch_name="master")
+    if branch is not None:
+        return branch
+
     return None
 
 
@@ -109,8 +129,11 @@ def check_app(app_details: AppDetails) -> tuple[bool, list[dict], dict]:
         repo.remotes.origin.fetch()
 
         # Check for changes in the main branch
-        main_branch = get_main_branch(repo=repo)
-        main_branch.checkout()
+        branch = get_branch(repo=repo, branch_name=app_details.override_branch) if app_details.override_branch else get_main_branch(repo=repo)
+        if not branch:
+            raise ValueError(f"Could not find applicable branch for {app_details.app_name} ({app_details.git_url})")
+
+        branch.checkout()
         repo.git.pull()
 
         # Determine if the repository has any changes
