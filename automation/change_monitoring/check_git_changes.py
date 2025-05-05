@@ -275,6 +275,7 @@ if __name__ == "__main__":
     changed_apps = []
 
     for app in apps:
+        print(f"Checking {app.app_name} ({app.git_url}) for changes...")
         has_changed, changed_files, new_app_data = check_app(app_details=app)
 
         new_data.append(new_app_data)
