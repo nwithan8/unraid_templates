@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>restic</Name>
     <Repository>restic/restic:latest</Repository>
     <Registry>https://hub.docker.com/r/restic/restic</Registry>
@@ -15,7 +15,7 @@
         A backup program that is fast, efficient and secure.
     </Overview>
     <Beta>False</Beta>
-    <Category>Backup: Cloud: Other: Productivity: Tools: Status Stable</Category>
+    <Category>Backup: Cloud: Other: Productivity: Tools: Status:Stable</Category>
     <ExtraSearchTerms>backup rclone cloud storage BackBlaze S3 AWS drive dropbox Azure Swift SFTP</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/restic-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/restic.xml</TemplateURL>

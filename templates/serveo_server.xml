@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>serveo</Name>
     <Repository>taichunmin/serveo-server:latest</Repository>
     <Registry>https://hub.docker.com/r/taichunmin/serveo-server</Registry>
@@ -15,7 +15,7 @@
         Expose local servers to the internet via SSH tunneling.
     </Overview>
     <Beta>False</Beta>
-    <Category>Cloud: Network:Web Network:Proxy Productivity: Tools: Status Stable</Category>
+    <Category>Cloud: Network:Web Network:Proxy Productivity: Tools: Status:Stable</Category>
     <ExtraSearchTerms>local tunnel serveo ngrok route traffic SSH terminal expose port forwarding proxy</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/serveo-server-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/serveo_server.xml</TemplateURL>

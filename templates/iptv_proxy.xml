@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>IPTV Proxy</Name>
     <Repository>ghcr.io/pierre-emmanuelj/iptv-proxy/iptv-proxy</Repository>
     <Registry>https://github.com/pierre-emmanuelJ/iptv-proxy/pkgs/container/iptv-proxy%2Fiptv-proxy</Registry>

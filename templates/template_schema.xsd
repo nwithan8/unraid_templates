@@ -14,7 +14,7 @@
                 <xs:element name="Repository" minOccurs="1" maxOccurs="1">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
-                            <xs:pattern value="[\w\-.]+/[\w\-/]+:\w+"/> <!-- Example: author/repo:tag -->
+                            <xs:pattern value="[\w\-_.]+/[\w\-_/]+:[\w\-_.]+"/> <!-- Example: author/repo:tag -->
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
@@ -37,10 +37,11 @@
                 <xs:element name="WebUI" minOccurs="0" maxOccurs="1">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
-                            <xs:pattern value="https?://\[IP\]:\[PORT:\d{1,5}\]/"/> <!-- Technically allows ports larger than 65535 -->
+                            <xs:pattern value="https?://\[IP\]:\[PORT:\d{1,5}\].*"/> <!-- Technically allows ports larger than 65535 -->
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
+                <xs:element name="Shell" type="xs:string" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="Privileged" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
                 <xs:element name="Support" minOccurs="0" maxOccurs="1">
                     <xs:simpleType>
@@ -63,7 +64,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element name="Beta" minOccurs="1" maxOccurs="1">
+                <xs:element name="Beta" minOccurs="0" maxOccurs="1">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="True"/>
@@ -80,6 +81,13 @@
                 </xs:element>
                 <xs:element name="ExtraSearchTerms" type="xs:string" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="Icon" minOccurs="0" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="https?://.+\.(png|jpg|jpeg|gif|svg)"/> <!-- URL pattern for image files -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Banner" minOccurs="0" maxOccurs="1">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:pattern value="https?://.+\.(png|jpg|jpeg|gif|svg)"/> <!-- URL pattern for image files -->

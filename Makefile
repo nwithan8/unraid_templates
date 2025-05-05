@@ -2,3 +2,8 @@
 # @param name - The name of the template to check
 template_check_unix:
 	./scripts/.venv/bin/python3 ./scripts/template_already_exists.py $(name)
+
+# template_validate_unix: Validate the template using the XML XSD validator
+# @param name - The name of the template to validate
+template_validate_unix:
+	node ./xml-xsd-validator/cli.js ./templates/template_schema.xsd ./templates/$(name).xml

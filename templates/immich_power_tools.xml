@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="2">
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>Immich Power Tools</Name>
     <Repository>ghcr.io/varun-raj/immich-power-tools:latest</Repository>
     <Registry>ghcr.io/varun-raj/immich-power-tools</Registry>

@@ -1,0 +1,3 @@
+[submodule "xml-xsd-validator"]
+	path = xml-xsd-validator
+	url = https://github.com/idddev/xml-xsd-validator
