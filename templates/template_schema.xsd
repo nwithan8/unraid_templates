@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="Container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Name" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[\S\s]+"/> <!-- Non-empty string -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Repository" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[\w\-.]+/[\w\-/]+:\w+"/> <!-- Example: author/repo:tag -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Registry" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[\S\s]+"/> <!-- Non-empty string -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Branch" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Tag" type="xs:string"/>
+                            <xs:element name="TagDescription" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Network" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="WebUI" minOccurs="0" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="https?://\[IP\]:\[PORT:\d{1,5}\]/"/> <!-- Technically allows ports larger than 65535 -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Privileged" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="Support" minOccurs="0" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="https?://.+"/> <!-- URL pattern -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Project" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="https?://.+"/> <!-- URL pattern -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Overview" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[\S\s]+"/> <!-- Non-empty string -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Beta" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="True"/>
+                            <xs:enumeration value="False"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Category" minOccurs="0" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="([^:]+:[^:\s]*\s?)+"/> <!-- Any amount of "Category:" or "Category:Subcategory" elements-->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ExtraSearchTerms" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="Icon" minOccurs="0" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="https?://.+\.(png|jpg|jpeg|gif|svg)"/> <!-- URL pattern for image files -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TemplateURL" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="https?://.+\.xml"/> <!-- URL pattern for XML files -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Screenshot" minOccurs="0" maxOccurs="unbounded">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="https?://.+\.(png|jpg|jpeg|gif|svg)"/> <!-- URL pattern for image files -->
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Maintainer" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="WebPage">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="https?://.+"/> <!-- URL pattern -->
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Changes" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="Requires" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="ExtraParams" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="PostArgs" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="Config" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="Name" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:pattern value="[\S\s]+"/> <!-- Non-empty string -->
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="Target" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:pattern value="[\S\s]+"/> <!-- Non-empty string -->
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="Default" type="xs:string" use="required"/>
+                                <xs:attribute name="Mode" type="xs:string"/>
+                                <xs:attribute name="Description" type="xs:string" use="required"/>
+                                <xs:attribute name="Type" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Port"/>
+                                            <xs:enumeration value="Path"/>
+                                            <xs:enumeration value="Variable"/>
+                                            <xs:enumeration value="Label"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="Display" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="always"/>
+                                            <xs:enumeration value="always-hide"/>
+                                            <xs:enumeration value="advanced"/>
+                                            <xs:enumeration value="advanced-hide"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="Required" type="xs:boolean" use="required"/>
+                                <xs:attribute name="Mask" type="xs:boolean" use="required"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:integer" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
