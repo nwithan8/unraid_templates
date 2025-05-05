@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>AppTitle</Name>
+    <Repository>author/container:latest</Repository>
+    <Registry>https://hub.docker.com/r/author/container</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>beta</Tag>
+        <TagDescription>Latest beta release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>nightly</Tag>
+        <TagDescription>Latest nightly release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/author/app/issues</Support>
+    <Project>https://github.com/author/app</Project>
+    <Overview>
+        A description of the app.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>keywords related to the app</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dummy-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dummy.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dummy_screenshot_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dummy_screenshot_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dummy_screenshot_3.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-01
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="App Data Path" Target="/app/data" Default="/mnt/user/appdata/dummy/data" Description="Path to app data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dummy/data</Config>
+    <Config Name="Environmental Variable" Target="ENV_VAR" Default="default_value" Description="An example environmental variable" Type="Variable" Display="always-hide" Required="true" Mask="false">default_value</Config>
+    <Config Name="Environment Variable 2" Target="ENV_VAR_2" Default="true|false" Description="Another example environmental variable" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="App Port" Target="1000" Default="1000" Mode="tcp" Description="Container Port: 1000" Type="Port" Display="always-hide" Required="true" Mask="false">1000</Config>
+    <Config Name="App Path" Target="/internal/path" Default="/mnt/user/appdata/dummy/path" Description="Path to internal app data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dummy/path</Config>
+</Container>
