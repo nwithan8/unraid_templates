@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="Container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Name" type="xs:string"/>
+                <xs:element name="Repository" type="xs:string"/>
+                <xs:element name="Registry" type="xs:string"/>
+                <xs:element name="Branch" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Tag" type="xs:string"/>
+                            <xs:element name="TagDescription" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Network" type="xs:string"/>
+                <xs:element name="WebUI" type="xs:string"/>
+                <xs:element name="Privileged" type="xs:boolean"/>
+                <xs:element name="Support" type="xs:string"/>
+                <xs:element name="Project" type="xs:string"/>
+                <xs:element name="Overview" type="xs:string"/>
+                <xs:element name="Beta" type="xs:string"/>
+                <xs:element name="Category" type="xs:string"/>
+                <xs:element name="ExtraSearchTerms" type="xs:string"/>
+                <xs:element name="Icon" type="xs:string"/>
+                <xs:element name="TemplateURL" type="xs:string"/>
+                <xs:element name="Screenshot" type="xs:string" maxOccurs="unbounded"/>
+                <xs:element name="Maintainer">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="WebPage" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Changes" type="xs:string"/>
+                <xs:element name="Config" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="Name" type="xs:string" use="required"/>
+                                <xs:attribute name="Target" type="xs:string" use="required"/>
+                                <xs:attribute name="Default" type="xs:string" use="required"/>
+                                <xs:attribute name="Mode" type="xs:string"/>
+                                <xs:attribute name="Description" type="xs:string" use="required"/>
+                                <xs:attribute name="Type" type="xs:string" use="required"/>
+                                <xs:attribute name="Display" type="xs:string" use="required"/>
+                                <xs:attribute name="Required" type="xs:boolean" use="required"/>
+                                <xs:attribute name="Mask" type="xs:boolean" use="required"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:integer" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
