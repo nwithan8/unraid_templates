@@ -59,8 +59,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "3300a3ec928dd86adcc191dbaa30281dc3a94cf2",
-                "commit_message": "Fixed some pathing bugs, moved docker stuff into its own folder\n"
+                "commit_hash": "dec0adcf817818fbb86fda04451d2a90fd395aa6",
+                "commit_message": "minor edits to docker-compose\n"
             }
         ]
     },
