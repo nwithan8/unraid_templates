@@ -1,12 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>Bluesky PDS</Name>
-    <Repository>gravityfargo/bluesky-pds:latest</Repository>
+    <Repository>gravityfargo/bluesky-pds:v0.4.107</Repository>
     <Registry>https://hub.docker.com/r/gravityfargo/bluesky-pds</Registry>
-    <Branch>
-        <Tag>latest</Tag>
-        <TagDescription>Latest stable release</TagDescription>
-    </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3000]/</WebUI>
     <Privileged>false</Privileged>
@@ -28,6 +24,9 @@
 
         Initial release
     </Changes>
+    <Requires>
+        This image does not have a static `latest` tag. You will need to update the image tag manually to update.
+    </Requires>
     <ExtraParams>--hostname example.com --add-host example.com:0.0.0.0</ExtraParams>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="JWT Secret" Target="PDS_JWT_SECRET" Default="" Description="Secret key for JWT tokens. Run 'openssl rand --hex 16'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>

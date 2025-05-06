@@ -1,12 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>EmBoxd</Name>
-    <Repository>ghcr.io/computer-geek64/emboxd:latest</Repository>
+    <Repository>ghcr.io/computer-geek64/emboxd:v0.1.0</Repository>
     <Registry>ghcr.io/computer-geek64/emboxd</Registry>
-    <Branch>
-        <Tag>latest</Tag>
-        <TagDescription>Latest stable release</TagDescription>
-    </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <Privileged>false</Privileged>
@@ -29,7 +25,9 @@
         Initial release
     </Changes>
     <Requires>
-        Expects a `config.yaml` file in the Config Path directory: https://github.com/computer-geek64/emboxd/blob/master/config.yaml
+        Expects a `config.yaml` file in the Config Path directory: https://github.com/computer-geek64/emboxd/blob/master/config.yaml &#xD;
+        [br]
+        This image does not have a static `latest` tag. You will need to update the image tag manually to update.
     </Requires>
     <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/emboxd/config" Description="Path to config files" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/emboxd/config</Config>
