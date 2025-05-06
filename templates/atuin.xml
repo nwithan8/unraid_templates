@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>atuin</Name>
+    <Repository>ghcr.io/atuinsh/atuin:100de6e</Repository>
+    <Registry>ghcr.io/atuinsh/atuin</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8888]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.atuin.sh/</Support>
+    <Project>https://atuin.sh/</Project>
+    <Overview>
+        Atuin replaces your existing shell history with a SQLite database, and records additional context for your commands. Additionally, it provides optional and fully encrypted synchronisation of your history between machines, via an Atuin server.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>shell history sqlite database sync encryption</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/atuin-icon.png</Icon>
+    <Banner>https://docs.atuin.sh/_astro/logo-dark.CeeLmOI3.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/atuin.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/atuinsh/atuin/main/demo.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-05
+
+        Initial release
+    </Changes>
+    <Requires>
+        The image for this container does not have a `latest` tag. You will need to modify the image tag manually to update: https://github.com/atuinsh/atuin/pkgs/container/atuin/versions. &#xD;
+        [br]
+        This container requires a separate Postgres database.
+    </Requires>
+    <PostArgs>server start</PostArgs>
+    <Config Name="Web UI Port" Target="8888" Default="8888" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always-hide" Required="true" Mask="false">8888</Config>
+    <Config Name="Database Connection" Target="ATUIN_DB_URI" Default="postgres://$ATUIN_DB_USERNAME:$ATUIN_DB_PASSWORD@db/$ATUIN_DB_NAME" Description="Connection string to the database. This is automatically set by the container." Type="Variable" Display="always-hide" Required="true" Mask="false">postgres://$ATUIN_DB_USERNAME:$ATUIN_DB_PASSWORD@db/$ATUIN_DB_NAME</Config>
+    <Config Name="Allow Registration" Target="ATUIN_OPEN_REGISTRATION" Default="true|false" Description="Allow new users to register" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/atuin/config" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/atuin/config</Config>
+    <Config Name="Internal Host" Target="ATUIN_HOST" Default="0.0.0.0" Description="Internal host for the Atuin server. Not recommended to change." Type="Variable" Display="always-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Log" Target="RUST_LOG" Default="info,atuin_server=debug" Description="Log level for the Atuin server. Not recommended to change." Type="Variable" Display="always-hide" Required="true" Mask="false">info,atuin_server=debug</Config>
+</Container>

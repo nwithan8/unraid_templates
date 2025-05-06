@@ -212,5 +212,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "atuin",
+        "git_url": "https://github.com/atuinsh/atuin.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "a3c3dad9005c6ab2e9965632779da613d7a36f17",
+                "commit_message": null
+            }
+        ]
     }
 ]
