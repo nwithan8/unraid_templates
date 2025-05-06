@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>smartctl Exporter</Name>
+    <Repository>prometheuscommunity/smartctl-exporter:latest</Repository>
+    <Registry>https://hub.docker.com/r/prometheuscommunity/smartctl-exporter</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/prometheus-community/smartctl_exporter/issues</Support>
+    <Project>https://github.com/prometheus-community/smartctl_exporter</Project>
+    <Overview>
+        Export smartctl statistics to Prometheus
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>prometheus exporter smartctl stats statistics smartmontools</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/smartctl-exporter-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/smartctl_exporter.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-05
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="9633" Default="9633" Mode="tcp" Description="Container Port: 9633" Type="Port" Display="always-hide" Required="true" Mask="false">9633</Config>
+</Container>
