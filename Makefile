@@ -7,3 +7,9 @@ template_check_unix:
 # @param name - The name of the template to validate
 template_validate_unix:
 	node ./xml-xsd-validator/cli.js ./templates/template_schema.xsd ./templates/$(name).xml
+
+# copy_placeholder_unix: Copy the placeholder template for the new app
+# @param name - The name of the new app
+copy_placeholder_unix:
+	cp images/placeholder-icon.png images/$(name)-icon.png
+	git add images/$(name)-icon.png
