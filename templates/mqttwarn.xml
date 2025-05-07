@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>mqttwarn</Name>
+    <Repository>ghcr.io/mqtt-tools/mqttwarn-full:latest</Repository>
+    <Registry>ghcr.io/mqtt-tools/mqttwarn-full</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://mqttwarn.readthedocs.io</Support>
+    <Project>https://github.com/mqtt-tools/mqttwarn</Project>
+    <Overview>
+        Subscribe to MQTT topics and notify pluggable services.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>HomeAutomation: Network:Messenger MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>mqtt topic notifications pluggable services smart home automation</ExtraSearchTerms>
+    <Icon>https://mqttwarn.readthedocs.io/en/latest/_static/mqttwarn-logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mqttwarn.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/mqtt-tools/mqttwarn/main/assets/google-definition.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/mqtt-tools/mqttwarn/main/assets/mqttwarn.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `mqttwarn.ini` and a `funcs.py` file in the Config Path. See documentation: https://mqttwarn.readthedocs.io/en/latest/configure/index.html
+    </Requires>
+    <Config Name="Config Path" Target="/etc/mqttwarn" Default="/mnt/user/appdata/mqttwarn/config" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mqttwarn/config</Config>
+    <Config Name="Localtime path" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="Localtime path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/etc/localtime</Config>
+    <Config Name="Internal INI Path" Target="MQTTWARNINI" Default="/etc/mqttwarn/mqttwarn.ini" Description="Internal path to the INI file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/etc/mqttwarn/mqttwarn.ini</Config>
+</Container>
