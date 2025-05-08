@@ -238,13 +238,25 @@
         ]
     },
     {
-        "app_name": "Maintainarr Overlay",
+        "app_name": "Maintainarr Poster Overlay",
         "git_url": "https://gitlab.com/jakeC207/maintainerr-poster-overlay.git",
         "branch_override": null,
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
                 "commit_hash": "9ada4b341a610a347640d328bfe8799ef898b482",
+                "commit_message": null
+            }
+        ]
+    },
+    {
+        "app_name": "Maintainerr Overlay Helperr",
+        "git_url": "https://github.com/gssariev/maintainerr-overlay-helperr.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "c64c80302ddf2b7a66ffb8f4e4cca02ff57f5f56",
                 "commit_message": null
             }
         ]

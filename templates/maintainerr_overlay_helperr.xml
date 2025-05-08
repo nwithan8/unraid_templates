@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Maintainerr Overlay Helperr</Name>
+    <Repository>gsariev/maintainerr-overlay-helperr:latest</Repository>
+    <Registry>https://hub.docker.com/r/gsariev/maintainerr-overlay-helperr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/gssariev/maintainerr-overlay-helperr/issues</Support>
+    <Project>https://github.com/gssariev/maintainerr-overlay-helperr</Project>
+    <Overview>
+        Works in combination with Maintainerr, adding a Netflix-style "leaving soon" overlay on top of your media. It integrates with Plex and Maintainerr to download posters, add overlay text, and upload the modified posters back to Plex. It runs periodically to ensure posters are updated with the correct information.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>netflix plex maintainerr image poster overlay notification media</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/jorenn92/Maintainerr/refs/heads/main/ui/public/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/maintainerr_overlay_helperr.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/maintainerr-overlay-helperr_demo_1.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a font file named `font.tff` to be present in the Font Path.
+    </Requires>
+    <Config Name="Plex - URL" Target="PLEX_URL" Default="http://plex:32400" Description="URL to your Plex server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://plex:32400</Config>
+    <Config Name="Plex - Token" Target="PLEX_TOKEN" Default="" Description="Plex token for authentication" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Maintainerr - URL" Target="MAINTAINERR_URL" Default="http://maintainerr:6246" Description="URL to your Maintainerr server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://maintainerr:6246</Config>
+    <Config Name="Images Path" Target="/images" Default="/mnt/user/appdata/maintainerr_overlay_helperr/images" Description="Path to save images" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/maintainerr_overlay_helperr/images</Config>
+    <Config Name="Fonts Path" Target="/fonts" Default="/mnt/user/appdata/maintainerr_overlay_helperr/fonts" Description="Path to the font file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/maintainerr_overlay_helperr/fonts</Config>
+    <Config Name="Image - Font Color" Target="FONT_COLOR" Default="#FFFFFF" Description="Color of the font in hex format" Type="Variable" Display="always-hide" Required="true" Mask="false">#FFFFFF</Config>
+    <Config Name="Image - Font Size" Target="FONT_SIZE" Default="55" Description="Size of the font" Type="Variable" Display="always-hide" Required="true" Mask="false">55</Config>
+    <Config Name="Image - Background Color" Target="BACK_COLOR" Default="#B20710" Description="Background color of the image in hex format" Type="Variable" Display="always-hide" Required="true" Mask="false">#B20710</Config>
+    <Config Name="Image - Padding" Target="PADDING" Default="15" Description="Padding around the image" Type="Variable" Display="always-hide" Required="true" Mask="false">15</Config>
+    <Config Name="Image - Radius" Target="BACK_RADIUS" Default="30" Description="Radius of the image corners" Type="Variable" Display="always-hide" Required="true" Mask="false">30</Config>
+    <Config Name="Image - Horizontal Offset" Target="HORIZONTAL_OFFSET" Default="30" Description="Horizontal offset of the image" Type="Variable" Display="always-hide" Required="true" Mask="false">30</Config>
+    <Config Name="Image - Vertical Offset" Target="VERTICAL_OFFSET" Default="40" Description="Vertical offset of the image" Type="Variable" Display="always-hide" Required="true" Mask="false">40</Config>
+    <Config Name="Image - Horizontal Alignment" Target="HORIZONTAL_ALIGN" Default="center|left|right" Description="Horizontal alignment of the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Vertical Alignment" Target="vertical-align" Default="top|middle|bottom" Description="Vertical alignment of the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Date Format" Target="DATE_FORMAT" Default="d MMM|MMM d" Description="Date format for the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Use Date Suffix" Target="ENABLE_DAY_SUFFIX" Default="false|true" Description="Enable or disable the use of date suffixes (e.g. January 1 vs January 1st)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Date All Capitalized" Target="ENABLE_UPPERCASE" Default="false|true" Description="Enable or disable all capitalized date" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Overlay Text" Target="OVERLAY_TEXT" Default="Leaving" Description="Text to display next to the date" Type="Variable" Display="always-hide" Required="true" Mask="false">Leaving</Config>
+    <Config Name="Language" Target="LANGUAGE" Default="en-US" Description="Language for the overlay text" Type="Variable" Display="always-hide" Required="true" Mask="false">en-US</Config>
+    <Config Name="Run Interval" Target="RUN_INTERVAL" Default="480" Description="Interval in minutes to run the script" Type="Variable" Display="always-hide" Required="true" Mask="false">480</Config>
+    <Config Name="Internal Image Save Path" Target="IMAGE_SAVE_PATH" Default="/images" Description="Internal path to save images. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/images</Config>
+    <Config Name="Internal Original Image Save Path" Target="ORIGINAL_IMAGE_PATH" Default="/images/originals" Description="Internal path to save original images. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/images/originals</Config>
+    <Config Name="Internal Temporary Image Save Path" Target="TEMP_IMAGE_PATH" Default="/images/temp" Description="Internal path to save temporary images. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/images/temp</Config>
+    <Config Name="Internal Font File" Target="FONT_PATH" Default="/fonts/font.ttf" Description="Internal path to the font file. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/fonts/font.ttf</Config>
+</Container>
