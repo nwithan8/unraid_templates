@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Rollerblades</Name>
+    <Repository>ghcr.io/jcostom/rollerblades:latest</Repository>
+    <Registry>ghcr.io/jcostom/rollerblades</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/jcostom/rollerblades/issues</Support>
+    <Project>https://github.com/jcostom/rollerblades</Project>
+    <Overview>
+        A tool to automate Plex prerolls based on schedules.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex prerolls movie trailer preview automation schedule rollarr meta manager emby jellyfin</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/rollerblades-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/rollerblades.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `prerolls.json` file in the Config Path. See documentation: https://github.com/jcostom/rollerblades#create-your-config-file
+    </Requires>
+    <ExtraParams>--user 099:100</ExtraParams>
+    <Config Name="Plex - Host" Target="PLEX_HOST" Default="" Description="Plex server host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex - Token" Target="PLEX_TOKEN" Default="" Description="Plex server token" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/rollerblades/config" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/rollerblades/config</Config>
+</Container>
