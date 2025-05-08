@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Plex Randomizer</Name>
+    <Repository>pierredurrr/plex-randomizer:latest</Repository>
+    <Registry>https://hub.docker.com/r/pierredurrr/plex-randomizer</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/PierreDurrr/plex-randomizer/issues</Support>
+    <Project>https://github.com/PierreDurrr/plex-randomizer</Project>
+    <Overview>
+        Copy a set number of random files from a source Plex library to a destination library.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex media random movie library copy symlink item server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/plex-randomizer-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/plex_randomizer.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-07
+
+        Initial release
+    </Changes>
+    <Config Name="Plex - Server URL" Target="PLEX_SERVER_ADDRESS" Default="http://plex" Description="Plex server URL (include protocol, exclude port)" Type="Variable" Display="always-hide" Required="true" Mask="false">http://plex</Config>
+    <Config Name="Plex - Server Port" Target="PLEX_SERVER_PORT" Default="32400" Description="Plex server port" Type="Variable" Display="always-hide" Required="true" Mask="false">32400</Config>
+    <Config Name="Plex - Username" Target="PLEX_LOGIN" Default="" Description="Plex username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex - Password" Target="PLEX_PASSWORD" Default="" Description="Plex password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Plex - Library Section ID" Target="PLEX_LIBRARY_SECTION_ID" Default="" Description="Plex library section ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Source Path" Target="/files/source" Default="" Description="Source library path" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Destination Path" Target="/files/destination" Default="" Description="Destination library path" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Number of Movies" Target="AMOUNT_OF_WANTED_MOVIES" Default="3" Description="Number of random movies to copy" Type="Variable" Display="always-hide" Required="true" Mask="false">3</Config>
+    <Config Name="Action Type" Target="ACTION_TYPE" Default="symlink|copy" Description="Action to perform to move files from source to destination" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Source Path" Target="SOURCE_FOLDER" Default="/files/source" Description="Internal path to the source folder. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/files/source</Config>
+    <Config Name="Internal Destination Path" Target="DESTINATION_FOLDER" Default="/files/destination" Description="Internal path to the destination folder. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/files/destination</Config>
+</Container>
