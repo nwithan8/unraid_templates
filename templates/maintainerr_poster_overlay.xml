@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Maintainerr Poster Overlay</Name>
+    <Repository>jakec207/maintainerr-overlay:latest</Repository>
+    <Registry>https://hub.docker.com/r/jakec207/maintainerr-overlay</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://gitlab.com/jakeC207/maintainerr-poster-overlay</Support>
+    <Project>https://gitlab.com/jakeC207/maintainerr-poster-overlay</Project>
+    <Overview>
+        A basic photo sharing site, allowing anyone to upload and view shared albums.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>maintainerr poster overlay process plex meta manager emby jellyfin media server automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/jorenn92/Maintainerr/refs/heads/main/ui/public/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/maintainerr_poster_overlay.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yaml` file in the Data Path. See documentation: https://gitlab.com/jakeC207/maintainerr-poster-overlay/-/blob/main/config.yaml
+    </Requires>
+    <Config Name="Schedule" Target="CRON" Default="0 */8 * * *" Description="Cron schedule for the system to run" Type="Variable" Display="always-hide" Required="true" Mask="false">0 */8 * * *</Config>
+    <Config Name="Action" Target="ACTION" Default="add|reset|test" Description="Action to perform" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Run On Creation" Target="RUN_ON_CREATION" Default="false|true" Description="Run the action on creation" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Data Path" Target="/maintainerr-overlay" Default="/mnt/user/appdata/maintainerr-overlay" Description="Path to the maintainerr overlay data (images, fonts, config files)" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/maintainerr-overlay</Config>
+</Container>

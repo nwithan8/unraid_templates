@@ -224,5 +224,29 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Plex Randomizer",
+        "git_url": "https://github.com/PierreDurrr/plex-randomizer.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "e81cff94b16d73dfe4b72dc50062cc6860e65d63",
+                "commit_message": null
+            }
+        ]
+    },
+    {
+        "app_name": "Maintainarr Overlay",
+        "git_url": "https://gitlab.com/jakeC207/maintainerr-poster-overlay.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "9ada4b341a610a347640d328bfe8799ef898b482",
+                "commit_message": null
+            }
+        ]
     }
 ]
