@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>OpenTofu</Name>
+    <Repository>ghcr.io/opentofu/opentofu:latest</Repository>
+    <Registry>ghcr.io/opentofu/opentofu</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://opentofu.org/docs/intro/install/docker/</Support>
+    <Project>https://opentofu.org/</Project>
+    <Overview>
+        OpenTofu is a reliable, flexible, community-driven infrastructure as code tool under the Linux Foundation's stewardship. It serves as a drop-in replacement for Terraform, preserving your existing workflows and configurations. &#xD;
+        [br]
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://opentofu.org/docs/cli/commands/
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>tofu terraform infrastructure as code IaC cli tool utility shell</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/opentofu-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/opentofu.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool. Open a Console in the container to use it.
+    </Requires>
+    <ExtraParams>--workdir=/srv/workspace</ExtraParams>
+    <Config Name="Workspace Path" Target="/srv/workspace" Default="/mnt/user/appdata/opentofu/workspace" Description="Path to workspace" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/opentofu/workspace</Config>
+</Container>

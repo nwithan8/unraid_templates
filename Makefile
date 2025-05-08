@@ -13,3 +13,10 @@ template_validate_unix:
 copy_placeholder_unix:
 	cp images/placeholder-icon.png images/$(name)-icon.png
 	git add images/$(name)-icon.png
+
+# download_github_icon: Download an icon from a GitHub profile picture
+# @param link - The GitHub profile link
+# @param name - The name of the new app
+download_github_icon:
+	curl -s -o images/$(name)-icon.png $(link)
+	git add images/$(name)-icon.png
