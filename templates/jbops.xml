@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>jbops</Name>
+    <Repository>ghcr.io/home-operations/jbops:rolling</Repository>
+    <Registry>ghcr.io/home-operations/jbops</Registry>
+    <Branch>
+        <Tag>rolling</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/home-operations/containers/issues</Support>
+    <Project>https://github.com/blacktwin/JBOPS</Project>
+    <Overview>
+        Just a Bunch Of Plex Scripts
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex tautulli scripts automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/jbops-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/jbops.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a Plex config file mounted to the Config File path BEFORE starting the container. See documentation: https://python-plexapi.readthedocs.io/en/latest/configuration.html
+    </Requires>
+    <Config Name="Config File" Target="/config/config.ini" Default="" Description="Path to Plex config file" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Script Name" Target="JBOPS__SCRIPT_PATH" Default="fun/plexapi_haiku.py" Description="Path inside the container to the script to run" Type="Variable" Display="always-hide" Required="true" Mask="false">fun/plexapi_haiku.py</Config>
+    <Config Name="Internal Config Path" Target="PLEXAPI_CONFIG_PATH" Default="/config/config.ini" Description="Internal path to the config file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config/config.ini</Config>
+</Container>
