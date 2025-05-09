@@ -9,7 +9,7 @@
     </Branch>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
-    <Support>https://github.com/gssariev/overr-syncerr/issues</Support>
+    <Support>https://wiki.overrsyncerr.info</Support>
     <Project>https://github.com/gssariev/overr-syncerr</Project>
     <Overview>
         Webhook handler for subtitle management with Bazarr, Radarr, and Sonarr integration. Supports both Overseerr and Jellyseerr.
