@@ -18,13 +18,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "a104bb083f607e79fcbab19b0188c35665347825",
-                "commit_message": "Fix database creation on startup\n"
+                "commit_hash": "9b437d546a1ab5670ef6488bcd81d0d641f6a144",
+                "commit_message": "Update to PostgreSQL 17 and PostGIS 3.5\n"
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
-                "commit_hash": "0ed6fb7ea80c83dac2babec1a43539bdf3a9dabd",
-                "commit_message": ""
+                "commit_hash": "9b437d546a1ab5670ef6488bcd81d0d641f6a144",
+                "commit_message": "Update to PostgreSQL 17 and PostGIS 3.5\n"
             }
         ]
     },
