@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-05-09
+
+        Fix bad path variables
+
         ### 2025-05-07
 
         Initial release
@@ -51,8 +55,8 @@
     <Config Name="Image - Overlay Text" Target="OVERLAY_TEXT" Default="Leaving" Description="Text to display next to the date" Type="Variable" Display="always-hide" Required="true" Mask="false">Leaving</Config>
     <Config Name="Language" Target="LANGUAGE" Default="en-US" Description="Language for the overlay text" Type="Variable" Display="always-hide" Required="true" Mask="false">en-US</Config>
     <Config Name="Run Interval" Target="RUN_INTERVAL" Default="480" Description="Interval in minutes to run the script" Type="Variable" Display="always-hide" Required="true" Mask="false">480</Config>
-    <Config Name="Internal Image Save Path" Target="IMAGE_SAVE_PATH" Default="/images" Description="Internal path to save images. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/images</Config>
-    <Config Name="Internal Original Image Save Path" Target="ORIGINAL_IMAGE_PATH" Default="/images/originals" Description="Internal path to save original images. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/images/originals</Config>
-    <Config Name="Internal Temporary Image Save Path" Target="TEMP_IMAGE_PATH" Default="/images/temp" Description="Internal path to save temporary images. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/images/temp</Config>
-    <Config Name="Internal Font File" Target="FONT_PATH" Default="/fonts/font.ttf" Description="Internal path to the font file. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/fonts/font.ttf</Config>
+    <Config Name="Internal Image Save Path" Target="IMAGE_SAVE_PATH" Default="/images" Description="Internal path to save images. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/images</Config>
+    <Config Name="Internal Original Image Save Path" Target="ORIGINAL_IMAGE_PATH" Default="/images/originals" Description="Internal path to save original images. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/images/originals</Config>
+    <Config Name="Internal Temporary Image Save Path" Target="TEMP_IMAGE_PATH" Default="/images/temp" Description="Internal path to save temporary images. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/images/temp</Config>
+    <Config Name="Internal Font File" Target="FONT_PATH" Default="/fonts/font.ttf" Description="Internal path to the font file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/fonts/font.ttf</Config>
 </Container>
