@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Flixpatrol Top 10 on Trakt</Name>
+    <Repository>ghcr.io/navino16/flixpatrol-top10-on-trakt:latest</Repository>
+    <Registry>ghcr.io/navino16/flixpatrol-top10-on-trakt</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Navino16/flixpatrol-top10-on-trakt/issues</Support>
+    <Project>https://github.com/Navino16/flixpatrol-top10-on-trakt</Project>
+    <Overview>
+        This tool get TODAY top 10 from flixpatrol and push the result on trakt list (useful for syncing with Kometa)
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex kometa meta manager trakt flixpatrol sync collection top</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/flixpatrol-to-trakt-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/flixpatrol_to_trakt.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-10
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a config file in the Config Path. See documentation: https://github.com/Navino16/flixpatrol-top10-on-trakt#configuration-file
+    </Requires>
+    <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/flixpatrol_to_trakt/config" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/flixpatrol_to_trakt/config</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|err|warn|debug" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
