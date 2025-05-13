@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>rclone</Name>
+    <Repository>rclone/rclone:latest</Repository>
+    <Registry>https://hub.docker.com/r/rclone/rclone</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>beta</Tag>
+        <TagDescription>Latest beta release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://rclone.org/docs/</Support>
+    <Project>https://rclone.org/</Project>
+    <Overview>
+        Rclone is a command-line program to manage files on cloud storage. It is a feature-rich alternative to cloud vendors' web storage interfaces. Over 70 cloud storage products support rclone including S3 object stores, business and consumer file storage services, as well as standard transfer protocols. &#xD;
+        [br]
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://rclone.org/commands/
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>rclone file copy sync remote amazon s3 google drive onedrive dropbox</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/rclone-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/rclone.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-12
+
+        Initial release
+    </Changes>
+    <PostArgs>config</PostArgs>
+    <Config Name="Rclone Config" Target="/config/rclone" Default="" Description="Path to rclone config file" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Data Path" Target="/data" Default="" Description="Path to data directory to use inside the container" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="RC Port" Target="5572" Default="5572" Description="Optional, port for rclone web UI" Type="Port" Display="always-hide" Required="false" Mask="false">5572</Config>
+</Container>
