@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Crontab</Name>
+    <Repository>willfarrell/crontab:latest</Repository>
+    <Registry>https://hub.docker.com/r/willfarrell/crontab</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/willfarrell/docker-crontab/issues</Support>
+    <Project>https://github.com/willfarrell/docker-crontab</Project>
+    <Overview>
+        A simple wrapper over the Docker CLI to all complex cron job to be run in other containers.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ofelia cron job schedule scheduler docker apps container automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/crontab-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/crontab.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a config file in the Config Path. See documentation: https://github.com/willfarrell/docker-crontab#config-file
+    </Requires>
+    <Config Name="Config Path" Target="/opt/crontab" Default="/mnt/user/appdata/crontab/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/crontab/config</Config>
+    <Config Name="Logs Path" Target="/var/log/crontab" Default="/mnt/user/appdata/crontab/logs" Description="Path to logs" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/crontab/logs</Config>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
