@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Cron - Alpine</Name>
+    <Repository>ghcr.io/2franix/cron-docker:latest</Repository>
+    <Registry>ghcr.io/2franix/cron-docker</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/2franix/cron-docker/issues</Support>
+    <Project>https://github.com/2franix/cron-docker</Project>
+    <Overview>
+        Alpine-based images with cron support
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ofelia cron job schedule scheduler docker apps container automation ubuntu</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/cron-alpine-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/cron_alpine.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a crontab file mounted to Cron File BEFORE starting the container.
+    </Requires>
+    <Config Name="Cron File" Target="/crontab" Default="/mnt/user/appdata/cron_alpine/crontab" Description="Crontab file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/cron_alpine/crontab</Config>
+    <Config Name="Pre-Run Script Directory" Target="/entrypoint.pre.d" Default="/mnt/user/appdata/cron_alpine/pre-run.d" Description="Directory for pre-run scripts" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/cron_alpine/pre-run.d</Config>
+    <Config Name="Cron - Mail To" Target="CRON_MAILTO" Default="" Description="Cron emails recipient" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="SMTP - Host" Target="SMTP_HOST" Default="" Description="SMTP server hostname" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="SMTP - Port" Target="SMTP_PORT" Default="" Description="SMTP server port" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="SMTP - TLS" Target="SMTP_TLS" Default="on|off" Description="Use TLS for SMTP connection" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="SMTP - From Address" Target="SMTP_FROM" Default="" Description="Sender email address" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="SMTP - Username" Target="SMTP_USER" Default="" Description="SMTP username" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="SMTP - Password" Target="SMTP_PASSWORD" Default="" Description="SMTP password" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Cron User ID" Target="CRON_USER_UID" Default="099" Description="User ID to run the cron jobs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">099</Config>
+    <Config Name="Cron Group ID" Target="CRON_USER_GID" Default="099" Description="Group ID to run the cron jobs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">099</Config>
+    <Config Name="Cron Worker" Target="CRON_USER" Default="worker" Description="User to run the cron jobs as. Not modifiable" Type="Variable" Display="advanced-hide" Required="true" Mask="false">worker</Config>
+    <Config Name="Internal Cron Worker Home" Target="CRON_USER_HOME" Default="/worker" Description="Home directory of the cron user." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/worker</Config>
+    <Config Name="Internal Pre-Run Script Directory" Target="CRON_ENTRYPOINT_PRE_DIR" Default="/entrypoint.pre.d" Description="Internal directory for pre-run scripts." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/entrypoint.pre.d</Config>
+    <Config Name="Internal Cron File" Target="CRON_SPEC_FILE" Default="/crontab" Description="Internal crontab file." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/crontab</Config>
+    <Config Name="Cron Verbosity" Target="CRON_VERBOSITY" Default="8|7|6|5|4|3|2|1|0" Description="Cron verbosity level. 0 - max, 8 - min" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
