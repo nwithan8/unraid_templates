@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Cron - Ubuntu</Name>
+    <Repository>tozd/cron:ubuntu-trusty</Repository>
+    <Registry>https://hub.docker.com/r/tozd/cron</Registry>
+    <Branch>
+        <Tag>ubuntu-trusty</Tag>
+        <TagDescription>Latest release of Ubuntu Trusty</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>ubuntu-xenial</Tag>
+        <TagDescription>Latest release of Ubuntu Xenial</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>ubuntu-bionic</Tag>
+        <TagDescription>Latest release of Ubuntu Bionic</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>ubuntu-focal</Tag>
+        <TagDescription>Latest release of Ubuntu Focal</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>ubuntu-jammy</Tag>
+        <TagDescription>Latest release of Ubuntu Jammy</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://gitlab.com/tozd/docker/cron</Support>
+    <Project>https://gitlab.com/tozd/docker/cron</Project>
+    <Overview>
+        Ubuntu-based images with cron support
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ofelia cron job schedule scheduler docker apps container automation ubuntu</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/cron-ubuntu-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/cron_ubuntu.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-12
+
+        Initial release
+    </Changes>
+    <Config Name="Cron Path" Target="/etc/cron.d" Default="/mnt/user/appdata/cron_ubuntu/config" Description="Path to cron files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/cron_ubuntu/config</Config>
+</Container>
