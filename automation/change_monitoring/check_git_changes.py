@@ -202,6 +202,18 @@ def build_app_change_message(
         message += f"- {file_details_item['file_path']} (commit: {file_details_item['commit_hash']}, message: {file_details_item['commit_message']})\n"
     return message
 
+def store_app_name(
+        app_name: str,
+        tracker_file: str
+) -> None:
+    """
+    Store the app name in the tracker file.
+    :param app_name: The name of the app.
+    :param tracker_file: The path to the tracker file.
+    """
+    with open(tracker_file, "a") as f:
+        f.write(f"{app_name}\n")
+
 
 def send_ntfy_notification(
         app_name: str,
@@ -283,6 +295,12 @@ if __name__ == "__main__":
         help="URL of this repository.",
         required=True
     )
+    parser.add_argument(
+        "--tracker-file",
+        type=str,
+        help="Path to the file to track names of apps with changes.",
+        required=True
+    )
     args = parser.parse_args()
 
     data_file_path = args.data_file
@@ -290,6 +308,7 @@ if __name__ == "__main__":
     ntfy_topic = args.ntfy_topic
     ntfy_token = args.ntfy_token
     repo_url = args.repo_url
+    tracker_file = args.tracker_file
 
     apps = load_app_details(file_path=data_file_path)
     new_data: list[dict] = []
@@ -329,6 +348,7 @@ if __name__ == "__main__":
                 file_details=app["changed_files"]
             )
             print(f"Changes in {app['app_name']}:\n{details}")
+            store_app_name(app_name=app["app_name"], tracker_file=tracker_file)
     else:
         print("No changes detected in any apps.")
 
