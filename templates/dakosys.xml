@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Dakosys</Name>
+    <Repository>ghcr.io/sahara101/dakosys:latest</Repository>
+    <Registry>ghcr.io/sahara101/dakosys</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/sahara101/Dakosys/issues</Support>
+    <Project>https://github.com/sahara101/Dakosys</Project>
+    <Overview>
+        DAKOSYS is a powerful tool for Plex users that creates and manages Trakt.tv lists and Kometa/PMM overlays. It helps you categorize anime episodes by type, track TV show statuses, display media file sizes, all running in Docker with automatic scheduling. &#xD;
+        [br]
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://github.com/sahara101/Dakosys#-usage-examples
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex meta manager kometa trakt tv overlay anime episode categorization</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/cglatot/Dakosys-Overlay-Only/main/dakosys-logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dakosys.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dakosys_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dakosys_demo_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dakosys_demo_3.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Kometa instance. &#xD;
+        [br]
+        This is a CLI tool. Open a Console in the container and run `goss` to use it.
+    </Requires>
+    <PostArgs>daemon</PostArgs>
+    <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/dakosys/data" Mode="rw" Description="Data path" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dakosys/data</Config>
+    <Config Name="Kometa Data Path" Target="/kometa" Default="" Mode="rw" Description="Path to Kometa config" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Data" Target="/app/config" Default="/mnt/user/appdata/dakosys/config" Mode="rw" Description="Configuration data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dakosys/config</Config>
+</Container>
