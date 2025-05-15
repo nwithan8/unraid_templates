@@ -260,5 +260,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Scraperr",
+        "git_url": "https://github.com/jaypyles/Scraperr.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "ed0828a5852ce29e4581f5faa3998be5a5718fa9",
+                "commit_message": null
+            }
+        ]
     }
 ]

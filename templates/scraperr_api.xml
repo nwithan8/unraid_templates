@@ -29,13 +29,18 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-05-14
+
+        Add Media Path and update internal App Data path
+
         ### 2025-01-20
 
         Initial release
     </Changes>
     <Config Name="API Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
     <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Used to encode authentication tokens, can be a random string" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="App Data" Target="/project/data" Default="/mnt/user/appdata/scraperr/api_data" Description="Path to store application data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/scraperr/api_data</Config>
+    <Config Name="Media Path" Target="/project/app/media" Default="" Description="Path to store media files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/scraperr/media</Config>
+    <Config Name="App Data" Target="/project/app/data" Default="/mnt/user/appdata/scraperr/api_data" Description="Path to store application data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/scraperr/api_data</Config>
     <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|DEBUG|ERROR" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Auth Token Algorithm" Target="ALGORITHM" Default="HS256" Description="Algorithm used to encode authentication tokens" Type="Variable" Display="advanced-hide" Required="true" Mask="false">HS256</Config>
     <Config Name="Access Token Expiry Time" Target="ACCESS_TOKEN_EXPIRE_MINUTES" Default="600" Description="Time in minutes before access tokens expire" Type="Variable" Display="advanced-hide" Required="true" Mask="false">600</Config>
