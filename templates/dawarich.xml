@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-05-14
+
+        Clarify PostGIS requirement
+
         ### 2025-04-17
 
         - Add SELF_HOSTED environmental variable
@@ -53,7 +57,7 @@
         Initial release
     </Changes>
     <Requires>
-        Requires separate Redis, PostgreSQL and Dawarich Sidekiq containers. See the documentation for more information: https://dawarich.app/docs/environment-variables-and-settings
+        Requires separate Redis, PostGIS and Dawarich Sidekiq containers. See the documentation for more information: https://dawarich.app/docs/environment-variables-and-settings
     </Requires>
     <ExtraParams>--entrypoint web-entrypoint.sh</ExtraParams>
     <PostArgs>bin/rails server -p 3000 -b ::</PostArgs>
@@ -61,11 +65,11 @@
     <Config Name="Imports Path" Target="/var/app/tmp/imports/watched" Default="/mnt/user/appdata/dawarich/imports" Description="Path to watch for imports" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/imports</Config>
     <Config Name="Storage Path" Target="/var/app/storage" Default="/mnt/user/appdata/dawarich/storage" Description="Path to store application data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/storage</Config>
     <Config Name="Redis - URL" Target="REDIS_URL" Default="redis://IP_ADDRESS:6379/0" Description="URL of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://IP_ADDRESS:6379/0</Config>
-    <Config Name="Postgres - Host" Target="DATABASE_HOST" Default="" Description="Host of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Postgres - Port" Target="DATABASE_PORT" Default="5432" Description="Port of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
-    <Config Name="Postgres - Username" Target="DATABASE_USERNAME" Default="" Description="Username of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Postgres - Password" Target="DATABASE_PASSWORD" Default="" Description="Password of the PostgreSQL server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Postgres - Database" Target="DATABASE_NAME" Default="" Description="Name of the PostgreSQL database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="PostGIS - Host" Target="DATABASE_HOST" Default="" Description="Host of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="PostGIS - Port" Target="DATABASE_PORT" Default="5432" Description="Port of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="PostGIS - Username" Target="DATABASE_USERNAME" Default="" Description="Username of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="PostGIS - Password" Target="DATABASE_PASSWORD" Default="" Description="Password of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="PostGIS - Database" Target="DATABASE_NAME" Default="" Description="Name of the PostGIS database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Timezone" Target="TIME_ZONE" Default="UTC" Description="Timezone of the application" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Distance Units" Target="DISTANCE_UNIT" Default="km|mi" Description="Units for distance" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Minimum City Minutes" Target="MIN_MINUTES_SPENT_IN_CITY" Default="60" Description="Minimum minutes spent in a city to be considered a visit" Type="Variable" Display="always-hide" Required="true" Mask="false">60</Config>
