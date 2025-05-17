@@ -20,10 +20,14 @@
     <ExtraSearchTerms>sonarr radarr lidarr readarr whisparr huntarr media tv show movies music audio video books files anime search indexer torrent usenet plex jellyfin emby content upgrade profile quality download missing arrs</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/plexguide/Huntarr.io/main/frontend/static/logo/512.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huntarr.xml</TemplateURL>
-    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr_demo_1.png</Screenshot>
-    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr_demo_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr_demo_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr_demo_4.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr_demo_5.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/huntarr_demo_6.png</Screenshot>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
+        <DonateLink>https://donate.plex.one/</DonateLink>
+        <DonateText>Donations to Plex.One, the developer of Huntarr</DonateText>
     </Maintainer>
     <Changes>
         ### 2024-04-24
