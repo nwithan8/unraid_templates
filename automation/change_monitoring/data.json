@@ -268,8 +268,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "ed0828a5852ce29e4581f5faa3998be5a5718fa9",
-                "commit_message": null
+                "commit_hash": "f815a58efc16685ccbccd7b509f3787759d2bb12",
+                "commit_message": "chore: update docker version [skip ci]\n"
             }
         ]
     },
