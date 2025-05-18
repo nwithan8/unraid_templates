@@ -268,8 +268,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f815a58efc16685ccbccd7b509f3787759d2bb12",
-                "commit_message": "chore: update docker version [skip ci]\n"
+                "commit_hash": "263e46ba4d12ac8386a3342e92370ac1d9ab6e01",
+                "commit_message": "feat: add media viewer + other fixes (#79)\n\n* feat: add media viewer + other fixes\n\n* chore: remove logging [skip ci]\n\n* chore: remove logging [skip ci]\n\n* feat: add unit test for media\n\n* feat: add unit test for media\n\n* feat: add unit test for media [skip ci]\n\n* feat: add unit test for media [skip ci]\n\n* feat: add unit test for media [skip ci]\n\n* feat: add unit test for media [skip ci]\n\n* chore: update docs [skip ci]"
             }
         ]
     },
