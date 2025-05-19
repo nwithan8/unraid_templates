@@ -18,13 +18,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "9b437d546a1ab5670ef6488bcd81d0d641f6a144",
-                "commit_message": "Update to PostgreSQL 17 and PostGIS 3.5\n"
+                "commit_hash": "06aee05602d31e9fde04184ef3e40206215a40af",
+                "commit_message": "Move distance unit settings to user settings\n"
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
-                "commit_hash": "9b437d546a1ab5670ef6488bcd81d0d641f6a144",
-                "commit_message": "Update to PostgreSQL 17 and PostGIS 3.5\n"
+                "commit_hash": "e10e97cb9260c50345d12e093beeb870446119c7",
+                "commit_message": "Update default value for STORE_GEODATA\n"
             }
         ]
     },
