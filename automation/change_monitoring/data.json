@@ -136,8 +136,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "30ef63f277b1d28530e7fdf0b50a7ff052ee3e62",
-                "commit_message": null
+                "commit_hash": "5b2f8a1b3025fe59df55895f6a4083dfbfb46fd2",
+                "commit_message": "Updated info.js for new printers key. Updated print.js to forward ESC/POS printer IPs. Updated keys within variables.js. Added 'UI_BACK_BUTTON', 'PRINTER_TYPE' and 'PRINTER_IP' to the deprecated strings array.js. Updated status.js with new printing module. Updated docker-compose.yml environment variables. Updated dependencies. Hotfix body type for express v5. Updated README.md. Removed back button from navigation.ejs. Updated print.ejs and bulk-print.ejs with printer selection. Updated print logic within server.js to allow printer selection by user\n"
             }
         ]
     },
