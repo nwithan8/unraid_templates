@@ -36,6 +36,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-05-20
+
+        Updated environmental variables for v6
+
         ### 2025-04-25
 
         Initial release
@@ -58,8 +62,7 @@
     <Config Name="Authentication - API - Bearer Token" Target="AUTH_INTERNAL_BEARER_TOKEN" Default="" Description="The bearer token used for the API" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Voucher Types" Target="VOUCHER_TYPES" Default="480,1,,,;" Description="A semi-colon-separated list of voucher types in the following format: expiration in minutes (required),single-use or multi-use vouchers value - '0' is for multi-use (unlimited) - '1' is for single-use - 'N' is for multi-use (Nx) (optional),upload speed limit in kbps (optional),download speed limit in kbps (optional),data transfer limit in MB (optional)" Type="Variable" Display="always-hide" Required="true" Mask="false">480,1,,,;</Config>
     <Config Name="Allow Custom Voucher Types" Target="VOUCHER_CUSTOM" Default="false|true" Description="Allow users to create custom vouchers types within the UI" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Printing - File Format" Target="PRINTER_TYPE" Default="" Description="Enable/disable the printer and set the preferred type, currently supported types: pdf, escpos" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
-    <Config Name="Printing - Printer IP" Target="PRINTER_IP" Default="" Description="IP address to your network enabled ESC/POS compatible printer (Only required when using File Format set to 'escpos')" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Printers" Target="PRINTERS" Default="" Description="A comma-separated list of printer formats and IPs. Example: 'pdf,192.168.1.10'" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Email - From Address" Target="SMTP_FROM" Default="" Description="The email address that will be used as the sender of the emails" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Email - SMTP Host" Target="SMTP_HOST" Default="" Description="The SMTP host to use for sending emails" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Email - SMTP Port" Target="SMTP_PORT" Default="587" Description="The SMTP port to use for sending emails" Type="Variable" Display="always-hide" Required="false" Mask="false">587</Config>
@@ -74,5 +77,4 @@
     <Config Name="Enable API" Target="SERVICE_API" Default="true|false" Description="Enable the API" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Translation - Default Language" Target="TRANSLATION_DEFAULT" Default="en" Description="Sets the default translation for dropdowns" Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
     <Config Name="Translation - Debug" Target="TRANSLATION_DEBUG" Default="false|true" Description="Enables/disables translation debugging, when enabled only translation keys are shown" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Enable UI Back Button" Target="UI_BACK_BUTTON" Default="false|true" Description="Enables/disables a back-button next to the logo to go back 1 page in history (Could be used with multi-page kiosks)" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
