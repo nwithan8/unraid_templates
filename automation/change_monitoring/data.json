@@ -18,8 +18,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "06aee05602d31e9fde04184ef3e40206215a40af",
-                "commit_message": "Move distance unit settings to user settings\n"
+                "commit_hash": "e4c5e9d7ea9990fb3b551c09440cce43a1ff8ae0",
+                "commit_message": "Merge pull request #1183 from jivanpal/create-missing-database\n\ndocker-compose.yml: Add PostGIS envvar to create database on initial setup."
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
