@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>WebDAV</Name>
+    <Repository>bytemark/webdav:latest</Repository>
+    <Registry>https://hub.docker.com/r/bytemark/webdav</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/BytemarkHosting/docker-webdav/issues</Support>
+    <Project>https://github.com/BytemarkHosting/docker-webdav</Project>
+    <Overview>
+        An easily configurable WebDAV server with Apache.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Other Network: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>apache webdav server web files</ExtraSearchTerms>
+    <Icon>https://debrid-link.com/screen/webdav_logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/webdav.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-23
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="5000" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="Authentication Type" Target="AUTH_TYPE" Default="Basic|Digest" Description="Authentication type for WebDAV" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Username" Target="USERNAME" Default="" Description="Username for WebDAV authentication" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Password" Target="PASSWORD" Default="" Description="Password for WebDAV authentication" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Data Path" Target="/var/lib/dav" Default="/mnt/user/appdata/webdav/data" Description="Path to files to serve" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/webdav/data</Config>
+</Container>
