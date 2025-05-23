@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>httpyac</Name>
+    <Repository>ghcr.io/anweber/httpyac:latest</Repository>
+    <Registry>ghcr.io/anweber/httpyac</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://httpyac.github.io/guide/installation_docker.html</Support>
+    <Project>https://httpyac.github.io/</Project>
+    <Overview>
+        Quickly and easily send REST, SOAP, GraphQL and gRPC requests
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>http client cli rest soap graphql grpc request yac development network https</ExtraSearchTerms>
+    <Icon>https://httpyac.github.io/favicon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/httpyac.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-23
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://httpyac.github.io/guide/installation_docker.html#installation
+    </Requires>
+    <PostArgs>--version</PostArgs>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/httpyac/data" Description="Path to data files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/httpyac/data</Config>
+</Container>
