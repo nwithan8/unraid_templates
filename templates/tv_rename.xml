@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>TV Rename</Name>
+    <Repository>jasongdove/tvrename:develop</Repository>
+    <Registry>https://hub.docker.com/r/jasongdove/tvrename</Registry>
+    <Branch>
+        <Tag>develop</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/jasongdove/tvrename/issues</Support>
+    <Project>https://github.com/jasongdove/tvrename</Project>
+    <Overview>
+        Identify and rename television episode files.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Other Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>sonarr tunarr dizquetv ersatztv tv show episode rename management cli</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tv-rename-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tv_rename.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-23
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://github.com/jasongdove/tvrename
+    </Requires>
+    <Config Name="Temp Path" Target="/tmp/tv" Default="/mnt/user/appdata/tv_rename/tmp" Description="Path to temp files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/tv_rename/tmp</Config>
+    <Config Name="Cache Path" Target="/cache" Default="/mnt/user/appdata/tv_rename/cache" Description="Path to cache files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/tv_rename/cache</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
