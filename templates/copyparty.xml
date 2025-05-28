@@ -40,13 +40,20 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-05-27
+
+        Clarify config file requirement
+
         ### 2025-04-25
 
         Initial release
     </Changes>
+    <Requires>
+        Expects a config.conf file in the Config Path BEFORE the container is started. See documentation: https://github.com/9001/copyparty#server-config
+    </Requires>
     <ExtraParams>--user 099:100</ExtraParams>
     <Config Name="Web UI Port" Target="3923" Default="3923" Mode="tcp" Description="Container Port: 3923" Type="Port" Display="always-hide" Required="true" Mask="false">3923</Config>
     <Config Name="File Storage" Target="/w" Default="/mnt/user/appdata/copyparty/files" Description="Path to file storage" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/copyparty/files</Config>
-    <Config Name="Config Path" Target="/cfg" Default="/mnt/user/appdata/copyparty/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/copyparty/config</Config>
-    <Config Name="Preload" Target="LD_PRELOAD" Default="/usr/lib/libmimalloc-secure.so.NOPE|/usr/lib/libmimalloc-secure.so.2" Description="Switch to preload mimalloc secure library at the expense of RAM usage." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/cfg" Default="/mnt/user/appdata/copyparty/config" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/copyparty/config</Config>
+    <Config Name="Mimalloc" Target="LD_PRELOAD" Default="/usr/lib/libmimalloc-secure.so.NOPE|/usr/lib/libmimalloc-secure.so.2" Description="Enable mimalloc for higher performance, at the expense of 2x RAM usage." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
