@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>speedrr</Name>
+    <Repository>itschasa/speedrr:latest</Repository>
+    <Registry>https://hub.docker.com/r/itschasa/speedrr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/itschasa/speedrr/issues</Support>
+    <Project>https://github.com/itschasa/speedrr</Project>
+    <Overview>
+        Dynamically manage speeds on torrent clients, with Plex/Jellyfin/Emby intergration.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>sonarr radarr qbittorrent deluge transmission plex jellyfin emby upload speed control torrent usenet download</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/itschasa/speedrr/master/images/speedrr.png</Icon>
+    <Banner>https://raw.githubusercontent.com/itschasa/speedrr/master/images/speedrr_text.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/speedrr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-28
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a "config.yaml" file in the Config Folder BEFORE the container starts. See documentation: https://github.com/itschasa/speedrr/blob/main/config.yaml
+    </Requires>
+    <Config Name="Config Folder" Target="/data" Default="/mnt/user/appdata/speedrr/config" Description="Path to config files" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/speedrr/config</Config>
+    <Config Name="Internal Config File" Target="SPEEDRR_CONFIG" Default="/data/config.yaml" Description="Internal path to config file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data/config.yaml</Config>
+    <Config Name="Console Log Level" Target="SPEEDRR_LOG_LEVEL" Default="20" Description="Log level in console" Type="Variable" Display="advanced-hide" Required="false" Mask="false">20</Config>
+    <Config Name="File Log Level" Target="SPEEDRR_LOG_FILE_LEVEL" Default="30" Mode="" Description="Log level in file" Type="Variable" Display="advanced-hide" Required="false" Mask="false">20</Config>
+</Container>
