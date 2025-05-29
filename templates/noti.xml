@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>noti</Name>
+    <Repository>devmtl/noti:latest</Repository>
+    <Registry>https://hub.docker.com/r/devmtl/noti</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/firepress-org/noti-in-docker/issues</Support>
+    <Project>https://github.com/variadico/noti</Project>
+    <Overview>
+        Monitor a process and trigger a notification. &#xD;
+        [br]
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://pkg.go.dev/bdd.fi/x/runitor#readme-usage
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>notification slack webhook ntfy email push notification service alert</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/noti-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/noti.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool; edit **Post Arguments** accordingly. See documentation: https://github.com/variadico/noti/blob/main/docs/noti.md
+    </Requires>
+    <PostArgs>sh -c 'noti -m "Hello"'</PostArgs>
+</Container>
