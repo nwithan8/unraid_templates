@@ -313,5 +313,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Convert-Commander",
+        "git_url": "https://github.com/Benzauber/convert-commander.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "871e887a1c9a64361db4d5ae2421aea6f696182f",
+                "commit_message": null
+            }
+        ]
     }
 ]
