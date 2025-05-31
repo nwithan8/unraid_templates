@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>ParkPow Plate Recognizer - Snapshot</Name>
+    <Repository>platerecognizer/alpr:latest</Repository>
+    <Registry>https://hub.docker.com/r/platerecognizer/alpr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release (Global engine)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>thailand</Tag>
+        <TagDescription>Latest stable release (Thailand engine)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>germany</Tag>
+        <TagDescription>Latest stable release (Germany engine)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>korea</Tag>
+        <TagDescription>Latest stable release (Korea engine)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>japan</Tag>
+        <TagDescription>Latest stable release (Japan engine)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>egypt</Tag>
+        <TagDescription>Latest stable release (Egypt engine)</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>uae</Tag>
+        <TagDescription>Latest stable release (United Arab Emirates engine)</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://guides.platerecognizer.com/docs/snapshot/manual-install</Support>
+    <Project>https://platerecognizer.com/</Project>
+    <Overview>
+        Read a license plate from a vehicle picture, powered by ParkPow.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>image picture camera license plate boat recognition api sdk vehicle parking lot alpr</ExtraSearchTerms>
+    <Icon>https://app.parkpow.com/static/images/Icon_ParkPow_100x100.jpg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/parkpow_plate_recognizer_snapshot.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Runs offline, but requires a token and license from https://app.platerecognizer.com/products/snapshot-sdk/
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="3000" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="API Token" Target="TOKEN" Default="" Description="API Token for Plate Recognizer: https://app.platerecognizer.com/products/snapshot-sdk/" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="License" Target="LICENSE_KEY" Default="" Description="License Key for Plate Recognizer: https://app.platerecognizer.com/products/snapshot-sdk/" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="App Data" Target="/license" Default="/mnt/user/appdata/plate_recognizer/snapshot" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plate_recognizer/snapsho</Config>
+</Container>

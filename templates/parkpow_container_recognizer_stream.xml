@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>ParkPow Shipping Container Recognizer - Stream</Name>
+    <Repository>platerecognizer/container-video:latest</Repository>
+    <Registry>https://hub.docker.com/r/platerecognizer/container-video</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://guides.platerecognizer.com/docs/other-apps/shipping-container-live/docker-configuration</Support>
+    <Project>https://platerecognizer.com/</Project>
+    <Overview>
+        Read a shipping container number from a live stream, powered by ParkPow.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>image picture camera video stream live shipping container number alpr</ExtraSearchTerms>
+    <Icon>https://app.parkpow.com/static/images/Icon_ParkPow_100x100.jpg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/parkpow_container_recognizer_stream.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Runs offline, but requires a token and license from https://app.platerecognizer.com/products/snapshot-sdk/
+    </Requires>
+    <Config Name="API Token" Target="TOKEN" Default="" Description="API Token for Plate Recognizer: https://app.platerecognizer.com/products/snapshot-sdk/" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="License" Target="LICENSE_KEY" Default="" Description="License Key for Plate Recognizer: https://app.platerecognizer.com/products/snapshot-sdk/" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="App Data" Target="/container-video-data" Default="/mnt/user/appdata/shipping_container_recognizer/stream" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/shipping_container_recognizer/stream</Config>
+</Container>

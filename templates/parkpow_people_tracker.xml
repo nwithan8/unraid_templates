@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>ParkPow People Tracker</Name>
+    <Repository>platerecognizer/people-tracker:latest</Repository>
+    <Registry>https://hub.docker.com/r/platerecognizer/people-tracker</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://guides.platerecognizer.com/docs/other-apps/people-tracker/docker-configuration</Support>
+    <Project>https://platerecognizer.com/</Project>
+    <Overview>
+        PeopleTracker is a detection software that processes live camera or pre-recorded video feeds rapidly and effectively. Upon detection of a person, the software triggers a webhook in real-time, thus ensuring swift and efficient people counting metrics.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>stream video camera people recognization person detector tracker</ExtraSearchTerms>
+    <Icon>https://app.parkpow.com/static/images/Icon_ParkPow_100x100.jpg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/parkpow_people_tracker.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Runs offline, but requires a token and license from https://app.platerecognizer.com/products/snapshot-sdk/ &#xD;
+        [br]
+        Requires a `people-config.ini` file in the App Data folder. See documentation: https://guides.platerecognizer.com/docs/other-apps/people-tracker/configuration
+    </Requires>
+    <Config Name="API Token" Target="TOKEN" Default="" Description="API Token for Plate Recognizer: https://app.platerecognizer.com/products/snapshot-sdk/" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="License" Target="LICENSE_KEY" Default="" Description="License Key for Plate Recognizer: https://app.platerecognizer.com/products/snapshot-sdk/" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="App Data" Target="/people-data" Default="/mnt/user/appdata/people_tracker/stream" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/people_tracker/stream</Config>
+</Container>
