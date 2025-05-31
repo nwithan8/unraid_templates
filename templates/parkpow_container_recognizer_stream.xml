@@ -15,7 +15,7 @@
         Read a shipping container number from a live stream, powered by ParkPow.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <Category>AI: MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>image picture camera video stream live shipping container number alpr</ExtraSearchTerms>
     <Icon>https://app.parkpow.com/static/images/Icon_ParkPow_100x100.jpg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/parkpow_container_recognizer_stream.xml</TemplateURL>

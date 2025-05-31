@@ -16,7 +16,7 @@
         Read a shipping container number from a picture, powered by ParkPow.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <Category>AI: MediaApp:Photos Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>image picture camera shipping container number alpr</ExtraSearchTerms>
     <Icon>https://app.parkpow.com/static/images/Icon_ParkPow_100x100.jpg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/parkpow_container_recognizer_snapshot.xml</TemplateURL>

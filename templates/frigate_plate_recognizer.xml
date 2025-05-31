@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Frigate Plate Recognizer</Name>
+    <Repository>lmerza/frigate_plate_recognizer:latest</Repository>
+    <Registry>https://hub.docker.com/r/lmerza/frigate_plate_recognizer</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ljmerza/frigate_plate_recognizer/issues</Support>
+    <Project>https://github.com/ljmerza/frigate_plate_recognizer</Project>
+    <Overview>
+        Identify license plates via Plate Recognizer or CodeProject.AI and add them as sublabels to Frigate.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: MediaApp:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>image picture camera blueiris home assistant frigate plate recognition license number codeproject ai</ExtraSearchTerms>
+    <Icon-black>https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/docs/static/img/logo.svg</Icon-black>
+    <Icon-white>https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/docs/static/img/logo-dark.svg</Icon-white>
+    <Icon-grey>https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/docs/static/img/logo.svg</Icon-grey>
+    <Icon-azure>https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/docs/static/img/logo-dark.svg</Icon-azure>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/frigate_plate_recognizer.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate Frigate and CodeProject.AI instances. &#xD;
+        [br]
+        Expects a `config.yml` file in the App Data folder. See documentation: https://github.com/ljmerza/frigate_plate_recognizer#setup
+    </Requires>
+    <Config Name="Plate Image Storage" Target="/plates" Default="" Description="Path to store plate images" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="App Data" Target="/config" Default="/mnt/user/appdata/frigate_plate_recognizer/config" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/frigate_plate_recognizer/config</Config>
+</Container>

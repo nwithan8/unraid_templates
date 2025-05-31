@@ -15,7 +15,7 @@
         PeopleTracker is a detection software that processes live camera or pre-recorded video feeds rapidly and effectively. Upon detection of a person, the software triggers a webhook in real-time, thus ensuring swift and efficient people counting metrics.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <Category>AI: MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>stream video camera people recognization person detector tracker</ExtraSearchTerms>
     <Icon>https://app.parkpow.com/static/images/Icon_ParkPow_100x100.jpg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/parkpow_people_tracker.xml</TemplateURL>
