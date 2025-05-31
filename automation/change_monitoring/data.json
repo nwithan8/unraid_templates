@@ -325,5 +325,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "FastAPI-DLS",
+        "git_url": "https://git.collinwebdesigns.de/oscar.krause/fastapi-dls.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "54eaf55ee8816dce38ba5034196043e7624b6a57",
+                "commit_message": null
+            }
+        ]
     }
 ]

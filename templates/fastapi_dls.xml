@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>FastAPI-DLS</Name>
+    <Repository>collinwebdesigns/fastapi-dls:latest</Repository>
+    <Registry>https://hub.docker.com/r/collinwebdesigns/fastapi-dls</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:443]/</WebUI>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://git.collinwebdesigns.de/oscar.krause/fastapi-dls/-/issues</Support>
+    <Project>https://git.collinwebdesigns.de/oscar.krause/fastapi-dls</Project>
+    <Overview>
+        Minimal Delegated License Service (DLS)
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>nvidia gpu vgpu license server</ExtraSearchTerms>
+    <Icon>https://git.collinwebdesigns.de/uploads/-/system/project/avatar/106/png-transparent-nvidia-grid-logo-business-nvidia-electronics-text-trademark.png?width=64</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/fastapi_dls.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-05-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Generate certificates before starting the container for the first time. See documentation: https://git.collinwebdesigns.de/oscar.krause/fastapi-dls/-/tree/main/#docker
+    </Requires>
+    <Config Name="HTTPS Port" Target="443" Default="4443" Description="Same as DLS Port below." Type="Port" Mode="tcp" Display="always-hide" Required="true" Mask="false">4443</Config>
+    <Config Name="DLS Port" Target="DSL_PORT" Default="4443" Description="Choose port you want to use. Make sure to change the HTTPS port above to match it." Type="Variable" Display="always-hide" Required="true" Mask="false">4443</Config>
+    <Config Name="App Cert" Target="/app/cert" Default="/mnt/user/appdata/fastapi-dls/cert" Description="Read the description above to make this folder. You do not need to change the path." Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/fastapi-dls/cert</Config>
+    <Config Name="App Database" Target="/app/database" Default="/mnt/user/appdata/fastapi-dls/data" Description="Read the description above to make this folder. You do not need to change the path." Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/fastapi-dls/data</Config>
+    <Config Name="DSL IP" Target="DLS_URL" Default="localhost" Description="Put your container's IP (or your host's IP if it's shared)." Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Internal Database Path" Target="DATABASE" Default="sqlite:////app/database/db.sqlite" Description="Internal path to database. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">sqlite:////app/database/db.sqlite</Config>
+    <Config Name="Debug" Target="DEBUG" Default="true|false" Description="Enable debugging" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Lease Length" Target="LEASE_EXPIRE_DAYS" Default="90" Description="Lease length, in days. Max 90 days." Type="Variable" Display="advanced" Required="true" Mask="false">90</Config>
+</Container>
