@@ -59,5 +59,5 @@
     <Config Name="Web UI Port" Target="8080" Default="3000" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="API Token" Target="TOKEN" Default="" Description="API Token for Plate Recognizer: https://app.platerecognizer.com/products/snapshot-sdk/" Type="Variable" Display="always" Required="true" Mask="true"/>
     <Config Name="License" Target="LICENSE_KEY" Default="" Description="License Key for Plate Recognizer: https://app.platerecognizer.com/products/snapshot-sdk/" Type="Variable" Display="always" Required="true" Mask="true"/>
-    <Config Name="App Data" Target="/license" Default="/mnt/user/appdata/plate_recognizer/snapshot" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plate_recognizer/snapsho</Config>
+    <Config Name="App Data" Target="/license" Default="/mnt/user/appdata/plate_recognizer/snapshot" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plate_recognizer/snapshot</Config>
 </Container>
