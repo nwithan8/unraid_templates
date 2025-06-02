@@ -337,5 +337,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Willow Application Server",
+        "git_url": "https://github.com/HeyWillow/willow-application-server.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "91ea9b8577eaaeee2a52793610db1d61ef669dc0",
+                "commit_message": null
+            }
+        ]
     }
 ]

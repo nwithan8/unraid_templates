@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Willow Application Server</Name>
+    <Repository>ghcr.io/heywillow/willow-application-server:latest</Repository>
+    <Registry>ghcr.io/heywillow/willow-application-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <WebUI>http://[IP]:[PORT:8502]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://heywillow.io/components/willow-application-server/</Support>
+    <Project>https://heywillow.io/</Project>
+    <Overview>
+        Manage configuration across all Willow devices. Part of the Willow suite.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ai voice assistant llm home automation smart esp32 s3 box willow</ExtraSearchTerms>
+    <Icon>https://heywillow.io/images/favicon.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/willow_application_server.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-01
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="8502" Default="8502" Mode="tcp" Description="Container Port: 8502" Type="Port" Display="always-hide" Required="true" Mask="false">8502</Config>
+    <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/willow_application_server/app" Description="Path to store application data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/willow_application_server/app</Config>
+    <Config Name="Storage Path" Target="/app/storage" Default="/mnt/user/appdata/willow_application_server/storage" Description="Path to store application storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/willow_application_server/storage</Config>
+    <Config Name="Docker Log Level" Target="LOG_LEVEL" Default="info|debug|warning|error|critical" Description="Set the log level for the Docker container" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="WAS Log Level" Target="WAS_LOG_LEVEL" Default="info|debug|warning|error|critical" Description="Set the log level for the application server" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
