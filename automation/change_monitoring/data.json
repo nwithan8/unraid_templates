@@ -18,8 +18,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "e4c5e9d7ea9990fb3b551c09440cce43a1ff8ae0",
-                "commit_message": "Merge pull request #1183 from jivanpal/create-missing-database\n\ndocker-compose.yml: Add PostGIS envvar to create database on initial setup."
+                "commit_hash": "551c6e76293bfeb9253579829c4fe17fd5413d28",
+                "commit_message": "Use sqlite for cable in development\n"
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
@@ -268,8 +268,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "263e46ba4d12ac8386a3342e92370ac1d9ab6e01",
-                "commit_message": "feat: add media viewer + other fixes (#79)\n\n* feat: add media viewer + other fixes\n\n* chore: remove logging [skip ci]\n\n* chore: remove logging [skip ci]\n\n* feat: add unit test for media\n\n* feat: add unit test for media\n\n* feat: add unit test for media [skip ci]\n\n* feat: add unit test for media [skip ci]\n\n* feat: add unit test for media [skip ci]\n\n* feat: add unit test for media [skip ci]\n\n* chore: update docs [skip ci]"
+                "commit_hash": "6c56f2f1619570f84619f5a82152728850256f1b",
+                "commit_message": "Chore: app refactor (#88)\n\n* chore: refactor wip\n\n* chore: refactor wip\n\n* chore: refactor wip\n\n* chore: refactor wip\n\n* chore: refactor wip\n\n* chore: refactor wip\n\n* chore: work in progress\n\n* chore: work in progress\n\n* chore: work in progress\n\n* chore: work in progress\n\n* chore: work in progress\n\n* chore: work in progress\n\n* chore: work in progress\n\n* chore: work in progress\n\n* chore: work in progress\n\n* chore: refactor wip\n\n* chore: work in progress\n\n* chore: refactor wip\n\n* chore: refactor wip\n\n* chore: refactor wip\n\n* fix: build\n\n* fix: cypress test\n\n* fix: cypress test\n\n* fix: cypress test\n\n* fix: cypress test\n\n* fix: cypress test\n\n* fix: cypress test\n\n* fix: cypress test\n\n* fix: cypress test\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests\n\n* fix: cypress tests"
             }
         ]
     },
