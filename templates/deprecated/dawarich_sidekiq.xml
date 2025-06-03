@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-06-02
+
+        Deprecated as no longer needed for Dawarich
+
         ### 2025-05-19
 
         Remove DISTANCE_UNIT variable
