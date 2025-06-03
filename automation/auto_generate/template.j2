@@ -1,0 +1,135 @@
+{#- Functions -#}
+{%- macro clean(str) -%}
+    {{ str | replace("<", "") | replace(">", "") | replace("[", "") | replace("]", "") | replace("&", "and") | e }}
+{%- endmacro -%}
+{%- macro markdown(str) -%}
+    {{ str | replace("\n", "&#xD;") }}
+{%- endmacro -%}
+{%- macro changelog_date(date) -%}
+    ### {{ date | replace(".", "-") | replace("/", "-") | replace(" ", "-") }}
+{%- endmacro -%}
+{%- macro changelog_entry(item) -%}
+    - {{ markdown(clean(item)) }}
+{%- endmacro -%}
+{%- macro category_format(category) %}
+    {%- if ':' in category -%}
+        {{ category }}
+    {%- else -%}
+        {{ category + ":" }}
+    {%- endif -%}
+{%- endmacro -%}
+
+{#- Variables -#}
+{%- set app_name = app_name if app_name is defined else "MyApp" -%}
+{%- set repo = repo if repo is defined else "myrepo/myapp" -%}
+{%- set main_tag = main_tag if main_tag is defined else "latest" -%}
+{%- set main_tag_description = main_tag_description if main_tag_description is defined else "Latest stable release" -%}
+{%- set registry = registry if registry is defined else "docker.io" -%}
+{%- set network = network if network is defined else "bridge" -%}
+{%- set web_ui = web_ui if web_ui is defined else {} -%}
+{%- set shell = shell if shell is defined else "/bin/bash" -%}
+{%- set privileged = privileged if privileged is defined else false -%}
+{%- set support_url = support_url if support_url is defined else "" -%}
+{%- set project_url = project_url if project_url is defined else "" -%}
+{%- set overview = overview if overview is defined else "" -%}
+{%- set beta = beta if beta is defined else false -%}
+{%- set categories = categories if categories is defined else [] -%}
+{%- set extra_search_terms = extra_search_terms if extra_search_terms is defined else [] -%}
+{%- set icon_url = icon_url if icon_url is defined else "" -%}
+{%- set banner_url = banner_url if banner_url is defined else "" -%}
+
+{#- Variables -#}
+{%- set calculated_app_name_lower = app_name | lower -%}
+{%- set calculated_app_name_kebab = calculated_app_name_lower | replace(" ", "-") -%}
+{%- set calculated_app_name_underscored = calculated_app_name_lower | replace(" ", "_") -%}
+
+{%- set calculated_categories = [] -%}
+{%- for category in categories -%}
+    {%- set x = calculated_categories.append(category_format(category)) -%}
+{%- endfor -%}
+
+{%- set calculated_extra_search_terms = [] -%}
+{%- for term in extra_search_terms -%}
+    {%- set x = calculated_extra_search_terms.append(term) -%}
+{%- endfor -%}
+
+{%- set calculated_icon_url = "" %}
+{%- if icon_url is defined and icon_url != "" -%}
+    {%- set calculated_icon_url = icon_url -%}
+{%- else -%}
+    {%- set calculated_icon_url = "https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/" ~ calculated_app_name_kebab ~ "-icon.png" -%}
+{%- endif -%}
+
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>{{ app_name }}</Name>
+    <Repository>{{ repo }}:{{ main_tag }}</Repository>
+    <Registry>{{ registry }}</Registry>
+    <Branch>
+        <Tag>{{ main_tag }}</Tag>
+        <TagDescription>{{ main_tag_description}}</TagDescription>
+    </Branch>
+{%- if extra_branches is defined %}
+    {%- for branch in extra_branches %}
+    <Branch>
+        <Tag>{{ branch.tag }}</Tag>
+        <TagDescription>{{ branch.desc }}</TagDescription>
+    </Branch>
+    {%- endfor %}
+{%- endif %}
+    <Network>{{ network if network is defined else 'bridge' }}</Network>
+{%- if webui is defined %}
+    <WebUI>http://[IP]:[PORT:{{ web_ui.port }}]/{{ web_ui.path }}</WebUI>
+{%- endif %}
+{%- if shell is defined %}
+    <Shell>{{ shell }}</Shell>
+{%- endif %}
+    <Privileged>{{ "true" if privileged is defined and privileged is sameas true else "false" }}</Privileged>
+    <Support>{{ support_url }}</Support>
+    <Project>{{ project_url }}</Project>
+    <Overview>
+        {{ markdown(clean(overview)) | trim }}
+    </Overview>
+    <Beta>{{ "True" if beta is defined and beta is sameas true else "False" }}</Beta>
+    <Category>{{ calculated_categories | join(" ") }}</Category>
+    <ExtraSearchTerms>{{ calculated_extra_search_terms | join(" ") }}</ExtraSearchTerms>
+    <Icon>{{ calculated_icon_url }}</Icon>
+{%- if banner_url is defined %}
+    <Banner>{{ banner_url }}</Banner>
+{%- endif %}
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/{{ calculated_app_name_underscored }}.xml</TemplateURL>
+    {% if screenshots is defined %}{% for screenshot in screenshots %}<Screenshot>{{ screenshot }}</Screenshot>{% endfor %}{% endif %}
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        {%- for entry in changelog %}
+        {{ changelog_date(entry.date) }}
+        {%- for item in entry.line_items %}
+        {{ changelog_entry(item) }}
+        {%- endfor %}
+        {% raw %}{% endraw %}
+        {%- endfor %}
+    </Changes>
+{%- if requires is defined %}
+    <Requires>
+        {{ clean(requires) | trim }}
+    </Requires>
+{%- endif %}
+{%- if extra_params is defined %}
+    <ExtraParams>
+        {{ extra_params | join(" ") }}
+    </ExtraParams>
+{%- endif %}
+{%- if post_args is defined %}
+    <PostArgs>
+        {{ post_args }}
+    </PostArgs>
+{%- endif %}
+{%- for item in always_config_items %}
+    <Config Name="{{ clean(item.name) if item.name is defined else item.target }}" Target="{{ item.target }}" Default="{{ item.default if item.default is defined else '' }}" Description="{{ clean(item.desc) if item.desc is defined else '' }}" Type="{{ item.type }}" Mode="{{ item.mode if item.mode is defined else '' }}" Display="{{ "always-hide" if item.hide is sameas true else "always" }}" Required="{{ "true" if item.required is defined and item.required is sameas true else "false" }}" Mask="{{ "true" if item.mask is defined and item.mask is sameas true else "false" }}">{{ item.default if item.default is defined else '' }}</Config>
+{%- endfor %}
+{%- for item in advanced_config_items %}
+    <Config Name="{{ clean(item.name) if item.name is defined else item.target }}" Target="{{ item.target }}" Default="{{ item.default if item.default is defined else '' }}" Description="{{ clean(item.desc) if item.desc is defined else '' }}" Type="{{ item.type }}" Mode="{{ item.mode if item.mode is defined else '' }}" Display="{{ "advanced-hide" if item.hide is sameas true else "advanced" }}" Required="{{ "true" if item.required is defined and item.required is sameas true else "false" }}" Mask="{{ "true" if item.mask is defined and item.mask is sameas true else "false" }}">{{ item.default if item.default is defined else '' }}</Config>
+{%- endfor %}
+</Container>

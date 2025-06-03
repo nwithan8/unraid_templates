@@ -1,0 +1,60 @@
+---
+app_name: My App
+repo: "imagegenius/docker-immich"
+main_tag: "latest"
+main_tag_description: "Latest Immich release. Machine-learning is completely removed."
+registry: "ghcr.io/imagegenius/docker-immich"
+extra_branches:
+  - { tag: "noml", desc: "Latest Immich release. Machine-learning is completely removed." }
+  - { tag: "cuda", desc: "Latest Immich release. Machine-learning supports cuda (Nvidia)." }
+  - { tag: "openvino", desc: "Latest Immich release. Machine-learning supports openvino (Intel)." }
+network: host
+shell: sh
+support_url: https://support.com
+project_url: https://immich.app/
+overview: This is an overview.
+icon_url: "https://raw.githubusercontent.com/immich-app/immich/main/design/immich-logo-inline-dark.png"
+banner_url: "https://raw.githubusercontent.com/immich-app/immich/main/design/immich-logo-inline-dark.png"
+screenshots:
+  - https://image1.com/screenshot1.png
+  - https://image2.com/screenshot2.png
+categories:
+  - Backup
+  - Media
+  - MediaApp:Video
+extra_search_terms:
+  - Immich
+  - Photo Backup
+  - Video Backup
+changelog:
+  - date: "04.04.25"
+    line_items:
+      - "use \"SERVER_PORT\" or \"MACHINE_LEARNING_PORT\" instead of \"IMMICH_PORT\" and use \"SERVER_HOST\" or \"MACHINE_LEARNING_HOST\" instead of \"IMMICH_HOST\""
+      - "second thing"
+  - date: "03.04.25"
+    line_items:
+      - "first thing"
+      - "second thing"
+      - "third thing"
+      - "fourth thing"
+      - "fifth thing"
+      - "sixth thing"
+      - "seventh thing"
+      - "eighth thing"
+      - "ninth thing"
+      - "tenth thing"
+      - "eleventh thing"
+      - "twelfth thing"
+      - "thirteenth thing"
+      - "fourteenth thing"
+      - "fifteenth thing"
+      - "sixteenth thing"
+requires: Requires a PostgreSQL 14/15/16 instance
+extra_params:
+  - --user 99:100
+  - --restart unless-stopped
+post_args: npm run start
+always_config_items:
+  - { name: "Database Host", type: "Variable", target: "DB_HOSTNAME", default: "192.168.1.x", desc: "PostgreSQL Host", hide: true, required: true, mask: true }
+advanced_config_items:
+  - { name: "Database Username", type: "Variable", target: "DB_USERNAME", default: "postgres", desc: "PostgreSQL Username", hide: true, required: true, mask: true }

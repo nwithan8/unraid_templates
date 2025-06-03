@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>My App</Name>
+    <Repository>imagegenius/docker-immich:latest</Repository>
+    <Registry>ghcr.io/imagegenius/docker-immich</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest Immich release. Machine-learning is completely removed.</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>noml</Tag>
+        <TagDescription>Latest Immich release. Machine-learning is completely removed.</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>cuda</Tag>
+        <TagDescription>Latest Immich release. Machine-learning supports cuda (Nvidia).</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>openvino</Tag>
+        <TagDescription>Latest Immich release. Machine-learning supports openvino (Intel).</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://support.com</Support>
+    <Project>https://immich.app/</Project>
+    <Overview>
+        This is an overview.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Backup: Media: MediaApp:Video</Category>
+    <ExtraSearchTerms>Immich Photo Backup Video Backup</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/immich-app/immich/main/design/immich-logo-inline-dark.png</Icon>
+    <Banner>https://raw.githubusercontent.com/immich-app/immich/main/design/immich-logo-inline-dark.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/my_app.xml</TemplateURL>
+    <Screenshot>https://image1.com/screenshot1.png</Screenshot><Screenshot>https://image2.com/screenshot2.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 04-04-25
+        - use &#34;SERVER_PORT&#34; or &#34;MACHINE_LEARNING_PORT&#34; instead of &#34;IMMICH_PORT&#34; and use &#34;SERVER_HOST&#34; or &#34;MACHINE_LEARNING_HOST&#34; instead of &#34;IMMICH_HOST&#34;
+        - second thing
+        
+        ### 03-04-25
+        - first thing
+        - second thing
+        - third thing
+        - fourth thing
+        - fifth thing
+        - sixth thing
+        - seventh thing
+        - eighth thing
+        - ninth thing
+        - tenth thing
+        - eleventh thing
+        - twelfth thing
+        - thirteenth thing
+        - fourteenth thing
+        - fifteenth thing
+        - sixteenth thing
+        
+    </Changes>
+    <Requires>
+        Requires a PostgreSQL 14/15/16 instance
+    </Requires>
+    <ExtraParams>
+        --user 99:100 --restart unless-stopped
+    </ExtraParams>
+    <PostArgs>
+        npm run start
+    </PostArgs>
+    <Config Name="Database Host" Target="DB_HOSTNAME" Default="192.168.1.x" Description="PostgreSQL Host" Type="Variable" Mode="" Display="always-hide" Required="true" Mask="true">192.168.1.x</Config>
+    <Config Name="Database Username" Target="DB_USERNAME" Default="postgres" Description="PostgreSQL Username" Type="Variable" Mode="" Display="advanced-hide" Required="true" Mask="true">postgres</Config>
+</Container>
