@@ -18,13 +18,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "551c6e76293bfeb9253579829c4fe17fd5413d28",
-                "commit_message": "Use sqlite for cable in development\n"
+                "commit_hash": "6d39f4306f55a10a9ceefc78fbbd536623214082",
+                "commit_message": "Remove Redis and Sidekiq from Dawarich\n"
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
-                "commit_hash": "e10e97cb9260c50345d12e093beeb870446119c7",
-                "commit_message": "Update default value for STORE_GEODATA\n"
+                "commit_hash": "6d39f4306f55a10a9ceefc78fbbd536623214082",
+                "commit_message": "Remove Redis and Sidekiq from Dawarich\n"
             }
         ]
     },
@@ -83,8 +83,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "b8f79769d1a27ed90ca4b3f67fc5665776642a5d",
-                "commit_message": null
+                "commit_hash": "57de3f3112ace4b520a7869a562cea7a6ae8b315",
+                "commit_message": "Enhance log filtering and pagination handling - Improved log entry filtering by adding data attributes to manage visibility based on log levels. Updated pagination logic to account for entries hidden by filters, ensuring accurate page counts. Increased delay for pagination updates to improve performance during filtering and added debugging logs for better visibility into badge text processing.\n"
             }
         ]
     },
