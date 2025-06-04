@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-05-04
+
+        Update environment variables
+
         ### 2025-04-24
 
         Initial release
@@ -41,8 +45,11 @@
     <Config Name="Vapid - Private Key" Target="VAPID_PRIVATE_KEY" Default="" Description="Vapid credentials for push notifications" Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Resend - Key" Target="RESEND" Default="" Description="Resend credentials for email notifications" Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Admin Email" Target="ADMIN_EMAIL" Default="" Description="Email address to send emails as" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="Remove Events After Days" Target="REMOVE_EVENTS_AT" Default="120" Description="Number of days to keep events in the database" Type="Variable" Display="always-hide" Required="true" Mask="false">120</Config>
-    <Config Name="Remove Test Events After Days" Target="REMOVE_TEST_EVENTS_AT" Default="7" Description="Number of days to keep test events in the database" Type="Variable" Display="always-hide" Required="true" Mask="false">7</Config>
+    <Config Name="SMTP - Host" Target="SMTP_HOST" Default="" Description="SMTP host for sending emails" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SMTP - Port" Target="SMTP_PORT" Default="587" Description="SMTP port for sending emails" Type="Variable" Display="always" Required="false" Mask="false">587</Config>
+    <Config Name="SMTP - Username" Target="SMTP_USERNAME" Default="" Description="SMTP username for sending emails" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SMTP - Password" Target="SMTP_PASSWORD" Default="" Description="SMTP password for sending emails" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Remove Test Events After Days" Target="REMOVE_TEST_EVENTS_AFTER" Default="7" Description="Number of days to keep test events in the database" Type="Variable" Display="always-hide" Required="true" Mask="false">7</Config>
     <Config Name="CORS" Target="CORS" Default="*" Description="CORS settings for the API" Type="Variable" Display="advanced-hide" Required="true" Mask="false">*</Config>
     <Config Name="Node.js Port" Target="PORT" Default="2000" Description="Port for the Node.js backend. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">2000</Config>
     <Config Name="Vite API URL" Target="VITE_API_URL" Default="http://localhost:4337" Description="URL of the backend. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://localhost:4337</Config>
