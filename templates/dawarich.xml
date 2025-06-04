@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-06-04
+
+        Fix bad Variable for database paths
+
         ### 2025-06-02
 
         Update for 0.27.2 - Remove Redis and Sidekiq requirements, add database paths
@@ -92,8 +96,8 @@
     <Config Name="Application Hosts" Target="APPLICATION_HOSTS" Default="localhost" Description="Hosts of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
     <Config Name="Background Processing Concurrency" Target="BACKGROUND_PROCESSING_CONCURRENCY" Default="10" Description="Number of background processing threads" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
     <Config Name="Application Protocol" Target="APPLICATION_PROTOCOL" Default="http" Description="Protocol of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http</Config>
-    <Config Name="Database - Queue" Target="QUEUE_DATABASE_PATH" Default="/dawarich_db_data/dawarich_development_queue.sqlite3" Description="Path to the database queue file. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/dawarich_db_data/dawarich_development_queue.sqlite3</Config>
-    <Config Name="Database - Cache" Target="CACHE_DATABASE_PATH" Default="/dawarich_db_data/dawarich_development_cache.sqlite3" Description="Path to the database cache file. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/dawarich_db_data/dawarich_development_cache.sqlite3</Config>
-    <Config Name="Database - Cable" Target="CABLE_DATABASE_PATH" Default="/dawarich_db_data/dawarich_development_cable.sqlite3" Description="Path to the database cable file. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/dawarich_db_data/dawarich_development_cable.sqlite3</Config>
+    <Config Name="Database - Queue" Target="QUEUE_DATABASE_PATH" Default="/dawarich_db_data/dawarich_development_queue.sqlite3" Description="Internal path to the database queue file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dawarich_db_data/dawarich_development_queue.sqlite3</Config>
+    <Config Name="Database - Cache" Target="CACHE_DATABASE_PATH" Default="/dawarich_db_data/dawarich_development_cache.sqlite3" Description="Internal path to the database cache file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dawarich_db_data/dawarich_development_cache.sqlite3</Config>
+    <Config Name="Database - Cable" Target="CABLE_DATABASE_PATH" Default="/dawarich_db_data/dawarich_development_cable.sqlite3" Description="Internal path to the database cable file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dawarich_db_data/dawarich_development_cable.sqlite3</Config>
     <Config Name="Is Self-Hosted" Target="SELF_HOSTED" Default="true|false" Description="Is the application self-hosted?" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
