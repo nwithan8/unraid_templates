@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>SurfSense - Backend</Name>
+    <Repository>ghcr.io/modsetter/surfsense_backend:latest</Repository>
+    <Registry>ghcr.io/modsetter/surfsense_backend</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://www.surfsense.net/docs</Support>
+    <Project>https://www.surfsense.net/</Project>
+    <Overview>
+        Open Source Alternative to NotebookLM / Perplexity / Glean, connected to external sources such as search engines (Tavily, Linkup), Slack, Linear, Notion, YouTube, GitHub, Discord and more. &#xD;
+        [br]
+        This is the backend container.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>notebooklm llm erplexity glean ai search engine slack linear notion youtube github discord podcast notes text corpus</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/surfsense-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/surfsense-banner.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/surfsense_backend.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-05
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate SurfSense - Frontend container and PostgreSQL database.
+    </Requires>
+    <Config Name="API Port" Target="8000" Default="3001" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">3001</Config>
+    <Config Name="Database - URL" Target="DATABASE_URL" Default="postgresql+asyncpg://USERNAME:PASSWORD@IP_ADDRESS:5432/surfsense" Description="URL of the PostgreSQL database, including port and credentials" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql+asyncpg://USERNAME:PASSWORD@IP_ADDRESS:5432/surfsense</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="JWT Secret key for authentication (should be a secure random string)" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Frontend URL" Target="FRONTEND_URL" Default="http://MY_IP_ADDRESS:3000" Description="URL of the frontend service, including port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://MY_IP_ADDRESS:3000</Config>
+    <Config Name="Authentication - Type" Target="AUTH_TYPE" Default="LOCAL|GOOGLE" Description="Authentication type (Google OAuth or local email/password)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Authentication - Google Client ID" Target="GOOGLE_OAUTH_CLIENT_ID" Default="" Description="Google OAuth Client ID. Required if AUTH_TYPE is set to GOOGLE." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Authentication - Google Client Secret" Target="GOOGLE_OAUTH_CLIENT_SECRET" Default="" Description="Google OAuth Client Secret. Required if AUTH_TYPE is set to GOOGLE." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Models - Embedder Model" Target="EMBEDDING_MODEL" Default="mixedbread-ai/mxbai-embed-large-v1" Description="Name of the embedding model (e.g., openai://text-embedding-ada-002, anthropic://claude-v1, mixedbread-ai/mxbai-embed-large-v1)" Type="Variable" Display="always-hide" Required="true" Mask="false">mixedbread-ai/mxbai-embed-large-v1</Config>
+    <Config Name="Models - Reranker Model" Target="RERANKERS_MODEL_NAME" Default="ms-marco-MiniLM-L-12-v2" Description="Name of the reranker model (e.g., ms-marco-MiniLM-L-12-v2)" Type="Variable" Display="always-hide" Required="false" Mask="false">ms-marco-MiniLM-L-12-v2</Config>
+    <Config Name="Models - Reranker Model Type" Target="RERANKERS_MODEL_TYPE" Default="flashrank" Description="Type of reranker model (e.g., flashrank)" Type="Variable" Display="always-hide" Required="false" Mask="false">flashrank</Config>
+    <Config Name="LiteLLM - Fast LLM" Target="FAST_LLM" Default="openai/gpt-4o-mini" Description="LiteLLM routed smaller, faster LLM (e.g., openai/gpt-4o-mini, ollama/deepseek-r1:8b). See documentation: https://docs.litellm.ai/docs/providers" Type="Variable" Display="always-hide" Required="true" Mask="false">openai/gpt-4o-mini</Config>
+    <Config Name="LiteLLM - Strategic LLM" Target="STRATEGIC_LLM" Default="openai/gpt-4o" Description="LiteLLM routed advanced LLM for complex tasks (e.g., openai/gpt-4o, ollama/gemma3:12b). See documentation: https://docs.litellm.ai/docs/providers" Type="Variable" Display="always-hide" Required="true" Mask="false">openai/gpt-4o</Config>
+    <Config Name="LiteLLM - Long Context LLM" Target="LONG_CONTEXT_LLM" Default="gemini/gemini-2.0-flash" Description="LiteLLM routed LLM for longer context windows (e.g., gemini/gemini-2.0-flash, ollama/deepseek-r1:8b). See documentation: https://docs.litellm.ai/docs/providers" Type="Variable" Display="always-hide" Required="true" Mask="false">gemini/gemini-2.0-flash</Config>
+    <Config Name="LiteLLM - Text To Speech Service" Target="TTS_SERVICE" Default="openai/tts-1" Description="Text-to-Speech API provider for Podcasts (e.g., openai/tts-1, azure/neural, vertex_ai/). See documentation: https://docs.litellm.ai/docs/text_to_speech#supported-providers" Type="Variable" Display="always-hide" Required="true" Mask="false">openai/tts-1</Config>
+    <Config Name="LiteLLM - Speech To Text Service" Target="STT_SERVICE" Default="openai/whisper-1" Description="Speech-to-Text API provider for Podcasts (e.g., openai/whisper-1). See documentation: https://docs.litellm.ai/docs/audio_transcription#supported-providers" Type="Variable" Display="always-hide" Required="true" Mask="false">openai/whisper-1</Config>
+    <Config Name="OpenAI - API Key" Target="OPENAI_API_KEY" Default="" Description="OpenAI API key for LLMs and embeddings. Required if using OpenAI models." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Gemini - API Key" Target="GEMINI_API_KEY" Default="" Description="Gemini API key for LLMs and embeddings. Required if using Gemini models." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Anthropic - API Key" Target="ANTHROPIC_API_KEY" Default="" Description="Anthropic API key for LLMs and embeddings. Required if using Anthropic models." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Firecrawl - API Key" Target="FIRECRAWL_API_KEY" Default="" Description="API key for Firecrawl service for web crawling" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="ETL Service" Target="ETL_SERVICE" Default="UNSTRUCTURED|LLAMACLOUD" Description="Document parsing service: UNSTRUCTURED (supports 34+ formats) or LLAMACLOUD (supports 50+ formats including legacy document types)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Unstructured - API Key" Target="UNSTRUCTURED_API_KEY" Default="" Description="API key for Unstructured.io service for document parsing. Required if ETL Service is set to UNSTRUCTURED" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="LlamaCloud - API Key" Target="LLAMA_CLOUD_API_KEY" Default="" Description="API key for LlamaCloud service for document parsing. Required if ETL Service is set to LLAMACLOUD" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/surfsense/backend/app" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/backend/app</Config>
+    <Config Name="LangSmith - Tracing" Target="LANGSMITH_TRACING" Default="false|true" Description="Enable LangSmith tracing." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="LangSmith - Endpoint" Target="LANGSMITH_ENDPOINT" Default="https://api.smith.langchain.com" Description="LangSmith API endpoint. Default is https://api.smith.langchain.com, change only if you know what you're doing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://api.smith.langchain.com</Config>
+    <Config Name="LangSmith - Project Name" Target="LANGSMITH_PROJECT" Default="" Description="LangSmith project name." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="LangSmith - API Key" Target="LANGSMITH_API_KEY" Default="" Description="API key for LangSmith tracing. Required if LANGSMITH_TRACING is enabled." Type="Variable" Display="advanced-hide" Required="false" Mask="true"/>
+    <Config Name="LiteLLM - Fast LLM API Base" Target="FAST_LLM_API_BASE" Default="" Description="Base URL for the Fast LLM API. Optional, leave empty to use default." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="LiteLLM - Strategic LLM API Base" Target="STRATEGIC_LLM_API_BASE" Default="" Description="Base URL for the Strategic LLM API. Optional, leave empty to use default." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="LiteLLM - Long Context LLM API Base" Target="LONG_CONTEXT_LLM_API_BASE" Default="" Description="Base URL for the Long Context LLM API. Optional, leave empty to use default." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="LiteLLM - Text To Speech API Base" Target="TTS_SERVICE_API_BASE" Default="" Description="Base URL for the Text To Speech API. Optional, leave empty to use default." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="LiteLLM - Speech To Text API Base" Target="STT_SERVICE_API_BASE" Default="" Description="Base URL for the Speech To Text API. Optional, leave empty to use default." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Internal Python Path" Target="PYTHONPATH" Default="/app" Description="Internal Python path for the application. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app</Config>
+    <Config Name="Uvicorn Loop" Target="UVICORN_LOOP" Default="asyncio" Description="Uvicorn loop type. Default is asyncio, change only if you know what you're doing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">asyncio</Config>
+    <Config Name="Unstructured Has Patched Loop" Target="UNSTRUCTURED_HAS_PATCHED_LOOP" Default="1" Description="Unstructured library patched loop. Default is 1, change only if you know what you're doing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
+</Container>
