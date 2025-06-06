@@ -32,13 +32,12 @@
         Initial release
     </Changes>
     <Requires>
-        Requires a separate SurfSense - Backend container.
+        Requires separate SurfSense - Backend, pgAdmin4 and pgvector containers. See documentation: https://github.com/MODSetter/SurfSense/blob/main/DOCKER_SETUP.md#deployment-options
     </Requires>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="Backend - URL" Target="NEXT_PUBLIC_API_URL" Default="http://MY_IP_ADDRESS:3001" Description="URL of the backend service, including port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://MY_IP_ADDRESS:3001</Config>
     <Config Name="Backend - URL" Target="NEXT_PUBLIC_FASTAPI_BACKEND_URL" Default="http://MY_IP_ADDRESS:3001" Description="URL of the FastAPI backend service, including port. Should match other Backend URL." Type="Variable" Display="always-hide" Required="true" Mask="false">http://MY_IP_ADDRESS:3001</Config>
     <Config Name="Backend - Authentication Type" Target="NEXT_PUBLIC_FASTAPI_BACKEND_AUTH_TYPE" Default="LOCAL|GOOGLE" Description="Authentication type used by the backend." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Backend - ETL Service" Target="NEXT_PUBLIC_ETL_SERVICE" Default="UNSTRUCTURED|LLAMACLOUD" Description="Document parsing service used by the backend." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/surfsense/frontend/app" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/frontend/app</Config>
     <Config Name="App Node Modules" Target="/app/node_modules" Default="/mnt/user/appdata/surfsense/frontend/node_modules" Description="Path to node modules" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/frontend/node_modules</Config>
 </Container>

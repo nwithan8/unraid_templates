@@ -32,7 +32,7 @@
         Initial release
     </Changes>
     <Requires>
-        Requires a separate SurfSense - Frontend container and PostgreSQL database.
+        Requires separate SurfSense - Frontend, pgAdmin4 and pgvector containers. See documentation: https://github.com/MODSetter/SurfSense/blob/main/DOCKER_SETUP.md#deployment-options
     </Requires>
     <Config Name="API Port" Target="8000" Default="3001" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">3001</Config>
     <Config Name="Database - URL" Target="DATABASE_URL" Default="postgresql+asyncpg://USERNAME:PASSWORD@IP_ADDRESS:5432/surfsense" Description="URL of the PostgreSQL database, including port and credentials" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql+asyncpg://USERNAME:PASSWORD@IP_ADDRESS:5432/surfsense</Config>
@@ -56,7 +56,6 @@
     <Config Name="ETL Service" Target="ETL_SERVICE" Default="UNSTRUCTURED|LLAMACLOUD" Description="Document parsing service: UNSTRUCTURED (supports 34+ formats) or LLAMACLOUD (supports 50+ formats including legacy document types)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Unstructured - API Key" Target="UNSTRUCTURED_API_KEY" Default="" Description="API key for Unstructured.io service for document parsing. Required if ETL Service is set to UNSTRUCTURED" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="LlamaCloud - API Key" Target="LLAMA_CLOUD_API_KEY" Default="" Description="API key for LlamaCloud service for document parsing. Required if ETL Service is set to LLAMACLOUD" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
-    <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/surfsense/backend/app" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/backend/app</Config>
     <Config Name="LangSmith - Tracing" Target="LANGSMITH_TRACING" Default="false|true" Description="Enable LangSmith tracing." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="LangSmith - Endpoint" Target="LANGSMITH_ENDPOINT" Default="https://api.smith.langchain.com" Description="LangSmith API endpoint. Default is https://api.smith.langchain.com, change only if you know what you're doing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://api.smith.langchain.com</Config>
     <Config Name="LangSmith - Project Name" Target="LANGSMITH_PROJECT" Default="" Description="LangSmith project name." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
