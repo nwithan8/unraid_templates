@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>orpheusbetter</Name>
+    <Repository>ghcr.io/quorn23/orpheusbetter-docker:master</Repository>
+    <Registry>ghcr.io/quorn23/orpheusbetter-docker</Registry>
+    <Branch>
+        <Tag>master</Tag>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/quorn23/orpheusbetter-docker/issues</Support>
+    <Project>https://github.com/quorn23/orpheusbetter-docker</Project>
+    <Overview>
+        orpheusbetter is a script which automatically transcodes and uploads these files to Orpheus.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>flac orpheus scan transcode audio automation upload</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/orpheusbetter-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/orpheusbetter.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-07
+
+        Initial release
+    </Changes>
+    <Config Name="Data Path" Target="/data/torrents" Default="" Description="Path to torrents directory" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/config/.orpheusbetter" Default="/mnt/user/appdata/orpheusbetter/config" Description="Path to the orpheusbetter config directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/orpheusbetter/config</Config>
+</Container>
