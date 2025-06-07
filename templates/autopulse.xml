@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>autopulse</Name>
+    <Repository>ghcr.io/dan-online/autopulse:latest</Repository>
+    <Registry>ghcr.io/dan-online/autopulse</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:2875]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dan-online/autopulse/issues</Support>
+    <Project>https://github.com/dan-online/autopulse</Project>
+    <Overview>
+        autopulse is a web server that receives notifications from media organizers like Sonarr, Radarr, and Lidarr and updates the items in media servers like Plex, Jellyfin and Emby. It is designed to be efficient, only updating the items that have changed, reducing the load on media servers.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>autopulse plex jellyfin emby sonarr radarr lidarr tdarr fileflows notify</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/dan-online/autopulse/main/assets/logo.webp</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/autopulse.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a config.yaml file at the Config File Path before starting the container. See documentation: https://github.com/dan-online/autopulse#configuration
+    </Requires>
+    <Config Name="Web UI Port" Target="2875" Default="2875" Mode="tcp" Description="Container Port: 2875" Type="Port" Display="always-hide" Required="true" Mask="false">2875</Config>
+    <Config Name="Config File Path" Target="/app/config.yaml" Default="/mnt/user/appdata/autopulse/config.yaml" Description="Path to the configuration file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/autopulse/config.yaml</Config>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/autopulse/data" Description="Path to the app data directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/autopulse/data</Config>
+    <Config Name="Internal Database Connection" Target="AUTOPULSE__APP__DATABASE_URL" Default="sqlite://data/autopulse.db" Type="Variable" Display="advanced-hide" Required="true" Mask="false">sqlite://data/autopulse.db</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
