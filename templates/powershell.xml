@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>PowerShell</Name>
+    <Repository>mcr.microsoft.com/powershell:latest</Repository>
+    <Registry>mcr.microsoft.com/powershell</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-in-docker</Support>
+    <Project>https://learn.microsoft.com/en-us/powershell/scripting/install/powershell-in-docker</Project>
+    <Overview>
+        A Docker container with PowerShell pre-installed. Useful for running PowerShell scripts. &#xD;
+        [br]
+        This is a CLI tool. Please edit the **Post Arguments** accordingly.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>powershell script run command cli microsoft tool</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/powershell-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/powershell.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool; edit **Post Arguments** accordingly. Your script will be available in /scripts.
+    </Requires>
+    <PostArgs>pwsh</PostArgs>
+    <Config Name="Scripts Path" Target="/scripts" Default="/mnt/user/appdata/powershell/scripts" Description="Path to your PowerShell scripts directory" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/powershell/scripts</Config>
+</Container>
