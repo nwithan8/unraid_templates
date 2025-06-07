@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Container-Mon</Name>
+    <Repository>ghcr.io/rafhaanshah/container-mon:latest</Repository>
+    <Registry>ghcr.io/rafhaanshah/container-mon</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/RafhaanShah/Container-Mon/issues</Support>
+    <Project>https://github.com/RafhaanShah/Container-Mon</Project>
+    <Overview>
+        Get notified when your Docker containers are unhealthy.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>container monitor healthcheck docker notification unraid shoutrrr</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/container-mon-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/container_mon.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-06
+
+        Initial release
+    </Changes>
+    <Config Name="Schedule" Target="CONTAINERMON_CRON" Default="*/5 * * * *" Description="Cron schedule for checking container health" Type="Variable" Display="always-hide" Required="true" Mask="false">*/5 * * * *</Config>
+    <Config Name="Notification URL" Target="CONTAINERMON_NOTIFICATION_URL" Default="" Description="Notification URL for Shoutrrr. Multiple services can be used with the | (pipe) character as a separator." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Fail Limit" Target="CONTAINERMON_FAIL_LIMIT" Default="1" Description="Number of consecutive 'unhealthy' checks to reach before sending a notification" Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Use Labels" Target="CONTAINERMON_USE_LABELS" Default="false|true" Description="If true, will only monitor containers with the label containermon.enable=true set" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Notify Health" Target="CONTAINERMON_NOTIFY_HEALTHY" Default="true|false" Description="If true will send a notification when an 'unhealthy' container returns to being 'healthy'" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Check Stopped Containers" Target="CONTAINERMON_CHECK_STOPPED" Default="true|false" Description="If true will consider stopped containers as 'unhealthy'. If false, you will only be notified for containers that have a healthcheck set" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Notification Prefix" Target="CONTAINERMON_MESSAGE_PREFIX" Default="" Description="Custom text to be prefixed to all notification messages." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Docker Host" Target="DOCKER_HOST" Default="/var/run/docker.sock" Description="Internal path to Docker host. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
