@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Docker Socket Proxy</Name>
+    <Repository>lscr.io/linuxserver/socket-proxy:latest</Repository>
+    <Registry>lscr.io/linuxserver/socket-proxy</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>true</Privileged>
+    <Support>https://docs.linuxserver.io/images/docker-socket-proxy</Support>
+    <Project>https://docs.linuxserver.io/images/docker-socket-proxy</Project>
+    <Overview>
+        The Socket Proxy is a security-enhanced proxy which allows you to apply access rules to the Docker socket, limiting the attack surface for containers such as watchtower or Traefik that need to use it.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>docker socket proxy privacy security access control unraid watchtower traefik</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/docker-logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/socket_proxy.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-07
+
+        Initial release
+    </Changes>
+    <ExtraParams>--read-only</ExtraParams>
+    <Config Name="Allow POST" Target="POST" Default="0|1" Description="When set to 0, only GET and HEAD operations are allowed, making API access read-only." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Container Starts" Target="ALLOW_START" Default="0|1" Description="Allow starting containers." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Container Stops" Target="ALLOW_STOP" Default="0|1" Description="Allow stopping containers." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Container Restarts" Target="ALLOW_RESTARTS" Default="0|1" Description="Allow restarting containers." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Auth Endpoint" Target="AUTH" Default="0|1" Description="Allow access to the auth endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Build Endpoint" Target="BUILD" Default="0|1" Description="Allow access to the build endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Commit Endpoint" Target="COMMIT" Default="0|1" Description="Allow access to the commit endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Configs Endpoint" Target="CONFIGS" Default="0|1" Description="Allow access to the configs endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Containers Endpoint" Target="CONTAINERS" Default="0|1" Description="Allow access to the containers endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Distribution Endpoint" Target="DISTRIBUTION" Default="0|1" Description="Allow access to the distribution endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disable IPv6" Target="DISABLE_IPV6" Default="0|1" Description="Set to 1 to prevent binding to the IPv6 interface for legacy systems that cannot support IPv6." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Events Endpoint" Target="EVENTS" Default="1|0" Description="Allow access to the events endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Exec Endpoint" Target="EXEC" Default="0|1" Description="Allow access to the exec endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Images Endpoint" Target="IMAGES" Default="0|1" Description="Allow access to the images endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Info Endpoint" Target="INFO" Default="0|1" Description="Allow access to the info endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Networks Endpoint" Target="NETWORKS" Default="0|1" Description="Allow access to the networks endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Nodes Endpoint" Target="NODES" Default="0|1" Description="Allow access to the nodes endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Ping Endpoint" Target="PING" Default="1|0" Description="Allow access to the ping endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Plugins Endpoint" Target="PLUGINS" Default="0|1" Description="Allow access to the plugins endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Secrets Endpoint" Target="SECRETS" Default="0|1" Description="Allow access to the secrets endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Services Endpoint" Target="SERVICES" Default="0|1" Description="Allow access to the services endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Session Endpoint" Target="SESSION" Default="0|1" Description="Allow access to the session endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Swarm Endpoint" Target="SWARM" Default="0|1" Description="Allow access to the swarm endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow System Endpoint" Target="SYSTEM" Default="0|1" Description="Allow access to the system endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Tasks Endpoint" Target="TASKS" Default="0|1" Description="Allow access to the tasks endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Version Endpoint" Target="VERSION" Default="1|0" Description="Allow access to the version endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allow Volumes Endpoint" Target="VOLUMES" Default="0|1" Description="Allow access to the volumes endpoint." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|debug|notice|warning|err|crit|alert|emerg" Description="Set the log level for the proxy." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
