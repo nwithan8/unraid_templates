@@ -13,7 +13,8 @@
     <Support>https://erugo.app/getting-started/#getting-started-with-erugo</Support>
     <Project>https://erugo.app</Project>
     <Overview>
-        Erugo is a powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend. It offers secure, customisable file-transfer capabilities through an elegant user interface, giving you complete control over your data while providing a seamless experience for both senders and recipients.    </Overview>
+        Erugo is a powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend. It offers secure, customisable file-transfer capabilities through an elegant user interface, giving you complete control over your data while providing a seamless experience for both senders and recipients.
+    </Overview>
     <Beta>False</Beta>
     <Category>Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>file sharing file transfer self-hosted php vue laravel airdrop send</ExtraSearchTerms>

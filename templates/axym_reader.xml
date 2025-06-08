@@ -13,7 +13,7 @@
     <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
     <Project>https://axym.davidewiest.com</Project>
     <Overview>
-        A self hostable free open-source speed reading app. Highly customizable. Implements chunking, pacing and highlighting.
+        A self-hostable free open-source speed reading app. Highly customizable. Implements chunking, pacing and highlighting.
     </Overview>
     <Beta>False</Beta>
     <Category>Tools: Productivity: Other: Status:Stable</Category>

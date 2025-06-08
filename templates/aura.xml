@@ -18,7 +18,7 @@
     <Beta>True</Beta>
     <Category>MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>mediux aura media server image retrieval automation plex emby jellyfin kometa meta manager</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/aura-icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/aurap-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/aura.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

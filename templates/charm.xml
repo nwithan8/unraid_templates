@@ -12,7 +12,9 @@
     <Privileged>false</Privileged>
     <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
     <Project>https://github.com/charmbracelet/charm</Project>
-    <Overview>The Charm Tool and Library</Overview>
+    <Overview>
+        The Charm Tool and Library
+    </Overview>
     <Beta>False</Beta>
     <Category>Backup: Cloud: Productivity: Tools: Other: Status:Stable</Category>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/charm-icon.png</Icon>
