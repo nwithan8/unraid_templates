@@ -27,7 +27,7 @@
 
         Initial release
     </Changes>
-    <ExtraParams>--read-only</ExtraParams>
+    <ExtraParams>--read-only --tmpfs /run</ExtraParams>
     <Config Name="Allow POST" Target="POST" Default="0|1" Description="When set to 0, only GET and HEAD operations are allowed, making API access read-only." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Allow Container Starts" Target="ALLOW_START" Default="0|1" Description="Allow starting containers." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Allow Container Stops" Target="ALLOW_STOP" Default="0|1" Description="Allow stopping containers." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
