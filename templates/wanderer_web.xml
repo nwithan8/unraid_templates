@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-06-10
+
+        Fix bad variable name
+
         ### 2025-01-26
 
         Initial release
@@ -38,7 +42,7 @@
     <Config Name="Meilisearch - URL" Target="MEILI_URL" Default="http://meilisearch:7700" Description="URL of the Meilisearch instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://meilisearch:7700</Config>
     <Config Name="Meilisearch - Master Key" Target="MEILI_MASTER_KEY" Default="" Description="Master key for the Meilisearch instance" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Database - URL" Target="PUBLIC_POCKETBASE_URL" Default="http://wanderer-db:8090" Description="URL of the Wanderer - Database instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://wanderer-db:8090</Config>
-    <Config Name="Disable Signups" Target="PUBLIC_DISABLE_SIGNUPS" Default="false|true" Description="Disable the ability to sign up" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disable Signups" Target="PUBLIC_DISABLE_SIGNUP" Default="false|true" Description="Disable the ability to sign up" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Uploads Path" Target="/app/uploads" Default="/mnt/user/appdata/wanderer/uploads" Description="Path to uploaded files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/wanderer/uploads</Config>
     <Config Name="Origin" Target="ORIGIN" Default="http://localhost:3000" Description="Origin of the web app" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://localhost:3000</Config>
     <Config Name="Body Size Limit" Target="BODY_SIZE_LIMIT" Default="Infinity" Description="Maximum size of the body" Type="Variable" Display="advanced-hide" Required="true" Mask="false">Infinity</Config>
