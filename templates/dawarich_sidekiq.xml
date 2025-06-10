@@ -5,7 +5,11 @@
     <Registry>https://hub.docker.com/r/freikin/dawarich</Registry>
     <Branch>
         <Tag>latest</Tag>
-        <TagDescription>Latest stable release</TagDescription>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>0.28.0</Tag>
+        <TagDescription>v0.28.0, recommended for recent update issues</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
@@ -26,6 +30,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-06-09
+
+        - Add new env vars for latest release
+        - Add Redis URL configuration
+
         ### 2025-06-02
 
         Deprecated as no longer needed for Dawarich
