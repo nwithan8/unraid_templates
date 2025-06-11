@@ -115,7 +115,7 @@ def get_most_recent_file_commit(file_path: str, repo: Repo):
     return next(commits, None)
 
 
-def check_app(app_details: AppDetails) -> tuple[bool, list[dict], dict]:
+def check_app(app_details: AppDetails) -> tuple[bool, list[dict], dict, Optional[Exception]]:
     """
     Check if the app has changed in the repository.
     :param app_details: The app details to check.
@@ -123,10 +123,14 @@ def check_app(app_details: AppDetails) -> tuple[bool, list[dict], dict]:
     """
     with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmpdir:
         # Clone the repository
-        repo = Repo.clone_from(url=app_details.git_url, to_path=tmpdir)
+        try:
+            repo = Repo.clone_from(url=app_details.git_url, to_path=tmpdir)
 
-        # Fetch the latest changes
-        repo.remotes.origin.fetch()
+            # Fetch the latest changes
+            repo.remotes.origin.fetch()
+        except Exception as e:
+            print(f"Failed to clone or fetch repository {app_details.git_url}: {e}")
+            return False, [], {}, e
 
         # Check for changes in the main branch
         branch = get_branch(repo=repo, branch_name=app_details.branch_override) if app_details.branch_override else get_main_branch(repo=repo)
@@ -144,7 +148,7 @@ def check_app(app_details: AppDetails) -> tuple[bool, list[dict], dict]:
 
         # Temporary directory will be deleted automatically
 
-    return has_changed, changed_files, new_app_data
+    return has_changed, changed_files, new_app_data, None
 
 
 def read_data_file(file_path: str) -> list[dict]:
@@ -223,6 +227,7 @@ def send_ntfy_notification(
         ntfy_topic: str,
         ntfy_token: str,
         repo_url: str,
+        message_template: str,
 ):
     """
     Send a notification using ntfy.
@@ -233,6 +238,7 @@ def send_ntfy_notification(
     :param ntfy_topic: The topic to send the notification to.
     :param ntfy_token: The token for authentication.
     :param repo_url: The URL of the repository.
+    :param message_template: The template for the notification message. Includes {app_name} placeholder.
     """
     message = build_app_change_message(
         app_name=app_name,
@@ -243,7 +249,7 @@ def send_ntfy_notification(
     objectrest.post(url=f"{ntfy_url}",
                     data=json.dumps({
                         "topic": ntfy_topic,
-                        "title": f"Upstream changes detected in {app_name}",
+                        "title": message_template.format(app_name=app_name),
                         "message": message,
                         "actions": [
                             {
@@ -315,12 +321,34 @@ if __name__ == "__main__":
 
     changes_detected = False
     changed_apps = []
+    errors_detected = False
+    errored_apps = []
 
     for app in apps:
         print(f"Checking {app.app_name} ({app.git_url}) for changes...")
-        has_changed, changed_files, new_app_data = check_app(app_details=app)
+        has_changed, changed_files, new_app_data, error = check_app(app_details=app)
 
         new_data.append(new_app_data)
+
+        if error:
+            errors_detected = True
+            send_ntfy_notification(
+                app_name=app.app_name,
+                git_url=app.git_url,
+                file_details=changed_files,
+                ntfy_url=ntfy_url,
+                ntfy_topic=ntfy_topic,
+                ntfy_token=ntfy_token,
+                repo_url=repo_url,
+                message_template="Could not pull repository for {app_name}"
+            )
+            errored_apps.append({
+                "app_name": app.app_name,
+                "git_url": app.git_url,
+                "error": error
+            })
+            print(f"Error checking {app.app_name}: {error}")
+            continue
 
         if has_changed:
             changes_detected = True
@@ -331,7 +359,8 @@ if __name__ == "__main__":
                 ntfy_url=ntfy_url,
                 ntfy_topic=ntfy_topic,
                 ntfy_token=ntfy_token,
-                repo_url=repo_url
+                repo_url=repo_url,
+                message_template="Upstream changes detected in {app_name}, possibly deleted"
             )
             changed_apps.append({
                 "app_name": app.app_name,

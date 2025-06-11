@@ -154,18 +154,6 @@
         ]
     },
     {
-        "app_name": "Lumen",
-        "git_url": "https://github.com/ChecksumDev/lumen.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "docker-compose.yml",
-                "commit_hash": "059911017e69c4cea5c7f68516e6a4d5706eef53",
-                "commit_message": null
-            }
-        ]
-    },
-    {
         "app_name": "Overr-Syncerr",
         "git_url": "https://github.com/gssariev/overr-syncerr.git",
         "branch_override": null,
