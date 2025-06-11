@@ -17,7 +17,7 @@
     <Beta>False</Beta>
     <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>photo album share image gallery pictures immich upload optimizer proxy storage resize compress</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/immich-upload-optimizer-icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/immich-app/immich/main/design/immich-logo-stacked-light.svg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/immich_upload_optimizer.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

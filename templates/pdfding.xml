@@ -18,7 +18,7 @@
     <Beta>False</Beta>
     <Category>MediaApp:Other MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>pdf manager viewer editor server devices</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pdfding-icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/mrmn2/PdfDing/master/pdfding/static/images/logo_with_circle.svg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pdfding.xml</TemplateURL>
     <Screenshot>https://raw.githubusercontent.com/mrmn2/PdfDing-Screenshots/master/screenshots/pdf_overview_dark_green.png</Screenshot>
     <Maintainer>
