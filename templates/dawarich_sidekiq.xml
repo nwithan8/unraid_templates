@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>Dawarich - Sidekiq</Name>
-    <Repository>freikin/dawarich:latest</Repository>
+    <Repository>freikin/dawarich:0.28.0</Repository>
     <Registry>https://hub.docker.com/r/freikin/dawarich</Registry>
     <Branch>
         <Tag>latest</Tag>
-        <TagDescription>Latest stable release</TagDescription>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>0.28.0</Tag>
+        <TagDescription>v0.28.0, recommended for recent update issues</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
@@ -14,7 +18,7 @@
     <Overview>
         A self-hosted web app designed to replace Google Timeline (aka Google Location History). Visualize your data on an interactive map, import your location history from Google Maps Timeline and Owntracks, and explore statistics like the number of countries and cities visited, total distance traveled, and more!
     </Overview>
-    <Beta>False</Beta>
+    <Beta>True</Beta>
     <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>photo album share image gallery timeline location history google maps owntracks immich sidekick sidekiq companion</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dawarich-icon.png</Icon>
@@ -26,6 +30,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-06-09
+
+        - Add new env vars for latest release
+        - Add Redis URL configuration
+
         ### 2025-06-02
 
         Deprecated as no longer needed for Dawarich

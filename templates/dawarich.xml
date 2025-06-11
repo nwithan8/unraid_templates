@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>Dawarich</Name>
-    <Repository>freikin/dawarich:latest</Repository>
+    <Repository>freikin/dawarich:0.28.0</Repository>
     <Registry>https://hub.docker.com/r/freikin/dawarich</Registry>
     <Branch>
         <Tag>latest</Tag>
-        <TagDescription>Latest stable release</TagDescription>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>0.28.0</Tag>
+        <TagDescription>v0.28.0, recommended for recent update issues</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3000]/</WebUI>
@@ -15,7 +19,7 @@
     <Overview>
         A self-hosted web app designed to replace Google Timeline (aka Google Location History). Visualize your data on an interactive map, import your location history from Google Maps Timeline and Owntracks, and explore statistics like the number of countries and cities visited, total distance traveled, and more!
     </Overview>
-    <Beta>False</Beta>
+    <Beta>True</Beta>
     <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>photo album share image gallery timeline location history google maps owntracks immich</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dawarich-icon.png</Icon>
@@ -27,6 +31,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-06-09
+
+        - Add new env vars for latest release
+        - Add Redis URL configuration
+
         ### 2025-06-04
 
         Fix bad Variable for database paths
@@ -69,7 +78,7 @@
         Initial release
     </Changes>
     <Requires>
-        Requires separate PostGIS container. See the documentation for more information: https://dawarich.app/docs/environment-variables-and-settings
+        Requires separate PostGIS container, Sidekiq and Redis containers. See the documentation for more information: https://dawarich.app/docs/environment-variables-and-settings
     </Requires>
     <ExtraParams>--entrypoint web-entrypoint.sh</ExtraParams>
     <PostArgs>bin/rails server -p 3000 -b ::</PostArgs>
@@ -77,27 +86,26 @@
     <Config Name="Imports Path" Target="/var/app/tmp/imports/watched" Default="/mnt/user/appdata/dawarich/imports" Description="Path to watch for imports" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/imports</Config>
     <Config Name="Storage Path" Target="/var/app/storage" Default="/mnt/user/appdata/dawarich/storage" Description="Path to store application data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/storage</Config>
     <Config Name="Database Path" Target="/dawarich_db_data" Default="/mnt/user/appdata/dawarich/db_data" Description="Path to store database data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/db_data</Config>
+    <Config Name="Web Files Path" Target="/var/app/public" Default="/mnt/user/appdata/dawarich/wwwroot" Description="Path to web files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/wwwroot</Config>
+    <Config Name="Redis URL" Target="REDIS_URL" Default="redis://redis:6379" Description="Redis server URL for background processing" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://redis:6379</Config>
     <Config Name="PostGIS - Host" Target="DATABASE_HOST" Default="" Description="Host of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="PostGIS - Port" Target="DATABASE_PORT" Default="5432" Description="Port of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="PostGIS - Port" Target="DATABASE_PORT" Default="5432" Description="Port of the PostGIS server" Type="Variable" Display="always-hide" Required="false" Mask="false">5432</Config>
     <Config Name="PostGIS - Username" Target="DATABASE_USERNAME" Default="" Description="Username of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="PostGIS - Password" Target="DATABASE_PASSWORD" Default="" Description="Password of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="PostGIS - Database" Target="DATABASE_NAME" Default="" Description="Name of the PostGIS database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Timezone" Target="TIME_ZONE" Default="UTC" Description="Timezone of the application" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Timezone" Target="TIME_ZONE" Default="UTC" Description="Timezone of the application" Type="Variable" Display="always-hide" Required="true" Mask="false">UTC</Config>
     <Config Name="Minimum City Minutes" Target="MIN_MINUTES_SPENT_IN_CITY" Default="60" Description="Minimum minutes spent in a city to be considered a visit" Type="Variable" Display="always-hide" Required="true" Mask="false">60</Config>
-    <Config Name="Photon API - Host" Target="PHOTON_API_HOST" Default="photon.komoot.io" Description="Host of the Photon API" Type="Variable" Display="always-hide" Required="true" Mask="false">photon.komoot.io</Config>
-    <Config Name="Photon API - Use HTTPS" Target="PHOTON_API_USE_HTTPS" Default="true|false" Description="Use HTTPS for the Photon API" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Prometheus Exporter - Enable" Target="PROMETHEUS_EXPORTER_ENABLED" Default="false|true" Description="Enable the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Prometheus Exporter - Host" Target="PROMETHEUS_EXPORTER_HOST" Default="0.0.0.0" Description="Host of the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false">0.0.0.0</Config>
-    <Config Name="Prometheus Exporter - Port" Target="PROMETHEUS_EXPORTER_PORT" Default="3001" Description="Port of the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false">9394</Config>
-    <Config Name="Enable Telemetry" Target="ENABLE_TELEMETRY" Default="false|true" Description="Enable telemetry" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Web Files Path" Target="/var/app/public" Default="/mnt/user/appdata/dawarich/wwwroot" Description="Path to web files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/wwwroot</Config>
+    <Config Name="Store Geodata" Target="STORE_GEODATA" Default="true|false" Description="Store geodata in the database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Photon API - Host" Target="PHOTON_API_HOST" Default="photon.komoot.io" Description="Host of the Photon API" Type="Variable" Display="always-hide" Required="false" Mask="false">photon.komoot.io</Config>
+    <Config Name="Photon API - Use HTTPS" Target="PHOTON_API_USE_HTTPS" Default="true|false" Description="Use HTTPS for the Photon API" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Prometheus Exporter - Enable" Target="PROMETHEUS_EXPORTER_ENABLED" Default="false|true" Description="Enable the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false">false</Config>
+    <Config Name="Prometheus Exporter - Port" Target="9394" Default="9394" Mode="tcp" Description="Container Port: 9394 (optional, for Prometheus monitoring)" Type="Port" Display="always-hide" Required="false" Mask="false">9394</Config>
+    <Config Name="Enable Telemetry" Target="ENABLE_TELEMETRY" Default="false|true" Description="Enable telemetry" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
     <Config Name="Rails Environment" Target="RAILS_ENV" Default="development" Description="Rails environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">development</Config>
-    <Config Name="Application Host" Target="APPLICATION_HOST" Default="localhost" Description="Host of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
     <Config Name="Application Hosts" Target="APPLICATION_HOSTS" Default="localhost" Description="Hosts of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
-    <Config Name="Background Processing Concurrency" Target="BACKGROUND_PROCESSING_CONCURRENCY" Default="10" Description="Number of background processing threads" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Background Processing Concurrency" Target="BACKGROUND_PROCESSING_CONCURRENCY" Default="10" Description="Number of background processing threads" Type="Variable" Display="advanced-hide" Required="false" Mask="false">10</Config>
     <Config Name="Application Protocol" Target="APPLICATION_PROTOCOL" Default="http" Description="Protocol of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http</Config>
-    <Config Name="Database - Queue" Target="QUEUE_DATABASE_PATH" Default="/dawarich_db_data/dawarich_development_queue.sqlite3" Description="Internal path to the database queue file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dawarich_db_data/dawarich_development_queue.sqlite3</Config>
-    <Config Name="Database - Cache" Target="CACHE_DATABASE_PATH" Default="/dawarich_db_data/dawarich_development_cache.sqlite3" Description="Internal path to the database cache file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dawarich_db_data/dawarich_development_cache.sqlite3</Config>
-    <Config Name="Database - Cable" Target="CABLE_DATABASE_PATH" Default="/dawarich_db_data/dawarich_development_cable.sqlite3" Description="Internal path to the database cable file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dawarich_db_data/dawarich_development_cable.sqlite3</Config>
     <Config Name="Is Self-Hosted" Target="SELF_HOSTED" Default="true|false" Description="Is the application self-hosted?" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Prometheus Exporter - Internal Host" Target="PROMETHEUS_EXPORTER_HOST" Default="0.0.0.0" Description="Internal host of the Prometheus exporter. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Prometheus Exporter - Internal Port" Target="PROMETHEUS_EXPORTER_PORT" Default="9394" Description="Internal port of the Prometheus exporter. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">9394</Config>
 </Container>
