@@ -18,13 +18,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "6d39f4306f55a10a9ceefc78fbbd536623214082",
-                "commit_message": "Remove Redis and Sidekiq from Dawarich\n"
+                "commit_hash": "715a9960215b3ae910a56365476335c2ad98b9d6",
+                "commit_message": "Fix docker-compose.yml\n"
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
-                "commit_hash": "6d39f4306f55a10a9ceefc78fbbd536623214082",
-                "commit_message": "Remove Redis and Sidekiq from Dawarich\n"
+                "commit_hash": "c718eba6eff9988cea8084b9886cf54a8d0874be",
+                "commit_message": "Add release notes\n"
             }
         ]
     },
@@ -59,8 +59,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "dec0adcf817818fbb86fda04451d2a90fd395aa6",
-                "commit_message": "minor edits to docker-compose\n"
+                "commit_hash": "8930e9fbfe8d0dda1737e8e230bb030c50a6f8f9",
+                "commit_message": "Fixed env var docs for remove_events\n"
             }
         ]
     },
@@ -83,8 +83,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "57de3f3112ace4b520a7869a562cea7a6ae8b315",
-                "commit_message": "Enhance log filtering and pagination handling - Improved log entry filtering by adding data attributes to manage visibility based on log levels. Updated pagination logic to account for entries hidden by filters, ensuring accurate page counts. Increased delay for pagination updates to improve performance during filtering and added debugging logs for better visibility into badge text processing.\n"
+                "commit_hash": "40adfe38e6c734f875d82db8efe9cbb0a418a3fc",
+                "commit_message": "feat: implement timezone-aware logging using user settings instead of system time\n"
             }
         ]
     },
