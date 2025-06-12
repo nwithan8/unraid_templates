@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>PostgREST</Name>
+    <Repository>postgrest/postgrest:latest</Repository>
+    <Registry>https://hub.docker.com/r/postgrest/postgrest</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.postgrest.org/en/latest/</Support>
+    <Project>https://postgrest.org</Project>
+    <Overview>
+        PostgREST serves a fully RESTful API from any existing PostgreSQL database. It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch. &#xD;
+        [br]
+        There are a number of additional configurable options via environmental variables. See documentation: https://docs.postgrest.org/en/latest/references/configuration.html#config-full-list
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>api postgres database rest</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/postgrest-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/postgrest.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate PostgreSQL database.
+    </Requires>
+    <Config Name="API Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Database Connection URI" Target="PGRST_DB_URI" Default="postgres://USERNAME:PASSWORD@IP_ADDRESS:5432/database" Description="Database connection URI for Postgres" Type="Variable" Display="always-hide" Required="true" Mask="false">postgres://USERNAME:PASSWORD@IP_ADDRESS:5432/database</Config>
+    <Config Name="API Proxy" Target="PGRST_OPENAPI_SERVER_PROXY_URI" Default="http://127.0.0.1:3000" Description="Internal API proxy URL. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://127.0.0.1:3000</Config>
+</Container>
