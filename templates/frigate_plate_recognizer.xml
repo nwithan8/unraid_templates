@@ -17,10 +17,7 @@
     <Beta>False</Beta>
     <Category>AI: MediaApp:Photos Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>image picture camera blueiris home assistant frigate plate recognition license number codeproject ai</ExtraSearchTerms>
-    <Icon-black>https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/docs/static/img/logo.svg</Icon-black>
-    <Icon-white>https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/docs/static/img/logo-dark.svg</Icon-white>
-    <Icon-grey>https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/docs/static/img/logo.svg</Icon-grey>
-    <Icon-azure>https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/docs/static/img/logo-dark.svg</Icon-azure>
+    <Icon>https://raw.githubusercontent.com/blakeblackshear/frigate/refs/heads/dev/docs/static/img/logo.svg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/frigate_plate_recognizer.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>

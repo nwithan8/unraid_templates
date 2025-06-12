@@ -17,10 +17,7 @@
     <Beta>False</Beta>
     <Category>Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>apache kafka distributed streaming platform message broker</ExtraSearchTerms>
-    <Icon-black>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kafka-icon-light.png</Icon-black>
-    <Icon-white>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kafka-icon-dark.png</Icon-white>
-    <Icon-grey>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kafka-icon-light.png</Icon-grey>
-    <Icon-azure>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kafka-icon-dark.png</Icon-azure>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/kafka-icon-light.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/kafka.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
