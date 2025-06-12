@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>CastSponsorSkip</Name>
+    <Repository>ghcr.io/gabe565/castsponsorskip:latest</Repository>
+    <Registry>ghcr.io/gabe565/castsponsorskip</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>beta</Tag>
+        <TagDescription>Latest beta release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/gabe565/CastSponsorSkip/issues</Support>
+    <Project>https://github.com/gabe565/CastSponsorSkip</Project>
+    <Overview>
+        A Go program that skips sponsored YouTube content and skippable ads on all local Google Cast devices, using the SponsorBlock API.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>youtube ad skip sponsor sponsorblock cast chromecast google android streaming tv</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/gabe565/CastSponsorSkip/main/assets/icon.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/cast_sponsor_skip.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-12
+
+        Initial release
+    </Changes>
+    <Config Name="Categories" Target="CSS_CATEGORIES" Default="sponsor" Description="Comma-separated list of SponsorBlock categories to skip. See: https://wiki.sponsor.ajay.app/w/Types#Category" Type="Variable" Display="always-hide" Required="true" Mask="false">sponsor</Config>
+    <Config Name="YouTube API Key" Target="CSS_YOUTUBE_API_KEY" Default="" Description="YouTube API key for fallback video identification (required on some Chromecast devices)." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Mute Ads" Target="CSS_MUTE_ADS" Default="true|false" Description="Mutes the device while an ad is playing." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Skip Sponsors" Target="CSS_SKIP_SPONSORS" Default="true|false" Description="Toggles sponsored segment skipping via the SponsorBlock API. If disabled, only YouTube ads will be skipped." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Discover Interval" Target="CSS_DISCOVER_INTERVAL" Default="5m" Description="Interval to restart the DNS discovery client." Type="Variable" Display="advanced-hide" Required="true" Mask="false">5m</Config>
+    <Config Name="Paused Interval" Target="CSS_PAUSED_INTERVAL" Default="1m" Description="Time to wait between each poll of the Cast device status when paused." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1m</Config>
+    <Config Name="Playing Interval" Target="CSS_PLAYING_INTERVAL" Default="500ms" Description="Time to wait between each poll of the Cast device status when playing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">500ms</Config>
+    <Config Name="Devices" Target="CSS_DEVICES" Default="" Description="Comma-separated list of device addresses. This will disable discovery and is not recommended unless discovery fails." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>

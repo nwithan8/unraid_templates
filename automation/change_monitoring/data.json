@@ -350,5 +350,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Cast Sponsor Skip",
+        "git_url": "https://github.com/gabe565/CastSponsorSkip.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "5219cc90e407cad744da58aad0e62acef0f868bd",
+                "commit_message": null
+            }
+        ]
     }
 ]
