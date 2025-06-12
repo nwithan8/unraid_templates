@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Swagger Editor</Name>
+    <Repository>swaggerapi/swagger-editor:latest</Repository>
+    <Registry>https://hub.docker.com/r/swaggerapi/swagger-editor</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>unstable</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/swagger-api/swagger-editor/issues</Support>
+    <Project>https://editor.swagger.io/</Project>
+    <Overview>
+        Swagger Editor lets you edit OpenAPI API definitions (OpenAPI 2.0 and OpenAPI 3.0.3) in JSON or YAML format inside your browser and to preview documentations in real time. Valid OpenAPI definitions can then be generated and used with the full Swagger tooling (code generation, documentation, etc).        [br]
+        There are additional configuration options via environmental variables. See documentation: https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md#docker
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>swagger ui api docs rest autogenerate documentation edit</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/swagger-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/swagger_editor.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-12
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Swagger File" Target="SWAGGER_FILE" Default="" Description="Path to swagger JSON or YAML file to edit. Remove if not used." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Swagger URL" Target="URL" Default="" Description="URL to the swagger JSON or YAML file used to edit. Remove if not used." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Base URL" Target="BASE_URL" Default="/" Description="Base URL for the application. Change if you are running behind a reverse proxy or in a subdirectory." Type="Variable" Display="always-hide" Required="true" Mask="false">/</Config>
+</Container>
