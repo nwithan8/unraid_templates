@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Swagger UI</Name>
+    <Repository>swaggerapi/swagger-ui:latest</Repository>
+    <Registry>https://hub.docker.com/r/swaggerapi/swagger-ui</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>unstable</Tag>
+        <TagDescription>Latest development release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/swagger-api/swagger-ui/tree/master/docs</Support>
+    <Project>https://swagger.io/</Project>
+    <Overview>
+        Swagger UI allows anyone — be it your development team or your end consumers — to visualize and interact with the API’s resources without having any of the implementation logic in place. It’s automatically generated from your OpenAPI (formerly known as Swagger) Specification, with the visual documentation making it easy for back end implementation and client side consumption. &#xD;
+        [br]
+        There are additional configuration options via environmental variables. See documentation: https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md#docker
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>swagger ui api docs rest autogenerate documentation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/swagger-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/swagger_ui.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-12
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Swagger JSON File" Target="SWAGGER_JSON" Default="" Description="Path to swagger.json file used to render the API documentation. Remove if not used." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Swagger JSON URL" Target="SWAGGER_JSON_URL" Default="" Description="URL to the swagger.json file used to render the API documentation. Remove if not used." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Base URL" Target="BASE_URL" Default="/" Description="Base URL for the API documentation. Change if you are running behind a reverse proxy or in a subdirectory." Type="Variable" Display="always-hide" Required="true" Mask="false">/</Config>
+</Container>
