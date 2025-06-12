@@ -12,6 +12,11 @@ template_check_unix:
 template_validate_unix:
 	node ./xml-xsd-validator/cli.js ./templates/template_schema.xsd ./templates/$(name).xml
 
+## copy_to_unraid_unix - Copy the template to the Unraid server
+# @param file - The file of the template to copy
+copy_to_unraid_unix:
+	sh ./scripts/copy_to_unraid.sh $(file)
+
 ## copy_placeholder_unix - Copy the placeholder template for the new app
 # @param name - The name of the new app
 copy_placeholder_unix:
