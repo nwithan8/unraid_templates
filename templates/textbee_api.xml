@@ -17,7 +17,7 @@
     <Beta>False</Beta>
     <Category>Network:Messenger Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>sms text message gateway api web interface ui twilio</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/textbee-icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/vernu/textbee/refs/heads/main/web/public/images/logo.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/textbee_api.xml</TemplateURL>
     <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/textbee_demo_1.png</Screenshot>
     <Maintainer>
