@@ -25,4 +25,17 @@ download_github_icon:
 	curl -s -o images/$(name)-icon.png $(link)
 	git add images/$(name)-icon.png
 
+## set_up_python - Set up the Python virtual environment and install dependencies
+set_up_python:
+	python3 -m venv scripts/.venv
+	scripts/.venv/bin/pip install --upgrade pip
+	scripts/.venv/bin/pip install -r scripts/requirements.txt
+
+## font_awesome_icon - Download the Font Awesome icon for the app
+# @param icon - Icon name from Font Awesome
+# @param name - The name of the app
+# @param category - The icon category (e.g., solid, regular, brands)
+font_awesome_icon:
+	sh ./scripts/font_awesome_icon.sh $(icon) $(name) $(category)
+
 .PHONY: help template_check_unix template_validate_unix copy_placeholder_unix download_github_icon
