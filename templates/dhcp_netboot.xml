@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>DHCP Netboot</Name>
+    <Repository>samdbmg/dhcp-netboot.xyz:latest</Repository>
+    <Registry>https://hub.docker.com/r/samdbmg/dhcp-netboot.xyz</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/samdbmg/dhcp-netboot.xyz/issues</Support>
+    <Project>https://github.com/samdbmg/dhcp-netboot.xyz</Project>
+    <Overview>
+        This Docker container lets you PXE boot a bunch of installers and utilities on your local network, without much mucking about configuring DHCP and TFTP servers, using the excellent netboot.xyz project.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>network boot pxe iso utilities installer dhcp tftp</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dhcp-netboot-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dhcp_netboot.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-12
+
+        Initial release
+    </Changes>
+    <Requires>
+        This container runs on the host network. Please read the documentation: https://github.com/samdbmg/dhcp-netboot.xyz#option-1-running-it-directly
+    </Requires>
+    <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
+    <Config Name="DHCP Range Start" Target="DHCP_RANGE_START" Default="192.168.0.1" Description="Start of the DHCP range for PXE booting. This should be in the same subnet as your Unraid server." Type="Variable" Display="always-hide" Required="true" Mask="false">192.168.0.1</Config>
+</Container>
