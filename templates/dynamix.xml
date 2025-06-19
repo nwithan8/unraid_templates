@@ -42,7 +42,7 @@
         Initial release
     </Changes>
     <Requires>
-        Requires a `config.json` file to be mounted at `/app/config.json` before starting the container. See configuration details: https://github.com/TheImaginear/dynamiX?tab=readme-ov-file#-configuration &#xD;
+        Requires a `config.json` file to be mounted at `/app/config.json` before starting the container. See configuration details: https://github.com/TheImaginear/dynamiX/blob/main/config.json &#xD;
         [br]
         Requires a number of JSON files to be created on the host system BEFORE the container is started. These files can be created with the `touch` command.
     </Requires>
