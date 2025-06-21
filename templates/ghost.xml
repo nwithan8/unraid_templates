@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Ghost</Name>
+    <Repository>ghost:latest</Repository>
+    <Registry>https://hub.docker.com/_/ghost/</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:2368]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://ghost.org/docs/config/</Support>
+    <Project>https://ghost.org/</Project>
+    <Overview>
+        Ghost is an open-source software that lets you create your website with a blog.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>web website blog blogging content management system CMS hosting</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/docker-library/docs/refs/heads/master/ghost/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ghost.xml</TemplateURL>
+    <Screenshot>https://user-images.githubusercontent.com/6694151/50233512-9bbc8a80-0381-11e9-83bb-f29a67000378.jpg</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-21
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MySQL database. &#xD;
+        [br]
+        May require additional configuration after initial setup. See documentation: https://ghost.org/docs/config/#configuration-options
+    </Requires>
+    <Config Name="Web UI Port" Target="2368" Default="2368" Mode="tcp" Description="Container Port: 2368" Type="Port" Display="always-hide" Required="true" Mask="false">2368</Config>
+    <Config Name="URL" Target="url" Default="http://localhost:2368" Description="The URL of your Ghost instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:2368</Config>
+    <Config Name="Database - Host" Target="database__connection__host" Default="" Description="Database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Port" Target="database__connection__port" Default="3306" Description="Database port" Type="Variable" Display="always-hide" Required="true" Mask="false">3306</Config>
+    <Config Name="Database - User" Target="database__connection__user" Default="" Description="Database user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Password" Target="database__connection__password" Default="" Description="Database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Database - Name" Target="database__connection__database" Default="" Description="Database name" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Content Storage Path" Target="/var/lib/ghost/content" Default="/mnt/user/appdata/ghost/content" Description="Path to the content storage directory" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/ghost/content</Config>
+    <Config Name="Environment" Target="NODE_ENV" Default="production|development" Description="Environment to run Ghost in" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Client" Target="database__client" Default="mysql" Description="Database client to use (e.g., mysql, sqlite3)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">mysql</Config>
+</Container>
