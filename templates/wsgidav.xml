@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>WsgiDAV</Name>
+    <Repository>mar10/wsgidav:latest</Repository>
+    <Registry>https://hub.docker.com/r/mar10/wsgidav</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/mar10/wsgidav/issues</Support>
+    <Project>https://github.com/mar10/wsgidav</Project>
+    <Overview>
+        A generic and extendable WebDAV server written in Python and based on WSGI.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>wsgi dav webdav server python hosting files</ExtraSearchTerms>
+    <Icon>hhttps://raw.githubusercontent.com/mar10/wsgidav/master/docs/source/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/wsgidav.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-21
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Storage" Target="/var/wsgidav-root" Default="/mnt/user/appdata/wsgidav/storage" Description="Path to the storage directory" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/wsgidav/storage</Config>
+</Container>
