@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>EmailEngine</Name>
+    <Repository>postalsys/emailengine:latest</Repository>
+    <Registry>https://hub.docker.com/r/postalsys/emailengine</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://emailengine.app/support</Support>
+    <Project>https://emailengine.app/</Project>
+    <Overview>
+        Headless email client application that makes IMAP and SMTP resources available over REST. Integrate email accounts with your service with ease!    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>email client imap smtp rest api integration automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/email-engine-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/email_engine.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-21
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Redis container. &#xD;
+        [br]
+        May require additional configuration. See documentation: https://emailengine.app/configuration
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Redis Connection" Target="EENGINE_REDIS" Default="redis://localhost:6379/7" Description="Connection string for Redis instance" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://localhost:6379/7</Config>
+</Container>
