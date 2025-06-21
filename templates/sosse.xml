@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
-    <Name>SOSSE</Name>
+    <Name>Sosse</Name>
     <Repository>biolds/sosse:latest</Repository>
     <Registry>https://hub.docker.com/r/biolds/sosse</Registry>
     <Branch>
@@ -11,9 +11,9 @@
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://sosse.readthedocs.io/en/stable/install/docker.html</Support>
-    <Project>https://sosse.readthedocs.io</Project>
+    <Project>https://sosse.io</Project>
     <Overview>
-        SOSSE (Selenium Open Source Search Engine) is a web archiving software, crawler, and search engine
+        Sosse (Selenium Open Source Search Engine) is a web archiving software, crawler, and search engine
     </Overview>
     <Beta>False</Beta>
     <Category>Backup: Cloud: Productivity: Tools: Other: Status:Stable</Category>
@@ -24,6 +24,7 @@
     <Screenshot>https://sosse.readthedocs.io/en/stable/_images/guide_download_archive_html.png</Screenshot>
     <Screenshot>https://sosse.readthedocs.io/en/stable/_images/archive_download.png</Screenshot>
     <Screenshot>https://sosse.readthedocs.io/en/stable/_images/analytics.png</Screenshot>
+    <Screenshot>https://sosse.readthedocs.io/en/stable/_images/tags_filter.png</Screenshot>
     <Screenshot>https://sosse.readthedocs.io/en/stable/_images/history.png</Screenshot>
     <Screenshot>https://sosse.readthedocs.io/en/stable/_images/crawl_queue.png</Screenshot>
     <Screenshot>https://sosse.readthedocs.io/en/stable/_images/crawl_policy_decision_no_hilight.png</Screenshot>
