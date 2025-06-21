@@ -1,6 +1,12 @@
 name: Validate Template
 
 on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
   push:
     branches:
       - main
