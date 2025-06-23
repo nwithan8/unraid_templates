@@ -18,7 +18,7 @@
     <Beta>False</Beta>
     <Category>Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>wsgi dav webdav server python hosting files</ExtraSearchTerms>
-    <Icon>hhttps://raw.githubusercontent.com/mar10/wsgidav/master/docs/source/logo.png</Icon>
+    <Icon>https://raw.githubusercontent.com/mar10/wsgidav/master/docs/source/logo.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/wsgidav.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
