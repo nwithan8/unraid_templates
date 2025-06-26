@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>LocalAI</Name>
-    <Repository>localai/localai:latest-cpu</Repository>
+    <Repository>localai/localai:latest</Repository>
     <Registry>https://hub.docker.com/r/localai/localai</Registry>
     <Branch>
-        <Tag>latest-cpu</Tag>
+        <Tag>latest</Tag>
         <TagDescription>Latest standard release (CPU only)</TagDescription>
     </Branch>
     <Branch>
@@ -14,6 +14,10 @@
     <Branch>
         <Tag>latest-gpu-nvidia-cuda-12</Tag>
         <TagDescription>Latest standard release with Nvidia GPU (CUDA 12) support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>latest-nvidia-l4t-arm64</Tag>
+        <TagDescription>Latest standard release with Nvidia Jetson (L4T) ARM64 support</TagDescription>
     </Branch>
     <Branch>
         <Tag>latest-gpu-hipblas</Tag>
@@ -83,6 +87,10 @@
         Additional image variants are also available: https://localai.io/basics/container/#standard-container-images &#xD;
     </Requires>
     <Changes>
+        ### 2025-06-25
+
+        Add new Docker tags
+
         ### 2024-06-20
 
         Update documentation for Intel iGPU passthrough
