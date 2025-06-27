@@ -83,8 +83,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "40adfe38e6c734f875d82db8efe9cbb0a418a3fc",
-                "commit_message": "feat: implement timezone-aware logging using user settings instead of system time\n"
+                "commit_hash": "0fee673acb9788e10142e0e96db5cd095537ba4f",
+                "commit_message": "Add health check and graceful shutdown support\n\n- Implemented health check endpoint for Docker and orchestration systems.\n- Added graceful shutdown configuration in Docker Compose and application code.\n- Enhanced shutdown handling in main application and background tasks for improved diagnostics.\n- Updated Dockerfile to include health check command.\n- Introduced readiness check endpoint for Kubernetes-style orchestration.\n"
             }
         ]
     },
@@ -244,8 +244,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "c64c80302ddf2b7a66ffb8f4e4cca02ff57f5f56",
-                "commit_message": null
+                "commit_hash": "1014a84edbe322ed3bb236a706490ea9a5a8c332",
+                "commit_message": "Update docker-compose.yml"
             }
         ]
     },
@@ -280,8 +280,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f8a7467ec0e939f90d19211a0a0efc5e17a58127",
-                "commit_message": null
+                "commit_hash": "c8eb034c492001deb3a47dd3f3c2a366f784bb3c",
+                "commit_message": "chore: use `v1` tag in example `docker-compose.yml`\n"
             }
         ]
     },
@@ -321,23 +321,7 @@
             }
         ]
     },
-    {
-        "app_name": "SurfSense",
-        "git_url": "https://github.com/MODSetter/SurfSense.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "docker-compose.yml",
-                "commit_hash": "bfeae0cb6766c604cc7393d7269df50cfeefec08",
-                "commit_message": null
-            },
-            {
-                "file_path": "docker-compose.override.yml",
-                "commit_hash": "818706558affc3f594f20b020e20056353feed72",
-                "commit_message": null
-            }
-        ]
-    },
+    {},
     {
         "app_name": "Container-Mon",
         "git_url": "https://github.com/RafhaanShah/Container-Mon.git",
