@@ -273,7 +273,6 @@
             }
         ]
     },
-    {},
     {
         "app_name": "Pocket-ID",
         "git_url": "https://github.com/pocket-id/pocket-id.git",
