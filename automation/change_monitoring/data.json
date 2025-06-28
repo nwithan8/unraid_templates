@@ -356,5 +356,22 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "BrickTracker",
+        "git_url": "https://gitea.baerentsen.space/FrederikBaerentsen/BrickTracker.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "compose.yml",
+                "commit_hash": "e28ad8b32c9df02ff473bf2cb9c9f5f846154438",
+                "commit_message": null
+            },
+            {
+                "file_path": ".env.sample",
+                "commit_hash": "2e995b615d0a91e370aef758ea3eeccd75939db5",
+                "commit_message": null
+            }
+        ]
     }
 ]

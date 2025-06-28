@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-06-28
+
+        Add additional environment variables
+
         ### 2025-05-09
 
         Fix bad path variables
@@ -53,8 +57,11 @@
     <Config Name="Image - Use Date Suffix" Target="ENABLE_DAY_SUFFIX" Default="false|true" Description="Enable or disable the use of date suffixes (e.g. January 1 vs January 1st)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Date All Capitalized" Target="ENABLE_UPPERCASE" Default="false|true" Description="Enable or disable all capitalized date" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Overlay Text" Target="OVERLAY_TEXT" Default="Leaving" Description="Text to display next to the date" Type="Variable" Display="always-hide" Required="true" Mask="false">Leaving</Config>
+    <Config Name="Collections - Order" Target="PLEX_COLLECTION_ORDER" Default="asc|desc" Description="Order of collections in Plex" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Collections - Names" Target="REORDER_COLLECTIONS" Default="Leaving Soon" Description="Comma-separated list of names of the collections to be reordered" Type="Variable" Display="always-hide" Required="true" Mask="false">Leaving Soon</Config>
     <Config Name="Language" Target="LANGUAGE" Default="en-US" Description="Language for the overlay text" Type="Variable" Display="always-hide" Required="true" Mask="false">en-US</Config>
-    <Config Name="Run Interval" Target="RUN_INTERVAL" Default="480" Description="Interval in minutes to run the script" Type="Variable" Display="always-hide" Required="true" Mask="false">480</Config>
+    <Config Name="Cron Schedule" Target="CRON_SCHEDULE" Default="0 */8 * * *" Description="Cron schedule to run the script" Type="Variable" Display="always-hide" Required="true" Mask="false">0 */8 * * *</Config>
+    <Config Name="Run On Creation" Target="RUN_ON_CREATION" Default="false|true" Description="Run the script immediately on Docker boot" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Internal Image Save Path" Target="IMAGE_SAVE_PATH" Default="/images" Description="Internal path to save images. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/images</Config>
     <Config Name="Internal Original Image Save Path" Target="ORIGINAL_IMAGE_PATH" Default="/images/originals" Description="Internal path to save original images. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/images/originals</Config>
     <Config Name="Internal Temporary Image Save Path" Target="TEMP_IMAGE_PATH" Default="/images/temp" Description="Internal path to save temporary images. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/images/temp</Config>

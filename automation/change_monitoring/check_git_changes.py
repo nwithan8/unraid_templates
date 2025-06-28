@@ -328,9 +328,8 @@ if __name__ == "__main__":
         print(f"Checking {app.app_name} ({app.git_url}) for changes...")
         has_changed, changed_files, new_app_data, error = check_app(app_details=app)
 
-        new_data.append(new_app_data)
-
         if error:
+            # Do not add the app to new_data if there was an error (remove from JSON)
             errors_detected = True
             send_ntfy_notification(
                 app_name=app.app_name,
@@ -349,6 +348,8 @@ if __name__ == "__main__":
             })
             print(f"Error checking {app.app_name}: {error}")
             continue
+
+        new_data.append(new_app_data)
 
         if has_changed:
             changes_detected = True
