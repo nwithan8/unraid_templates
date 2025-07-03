@@ -18,13 +18,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "715a9960215b3ae910a56365476335c2ad98b9d6",
+                "commit_hash": "787dd9cde8781601a6bcb1898ef4cdf604062a7c",
                 "commit_message": "Fix docker-compose.yml\n"
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
-                "commit_hash": "c718eba6eff9988cea8084b9886cf54a8d0874be",
-                "commit_message": "Add release notes\n"
+                "commit_hash": "421a20ba8c5e6d1901b6d58becc939ff6f4dc456",
+                "commit_message": "Using Redis default directory for data.\n\nFor some reason for original Docker compose configuration path `/data` was correct, but for production this directory is used which isn't used by Redis, except if it's configured expressly.\r\n\r\nChecked here: https://github.com/redis/docker-library-redis/blob/master/7.4/alpine/Dockerfile#L134"
             }
         ]
     },
