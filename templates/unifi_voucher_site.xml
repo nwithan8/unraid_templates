@@ -36,6 +36,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-07-08
+
+        Add environment variables
+
         ### 2025-05-20
 
         Updated environmental variables for v6
@@ -71,6 +75,7 @@
     <Config Name="Email - SMTP Password" Target="SMTP_PASSWORD" Default="" Description="The SMTP password to use for sending emails" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Kiosk - Enable" Target="KIOSK_ENABLED" Default="false|true" Description="Enable/disable the kiosk page on /kiosk" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Kiosk - Voucher Type" Target="KIOSK_VOUCHER_TYPE" Default="480,1,,,;" Description="A semi-colon-separated list of voucher types in the following format: expiration in minutes (required),single-use or multi-use vouchers value - '0' is for multi-use (unlimited) - '1' is for single-use - 'N' is for multi-use (Nx) (optional),upload speed limit in kbps (optional),download speed limit in kbps (optional),data transfer limit in MB (optional)" Type="Variable" Display="always-hide" Required="true" Mask="false">480,1,,,;</Config>
+    <Config Name="Kiosk - Guest Name Required" Target="KIOSK_NAME_REQUIRED" Default="false|true" Description="Require the guest to enter their name on the kiosk page" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Log Level" Target="LOG_LEVEL" Default="info|error|debug" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Authentication - Disable" Target="AUTH_DISABLE" Default="false|true" Description="Disable all authentication methods" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Enable Web UI" Target="SERVICE_WEB" Default="true|false" Description="Enable the web UI" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
