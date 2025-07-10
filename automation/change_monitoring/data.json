@@ -136,8 +136,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "b3f1988982fc55d36f2b9810648f509b71c3be40",
-                "commit_message": "Added guestName translation to kiosk.json. Implemented time.json to time util translations. Updated info.js to reflect kiosk name requirement. Updated mail.js and print.js for localized time translations. Implemented optional guest name (voucher note) within kiosk.ejs. Implemented translations within time.js. Updated docker-compose.yml. Updated dependencies. Updated README.md\n"
+                "commit_hash": "454d92b861a27d173a37f2008c48c0a8a5cf75ae",
+                "commit_message": "Updated kiosk.json with new translation strings. Updated info.js to reflect the multiple kiosk voucher types. Deprecated the `KIOSK_VOUCHER_TYPE` environment variable. Implemented the `KIOSK_VOUCHER_TYPES` environment variable with support for multiple voucher types. Moved the kiosk images (logo.png and bg.jpg) to a kiosk image sub-folder. Redesign of the kiosk.ejs language selector to provide space for custom images. Implemented voucher types within kiosk.ejs. Utilize the bytes converter within voucher.ejs to reformat bytes labels. Updated the docker-compose.yml. Updated the README.md. Implemented /kiosk custom assets overrides. Implemented a type check for the voucher types from kiosk requests\n"
             }
         ]
     },
