@@ -18,7 +18,7 @@
     <Beta>False</Beta>
     <Category>Network:Management Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>unifi voucher site guest network management wifi password qr code</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/unifi-voucher-site-icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/refs/heads/master/public/images/kiosk/logo.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/unifi_voucher_site.xml</TemplateURL>
     <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/pdf_example.png</Screenshot>
     <Screenshot>https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/.docs/images/escpos_example.jpg</Screenshot>
