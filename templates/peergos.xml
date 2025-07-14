@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Peergos UI</Name>
+    <Repository>ghcr.io/peergos/web-ui:latest</Repository>
+    <Registry>ghcr.io/peergos/web-ui</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>master</Tag>
+        <TagDescription>Latest edge version</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://peergos.org/features</Support>
+    <Project>https://peergos.org</Project>
+    <Overview>
+        A p2p, secure file storage, social network and application protocol
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>P2P peer-to-peer secure file storage social network application protocol web ui internet</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/peergos-icon.svg</Icon>
+    <Banner>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/peergos-banner.svg</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/peergos.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Peergos/web-ui/master/assets/images/tour/images.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Peergos/web-ui/master/assets/images/tour/calendar.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Peergos/web-ui/master/assets/images/tour/social-feed.jpg</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Replace YOUR_DOMAIN_NAME with your domain name in the Post Arguments section.
+    </Requires>
+    <PostArgs>daemon -listen-host 0.0.0.0 -public-domain YOUR_DOMAIN_NAME -log-to-console true</PostArgs>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Data Path" Target="/opt/peergos/data" Default="" Description="Path to the Peergos data directory" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+</Container>
