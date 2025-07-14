@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Hasheous</Name>
+    <Repository>ghcr.io/gaseous-project/hasheous:latest</Repository>
+    <Registry>ghcr.io/gaseous-project/hasheous</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/gaseous-project/hasheous</Support>
+    <Project>https://hasheous.org/</Project>
+    <Overview>
+        Public server to proxy and cache IGDB queries and provide hash matching and lookups for the Gaseous server and other projects.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>hash lookup cache proxy igdb gaseous</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/gaseous-project/gaseous-server/refs/heads/main/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/hasheous.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MariaDB server.
+    </Requires>
+    <Config Name="Web UI Port" Target="80" Default="7157" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">7157</Config>
+    <Config Name="Database - Host" Target="dbhost" Default="" Description="Database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Username" Target="dbuser" Default="" Description="Database username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Password" Target="dbpass" Default="" Description="Database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="IGDB - Client ID" Target="igdbclientid" Default="" Description="IGDB client ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="IGDB - Client Secret" Target="igdbclientsecret" Default="" Description="IGDB client secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Data Storage" Target="/root/.hasheous-server" Default="/mnt/user/appdata/hasheous/data" Description="Path to data storage location" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/hasheous/data</Config>
+</Container>
