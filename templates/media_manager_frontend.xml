@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>MediaManager - Frontend</Name>
+    <Repository>ghcr.io/maxdorninger/mediamanager/frontend:latest</Repository>
+    <Registry>ghcr.io/maxdorninger/mediamanager/frontend</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://maxdorninger.github.io/MediaManager/troubleshooting.html</Support>
+    <Project>hhttps://maxdorninger.github.io/MediaManager/introduction.html</Project>
+    <Overview>
+        Manage your TV and movie library. Designed to be a replacement for Sonarr, Radarr, Overseer, and Jellyseer. It supports TVDB and TMDB for metadata, supports OIDC and OAuth 2.0 for authentication and supports Prowlarr and Jackett. It also provides an API to interact with the software programmatically, allowing for automation and integration with other services. &#xD;
+        [br]
+        This is the frontend component.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex jellyfin emby media manager sonarr radarr overseer jellyseer prowlarr jackett oidc oauth api torrents usenet</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/maxdorninger/MediaManager/refs/heads/master/Writerside/images/logo.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/media_manager_frontend.xml</TemplateURL>
+    <Screenshot>https://maxdorninger.github.io/MediaManager/MediaManager/screenshot-dashboard.png</Screenshot>
+    <Screenshot>https://maxdorninger.github.io/MediaManager/MediaManager/screenshot-tv-dashboard.png</Screenshot>
+    <Screenshot>https://maxdorninger.github.io/MediaManager/MediaManager/screenshot-download-season.png</Screenshot>
+    <Screenshot>https://maxdorninger.github.io/MediaManager/MediaManager/screenshot-request-season.png</Screenshot>
+    <Screenshot>https://maxdorninger.github.io/MediaManager/MediaManager/screenshot-tv-torrents.png</Screenshot>
+    <Screenshot>https://maxdorninger.github.io/MediaManager/MediaManager/screenshot-settings.png</Screenshot>
+    <Screenshot>https://maxdorninger.github.io/MediaManager/MediaManager/screenshot-login.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MediaManager - Backend container and Postgres database. &#xD;
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Backend API URL" Target="PUBLIC_API_URL" Default="http://[IP]:[PORT:8000]/api/v1" Description="URL to the MediaManager backend API" Type="Text" Display="always-hide" Required="true" Mask="false">http://[IP]:[PORT:8000]/api/v1</Config>
+</Container>
