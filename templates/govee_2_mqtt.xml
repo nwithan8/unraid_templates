@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Govee2MQTT</Name>
+    <Repository>ghcr.io/wez/govee2mqtt:latest</Repository>
+    <Registry>ghcr.io/wez/govee2mqtt</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/wez/govee2mqtt/blob/main/docs/CONFIG.md</Support>
+    <Project>https://github.com/wez/govee2mqtt</Project>
+    <Overview>
+        Connect Govee lights and devices to Home Assistant via MQTT.
+    </Overview>
+    <Category>HomeAutomation: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>Govee lights control MQTT Home Assistant automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/govee2mqtt-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/govee_2_mqtt.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MQTT broker.
+    </Requires>
+    <Config Name="Govee - Account Email" Target="GOVEE_EMAIL" Default="" Description="Govee account email address" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Govee - Account Password" Target="GOVEE_PASSWORD" Default="" Description="Govee account password" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Govee - API Key" Target="GOVEE_API_KEY" Default="" Description="Govee API key." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="MQTT - Host" Target="GOVEE_MQTT_HOST" Default="" Description="MQTT Host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="MQTT - Port" Target="GOVEE_MQTT_PORT" Default="1883" Description="MQTT Port" Type="Variable" Display="always-hide" Required="true" Mask="false">1883</Config>
+    <Config Name="MQTT - Username" Target="GOVEE_MQTT_USER" Default="" Description="MQTT Username. Remove if no authentication required." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="MQTT - Password" Target="GOVEE_MQTT_PASSWORD" Default="" Description="MQTT Password. Remove if no authentication required." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Temperature Unit" Target="GOVEE_TEMPERATURE_SCALE" Default="C|F" Description="Temperature unit for devices. Celsius or Fahrenheit." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Log Style" Target="RUST_LOG_STYLE" Default="always" Description="When to use Rust-style colored output for logs" Type="Variable" Display="advanced-hide" Required="true" Mask="false">always</Config>
+    <Config Name="Log Level" Target="RUST_LOG" Default="" Description="Set to 'govee=trace' for debug logs" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
