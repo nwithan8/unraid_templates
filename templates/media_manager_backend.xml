@@ -45,5 +45,5 @@
     <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
     <Config Name="Config File" Target="/app/config.toml" Default="/mnt/user/appdata/media_manager/config.toml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/media_manager/config.toml</Config>
     <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/media_manager/data" Description="Path to the data directory" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/media_manager/data</Config>
-    <Config Name="Internal Config File Path" Target="CONFIG_FILE" Default="/app/config.toml" Description="Internal ath to the config file" Type="Path" Display="advanced-hide" Required="true" Mask="false">/app/config.toml</Config>
+    <Config Name="Internal Config File Path" Target="CONFIG_FILE" Default="/app/config.toml" Description="Internal path to the config file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/config.toml</Config>
 </Container>
