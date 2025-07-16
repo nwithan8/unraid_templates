@@ -433,5 +433,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Torrents Manager",
+        "git_url": "https://gitlab.com/h0st1ng/media/torrents-manager.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "c841c935c0d4eb5166772aab1c2777e676f671c4",
+                "commit_message": null
+            }
+        ]
     }
 ]

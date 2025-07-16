@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Torrents Manager</Name>
+    <Repository>registry.gitlab.com/h0st1ng/media/torrents-manager/master:latest</Repository>
+    <Registry>registry.gitlab.com/h0st1ng/media/torrents-manager/master</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://gitlab.com/h0st1ng/media/torrents-manager</Support>
+    <Project>https://gitlab.com/h0st1ng/media/torrents-manager</Project>
+    <Overview>
+        A simple web application to manage qBittorrent upload settings based on time of day.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>torrent manager qBittorrent upload schedule automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/torrents-manager-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/torrents_manager.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-15
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate qBittorrent instance. &#xD;
+        [br]
+        Recommended to run via a cron schedule (e.g. Ofelia)
+    </Requires>
+    <Config Name="qBittorrent - URL" Target="QBITTORRENT_URL" Default="http://localhost:8080" Description="URL of the qBittorrent Web UI" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8080</Config>
+    <Config Name="qBittorrent - Username" Target="QBITTORRENT_USERNAME" Default="admin" Description="Username for the qBittorrent Web UI" Type="Variable" Display="always-hide" Required="true" Mask="false">admin</Config>
+    <Config Name="qBittorrent - Password" Target="QBITTORRENT_PASSWORD" Default="" Description="Password for the qBittorrent Web UI" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Schedule - Night Start" Target="DEFAULT_NIGHT_START" Default="23:30" Description="Start time for the night schedule (HH:MM format)" Type="Variable" Display="always-hide" Required="true" Mask="false">23:30</Config>
+    <Config Name="Schedule - Night End" Target="DEFAULT_NIGHT_END" Default="7:00" Description="End time for the night schedule (HH:MM format)" Type="Variable" Display="always-hide" Required="true" Mask="false">7:00</Config>
+    <Config Name="Schedule - Max Uploads Day" Target="DEFAULT_MAX_DAY_UPLOADS" Default="0" Description="Maximum number of uploads allowed during the day (0 for unlimited)" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Schedule - Max Uploads Night" Target="DEFAULT_MAX_NIGHT_UPLOADS" Default="0" Description="Maximum number of uploads allowed during the night (0 for unlimited)" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/torrents_manager/data" Description="Path to the data directory for Torrents Manager" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/torrents_manager/data</Config>
+</Container>
