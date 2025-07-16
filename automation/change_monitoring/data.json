@@ -409,5 +409,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "ICS Proxy",
+        "git_url": "https://github.com/13hannes11/ics-proxy.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "a6ad144eac410e58f09828bfe3899764a5a33b51",
+                "commit_message": null
+            }
+        ]
     }
 ]

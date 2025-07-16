@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>ICS Proxy</Name>
+    <Repository>ghcr.io/13hannes11/ics-proxy:latest</Repository>
+    <Registry>ghcr.io/13hannes11/ics-proxy</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/13hannes11/ics-proxy/issues</Support>
+    <Project>https://ics-proxy.de/</Project>
+    <Overview>
+        A calendar proxy application that allows keeping the calendar URL stable while changing the target URL.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>calendar proxy ICS iCal file CalDAV</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ics-proxy-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ics_proxy.xml</TemplateURL>
+    <Screenshot>https://user-images.githubusercontent.com/9381167/136559243-2a7c9062-33e3-436e-a781-fef3173e1671.png</Screenshot>
+    <Screenshot>https://user-images.githubusercontent.com/9381167/136559368-3404a94f-35d1-4235-8c98-2f837b75fda0.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-15
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Protocol" Target="PROTOCOL" Default="http|https" Description="Protocol to use for the ICS Proxy" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Base URL" Target="BASE_URL" Default="IP_ADDRESS:8080" Description="Base URL for the ICS Proxy" Type="Variable" Display="always-hide" Required="true" Mask="false">IP_ADDRESS:8080</Config>
+    <Config Name="Database Path" Target="/app/db" Default="/mnt/user/appdata/ics_proxy/db" Description="Path to the db directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ics_proxy/db</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="sqlite://db/db.db" Description="Database URL for the ICS Proxy" Type="Variable" Display="advanced-hide" Required="true" Mask="false">sqlite://db/db.db</Config>
+</Container>
