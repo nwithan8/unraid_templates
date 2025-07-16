@@ -244,8 +244,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "1014a84edbe322ed3bb236a706490ea9a5a8c332",
-                "commit_message": "Update docker-compose.yml"
+                "commit_hash": "82d7c249aa7dcedf066f93e00dd3749b3edd86f5",
+                "commit_message": "Updated variable to according to function\n\nREORDER_COLLECTIONS is now PROCESS_COLLECTIONS"
             }
         ]
     },
