@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>LocalRecall</Name>
+    <Repository>quay.io/mudler/localrecall:latest</Repository>
+    <Registry>quay.io/mudler/localrecall</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/LinOTP/LinOTP/issues</Support>
+    <Project>https://github.com/LinOTP/LinOTP</Project>
+    <Overview>
+        A lightweight, no-frills RESTful API designed for managing knowledge bases and files stored in vector databases—no GPU, internet, or cloud services required!    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>webui ui knowledge base vector database file management local recall ai agi localai ollama memory</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/mudler/LocalRecall/main/static/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/local_recall.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-15
+
+        Initial release
+    </Changes>
+    <Requires>
+        Works best with a separate LocalAI instance or OpenAI-compatible API for AI capabilities. &#xD;
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Embedding Model" Target="EMBEDDING_MODEL" Default="granite-embedding-107m-multilingual" Description="Embedding model." Type="Variable" Display="always-hide" Required="true" Mask="false">granite-embedding-107m-multilingual</Config>
+    <Config Name="OpenAI API - Base URL" Target="OPENAI_BASE_URL" Default="http://IP_ADDRESS:8080" Description="Base URL for the OpenAI-compatible API. If using LocalAI on the same machine, set to http://IP_ADDRESS:8080" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:8080</Config>
+    <Config Name="OpneAI API - Key" Target="OPENAI_API_KEY" Default="" Description="API key for the OpenAI-compatible API." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Internal Collections Database Path" Target="COLLECTION_DB_PATH" Default="/db" Description="Internal path to the collections database. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/db</Config>
+    <Config Name="Internal Assets Path" Target="FILE_ASSETS" Default="/assets" Description="Internal path to the assets directory. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/assets</Config>
+    <Config Name="Database Path" Target="/db" Default="/mnt/user/appdata/local_recall/db" Description="Path to the database directory for LocalRecall" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/local_recall/db</Config>
+    <Config Name="Assets Path" Target="/assets" Default="/mnt/user/appdata/local_recall/assets" Description="Path to the assets directory for LocalRecall" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/local_recall/assets</Config>
+</Container>
