@@ -41,5 +41,5 @@
         Requires a separate MediaManager - Backend container and Postgres database. &#xD;
     </Requires>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
-    <Config Name="Backend API URL" Target="PUBLIC_API_URL" Default="http://[IP]:[PORT:8000]/api/v1" Description="URL to the MediaManager backend API" Type="Text" Display="always-hide" Required="true" Mask="false">http://[IP]:[PORT:8000]/api/v1</Config>
+    <Config Name="Backend API URL" Target="PUBLIC_API_URL" Default="http://[IP]:[PORT:8000]/api/v1" Description="URL to the MediaManager backend API" Type="Variable" Display="always-hide" Required="true" Mask="false">http://[IP]:[PORT:8000]/api/v1</Config>
 </Container>
