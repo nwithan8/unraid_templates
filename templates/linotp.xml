@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>LinOTP</Name>
+    <Repository>linotp/linotp:3.4.4</Repository>
+    <Registry>https://hub.docker.com/r/linotp/linotp</Registry>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/LinOTP/LinOTP/issues</Support>
+    <Project>https://github.com/LinOTP/LinOTP</Project>
+    <Overview>
+        The open source solution for two-factor authentication, accommodating many different OTP algorithms using a modular approach. This includes the OATH standards such as HMAC (RFC 4226) and time-based HMAC. But LinOTP's design makes it easy to create your own tokens with different algorithms, including challenge-response tokens, tokens based on QR codes, and tokens based on push-type messages.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>two-factor authentication 2FA OTP OATH HMAC TOTP challenge-response QR code push token security</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/linotp-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/linotp.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-15
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database. &#xD;
+        [br]
+        This container does not have a "latest" tag; you must manually change the tag to update to newer versions.
+    </Requires>
+    <PostArgs>--with-bootstrap</PostArgs>
+    <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="Admin Password" Target="LINOTP_ADMIN_PASSWORD" Default="" Description="Password for the LinOTP admin user" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Database URI" Target="LINOTP_DATABASE_URI" Default="postgresql://USERNAME:PASSWORD@IP_ADDRESS:5432/linotp" Description="Database connection URI for the LinOTP database" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://USERNAME:PASSWORD@IP_ADDRESS:5432/linotp</Config>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/linotp/data" Description="Path to the data directory for LinOTP" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/linotp/data</Config>
+    <Config Name="Site Root Redirect" Target="LINOTP_SITE_ROOT_REDIRECT" Default="/manage/" Description="Redirect URL for the LinOTP site root" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/manage/</Config>
+    <Config Name="Secure Session Cookie" Target="LINOTP_SESSION_COOKIE_SECURE" Default="false|true" Description="Set to true to use secure cookies for sessions (recommended for production)" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Log Level" Target="LINOTP_LOG_LEVEL" Default="INFO|DEBUG|WARNING|ERROR|CRITICAL" Description="Set the log level for LinOTP." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
