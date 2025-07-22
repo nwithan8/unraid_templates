@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-07-22
+
+        Add support for Docling as an ETL service
+
         ### 2025-06-05
 
         Initial release
@@ -52,8 +56,8 @@
     <Config Name="OpenAI - API Key" Target="OPENAI_API_KEY" Default="" Description="OpenAI API key for LLMs and embeddings. Required if using OpenAI models." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Gemini - API Key" Target="GEMINI_API_KEY" Default="" Description="Gemini API key for LLMs and embeddings. Required if using Gemini models." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Anthropic - API Key" Target="ANTHROPIC_API_KEY" Default="" Description="Anthropic API key for LLMs and embeddings. Required if using Anthropic models." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
-    <Config Name="Firecrawl - API Key" Target="FIRECRAWL_API_KEY" Default="" Description="API key for Firecrawl service for web crawling" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="ETL Service" Target="ETL_SERVICE" Default="UNSTRUCTURED|LLAMACLOUD" Description="Document parsing service: UNSTRUCTURED (supports 34+ formats) or LLAMACLOUD (supports 50+ formats including legacy document types)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Firecrawl - API Key" Target="FIRECRAWL_API_KEY" Default="" Description="API key for Firecrawl service for web crawling" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="ETL Service" Target="ETL_SERVICE" Default="UNSTRUCTURED|LLAMACLOUD|DOCLING" Description="Document parsing service" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Unstructured - API Key" Target="UNSTRUCTURED_API_KEY" Default="" Description="API key for Unstructured.io service for document parsing. Required if ETL Service is set to UNSTRUCTURED" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="LlamaCloud - API Key" Target="LLAMA_CLOUD_API_KEY" Default="" Description="API key for LlamaCloud service for document parsing. Required if ETL Service is set to LLAMACLOUD" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="LangSmith - Tracing" Target="LANGSMITH_TRACING" Default="false|true" Description="Enable LangSmith tracing." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
