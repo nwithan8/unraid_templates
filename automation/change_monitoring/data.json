@@ -446,8 +446,8 @@
             },
             {
                 "file_path": "docker-compose.override.yml",
-                "commit_hash": "818706558affc3f594f20b020e20056353feed72",
-                "commit_message": null
+                "commit_hash": "4eab57a02498585f41690680221960c692b43bfd",
+                "commit_message": "chore: Remove TESSDATA_PREFIX environment variable from docker-compose.override.yml\n"
             }
         ]
     }
