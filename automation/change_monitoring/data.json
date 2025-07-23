@@ -124,8 +124,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "454d92b861a27d173a37f2008c48c0a8a5cf75ae",
-                "commit_message": "Updated kiosk.json with new translation strings. Updated info.js to reflect the multiple kiosk voucher types. Deprecated the `KIOSK_VOUCHER_TYPE` environment variable. Implemented the `KIOSK_VOUCHER_TYPES` environment variable with support for multiple voucher types. Moved the kiosk images (logo.png and bg.jpg) to a kiosk image sub-folder. Redesign of the kiosk.ejs language selector to provide space for custom images. Implemented voucher types within kiosk.ejs. Utilize the bytes converter within voucher.ejs to reformat bytes labels. Updated the docker-compose.yml. Updated the README.md. Implemented /kiosk custom assets overrides. Implemented a type check for the voucher types from kiosk requests\n"
+                "commit_hash": "95cbad4fd8ea75a9daeab1c23d3afbe832d5933c",
+                "commit_message": "Updated info.js to reflect auto kiosk print status. Implemented `KIOSK_PRINTER` environment variable. Updated docker-compose.yml. Dependency updates. Updated README.md. Implemented voucher auto-print within kiosk in server.js\n"
             }
         ]
     },
