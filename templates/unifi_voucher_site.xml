@@ -38,7 +38,8 @@
     <Changes>
         ### 2025-07-23
 
-        Add environmental variable
+        - Add environmental variable
+        - Add options.json config option
 
         ### 2025-07-13
 
@@ -56,7 +57,11 @@
 
         Initial release
     </Changes>
+    <Requires>
+        Can be configured via an `options.json` file or via environmental variables.
+    </Requires>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Config File" Target="/data/options.json" Default="/mnt/user/appdata/unifi_voucher_site/options.json" Description="Config file. Remove to use environmental variables instead." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/unifi_voucher_site/options.json</Config>
     <Config Name="UniFi OS Console - IP Address" Target="UNIFI_IP" Default="" Description="IP address of the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="UniFi OS Console - Port" Target="UNIFI_PORT" Default="443" Description="Port of the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false">443</Config>
     <Config Name="UniFi OS Console - Username" Target="UNIFI_USERNAME" Default="" Description="Username for the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
