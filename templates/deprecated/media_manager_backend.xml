@@ -13,6 +13,8 @@
     <Support>https://maxdorninger.github.io/MediaManager/troubleshooting.html</Support>
     <Project>hhttps://maxdorninger.github.io/MediaManager/introduction.html</Project>
     <Overview>
+        DEPRECATED: Please use the unified MediaManager application instead. &#xD;
+        [br]
         Manage your TV and movie library. Designed to be a replacement for Sonarr, Radarr, Overseer, and Jellyseer. It supports TVDB and TMDB for metadata, supports OIDC and OAuth 2.0 for authentication and supports Prowlarr and Jackett. It also provides an API to interact with the software programmatically, allowing for automation and integration with other services. &#xD;
         [br]
         This is the backend component.
@@ -33,6 +35,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-07-25
+
+        Deprecated: Please use the unified MediaManager application instead.
+
         ### 2025-07-14
 
         Initial release
