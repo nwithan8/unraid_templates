@@ -381,8 +381,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "cd8b3abf7084e1e0b13d4c7cca9f48e81899ac80",
-                "commit_message": null
+                "commit_hash": "f08fb2691987730054d9d67b2322cdea1e4b8781",
+                "commit_message": "work on docs and add docker-compose.yaml\n"
             }
         ]
     },
