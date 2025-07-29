@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>PrintGuard</Name>
+    <Repository>ghcr.io/oliverbravery/printguard:latest</Repository>
+    <Registry>ghcr.io/oliverbravery/printguard</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/oliverbravery/PrintGuard/issues</Support>
+    <Project>https://github.com/oliverbravery/PrintGuard</Project>
+    <Overview>
+        PrintGuard offers local, real-time print failure detection for 3D printing on edge devices. A web interface enables users to monitor multiple printer-facing cameras, connect to printers through compatible services (i.e. Octoprint) and receive failure notifications when the computer vision fault detection model designed for local edge deployment detects an issue and automatically suspend or terminate the print job.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>printing 3d model monitor alert notification guard print failure detection automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/printguard-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/printguard.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires privileged access to access host system's camera.
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/printguard/data" Description="Path to the data folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/printguard/data</Config>
+</Container>
