@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>ContextMod</Name>
+    <Repository>ghcr.io/foxxmd/context-mod:latest</Repository>
+    <Registry>ghcr.io/foxxmd/context-mod</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8085]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://contextmod.dev/</Support>
+    <Project>https://contextmod.dev/</Project>
+    <Overview>
+        Context Mod (CM) is an event-based, reddit moderation bot built on top of snoowrap and written in typescript. It is designed to help fill in the gaps for automoderator in regard to more complex behavior with a focus on user-history based moderation.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>bot automod moderator reddit snoowrap typescript automation subreddit social media</ExtraSearchTerms>
+    <Icon>https://contextmod.dev/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/contextmod.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a `config.yaml` or `config.json` file to in the Config Path before the container is started. See documentation: https://contextmod.dev/operator/configuration.html#file-configuration-recommended
+    </Requires>
+    <Config Name="Web UI Port" Target="8085" Default="8085" Mode="tcp" Description="Container Port: 8085" Type="Port" Display="always-hide" Required="true" Mask="false">8085</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/contextmod/config" Description="Path to the config folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/contextmod/config</Config>
+    <Config Name="Internal Data Directory" Target="DATA_DIR" Default="/config" Description="Internal path to the data directory. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config</Config>
+</Container>

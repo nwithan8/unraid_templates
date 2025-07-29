@@ -467,5 +467,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "ContextMod",
+        "git_url": "https://github.com/FoxxMD/context-mod.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "b094b72d4ada05f57b87847f8d32a33c800365c9",
+                "commit_message": null
+            }
+        ]
     }
 ]
