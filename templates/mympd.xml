@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>MyMPD</Name>
+    <Repository>ghcr.io/jcorporation/mympd/mympd:latest</Repository>
+    <Registry>ghcr.io/jcorporation/mympd/mympd</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://jcorporation.github.io/myMPD/</Support>
+    <Project>https://jcorporation.github.io/myMPD/</Project>
+    <Overview>
+        myMPD is a standalone and mobile friendly web-based MPD client with a tiny footprint and advanced features.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>mpd music player web ui youtube spotify stream album audio squeezebox</ExtraSearchTerms>
+    <Icon>https://jcorporation.github.io/myMPD/assets/mympd-logo.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mympd.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        May require additional configuration. See documentation: https://jcorporation.github.io/myMPD/020-configuration/configuration-files/
+    </Requires>
+    <ExtraParams>--user 1000:1000</ExtraParams>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="MPD Listening Socket" Target="/run/mpd" Default="/run/mpd" Description="Path to the MPD listening socket" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/run/mpd</Config>
+    <Config Name="Working Directory" Target="/var/lib/mympd" Default="/mnt/user/appdata/mympd/working" Description="Path to the working directory" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mympd/working</Config>
+    <Config Name="Cache Directory" Target="/var/cache/mympd" Default="/mnt/user/appdata/mympd/cache" Description="Path to the cache directory" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mympd/cache</Config>
+    <Config Name="Music Directory" Target="/var/lib/mpd/music" Default="" Description="Path to the music directory" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Playlist Directory" Target="/var/lib/mpd/playlists" Default="" Description="Path to the playlist directory" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="UMask" Target="UMASK_SET" Default="022" Description="Umask setting for file permissions" Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
+    <Config Name="Enable SSL" Target="MYMPD_SSL" Default="false|true" Description="Enable SSL for MyMPD" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal HTTP Port" Target="MYMPD_HTTP_PORT" Default="8080" Description="Internal HTTP port for MyMPD. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
+</Container>
