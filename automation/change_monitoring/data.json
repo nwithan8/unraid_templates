@@ -136,8 +136,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/examples/docker/basic-docker-compose/docker-compose.yml",
-                "commit_hash": "d5a9bd80b2bdc4ecb10a99d3db6f5441258acce7",
-                "commit_message": null
+                "commit_hash": "5b98e104f28e5f61155e661050340bccf4585832",
+                "commit_message": "Update docker-compose.yml\n\nThe version attribute is deprecated, resolves error \"the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion\" when building with Docker\n\nSigned-off-by: ptweezy <parkerbrayden@gmail.com>"
             }
         ]
     },
