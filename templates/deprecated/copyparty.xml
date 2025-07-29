@@ -40,6 +40,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-07-29
+
+        Update environmental variables
+
         ### 2025-05-27
 
         Clarify config file requirement
@@ -56,4 +60,5 @@
     <Config Name="File Storage" Target="/w" Default="/mnt/user/appdata/copyparty/files" Description="Path to file storage" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/copyparty/files</Config>
     <Config Name="Config Path" Target="/cfg" Default="/mnt/user/appdata/copyparty/config" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/copyparty/config</Config>
     <Config Name="Mimalloc" Target="LD_PRELOAD" Default="/usr/lib/libmimalloc-secure.so.NOPE|/usr/lib/libmimalloc-secure.so.2" Description="Enable mimalloc for higher performance, at the expense of 2x RAM usage." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Python Buffer" Target="PYTHONUNBUFFERED" Default="1" Description="Enable unbuffered output for Python." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
 </Container>
