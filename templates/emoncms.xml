@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Emoncms</Name>
+    <Repository>galexjunk/emoncms:latest</Repository>
+    <Registry>https://hub.docker.com/r/alexjunk/emoncms</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://emoncms-docker.github.io/setup/</Support>
+    <Project>https://emoncms.org/</Project>
+    <Overview>
+        Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>stats monitoring energy home assistant data visualization open-source automation mqtt open</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/emoncms-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/emoncms.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        May require additional configuration. See documentation: https://emoncms-docker.github.io/setup/
+    </Requires>
+    <Config Name="HTTP Port" Target="80" Default="8081" Mode="tcp" Description="HTTP Port" Type="Port" Display="always-hide" Required="true" Mask="false">8081</Config>
+    <Config Name="HTTPS Port" Target="443" Default="8082" Mode="tcp" Description="HTTPS Port" Type="Port" Display="always-hide" Required="true" Mask="false">8082</Config>
+    <Config Name="MQTT Port" Target="1883" Default="1883" Mode="tcp" Description="MQTT Port, if using internal broker. Remove if using external broker." Type="Port" Display="always" Required="false" Mask="false">1883</Config>
+    <Config Name="Database - Host" Target="MYSQL_DATABASE" Default="" Description="Database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - User" Target="MYSQL_USER" Default="emoncms" Description="Database user" Type="Variable" Display="always-hide" Required="true" Mask="false">emoncms</Config>
+    <Config Name="Database - Password" Target="MYSQL_PASSWORD" Default="" Description="Database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="MQTT - Host" Target="MQTT_HOST" Default="localhost" Description="MQTT host. If using internal broker, set to 'localhost'." Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="MQTT - User" Target="MQTT_USER" Default="" Description="MQTT user." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="MQTT - Password" Target="MQTT_PASSWORD" Default="" Description="MQTT password." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="MQTT - Log Level" Target="MQTT_LOG_LEVEL" Default="info|error|warn" Description="MQTT log level." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Redis Low-Write Mode" Target="REDIS_BUFFER" Default="1|0" Description="Enable Redis low-write mode. Set to 1 to enable, 0 to disable." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Level" Target="EMONCMS_LOG_LEVEL" Default="1|2|3" Description="1=INFO, 2=WARN, 3=ERROR" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal CRT File" Target="CRT_FILE" Default="/etc/ssl/apache2/server.pem" Description="Path to the internal CRT file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/etc/ssl/apache2/server.pem</Config>
+    <Config Name="Internal Key File" Target="KEY_FILE" Default="/etc/ssl/apache2/server.key" Description="Path to the internal Key file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/etc/ssl/apache2/server.key</Config>
+    <Config Name="CName" Target="CNAME" Default="localhost" Description="CName for the server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/emoncms/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/emoncms/data</Config>
+</Container>
