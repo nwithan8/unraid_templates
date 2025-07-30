@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>LocalStack Pro</Name>
+    <Repository>localstack/localstack-pro:latest</Repository>
+    <Registry>https://hub.docker.com/r/localstack/localstack-pro</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>https://[IP]:[PORT:443]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.localstack.cloud/</Support>
+    <Project>https://www.localstack.cloud/</Project>
+    <Overview>
+        LocalStack is a local cloud emulator that lets you build and test cloud applications entirely on your machine. Spin up fully functional local environments that mirror real cloud behavior — including AWS services and Snowflake — without provisioning real cloud infrastructure. Whether you're validating IaC templates, running integration tests, or iterating on data pipelines, LocalStack integrates seamlessly with your tools and CI/CD pipelines to help you ship faster and safer.    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ci cd aws amazon web services cloud emulator localstack snowflake infrastructure code iac simulator s3 ec2 environment local stack</ExtraSearchTerms>
+    <Icon>https://cdn.prod.website-files.com/6539036f80ddc9e9a467134e/681e4d77a183f92570e14555_localstack-logo.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/localstack_pro.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        May require additional configuration via environmental variables. See documentation: https://docs.localstack.cloud/references/configuration/
+    </Requires>
+    <Config Name="Web UI Port" Target="4566" Default="4566" Mode="tcp" Description="Container Port: 4566" Type="Port" Display="always-hide" Required="true" Mask="false">4566</Config>
+    <Config Name="HTTPS Port" Target="443" Default="9443" Mode="tcp" Description="Container Port: 443 for HTTPS access" Type="Port" Display="always-hide" Required="true" Mask="false">9443</Config>
+    <Config Name="External Service Ports" Target="4510-4559" Default="4510-4559" Description="Range for external service ports" Type="Port" Display="always" Required="true" Mask="false">4510-4559</Config>
+    <Config Name="Data Directory" Target="/var/lib/localstack" Default="/mnt/user/appdata/localstack/data" Description="Path to the data directory" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/localstack/data</Config>
+    <Config Name="Auth Token" Target="LOCALSTACK_AUTH_TOKEN" Default="" Description="Authentication token for LocalStack Pro. See documentation: https://docs.localstack.cloud/getting-started/auth-token/" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Persistence" Target="PERSISTENCE" Default="0|1" Description="Enable persistence for the data directory. Set to 1 to enable." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Debug" Target="DEBUG" Default="0|1" Description="Enable debug mode. Set to 1 to enable." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
