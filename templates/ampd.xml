@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>ampd</Name>
+    <Repository>rain0r/ampd:latest</Repository>
+    <Registry>https://hub.docker.com/r/rain0r/ampd</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://rain0r.github.io/ampd/docs/docker.html</Support>
+    <Project>https://rain0r.github.io/ampd/</Project>
+    <Overview>
+        ampd is a free web-based client for MPD.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>mpd music player web ui youtube spotify stream album audio squeezebox</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ampd-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ampd.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-07-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        May require additional configuration. See documentation: https://rain0r.github.io/ampd/docs/docker.html
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="MPD Server" Target="MPD_SERVER" Default="" Description="URL to the MPD server." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="MPD Port" Target="MPD_PORT" Default="6600" Description="Port of the MPD server." Type="Variable" Display="always-hide" Required="true" Mask="false">6600</Config>
+    <Config Name="Enable Local Cover Cache" Target="LOCAL_COVER_CACHE" Default="false|true" Description="Enable local cover cache for faster loading of covers." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="MB Cover Cache" Target="MB_COVER_CACHE" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Reset Modes on Clear" Target="RESET_MODES_ON_CLEAR" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Create New Playlists" Target="CREATE_NEW_PLAYLISTS" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Delete Existing Playlists" Target="DELETE_EXISTING_PLAYLISTS" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Working Directory" Target="HOME_DIR" Default="/opt/ampd/home" Description="Internal working directory for ampd. Do not change unless you know what you are doing." Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/opt/ampd/home</Config>
+    <Config Name="Working Directory" Target="/opt/ampd/home" Default="/mnt/user/appdata/ampd" Description="Path to the working directory. This is where ampd stores its data." Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ampd</Config>
+</Container>
