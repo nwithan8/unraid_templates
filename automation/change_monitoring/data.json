@@ -124,8 +124,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "95cbad4fd8ea75a9daeab1c23d3afbe832d5933c",
-                "commit_message": "Updated info.js to reflect auto kiosk print status. Implemented `KIOSK_PRINTER` environment variable. Updated docker-compose.yml. Dependency updates. Updated README.md. Implemented voucher auto-print within kiosk in server.js\n"
+                "commit_hash": "0c9aeac7a59e958a0b7d7ca2279454042c90a40b",
+                "commit_message": "Updated  to . Fixed bulk-print.ejs notes view. Updated details.ejs view with additional voucher metadata. Updated voucher.ejs notes view. Created notes.js utils for extracting voucher notes and metadata. Updated docker-compose.yml. Updated README.md. Implemented voucher note check for seperator misuse. Implemented new notes-metadata embed. Implemented new voucher filter within existing chain. Fixed notes sort to only filter on the notes not the metadata. Removed unused  variable forward to voucher.ejs\n"
             }
         ]
     },
