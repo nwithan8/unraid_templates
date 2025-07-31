@@ -479,5 +479,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Crawl4AI",
+        "git_url": "https://github.com/unclecode/crawl4ai.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "4812f08a73f419de343bd93c8a48809bb305618c",
+                "commit_message": null
+            }
+        ]
     }
 ]
