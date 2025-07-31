@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>Crawl4AI</Name>
-    <Repository>ghcr.io/foxxmd/context-mod:latest</Repository>
-    <Registry>ghcr.io/foxxmd/context-mod</Registry>
+    <Repository>unclecode/crawl4ai:latest</Repository>
+    <Registry>https://hub.docker.com/r/unclecode/crawl4ai</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
