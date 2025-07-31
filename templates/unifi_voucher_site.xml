@@ -36,6 +36,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-07-31
+
+        - Add environmental variable
+
         ### 2025-07-23
 
         - Add environmental variable
@@ -77,6 +81,7 @@
     <Config Name="Authentication - OIDC - Client ID" Target="AUTH_OIDC_CLIENT_ID" Default="" Description="OIDC client id provided by oauth provider" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Authentication - OIDC - Client Secret" Target="AUTH_OIDC_CLIENT_SECRET" Default="" Description="OIDC client secret provided by oauth provider" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Authentication - API - Bearer Token" Target="AUTH_INTERNAL_BEARER_TOKEN" Default="" Description="The bearer token used for the API" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Authentication - Limit Admins to Own Organization" Target="PIN_OIDC_USER_TO_OWN_DOMAIN" Default="false|true" Description="Limit voucher administrators to managing only vouchers associated with their own organization. If enabled, system automatically assigns the administrator’s email domain as a note to each created voucher." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Voucher Types" Target="VOUCHER_TYPES" Default="480,1,,,;" Description="A semi-colon-separated list of voucher types in the following format: expiration in minutes (required),single-use or multi-use vouchers value - '0' is for multi-use (unlimited) - '1' is for single-use - 'N' is for multi-use (Nx) (optional),upload speed limit in kbps (optional),download speed limit in kbps (optional),data transfer limit in MB (optional)" Type="Variable" Display="always-hide" Required="true" Mask="false">480,1,,,;</Config>
     <Config Name="Allow Custom Voucher Types" Target="VOUCHER_CUSTOM" Default="false|true" Description="Allow users to create custom vouchers types within the UI" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Printers" Target="PRINTERS" Default="" Description="A comma-separated list of printer formats and IPs. Example: 'pdf,192.168.1.10'" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
