@@ -446,8 +446,8 @@
             },
             {
                 "file_path": "docker-compose.override.yml",
-                "commit_hash": "4eab57a02498585f41690680221960c692b43bfd",
-                "commit_message": "chore: Remove TESSDATA_PREFIX environment variable from docker-compose.override.yml\n"
+                "commit_hash": "d4f0613865b506eb1e689225b5d8744d5620e238",
+                "commit_message": "Fixed docker build hook to build for all architectures\n"
             }
         ]
     },
