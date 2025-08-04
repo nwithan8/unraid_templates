@@ -1,15 +1,11 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
     <Name>Dawarich</Name>
-    <Repository>freikin/dawarich:0.28.0</Repository>
+    <Repository>freikin/dawarich:latest</Repository>
     <Registry>https://hub.docker.com/r/freikin/dawarich</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest release</TagDescription>
-    </Branch>
-    <Branch>
-        <Tag>0.28.0</Tag>
-        <TagDescription>v0.28.0, recommended for recent update issues</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3000]/</WebUI>
@@ -31,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-08-03
+
+        - Change default tag back to `latest`
+
         ### 2025-06-09
 
         - Add new env vars for latest release
