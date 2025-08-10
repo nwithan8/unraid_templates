@@ -487,8 +487,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "4812f08a73f419de343bd93c8a48809bb305618c",
-                "commit_message": null
+                "commit_hash": "ff6ea41ac3942b7d171af51ad8bb988b20f3cbee",
+                "commit_message": "feat(docker): add flexible LLM provider configuration\n\n- Support LLM_PROVIDER env var to override default provider (openai/gpt-4o-mini)\n- Add optional 'provider' parameter to API endpoints for per-request overrides\n- Implement provider validation to ensure API keys exist\n- Update documentation and examples with new configuration options\n\nCloses the need to hardcode providers in config.yml\n"
             }
         ]
     }
