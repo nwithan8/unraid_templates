@@ -8,24 +8,8 @@
         <TagDescription>Latest development release</TagDescription>
     </Branch>
     <Branch>
-        <Tag>latest-vaapi</Tag>
-        <TagDescription>Latest development release with Intel iGPU support</TagDescription>
-    </Branch>
-    <Branch>
-        <Tag>latest-nvidia</Tag>
-        <TagDescription>Latest development release with Nvidia GPU support</TagDescription>
-    </Branch>
-    <Branch>
         <Tag>edge</Tag>
         <TagDescription>Edge release (every 2 hours) release</TagDescription>
-    </Branch>
-    <Branch>
-        <Tag>edge-vaapi</Tag>
-        <TagDescription>Edge release (every 2 hours) release with Intel iGPU support</TagDescription>
-    </Branch>
-    <Branch>
-        <Tag>edge-nvidia</Tag>
-        <TagDescription>Edge release (every 2 hours) release with Nvidia GPU support</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8000]/</WebUI>
@@ -52,6 +36,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ## 2025-08-11
+
+        Remove hardware-acceleration-specific tags, no longer needed
+
         ## 2024-08-04
 
         Default to the latest tag
