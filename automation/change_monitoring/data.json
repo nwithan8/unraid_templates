@@ -71,8 +71,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.sqlite.yaml",
-                "commit_hash": "c1065d351c4f35add7653f376039063aa3621f58",
-                "commit_message": null
+                "commit_hash": "558849ce323d24bba0ca70e97071cc8be824dba0",
+                "commit_message": "refactor(docker): Move Docker configuration to dedicated directory\n\nMove all Dockerfiles, Docker Compose files, and environment files into a new\n`docker/` subdirectory. This centralizes all Docker-related assets, improving\nproject organization and maintainability by grouping concerns.\n\nUpdate `Makefile` targets to reference the new paths for `docker compose`\ncommands. This ensures that development and cleanup commands continue to\nfunction correctly after the file relocation.\n\nAdjust relative paths for build contexts and volume mounts within the Docker\nCompose files. Since the compose files are now nested in `docker/`, paths like\n`./data` or `./views` need to become `../data` or `../views` to correctly point\nto locations relative to the project root from the perspective of the\ndocker-compose file.\n\nAdd the new `docker/` directory and the `data/` directory to `.dockerignore`.\nThis prevents these directories from being unnecessarily copied into the Docker\nbuild context, reducing image size and build times by excluding non-essential\nfiles.\n\nSigned-off-by: Jo Vandeginste <Jo.Vandeginste@kuleuven.be>\n"
             }
         ]
     },
