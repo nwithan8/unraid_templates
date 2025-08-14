@@ -511,5 +511,17 @@
                 "commit_message": "feat(docker): add flexible LLM provider configuration\n\n- Support LLM_PROVIDER env var to override default provider (openai/gpt-4o-mini)\n- Add optional 'provider' parameter to API endpoints for per-request overrides\n- Implement provider validation to ensure API keys exist\n- Update documentation and examples with new configuration options\n\nCloses the need to hardcode providers in config.yml\n"
             }
         ]
+    },
+    {
+        "app_name": "Auto Archiver",
+        "git_url": "https://github.com/bellingcat/auto-archiver.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "799cef3a8c9b691b0c856ec1e36b87bb1742ca85",
+                "commit_message": null
+            }
+        ]
     }
 ]

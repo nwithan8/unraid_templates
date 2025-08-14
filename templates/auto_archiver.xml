@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Auto Archiver</Name>
+    <Repository>bellingcat/auto-archiver:latest</Repository>
+    <Registry>https://hub.docker.com/r/bellingcat/auto-archiver</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://auto-archiver.readthedocs.io</Support>
+    <Project>https://github.com/bellingcat/auto-archiver</Project>
+    <Overview>
+        Auto Archiver is a Python tool to automatically archive content on the web in a secure and verifiable way. It takes URLs from different sources (e.g. a CSV file, Google Sheets, command line etc.) and archives the content of each one. It can archive social media posts, videos, images and webpages. Content can be enriched, then saved either locally or remotely (S3 bucket, Google Drive). The status of the archiving process can be appended to a CSV report, or if using Google Sheets – back to the original sheet. &#xD;
+        [br]
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://auto-archiver.readthedocs.io/en/latest/installation/setup.html
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>archive internet web content automation python script scrape</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/auto-archiver-icon.png</Icon>
+    <Banner>https://auto-archiver.readthedocs.io/en/latest/_static/bc.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/auto_archiver.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/bellingcat/auto-archiver/refs/heads/main/docs/demo-before.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/bellingcat/auto-archiver/refs/heads/main/docs/demo-after.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/bellingcat/auto-archiver/refs/heads/main/docs/demo-archive.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/bellingcat/auto-archiver/refs/heads/main/docs/demo-progress.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `orchestration.yaml` file to be present in the Secrets Storage path before starting the container. See configuration details: https://auto-archiver.readthedocs.io/en/latest/installation/configurations.html
+    </Requires>
+    <PostArgs>--config secrets/orchestration.yaml</PostArgs>
+    <Config Name="Secrets Storage" Target="/app/secrets" Default="/mnt/user/appdata/auto-archiver/secrets" Description="Path to the secrets storage folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/auto-archiver/secrets</Config>
+    <Config Name="Local Archive" Target="/app/local_archive" Default="/mnt/user/appdata/auto-archiver/local_archive" Description="Path to the local archive folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/auto-archiver/local_archive</Config>
+</Container>
