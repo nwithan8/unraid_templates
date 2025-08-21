@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>AuthPortal</Name>
+    <Repository>modomofn/auth-portal:latest</Repository>
+    <Registry>https://hub.docker.com/r/modomofn/auth-portal</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/modom-ofn/auth-portal/issues</Support>
+    <Project>https://github.com/modom-ofn/auth-portal</Project>
+    <Overview>
+        AuthPortal is a lightweight, self-hosted authentication gateway for Plex users. It reproduces Overseerr’s clean popup login (no code entry), stores the Plex token, and issues a secure session cookie for your intranet portal.    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Management MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex authentication portal login token session cookie auth access proxy ldap</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/auth-portal-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/auth_portal.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/auth_portal_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/auth_portal_demo_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/auth_portal_demo_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/auth_portal_demo_4.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-21
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database.
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Database Connection URL" Target="DATABASE_URL" Default="postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_IP:5432/AuthPortaldb?sslmode=disable" Description="Postgres database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="true">postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_IP:5432/AuthPortaldb?sslmode=disable</Config>
+    <Config Name="App Base URL" Target="APP_BASE_URL" Default="http://IP_ADDRESS:PORT" Description="Public URL of this service. If using HTTPS, cookies will be marked Secure." Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:PORT</Config>
+    <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Description="Long random string for signing the session cookie" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Plex - Owner Token" Target="PLEX_OWNER_TOKEN" Default="" Description="Token from Plex server owner; used to validate server membership." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Plex - Server Machine ID" Target="PLEX_SERVER_MACHINE_ID" Default="" Description="Machine ID of your Plex server (preferred over name)." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex - Server Name" Target="PLEX_SERVER_NAME" Default="" Description="Optional: Plex server name (used if machine ID not set)." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+</Container>

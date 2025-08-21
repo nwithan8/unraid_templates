@@ -23,6 +23,7 @@
     <Category>Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>games epic free deals notification automation apprise ntfy discord webhook checkout link</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/epicgames-freegames-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/epicgames_freegames.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
