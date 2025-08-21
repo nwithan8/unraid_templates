@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Epic Games Free Games</Name>
+    <Repository>ghcr.io/claabs/epicgames-freegames-node:latest</Repository>
+    <Registry>ghcr.io/claabs/epicgames-freegames-node</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>debian</Tag>
+        <TagDescription>If issues with Chromium starting</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://claabs.github.io/epicgames-freegames-node/index.html</Support>
+    <Project>https://github.com/claabs/epicgames-freegames-node</Project>
+    <Overview>
+        Automatically login and find available free games the Epic Games Store. Sends you a prepopulated checkout link so you can complete the checkout after logging in. Supports multiple accounts, login sessions, and scheduled runs.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>games epic free deals notification automation apprise ntfy discord webhook checkout link</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/epicgames-freegames-icon.png</Icon>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-21
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.json` file to be present in the App Data path before starting the container. See configuration details: https://github.com/claabs/epicgames-freegames-node#json-configuration
+    </Requires>
+    <PostArgs>-m 2g</PostArgs>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="App Data" Target="/usr/app/config" Default="/mnt/user/appdata/auto-archiver/config" Description="Path to the configuration folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/auto-archiver/config</Config>
+</Container>
