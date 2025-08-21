@@ -156,8 +156,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/examples/docker/basic-docker-compose/docker-compose.yml",
-                "commit_hash": "3cde1f3be205f4a6fe333191d19910678c78f866",
-                "commit_message": "docker-compose: PYTHONUNBUFFERED=1\n\nalmost zero performance impact with podman in kitty\n"
+                "commit_hash": "cd8771fa522d1cf645c3c7e0193f07b53d81559c",
+                "commit_message": "updated authelia docker-compose.yml (#377)\n\n"
             }
         ]
     },
@@ -252,8 +252,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "82d7c249aa7dcedf066f93e00dd3749b3edd86f5",
-                "commit_message": "Updated variable to according to function\n\nREORDER_COLLECTIONS is now PROCESS_COLLECTIONS"
+                "commit_hash": "fbea7706b8fca6165f1c3bd5e6a24bb73856024f",
+                "commit_message": "Update docker-compose.yml"
             }
         ]
     },
