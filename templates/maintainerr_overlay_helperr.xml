@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-08-21
+
+        Update environment variables
+
         ### 2025-07-17
 
         Update environment variables
@@ -56,7 +60,9 @@
     <Config Name="Image - Horizontal Offset" Target="HORIZONTAL_OFFSET" Default="30" Description="Horizontal offset of the image" Type="Variable" Display="always-hide" Required="true" Mask="false">30</Config>
     <Config Name="Image - Vertical Offset" Target="VERTICAL_OFFSET" Default="40" Description="Vertical offset of the image" Type="Variable" Display="always-hide" Required="true" Mask="false">40</Config>
     <Config Name="Image - Horizontal Alignment" Target="HORIZONTAL_ALIGN" Default="center|left|right" Description="Horizontal alignment of the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Image - Vertical Alignment" Target="vertical-align" Default="top|middle|bottom" Description="Vertical alignment of the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Vertical Alignment" Target="VERTICAL_ALIGN" Default="top|middle|bottom" Description="Vertical alignment of the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Reset Overlay" Target="RESET_OVERLAY" Default="false|true" Description="Reset the overlay on the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Reapply Overlay" Target="REAPPLY_OVERLAY" Default="false|true" Description="Reapply the overlay on the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Date Format" Target="DATE_FORMAT" Default="d MMM|MMM d" Description="Date format for the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Use Date Suffix" Target="ENABLE_DAY_SUFFIX" Default="false|true" Description="Enable or disable the use of date suffixes (e.g. January 1 vs January 1st)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Date All Capitalized" Target="ENABLE_UPPERCASE" Default="false|true" Description="Enable or disable all capitalized date" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
