@@ -6,8 +6,8 @@
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
     <Privileged>false</Privileged>
-    <Support>https://github.com/LinOTP/LinOTP/issues</Support>
-    <Project>https://github.com/LinOTP/LinOTP</Project>
+    <Support>https://github.com/mudler/LocalRecall/issues</Support>
+    <Project>https://github.com/mudler/LocalRecall</Project>
     <Overview>
         A lightweight, no-frills RESTful API designed for managing knowledge bases and files stored in vector databases—no GPU, internet, or cloud services required!    </Overview>
     <Beta>False</Beta>
