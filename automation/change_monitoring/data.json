@@ -535,5 +535,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "OttrBox",
+        "git_url": "https://github.com/aottr/ottrbox.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "f16d499735a32d979cae78188b5c164ca05decba",
+                "commit_message": null
+            }
+        ]
     }
 ]

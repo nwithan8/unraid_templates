@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>OttrBox</Name>
+    <Repository>ghcr.io/aottr/ottrbox:latest</Repository>
+    <Registry>ghcr.io/aottr/ottrbox</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://stonith404.github.io/pingvin-share/introduction</Support>
+    <Project>https://github.com/aottr/ottrbox</Project>
+    <Overview>
+        OttrBox is a self-hosted file sharing platform and an alternative for WeTransfer.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>file sharing transfer wetransfer pingvin share</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/aottr/ottrbox/main/docs/static/img/pingvinshare.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ottrbox.xml</TemplateURL>
+    <Screenshot>https://user-images.githubusercontent.com/58886915/225038319-b2ef742c-3a74-4eb6-9689-4207a36842a4.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-23
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Behind Reverse Proxy" Target="TRUST_PROXY" Default="false|true" Description="Set to true if running behind a reverse proxy" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Data Path" Target="/opt/app/backend/data" Default="/mnt/user/appdata/ottrbox/data" Description="Path to store uploaded files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ottrbox/data</Config>
+    <Config Name="Images Path" Target="/opt/app/frontend/public/img" Default="/mnt/user/appdata/ottrbox/images" Description="Path to store image files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ottrbox/images</Config>
+</Container>
