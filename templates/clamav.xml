@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>ClamAV</Name>
+    <Repository>clamav/clamav:latest</Repository>
+    <Registry>https://hub.docker.com/r/clamav/clamav</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://docs.clamav.net/Introduction.html</Support>
+    <Project>https://docs.clamav.net</Project>
+    <Overview>
+        ClamAV is an open source (GPLv2) anti-virus toolkit, designed especially for e-mail scanning on mail gateways. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. The core of the package is an anti-virus engine available in a form of shared library.
+        [br]
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://docs.clamav.net/manual/Installing/Docker.html#running-clamdscan
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Security: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>security virus antivirus clamav clamdscan scan toolkit cli email gateway</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/micahsnyder/clamav-documentation/main/src/images/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/clamav.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-23
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool; edit **Post Arguments** accordingly. See documentation: https://docs.clamav.net/manual/Installing/Docker.html#running-clamdscan &#xD;
+        [br]
+        This is known to consume a lot of RAM: https://docs.clamav.net/manual/Installing/Docker.html#why-is-this-much-ram-required
+    </Requires>
+    <Config Name="TCP Port" Target="3310" Default="3310" Description="TCP Port" Type="Port" Display="always-hide" Required="true" Mask="false">3310</Config>
+</Container>
