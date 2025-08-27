@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Cloudflare DDNS</Name>
+    <Repository>ghcr.io/akarys42/cloudflare-ddns-docker:latest</Repository>
+    <Registry>ghcr.io/akarys42/cloudflare-ddns-docker</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Akarys42/cloudflare-ddns-docker/issues</Support>
+    <Project>https://github.com/Akarys42/cloudflare-ddns-docker</Project>
+    <Overview>
+        Cloudflare DDNS is a configurable Docker service updating your CloudFlare DNS records periodically to match your local IP address.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>dns ddns dynamic cloudflare ip record update</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/cloudflare-ddns-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/cloudflare_ddns.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-27
+
+        Initial release
+    </Changes>
+    <Config Name="Cloudflare Token" Target="CF_DDNS_TOKEN" Default="" Description="Cloudflare API Token with DNS Edit permissions" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Delay" Target="CF_DDNS_DELAY" Default="" Description="The time to wait between each update. It is parsed per strftime" Type="Variable" Display="always" Required="true" Mask="false"/>
+</Container>
