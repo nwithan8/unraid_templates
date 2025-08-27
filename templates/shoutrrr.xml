@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>shoutrrr</Name>
+    <Repository>containrrr/shoutrrr:latest</Repository>
+    <Registry>https://hub.docker.com/r/containrrr/shoutrrr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://containrrr.dev/shoutrrr/dev/getting-started/</Support>
+    <Project>https://containrrr.dev/shoutrrr</Project>
+    <Overview>
+        Notification library for gophers and their furry friends. Heavily inspired by Apprise.
+        [br]
+        This is a CLI tool. Please edit the **Post Arguments** accordingly. See documentation: https://containrrr.dev/shoutrrr/dev/getting-started/
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>apprise notification notify alerts webhook email sms discord telegram mattermost slack teams gotify</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/containrrr/shoutrrr/main/docs/shoutrrr-logotype.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/shoutrrr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool; edit **Post Arguments** accordingly. See documentation: https://containrrr.dev/shoutrrr/dev/getting-started/ &#xD;
+    </Requires>
+    <PostArgs>help</PostArgs>
+</Container>
