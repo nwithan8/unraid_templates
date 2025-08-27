@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>VoidAuth</Name>
+    <Repository>voidauth/voidauth:latest</Repository>
+    <Registry>https://hub.docker.com/r/voidauth/voidauth</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://voidauth.app/#/Getting-Started?id=initial-setup</Support>
+    <Project>https://voidauth.app</Project>
+    <Overview>
+        VoidAuth is an open-source authentication platform that streamlines user management and access control for self-hosted applications. Centered on OpenID Connect (OIDC) integration, it also offers first class support for Proxy ForwardAuth (ProxyAuth). With a focus on an intuitive end-user and administrator web interface, VoidAuth provides a seamless and professional authentication experience.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Management MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>authentication auth portal oauth sso openid connect identity provider idp login token session cookie access proxy ldap</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/voidauth/voidauth/refs/heads/main/docs/logo_full_text.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/voidauth.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres database.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="App URL" Target="APP_URL" Default="" Description="URL VoidAuth will be served on. Must start with https://" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Default Redirect" Target="DEFAULT_REDIRECT" Default="" Description="The home/landing/app url for your domain. This is where users will be redirected upon accepting an invitation, logout, or clicking the logo when already on the auth home page. Will default to App URL if not provided." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Allow Registration" Target="SIGNUP" Default="false|true" Description="Allow new users to self-register themselves without invitation." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Registration Requires Approval" Target="SIGNUP_REQUIRES_APPROVAL" Default="true|false" Description="Whether new users who register themselves require approval by an admin. Setting this to false while SIGNUP is true enables open self-registration; use with caution!" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Enable Email Verification" Target="EMAIL_VERIFICATION" Default="false|true" Description="If true, users must have an email address and will get a verification email when changing their email address before it can be used. If you are using an email provider, this should be set to true." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="App Title" Target="APP_TITLE" Default="VoidAuth" Description="Title that will show on the web interface, use your own brand/app/title." Type="Variable" Display="always-hide" Required="true" Mask="false">VoidAuth</Config>
+    <Config Name="App Color" Target="APP_COLOR" Default="#906bc7" Description="Theme color in hex format" Type="Variable" Display="always-hide" Required="false" Mask="false">#906bc7</Config>
+    <Config Name="Contact Email" Target="CONTACT_EMAIL" Default="" Description="The email address used for 'Contact Us' links, which are shown on most end-user pages if this is set." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Database - Host" Target="DB_HOST" Default="" Description="Host address of the Postgres database." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Port" Target="DB_PORT" Default="5432" Description="Port number of the Postgres database." Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Database - Name" Target="DB_NAME" Default="postgres" Description="Name of the Postgres database." Type="Variable" Display="always-hide" Required="true" Mask="false">postgres</Config>
+    <Config Name="Database - User" Target="DB_USER" Default="postgres" Description="Username for the Postgres database." Type="Variable" Display="always-hide" Required="true" Mask="false">postgres</Config>
+    <Config Name="Database - Password" Target="DB_PASSWORD" Default="" Description="Password for the Postgres database." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Storage Key - Primary" Target="STORAGE_KEY" Default="" Description="Storage encryption key for secret values such as keys and client secrets. Must be at least 32 characters long and should be randomly generated." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Storage Key - Secondary" Target="STORAGE_KEY_SECONDARY" Default="" Description="Secondary storage encryption key, used when rotating the primary storage encryption key." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="SMTP - Host" Target="SMTP_HOST" Default="" Description="Hostname of the SMTP server to use for sending emails." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="SMTP - Port" Target="SMTP_PORT" Default="587" Description="Port number of the SMTP server." Type="Variable" Display="always-hide" Required="false" Mask="false">587</Config>
+    <Config Name="SMTP - Username" Target="SMTP_USER" Default="" Description="Username for authenticating with the SMTP server." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="SMTP - Password" Target="SMTP_PASS" Default="" Description="Password for authenticating with the SMTP server." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="SMTP - From Address" Target="SMTP_FROM" Default="" Description="Email address that emails will be sent from." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="SMTP - Secure" Target="SMTP_SECURE" Default="false|true" Description="Whether to use a secure connection (TLS) when connecting to the SMTP server." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="App Data" Target="/app/config" Default="/mnt/user/appdata/voidauth/config" Description="Path to data directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/voidauth/config</Config>
+    <Config Name="Password Strength" Default="3|0|1|2|4" Target="PASSWORD_STRENGTH" Description="The minimum strength of users passwords, at least 3 is recommended." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Admin Emails" Target="ADMIN_EMAILS" Default="hourly" Description="The minimum duration between admin notification emails. Can be set to values like: '4 hours', '30 minutes', 'weekly', 'daily', etc. If set to 'false', admin notification emails are disabled." Type="Variable" Display="advanced-hide" Required="true" Mask="false">hourly</Config>
+    <Config Name="Internal App Port" Target="APP_PORT" Default="3000" Description="Internal web interface port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3000</Config>
+</Container>
