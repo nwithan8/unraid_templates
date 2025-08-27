@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Vouch Proxy</Name>
+    <Repository>quay.io/vouch/vouch-proxy:latest</Repository>
+    <Registry>quay.io/vouch/vouch-proxy</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9090]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/vouch/vouch-proxy/issues</Support>
+    <Project>https://github.com/vouch/vouch-proxy</Project>
+    <Overview>
+        An SSO solution for Nginx using the auth_request module. Vouch Proxy can protect all of your websites at once.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Management MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>authentication auth portal oauth sso openid connect identity provider idp login token session cookie access proxy ldap</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/vouch-proxy-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/vouch_proxy.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yml` file at the Config File path before starting the container. See documentation: https://github.com/vouch/vouch-proxy/blob/master/config/config.yml_example_scopes_and_claims
+    </Requires>
+    <Config Name="Web UI Port" Target="9090" Default="9090" Mode="tcp" Description="Container Port: 9090" Type="Port" Display="always-hide" Required="true" Mask="false">9090</Config>
+    <Config Name="Config File" Target="/config/config.yml" Default="/mnt/user/appdata/vouch-proxy/config/config.yml" Description="Path to config.yml file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/vouch-proxy/config/config.yml</Config>
+</Container>
