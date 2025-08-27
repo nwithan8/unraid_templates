@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-08-26
+
+        Add environmental variables
+
         ### 2025-08-21
 
         Initial release
@@ -37,8 +41,24 @@
     <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
     <Config Name="Database Connection URL" Target="DATABASE_URL" Default="postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_IP:5432/AuthPortaldb?sslmode=disable" Description="Postgres database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="true">postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_IP:5432/AuthPortaldb?sslmode=disable</Config>
     <Config Name="App Base URL" Target="APP_BASE_URL" Default="http://IP_ADDRESS:PORT" Description="Public URL of this service. If using HTTPS, cookies will be marked Secure." Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:PORT</Config>
-    <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Description="Long random string for signing the session cookie" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Plex - Owner Token" Target="PLEX_OWNER_TOKEN" Default="" Description="Token from Plex server owner; used to validate server membership." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Plex - Server Machine ID" Target="PLEX_SERVER_MACHINE_ID" Default="" Description="Machine ID of your Plex server (preferred over name)." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Plex - Server Name" Target="PLEX_SERVER_NAME" Default="" Description="Optional: Plex server name (used if machine ID not set)." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Media Server" Target="MEDIA_SERVER" Default="plex|emby|jellyfin" Description="Type of media server to authenticate against" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Description="HMAC secret for JWT cookie" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Data Key" Target="DATA_KEY" Default="" Description="Base64 32-byte key for sealing tokens at rest" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Force Secure Cookie" Target="FORCE_SECURE_COOKIE" Default="0|1" Description="Set to 1 to force Secure on cookies (behind TLS/ingress)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Authorized Page - External URL" Target="LOGIN_EXTRA_LINK_URL" Default="" Description="External URL on authorized page" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Authorized Page - External URL Text" Target="LOGIN_EXTRA_LINK_TEXT" Default="" Description="Text for external URL on authorized page" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Unauthorized Page Request - Email" Target="UNAUTH_REQUEST_EMAIL" Default="" Description="Email address for unauthorized page request access link" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Unauthorized Page Request - Email Subject" Target="UNAUTH_REQUEST_SUBJECT" Default="" Description="Subject for unauthorized page request access email" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Plex - Owner Token" Target="PLEX_OWNER_TOKEN" Default="" Description="Token from Plex server owner; used to validate server membership." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Plex - Server Machine ID" Target="PLEX_SERVER_MACHINE_ID" Default="" Description="Machine ID of your Plex server (preferred over name)." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Plex - Server Name" Target="PLEX_SERVER_NAME" Default="" Description="Optional: Plex server name (used if machine ID not set)." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Emby - Server URL" Target="EMBY_SERVER_URL" Default="" Description="URL of your Emby server (e.g. http://IP:PORT)." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Emby - Server API Key" Target="EMBY_API_KEY" Default="" Description="API key from your Emby server." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Emby - App Name" Target="EMBY_APP_NAME" Default="AuthPortal" Description="Name of the Emby application (for client headers)." Type="Variable" Display="always" Required="false" Mask="false">AuthPortal</Config>
+    <Config Name="Emby - App Version" Target="EMBY_APP_VERSION" Default="" Description="Version of the Emby application (for client headers)." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Jellyfin - Server URL" Target="JELLYFIN_SERVER_URL" Default="" Description="URL of your Jellyfin server (e.g. http://IP:PORT)." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Jellyfin - Server API Key" Target="JELLYFIN_API_KEY" Default="" Description="API key from your Jellyfin server." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Jellyfin - App Name" Target="JELLYFIN_APP_NAME" Default="AuthPortal" Description="Name of the Jellyfin application (for client headers)." Type="Variable" Display="always" Required="false" Mask="false">AuthPortal</Config>
+    <Config Name="Jellyfin - App Version" Target="JELLYFIN_APP_VERSION" Default="" Description="Version of the Jellyfin application (for client headers)." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|DEBUG|WARN|ERROR" Description="Logging level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
