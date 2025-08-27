@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>NzbDAV</Name>
+    <Repository>nzbdav/nzbdav:alpha</Repository>
+    <Registry>https://hub.docker.com/r/nzbdav/nzbdav</Registry>
+    <Branch>
+        <Tag>alpha</Tag>
+        <TagDescription>Latest alpha release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/nzbdav-dev/nzbdav/issues</Support>
+    <Project>https://github.com/nzbdav-dev/nzbdav</Project>
+    <Overview>
+        NzbDAV is a WebDAV server that allows you to mount and browse NZB documents as a virtual file system without downloading. It's designed to integrate with other media management tools, like Sonarr and Radarr, by providing a SABnzbd-compatible API. With it, you can build an infinite Plex or Jellyfin media library that streams directly from your usenet provider at maxed-out speeds, without using any storage space on your own server.
+    </Overview>
+    <Beta>True</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Beta</Category>
+    <ExtraSearchTerms>nzb dav webdav usenet sabnzbd sonarr radarr plex emby jellyfin streaming</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/nzb-dav-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/nzb_dav.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-27
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/nzb_dav/config" Description="Path to config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/nzb_dav/config</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>

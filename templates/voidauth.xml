@@ -16,7 +16,7 @@
         VoidAuth is an open-source authentication platform that streamlines user management and access control for self-hosted applications. Centered on OpenID Connect (OIDC) integration, it also offers first class support for Proxy ForwardAuth (ProxyAuth). With a focus on an intuitive end-user and administrator web interface, VoidAuth provides a seamless and professional authentication experience.
     </Overview>
     <Beta>False</Beta>
-    <Category>Network:Management MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <Category>Network:Management Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>authentication auth portal oauth sso openid connect identity provider idp login token session cookie access proxy ldap</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/voidauth/voidauth/refs/heads/main/docs/logo_full_text.svg</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/voidauth.xml</TemplateURL>

@@ -16,7 +16,7 @@
         Rauthy is a lightweight and easy to use OpenID Connect Identity Provider. It aims to be simple to both set up and operate, with very secure defaults and lots of config options, if you need the flexibility. It puts heavy emphasis on Passkeys and a very strong security in general. The project is written in Rust to be as memory efficient, secure and fast as possible, and it can run on basically any hardware. If you need Single Sign-On support for IoT or headless CLI tools, it's got you covered as well.
     </Overview>
     <Beta>False</Beta>
-    <Category>Network:Management MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <Category>Network:Management Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>authentication auth portal oauth sso openid connect identity provider idp login token session cookie access proxy ldap</ExtraSearchTerms>
     <Icon>https://sebadob.github.io/rauthy/rauthy_grey_small.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/rauthy.xml</TemplateURL>
