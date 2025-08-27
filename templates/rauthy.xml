@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Rauthy</Name>
+    <Repository>ghcr.io/sebadob/rauthy:latest</Repository>
+    <Registry>ghcr.io/sebadob/rauthy</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8443]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://sebadob.github.io/rauthy/getting_started/docker.html</Support>
+    <Project>https://sebadob.github.io/rauthy/intro.html</Project>
+    <Overview>
+        Rauthy is a lightweight and easy to use OpenID Connect Identity Provider. It aims to be simple to both set up and operate, with very secure defaults and lots of config options, if you need the flexibility. It puts heavy emphasis on Passkeys and a very strong security in general. The project is written in Rust to be as memory efficient, secure and fast as possible, and it can run on basically any hardware. If you need Single Sign-On support for IoT or headless CLI tools, it's got you covered as well.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Management MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>authentication auth portal oauth sso openid connect identity provider idp login token session cookie access proxy ldap</ExtraSearchTerms>
+    <Icon>https://sebadob.github.io/rauthy/rauthy_grey_small.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/rauthy.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.toml` file at the Config File path before starting the container. See documentation: https://sebadob.github.io/rauthy/config/config.html
+    </Requires>
+    <Config Name="Web UI Port" Target="8443" Default="8443" Mode="tcp" Description="Container Port: 8443" Type="Port" Display="always-hide" Required="true" Mask="false">8443</Config>
+    <Config Name="Config File" Target="/app/config.toml" Default="/mnt/user/appdata/rauthy/config.toml" Description="Path to config.toml file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/rauthy/config.toml</Config>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/rauthy/data" Description="Path to data directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/rauthy/data</Config>
+</Container>
