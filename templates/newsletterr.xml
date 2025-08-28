@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>newsletterr</Name>
+    <Repository>jma1ice/newsletterr:latest</Repository>
+    <Registry>https://hub.docker.com/r/jma1ice/newsletterr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:6397]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/jma1ice/newsletterr/issues</Support>
+    <Project>https://www.newsletterr.org/</Project>
+    <Overview>
+        Newsletterr is a lightweight Flask application that talks to Tautulli, crunches your Plex statistics, renders charts with Highcharts, pulls recommendations from conjurr and emails the results to your user base, all without leaving the browser.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex tautulli newsletter email recommendations stats analytics conjurr</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/jma1ice/newsletterr/refs/heads/main/static/img/favicon.ico</Icon>
+    <Banner>https://raw.githubusercontent.com/jma1ice/newsletterr/refs/heads/main/static/img/Asset_94x.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/newsletterr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-27
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="6397" Default="6397" Mode="tcp" Description="Container Port: 6397" Type="Port" Display="always-hide" Required="true" Mask="false">6397</Config>
+    <Config Name="Public URL" Target="PUBLIC_BASE_URL" Default="http://IP_ADDRESS:6397" Description="Public URL for accessing Newsletterr" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:6397</Config>
+    <Config Name="Database Path" Target="/app/database" Default="/mnt/user/appdata/newsletterr/database" Mode="rw" Description="Path to store the database" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/newsletterr/database</Config>
+</Container>
