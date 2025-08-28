@@ -144,8 +144,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "0c9aeac7a59e958a0b7d7ca2279454042c90a40b",
-                "commit_message": "Updated  to . Fixed bulk-print.ejs notes view. Updated details.ejs view with additional voucher metadata. Updated voucher.ejs notes view. Created notes.js utils for extracting voucher notes and metadata. Updated docker-compose.yml. Updated README.md. Implemented voucher note check for seperator misuse. Implemented new notes-metadata embed. Implemented new voucher filter within existing chain. Fixed notes sort to only filter on the notes not the metadata. Removed unused  variable forward to voucher.ejs\n"
+                "commit_hash": "7b8a9964523306325aa6a9dbd5868da7a9cce57c",
+                "commit_message": "Removed old UniFi username check from info.js. Implemented temporary guest features warning in info.js. Cleanup unifi.js to remove legacy implementation and switch to UniFi Integrations. Removed deprecated `UNIFI_USERNAME` and `UNIFI_PASSWORD` from variables.js. Updated docker-compose.yml. Removed old dependencies. Updated README.md\n"
             }
         ]
     },
