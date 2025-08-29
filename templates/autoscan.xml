@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Autoscan</Name>
+    <Repository>cloudb0x/autoscan:latest</Repository>
+    <Registry>https://hub.docker.com/r/cloudb0x/autoscan</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Cloudbox/autoscan/issues</Support>
+    <Project>https://github.com/Cloudbox/autoscan</Project>
+    <Overview>
+        Autoscan replaces the default Plex and Emby behaviour for picking up file changes on the file system. Autoscan integrates with Sonarr, Radarr, Readarr, Lidarr and Google Drive to fetch changes in near real-time without relying on the file system.    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex emby jellyfin autoscan automation drive google service account sonarr radarr lidarr media content files</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/autoscan-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/autoscan.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires `config.yaml` file to be available in the Config Path before starting the container. See configuration details: https://github.com/Cloudbox/autoscan#full-config-file
+    </Requires>
+    <Config Name="Webhooks Port" Target="3030" Default="3030" Description="Container Port: 3030" Type="Port" Display="always-hide" Required="true" Mask="false">3030</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/autoscan/config" Description="Path to config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/autoscan/config</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+    <Config Name="Verbosity" Target="AUTOSCAN_VERBOSITY" Default="0|1|2" Description="0=Info, 1=Debug, 2=Trace" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
