@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>SparkyFitness - Backend</Name>
+    <Repository>codewithcj/sparkyfitness_server:latest</Repository>
+    <Registry>https://hub.docker.com/r/codewithcj/sparkyfitness_server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>sparkyfitness</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://codewithcj.github.io/SparkyFitness</Support>
+    <Project>https://github.com/CodeWithCJ/SparkyFitness</Project>
+    <Overview>
+        SparkyFitness is a comprehensive fitness tracking and management application designed to help users monitor their nutrition, exercise, and body measurements. It provides tools for daily progress tracking, goal setting, and insightful reports to support a healthy lifestyle.  &#xD;
+        [br]
+        This is the backend container.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>health tracking data fitness nutrition exercise workout diet calories weight body measurements myfitnesspal pal</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/sparky-fitness-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/sparky_fitness_backend.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/sparkyfitness_demo_1.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate SparkyFitness - Frontend and Postgres containers.
+    </Requires>
+    <Config Name="API Port" Target="3010" Default="3010" Mode="tcp" Description="Container Port: 3010" Type="Port" Display="always-hide" Required="true" Mask="false">3010</Config>
+    <Config Name="Postgres - Host" Target="SPARKY_FITNESS_DB_HOST" Default="http://IP_ADDRESS" Description="Hostname or IP address of the Postgres server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS</Config>
+    <Config Name="Postgres - Port" Target="SPARKY_FITNESS_DB_PORT" Default="5432" Description="Port number for the Postgres server" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Postgres - Database Name" Target="SPARKY_FITNESS_DB_NAME" Default="sparkyfitness_db" Description="Name of the Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false">sparkyfitness_db</Config>
+    <Config Name="Postgres - Username" Target="SPARKY_FITNESS_DB_USER" Default="" Description="Username for the Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Password" Target="SPARKY_FITNESS_DB_PASSWORD" Default="" Description="Password for the Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Frontend URL" Target="SPARKY_FITNESS_FRONTEND_URL" Default="http://IP_ADDRESS:3004" Description="URL where the frontend is accessible (e.g., http://IP_ADDRESS:3004)" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3004</Config>
+    <Config Name="Security - Encryption Key" Target="SPARKY_FITNESS_API_ENCRYPTION_KEY" Default="" Description="A 64-character hex string used to encrypt data. Generate with 'openssl rand -hex 32'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Security - JWT Secret" Target="JWT_SECRET" Default="" Description="A secret key for signing JSON Web Tokens. Generate with 'openssl rand -base64 32'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Disable User Signups" Target="SPARKY_FITNESS_DISABLE_SIGNUP" Default="false|true" Description="Set to true to disable new user registrations" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Force Email Logins" Target="SPARKY_FITNESS_FORCE_EMAIL_LOGIN" Default="false|true" Description="Force email/password login to be enabled, overriding any in-app settings. This is a fail-safe to prevent being locked out if OIDC is misconfigured." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Admin Email" Target="SPARKY_FITNESS_ADMIN_EMAIL" Default="" Description="Automatically grant admin rights to this email" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Log Level" Target="SPARKY_FITNESS_LOG_LEVEL" Default="INFO|DEBUG|WARN|ERROR" Description="Logging level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Node Environment" Target="NODE_ENV" Default="production|development" Description="Node environment setting" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal API Port" Target="SPARKY_FITNESS_SERVER_PORT" Default="3010" Description="Internal ort for API communication. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3010</Config>
+</Container>

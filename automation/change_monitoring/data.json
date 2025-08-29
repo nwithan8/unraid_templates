@@ -547,5 +547,22 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "SparkyFitness",
+        "git_url": "https://github.com/CodeWithCJ/SparkyFitness.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker/docker-compose.prod.yml",
+                "commit_hash": "5c8afa477e2ec1d81856cafbdc6ab99ead9f754a",
+                "commit_message": null
+            },
+            {
+                "file_path": "docker/.env.example",
+                "commit_hash": "5bcbe7c34a562cf9923c66105346261b52c336e0",
+                "commit_message": null
+            }
+        ]
     }
 ]
