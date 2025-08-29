@@ -36,6 +36,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-08-29
+
+        - Update environmental variables
+
         ### 2025-07-31
 
         - Add environmental variable
@@ -68,8 +72,7 @@
     <Config Name="Config File" Target="/data/options.json" Default="/mnt/user/appdata/unifi_voucher_site/options.json" Description="Config file. Remove to use environmental variables instead." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/unifi_voucher_site/options.json</Config>
     <Config Name="UniFi OS Console - IP Address" Target="UNIFI_IP" Default="" Description="IP address of the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="UniFi OS Console - Port" Target="UNIFI_PORT" Default="443" Description="Port of the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false">443</Config>
-    <Config Name="UniFi OS Console - Username" Target="UNIFI_USERNAME" Default="" Description="Username for the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="UniFi OS Console - Password" Target="UNIFI_PASSWORD" Default="" Description="Password for the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="UniFi OS Console - Token" Target="UNIFI_TOKEN" Default="" Description="The API Key created on the integrations tab within UniFi OS" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="UniFi OS Console - Site ID" Target="UNIFI_SITE_ID" Default="default" Description="Site ID for the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false">default</Config>
     <Config Name="UniFi OS Console - SSID" Target="UNIFI_SSID" Default="" Description="The UniFi SSID where guests need to connect to (Used within templating and 'Scan to Connect')" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="UniFi OS Console - SSID Password" Target="UNIFI_SSID_PASSWORD" Default="" Description="The UniFi SSID WPA/WPA2/WPA3 Password (Can be ignored for 'Open' networks) (Used within templating and 'Scan to Connect')" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
@@ -95,10 +98,14 @@
     <Config Name="Kiosk - Voucher Types" Target="KIOSK_VOUCHER_TYPES" Default="480,1,,,;" Description="A semi-colon-separated list of voucher types in the following format: expiration in minutes (required),single-use or multi-use vouchers value - '0' is for multi-use (unlimited) - '1' is for single-use - 'N' is for multi-use (Nx) (optional),upload speed limit in kbps (optional),download speed limit in kbps (optional),data transfer limit in MB (optional)" Type="Variable" Display="always-hide" Required="true" Mask="false">480,1,,,;</Config>
     <Config Name="Kiosk - Guest Name Required" Target="KIOSK_NAME_REQUIRED" Default="false|true" Description="Require the guest to enter their name on the kiosk page" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Kiosk - Printer IP" Target="KIOSK_PRINTER" Default="" Description="Enable a printer for Kiosk Vouchers (this automatically prints vouchers), e.g. an ESC/POS-compatible printer" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Kiosk - Homepage" Target="KIOSK_HOMEPAGE" Default="false|true" Description="Enable/disable an override to redirect to the Kiosk on the / url (Also enables a link from the Kiosk back to the Admin UI)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Tasks - Cleanup Expired Vouchers" Target="TASK_CLEANUP_EXPIRED" Default="false|true" Description="Enable/disable automatic cleanup of expired vouchers" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Tasks - Cleanup Unused Vouchers" Target="TASK_CLEANUP_UNUSED" Default="false|true" Description="Enable/disable automatic cleanup of unused (> 1 day) vouchers" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Log Level" Target="LOG_LEVEL" Default="info|error|debug" Description="Log level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Authentication - Disable" Target="AUTH_DISABLE" Default="false|true" Description="Disable all authentication methods" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Enable Web UI" Target="SERVICE_WEB" Default="true|false" Description="Enable the web UI" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Enable API" Target="SERVICE_API" Default="true|false" Description="Enable the API" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Translation - Default Language" Target="TRANSLATION_DEFAULT" Default="en" Description="Sets the default translation for dropdowns" Type="Variable" Display="advanced-hide" Required="true" Mask="false">en</Config>
+    <Config Name="Translation - Hidden Languages" Target="TRANSLATION_HIDDEN_LANGUAGES" Default="" Description="A comma-separated list of language codes to hide from the language selection dropdown" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Translation - Debug" Target="TRANSLATION_DEBUG" Default="false|true" Description="Enables/disables translation debugging, when enabled only translation keys are shown" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
