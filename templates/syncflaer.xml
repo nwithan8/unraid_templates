@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>SyncFlaer</Name>
+    <Repository>ghcr.io/containeroo/syncflaer:latest</Repository>
+    <Registry>ghcr.io/containeroo/syncflaer</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/containeroo/SyncFlaer/issues</Support>
+    <Project>https://github.com/containeroo/SyncFlaer</Project>
+    <Overview>
+        Synchronize Traefik host rules and/or Kubernetes Ingresses with Cloudflare®.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>cloudflare trafeik ingress kubernetes</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/syncflaer-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/syncflaer.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-29
+
+        Initial release
+    </Changes>
+    <PostArgs>--config-path /config.yml</PostArgs>
+    <Requires>
+        Requires a `config.yml` file to be mounted at the Config File path before starting the container. See configuration details: https://github.com/containeroo/SyncFlaer#config-file
+    </Requires>"
+    <Config Name="Config File" Target="/config.yml" Default="/mnt/user/appdata/syncflaer/config.yml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/syncflaer/config.yml</Config>
+</Container>
