@@ -555,13 +555,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "5c8afa477e2ec1d81856cafbdc6ab99ead9f754a",
-                "commit_message": null
+                "commit_hash": "838b632387a2aa30d4ac52d93081eaf84176499e",
+                "commit_message": "Update env file to use encripton key and JWT secret from files if available\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "5bcbe7c34a562cf9923c66105346261b52c336e0",
-                "commit_message": null
+                "commit_hash": "838b632387a2aa30d4ac52d93081eaf84176499e",
+                "commit_message": "Update env file to use encripton key and JWT secret from files if available\n"
             }
         ]
     }
