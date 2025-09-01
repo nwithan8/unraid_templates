@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Koito</Name>
+    <Repository>gabehf/koito:latest</Repository>
+    <Registry>https://hub.docker.com/r/gabehf/koito</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4110]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://koito.io/guides/installation/</Support>
+    <Project>https://koito.io/</Project>
+    <Overview>
+        Koito is a modern, themeable ListenBrainz-compatible scrobbler for self-hosters who want control over their data and insights into their listening habits. It supports relaying to other compatible scrobblers, so you can try it safely without replacing your current setup.    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>scrobbler music listenbrainz audio lastfm</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/koito-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/gabehf/Koito/refs/heads/main/docs/src/assets/logo_text.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/koito.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/gabehf/Koito/main/assets/screenshot1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/gabehf/Koito/main/assets/screenshot2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/gabehf/Koito/main/assets/screenshot3.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-08-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate PostgreSQL database.
+    </Requires>
+    <Config Name="Web UI Port" Target="4110" Default="4110" Mode="tcp" Description="Container Port: 4110" Type="Port" Display="always-hide" Required="true" Mask="false">4110</Config>
+    <Config Name="Database URL" Target="KOITO_DATABASE_URL" Default="postgresql://user:password@host:port/database" Description="Postgres database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://user:password@host:port/database</Config>
+    <Config Name="Allowed Hosts" Target="KOITO_ALLOWED_HOSTS" Default="koito.example.com" Description="Comma-separated list of allowed hosts (e.g., koito.example.com,localhost)" Type="Variable" Display="always-hide" Required="true" Mask="false">koito.example.com</Config>
+    <Config Name="App Data" Target="/etc/koito" Default="/mnt/user/appdata/koito/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/koito/data</Config>
+</Container>
