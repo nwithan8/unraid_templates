@@ -10,8 +10,8 @@
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <Privileged>false</Privileged>
-    <Support>https://github.com/alexwilczewski/docker-sabredav/issues</Support>
-    <Project>https://github.com/alexwilczewski/docker-sabredav</Project>
+    <Support>https://github.com/richarvey/nginx-php-fpm/issues</Support>
+    <Project>https://github.com/richarvey/nginx-php-fpm</Project>
     <Overview>
         Nginx + PHP-FPM capable of pulling application code from git.
     </Overview>
