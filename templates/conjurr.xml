@@ -24,9 +24,23 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-09-01
+
+        Add environment variables to persist settings
+
         ### 2025-08-30
 
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="2665" Default="2665" Mode="tcp" Description="Container Port: 2665" Type="Port" Display="always-hide" Required="true" Mask="false">2665</Config>
+    <Config Name="Tautulli - URL" Target="TAUTULLI_URL" Default="http://IP_ADDRESS:8181" Description="Tautulli URL including port (e.g., http://IP_ADDRESS:8181)" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:8181</Config>
+    <Config Name="Tautulli - API Key" Target="TAUTULLI_API_KEY" Default="" Description="Tautulli API Key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Google Gemini - API Key" Target="GOOGLE_API_KEY" Default="" Description="Google Gemini API Key" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Google Gemini - Daily Quotas" Target="GEMINI_DAILY_QUOTAS" Default="" Description="JSON object specifying daily quotas for each Gemini model" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="User Mode" Target="USER_MODE" Default="0|1" Description="Set to 1 to enable user-mode (hides settings/debug, requires email/username login, auto mobile UI for phones/tablets)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Tautulli - Data Path" Target="/tautulli" Default="" Mode="rw" Description="Path to the Tautulli folder containing tautulli.db. Remove if not using direct database access." Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="Tautulli - Internal Database Path" Target="TAUTULLI_DB_PATH" Default="/tautulli/tautulli.db" Mode="rw" Description="Internal path to the Tautulli database file. Do not change, but remove if not using direct database access." Type="Path" Display="always" Required="true" Mask="false">/tautulli/tautulli.db</Config>
+    <Config Name="Overseerr - URL" Target="OVERSEERR_URL" Default="http://IP_ADDRESS:5055" Description="Overseerr URL including port (e.g., http://IP_ADDRESS:5055)" Type="Variable" Display="always" Required="false" Mask="false">http://IP_ADDRESS:5055</Config>
+    <Config Name="Overseerr - API Key" Target="OVERSEERR_API_KEY" Default="" Description="Overseerr API Key" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="TMDB - API Key" Target="TMDB_API_KEY" Default="" Description="TMDB API Key" Type="Variable" Display="always" Required="false" Mask="true"/>
 </Container>
