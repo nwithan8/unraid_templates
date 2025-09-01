@@ -11,7 +11,7 @@
     <Privileged>false</Privileged>
     <WebUI>http://[IP]:[PORT:5232]/</WebUI>
     <Support>https://github.com/parrazam/radicale-docker/issues</Support>
-    <Project>https://radicale.org</Project>
+    <Project>https://github.com/parrazam/radicale-docker</Project>
     <Overview>
         Docker container for Radicale calendar, to-do list and contact (CalDAV/CardDAV) server + Infcloud web UI pre-installed. &#xD;
         [br]
