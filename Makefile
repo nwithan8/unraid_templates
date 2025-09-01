@@ -23,6 +23,12 @@ copy_placeholder_unix:
 	cp images/placeholder-icon.png images/$(name)-icon.png
 	git add images/$(name)-icon.png
 
+## copy_downloaded_icon - Copy a downloaded icon to the images folder
+# @param name - The name of the new app
+copy_downloaded_icon:
+	mv ~/Downloads/$(name)-icon.png images/$(name)-icon.png
+	git add images/$(name)-icon.png
+
 ## download_github_icon - Download an icon from a GitHub profile picture
 # @param link - The GitHub profile link
 # @param name - The name of the new app

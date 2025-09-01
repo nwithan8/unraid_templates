@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>MUM</Name>
+    <Repository>ghcr.io/mrrobotjs/mum:latest</Repository>
+    <Registry>ghcr.io/mrrobotjs/mum</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/MrRobotjs/MUM/issues</Support>
+    <Project>https://github.com/MrRobotjs/MUM</Project>
+    <Overview>
+        MUM (Multimedia User Management) is a powerful, self-hosted web application designed to centralize and simplify user management across a variety of media servers. Featuring a modular plugin system, MUM allows administrators to seamlessly manage users, invitations, and server access from a single, user-friendly interface.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>invite user management media server plex emby jellyfin sonarr radarr</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mum-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mum.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mum_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mum_demo_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mum_demo_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mum_demo_4.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-09-01
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5000" Default="5699" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5699</Config>
+    <Config Name="App Data" Target="/app/instance" Default="/mnt/user/appdata/mum/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/mum/data</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
