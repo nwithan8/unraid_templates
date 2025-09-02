@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Shoko</Name>
+    <Repository>ghcr.io/shokoanime/server:latest</Repository>
+    <Registry>ghcr.io/shokoanime/server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8111]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.shokoanime.com/</Support>
+    <Project>https://shokoanime.com/</Project>
+    <Overview>
+        An open-source, cross-platform anime collection management system to automate and organize your collection so you can spend more time watching.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Video MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex emby jellyfin kodi anime manga organize management automation</ExtraSearchTerms>
+    <Icon>https://docs.shokoanime.com/images/logo.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/shoko_server.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-09-02
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8111" Default="8111" Mode="tcp" Description="Container Port: 8111" Type="Port" Display="always-hide" Required="true" Mask="false">8111</Config>
+    <Config Name="Anime Files" Target="/mnt/anime" Default="" Description="Path to your anime files" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Data" Target="/home/shoko/.shoko" Default="/mnt/user/appdata/shoko/config" Description="Path to the config folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/shoko/config</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>

@@ -564,5 +564,17 @@
                 "commit_message": "Update env file to use encripton key and JWT secret from files if available\n"
             }
         ]
+    },
+    {
+        "app_name": "Shoko",
+        "git_url": "https://github.com/ShokoAnime/ShokoDocs.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docs/.vitepress/components/DockerCompose.vue",
+                "commit_hash": "d65f2bfc37740b0f5deffe7d22b2e259d9278b4e",
+                "commit_message": null
+            }
+        ]
     }
 ]
