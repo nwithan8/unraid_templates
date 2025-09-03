@@ -576,5 +576,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Door Opener",
+        "git_url": "https://github.com/Sloth-on-meth/DoorOpener.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "14ac6f5c205c92c33074d5cca0249c0da3844fbb",
+                "commit_message": null
+            }
+        ]
     }
 ]

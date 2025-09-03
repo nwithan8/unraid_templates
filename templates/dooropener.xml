@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>DoorOpener</Name>
+    <Repository>ghcr.io/sloth-on-meth/dooropener:latest</Repository>
+    <Registry>ghcr.io/sloth-on-meth/dooropener</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:6532]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Sloth-on-meth/DoorOpener/issues</Support>
+    <Project>https://github.com/Sloth-on-meth/DoorOpener</Project>
+    <Overview>
+        A sleek, single-button web portal for triggering any Home Assistant action (like opening a building door), protected by secure PIN authentication. Perfect for apartment buildings, offices, or any scenario where you want easy, controlled access for multiple users.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>home assistant automation lock door security pin access control</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/door-opener-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dooropener.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-09-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a `config.ini` file to be mounted at `/app/config.ini` before starting the container. See configuration details: https://github.com/Sloth-on-meth/DoorOpener#configuration &#xD;
+        [br]
+        Requires a separate Home Assistant instance with Long-Lived Access Token for API access.
+    </Requires>
+    <Config Name="Web UI Port" Target="6532" Default="6532" Mode="tcp" Description="Container Port: 6532" Type="Port" Display="always-hide" Required="true" Mask="false">6532</Config>
+    <Config Name="Config File" Target="/app/config.ini" Default="/mnt/user/appdata/door_opener/config.ini" Description="Path to the config file" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/door_opener/config.ini</Config>
+    <Config Name="Logs Path" Target="/app/logs" Default="/mnt/user/appdata/door_opener/logs" Description="Path to the logs folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/door_opener/logs</Config>
+    <Config Name="Internal Web UI Port" Target="DOOROPENER_PORT" Default="6532" Description="Internal port for the web UI. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">6532</Config>
+</Container>
