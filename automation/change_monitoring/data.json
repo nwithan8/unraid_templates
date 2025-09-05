@@ -252,7 +252,7 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "fbea7706b8fca6165f1c3bd5e6a24bb73856024f",
+                "commit_hash": "cc6fb63870dc9fb9efe7703856604caa16162ae7",
                 "commit_message": "Update docker-compose.yml"
             }
         ]
@@ -584,8 +584,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "14ac6f5c205c92c33074d5cca0249c0da3844fbb",
-                "commit_message": null
+                "commit_hash": "d3e31c325fa77e8988ed0f515a84de286d653b88",
+                "commit_message": "change default timezone\n"
             }
         ]
     }
