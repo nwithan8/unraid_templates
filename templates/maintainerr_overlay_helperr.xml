@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-09-05
+
+        Update environment variables
+
         ### 2025-08-21
 
         Update environment variables
@@ -52,23 +56,29 @@
     <Config Name="Maintainerr - URL" Target="MAINTAINERR_URL" Default="http://maintainerr:6246" Description="URL to your Maintainerr server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://maintainerr:6246</Config>
     <Config Name="Images Path" Target="/images" Default="/mnt/user/appdata/maintainerr_overlay_helperr/images" Description="Path to save images" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/maintainerr_overlay_helperr/images</Config>
     <Config Name="Fonts Path" Target="/fonts" Default="/mnt/user/appdata/maintainerr_overlay_helperr/fonts" Description="Path to the font file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/maintainerr_overlay_helperr/fonts</Config>
+    <Config Name="Plex Metadata Path" Target="/plexmeta" Default="" Description="Path to Plex metadata (usually Library/Application Support/Plex Media Server/Metadata inside Plex root folder)" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex Database Path" Target="/plex-db" Default="" Description="Path to Plex database (usually Library/Application Support/Plex Media Server/Plug-in Support/Databases inside Plex root folder)" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Font Color" Target="FONT_COLOR" Default="#FFFFFF" Description="Color of the font in hex format" Type="Variable" Display="always-hide" Required="true" Mask="false">#FFFFFF</Config>
-    <Config Name="Image - Font Size" Target="FONT_SIZE" Default="55" Description="Size of the font" Type="Variable" Display="always-hide" Required="true" Mask="false">55</Config>
+    <Config Name="Image - Font Size" Target="FONT_SIZE" Default="3.2" Description="Size of the font" Type="Variable" Display="always-hide" Required="true" Mask="false">3.2</Config>
     <Config Name="Image - Background Color" Target="BACK_COLOR" Default="#B20710" Description="Background color of the image in hex format" Type="Variable" Display="always-hide" Required="true" Mask="false">#B20710</Config>
-    <Config Name="Image - Padding" Target="PADDING" Default="15" Description="Padding around the image" Type="Variable" Display="always-hide" Required="true" Mask="false">15</Config>
-    <Config Name="Image - Radius" Target="BACK_RADIUS" Default="30" Description="Radius of the image corners" Type="Variable" Display="always-hide" Required="true" Mask="false">30</Config>
-    <Config Name="Image - Horizontal Offset" Target="HORIZONTAL_OFFSET" Default="30" Description="Horizontal offset of the image" Type="Variable" Display="always-hide" Required="true" Mask="false">30</Config>
-    <Config Name="Image - Vertical Offset" Target="VERTICAL_OFFSET" Default="40" Description="Vertical offset of the image" Type="Variable" Display="always-hide" Required="true" Mask="false">40</Config>
+    <Config Name="Image - Padding" Target="PADDING" Default="1.2" Description="Padding around the image" Type="Variable" Display="always-hide" Required="true" Mask="false">1.2</Config>
+    <Config Name="Image - Radius" Target="BACK_RADIUS" Default="0" Description="Radius of the image corners" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Image - Horizontal Offset" Target="HORIZONTAL_OFFSET" Default="0" Description="Horizontal offset of the image" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Image - Vertical Offset" Target="VERTICAL_OFFSET" Default="3" Description="Vertical offset of the image" Type="Variable" Display="always-hide" Required="false" Mask="false">3</Config>
     <Config Name="Image - Horizontal Alignment" Target="HORIZONTAL_ALIGN" Default="center|left|right" Description="Horizontal alignment of the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Vertical Alignment" Target="VERTICAL_ALIGN" Default="top|middle|bottom" Description="Vertical alignment of the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Reset Overlay" Target="RESET_OVERLAY" Default="false|true" Description="Reset the overlay on the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Reapply Overlay" Target="REAPPLY_OVERLAY" Default="false|true" Description="Reapply the overlay on the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Image - Date Format" Target="DATE_FORMAT" Default="d MMM|MMM d" Description="Date format for the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Date Format" Target="DATE_FORMAT" Default="MMM d|d MMM" Description="Date format for the image" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Use Date Suffix" Target="ENABLE_DAY_SUFFIX" Default="false|true" Description="Enable or disable the use of date suffixes (e.g. January 1 vs January 1st)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Image - Use Days Left" Target="USE_DAYS" Default="true|false" Description="Enable to use days left; disable to use calculated date" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Date All Capitalized" Target="ENABLE_UPPERCASE" Default="false|true" Description="Enable or disable all capitalized date" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Overlay Text" Target="OVERLAY_TEXT" Default="Leaving" Description="Text to display next to the date" Type="Variable" Display="always-hide" Required="true" Mask="false">Leaving</Config>
+    <Config Name="Days Text - Today" Target="TEXT_TODAY" Default="Last chance to watch" Description="Text to display for items leaving today when Use Days Left is enabled" Type="Variable" Display="always-hide" Required="false" Mask="false">Last chance to watch</Config>
+    <Config Name="Days Text - One Day Left" Target="TEXT_DAY" Default="Gone tomorrow" Description="Text to display for items leaving in 1 day when Use Days Left is enabled" Type="Variable" Display="always-hide" Required="false" Mask="false">Gone tomorrow</Config>
+    <Config Name="Days Text - Multiple Days Left" Target="TEXT_DAYS" Default="Gone in {0} days" Description="Text to display for items leaving in multiple days when Use Days Left is enabled" Type="Variable" Display="always-hide" Required="false" Mask="false">Gone in {0} days</Config>
     <Config Name="Collections - Order" Target="PLEX_COLLECTION_ORDER" Default="asc|desc" Description="Order of collections in Plex" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Collections - Names" Target="PROCESS_COLLECTIONS" Default="Leaving Soon" Description="Comma-separated list of names of the collections to be reordered" Type="Variable" Display="always-hide" Required="true" Mask="false">Leaving Soon</Config>
+    <Config Name="Collections - Names" Target="REORDER_COLLECTIONS" Default="Leaving Soon" Description="Comma-separated list of names of the collections to be reordered" Type="Variable" Display="always-hide" Required="true" Mask="false">Leaving Soon</Config>
     <Config Name="Language" Target="LANGUAGE" Default="en-US" Description="Language for the overlay text" Type="Variable" Display="always-hide" Required="true" Mask="false">en-US</Config>
     <Config Name="Cron Schedule" Target="CRON_SCHEDULE" Default="0 */8 * * *" Description="Cron schedule to run the script" Type="Variable" Display="always-hide" Required="true" Mask="false">0 */8 * * *</Config>
     <Config Name="Run On Creation" Target="RUN_ON_CREATION" Default="false|true" Description="Run the script immediately on Docker boot" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
