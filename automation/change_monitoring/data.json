@@ -34,7 +34,7 @@
         "branch_override": null,
         "files_to_check": [
             {
-                "file_path": "docker-compose.yaml",
+                "file_path": "docs/guide/swarm.md",
                 "commit_hash": "79cc6f83ab310e0797c092f977bec032cbd142a8",
                 "commit_message": "update docs\n"
             }
@@ -70,22 +70,7 @@
         "branch_override": null,
         "files_to_check": [
             {
-                "file_path": "docker/docker-compose.base.yaml",
-                "commit_hash": "21b61f57df3fb6c34c904508e7fa96b8f67fef5a",
-                "commit_message": "refactor(docker): Consolidate Docker Compose setup to use profiles\n\nConsolidate multiple Docker Compose configuration files into a single\n`docker-compose.yaml` file. This simplifies the overall Docker Compose setup by\nleveraging profiles to manage different environments (e.g., dev-postgres,\ndev-sqlite) and application modes (app, dev). It reduces file redundancy and\nimproves the maintainability of the Docker configuration.\n\nUpdate Makefile commands to utilize the new Docker Compose profiles. The\n`dev-docker-postgres`, `dev-docker-sqlite`, and `dev-docker-clean` targets now\ncorrectly invoke Docker Compose with the appropriate profiles and project\ndirectory, ensuring compatibility with the consolidated setup.\n\nRemove the `sqlite.env` file as its configuration is now inlined within the\n`docker-compose.yaml`. This further streamlines the setup by directly specifying\nthe SQLite database driver and DSN in the `dev-workout-tracker-sqlite` service\ndefinition, eliminating the need for a separate environment file.\n\nSigned-off-by: Jo Vandeginste <Jo.Vandeginste@kuleuven.be>\n"
-            },
-            {
-                "file_path": "docker/docker-compose.sqlite.yaml",
-                "commit_hash": "21b61f57df3fb6c34c904508e7fa96b8f67fef5a",
-                "commit_message": "refactor(docker): Consolidate Docker Compose setup to use profiles\n\nConsolidate multiple Docker Compose configuration files into a single\n`docker-compose.yaml` file. This simplifies the overall Docker Compose setup by\nleveraging profiles to manage different environments (e.g., dev-postgres,\ndev-sqlite) and application modes (app, dev). It reduces file redundancy and\nimproves the maintainability of the Docker configuration.\n\nUpdate Makefile commands to utilize the new Docker Compose profiles. The\n`dev-docker-postgres`, `dev-docker-sqlite`, and `dev-docker-clean` targets now\ncorrectly invoke Docker Compose with the appropriate profiles and project\ndirectory, ensuring compatibility with the consolidated setup.\n\nRemove the `sqlite.env` file as its configuration is now inlined within the\n`docker-compose.yaml`. This further streamlines the setup by directly specifying\nthe SQLite database driver and DSN in the `dev-workout-tracker-sqlite` service\ndefinition, eliminating the need for a separate environment file.\n\nSigned-off-by: Jo Vandeginste <Jo.Vandeginste@kuleuven.be>\n"
-            },
-            {
-                "file_path": "docker/sqlite.env",
-                "commit_hash": "21b61f57df3fb6c34c904508e7fa96b8f67fef5a",
-                "commit_message": "refactor(docker): Consolidate Docker Compose setup to use profiles\n\nConsolidate multiple Docker Compose configuration files into a single\n`docker-compose.yaml` file. This simplifies the overall Docker Compose setup by\nleveraging profiles to manage different environments (e.g., dev-postgres,\ndev-sqlite) and application modes (app, dev). It reduces file redundancy and\nimproves the maintainability of the Docker configuration.\n\nUpdate Makefile commands to utilize the new Docker Compose profiles. The\n`dev-docker-postgres`, `dev-docker-sqlite`, and `dev-docker-clean` targets now\ncorrectly invoke Docker Compose with the appropriate profiles and project\ndirectory, ensuring compatibility with the consolidated setup.\n\nRemove the `sqlite.env` file as its configuration is now inlined within the\n`docker-compose.yaml`. This further streamlines the setup by directly specifying\nthe SQLite database driver and DSN in the `dev-workout-tracker-sqlite` service\ndefinition, eliminating the need for a separate environment file.\n\nSigned-off-by: Jo Vandeginste <Jo.Vandeginste@kuleuven.be>\n"
-            },
-            {
-                "file_path": "docker/docker-compose.postgres.yaml",
+                "file_path": "docker/docker-compose.yaml",
                 "commit_hash": "21b61f57df3fb6c34c904508e7fa96b8f67fef5a",
                 "commit_message": "refactor(docker): Consolidate Docker Compose setup to use profiles\n\nConsolidate multiple Docker Compose configuration files into a single\n`docker-compose.yaml` file. This simplifies the overall Docker Compose setup by\nleveraging profiles to manage different environments (e.g., dev-postgres,\ndev-sqlite) and application modes (app, dev). It reduces file redundancy and\nimproves the maintainability of the Docker configuration.\n\nUpdate Makefile commands to utilize the new Docker Compose profiles. The\n`dev-docker-postgres`, `dev-docker-sqlite`, and `dev-docker-clean` targets now\ncorrectly invoke Docker Compose with the appropriate profiles and project\ndirectory, ensuring compatibility with the consolidated setup.\n\nRemove the `sqlite.env` file as its configuration is now inlined within the\n`docker-compose.yaml`. This further streamlines the setup by directly specifying\nthe SQLite database driver and DSN in the `dev-workout-tracker-sqlite` service\ndefinition, eliminating the need for a separate environment file.\n\nSigned-off-by: Jo Vandeginste <Jo.Vandeginste@kuleuven.be>\n"
             },

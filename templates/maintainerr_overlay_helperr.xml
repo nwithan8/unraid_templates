@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-09-08
+
+        Update environmental variables
+
         ### 2025-09-05
 
         Update environment variables
@@ -78,7 +82,7 @@
     <Config Name="Days Text - One Day Left" Target="TEXT_DAY" Default="Gone tomorrow" Description="Text to display for items leaving in 1 day when Use Days Left is enabled" Type="Variable" Display="always-hide" Required="false" Mask="false">Gone tomorrow</Config>
     <Config Name="Days Text - Multiple Days Left" Target="TEXT_DAYS" Default="Gone in {0} days" Description="Text to display for items leaving in multiple days when Use Days Left is enabled" Type="Variable" Display="always-hide" Required="false" Mask="false">Gone in {0} days</Config>
     <Config Name="Collections - Order" Target="PLEX_COLLECTION_ORDER" Default="asc|desc" Description="Order of collections in Plex" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Collections - Names" Target="REORDER_COLLECTIONS" Default="Leaving Soon" Description="Comma-separated list of names of the collections to be reordered" Type="Variable" Display="always-hide" Required="true" Mask="false">Leaving Soon</Config>
+    <Config Name="Collections - Names" Target="PROCESS_COLLECTIONS" Default="Leaving Soon" Description="Comma-separated list of names of the collections to be reordered" Type="Variable" Display="always-hide" Required="true" Mask="false">Leaving Soon</Config>
     <Config Name="Language" Target="LANGUAGE" Default="en-US" Description="Language for the overlay text" Type="Variable" Display="always-hide" Required="true" Mask="false">en-US</Config>
     <Config Name="Cron Schedule" Target="CRON_SCHEDULE" Default="0 */8 * * *" Description="Cron schedule to run the script" Type="Variable" Display="always-hide" Required="true" Mask="false">0 */8 * * *</Config>
     <Config Name="Run On Creation" Target="RUN_ON_CREATION" Default="false|true" Description="Run the script immediately on Docker boot" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
