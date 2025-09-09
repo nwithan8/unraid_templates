@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-09-09
+
+        Add PGID and PUID environment variables
+
         ### 2025-09-03
 
         Initial release
@@ -37,4 +41,6 @@
     <Config Name="Config File" Target="/app/config.ini" Default="/mnt/user/appdata/door_opener/config.ini" Description="Path to the config file" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/door_opener/config.ini</Config>
     <Config Name="Logs Path" Target="/app/logs" Default="/mnt/user/appdata/door_opener/logs" Description="Path to the logs folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/door_opener/logs</Config>
     <Config Name="Internal Web UI Port" Target="DOOROPENER_PORT" Default="6532" Description="Internal port for the web UI. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">6532</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
