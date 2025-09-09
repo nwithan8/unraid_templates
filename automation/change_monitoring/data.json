@@ -569,8 +569,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "4fd64b0ab39f23ac53aaf164b261d2536c1b29da",
-                "commit_message": "add env_file configuration to to docker-compose.yml\n"
+                "commit_hash": "a86e92f3123db3d04cb8076abf2c149bebb3016b",
+                "commit_message": "feat: implement dynamic user privileges with gosu and configurable PUID/PGID\n"
             }
         ]
     }
