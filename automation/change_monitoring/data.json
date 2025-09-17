@@ -362,8 +362,8 @@
             },
             {
                 "file_path": ".env.sample",
-                "commit_hash": "2e995b615d0a91e370aef758ea3eeccd75939db5",
-                "commit_message": null
+                "commit_hash": "3adeef086be8ee13fb96e7135f1eb42b20f99609",
+                "commit_message": "Added migration to get new bricklink data fields, fixed bricklink links, added set refresh based on missing bricklink data\n"
             }
         ]
     },
@@ -569,8 +569,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "a86e92f3123db3d04cb8076abf2c149bebb3016b",
-                "commit_message": "feat: implement dynamic user privileges with gosu and configurable PUID/PGID\n"
+                "commit_hash": "1c9dd57898d149673d737f962a390a4697881f37",
+                "commit_message": "chore: switch from local build to remote container image\n"
             }
         ]
     }
