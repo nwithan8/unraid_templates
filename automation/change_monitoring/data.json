@@ -516,8 +516,8 @@
         "files_to_check": [
             {
                 "file_path": "README.md",
-                "commit_hash": "b1c484756d5ccc8268ebdcbc2045c8aed53b927d",
-                "commit_message": "main-branch-readiness\n\npreparing for main branch push, updating image tags\n"
+                "commit_hash": "68c4682e5ef9fa75ff74e4c9e89b902aa6dcfaef",
+                "commit_message": "v2.0.1 - Provider Abstraction\n\n- Unified 'MediaProvider' Interface\n- Normalized '/whoami' response\n- DB schema to support multi-provider identities\n- CVE-2025-47906 Fix\n- A few other optimizations, README and CHANGELOG have more info on all changes.\n"
             }
         ]
     },
