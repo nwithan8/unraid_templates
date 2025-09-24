@@ -129,8 +129,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "7b8a9964523306325aa6a9dbd5868da7a9cce57c",
-                "commit_message": "Removed old UniFi username check from info.js. Implemented temporary guest features warning in info.js. Cleanup unifi.js to remove legacy implementation and switch to UniFi Integrations. Removed deprecated `UNIFI_USERNAME` and `UNIFI_PASSWORD` from variables.js. Updated docker-compose.yml. Removed old dependencies. Updated README.md\n"
+                "commit_hash": "ae6aa9b5a10f948e76e782e8245ae2c65f341a30",
+                "commit_message": "Implemented `KIOSK_TIMEOUT` environment variable. Introduced adjustable kiosk timeout timer. Moved static animation from style.css to kiosk.ejs. Fixed incorrect preload tag within kiosk.ejs. Added missing bg.jpg preload tag within kiosk.ejs. Updated docker-compose.yml. Dependency updates. Updated README.md\n"
             }
         ]
     },
