@@ -516,8 +516,8 @@
         "files_to_check": [
             {
                 "file_path": "README.md",
-                "commit_hash": "68c4682e5ef9fa75ff74e4c9e89b902aa6dcfaef",
-                "commit_message": "v2.0.1 - Provider Abstraction\n\n- Unified 'MediaProvider' Interface\n- Normalized '/whoami' response\n- DB schema to support multi-provider identities\n- CVE-2025-47906 Fix\n- A few other optimizations, README and CHANGELOG have more info on all changes.\n"
+                "commit_hash": "7aba68b8eee0525d1ad691b40c90b69f2ca817fc",
+                "commit_message": "docs: update project structure\n\nFound error in project structure on README.md.\n- Removed the erroneous providers.go line\n"
             }
         ]
     },
@@ -540,8 +540,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "838b632387a2aa30d4ac52d93081eaf84176499e",
-                "commit_message": "Update env file to use encripton key and JWT secret from files if available\n"
+                "commit_hash": "ec5cd4b2d115ea007e6bbf94a60314f3ea71ac36",
+                "commit_message": "docker update: Update Garmin microservice Dockerfile and production compose file\n"
             },
             {
                 "file_path": "docker/.env.example",
