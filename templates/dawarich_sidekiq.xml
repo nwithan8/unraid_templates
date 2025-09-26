@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-09-26
+
+        Fix Redis URL default value
+
         ### 2025-09-17
 
         Make latest the default tag
@@ -62,7 +66,7 @@
     <PostArgs>sidekiq</PostArgs>
     <Config Name="Imports Path" Target="/var/app/tmp/imports/watched" Default="/mnt/user/appdata/dawarich/imports" Description="Path to watch for imports" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/imports</Config>
     <Config Name="Storage Path" Target="/var/app/storage" Default="/mnt/user/appdata/dawarich/storage" Description="Path to store application data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/storage</Config>
-    <Config Name="Redis - URL" Target="REDIS_URL" Default="redis://IP_ADDRESS:6379/0" Description="URL of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://IP_ADDRESS:6379/0</Config>
+    <Config Name="Redis - URL" Target="REDIS_URL" Default="redis://IP_ADDRESS:6379" Description="URL of the Redis server" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://IP_ADDRESS:6379</Config>
     <Config Name="PostGIS - Host" Target="DATABASE_HOST" Default="" Description="Host of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="PostGIS - Port" Target="DATABASE_PORT" Default="5432" Description="Port of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
     <Config Name="PostGIS - Username" Target="DATABASE_USERNAME" Default="" Description="Username of the PostGIS server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
