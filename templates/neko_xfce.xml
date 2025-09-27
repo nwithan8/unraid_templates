@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Neko-Xfce</Name>
+    <Repository>ghcr.io/m1k1o/neko/xfce:latest</Repository>
+    <Registry>ghcr.io/m1k1o/neko/xfce</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://neko.m1k1o.net/docs/v3/introduction</Support>
+    <Project>https://neko.m1k1o.net/</Project>
+    <Overview>
+        A self-hosted virtual desktop that runs in Docker and uses WebRTC technology. Neko allows you to run a fully-functional desktop in a virtual environment, providing secure and private internet access from anywhere. It's perfect for developers, privacy-conscious users, and anyone needing a virtual desktop environment.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>browser app embed web firefox chromium tor</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/m1k1o/neko/refs/heads/master/webpage/static/img/icons/xfce.svg</Icon>
+    <Banner>https://raw.githubusercontent.com/m1k1o/neko/refs/heads/master/webpage/static/img/logo.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/neko_xfce.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-09-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a `config.yaml` file to be mounted at the Config File path before starting the container. See configuration details: https://neko.m1k1o.net/docs/v3/configuration#file &#xD;
+        &#xD;
+        Optional: Add prefix to repository name to enable hardware acceleration. See https://neko.m1k1o.net/docs/v3/installation/docker-images#flavors
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="WebRTC UDP Ports" Target="52000-52100" Default="52000-52100" Mode="udp" Description="UDP ports for client traffic" Type="Port" Display="always-hide" Required="true" Mask="false">52000-52100</Config>
+    <Config Name="Config File" Target="/etc/neko/neko.yaml" Default="/mnt/user/appdata/neko/config.yaml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/neko/config.yaml</Config>
+</Container>
