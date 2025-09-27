@@ -201,8 +201,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "a3c3dad9005c6ab2e9965632779da613d7a36f17",
-                "commit_message": null
+                "commit_hash": "ca2b1faa46b852833df205e84d73bafb24065980",
+                "commit_message": "fix: docker compose link (#2914)\n\nThe current docker-compose.yml fails to start today with an error:\n\nservice \"atuin\" depends on undefined service \"postgresql\": invalid\ncompose project\n\nThis patch modernizes the yml and fixes the link. Tested on docker\ncompose v2.39.4.\n\nDocs patch is https://github.com/atuinsh/docs/pull/104 .  /cc @ellie \n\n## Checks\n- [x] I am happy for maintainers to push small adjustments to this PR,\nto speed up the review cycle\n- [x] I have checked that there are no existing pull requests for the\nsame thing"
             }
         ]
     },
@@ -540,8 +540,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "ec5cd4b2d115ea007e6bbf94a60314f3ea71ac36",
-                "commit_message": "docker update: Update Garmin microservice Dockerfile and production compose file\n"
+                "commit_hash": "6bfcf022a031b6fc341b6405aed4e27227f72880",
+                "commit_message": "Garmin docker file change\n"
             },
             {
                 "file_path": "docker/.env.example",
