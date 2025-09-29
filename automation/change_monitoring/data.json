@@ -540,13 +540,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "6bfcf022a031b6fc341b6405aed4e27227f72880",
-                "commit_message": "Garmin docker file change\n"
+                "commit_hash": "f082aed4ff33ab9df8778e341c896fec9f58a827",
+                "commit_message": "Addition of Free Excercise DB integration, Garmin Port customization, UI updates and multiple notes added to help users using the app.\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "838b632387a2aa30d4ac52d93081eaf84176499e",
-                "commit_message": "Update env file to use encripton key and JWT secret from files if available\n"
+                "commit_hash": "f082aed4ff33ab9df8778e341c896fec9f58a827",
+                "commit_message": "Addition of Free Excercise DB integration, Garmin Port customization, UI updates and multiple notes added to help users using the app.\n"
             }
         ]
     },
