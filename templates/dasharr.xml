@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Dasharr</Name>
+    <Repository>ghcr.io/frenchgithubuser/dasharr:latest</Repository>
+    <Registry>ghcr.io/frenchgithubuser/dasharr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/FrenchGithubUser/Dasharr/issues</Support>
+    <Project>https://github.com/FrenchGithubUser/Dasharr</Project>
+    <Overview>
+        Dashboard of your indexers' usage
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>indexer usage dashboard monitor usenet torrent prowlarr</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/dasharr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/dasharr.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/FrenchGithubUser/Dasharr/main/images/0.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/FrenchGithubUser/Dasharr/main/images/1.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-01
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a `config.json` file to be in the Config Files path before starting the container. See configuration details: https://github.com/FrenchGithubUser/Dasharr/blob/main/backend/config_sample/config_sample.json &#xD;
+        &#xD;
+        Requires a separate Prowlarr instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="80" Default="3000" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="API Key" Target="API_KEY" Default="" Description="API Key for accessing the Dasharr API" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Prowlarr Database Path" Target="/backend/prowlarr/prowlarr.db" Default="" Description="Path to the Prowlarr database file" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Files" Target="/backend/config" Description="Path to the config folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dasharr/config</Config>
+</Container>
