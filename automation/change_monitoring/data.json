@@ -585,5 +585,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "UMTK",
+        "git_url": "https://github.com/netplexflix/Upcoming-Movies-TV-Shows-for-Kometa.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "991738beada9aafb3f661fafde87ee22c984c6bc",
+                "commit_message": null
+            }
+        ]
     }
 ]
