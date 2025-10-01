@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>LDAP Sync</Name>
+    <Repository>modomofn/ldap-sync:latest</Repository>
+    <Registry>https://hub.docker.com/r/modomofn/ldap-sync</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/modom-ofn/ldap-sync/issues</Support>
+    <Project>https://github.com/modom-ofn/ldap-sync</Project>
+    <Overview>
+        An LDAP extension for AuthPortal
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Management MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex authentication portal login token session cookie auth access proxy ldap</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/auth-portal-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ldap_sync.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-01
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate AuthPortal, OpenLDAP and Postgres instances.
+    </Requires>
+    <Config Name="Database Connection URL" Target="DATABASE_URL" Default="postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_IP:5432/auth" Description="Postgres database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="true">postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_IP:5432/auth</Config>
+    <Config Name="LDAP - Host" Target="LDAP_HOST" Default="ldap://IP:PORT" Description="LDAP server URL (e.g. ldap://IP:PORT)" Type="Variable" Display="always-hide" Required="true" Mask="false">ldap://IP:PORT</Config>
+    <Config Name="LDAP - Admin DN" Target="LDAP_ADMIN_DN" Default="cn=admin,dc=authportal,dc=local" Description="LDAP admin distinguished name" Type="Variable" Display="always-hide" Required="true" Mask="false">cn=admin,dc=authportal,dc=local</Config>
+    <Config Name="LDAP - Admin Password" Target="LDAP_ADMIN_PASSWORD" Default="" Description="LDAP admin password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="LDAP - Base DN" Target="BASE_DN" Default="ou=users,dc=authportal,dc=local" Description="Base distinguished name for user searches" Type="Variable" Display="always-hide" Required="true" Mask="false">ou=users,dc=authportal,dc=local</Config>
+    <Config Name="LDAP - STARTTLS" Target="LDAP_STARTTLS" Default="false|true" Description="Enable STARTTLS for LDAP connection" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+</Container>
