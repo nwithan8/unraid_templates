@@ -540,8 +540,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "f082aed4ff33ab9df8778e341c896fec9f58a827",
-                "commit_message": "Addition of Free Excercise DB integration, Garmin Port customization, UI updates and multiple notes added to help users using the app.\n"
+                "commit_hash": "d96d1a76eec7963b9bc07d0e2a85d63d09f36c90",
+                "commit_message": "Added ability to request password reset emails and reset passwords via emailed link.\n"
             },
             {
                 "file_path": "docker/.env.example",
@@ -593,8 +593,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "991738beada9aafb3f661fafde87ee22c984c6bc",
-                "commit_message": null
+                "commit_hash": "45eec2464239fc3e2d31ef334558de8f5ae9e8d9",
+                "commit_message": "simplify docker-compose\n"
             }
         ]
     },
