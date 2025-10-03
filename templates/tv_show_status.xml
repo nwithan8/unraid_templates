@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>TV Show Status</Name>
+    <Repository>netplexflix/tssk:latest</Repository>
+    <Registry>https://hub.docker.com/r/netplexflix/tssk</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/netplexflix/TV-show-status-for-Kometa/issues</Support>
+    <Project>https://github.com/netplexflix/TV-show-status-for-Kometa</Project>
+    <Overview>
+        TSSK checks your Sonarr for your TV Shows statuses and creates .yml files which can be used by Kometa to create collections and overlays.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex automation collection pin unpin Kometa playlist Netflix trailer Sonarr Radarr status show</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tssk-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tv_show_status.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tssk_demo_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tssk_demo_2.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate Kometa, Sonarr and Plex servers.
+    </Requires>
+    <Config Name="Cron Schedule" Target="CRON" Default="0 2 * * *" Description="Cron schedule for running the update (default: daily at 2 AM)" Type="Variable" Display="always-hide" Required="true" Mask="false">0 2 * * *</Config>
+    <Config Name="Kometa Config Files" Target="/app/kometa" Default="" Description="Output directory for generated Kometa YAML files" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="App Config" Target="/app/config" Default="/mnt/user/appdata/umtk/config" Description="Path to the config folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/umtk/config</Config>
+    <Config Name="Is Docker" Target="DOCKER" Default="true|false" Description="Indicate app is running in Docker. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>

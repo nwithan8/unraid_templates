@@ -609,5 +609,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "TSSK",
+        "git_url": "https://github.com/netplexflix/TV-show-status-for-Kometa.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "1a0fd8a8d7508b3a84c159935004895a6c377cb5",
+                "commit_message": "Switched DockerHub account"
+            }
+        ]
     }
 ]

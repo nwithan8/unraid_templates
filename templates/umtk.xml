@@ -7,7 +7,7 @@
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
-    <Network>bridge</Network>
+    <Network>host</Network>
     <Privileged>false</Privileged>
     <Support>https://github.com/netplexflix/Upcoming-Movies-TV-Shows-for-Kometa/issues</Support>
     <Project>https://github.com/netplexflix/Upcoming-Movies-TV-Shows-for-Kometa</Project>
@@ -25,6 +25,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-10-03
+
+        Update network mode to host
+
         ### 2025-10-01
 
         Initial release
