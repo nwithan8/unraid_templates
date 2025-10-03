@@ -27,6 +27,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-10-03
+
+        - Add email environment variables
+        - Add backup storage path
+
         ### 2025-09-26
 
         Add environmental variable for Garmin microservice connection
@@ -51,6 +56,13 @@
     <Config Name="Disable User Signups" Target="SPARKY_FITNESS_DISABLE_SIGNUP" Default="false|true" Description="Set to true to disable new user registrations" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Force Email Logins" Target="SPARKY_FITNESS_FORCE_EMAIL_LOGIN" Default="false|true" Description="Force email/password login to be enabled, overriding any in-app settings. This is a fail-safe to prevent being locked out if OIDC is misconfigured." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Admin Email" Target="SPARKY_FITNESS_ADMIN_EMAIL" Default="" Description="Automatically grant admin rights to this email" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP Host" Target="SPARKY_FITNESS_EMAIL_HOST" Default="" Description="SMTP server hostname for sending emails" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP Port" Target="SPARKY_FITNESS_EMAIL_PORT" Default="587" Description="SMTP server port (default: 587)" Type="Variable" Display="always-hide" Required="false" Mask="false">587</Config>
+    <Config Name="Email - SMTP Secure" Target="SPARKY_FITNESS_EMAIL_SECURE" Default="false|true" Description="Set to true if the SMTP server requires a secure connection (TLS)" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP User" Target="SPARKY_FITNESS_EMAIL_USER" Default="" Description="SMTP server username for authentication" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Email - SMTP Password" Target="SPARKY_FITNESS_EMAIL_PASS" Default="" Description="SMTP server password for authentication" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Email - From Address" Target="SPARKY_FITNESS_EMAIL_FROM" Default="" Description="Email address that emails will be sent from" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Backup Storage" Target="/app/SparkyFitnessServer/backup" Default="/mnt/user/appdata/sparkyfitness/backup" Description="Path to the backup storage folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/sparkyfitness/backup</Config>
     <Config Name="Log Level" Target="SPARKY_FITNESS_LOG_LEVEL" Default="INFO|DEBUG|WARN|ERROR" Description="Logging level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Node Environment" Target="NODE_ENV" Default="production|development" Description="Node environment setting" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Internal API Port" Target="SPARKY_FITNESS_SERVER_PORT" Default="3010" Description="Internal ort for API communication. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3010</Config>
