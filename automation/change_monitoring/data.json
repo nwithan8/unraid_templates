@@ -237,7 +237,7 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "ecadeebeedd33882b9c161124695a754a5f85743",
+                "commit_hash": "2225c49bbf3fde155bb841428132dc4c4a163ee9",
                 "commit_message": "Update docker-compose.yml"
             }
         ]
