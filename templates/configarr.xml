@@ -15,7 +15,7 @@
         A powerful configuration and synchronization tool designed specifically for Sonarr v4 and Radarr v5. It streamlines the process of managing custom formats and quality profiles by automatically synchronizing settings from TRaSH Guides while supporting additional customizations.
     </Overview>
     <Beta>False</Beta>
-    <Category>Downloaders MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <Category>Downloaders: MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>configuration synchronization Sonarr Radarr Recyclarr Notifiarr Profilarr custom formats quality profiles TRaSH Guides</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/configarr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/configarr.xml</TemplateURL>

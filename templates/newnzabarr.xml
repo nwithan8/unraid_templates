@@ -15,7 +15,7 @@
         A Usenet plugin framework for the *arr ecosystem designed to fill that gap. Can be added to Sonarr, Radarr, Lidarr and Readarr to download media using search plugins under the hood.
     </Overview>
     <Beta>False</Beta>
-    <Category>Downloaders MediaApp:Video MediaServer:Video MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <Category>Downloaders: MediaApp:Video MediaServer:Video MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>Usenet Sonarr Radarr Lidarr Readarr plugin search content indexer</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/newnzabarr-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/newnzabarr.xml</TemplateURL>

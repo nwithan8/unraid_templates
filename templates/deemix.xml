@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Deemix</Name>
+    <Repository>ghcr.io/bambanah/deemix:latest</Repository>
+    <Registry>ghcr.io/bambanah/deemix</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:6595]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/bambanah/deemix/issues</Support>
+    <Project>https://github.com/bambanah/deemix</Project>
+    <Overview>
+        Download content from Deezer.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>deezer music download</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/deemix-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/deemix.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-06
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="6595" Default="6595" Mode="tcp" Description="Container Port: 6595" Type="Port" Display="always-hide" Required="true" Mask="false">6595</Config>
+    <Config Name="Downloads Path" Target="/downloads" Default="" Description="Path to the downloads folder" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Single User" Target="DEEMIX_SINGLE_USER" Default="true|false" Description="Enable single user mode" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/deemix/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/deemix/config</Config>
+    <Config Name="Internal Server Port" Target="DEEMIX_SERVER_PORT" Default="6595" Description="Internal port for server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">6595</Config>
+    <Config Name="Internal Config Path" Target="DEEMIX_DATA_DIR" Default="/app/config" Description="Internal path to config files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/config</Config>
+    <Config Name="Internal Downloads Path" Target="DEEMIX_MUSIC_DIR" Default="/downloads" Description="Internal path to downloads folder. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/downloads</Config>
+    <Config Name="Internal Host" Target="DEEMIX_HOST" Default="0.0.0.0" Description="Internal host address. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+    <Config Name="UMASK" Target="UMASK" Default="022" Description="Set the umask for file permissions. Default is 022." Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
+</Container>
