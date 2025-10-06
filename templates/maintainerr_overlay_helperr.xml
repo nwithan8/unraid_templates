@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-10-06
+
+        Remove Plex database path
+
         ### 2025-09-08
 
         Update environmental variables
@@ -61,7 +65,6 @@
     <Config Name="Images Path" Target="/images" Default="/mnt/user/appdata/maintainerr_overlay_helperr/images" Description="Path to save images" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/maintainerr_overlay_helperr/images</Config>
     <Config Name="Fonts Path" Target="/fonts" Default="/mnt/user/appdata/maintainerr_overlay_helperr/fonts" Description="Path to the font file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/maintainerr_overlay_helperr/fonts</Config>
     <Config Name="Plex Metadata Path" Target="/plexmeta" Default="" Description="Path to Plex metadata (usually Library/Application Support/Plex Media Server/Metadata inside Plex root folder)" Type="Path" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Plex Database Path" Target="/plex-db" Default="" Description="Path to Plex database (usually Library/Application Support/Plex Media Server/Plug-in Support/Databases inside Plex root folder)" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Image - Font Color" Target="FONT_COLOR" Default="#FFFFFF" Description="Color of the font in hex format" Type="Variable" Display="always-hide" Required="true" Mask="false">#FFFFFF</Config>
     <Config Name="Image - Font Size" Target="FONT_SIZE" Default="3.2" Description="Size of the font" Type="Variable" Display="always-hide" Required="true" Mask="false">3.2</Config>
     <Config Name="Image - Background Color" Target="BACK_COLOR" Default="#B20710" Description="Background color of the image in hex format" Type="Variable" Display="always-hide" Required="true" Mask="false">#B20710</Config>
