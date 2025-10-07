@@ -516,8 +516,8 @@
         "files_to_check": [
             {
                 "file_path": "README.md",
-                "commit_hash": "7aba68b8eee0525d1ad691b40c90b69f2ca817fc",
-                "commit_message": "docs: update project structure\n\nFound error in project structure on README.md.\n- Removed the erroneous providers.go line\n"
+                "commit_hash": "2011d231d055947875dcdace2ff098ac5d3daea8",
+                "commit_message": "fix: Harden client IP detection and document trusted proxy setup\n\n- require TRUSTED_PROXY_CIDRS before honoring forwarded headers and add parsing helpers/tests for limiter safety\n- surface the new variable in sample env/compose configs and explain trusted proxy usage in the README\n"
             }
         ]
     },
@@ -540,13 +540,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "d96d1a76eec7963b9bc07d0e2a85d63d09f36c90",
-                "commit_message": "Added ability to request password reset emails and reset passwords via emailed link.\n"
+                "commit_hash": "87c835752882d284074bda9098b552ba3e3687d4",
+                "commit_message": "Garmin env update\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "f082aed4ff33ab9df8778e341c896fec9f58a827",
-                "commit_message": "Addition of Free Excercise DB integration, Garmin Port customization, UI updates and multiple notes added to help users using the app.\n"
+                "commit_hash": "dee1b3b2ba90d7fc6fcc3b5ec83e5492eefbe026",
+                "commit_message": "Addition of GARMIN_SERVICE_IS_CN to docker/.env.example\n"
             }
         ]
     },
