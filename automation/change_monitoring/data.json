@@ -633,5 +633,17 @@
                 "commit_message": "chore: use quotes in env vars"
             }
         ]
+    },
+    {
+        "app_name": "Tugtainer",
+        "git_url": "https://github.com/Quenary/tugtainer.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "6fd80356342cea84b13de20c2240568651ebd231",
+                "commit_message": null
+            }
+        ]
     }
 ]
