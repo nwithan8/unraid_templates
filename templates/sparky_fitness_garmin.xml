@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-10-07
+
+        Add China region support for Garmin microservice
+
         ### 2025-10-01
 
         Initial release
@@ -37,4 +41,5 @@
     <Config Name="API Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
     <Config Name="Garmin Microservice URL" Target="GARMIN_MICROSERVICE_URL" Default="http://IP_ADDRESS:8000" Description="URL of the Garmin microservice (e.g., http://IP_ADDRESS:8000)" Type="Variable" Display="always" Required="false" Mask="false">http://IP_ADDRESS:8000</Config>
     <Config Name="Garmin Microservice Port" Target="GARMIN_SERVICE_PORT" Default="8000" Description="Port number for the Garmin microservice. Must match port defined in GARMIN_MICROSERVICE_URL" Type="Variable" Display="always" Required="false" Mask="false">8000</Config>
+    <Config Name="China Region" Target="GARMIN_SERVICE_IS_CN" Default="false|true" Description="Set to true if you are in China to use the China Garmin servers" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
 </Container>

@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-10-07
+
+        Add CIDR trusted proxy support
+
         ### 2025-08-26
 
         Add environmental variables
@@ -41,6 +45,7 @@
     <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
     <Config Name="Database Connection URL" Target="DATABASE_URL" Default="postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_IP:5432/AuthPortaldb?sslmode=disable" Description="Postgres database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="true">postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_IP:5432/AuthPortaldb?sslmode=disable</Config>
     <Config Name="App Base URL" Target="APP_BASE_URL" Default="http://IP_ADDRESS:PORT" Description="Public URL of this service. If using HTTPS, cookies will be marked Secure." Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:PORT</Config>
+    <Config Name="Trusted Proxy CIDR Ranges" Target="TRUSTED_PROXY_CIDRS" Default="" Description="Comma-separated list of trusted proxy CIDR ranges for forwarded headers" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Media Server" Target="MEDIA_SERVER" Default="plex|emby|jellyfin" Description="Type of media server to authenticate against" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Description="HMAC secret for JWT cookie" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Data Key" Target="DATA_KEY" Default="" Description="Base64 32-byte key for sealing tokens at rest" Type="Variable" Display="always-hide" Required="true" Mask="true"/>

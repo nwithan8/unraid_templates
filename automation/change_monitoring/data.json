@@ -515,7 +515,7 @@
         "branch_override": null,
         "files_to_check": [
             {
-                "file_path": "README.md",
+                "file_path": "auth-portal-full-stack-dev_docker-compose.yml",
                 "commit_hash": "2011d231d055947875dcdace2ff098ac5d3daea8",
                 "commit_message": "fix: Harden client IP detection and document trusted proxy setup\n\n- require TRUSTED_PROXY_CIDRS before honoring forwarded headers and add parsing helpers/tests for limiter safety\n- surface the new variable in sample env/compose configs and explain trusted proxy usage in the README\n"
             }

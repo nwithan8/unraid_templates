@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-10-07
+
+        Add uploads storage path
+
         ### 2025-10-03
 
         - Add email environment variables
@@ -63,6 +67,7 @@
     <Config Name="Email - SMTP Password" Target="SPARKY_FITNESS_EMAIL_PASS" Default="" Description="SMTP server password for authentication" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Email - From Address" Target="SPARKY_FITNESS_EMAIL_FROM" Default="" Description="Email address that emails will be sent from" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Backup Storage" Target="/app/SparkyFitnessServer/backup" Default="/mnt/user/appdata/sparkyfitness/backup" Description="Path to the backup storage folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/sparkyfitness/backup</Config>
+    <Config Name="Uploads Storage" Target="/app/SparkyFitnessServer/uploads" Default="/mnt/user/appdata/sparkyfitness/uploads" Description="Path to the uploads storage folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/sparkyfitness/uploads</Config>
     <Config Name="Log Level" Target="SPARKY_FITNESS_LOG_LEVEL" Default="INFO|DEBUG|WARN|ERROR" Description="Logging level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Node Environment" Target="NODE_ENV" Default="production|development" Description="Node environment setting" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Internal API Port" Target="SPARKY_FITNESS_SERVER_PORT" Default="3010" Description="Internal ort for API communication. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3010</Config>
