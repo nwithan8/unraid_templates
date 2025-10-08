@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-10-07
+
+        Fix invalid internal config path variable.
+
         ### 2025-10-06
 
         Initial release
@@ -33,10 +37,10 @@
     <Config Name="Single User" Target="DEEMIX_SINGLE_USER" Default="true|false" Description="Enable single user mode" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/deemix/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/deemix/config</Config>
     <Config Name="Internal Server Port" Target="DEEMIX_SERVER_PORT" Default="6595" Description="Internal port for server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">6595</Config>
-    <Config Name="Internal Config Path" Target="DEEMIX_DATA_DIR" Default="/app/config" Description="Internal path to config files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/config</Config>
+    <Config Name="Internal Config Path" Target="DEEMIX_DATA_DIR" Default="/config" Description="Internal path to config files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config</Config>
     <Config Name="Internal Downloads Path" Target="DEEMIX_MUSIC_DIR" Default="/downloads" Description="Internal path to downloads folder. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/downloads</Config>
     <Config Name="Internal Host" Target="DEEMIX_HOST" Default="0.0.0.0" Description="Internal host address. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
-    <Config Name="UMASK" Target="UMASK" Default="022" Description="Set the umask for file permissions. Default is 022." Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
+    <Config Name="UMASK" Target="UMASK_SET" Default="022" Description="Set the umask for file permissions. Default is 022." Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
 </Container>

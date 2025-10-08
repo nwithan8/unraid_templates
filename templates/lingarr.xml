@@ -10,7 +10,7 @@
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
     <Privileged>false</Privileged>
-    <Support>https://github.com/lingarr-translate/lingarr/issues</Support>
+    <Support>https://github.com/lingarr-translate/lingarr/wiki</Support>
     <Project>https://github.com/lingarr-translate/lingarr</Project>
     <Overview>
         Lingarr is an application that leverages translation technologies to automatically translate subtitle files to your desired target language. With support for both LibreTranslate, DeepL and AI Lingarr offers a flexible solution for all your subtitle translation needs.
