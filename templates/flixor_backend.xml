@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Flixor - Backend</Name>
+    <Repository>flixorui/flixor_backend:latest</Repository>
+    <Registry>https://hub.docker.com/r/flixorui/flixor_backend</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Flixorui/flixor/issues</Support>
+    <Project>https://github.com/Flixorui/flixor</Project>
+    <Overview>
+        A fast, Netflix‑style web app, Android, iOS, and MacOS for your Plex library. Browse beautiful rows, see rich details (IMDb/Rotten Tomatoes), and play instantly in your browser with built‑in DASH/HLS playback. Works on any modern desktop or mobile browser. &#xD;
+        &#xD;
+        This is the backend component.
+    </Overview>
+    <Beta>True</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex ui flixor netflix streaming rows metadata android macos ios tv browser</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/flixor-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/flixor_backend.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-01.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-02.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-00m52.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-01m20.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-02m14.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-02m24.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-02m34.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-02m48.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-03m04.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-03m11.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-13
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Flixor - Frontend container or Flixor app.
+    </Requires>
+    <Config Name="API Port" Target="3001" Default="3001" Mode="tcp" Description="Container Port: 3001" Type="Port" Display="always-hide" Required="true" Mask="false">3001</Config>
+    <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/flixor_backend/config" Description="Path to the config files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/flixor_backend/config</Config>
+    <Config Name="Cache Path" Target="/app/cache" Default="/mnt/user/appdata/flixor_backend/cache" Description="Path to the cache files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/flixor_backend/cache</Config>
+    <Config Name="Frontend URL" Target="FRONTEND_URL" Default="" Description="The URL where the frontend is hosted (e.g., http://localhost:8080). Required if using the frontend app." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Description="A long, random string used to sign session cookies." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Node Environment" Target="NODE_ENV" Default="production" Description="Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+    <Config Name="Internal API Port" Target="PORT" Default="3001" Description="Internal API port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3001</Config>
+    <Config Name="Internal Host" Target="HOST" Default="0.0.0.0" Description="Internal host. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Internal Config Path" Target="CONFIG_DIRECTORY" Default="/app/config" Description="Internal path to the config files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/config</Config>
+    <Config Name="Internal Database Path" Target="DATABASE_PATH" Default="/app/config/db/app.sqlite" Description="Internal path to the database file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/config/db/app.sqlite</Config>
+    <Config Name="Internal Image Cache Path" Target="IMAGE_CACHE_DIR" Default="/app/cache/images" Description="Internal path to the image cache. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/cache/images</Config>
+</Container>

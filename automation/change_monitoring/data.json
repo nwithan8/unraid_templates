@@ -645,5 +645,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Flixor",
+        "git_url": "https://github.com/Flixorui/flixor.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "634596ac0b16a708559282a8e020f9d3e7a1c920",
+                "commit_message": "repo restructure"
+            }
+        ]
     }
 ]
