@@ -657,5 +657,17 @@
                 "commit_message": "repo restructure"
             }
         ]
+    },
+    {
+        "app_name": "Pingvin Share X",
+        "git_url": "https://github.com/smp46/pingvin-share-x.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "a1dc24385e6445fdde96c1d165a759183ab7f842",
+                "commit_message": null
+            }
+        ]
     }
 ]

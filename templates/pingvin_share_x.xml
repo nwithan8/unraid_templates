@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Pingvin Share X</Name>
+    <Repository>smp46/pingvin-share-x:latest</Repository>
+    <Registry>https://hub.docker.com/r/smp46/pingvin-share-x</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://stonith404.github.io/pingvin-share/introduction</Support>
+    <Project>https://github.com/smp46/pingvin-share-x</Project>
+    <Overview>
+        Pingvin Share X is a fork of Pingvin Share, a self-hosted file sharing platform and an alternative for WeTransfer.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Other MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>file sharing transfer wetransfer pingvin share ottrbox</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pingvin-share-x-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pingvin_share_x.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-14
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Behind Reverse Proxy" Target="TRUST_PROXY" Default="false|true" Description="Set to true if running behind a reverse proxy" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Data Path" Target="/opt/app/backend/data" Default="/mnt/user/appdata/pingvin_share_x/data" Description="Path to store uploaded files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pingvin_share_x/data</Config>
+    <Config Name="Images Path" Target="/opt/app/frontend/public/img" Default="/mnt/user/appdata/pingvin_share_x/images" Description="Path to store image files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pingvin_share_x/images</Config>
+</Container>
