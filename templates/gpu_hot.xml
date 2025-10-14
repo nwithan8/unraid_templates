@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>GPU Hot</Name>
+    <Repository>ghcr.io/psalias2006/gpu-hot:latest</Repository>
+    <Registry>ghcr.io/psalias2006/gpu-hot</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:1312]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/psalias2006/gpu-hot/issues</Support>
+    <Project>https://github.com/psalias2006/gpu-hot</Project>
+    <Overview>
+        Real-time NVIDIA GPU Monitoring Dashboard
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>gpu nvidia monitoring dashboard card heat temperature</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/psalias2006/gpu-hot/main/static/favicon.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/gpu_hot.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/psalias2006/gpu-hot/main/gpu-hot.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-13
+
+        Initial release
+    </Changes>
+    <ExtraParams>--gpus all</ExtraParams>
+    <Config Name="Web UI Port" Target="1312" Default="1312" Mode="tcp" Description="Container Port: 1312" Type="Port" Display="always-hide" Required="true" Mask="false">1312</Config>
+    <Config Name="Nvidia SMI Mode" Target="NVIDIA_SMI" Default="false|true" Description="Force nvidia-smi mode (for older GPUs)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+</Container>
