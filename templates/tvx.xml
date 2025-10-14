@@ -18,9 +18,13 @@
     <Beta>False</Beta>
     <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>m3u xml iptv tv guide crt vintage player plex emby jellyfin tunarr dizquetv ersatz</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/psalias2006/gpu-hot/main/static/favicon.svg</Icon>
+    <Icon>https://raw.githubusercontent.com/dopeytree/TVx/main/public/logo.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tvx.xml</TemplateURL>
-    <Screenshot>https://raw.githubusercontent.com/dopeytree/TVx/main/public/logo.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/dopeytree/TVx/main/public/screenshot-1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/dopeytree/TVx/main/public/screenshot-2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/dopeytree/TVx/main/public/screenshot-3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/dopeytree/TVx/main/public/screenshot-4.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/dopeytree/TVx/main/public/screenshot-5.png</Screenshot>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
