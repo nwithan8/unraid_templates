@@ -10,7 +10,7 @@
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3000]/</WebUI>
     <Privileged>false</Privileged>
-    <Support>https://stonith404.github.io/pingvin-share/introduction</Support>
+    <Support>https://smp46.github.io/pingvin-share-x/introduction</Support>
     <Project>https://github.com/smp46/pingvin-share-x</Project>
     <Overview>
         Pingvin Share X is a fork of Pingvin Share, a self-hosted file sharing platform and an alternative for WeTransfer.
