@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>TVx</Name>
+    <Repository>ghcr.io/dopeytree/tvx:latest</Repository>
+    <Registry>ghcr.io/dopeytree/tvx</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8777]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dopeytree/TVx/issues</Support>
+    <Project>https://github.com/dopeytree/TVx</Project>
+    <Overview>
+        A vintage TV experience for M3U playlists
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>m3u xml iptv tv guide crt vintage player plex emby jellyfin tunarr dizquetv ersatz</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/psalias2006/gpu-hot/main/static/favicon.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tvx.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/dopeytree/TVx/main/public/logo.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-13
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires an M3U playlist and optional XMLTV (EPG) guide file. Tunarr or Dizquetv paired with Plex, Emby or Jellyfin recommended.
+    </Requires>
+    <Config Name="Web UI Port" Target="8777" Default="8777" Mode="tcp" Description="Container Port: 8777" Type="Port" Display="always-hide" Required="true" Mask="false">8777</Config>
+    <Config Name="Nvidia SMI Mode" Target="NVIDIA_SMI" Default="false|true" Description="Force nvidia-smi mode (for older GPUs)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+</Container>
