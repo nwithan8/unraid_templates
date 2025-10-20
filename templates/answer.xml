@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Answer</Name>
+    <Repository>apache/answer:latest</Repository>
+    <Registry>https://hub.docker.com/r/apache/answer</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/install</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://answer.apache.org/docs</Support>
+    <Project>https://answer.apache.org</Project>
+    <Overview>
+        Apache Answer helps you to build a community between your users and your team. It's a place where you can share your knowledge and help your users to solve their problems.    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>apache answer knowledgebase faq support community forum question</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/answer-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/answer.xml</TemplateURL>
+    <Screenshot>https://answer.apache.org/assets/images/profile-laptop@2x-c4b7098e1429603fe6b8409621accf65.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-20
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="80" Default="9080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">9080</Config>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/answer/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/answer/data</Config>
+</Container>
