@@ -4,7 +4,6 @@
     <Repository>registry.gitlab.com/h0st1ng/media/torrents-manager/master:latest</Repository>
     <Registry>registry.gitlab.com/h0st1ng/media/torrents-manager/master</Registry>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://gitlab.com/h0st1ng/media/torrents-manager</Support>
     <Project>https://gitlab.com/h0st1ng/media/torrents-manager</Project>

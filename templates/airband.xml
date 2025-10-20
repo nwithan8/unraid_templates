@@ -19,7 +19,7 @@
         This container runs an Icecast audio server that RTLSDR-Airband can connect to so that you can use an RTLSDR dongle to listen to Air Traffic Control VHF radio communications, as well as some additional kinds of NFM modulated transmissions (see NFM) via a web browser or audio playback program.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>rtl-sdr rtl sdr airband adsb icecast radio antenna</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/airband-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/airband.xml</TemplateURL>

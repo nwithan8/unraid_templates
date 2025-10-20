@@ -8,7 +8,7 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://operational.co/selfhosted/docker</Support>
     <Project>https://operational.co/</Project>
@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-10-20
+
+        Fix port configuration for Web UI
+
         ### 2025-05-04
 
         Update environment variables

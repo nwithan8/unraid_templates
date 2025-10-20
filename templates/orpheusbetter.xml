@@ -15,7 +15,7 @@
         orpheusbetter is a script which automatically transcodes and uploads these files to Orpheus.
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Audio MediaServer:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>flac orpheus scan transcode audio automation upload</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/orpheusbetter-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/orpheusbetter.xml</TemplateURL>

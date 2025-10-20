@@ -15,7 +15,7 @@
     <Overview>
         Koito is a modern, themeable ListenBrainz-compatible scrobbler for self-hosters who want control over their data and insights into their listening habits. It supports relaying to other compatible scrobblers, so you can try it safely without replacing your current setup.    </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <Category>MediaApp:Music Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>scrobbler music listenbrainz audio lastfm</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/koito-icon.png</Icon>
     <Banner>https://raw.githubusercontent.com/gabehf/Koito/refs/heads/main/docs/src/assets/logo_text.png</Banner>
