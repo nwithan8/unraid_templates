@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>SmarterMail</Name>
+    <Repository>smartertools/smartermail:latest</Repository>
+    <Registry>https://hub.docker.com/r/smartertools/smartermail</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://help.smartertools.com</Support>
+    <Project>https://www.smartertools.com/</Project>
+    <Overview>
+        SmarterMail is the Microsoft Exchange alternative, offering the only other email, groupware, and collaboration server on the market with native MAPI support, the same protocol that powers Exchange and Outlook.    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>email mail server collaboration groupware exchange outlook mapi</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/smartermail-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/smartermail.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-20
+
+        Initial release
+    </Changes>
+    <Config Name="HTTP Web UI Port" Target="80" Default="1080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">1080</Config>
+    <Config Name="HTTPS Web UI Port" Target="443" Default="1443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always-hide" Required="true" Mask="false">1443</Config>
+    <Config Name="HTTPS UDP Port" Target="443" Default="1443" Mode="udp" Description="Container Port: 443" Type="Port" Display="always-hide" Required="true" Mask="false">1443</Config>
+    <Config Name="SMTP Port" Target="25" Default="1025" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always-hide" Required="true" Mask="false">1025</Config>
+    <Config Name="SMTP SSL Port" Target="465" Default="1465" Mode="tcp" Description="Container Port: 465" Type="Port" Display="always-hide" Required="true" Mask="false">1465</Config>
+    <Config Name="SMTP TLS Port" Target="587" Default="1587" Mode="tcp" Description="Container Port: 587" Type="Port" Display="always-hide" Required="true" Mask="false">1587</Config>
+    <Config Name="IMAP Port" Target="143" Default="1143" Mode="tcp" Description="Container Port: 143" Type="Port" Display="always-hide" Required="true" Mask="false">1143</Config>
+    <Config Name="IMAP SSL Port" Target="993" Default="1993" Mode="tcp" Description="Container Port: 993" Type="Port" Display="always-hide" Required="true" Mask="false">1993</Config>
+    <Config Name="POP3 Port" Target="110" Default="1110" Mode="tcp" Description="Container Port: 110" Type="Port" Display="always-hide" Required="true" Mask="false">1110</Config>
+    <Config Name="POP3 SSL Port" Target="995" Default="1995" Mode="tcp" Description="Container Port: 995" Type="Port" Display="always-hide" Required="true" Mask="false">1995</Config>
+    <Config Name="XMPP Port" Target="5222" Default="15222" Mode="tcp" Description="Container Port: 5222" Type="Port" Display="always-hide" Required="true" Mask="false">15222</Config>
+    <Config Name="App Data" Target="/app/Data" Default="/mnt/user/appdata/smartermail/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/smartermail/data</Config>
+    <Config Name="System Data" Target="/app/SystemData" Default="/mnt/user/appdata/smartermail/systemdata" Description="Path to the system data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/smartermail/systemdata</Config>
+</Container>
