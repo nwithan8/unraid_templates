@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Bugsink</Name>
+    <Repository>bugsink/bugsink:2</Repository>
+    <Registry>https://hub.docker.com/r/bugsink/bugsink</Registry>
+    <Branch>
+        <Tag>2</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://www.bugsink.com/docs/</Support>
+    <Project>https://www.bugsink.com/</Project>
+    <Overview>
+        Self-hosted Error Tracking
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>code bug tracking error jira board</ExtraSearchTerms>
+    <Icon>https://www.bugsink.com/static/images/bugsink-logo.7a9597e724ff.webp</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/bugsink.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/bugsink_demo_1.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-20
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate PostgresDB instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Generate with `penssl rand -base64 50`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Create Superuser" Target="CREATE_SUPERUSER" Default="admin:admin" Description="Create an initial superuser in the format username:password" Type="Variable" Display="always" Required="false" Mask="true">admin:admin</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="postgresql://user:password@host:port/database" Description="Postgres database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://user:password@host:port/database</Config>
+    <Config Name="Behind HTTPS Proxy" Target="BEHIND_HTTPS_PROXY" Default="false|true" Description="Set to true if running behind an HTTPS terminating proxy" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Base URL" Target="BASE_URL" Default="http://localhost:8000" Description="The base URL where Bugsink will be accessible" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000</Config>
+    <Config Name="Internal Port" Target="PORT" Default="8000" Description="Internal application port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8000</Config>
+</Container>
