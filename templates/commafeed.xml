@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>CommaFeed</Name>
+    <Repository>athou/commafeed:latest-h2</Repository>
+    <Registry>https://hub.docker.com/r/athou/commafeed</Registry>
+    <Branch>
+        <Tag>latest-h2</Tag>
+        <TagDescription>Latest stable release with embedded database</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8082]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Athou/commafeed/issues</Support>
+    <Project>https://www.commafeed.com</Project>
+    <Overview>
+        Google Reader inspired self-hosted RSS reader, based on Quarkus and React/TypeScript.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>rss feed reader news aggregator atom opml google</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/commafeed-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/commafeed.xml</TemplateURL>
+    <Screenshot>https://user-images.githubusercontent.com/1256795/184886828-1973f148-58a9-4c6d-9587-ee5e5d3cc2cb.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-20
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8082" Default="8082" Mode="tcp" Description="Container Port: 8082" Type="Port" Display="always-hide" Required="true" Mask="false">8082</Config>
+    <Config Name="App Data" Target="/commafeed/data" Default="/mnt/user/appdata/commafeed/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/commafeed/data</Config>
+</Container>
