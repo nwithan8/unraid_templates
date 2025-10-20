@@ -681,5 +681,26 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Whishper",
+        "git_url": "https://github.com/pluja/whishper.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "f9e33be9de15956972a804015977250b318de1ca",
+                "commit_message": null
+            },
+            {
+                "file_path": "docker-compose.gpu.yml",
+                "commit_hash": "8dca6cc8971f2e0963ef6892cda8f86d63334aa7",
+                "commit_message": null
+            },
+            {
+                "file_path": "example.env",
+                "commit_hash": "7929a3c8a799e88dc7a8a05da55299cbaad5ecaa",
+                "commit_message": null
+            }
     }
 ]
