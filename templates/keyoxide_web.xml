@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Keyoxide - Web</Name>
+    <Repository>codeberg.org/keyoxide/keyoxide-web:latest</Repository>
+    <Registry>codeberg.org/keyoxide/keyoxide-web</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.keyoxide.org</Support>
+    <Project>https://keyoxide.org/</Project>
+    <Overview>
+        Keyoxide is a privacy-friendly tool to create and verify decentralized online identities.  &#xD;
+        &#xD;
+        This is the web interface. It is recommended to also run a Keyoxide - Proxy container alongside it.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>identity verification decentralized PGP DID</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/keyoxide-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/keyoxide_web.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-20
+
+        Initial release
+    </Changes>
+    <Requires>
+        Recommended to also run a Keyoxide - Proxy instance as well.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Domain" Target="DOMAIN" Default="" Description="The domain on which the instance is hosted" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Onion URL" Target="ONION_URL" Default="" Description="The onion URL that points to the same instance" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Proxy Hostname" Target="PROXY_HOSTNAME" Default="" Description="The hostname and port of the Keyoxide Proxy instance (e.g., IP_ADDRESS:3001)" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="ActivityPub Public Key" Target="ACTIVITYPUB_PUBLIC_KEY" Default="" Description="The public key used to simulate an ActivityPub account and sign HTTP requests" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Experimental - Enable Cache" Target="ENABLE_EXPERIMENTAL_CACHE" Default="false|true" Description="Enable the experimental caching mechanism to improve performance" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Experimental - Enable Rate Limiter" Target="ENABLE_EXPERIMENTAL_RATE_LIMITER" Default="false|true" Description="Enable the experimental rate limiting feature to prevent abuse" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Port" Target="PORT" Default="3000" Description="The internal port the web interface listens on. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Act as Proxy" Target="ENABLE_PROXY_MODULE" Default="false" Description="Disable proxy functionality. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">false</Config>
+</Container>

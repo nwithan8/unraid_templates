@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Keyoxide - Proxy</Name>
+    <Repository>codeberg.org/keyoxide/keyoxide-web:latest</Repository>
+    <Registry>codeberg.org/keyoxide/keyoxide-web</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.keyoxide.org</Support>
+    <Project>https://keyoxide.org/</Project>
+    <Overview>
+        Keyoxide is a privacy-friendly tool to create and verify decentralized online identities.  &#xD;
+        &#xD;
+        This is the proxy interface. It is recommended to also run a Keyoxide - Web container alongside it.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>identity verification decentralized PGP DID</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/keyoxide-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/keyoxide_proxy.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-20
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a Keyoxide - Web instance to be running alongside this container.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3001" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3001</Config>
+    <Config Name="Domain" Target="DOMAIN" Default="" Description="The domain on which the instance is hosted" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="ActivityPub - URL" Target="ACTIVITYPUB_URL" Default="" Description="The URL of the simulated ActivityPub account (e.g. https://KEYOXIDE_WEB_DOMAIN/user/keyoxide)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="ActivityPub - Private Key" Target="ACTIVITYPUB_PRIVATE_KEY" Default="" Description="The private key used to simulate an ActivityPub account and sign HTTP requests" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="IRC Nickname" Target="IRC_NICK" Default="" Description="The nick of your IRC verifier account" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Matrix - Access Token" Target="MATRIX_ACCESS_TOKEN" Default="" Description="The access token of your Matrix verifier account" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Matrix - Instance" Target="MATRIX_INSTANCE" Default="" Description="The URL of the Matrix instance your verifier account is hosted on" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Matrix - Room" Target="MATRIX_ROOM_ID" Default="!dBfQZxCoGVmSTujfiv:matrix.org" Description="The ID of the Matrix room your verifier account will use" Type="Variable" Display="always" Required="false" Mask="false">!dBfQZxCoGVmSTujfiv:matrix.org</Config>
+    <Config Name="Telegram - Token" Target="TELEGRAM_TOKEN" Default="" Description="The bot token of your Telegram verifier bot" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="XMPP - Service" Target="XMPP_SERVICE" Default="" Description="The hostname of your XMPP verifier account" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="XMPP - Username" Target="XMPP_USERNAME" Default="" Description="The username of your XMPP verifier account" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="XMPP - Password" Target="XMPP_PASSWORD" Default="" Description="The password of your XMPP verifier account" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Act as Web" Target="ENABLE_MAIN_MODULE" Default="false" Description="Disable web interface functionality. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">false</Config>
+</Container>
