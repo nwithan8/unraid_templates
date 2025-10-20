@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+    <Name>Aonsoku</Name>
+    <Repository>ghcr.io/victoralvesf/aonsoku:latest</Repository>
+    <Registry>ghcr.io/victoralvesf/aonsoku</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/victoralvesf/aonsoku/issues</Support>
+    <Project>https://aonsoku.vercel.app</Project>
+    <Overview>
+        A modern client for Navidrome/Subsonic servers built with React and Rust.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Audio Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>music audio files navidrome subsonic streaming player</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/victoralvesf/aonsoku/main/src-tauri/icons/128x128.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/aonsoku.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/victoralvesf/aonsoku/main/media/home.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/victoralvesf/aonsoku/main/media/album.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/victoralvesf/aonsoku/main/media/playlist.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/victoralvesf/aonsoku/main/media/albums.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/victoralvesf/aonsoku/main/media/albumsByArtist.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/victoralvesf/aonsoku/main/media/artist.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/victoralvesf/aonsoku/main/media/player.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/victoralvesf/aonsoku/main/media/lyrics.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-19
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Subsonic API-compatible server (e.g. Navidrome)
+    </Requires>
+    <Config Name="Server URL" Target="SERVER_URL" Default="" Description="Pre-define a Subsonic URL (e.g., http://your-subsonic-server:port)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Hide Server Field" Target="HIDE_SERVER" Default="false|true" Description="Hide the server URL field in the login screen" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Auto-Login - User" Target="APP_USER" Default="" Description="Pre-define a username for auto-login" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Auto-Login - Password" Target="APP_PASSWORD" Default="" Description="Pre-define a password for auto-login" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Auth Type" Target="APP_AUTH_TYPE" Default="token|password" Description="Authentication type to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Server Type" Target="SERVER_TYPE" Default="subsonic|navidrome|lms" Description="Type of server to connect to" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Hide Radio Section" Target="HIDE_RADIOS_SECTION" Default="false|true" Description="Hide the radio section in the app" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Internal Port" Target="PORT" Default="8080" Description="Internal port for server" Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
+</Container>
