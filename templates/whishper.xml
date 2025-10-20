@@ -12,7 +12,7 @@
         <TagDescription>Latest stable release with Nvidia GPU support</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <WebUI>http://[IP]:[PORT:8082]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://whishper-docs.pages.dev</Support>
     <Project>https://whishper-docs.pages.dev/</Project>
@@ -35,6 +35,7 @@
     <Requires>
         Requires separate MongoDB and LibreTranslate instances.
     </Requires>
+    <Config Name="Web UI Port" Target="8082" Default="8082" Mode="tcp" Description="Container Port: 8082" Type="Port" Display="always-hide" Required="true" Mask="false">8082</Config>
     <Config Name="Profile" Target="PUBLIC_WHISHPER_PROFILE" Default="cpu|gpu" Description="Set to 'gpu' to use GPU. Need to select GPU-compatible image variant." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="LibreTranslate URL" Target="PUBLIC_TRANSLATION_API_HOST" Default="http://libretranslate:8080" Description="The URL of the LibreTranslate instance to use for translations." Type="Variable" Display="always-hide" Required="true" Mask="false">http://libretranslate:8080</Config>
     <Config Name="Whisper Server" Target="PUBLIC_API_HOST" Default="localhost:8082" Description="The hostname where Whishper is being served, without the protocol." Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost:8082</Config>

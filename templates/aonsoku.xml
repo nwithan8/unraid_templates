@@ -39,6 +39,7 @@
     <Requires>
         Requires a separate Subsonic API-compatible server (e.g. Navidrome)
     </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
     <Config Name="Server URL" Target="SERVER_URL" Default="" Description="Pre-define a Subsonic URL (e.g., http://your-subsonic-server:port)" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Hide Server Field" Target="HIDE_SERVER" Default="false|true" Description="Hide the server URL field in the login screen" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Auto-Login - User" Target="APP_USER" Default="" Description="Pre-define a username for auto-login" Type="Variable" Display="always" Required="false" Mask="false"/>
