@@ -8,7 +8,7 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:8777]/</WebUI>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/dopeytree/TVx/issues</Support>
     <Project>https://github.com/dopeytree/TVx</Project>
