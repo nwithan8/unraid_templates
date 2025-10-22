@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>AdventureLog - Frontend</Name>
     <Repository>ghcr.io/seanmorley15/adventurelog-frontend:latest</Repository>
     <Registry>https://github.com/seanmorley15/AdventureLog/pkgs/container/adventurelog-frontend</Registry>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>SurfSense - Frontend</Name>
     <Repository>ghcr.io/modsetter/surfsense_ui:latest</Repository>
     <Registry>ghcr.io/modsetter/surfsense_ui</Registry>
@@ -43,7 +43,7 @@
     <Config Name="Backend - URL" Target="NEXT_PUBLIC_FASTAPI_BACKEND_URL" Default="http://MY_IP_ADDRESS:3001" Description="URL of the FastAPI backend service, including port. Should match other Backend URL." Type="Variable" Display="always-hide" Required="true" Mask="false">http://MY_IP_ADDRESS:3001</Config>
     <Config Name="Backend - Authentication Type" Target="NEXT_PUBLIC_FASTAPI_BACKEND_AUTH_TYPE" Default="LOCAL|GOOGLE" Description="Authentication type used by the backend." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Backend - ETL Service" Target="NEXT_PUBLIC_ETL_SERVICE" Default="UNSTRUCTURED|LLAMACLOUD|DOCLING" Description="Document parsing service used by the backend." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Database - Postgres URL" Target="DATABASE_URL" Default="postgresql://postgres:MY_PASSWORD@db.sdsf.supabase.co:5432/postgres" Description="PostgreSQL database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://postgres:MY_PASSWORD@db.sdsf.supabase.co:5432/postgres
+    <Config Name="Database - Postgres URL" Target="DATABASE_URL" Default="postgresql://postgres:MY_PASSWORD@db.sdsf.supabase.co:5432/postgres" Description="PostgreSQL database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://postgres:MY_PASSWORD@db.sdsf.supabase.co:5432/postgres</Config>
     <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/surfsense/frontend/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/frontend/data</Config>
     <Config Name="App Node Modules" Target="/app/node_modules" Default="/mnt/user/appdata/surfsense/frontend/node_modules" Description="Path to node modules" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/frontend/node_modules</Config>
 </Container>
