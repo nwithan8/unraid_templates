@@ -702,5 +702,18 @@
                 "commit_hash": "7929a3c8a799e88dc7a8a05da55299cbaad5ecaa",
                 "commit_message": null
             }
+        ]
+    },
+    {
+        "app_name": "TVx",
+        "git_url": "https://github.com/dopeytree/TVx.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "72bfb3ec783526b137ce98f425e4a9e809628126",
+                "commit_message": null
+            }
+        ]
     }
 ]
