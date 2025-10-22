@@ -29,6 +29,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-10-21
+
+        Add missing environment variables
+
         ### 2025-10-13
 
         Initial release
@@ -36,6 +40,8 @@
     <Requires>
         Requires an M3U playlist and optional XMLTV (EPG) guide file. Tunarr or Dizquetv paired with Plex, Emby or Jellyfin recommended.
     </Requires>
-    <Config Name="Web UI Port" Target="8777" Default="8777" Mode="tcp" Description="Container Port: 8777" Type="Port" Display="always-hide" Required="true" Mask="false">8777</Config>
-    <Config Name="Nvidia SMI Mode" Target="NVIDIA_SMI" Default="false|true" Description="Force nvidia-smi mode (for older GPUs)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Web UI Port" Target="80" Default="8777" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8777</Config>
+    <Config Name="M3U URL" Target="VITE_M3U_URL" Default="http://your-tunarr-ip-address:8000/api/channels.m3u" Description="M3U URL for IPTV stream" Type="Variable" Display="always-hide" Required="true" Mask="false">http://your-tunarr-ip-address:8000/api/channels.m3u</Config>
+    <Config Name="XMLTV URL" Target="VITE_XMLTV_URL" Default="http://your-tunarr-ip-address:8000/api/xmltv.xml" Description="EPG URL for IPTV stream" Type="Variable" Display="always-hide" Required="true" Mask="false">http://your-tunarr-ip-address:8000/api/xmltv.xml</Config>
+    <Config Name="App Data" Target="/config" Default="/mnt/user/appdata/tvx/config" Mode="rw" Description="Path for persistent storage of settings, configuration files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/tvx/config</Config>
 </Container>
