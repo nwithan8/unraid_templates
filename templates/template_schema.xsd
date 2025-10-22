@@ -7,7 +7,7 @@
                 <xs:element name="Name" minOccurs="1" maxOccurs="1">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
-                            <xs:pattern value="[\S\s]+"/> <!-- Non-empty string -->
+                            <xs:pattern value="^[A-Za-z0-9\s\-]*$"/>  <!-- Non-empty string, letters, numbers, spaces, hyphens -->
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
