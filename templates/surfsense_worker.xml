@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/template_schema.xsd template_schema.xsd">
-    <Name>SurfSense - Backend</Name>
+    <Name>SurfSense - Worker</Name>
     <Repository>ghcr.io/modsetter/surfsense_backend:latest</Repository>
     <Registry>ghcr.io/modsetter/surfsense_backend</Registry>
     <Branch>
@@ -15,27 +15,19 @@
     <Overview>
         Open Source Alternative to NotebookLM / Perplexity / Glean, connected to external sources such as search engines (Tavily, Linkup), Slack, Linear, Notion, YouTube, GitHub, Discord and more. &#xD;
         [br]
-        This is the backend container.
+        This is the worker container.
     </Overview>
     <Beta>False</Beta>
     <Category>AI: MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>notebooklm llm erplexity glean ai search engine slack linear notion youtube github discord podcast notes text corpus</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/surfsense-icon.png</Icon>
     <Banner>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/surfsense-banner.png</Banner>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/surfsense_backend.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/surfsense_worker.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
         ### 2025-10-22
-
-        Add missing environmental variables
-
-        ### 2025-07-22
-
-        Add support for Docling as an ETL service
-
-        ### 2025-06-05
 
         Initial release
     </Changes>
@@ -70,17 +62,14 @@
     <Config Name="LlamaCloud - API Key" Target="LLAMA_CLOUD_API_KEY" Default="" Description="API key for LlamaCloud service for document parsing. Required if ETL Service is set to LLAMACLOUD" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Redis - URL" Target="CELERY_BROKER_URL" Default="redis://MY_IP_ADDRESS:6379/0" Description="URL of the Redis instance used as Celery broker, including port" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://MY_IP_ADDRESS:6379/0</Config>
     <Config Name="Redis - Results URL" Target="CELERY_RESULT_BACKEND" Default="redis://MY_IP_ADDRESS:6379/0" Description="URL of the Redis instance used as Celery result backend, including port. Must match CELERY_BROKER_URL" Type="Variable" Display="always-hide" Required="true" Mask="false">redis://MY_IP_ADDRESS:6379/0</Config>
-    <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/surfsense/backend/data" Description="Path to store app data. Must match Worker" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/backend/data</Config>
+    <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/surfsense/backend/data" Description="Path to store app data. Must match Backend" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/backend/data</Config>
     <Config Name="Temp Data" Target="/tmp" Default="/mnt/user/appdata/surfsense/shared/tmp" Description="Path to store temporary data. Must be shared between containers." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/shared/tmp</Config>
-    <Config Name="LangSmith - Tracing" Target="LANGSMITH_TRACING" Default="false" Description="Enable LangSmith tracing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">false</Config>
+    <Config Name="LangSmith - Tracing" Target="LANGSMITH_TRACING" Default="true" Description="Enable LangSmith tracing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">true</Config>
     <Config Name="LangSmith - Endpoint" Target="LANGSMITH_ENDPOINT" Default="https://api.smith.langchain.com" Description="LangSmith API endpoint. Default is https://api.smith.langchain.com, change only if you know what you're doing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://api.smith.langchain.com</Config>
     <Config Name="LangSmith - Project Name" Target="LANGSMITH_PROJECT" Default="" Description="LangSmith project name." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
     <Config Name="LangSmith - API Key" Target="LANGSMITH_API_KEY" Default="" Description="API key for LangSmith tracing. Required if LANGSMITH_TRACING is enabled." Type="Variable" Display="advanced-hide" Required="false" Mask="true"/>
     <Config Name="Uvicorn - Host" Target="UVICORN_HOST" Default="0.0.0.0" Description="Uvicorn host address. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
     <Config Name="Uvicorn - Port" Target="UVICORN_PORT" Default="8000" Description="Uvicorn port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8000</Config>
     <Config Name="Uvicorn - Log Level" Target="UVICORN_LOG_LEVEL" Default="info" Description="Uvicorn log level. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">info</Config>
-    <Config Name="Uvicorn - Loop" Target="UVICORN_LOOP" Default="asyncio" Description="Uvicorn loop type. Default is asyncio, change only if you know what you're doing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">asyncio</Config>
     <Config Name="Internal Python Path" Target="PYTHONPATH" Default="/app" Description="Internal Python path for the application. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app</Config>
-    <Config Name="Unstructured Has Patched Loop" Target="UNSTRUCTURED_HAS_PATCHED_LOOP" Default="1" Description="Unstructured library patched loop. Default is 1, change only if you know what you're doing." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
-    <Config Name="LangChain - Tracing V2" Target="LANGCHAIN_TRACING_V2" Default="false" Description="Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">false</Config>
 </Container>

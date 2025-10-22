@@ -450,9 +450,14 @@
                 "commit_message": "feat: added celery and removed background_tasks for MQ's\n\n- removed pre commit hooks\n- updated docker setup\n- updated github docker actions\n- updated docs\n"
             },
             {
-                "file_path": "docker-compose.override.yml",
-                "commit_hash": "c80bbfa86710614f73d4bb8000fe47663781e6c9",
-                "commit_message": "feat: added celery and removed background_tasks for MQ's\n\n- removed pre commit hooks\n- updated docker setup\n- updated github docker actions\n- updated docs\n"
+                "file_path": "surfsense_backend/env.example",
+                "commit_hash": "19ed0becce8ae78ed62287b9c97371c2510c58c2",
+                "commit_message": null
+            },
+            {
+                "file_path": "surfsense_web/.env.example",
+                "commit_hash": "ba62489715c559772fded136eeaff128e84ef712",
+                "commit_message": null
             }
         ]
     },
