@@ -398,8 +398,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/compose.yaml",
-                "commit_hash": "1d9f6146af7f4be7fcf2f3ccf17901fffafaacd6",
-                "commit_message": null
+                "commit_hash": "f776c3daa598f52ad1a08c34427e707585c1c2e9",
+                "commit_message": "chore: update docker infrastructure\n"
             }
         ]
     },
@@ -446,13 +446,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "bfeae0cb6766c604cc7393d7269df50cfeefec08",
-                "commit_message": null
+                "commit_hash": "c80bbfa86710614f73d4bb8000fe47663781e6c9",
+                "commit_message": "feat: added celery and removed background_tasks for MQ's\n\n- removed pre commit hooks\n- updated docker setup\n- updated github docker actions\n- updated docs\n"
             },
             {
                 "file_path": "docker-compose.override.yml",
-                "commit_hash": "d4f0613865b506eb1e689225b5d8744d5620e238",
-                "commit_message": "Fixed docker build hook to build for all architectures\n"
+                "commit_hash": "c80bbfa86710614f73d4bb8000fe47663781e6c9",
+                "commit_message": "feat: added celery and removed background_tasks for MQ's\n\n- removed pre commit hooks\n- updated docker setup\n- updated github docker actions\n- updated docs\n"
             }
         ]
     },
@@ -545,8 +545,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "dee1b3b2ba90d7fc6fcc3b5ec83e5492eefbe026",
-                "commit_message": "Addition of GARMIN_SERVICE_IS_CN to docker/.env.example\n"
+                "commit_hash": "d1a851abdf5c683e37fc056e0ca8e00607f7e37e",
+                "commit_message": "report\n"
             }
         ]
     },
@@ -557,8 +557,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/.vitepress/components/DockerCompose.vue",
-                "commit_hash": "d65f2bfc37740b0f5deffe7d22b2e259d9278b4e",
-                "commit_message": null
+                "commit_hash": "8434cee6834bff488385edc1a751e84c3a9a2516",
+                "commit_message": "Update Docker Compose Builder (#207)\n\n"
             }
         ]
     },
