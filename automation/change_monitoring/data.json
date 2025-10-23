@@ -446,8 +446,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "c80bbfa86710614f73d4bb8000fe47663781e6c9",
-                "commit_message": "feat: added celery and removed background_tasks for MQ's\n\n- removed pre commit hooks\n- updated docker setup\n- updated github docker actions\n- updated docs\n"
+                "commit_hash": "aed8163aee3a162201b34dde479669bddc6010e7",
+                "commit_message": "feat: added celery beat to docker\n"
             },
             {
                 "file_path": "surfsense_backend/env.example",
@@ -716,8 +716,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "72bfb3ec783526b137ce98f425e4a9e809628126",
-                "commit_message": null
+                "commit_hash": "5177ac9709b48b169d72c69048488fad19637e4b",
+                "commit_message": "rate limiting & security hardening for server\n"
             }
         ]
     }
