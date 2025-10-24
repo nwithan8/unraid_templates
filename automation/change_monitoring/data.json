@@ -446,8 +446,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "aed8163aee3a162201b34dde479669bddc6010e7",
-                "commit_message": "feat: added celery beat to docker\n"
+                "commit_hash": "c0e47d63f8652f5ca91b9c4ee8713e9098ce7039",
+                "commit_message": "fix: docker\n"
             },
             {
                 "file_path": "surfsense_backend/env.example",
@@ -716,8 +716,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "5177ac9709b48b169d72c69048488fad19637e4b",
-                "commit_message": "rate limiting & security hardening for server\n"
+                "commit_hash": "1f685289b12703bcc985858b289c1bce62fcfd87",
+                "commit_message": "updated UID 99 appuser for permissions\n"
             }
         ]
     }
