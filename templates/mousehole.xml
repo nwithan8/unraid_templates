@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Mousehole</Name>
+    <Repository>tmmrtn/mousehole:latest</Repository>
+    <Registry>https://hub.docker.com/r/tmmrtn/mousehole</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5010]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/t-mart/mousehole/issues</Support>
+    <Project>https://github.com/t-mart/mousehole</Project>
+    <Overview>
+        A background service to update a seedbox IP for MAM and an HTTP server to manage it.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>seedbox mam dynamic ip updater dyndns torrent</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mousehole-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mousehole.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/t-mart/mousehole/master/docs/demo.webp</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-25
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="5010" Default="5010" Mode="tcp" Description="Container Port: 5010" Type="Port" Display="always-hide" Required="true" Mask="false">5010</Config>
+    <Config Name="User Agent" Target="MOUSEHOLE_USER_AGENT" Default="mousehole-by-timtimtim" Description="The user agent to use for requests to MAM." Type="Variable" Display="always-hide" Required="true" Mask="false">mousehole-by-timtimtim</Config>
+    <Config Name="Check Interval" Target="MOUSEHOLE_CHECK_INTERVAL_SECONDS" Default="300" Description="The interval in seconds between checks." Type="Variable" Display="always-hide" Required="true" Mask="false">300</Config>
+    <Config Name="Response Interval" Target="MOUSEHOLE_STALE_RESPONSE_SECONDS" Default="86400" Description="he number of seconds after which a MAM response is considered stale." Type="Variable" Display="always-hide" Required="true" Mask="false">86400</Config>
+    <Config Name="App Data" Target="/srv/mousehole" Default="/mnt/user/appdata/mousehole/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/mousehole/data</Config>
+    <Config Name="Internal Port" Target="MOUSEHOLE_PORT" Default="5010" Description="Port for the internal HTTP server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">5010</Config>
+    <Config Name="Internal Data Path" Target="MOUSEHOLE_STATE_DIR_PATH" Default="/srv/mousehole" Description="Path to store internal state data. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/srv/mousehole</Config>
+</Container>
