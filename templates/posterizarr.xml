@@ -13,7 +13,7 @@
     <Support>https://github.com/fscorrupt/Posterizarr/issues</Support>
     <Project>https://github.com/fscorrupt/Posterizarr</Project>
     <Overview>
-        Automated poster maker for Plex/Jellyfin/Emby.
+        Automated poster maker for Plex/Jellyfin/Emby with a full Web UI.
     </Overview>
     <Beta>False</Beta>
     <Category>Tools: MediaServer Other: Status:Stable</Category>
@@ -24,33 +24,32 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
-        ### 2025-04-08
+        ### 2025-10-27
+        - Add Web UI Port for v2.0.0
+        - Set RUN_TIME variable default to 'disabled' (use UI scheduler) and move to advanced view.
 
+        ### 2025-04-08
         - Remove PUID/PGID in favor of --user 099:100
         - Change Docker image source
 
         ### 2024-11-08
+        - Add additional paths
 
-        Add additional paths
-        
         ### 2024-08-25
-
-        Use Unraid-default PUID and PGID
+        - Use Unraid-default PUID and PGID
 
         ### 2024-04-30
-
-        Fix port mapping via bridge network
+        - Fix port mapping via bridge network
 
         ### 2024-04-27
-
-        Add missing asset path
+        - Add missing asset path
 
         ### 2024-04-24
-
-        Initial release
+        - Initial release
     </Changes>
     <ExtraParams>--user 099:100</ExtraParams>
-    <Config Name="Run time" Target="RUN_TIME" Default="00:00" Description="Comma-separated list of times to run the script. Format: HH:MM (24-hour time)" Type="Variable" Display="always-hide" Required="true" Mask="false">00:00</Config>
+    <Config Name="Web UI" Target="8000" Default="8000" Mode="tcp" Description="Port for the Web UI. Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+    <Config Name="Run time" Target="RUN_TIME" Default="disabled" Description="[Advanced] Set the run time (e.g., 00:00) or set to 'disabled' to use the Web UI scheduler (recommended)." Type="Variable" Display="advanced" Required="true" Mask="false">disabled</Config>
     <Config Name="UMASK" Target="UMASK" Default="002" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">002</Config>
     <Config Name="TERM" Target="TERM" Default="xterm" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">xterm</Config>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/posterizarr" Mode="rw" Description="Storage for config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/posterizarr</Config>
