@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>ViniPlay</Name>
+    <Repository>ardovini/viniplay:latest</Repository>
+    <Registry>https://hub.docker.com/r/ardovini/viniplay</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8998]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ardoviniandrea/ViniPlay/issues</Support>
+    <Project>https://github.com/ardoviniandrea/ViniPlay</Project>
+    <Overview>
+        A powerful, self-hosted IPTV player with a modern web interface. Stream your M3U playlists with EPG data, manage users, cast to your TV, and watch multiple channels at once. &#xD;
+        For Nvidia GPU transcoding support, add "--gpus all" to the Extra Parameters field under Advanced. &#xD;
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>iptv m3u epg cast streaming vlc video player xtreamcodes</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/viniplay-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/viniplay.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/ardoviniandrea/ViniPlay/main/images/viniplay-main%20ux-min.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-27
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8998" Default="8998" Mode="tcp" Description="Container Port: 8998" Type="Port" Display="always-hide" Required="true" Mask="false">8998</Config>
+    <Config Name="DVR Recordings" Target="/dvr" Default="/mnt/user/dvr/viniplay/dvr" Description="Path to DVR recordings" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/dvr/viniplay/dvr</Config>
+    <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Description="A long random string used to secure sessions" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="VAPID Contact Email" Target="VAPID_CONTACT_EMAIL" Default="mailto:admin@example.com" Description="Add a contact email for VAPID push notifications. This is required by push services. It should start with mailto:" Type="Variable" Display="always-hide" Required="true" Mask="false">mailto:admin@example.com</Config>
+    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/viniplay/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/viniplay/data</Config>
+</Container>

@@ -732,5 +732,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "ViniPlay",
+        "git_url": "https://github.com/ardoviniandrea/ViniPlay.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "72d0d979cce9c821a77783459dc6e2d0dfb1bdd6",
+                "commit_message": null
+            }
+        ]
     }
 ]
