@@ -8,6 +8,7 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Support>https://github.com/fscorrupt/Posterizarr/issues</Support>
@@ -25,26 +26,33 @@
     </Maintainer>
     <Changes>
         ### 2025-10-27
+        
         - Add Web UI Port for v2.0.0
         - Set RUN_TIME variable default to 'disabled' (use UI scheduler) and move to advanced view.
 
         ### 2025-04-08
+        
         - Remove PUID/PGID in favor of --user 099:100
         - Change Docker image source
 
         ### 2024-11-08
+        
         - Add additional paths
 
         ### 2024-08-25
+        
         - Use Unraid-default PUID and PGID
 
         ### 2024-04-30
+        
         - Fix port mapping via bridge network
 
         ### 2024-04-27
+        
         - Add missing asset path
 
         ### 2024-04-24
+        
         - Initial release
     </Changes>
     <ExtraParams>--user 099:100</ExtraParams>
