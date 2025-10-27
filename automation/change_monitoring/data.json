@@ -545,13 +545,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "87c835752882d284074bda9098b552ba3e3687d4",
-                "commit_message": "Garmin env update\n"
+                "commit_hash": "f4ea0300fe3b12f62e5739745ff0306ba7887634",
+                "commit_message": "DOcker compose & env variable update for new DB user/password\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "d1a851abdf5c683e37fc056e0ca8e00607f7e37e",
-                "commit_message": "report\n"
+                "commit_hash": "f4ea0300fe3b12f62e5739745ff0306ba7887634",
+                "commit_message": "DOcker compose & env variable update for new DB user/password\n"
             }
         ]
     },
