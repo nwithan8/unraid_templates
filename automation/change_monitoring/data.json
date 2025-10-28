@@ -550,8 +550,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "f4ea0300fe3b12f62e5739745ff0306ba7887634",
-                "commit_message": "DOcker compose & env variable update for new DB user/password\n"
+                "commit_hash": "9473d407b66ddd439b746e6b33d4f742dda7b7fd",
+                "commit_message": "DB user bug fix and RLS policy improvements\n"
             }
         ]
     },
@@ -716,8 +716,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "1f685289b12703bcc985858b289c1bce62fcfd87",
-                "commit_message": "updated UID 99 appuser for permissions\n"
+                "commit_hash": "556dcb8ba13595e9b418b585cbfb997ec11a8bdb",
+                "commit_message": "revert: go back to nodejs user (UID 1001) that was working on Unraid\n\nThe appuser (UID 99) change was causing logging permission issues.\nReverting to the nodejs user setup that was working before.\n"
             }
         ]
     },
