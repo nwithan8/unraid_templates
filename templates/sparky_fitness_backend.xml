@@ -8,7 +8,6 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>sparkyfitness</Network>
-    <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://codewithcj.github.io/SparkyFitness</Support>
     <Project>https://github.com/CodeWithCJ/SparkyFitness</Project>
