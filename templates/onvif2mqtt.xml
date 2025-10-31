@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>ONVIF2MQTT</Name>
+    <Repository>kosdk/onvif2mqtt:latest</Repository>
+    <Registry>https://hub.docker.com/r/kosdk/onvif2mqtt</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Cossey/onvif2mqtt/issues</Support>
+    <Project>https://github.com/Cossey/onvif2mqtt</Project>
+    <Overview>
+        Translate ONVIF events (from IP Cameras) to MQTT messages.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>HomeAutomation: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>mqtt camera onvif ip camera event motion detection</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/onvif2mqtt-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/onvif2mqtt.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a "config.yml" file to be available in the Config Path folder before starting the container. See configuration details: https://github.com/Cossey/onvif2mqtt?tab=readme-ov-file#configuration
+    </Requires>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/onvif2mqtt/config" Description="Path to the configuration folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/onvif2mqtt/config</Config>
+</Container>
