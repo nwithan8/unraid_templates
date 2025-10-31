@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>RTL-TCP</Name>
+    <Repository>kosdk/rtl-tcp:latest</Repository>
+    <Registry>https://hub.docker.com/r/kosdk/rtl-tcp</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/Cossey/docker/blob/master/rtl-tcp/README.md</Support>
+    <Project>https://github.com/Cossey/docker/tree/master/rtl-tcp</Project>
+    <Overview>
+        RTL-SDR TCP server for RTL-SDR dongles.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>rtl-sdr software defined radio sdr tcp server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/rtl-tcp-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/rtl_tcp.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Edit Extra Parameters and pass in the proper device (find by running "ls /dev" in a terminal)
+    </Requires>
+    <ExtraParams>--device=/dev/ttyAMA0</ExtraParams>
+    <Config Name="Listening Port" Target="1234" Default="1234" Mode="tcp" Description="Container Port: 1234" Type="Port" Display="always-hide" Required="true" Mask="false">1234</Config>
+    <Config Name="Device Index" Target="DEVICE" Default="0" Description="RTL-SDR device index (0 for first device, 1 for second, etc.)" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Gain" Target="GAIN" Default="0" Description="Gain setting for the RTL-SDR device. Use 0 for automatic gain." Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Buffers" Target="BUFFERS" Default="" Description="Number of buffers to use. Leave empty for default." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="List Buffers" Target="LIST_BUFFERS" Default="500" Description="Max number of linked list buffers to keep" Type="Variable" Display="always-hide" Required="true" Mask="false">500</Config>
+    <Config Name="PPM Error" Target="PPM_ERROR" Default="0" Description="PPM error correction for the RTL-SDR device" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="Frequency" Target="FREQUENCY" Default="" Description="Tuning frequency in Hz" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Sample Rate" Target="SAMPLE_RATE" Default="2048000" Description="Sample rate in samples per second" Type="Variable" Display="always-hide" Required="true" Mask="false">2048000</Config>
+    <Config Name="Enable bias-T on GPIO PIN 0" Target="BIAS_T" Default="false|true" Description="Enable bias-T on GPIO PIN 0 (required for some devices)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Listening Port" Target="LISTEN_IP" Default="1234" Description="Internal port the interface listens on. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1234</Config>
+</Container>
