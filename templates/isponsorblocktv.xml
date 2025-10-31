@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>iSponsorBlockTV</Name>
+    <Repository>ghcr.io/dmunozv04/isponsorblocktv:latest</Repository>
+    <Registry>ghcr.io/dmunozv04/isponsorblocktv</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <WebUI>http://[IP]:[PORT:1166]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dmunozv04/iSponsorBlockTV/wiki/Installation</Support>
+    <Project>https://github.com/dmunozv04/iSponsorBlockTV</Project>
+    <Overview>
+        iSponsorBlockTV is a self-hosted application that connects to your YouTube TV app (see compatibility below) and automatically skips segments (like Sponsors or intros) in YouTube videos using the SponsorBlock API. It can also auto mute and press the "Skip Ad" button the moment it becomes available on YouTube ads.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>youtube ads skip sponsorblock isponsorblocktv isponsorblock tv auto mute skip ad intro outro advertisement</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/isponsorblocktv-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/isponsorblocktv.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Run in host network mode to auto-discover YouTube TV devices on your network. &#xD;
+        &#xD;
+        Requires running initially with **--setup-cli** added to Extra Parameters and opening a Console session to complete initial setup. See setup instructions: https://github.com/dmunozv04/iSponsorBlockTV/wiki/Installation#option-2-using-the-text-based-cli-configurator-tool
+    </Requires>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/isponsorblocktv/data" Description="Path to the app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/isponsorblocktv/data</Config>
+</Container>
