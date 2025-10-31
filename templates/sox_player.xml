@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>SOX Player</Name>
+    <Repository>kosdk/soxplayer:latest</Repository>
+    <Registry>https://hub.docker.com/r/kosdk/soxplayer</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Cossey/docker/blob/master/soxplayer/APIDOCS.md</Support>
+    <Project>https://github.com/Cossey/docker/tree/master/soxplayer</Project>
+    <Overview>
+        Play sounds on a host machine. Comes with a simple HTTP API for playing back audio on demand from a remote process or system. Designed for use in playing pre-recorded audio notifications for home automation software (openHAB).
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>sox sound audio player http api home automation openhab</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/sox-player-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/sox_player.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-31
+
+        Initial release
+    </Changes>
+    <Config Name="API Port" Target="3859" Default="3859" Mode="tcp" Description="Container Port: 3859" Type="Port" Display="always-hide" Required="true" Mask="false">3859</Config>
+    <Config Name="Output Device" Target="/dev/snd" Default="" Description="Path to the output sound device (e.g., /dev/snd)" Type="Device" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Sound Files" Target="/data" Default="" Description="Path to the folder containing sound files to be played" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Deny File Listing" Target="DENY_LIST" Default="false|true" Description="If true, prevents listing of available sound files via the API" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Internal API Port" Target="PORT" Default="3859" Description="Internal port the API listens on. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3859</Config>
+    <Config Name="Internal Sound Files Location" Target="LOCATION" Default="/data" Description="Internal path to the sound files location. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data</Config>
+</Container>
