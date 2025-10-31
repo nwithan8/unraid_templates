@@ -27,11 +27,8 @@
 
         Initial release
     </Changes>
-    <Requires>
-        Edit Extra Parameters and pass in the proper device (find by running "ls /dev" in a terminal)
-    </Requires>
-    <ExtraParams>--device=/dev/ttyAMA0</ExtraParams>
     <Config Name="Listening Port" Target="1234" Default="1234" Mode="tcp" Description="Container Port: 1234" Type="Port" Display="always-hide" Required="true" Mask="false">1234</Config>
+    <Config Name="RTL-SDR Devicr" Target="/dev/bus/usb" Default="/dev/bus/usb" Description="USB device to use for the RTL-SDR device" Type="Device" Mode="ro" Display="always-hide" Required="true" Mask="false">/dev/bus/usb</Config>
     <Config Name="Device Index" Target="DEVICE" Default="0" Description="RTL-SDR device index (0 for first device, 1 for second, etc.)" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
     <Config Name="Gain" Target="GAIN" Default="0" Description="Gain setting for the RTL-SDR device. Use 0 for automatic gain." Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
     <Config Name="Buffers" Target="BUFFERS" Default="" Description="Number of buffers to use. Leave empty for default." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
