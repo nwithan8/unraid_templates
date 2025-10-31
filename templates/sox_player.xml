@@ -15,7 +15,7 @@
         Play sounds on a host machine. Comes with a simple HTTP API for playing back audio on demand from a remote process or system. Designed for use in playing pre-recorded audio notifications for home automation software (openHAB).
     </Overview>
     <Beta>False</Beta>
-    <Category>MediaApp:Music Productivity: Tools: Other: Status:Stable</Category>
+    <Category>HomeAutomation: MediaApp:Music Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>sox sound audio player http api home automation openhab</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/sox-player-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/sox_player.xml</TemplateURL>

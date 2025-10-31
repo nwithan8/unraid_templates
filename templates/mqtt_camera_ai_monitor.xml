@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>MQTT Camera AI Monitor</Name>
+    <Repository>kosdk/mqtt-camera-ai-monitor:latest</Repository>
+    <Registry>https://hub.docker.com/r/kosdk/mqtt-camera-ai-monitor</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Cossey/mqtt-camera-ai-monitor/issues</Support>
+    <Project>https://github.com/Cossey/mqtt-camera-ai-monitor</Project>
+    <Overview>
+        Monitor MQTT channels for trigger commands, captures high-quality images from RTSP cameras using FFmpeg, and processes them through OpenAI-compatible AI endpoints for analysis. The application supports both single and multi-image capture for advanced motion detection and temporal analysis.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>HomeAutomation: AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>mqtt camera ai ffmpeg openai motion detection image capture</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mqtt-camera-ai-monitor-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mqtt_camera_ai_monitor.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-10-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a "config.yaml" file to be mounted at the Config File path before starting the container. See configuration details: https://github.com/Cossey/mqtt-camera-ai-monitor/blob/main/config.yaml.sample
+    </Requires>
+    <Config Name="Config File" Target="/app/config/custom-config.yaml" Default="/mnt/user/appdata/mqtt_camera_ai_monitor/config.yaml" Description="Path to the configuration file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mqtt_camera_ai_monitor/config.yaml</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|error|warn|debug|verbose|silly" Description="Set the logging level for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Config Location" Target="CONFIG_FILE" Default="/app/config/custom-config.yaml" Description="Internal path to the configuration file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/config/custom-config.yaml</Config>
+</Container>
