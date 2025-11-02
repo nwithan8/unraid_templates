@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>KoInsight</Name>
+    <Repository>ghcr.io/georgesg/koinsight:latest</Repository>
+    <Registry>ghcr.io/georgesg/koinsight</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/GeorgeSG/KoInsight/issues</Support>
+    <Project>https://github.com/GeorgeSG/KoInsight</Project>
+    <Overview>
+        KoInsight brings your KOReader reading stats to life with a clean, web-based dashboard.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>koreader ko insight reading stats dashboard ebook</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/GeorgeSG/KoInsight/refs/heads/master/images/logo.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/koinsight.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/GeorgeSG/KoInsight/refs/heads/master/images/screenshots/book_ld.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/GeorgeSG/KoInsight/refs/heads/master/images/screenshots/home_ld.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/GeorgeSG/KoInsight/refs/heads/master/images/screenshots/stats_1_ld.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/GeorgeSG/KoInsight/refs/heads/master/images/screenshots/stats_2_ld.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-11-01
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/koinsight/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/koinsight/data</Config>
+    <Config Name="Max Upload Size (MB)" Target="MAX_FILE_SIZE_MB" Default="100" Description="Maximum upload size in megabytes" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+</Container>
