@@ -645,7 +645,12 @@
         "branch_override": null,
         "files_to_check": [
             {
-                "file_path": "docker-compose.yml",
+                "file_path": "docker-compose.app.yml",
+                "commit_hash": "32ed9bffee440e24fd631d3c32faf189941c05fe",
+                "commit_message": "feat: tugtainer agent (#34)\n\n+ added Tugtainer Agent - part of software that provides http access to docker hosts. The agent is used in the main image and is also distributed as a separate image for installation on remote hosts.\n+ added new deploy guideline to readme\n+ added new docker-compose files for the app and for the agent\n\nCloses #31 #32"
+            },
+            {
+                "file_path": "docker-compose.agent.yml",
                 "commit_hash": "32ed9bffee440e24fd631d3c32faf189941c05fe",
                 "commit_message": "feat: tugtainer agent (#34)\n\n+ added Tugtainer Agent - part of software that provides http access to docker hosts. The agent is used in the main image and is also distributed as a separate image for installation on remote hosts.\n+ added new deploy guideline to readme\n+ added new docker-compose files for the app and for the agent\n\nCloses #31 #32"
             }

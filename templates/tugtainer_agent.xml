@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Tugtainer Agent</Name>
+    <Repository>quenary/tugtainer-agent:latest</Repository>
+    <Registry>https://hub.docker.com/r/quenary/tugtainer-agent</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8001]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Quenary/tugtainer/issues</Support>
+    <Project>https://github.com/Quenary/tugtainer</Project>
+    <Overview>
+        Automate updates of your Docker containers. This is the companion agent for Tugtainer.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>automation docker update monitor watchtower gui ui</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tugtainer-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tugtainer_agent.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Quenary/tugtainer/refs/heads/main/resources/tugtainer-containers-v1.1.2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Quenary/tugtainer/refs/heads/main/resources/tugtainer-images-v1.1.2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Quenary/tugtainer/refs/heads/main/resources/tugtainer-settings-v1.1.2.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-11-01
+
+        Initial release
+    </Changes>
+    <ExtraParams>--tmpfs /run</ExtraParams>
+    <Config Name="Web UI Port" Target="8001" Default="9413" Mode="tcp" Description="Container Port: 8001" Type="Port" Display="always-hide" Required="true" Mask="false">9413</Config>
+    <Config Name="Agent Secret" Target="AGENT_SECRET" Default="" Description="Secret key for agent authentication (must match Tugtainer server)" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
