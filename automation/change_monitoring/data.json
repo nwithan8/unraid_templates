@@ -100,13 +100,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/cpu/docker-compose.yml",
-                "commit_hash": "6a2d3a54cf9adacebccfdec4ebe294974694146c",
-                "commit_message": null
+                "commit_hash": "43a069b41f746dc8d57ad1803fee3368f3c3468b",
+                "commit_message": "feat: add configurable logging level with environment variable support\n\nThis commit introduces a new feature that allows users to configure the global API log level using the `API_LOG_LEVEL` environment variable. The implementation includes:\n\n- Added logging configuration in `api/src/main.py` that reads the `API_LOG_LEVEL` environment variable\n- Implemented validation for log levels against valid Loguru levels (TRACE, DEBUG, INFO, SUCCESS, WARNING, ERROR, CRITICAL)\n- Added fallback to \"DEBUG\" level if an invalid level is provided\n- Updated Docker compose files to include `API_LOG_LEVEL=DEBUG` as default configuration\n- Enhanced README.md with detailed documentation on how to set the log level:\n  * Via Docker compose files\n  * Via command line with docker run\n  * Direct execution with UV (Linux/macOS and Windows)\n- Added proper error handling and validation for log level inputs\n- Included informative print statement showing the effective log level at startup\n\nThe changes make the API more configurable and debuggable, allowing users to adjust logging verbosity based on their needs without modifying code. The documentation covers all supported platforms and deployment methods.\n"
             },
             {
                 "file_path": "docker/gpu/docker-compose.yml",
-                "commit_hash": "6a2d3a54cf9adacebccfdec4ebe294974694146c",
-                "commit_message": null
+                "commit_hash": "43a069b41f746dc8d57ad1803fee3368f3c3468b",
+                "commit_message": "feat: add configurable logging level with environment variable support\n\nThis commit introduces a new feature that allows users to configure the global API log level using the `API_LOG_LEVEL` environment variable. The implementation includes:\n\n- Added logging configuration in `api/src/main.py` that reads the `API_LOG_LEVEL` environment variable\n- Implemented validation for log levels against valid Loguru levels (TRACE, DEBUG, INFO, SUCCESS, WARNING, ERROR, CRITICAL)\n- Added fallback to \"DEBUG\" level if an invalid level is provided\n- Updated Docker compose files to include `API_LOG_LEVEL=DEBUG` as default configuration\n- Enhanced README.md with detailed documentation on how to set the log level:\n  * Via Docker compose files\n  * Via command line with docker run\n  * Direct execution with UV (Linux/macOS and Windows)\n- Added proper error handling and validation for log level inputs\n- Included informative print statement showing the effective log level at startup\n\nThe changes make the API more configurable and debuggable, allowing users to adjust logging verbosity based on their needs without modifying code. The documentation covers all supported platforms and deployment methods.\n"
             }
         ]
     },
