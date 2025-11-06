@@ -646,8 +646,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.app.yml",
-                "commit_hash": "32ed9bffee440e24fd631d3c32faf189941c05fe",
-                "commit_message": "feat: tugtainer agent (#34)\n\n+ added Tugtainer Agent - part of software that provides http access to docker hosts. The agent is used in the main image and is also distributed as a separate image for installation on remote hosts.\n+ added new deploy guideline to readme\n+ added new docker-compose files for the app and for the agent\n\nCloses #31 #32"
+                "commit_hash": "d781e95f148eeadce33cd721e67b70a757cc159a",
+                "commit_message": "docs: note about updating agent/proxy [skip ci]\n\n+ added note about updating agent/proxy to readme\n+ removed AGENT_SECRET var from docker-compose.app as it is unnecessary (agent port not exposed)\n"
             },
             {
                 "file_path": "docker-compose.agent.yml",
