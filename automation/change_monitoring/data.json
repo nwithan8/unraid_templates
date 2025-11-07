@@ -545,8 +545,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "f4ea0300fe3b12f62e5739745ff0306ba7887634",
-                "commit_message": "DOcker compose & env variable update for new DB user/password\n"
+                "commit_hash": "c69564958b9aa9ed1dbdbfcb9997dc47800e85f9",
+                "commit_message": "Added fast fail on missing required vars, added sensible defaults where applicable, parameterized host path for persistent dirs\n"
             },
             {
                 "file_path": "docker/.env.example",
