@@ -29,9 +29,22 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-11-07
+
+        Update environmental variables
+
         ### 2025-04-25
 
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="8880" Default="8880" Mode="tcp" Description="Container Port: 8880" Type="Port" Display="always-hide" Required="true" Mask="false">8880</Config>
+    <Config Name="App Data" Target="/app/api" Default="/mnt/user/appdata/kokoro-fastapi/data" Description="Path to the app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/kokoro-fastapi/data</Config>
+    <Config Name="Python Path" Target="PYTHONPATH" Default="/app:/app/api" Description="Python path environment variable" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app:/app/api</Config>
+    <Config Name="ONNX Optimization - Thread Count" Target="ONNX_NUM_THREADS" Default="8" Description="Number of threads to use for ONNX model inference" Type="Variable" Display="advanced-hide" Required="true" Mask="false">8</Config>
+    <Config Name="ONNX Optimization - Inter Op Thread Count" Target="ONNX_INTER_OP_THREADS" Default="4" Description="ONNX inter operation thread count" Type="Variable" Display="advanced-hide" Required="true" Mask="false">4</Config>
+    <Config Name="ONNX Optimization - Execution Mode" Target="ONNX_EXECUTION_MODE" Default="parallel" Description="ONNX execution mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false">parallel</Config>
+    <Config Name="ONNX Optimization - Optimization Level" Target="ONNX_OPTIMIZATION_LEVEL" Default="all" Description="ONNX optimization level" Type="Variable" Display="advanced-hide" Required="true" Mask="false">all</Config>
+    <Config Name="ONNX Optimization - Memory Pattern" Target="ONNX_MEMORY_PATTERN" Default="true" Description="Enable ONNX memory pattern optimization" Type="Variable" Display="advanced-hide" Required="true" Mask="false">true</Config>
+    <Config Name="ONNX Optimization - Arena Extend Strategy" Target="ONNX_ARENA_EXTEND_STRATEGY" Default="kNextPowerOfTwo" Description="ONNX arena extend strategy" Type="Variable" Display="advanced-hide" Required="true" Mask="false">kNextPowerOfTwo</Config>
+    <Config Name="Log Level" Target="API_LOG_LEVEL" Default="DEBUG" Description="Logging level for the API" Type="Variable" Display="advanced-hide" Required="true" Mask="false">DEBUG</Config>
 </Container>
