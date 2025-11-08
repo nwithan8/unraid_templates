@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Youtarr</Name>
+    <Repository>dialmaster/youtarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/dialmaster/youtarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3011]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/DialmasterOrg/Youtarr/issues</Support>
+    <Project>https://github.com/DialmasterOrg/Youtarr</Project>
+    <Overview>
+        Youtarr is a self-hosted YouTube downloader that automatically downloads videos from your favorite channels or specific URLs. With optional Plex integration, it can refresh your media library for a seamless, ad-free viewing experience.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex youtube downloader automation media video</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/youtarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/youtarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-11-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MariaDB database instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="3011" Default="3011" Mode="tcp" Description="Container Port: 3011" Type="Port" Display="always-hide" Required="true" Mask="false">3011</Config>
+    <Config Name="YouTube Output Directory" Target="/usr/src/app/data" Default="" Description="Path to store downloaded YouTube videos" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="YouTube Output Directory Host" Target="YOUTUBE_OUTPUT_DIR" Default="" Description="Host path to store downloaded YouTube videos. Should match above." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Host" Target="DB_HOST" Default="localhost" Description="Database host address" Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Database - Port" Target="DB_PORT" Default="3306" Description="Database port number" Type="Variable" Display="always-hide" Required="true" Mask="false">3306</Config>
+    <Config Name="Database - Name" Target="DB_NAME" Default="youtarr" Description="Database name" Type="Variable" Display="always-hide" Required="true" Mask="false">youtarr</Config>
+    <Config Name="Database - User" Target="DB_USER" Default="" Description="Database username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Password" Target="DB_PASSWORD" Default="" Description="Database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Auth - Enabled" Target="AUTH_ENABLED" Default="false|true" Description="Enable or disable authentication for the web interface" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Auth - Username" Target="AUTH_PRESET_USERNAME" Default="" Description="Username for authentication" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Auth - Password" Target="AUTH_PRESET_PASSWORD" Default="" Description="Password for authentication" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Config Storage" Target="/app/config" Default="/mnt/user/appdata/youtarr/config" Description="Path to store configuration files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/youtarr/config</Config>
+    <Config Name="Image Storage" Target="/app/server/images" Default="/mnt/user/appdata/youtarr/images" Description="Path to store images" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/youtarr/images</Config>
+    <Config Name="Job Storage" Target="/app/jobs" Default="/mnt/user/appdata/youtarr/jobs" Description="Path to store job files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/youtarr/jobs</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="warn|info|debug" Description="Set the logging level (debug, info, warn, error)" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="In Docker Container Flag" Target="IN_DOCKER_CONTAINER" Default="1" Description="Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
+</Container>
