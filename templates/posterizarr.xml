@@ -19,7 +19,7 @@
     <Beta>False</Beta>
     <Category>Tools: MediaServer Other: Status:Stable</Category>
     <ExtraSearchTerms>poster media art automation plex jellyfin emby</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/fscorrupt/Posterizarr/refs/heads/main/images/webhook.png</Icon>
+    <Icon>https://raw.githubusercontent.com/fscorrupt/Posterizarr/refs/heads/main/docs/images/webhook.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/posterizarr.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
