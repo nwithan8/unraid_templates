@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Mydia</Name>
+    <Repository>ghcr.io/getmydia/mydia:latest</Repository>
+    <Registry>ghcr.io/getmydia/mydia</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/getmydia/mydia/issues</Support>
+    <Project>https://github.com/getmydia/mydia</Project>
+    <Overview>
+        A modern, self-hosted media management platform for tracking, organizing, and monitoring your media library.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex emby jellyfin media management tracking organization library</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mydia-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mydia.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/getmydia/mydia/refs/heads/master/screenshots/homepage.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/getmydia/mydia/refs/heads/master/screenshots/movies.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/getmydia/mydia/refs/heads/master/screenshots/tv-shows.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/getmydia/mydia/refs/heads/master/screenshots/calendar.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/getmydia/mydia/refs/heads/master/screenshots/search.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-11-07
+
+        Initial release
+    </Changes>
+    <Requires>
+        Additional configuration options documented here: https://github.com/getmydia/mydia#-environment-variables-reference
+    </Requires>
+    <Config Name="Web UI Port" Target="4000" Default="4000" Mode="tcp" Description="Container Port: 4000" Type="Port" Display="always-hide" Required="true" Mask="false">4000</Config>
+    <Config Name="Secret Key Base" Target="SECRET_KEY_BASE" Default="" Description="Generate with 'openssl rand -base64 48'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Guardian Secret Key" Target="GUARDIAN_SECRET_KEY" Default="" Description="Generate with 'openssl rand -base64 48'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Host Domain" Target="PHX_HOST" Default="localhost" Description="Change to your domain or IP address" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
+    <Config Name="Movies Path" Target="/media/movies" Default="" Description="Path to your movies folder on the host system" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="TV Shows Path" Target="/media/tv" Default="" Description="Path to your TV shows folder on the host system" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Downloads Path" Target="/media/downloads" Default="" Description="Path to your downloads folder on the host system" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/mydia/config" Description="Path to the configuration folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/mydia/config</Config>
+    <Config Name="Internal Port" Target="PORT" Default="4000" Description="Internal application port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">4000</Config>
+    <Config Name="Internal Movies Path" Target="MOVIES_PATH" Default="/media/movies" Description="Internal path to movies folder. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/media/movies</Config>
+    <Config Name="Internal TV Shows Path" Target="TV_PATH" Default="/media/tv" Description="Internal path to TV shows folder. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/media/tv</Config>
+    <Config Name="Internal Database Path" Target="DATABASE_PATH" Default="/config/mydia.db" Description="Internal path to the database file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config/mydia.db</Config>
+</Container>
