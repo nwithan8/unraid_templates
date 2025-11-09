@@ -10,8 +10,8 @@
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8001]/</WebUI>
     <Privileged>false</Privileged>
-    <Support>https://github.com/TheImaginear/dynamiX/issues</Support>
-    <Project>https://github.com/TheImaginear/dynamiX</Project>
+    <Support>https://github.com/RayZ3R0/tidaloader/issues</Support>
+    <Project>https://github.com/RayZ3R0/tidaloader</Project>
     <Overview>
         A full-stack web application for downloading high-quality music from Tidal with intelligent playlist generation via ListenBrainz/Troi integration. Features automatic metadata tagging, lyrics fetching, and organized file management.
     </Overview>
