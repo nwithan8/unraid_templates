@@ -783,5 +783,22 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Tidaloader",
+        "git_url": "https://github.com/RayZ3R0/tidaloader.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "4c6766cc562b6b2282ff4581ba228724edfd2c80",
+                "commit_message": null
+            },
+            {
+                "file_path": ".env.example",
+                "commit_hash": "57de1d40bba01cb2557cc0a6ca165e300292d8b5",
+                "commit_message": null
+            }
+        ]
     }
 ]

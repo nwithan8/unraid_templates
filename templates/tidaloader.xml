@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Tidaloader</Name>
+    <Repository>ghcr.io/rayz3r0/tidaloader:latest</Repository>
+    <Registry>ghcr.io/rayz3r0/tidaloader</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8001]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/TheImaginear/dynamiX/issues</Support>
+    <Project>https://github.com/TheImaginear/dynamiX</Project>
+    <Overview>
+        A full-stack web application for downloading high-quality music from Tidal with intelligent playlist generation via ListenBrainz/Troi integration. Features automatic metadata tagging, lyrics fetching, and organized file management.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>tidal music downloader listenbrainz troi scrobbler playlist</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/tidaloader-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tidaloader.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-11-09
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8001" Default="8001" Mode="tcp" Description="Container Port: 8001" Type="Port" Display="always-hide" Required="true" Mask="false">8001</Config>
+    <Config Name="Music Folder" Target="/music" Default="" Description="Path to the music folder" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Authentication - Username" Target="AUTH_USERNAME" Default="" Description="Username for accessing the web interface" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Authentication - Password" Target="AUTH_PASSWORD" Default="" Description="Password for accessing the web interface" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Internal Music Folder" Target="MUSIC_DIR" Default="/music" Description="Internal path to the music folder inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/music</Config>
+</Container>
