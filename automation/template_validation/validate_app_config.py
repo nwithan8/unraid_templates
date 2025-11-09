@@ -33,6 +33,15 @@ def validate_template_file(template_file_path: str) -> bool:
         # Check that the port in WebUI is listed in a Config Port element
         webui_element = xml_data.find('WebUI')
         if webui_element is not None:
+            network_element = xml_data.find('Network')
+            if network_element is None:
+                print("Error: Network element is missing.")
+                return False
+
+            if network_element.text.strip().lower() == 'host':
+                print("Info: Network mode is set to 'host'; skipping WebUI port validation.")
+                return True
+
             webui_text = webui_element.text or ""
             if not re.match(r'^http(s)?://\[IP\]:\[PORT:\d+\]', webui_text):
                 print("Error: WebUI element does not match the required format 'http(s)://[IP]:[PORT:<port_number>]'.")
