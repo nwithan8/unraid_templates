@@ -800,5 +800,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Cloudreve",
+        "git_url": "https://github.com/cloudreve/cloudreve.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "78f7ec8b084541bd45c6479bd85405fde5e8f3cd",
+                "commit_message": null
+            }
+        ]
     }
 ]

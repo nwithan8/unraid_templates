@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Cloudreve</Name>
+    <Repository>cloudreve/cloudreve:latest</Repository>
+    <Registry>https://hub.docker.com/r/cloudreve/cloudreve</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5212]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://docs.cloudreve.org</Support>
+    <Project>https://cloudreve.org/</Project>
+    <Overview>
+        Self-hosted file management and sharing system, supports multiple storage providers
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>cloud storage file sharing drive dropbox google drive onedrive s3 copyparty clipboard</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/cloudreve/frontend/master/public/static/img/logo192.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/cloudreve.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/cloudreve/docs/master/images/homepage.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-11-10
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate Postgres and Redis instances.
+    </Requires>
+    <Config Name="Web UI Port" Target="5212" Default="5212" Mode="tcp" Description="Container Port: 5212" Type="Port" Display="always-hide" Required="true" Mask="false">5212</Config>
+    <Config Name="Download Port" Target="6888" Default="6888" Mode="tcp" Description="Container Port: 6888" Type="Port" Display="always-hide" Required="true" Mask="false">6888</Config>
+    <Config Name="Download Port (UDP)" Target="6888" Default="6888" Mode="udp" Description="Container Port: 6888" Type="Port" Display="always-hide" Required="true" Mask="false">6888</Config>
+    <Config Name="Postgres - Host" Target="CR_CONF_Database.Host" Default="" Description="Postgres database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Port" Target="CR_CONF_Database.Port" Default="5432" Description="Postgres database port" Type="Variable" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Postgres - Database Name" Target="CR_CONF_Database.Name" Default="cloudreve" Description="Postgres database name" Type="Variable" Display="always-hide" Required="true" Mask="false">cloudreve</Config>
+    <Config Name="Postgres - Username" Target="CR_CONF_Database.User" Default="" Description="Postgres database username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Postgres - Password" Target="CR_CONF_Database.Password" Default="" Description="Postgres database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Redis - Address" Target="CR_CONF_Redis.Server" Default="localhost:6379" Description="Redis server address" Type="Variable" Display="always-hide" Required="true" Mask="false">localhost:6379</Config>
+    <Config Name="Redis - Password" Target="CR_CONF_Redis.Password" Default="" Description="Redis server password" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Redis - Database" Target="CR_CONF_Redis.DB" Default="0" Description="Redis database number" Type="Variable" Display="always-hide" Required="true" Mask="false">0</Config>
+    <Config Name="App Data" Target="/cloudreve/data" Default="/mnt/user/appdata/cloudreve/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/cloudreve/data</Config>
+    <Config Name="Postgres - Database Type" Target="CR_CONF_Database.Type" Default="postgres" Description="Database type. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">postgres</Config>
+</Container>
