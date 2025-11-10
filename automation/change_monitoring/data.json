@@ -18,13 +18,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "787dd9cde8781601a6bcb1898ef4cdf604062a7c",
-                "commit_message": "Fix docker-compose.yml\n"
+                "commit_hash": "dbe5997495f8a98a9ed9e563d1aa27de3e3def7e",
+                "commit_message": "Update compose file\n"
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
-                "commit_hash": "421a20ba8c5e6d1901b6d58becc939ff6f4dc456",
-                "commit_message": "Using Redis default directory for data.\n\nFor some reason for original Docker compose configuration path `/data` was correct, but for production this directory is used which isn't used by Redis, except if it's configured expressly.\r\n\r\nChecked here: https://github.com/redis/docker-library-redis/blob/master/7.4/alpine/Dockerfile#L134"
+                "commit_hash": "b469836d197c35f945689aebddebb0c4bb574668",
+                "commit_message": "Remove dockerfiles that are no longer needed after consolidating into a single Dockerfile.\n"
             }
         ]
     },
@@ -521,8 +521,8 @@
         "files_to_check": [
             {
                 "file_path": "auth-portal-full-stack-dev_docker-compose.yml",
-                "commit_hash": "2011d231d055947875dcdace2ff098ac5d3daea8",
-                "commit_message": "fix: Harden client IP detection and document trusted proxy setup\n\n- require TRUSTED_PROXY_CIDRS before honoring forwarded headers and add parsing helpers/tests for limiter safety\n- surface the new variable in sample env/compose configs and explain trusted proxy usage in the README\n"
+                "commit_hash": "8c4cd586cd1e95330bc8e359c3c625d88efaa698",
+                "commit_message": "feat: honor configurable APP_TIMEZONE throughout backups\n\n- added APP_TIMEZONE/TZ handling in the app, sample env, and docker stack so every service runs in the configured zone.\n- converted backup scheduling, last-run/next-run calculations, and admin UI formatting to use that timezone, including localized labels and dates in admin.html/admin.js.\n"
             }
         ]
     },
@@ -769,8 +769,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/DOCKER.md",
-                "commit_hash": "690dba6ac00d200cf68421af947d1ae2fca07788",
-                "commit_message": null
+                "commit_hash": "b02316fbf880481cfd58c408df7266b947089273",
+                "commit_message": "refactor: startup scripts, infra, documentation\n\nThis commit is a major refactor to the configuration, docker-compose setup, and startup scripts.\nThis makes things much more consistent and cleaner, migrates to using .env, eliminates\ndeprecated code, and makes things cleaner.\n"
             },
             {
                 "file_path": "env.example",
@@ -779,8 +779,8 @@
             },
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f94c8d04439e580f9b822217b267a3e5ebbd6e2d",
-                "commit_message": null
+                "commit_hash": "b02316fbf880481cfd58c408df7266b947089273",
+                "commit_message": "refactor: startup scripts, infra, documentation\n\nThis commit is a major refactor to the configuration, docker-compose setup, and startup scripts.\nThis makes things much more consistent and cleaner, migrates to using .env, eliminates\ndeprecated code, and makes things cleaner.\n"
             }
         ]
     },
