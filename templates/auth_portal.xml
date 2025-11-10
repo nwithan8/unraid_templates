@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-11-10
+
+        Add OIDC provider support
+
         ### 2025-10-07
 
         Add CIDR trusted proxy support
@@ -50,6 +54,7 @@
     <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Description="HMAC secret for JWT cookie" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Data Key" Target="DATA_KEY" Default="" Description="Base64 32-byte key for sealing tokens at rest" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Force Secure Cookie" Target="FORCE_SECURE_COOKIE" Default="0|1" Description="Set to 1 to force Secure on cookies (behind TLS/ingress)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Force HSTS Header" Target="FORCE_HSTS" Default="0|1" Description="Set to 1 to force HSTS headers even if APP_BASE_URL is http (when TLS terminates upstream)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Authorized Page - External URL" Target="LOGIN_EXTRA_LINK_URL" Default="" Description="External URL on authorized page" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Authorized Page - External URL Text" Target="LOGIN_EXTRA_LINK_TEXT" Default="" Description="Text for external URL on authorized page" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Unauthorized Page Request - Email" Target="UNAUTH_REQUEST_EMAIL" Default="" Description="Email address for unauthorized page request access link" Type="Variable" Display="always" Required="false" Mask="false"/>
@@ -65,5 +70,7 @@
     <Config Name="Jellyfin - Server API Key" Target="JELLYFIN_API_KEY" Default="" Description="API key from your Jellyfin server." Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Jellyfin - App Name" Target="JELLYFIN_APP_NAME" Default="AuthPortal" Description="Name of the Jellyfin application (for client headers)." Type="Variable" Display="always" Required="false" Mask="false">AuthPortal</Config>
     <Config Name="Jellyfin - App Version" Target="JELLYFIN_APP_VERSION" Default="" Description="Version of the Jellyfin application (for client headers)." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OIDC Provider - Signing Key" Target="OIDC_SIGNING_KEY" Default="" Description="PEM-encoded private key for OIDC ID token signing" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="OIDC Provider - Issuer URL" Target="OIDC_ISSUER_URL" Default="http://IP_ADDRESS:PORT" Description="Issuer URL for OIDC provider (should match APP_BASE_URL)" Type="Variable" Display="always-hide" Required="false" Mask="false">http://IP_ADDRESS:PORT</Config>
     <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|DEBUG|WARN|ERROR" Description="Logging level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
