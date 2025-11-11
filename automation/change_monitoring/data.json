@@ -791,8 +791,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "4c6766cc562b6b2282ff4581ba228724edfd2c80",
-                "commit_message": null
+                "commit_hash": "0405163e095faf80bdda95eda1446093f8f0fc73",
+                "commit_message": "feat: add non-root user support with configurable UID/GID\n\n- Create non-root user 'appuser' in Dockerfile with ARG for UID/GID\n- Set ownership of /app and /music to appuser\n- Switch to non-root user before exposing port for improved security\n- Update docker-compose.yml to pass UID/GID build args with defaults\n\nThis enhances container security by avoiding root execution and allows customization of user IDs for volume permissions.\n"
             },
             {
                 "file_path": ".env.example",
