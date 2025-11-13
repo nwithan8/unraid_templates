@@ -18,8 +18,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "dbe5997495f8a98a9ed9e563d1aa27de3e3def7e",
-                "commit_message": "Update compose file\n"
+                "commit_hash": "59508ceefff2af0e47f8eddce4f8af65069e2598",
+                "commit_message": "Update docker-compose.yml to use boolean values instead of strings\n"
             },
             {
                 "file_path": "docker/docker-compose.production.yml",
