@@ -545,13 +545,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "c69564958b9aa9ed1dbdbfcb9997dc47800e85f9",
-                "commit_message": "Added fast fail on missing required vars, added sensible defaults where applicable, parameterized host path for persistent dirs\n"
+                "commit_hash": "71d3f4931f0e5eb1765723c3af16dd3bf0c32131",
+                "commit_message": "doc update\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "9473d407b66ddd439b746e6b33d4f742dda7b7fd",
-                "commit_message": "DB user bug fix and RLS policy improvements\n"
+                "commit_hash": "71d3f4931f0e5eb1765723c3af16dd3bf0c32131",
+                "commit_message": "doc update\n"
             }
         ]
     },
@@ -598,8 +598,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "45eec2464239fc3e2d31ef334558de8f5ae9e8d9",
-                "commit_message": "simplify docker-compose\n"
+                "commit_hash": "400dcf97b160645f186bacfaf9a79df28701a8e9",
+                "commit_message": "2025.11.06\n\n* Correctly label TV placeholder files as `S00E00.Coming.Soon` instead of `S00E00.Trailer`\n* update cleanup logic to detect `S00E00.Coming.Soon` and clean up entire show folder if using `umtk_root_tv`\n* Create metadata files to update TV Show episode name to `Trailer` or `Coming Soon` accordingly\n* append_dates_to_sort_titles (for sorting by expected availability date)\n* Updated readme to default to using umtk roots.\n* Update yt-dlp with the default optional dependency group included\n"
             }
         ]
     },
