@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-11-14
+
+        Add user/group ID configuration options
+
         ### 2025-11-09
 
         Initial release
@@ -33,4 +37,6 @@
     <Config Name="Authentication - Username" Target="AUTH_USERNAME" Default="" Description="Username for accessing the web interface" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Authentication - Password" Target="AUTH_PASSWORD" Default="" Description="Password for accessing the web interface" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Internal Music Folder" Target="MUSIC_DIR" Default="/music" Description="Internal path to the music folder inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/music</Config>
+    <Config Name="PUID" Target="USER_UID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="USER_GID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
