@@ -45,6 +45,6 @@
     <Config Name="Config Storage" Target="/app/config" Default="/mnt/user/appdata/youtarr/config" Description="Path to store configuration files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/youtarr/config</Config>
     <Config Name="Image Storage" Target="/app/server/images" Default="/mnt/user/appdata/youtarr/images" Description="Path to store images" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/youtarr/images</Config>
     <Config Name="Job Storage" Target="/app/jobs" Default="/mnt/user/appdata/youtarr/jobs" Description="Path to store job files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/youtarr/jobs</Config>
-    <Config Name="Log Level" Target="LOG_LEVEL" Default="warn|info|debug" Description="Set the logging level (debug, info, warn, error)" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|warn|debug" Description="Set the logging level (debug, info, warn, error)" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="In Docker Container Flag" Target="IN_DOCKER_CONTAINER" Default="1" Description="Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
 </Container>
