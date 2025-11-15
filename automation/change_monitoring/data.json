@@ -779,8 +779,8 @@
             },
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "b02316fbf880481cfd58c408df7266b947089273",
-                "commit_message": "refactor: startup scripts, infra, documentation\n\nThis commit is a major refactor to the configuration, docker-compose setup, and startup scripts.\nThis makes things much more consistent and cleaner, migrates to using .env, eliminates\ndeprecated code, and makes things cleaner.\n"
+                "commit_hash": "8e41f97ba0bf45a9f26097beb1ddb1b02b843697",
+                "commit_message": "refactor: Configuration\n\n- Break huge FE Configuration.tsx into components\n  - Move FE configuration schema into single location client/src/config/configSchema.ts\n    This will make maintenance easier moving forward since there are no longer multiple\n    places where this configuration is maintained\n- Refactor backend configModule for improved maintainability\n  - Make config.example.json into single source of truth for initial config settings\n  - Get rid of confusing versioned config migrations -- missing options are just merged\n    from the config.example.json\n  - config.example.json is built into the docker image so that this works even for users\n    who are running it \"outside\" the repo\n- Add basic support for server timezone\n- Remove old deprecated config variables (initialSetup and youtubeApiKey)\n- Improve tests with less warnings and faster test runs\n"
             }
         ]
     },
