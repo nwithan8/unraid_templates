@@ -497,8 +497,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "ff6ea41ac3942b7d171af51ad8bb988b20f3cbee",
-                "commit_message": "feat(docker): add flexible LLM provider configuration\n\n- Support LLM_PROVIDER env var to override default provider (openai/gpt-4o-mini)\n- Add optional 'provider' parameter to API endpoints for per-request overrides\n- Implement provider validation to ensure API keys exist\n- Update documentation and examples with new configuration options\n\nCloses the need to hardcode providers in config.yml\n"
+                "commit_hash": "46e1a67f614590e874c53fe31ad9dc333e2750c6",
+                "commit_message": "fix(docker): Remove environment variable overrides in docker-compose.yml (#1411)\n\nThe docker-compose.yml had an `environment:` section with variable\nsubstitutions (${VAR:-}) that was overriding values from .llm.env with\nempty strings.\n\n- Commented out the `environment:` section to prevent overwrites\n- Added clear warning comment explaining the override behavior\n- .llm.env values now load directly into container without interference\n"
             }
         ]
     },
@@ -646,13 +646,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.app.yml",
-                "commit_hash": "d781e95f148eeadce33cd721e67b70a757cc159a",
-                "commit_message": "docs: note about updating agent/proxy [skip ci]\n\n+ added note about updating agent/proxy to readme\n+ removed AGENT_SECRET var from docker-compose.app as it is unnecessary (agent port not exposed)\n"
+                "commit_hash": "c27a5dd530bd6dfe0ffbee09cc02da2ab9b3502e",
+                "commit_message": "feat: custom labels (protected, depends_on) (#59)\n\n+ added support of custom labels dev.quenary.tugtainer.protected and dev.quenary.tugtainer.depends_on\n+ added protected label to tugtainer images and docker-compose\n+ edited readme\n+ fixed issue when progress request fails with 404 because of unsafe group cache key in path param (cache_id as query param)\n\nCloses #41\nCloses #5"
             },
             {
                 "file_path": "docker-compose.agent.yml",
-                "commit_hash": "32ed9bffee440e24fd631d3c32faf189941c05fe",
-                "commit_message": "feat: tugtainer agent (#34)\n\n+ added Tugtainer Agent - part of software that provides http access to docker hosts. The agent is used in the main image and is also distributed as a separate image for installation on remote hosts.\n+ added new deploy guideline to readme\n+ added new docker-compose files for the app and for the agent\n\nCloses #31 #32"
+                "commit_hash": "c27a5dd530bd6dfe0ffbee09cc02da2ab9b3502e",
+                "commit_message": "feat: custom labels (protected, depends_on) (#59)\n\n+ added support of custom labels dev.quenary.tugtainer.protected and dev.quenary.tugtainer.depends_on\n+ added protected label to tugtainer images and docker-compose\n+ edited readme\n+ fixed issue when progress request fails with 404 because of unsafe group cache key in path param (cache_id as query param)\n\nCloses #41\nCloses #5"
             }
         ]
     },
