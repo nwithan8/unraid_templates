@@ -499,6 +499,16 @@
                 "file_path": "docker-compose.yml",
                 "commit_hash": "46e1a67f614590e874c53fe31ad9dc333e2750c6",
                 "commit_message": "fix(docker): Remove environment variable overrides in docker-compose.yml (#1411)\n\nThe docker-compose.yml had an `environment:` section with variable\nsubstitutions (${VAR:-}) that was overriding values from .llm.env with\nempty strings.\n\n- Commented out the `environment:` section to prevent overwrites\n- Added clear warning comment explaining the override behavior\n- .llm.env values now load directly into container without interference\n"
+            },
+            {
+                "file_path": ".llm.env.example",
+                "commit_hash": "7cac008c10fef3c24fab602ff4c5759ba999123b",
+                "commit_message": ""
+            },
+            {
+                "file_path": ".env.txt",
+                "commit_hash": "88643612e82df67cc308434965405ca2d8de189a",
+                "commit_message": ""
             }
         ]
     },
