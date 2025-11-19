@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Recipe Buddy</Name>
+    <Repository>ghcr.io/georgegebbett/recipe-buddy:latest</Repository>
+    <Registry>ghcr.io/georgegebbett/recipe-buddy</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/georgegebbett/recipe-buddy/issues</Support>
+    <Project>https://github.com/georgegebbett/recipe-buddy</Project>
+    <Overview>
+        Recipe Buddy is a tool that enables the easy adding of recipes to Grocy through web scraping.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>grocy recipes mealie cooking meal planning web scraping api</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/recipe-buddy-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/recipe_buddy.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-11-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Grocy instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Grocy - Base URL" Target="GROCY_BASE_URL" Default="" Description="Base URL for Grocy (e.g., http://grocy.local:9283)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Grocy - API Key" Target="GROCY_API_KEY" Default="" Description="API key for Grocy" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Auth - Secret" Target="NEXTAUTH_SECRET" Default="" Description="Generate with 'openssl rand -base64 32'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Auth - URL" Target="NEXTAUTH_URL" Default="http://localhost:3000" Description="URL for Recipe Buddy. Replace with IP address and port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="App Data" Target="/home/node/app/data" Default="/mnt/user/appdata/recipe-buddy/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/recipe-buddy/data</Config>
+</Container>
