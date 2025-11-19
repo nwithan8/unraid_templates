@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Reclaimarr</Name>
+    <Repository>ghcr.io/okhr/reclaimarr:latest</Repository>
+    <Registry>ghcr.io/okhr/reclaimarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Okhr/reclaimarr/issues</Support>
+    <Project>https://github.com/Okhr/reclaimarr</Project>
+    <Overview>
+        A tool to automatically reclaim disk space on your media server by intelligently deleting content from Jellyfin, Sonarr, and Radarr based on watch history and age.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>jellyfin sonarr radarr disk space reclaim deletion automation overseerr jellyseerr</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/reclaimarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/reclaimarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-11-18
+
+        Initial release
+    </Changes>
+    <Config Name="Media Path" Target="/media" Default="" Description="Path to your media files" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Jellyfin - URL" Target="JELLYFIN_URL" Default="" Description="URL of your Jellyfin server (e.g., http://jellyfin.local:8096)" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Jellyfin - API Key" Target="JELLYFIN_API_KEY" Default="" Description="API key for Jellyfin" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Jellystat - URL" Target="JELLYSTAT_URL" Default="" Description="URL of your Jellystat server (e.g., http://jellystat.local:port)" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Jellystat - API Key" Target="JELLYSTAT_API_KEY" Default="" Description="API key for Jellystat" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Jellyseerr - URL" Target="JELLYSEERR_URL" Default="" Description="URL of your Jellyseerr server (e.g., http://jellyseerr.local:port)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Jellyseerr - API Key" Target="JELLYSEERR_API_KEY" Default="" Description="API key for Jellyseerr" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Radarr - URL" Target="RADARR_URL" Default="" Description="URL of your Radarr server (e.g., http://radarr.local:7878)" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Radarr - API Key" Target="RADARR_API_KEY" Default="" Description="API key for Radarr" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Sonarr - URL" Target="SONARR_URL" Default="" Description="URL of your Sonarr server (e.g., http://sonarr.local:8989)" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Sonarr - API Key" Target="SONARR_API_KEY" Default="" Description="API key for Sonarr" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Cron Schedule" Target="CRON_SCHEDULE" Default="0 3 * * *" Description="Cron schedule for when to run the reclaim process" Type="Variable" Display="always-hide" Required="true" Mask="false">0 3 * * *</Config>
+    <Config Name="Target Disk Usage" Target="TARGET_USAGE" Default="80" Description="The target disk usage percentage" Type="Variable" Display="always-hide" Required="true" Mask="false">80</Config>
+    <Config Name="Minimum File Age (Days)" Target="MIN_AGE_DAYS" Default="90" Description="The minimum age in days before a media item can be deleted." Type="Variable" Display="always-hide" Required="true" Mask="false">90</Config>
+    <Config Name="Dry Run" Target="DRY_RUN" Default="false|true" Description="If true, no files will actually be deleted." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Verbose Logging" Target="VERBOSE" Default="false|true" Description="If true, verbose logging will be enabled." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Media Path" Target="MEDIA_PATH" Default="/media" Description="Internal path to your media files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/media</Config>
+</Container>
