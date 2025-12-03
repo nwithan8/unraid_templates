@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Home Assistant Time Machine</Name>
+    <Repository>ghcr.io/saihgupr/homeassistanttimemachine:latest</Repository>
+    <Registry>ghcr.io/saihgupr/homeassistanttimemachine</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:54000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/saihgupr/HomeAssistantTimeMachine/issues</Support>
+    <Project>https://github.com/saihgupr/HomeAssistantTimeMachine</Project>
+    <Overview>
+        Home Assistant Time Machine is a web-based tool that acts as a "Time Machine" for your Home Assistant configuration.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>HomeAutomation: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>home assistant backup restore snapshot time machine automation</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/home-assistant-time-machine-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/home_assistant_time_machine.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/saihgupr/HomeAssistantTimeMachine/main/images/1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/saihgupr/HomeAssistantTimeMachine/main/images/2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/saihgupr/HomeAssistantTimeMachine/main/images/3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/saihgupr/HomeAssistantTimeMachine/main/images/4.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/saihgupr/HomeAssistantTimeMachine/main/images/5.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Home Assistant instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="54000" Default="54000" Mode="tcp" Description="Container Port: 54000" Type="Port" Display="always-hide" Required="true" Mask="false">54000</Config>
+    <Config Name="Home Assistant URL" Target="HOME_ASSISTANT_URL" Default="http://localhost:8123" Description="URL for the Home Assistant instance" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8123</Config>
+    <Config Name="Home Assistant Long-Lived Access Token" Target="LONG_LIVED_ACCESS_TOKEN" Default="" Description="Long-lived access token for the Home Assistant instance" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Backups Storage" Target="/media" Default="" Description="Where to store Home Assistant backups" Type="Path" Display="always-hide" Mode="rw" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/home_assistant_time_machine/config" Description="Path to config data" Type="Path" Display="advanced-hide" Mode="rw" Required="true" Mask="false">/mnt/user/appdata/home_assistant_time_machine/config</Config>
+    <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/home_assistant_time_machine/data" Description="Path to data storage" Type="Path" Display="advanced-hide" Mode="rw" Required="true" Mask="false">/mnt/user/appdata/home_assistant_time_machine/data</Config>
+</Container>
