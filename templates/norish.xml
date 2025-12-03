@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Norish</Name>
+    <Repository>norishapp/norish:latest</Repository>
+    <Registry>https://hub.docker.com/r/norishapp/norish</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/norish-recipes/norish/issues</Support>
+    <Project>https://github.com/norish-recipes/norish</Project>
+    <Overview>
+        A realtime, self-hosted recipe app for families and friends
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>recipes cooking meal planning grocery list norish mealie tandoor</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/norish-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/norish.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/norish-recipes/norish/main/.github/assets/mockup-norish.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-03
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate PostgresDB and Chrome Headless instances. &#xD;
+        &#xD;
+        First-time setup requires configuring OIDC settings. See instructions: https://github.com/norish-recipes/norish#first-time-auth-provider
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Public URL" Target="AUTH_URL" Default="https://norish.example.com" Description="The public URL where Norish will be accessible" Type="Variable" Display="always-hide" Required="true" Mask="false">https://norish.example.com</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="postgresql://user:password@host:port/database" Description="Postgres database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://user:password@host:port/database</Config>
+    <Config Name="Master Key" Target="MASTER_KEY" Default="" Description="A secure, random string used for encryption and signing. Generate with 'openssl rand -base64 32'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Headless Chrome Websocket URL" Target="CHROME_WS_ENDPOINT" Default="ws://IP_ADDRESS:PORT" Description="WebSocket URL for a headless Chrome instance (e.g., ws://chrome:9222)" Type="Variable" Display="always-hide" Required="true" Mask="false">ws://IP_ADDRESS:PORT</Config>
+    <Config Name="Uploads Storage" Target="/app/uploads" Default="/mnt/user/appdata/norish/uploads" Description="Path to the uploads folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/norish/uploads</Config>
+    <Config Name="Internal Uploads Storage" Target="RECIPES_DISK_DIR" Default="/app/uploads" Description="Internal path to the uploads folder inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/uploads</Config>
+</Container>
