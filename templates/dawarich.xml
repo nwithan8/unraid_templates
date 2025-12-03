@@ -13,7 +13,9 @@
     <Support>https://dawarich.app/docs/intro</Support>
     <Project>https://dawarich.app</Project>
     <Overview>
-        A self-hosted web app designed to replace Google Timeline (aka Google Location History). Visualize your data on an interactive map, import your location history from Google Maps Timeline and Owntracks, and explore statistics like the number of countries and cities visited, total distance traveled, and more!
+        A self-hosted web app designed to replace Google Timeline (aka Google Location History). Visualize your data on an interactive map, import your location history from Google Maps Timeline and Owntracks, and explore statistics like the number of countries and cities visited, total distance traveled, and more! &#xD;
+        &#xD;
+        Additional optional configuration is available. See available variables: https://github.com/Freika/dawarich/blob/master/docker/.env.example
     </Overview>
     <Beta>True</Beta>
     <Category>MediaApp:Photos MediaServer:Photos Productivity: Tools: Other: Status:Stable</Category>
@@ -27,6 +29,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-12-03
+
+        - Document additional optional environment variables (e.g. OIDC support)
+
         ### 2025-08-03
 
         - Change default tag back to `latest`
