@@ -870,5 +870,17 @@
                 "commit_message": ""
             }
         ]
+    },
+    {
+        "app_name": "VERT",
+        "git_url": "https://github.com/VERT-sh/VERT.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "92f0aef6edbd9d2cdde1e90599af25449527e975",
+                "commit_message": ""
+            }
+        ]
     }
 ]
