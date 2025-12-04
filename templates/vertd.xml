@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>VERTd</Name>
+    <Repository>ghcr.io/vert-sh/vertd:latest</Repository>
+    <Registry>ghcr.io/vert-sh/vertd</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://vert.sh/about/</Support>
+    <Project>https://github.com/VERT-sh/vertd</Project>
+    <Overview>
+        VERT's solution to crappy video conversion services. &#xD;
+        &#xD;
+        For Nvidia GPU support, add "--gpus all" to the Extra Parameters field under Advanced. &#xD;
+        For Intel iGPU support, add "/dev/dri" as a Device and add "--device=/dev/dri" to the Extra Parameters field under Advanced. &#xD;
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>file conversion wasm webassembly video audio image document</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/vert-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/vertd.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-04
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate VERT instance.
+    </Requires>
+    <Config Name="API Port" Target="24153" Default="24153" Mode="tcp" Description="Container Port: 24153" Type="Port" Display="always-hide" Required="true" Mask="false">24153</Config>
+    <Config Name="Encoder" Target="VERTD_FORCE_GPU" Default="cpu|nvidia|amd|intel|apple" Description="Force specific hardware encoder" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Webhook URL" Target="WEBHOOK_URL" Default="" Description="Optional Discord webhook URL to notify of failed conversions" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Webhook Pings" Target="WEBHOOK_PINGS" Default="" Description="Optional user or role ID to ping in Discord webhook notifications" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Admin Password" Target="ADMIN_PASSWORD" Default="" Description="Admin password for kept videos." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Public URL" Target="PUBLIC_URL" Default="https://vertd.example.com" Description="Public URL for kept video access." Type="Variable" Display="always" Required="true" Mask="false"/>
+</Container>
