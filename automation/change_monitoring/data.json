@@ -894,5 +894,17 @@
                 "commit_message": ""
             }
         ]
+    },
+    {
+        "app_name": "Seerr",
+        "git_url": "https://github.com/seerr-team/seerr.git",
+        "branch_override": "develop",
+        "files_to_check": [
+            {
+                "file_path": "docs/getting-started/docker.mdx",
+                "commit_hash": "af083a3cd5c3e3d5d7917fdf4fdd67fe3f39c46b",
+                "commit_message": ""
+            }
+        ]
     }
 ]
