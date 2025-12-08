@@ -801,13 +801,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "0405163e095faf80bdda95eda1446093f8f0fc73",
-                "commit_message": "feat: add non-root user support with configurable UID/GID\n\n- Create non-root user 'appuser' in Dockerfile with ARG for UID/GID\n- Set ownership of /app and /music to appuser\n- Switch to non-root user before exposing port for improved security\n- Update docker-compose.yml to pass UID/GID build args with defaults\n\nThis enhances container security by avoiding root execution and allows customization of user IDs for volume permissions.\n"
+                "commit_hash": "8e3ef85dac7995e21070993b7977e6748cdaea00",
+                "commit_message": "feat: Implement persistent download queue with frontend management and backend processing\n"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "57de1d40bba01cb2557cc0a6ca165e300292d8b5",
-                "commit_message": null
+                "commit_hash": "8e3ef85dac7995e21070993b7977e6748cdaea00",
+                "commit_message": "feat: Implement persistent download queue with frontend management and backend processing\n"
             }
         ]
     },
