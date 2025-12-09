@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Borg Web UI</Name>
+    <Repository>ainullcode/borg-ui:latest</Repository>
+    <Registry>ainullcode/borg-ui</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8081]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://karanhudia.github.io/borg-ui/configuration</Support>
+    <Project>https://karanhudia.github.io/borg-ui/</Project>
+    <Overview>
+        Replace complex Borg Backup terminal commands with a beautiful web UI. Create, schedule, and restore backups with just a few clicks.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>borg backup ui web webui interface restic backrest storage cron task schedule</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/borg-ui-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/borg_ui.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-09
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8081" Default="8081" Mode="tcp" Description="Container Port: 8081" Type="Port" Display="always-hide" Required="true" Mask="false">8081</Config>
+    <Config Name="Initial Admin Password" Target="INITIAL_ADMIN_PASSWORD" Default="admin123" Description="Set the initial admin password for the web UI. Default: admin123" Type="Variable" Display="always-hide" Required="true" Mask="true">admin123</Config>
+    <Config Name="Data Path" Target="/local" Default="" Description="Path to data you want to backup" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Cache Path" Target="/home/borg/.cache/borg" Default="/mnt/user/appdata/borg-ui/cache" Description="Path to cache folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/borg-ui/cache</Config>
+    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/borg-ui/data" Description="Path to app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/borg-ui/data</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|DEBUG|WARNING|ERROR" Description="Set the log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
