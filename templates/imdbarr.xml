@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>imdbarr</Name>
+    <Repository>ghcr.io/skulltrail/imdbarr:latest</Repository>
+    <Registry>ghcr.io/skulltrail/imdbarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/skulltrail/imdbarr/issues</Support>
+    <Project>https://github.com/skulltrail/imdbarr</Project>
+    <Overview>
+        A lightweight API that bridges the gap between IMDB watchlists and Sonarr. Converts your IMDB watchlist or any public IMDB list to the format that Sonarr's Custom List feature expects.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>sonarr radarr imdb watchlist custom list api automation tmdb tvdb</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/imdbarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/imdbarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-09
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="TMDB API Key" Target="TMDB_API_KEY" Default="" Description="Your TMDB API Key" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Base URL" Target="BASE_URL" Default="http://localhost:3000" Description="The base URL for accessing the application. Change 'localhost' to your server's IP or domain if accessing remotely." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:3000</Config>
+    <Config Name="Internal Port" Target="PORT" Default="3000" Description="Internal application port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3000</Config>
+</Container>
