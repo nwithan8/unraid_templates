@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>zurg</Name>
+    <Repository>ghcr.io/debridmediamanager/zurg-testing:latest</Repository>
+    <Registry>ghcr.io/debridmediamanager/zurg-testing</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/debridmediamanager/zurg-testing/issues</Support>
+    <Project>https://github.com/debridmediamanager/zurg-testing</Project>
+    <Overview>
+        A self-hosted Real-Debrid webdav server. Together with rclone it can mount your Real-Debrid torrent library into your file system like Dropbox. It's meant to be used with Infuse (webdav server) and Plex (mount zurg webdav with rclone).
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>realdebrid zurg webdav rclone infuse plex torrent download debrid usenet</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/zurg-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/zurg.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-09
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yml` file to be mounted at `/app/config.yml` before starting the container. See configuration details: https://github.com/debridmediamanager/zurg-testing/blob/main/config.yml  &#xD;
+        &#xD;
+        Expects a `plex_update.sh` script to be mounted at `/app/plex_update.sh` if Plex integration is desired. See script details: https://github.com/debridmediamanager/zurg-testing/blob/main/scripts/plex_update.sh
+    </Requires>
+    <Config Name="API Port" Target="9999" Default="9999" Mode="tcp" Description="Container Port: 9999" Type="Port" Display="always-hide" Required="true" Mask="false">9999</Config>
+    <Config Name="Config File Path" Target="/app/config.yml" Default="/mnt/user/appdata/zurg/config.yml" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/zurg/config.yml</Config>
+    <Config Name="Plex Update Script" Target="/app/plex_update.sh" Default="" Description="Path to Plex update script: https://github.com/debridmediamanager/zurg-testing/blob/main/scripts/plex_update.sh" Type="Path" Display="always" Required="true" Mask="false"/>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/zurg/data" Description="Path to the app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/zurg/data</Config>
+</Container>

@@ -918,5 +918,17 @@
                 "commit_message": ""
             }
         ]
+    },
+    {
+        "app_name": "zurg",
+        "git_url": "https://github.com/debridmediamanager/zurg-testing.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "b568e6aefeb0b5744ff476993d8fd0d9adc7dd7f",
+                "commit_message": ""
+            }
+        ]
     }
 ]
