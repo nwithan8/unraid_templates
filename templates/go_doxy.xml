@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>GoDoxy</Name>
-    <Repository>ghcr.io/yusing/go-proxy:latest</Repository>
-    <Registry>ghcr.io/yusing/go-proxy</Registry>
+    <Repository>ghcr.io/yusing/godoxy:latest</Repository>
+    <Registry>ghcr.io/yusing/godoxy</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>host</Network>
     <Privileged>false</Privileged>
-    <Support>https://github.com/yusing/go-proxy/issues</Support>
-    <Project>https://github.com/yusing/go-proxy</Project>
+    <Support>https://github.com/yusing/godoxy/issues</Support>
+    <Project>https://github.com/yusing/godoxy</Project>
     <Overview>
         A lightweight, easy-to-use, and performant reverse proxy.
     </Overview>
@@ -23,6 +23,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 20250-12-09
+
+        Add missing environment variables, update repository URL
+
         ### 2025-01-10
 
         Initial release
@@ -37,10 +41,14 @@
     <Config Name="API - Address" Target="GODOXY_API_ADDR" Default="127.0.0.1:8888" Description="API address" Type="Variable" Display="always-hide" Required="true" Mask="false">127.0.0.1:8888</Config>
     <Config Name="HTTP Port" Target="GODOXY_HTTP_ADDR" Default=":80" Mode="tcp" Description="HTTP port" Type="Variable" Display="advanced-hide" Required="true" Mask="false">:80</Config>
     <Config Name="HTTPS Port" Target="GODOXY_HTTPS_ADDR" Default=":443" Mode="tcp" Description="HTTPS port" Type="Variable" Display="advanced-hide" Required="true" Mask="false">:443</Config>
+    <Config Name="Block HTTP" Target="GODOXY_API_JWT_SECURE" Default="true|false" Description="Block HTTP connections" Type="Variable" Display="advanced-hide" Required="true" Mask="false">true</Config>
     <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/go_doxy/config" Description="Path to the config directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/go_doxy/config</Config>
     <Config Name="Error Pages Path" Target="/app/error_pages" Default="/mnt/user/appdata/go_doxy/error_pages" Description="Path to the error pages directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/go_doxy/error_pages</Config>
     <Config Name="Certs Path" Target="/app/certs" Default="/mnt/user/appdata/go_doxy/certs" Description="Path to the certs directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/go_doxy/certs</Config>
-    <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Docker Socker Proxy Address" Target="SOCKET_PROXY_LISTEN_ADDR" Default="127.0.0.1:2375" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">127.0.0.1:2375</Config>
     <Config Name="Debug" Target="GODOXY_DEBUG" Default="false|true" Description="Enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Prometheus Address" Target="GODOXY_PROMETHEUS_ADDR" Default="" Description="Prometheus address" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="PGID" Target="GODOXY_UID" Default="99" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+    <Config Name="PUID" Target="GODOXY_GID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
