@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Lufi</Name>
+    <Repository>ghcr.io/megalis-bretagne/lufi:latest</Repository>
+    <Registry>ghcr.io/megalis-bretagne/lufi</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8081]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://framagit.org/fiat-tux/hat-softwares/lufi</Support>
+    <Project>https://framagit.org/fiat-tux/hat-softwares/lufi</Project>
+    <Overview>
+        Let's Upload that FIle - An E2E encrypted file sharing software.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>file sharing encrypted upload lufi</ExtraSearchTerms>
+    <Icon>https://framagit.org/uploads/-/system/project/avatar/1998/lufi.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/lufi.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-10
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a `lufi.conf` file to be mounted at the Config File path before starting the container. See configuration details: https://github.com/megalis-bretagne/lufi-docker/blob/main/lufi.conf
+    </Requires>
+    <Config Name="Web UI Port" Target="8081" Default="8081" Mode="tcp" Description="Container Port: 8081" Type="Port" Display="always-hide" Required="true" Mask="false">8081</Config>
+    <Config Name="File Storage" Target="/lufi/files" Default="/mnt/user/appdata/lufi/files" Description="Path to file storage" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/lufi/files</Config>
+    <Config Name="Config File" Target="/home/nonroot/lufi/lufi.conf" Default="/mnt/user/appdata/lufi/lufi.conf" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/lufi/lufi.conf</Config>
+</Container>
