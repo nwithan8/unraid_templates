@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>GoDoxy Frontend</Name>
-    <Repository>ghcr.io/yusing/go-proxy-frontend:latest</Repository>
-    <Registry>ghcr.io/yusing/go-proxy-frontend</Registry>
+    <Repository>ghcr.io/yusing/godoxy-frontend:latest</Repository>
+    <Registry>ghcr.io/yusing/godoxy-frontend</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
