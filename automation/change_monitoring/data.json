@@ -779,8 +779,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/DOCKER.md",
-                "commit_hash": "0bc28b67cc071c154d56b51f04f2c93b1bab926a",
-                "commit_message": "docs: major documentation restructure\n\nMajor refactor of documentation to make it easier to navigate, maintain and update.\nAlso fixed inaccuracies in documents and added updates to help with user setup\nand troubleshooting for various platforms and use cases.\n\n- Split monolithic README into focused topic guides\n- Added CONTRIBUTING.md with comprehensive contributor guidelines\n- Created dedicated guides for each media server (Plex, Kodi, Jellyfin, Emby)\n- Organized platform-specific docs into platforms/ subdirectory\n- Added new guides: AUTHENTICATION, CONFIG, ENVIRONMENT_VARIABLES, USAGE_GUIDE\n- Improved cross-referencing between docs\n- Removed redundant SETUP.md (merged into INSTALLATION.md)\n"
+                "commit_hash": "956bebccf87b388d232da4d30df7ccc9f47afdb9",
+                "commit_message": "docs: add ARM architecture guidance for manual docker compose users\n"
             },
             {
                 "file_path": "env.example",
@@ -789,8 +789,8 @@
             },
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "21b7adac2779608ec0c68231a7be5f9f8bf05eac",
-                "commit_message": "fix(db): resolve custom user auth issues and improve config clarity\n\n- Add -u flag to MariaDB healthcheck to use configured DB_USER instead of hardcoded root\n- Reorder and improve comments in .env.example for DB configuration section\n- Add warning about uncommenting MYSQL_USER/MYSQL_PASSWORD when using non-root user\n- Document \"Access Denied for Custom Database User\" troubleshooting scenario with step-by-step resolution\n- Adjust ChannelManager add button tooltip offset to prevent obscuring the button (32px offset)\n"
+                "commit_hash": "ef8974dcccb2d199abdb9cac820a55e5effc8832",
+                "commit_message": "fix: auto-detect ARM architecture for MariaDB volume configuration\n"
             }
         ]
     },
