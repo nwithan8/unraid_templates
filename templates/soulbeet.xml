@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Soulbeet</Name>
+    <Repository>docccccc/soulbeet:master</Repository>
+    <Registry>https://hub.docker.com/r/docccccc/soulbeet</Registry>
+    <Branch>
+        <Tag>master</Tag>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9765]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/terry90/soulbeet/issues</Support>
+    <Project>https://github.com/terry90/soulbeet</Project>
+    <Overview>
+        Soulbeet is a modern, self-hosted music downloader and manager. It bridges the gap between Soulseek (via slskd) and your music library (managed by beets), providing a seamless flow from search to streaming-ready library.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>music beetz soulseek slskd downloader manager library</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/soulbeet-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/soulbeet.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/terry90/soulbeet/refs/heads/master/screenshots/search.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/terry90/soulbeet/refs/heads/master/screenshots/settings.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-10
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Soulseek slskd server to be running and accessible.
+    </Requires>
+    <Config Name="Web UI Port" Target="9765" Default="9765" Mode="tcp" Description="Container Port: 9765" Type="Port" Display="always-hide" Required="true" Mask="false">9765</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="A secret key for Soulbeet (can be any random string)" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Soulseek - URL" Target="SLSKD_URL" Default="http://IP_ADDRESS:5030" Description="URL for the slskd server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:5030</Config>
+    <Config Name="Soulseek - API Key" Target="SLSKD_API_KEY" Default="" Description="API key for the slskd server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Soulseek - Internal Download Folder" Target="SLSKD_DOWNLOAD_PATH" Default="/downloads" Description="Internal path to the slskd download folder. Should match the path in Soulseek" Type="Path" Display="always-hide" Required="true" Mask="false">/downloads</Config>
+    <Config Name="Soulseek - External Download Folder" Target="/downloads" Default="" Description="Path to the external slskd download folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/downloads/soulseek</Config>
+    <Config Name="Beets - Config File" Target="BEETS_CONFIG" Default="/config/config.yaml" Description="Internal path to the beets config file. Optional, remove if not used." Type="Path" Display="always" Required="false" Mask="false">/config/config.yaml</Config>
+    <Config Name="Beets - Music Folder" Target="/music" Default="" Description="Path to the music library folder managed by beets" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Data Folder" Target="/data" Default="/mnt/user/appdata/soulbeet/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/soulbeet/data</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="sqlite:/data/soulbeet.db" Description="Database connection URL" Type="Variable" Display="advanced-hide" Required="false" Mask="false">sqlite:/data/soulbeet.db</Config>
+/</Container>
