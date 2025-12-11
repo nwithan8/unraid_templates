@@ -36,6 +36,6 @@
     <Config Name="Destination Path" Target="/files/destination" Default="" Description="Destination library path" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Number of Movies" Target="AMOUNT_OF_WANTED_MOVIES" Default="3" Description="Number of random movies to copy" Type="Variable" Display="always-hide" Required="true" Mask="false">3</Config>
     <Config Name="Action Type" Target="ACTION_TYPE" Default="symlink|copy" Description="Action to perform to move files from source to destination" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Internal Source Path" Target="SOURCE_FOLDER" Default="/files/source" Description="Internal path to the source folder. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/files/source</Config>
-    <Config Name="Internal Destination Path" Target="DESTINATION_FOLDER" Default="/files/destination" Description="Internal path to the destination folder. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/files/destination</Config>
+    <Config Name="Internal Source Path" Target="SOURCE_FOLDER" Default="/files/source" Description="Internal path to the source folder. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/files/source</Config>
+    <Config Name="Internal Destination Path" Target="DESTINATION_FOLDER" Default="/files/destination" Description="Internal path to the destination folder. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/files/destination</Config>
 </Container>

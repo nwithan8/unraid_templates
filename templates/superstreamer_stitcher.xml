@@ -39,5 +39,5 @@
     <Config Name="Secret" Target="SUPER_SECRET" Default="" Description="Secret key for the API" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Public Stitcher Endpoint" Target="PUBLIC_STITCHER_ENDPOINT" Default="http://localhost:52002" Description="Publicly accessible URL for Superstreamer Stitcher container. Replace with your IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:52002</Config>
     <Config Name="Public AWS S3 Endpoint" Target="PUBLIC_S3_ENDPOINT" Default="" Description="Publicly accessible URL for S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Internal App Port" Target="PORT" Default="52002" Mode="tcp" Description="Internal port for container. Not recommended to change." Type="Port" Display="advanced-hide" Required="true" Mask="false">52002</Config>
+    <Config Name="Internal App Port" Target="PORT" Default="52002" Mode="tcp" Description="Internal port for container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">52002</Config>
 </Container>

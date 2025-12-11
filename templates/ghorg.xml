@@ -38,7 +38,7 @@
     <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
     <Config Name="Data Path" Target="/data" Default="" Description="Where to store repositories" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/ghorg/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ghorg/config</Config>
-    <Config Name="Internal Data Path" Target="GHORG_ABSOLUTE_PATH_TO_CLONE_TO" Default="/data" Description="Internal path to repository storage. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/data</Config>
-    <Config Name="Internal Config Path" Target="GHORG_CONFIG" Default="/config/conf.yaml" Description="Internal path to config file. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/config/conf.yaml</Config>
-    <Config Name="Internal Reclone Path" Target="GHORG_RECLONE_PATH" Default="/config/reclone.yaml" Description="Internal path to reclone file. Not recommended to change." Type="Path" Display="advanced-hide" Required="true" Mask="false">/config/reclone.yaml</Config>
+    <Config Name="Internal Data Path" Target="GHORG_ABSOLUTE_PATH_TO_CLONE_TO" Default="/data" Description="Internal path to repository storage. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data</Config>
+    <Config Name="Internal Config Path" Target="GHORG_CONFIG" Default="/config/conf.yaml" Description="Internal path to config file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config/conf.yaml</Config>
+    <Config Name="Internal Reclone Path" Target="GHORG_RECLONE_PATH" Default="/config/reclone.yaml" Description="Internal path to reclone file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config/reclone.yaml</Config>
 </Container>

@@ -44,5 +44,5 @@
     <Config Name="AWS S3 - Region" Target="S3_REGION" Default="us-east-1" Description="Region of the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false">us-east-1</Config>
     <Config Name="AWS S3 - Access Key" Target="S3_ACCESS_KEY" Default="" Description="Access key for the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="AWS S3 - Secret Key" Target="S3_SECRET_KEY" Default="" Description="Secret key for the S3 storage bucket used to store media files." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Internal App Port" Target="PORT" Default="52001" Mode="tcp" Description="Internal port for container. Not recommended to change." Type="Port" Display="advanced-hide" Required="true" Mask="false">52001</Config>
+    <Config Name="Internal App Port" Target="PORT" Default="52001" Mode="tcp" Description="Internal port for container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">52001</Config>
 </Container>

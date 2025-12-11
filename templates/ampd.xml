@@ -39,6 +39,6 @@
     <Config Name="Reset Modes on Clear" Target="RESET_MODES_ON_CLEAR" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Create New Playlists" Target="CREATE_NEW_PLAYLISTS" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Delete Existing Playlists" Target="DELETE_EXISTING_PLAYLISTS" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Internal Working Directory" Target="HOME_DIR" Default="/opt/ampd/home" Description="Internal working directory for ampd. Do not change unless you know what you are doing." Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/opt/ampd/home</Config>
+    <Config Name="Internal Working Directory" Target="HOME_DIR" Default="/opt/ampd/home" Description="Internal working directory for ampd. Do not change unless you know what you are doing." Type="Variable" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/opt/ampd/home</Config>
     <Config Name="Working Directory" Target="/opt/ampd/home" Default="/mnt/user/appdata/ampd" Description="Path to the working directory. This is where ampd stores its data." Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ampd</Config>
 </Container>

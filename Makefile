@@ -49,4 +49,8 @@ set_up_python:
 font_awesome_icon:
 	sh ./scripts/font_awesome_icon.sh $(icon) $(name) $(category)
 
+## validate_templates - Validate all templates in the templates folder
+validate_templates:
+	for template in ./templates/*.xml; do scripts/.venv/bin/python3 automation/template_validation/validate_app_config.py $$template; done
+
 .PHONY: help template_check_unix template_validate_unix copy_placeholder_unix download_github_icon

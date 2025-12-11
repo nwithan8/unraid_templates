@@ -39,6 +39,6 @@
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="9705" Default="9705" Mode="tcp" Description="Container Port: 9705" Type="Port" Display="always-hide" Required="true" Mask="false">9705</Config>
-    <Config Name="Base URL" Target="BASE_URL" Default="" Description="Base URL for Huntarr, leave empty for root path" Type="Text" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Base URL" Target="BASE_URL" Default="" Description="Base URL for Huntarr, leave empty for root path" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/huntarr/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/huntarr/config</Config>
 </Container>

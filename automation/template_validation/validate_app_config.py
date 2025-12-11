@@ -61,7 +61,16 @@ def validate_template_file(template_file_path: str) -> bool:
                 print(f"Error: No Config element with Type 'Port' and Target '{webui_port}' matching a defined WebUI port.")
                 return False
 
-            # TODO: Add more validation checks as needed
+        # Most of the time (but not always), an environmental variable is all-caps (e.g., INTERNAL_CONFIG_PATH)
+        # Ensure that all Config elements with an all-caps Target is of Type 'Variable' (no accidental 'Path' for path-like variables)
+        for config in xml_data.findall('.//Config'):
+            target = config.get('Target')
+            if target and target.isupper():
+                if config.get('Type').lower().strip() != 'variable':
+                    print(f"Error: Config element with Target '{target}' is all-caps but not of Type 'Variable'.")
+                    return False
+
+        # TODO: Add more validation checks as needed
 
         return True
 
