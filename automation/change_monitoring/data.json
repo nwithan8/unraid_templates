@@ -950,8 +950,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f246ea3cf4c9d9eda0c1f3817d82a6dd0fe80eeb",
-                "commit_message": ""
+                "commit_hash": "89736689ede7280da317395e751f88775f3dafa6",
+                "commit_message": "Add slskd credentials in docker-compose.yml\n\nComment out sensitive environment variables in docker-compose.yml"
             }
         ]
     }
