@@ -155,6 +155,11 @@
                 "file_path": "docker-compose.yml",
                 "commit_hash": "d549784bd4d81f37fbccbfc25ef350cd860d13d4",
                 "commit_message": "Refactor docker-compose.yml for overr-syncerr service\n\nCleaned up the compose file. Variables are now stored in the .env file"
+            },
+            {
+                "file_path": "env.example",
+                "commit_hash": "ff69ab03d6b8f383dce2ef3fbb9b9ac14454b095",
+                "commit_message": null
             }
         ]
     },

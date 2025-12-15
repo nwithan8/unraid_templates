@@ -32,7 +32,9 @@
         Initial release
     </Changes>
     <Requires>
-        Enabling Kometa integration will attempt to communicate with a Kometa Docker container running on the same machine.
+        Enabling Kometa integration will attempt to communicate with a Kometa Docker container running on the same machine. &#xD;
+        &#xD;
+        May require additional configuration. See details: https://github.com/gssariev/overr-syncerr/blob/main/.env.example
     </Requires>
     <Config Name="Webhook Port" Target="8089" Default="8089" Mode="tcp" Description="Container Port: 8089" Type="Port" Display="always-hide" Required="false" Mask="false">8089</Config>
     <Config Name="Bazarr - URL" Target="BAZARR_URL" Default="http://IP_ADDRESS:PORT/api" Description="URL to Bazarr API" Type="Variable" Display="always-hide" Required="false" Mask="false">http://IP_ADDRESS:PORT/api</Config>
@@ -73,7 +75,7 @@
     <Config Name="Language Map" Target="LANGUAGE_MAP" Default='{}' Description="Map of language keywords. See example: https://github.com/gssariev/overr-syncerr/blob/1e68f8bd55bfd7aaeb65192f5ba539dbf2802a6f/docker-compose.yml#L68" Type="Variable" Display="always-hide" Required="true" Mask="false">{}</Config>
     <Config Name="Sync Words" Target="SYNC_KEYWORDS" Default='[]' Description="List of keywords to identify sync issues. See example: https://github.com/gssariev/overr-syncerr/blob/1e68f8bd55bfd7aaeb65192f5ba539dbf2802a6f/docker-compose.yml#L69" Type="Variable" Display="always-hide" Required="true" Mask="false">[]</Config>
     <Config Name="Add Label Words" Target="ADD_LABEL_KEYWORDS" Default='[]' Description="List of keywords to identify requests for adding labels. See example: https://github.com/gssariev/overr-syncerr/blob/1e68f8bd55bfd7aaeb65192f5ba539dbf2802a6f/docker-compose.yml#L70" Type="Variable" Display="always-hide" Required="true" Mask="false">[]</Config>
-    <Config Name="Config Path" Target="/mnt/usr" Default="/mnt/user/appdata/overr-syncerr/config" Description="Path to the config directory." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/overr-syncerr/config</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/overr-syncerr/config" Description="Path to the config directory." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/overr-syncerr/config</Config>
     <Config Name="Kometa - Internal Config Path" Target="KOMETA_CONFIG_PATH" Default="/kometa/config" Description="Internal path to the Kometa config directory." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/kometa/config</Config>
     <Config Name="AI - Max Request Size" Target="MAX_REQUEST_BYTES" Default="2000" Description="Maximum request size in bytes." Type="Variable" Display="always-hide" Required="true" Mask="false">2000</Config>
     <Config Name="AI - Max Tokens" Target="MAX_TOKENS" Default="4000" Description="Maximum number of tokens." Type="Variable" Display="always-hide" Required="true" Mask="false">4000</Config>
