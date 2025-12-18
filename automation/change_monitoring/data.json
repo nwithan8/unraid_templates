@@ -355,8 +355,8 @@
             },
             {
                 "file_path": ".env.sample",
-                "commit_hash": "3adeef086be8ee13fb96e7135f1eb42b20f99609",
-                "commit_message": "Added migration to get new bricklink data fields, fixed bricklink links, added set refresh based on missing bricklink data\n"
+                "commit_hash": "e32b82b961a7ee1ddef6bd7053649f8d7500b1e8",
+                "commit_message": "feat(env): updated examples\n"
             }
         ]
     },
@@ -836,18 +836,6 @@
             {
                 "file_path": "docker-compose.yml",
                 "commit_hash": "e4aeac32ca0d7ff0aa4de382d1c40eee39c7a49d",
-                "commit_message": ""
-            }
-        ]
-    },
-    {
-        "app_name": "Home Assistant Time Machine",
-        "git_url": "https://github.com/saihgupr/HomeAssistantTimeMachine.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "compose.yaml",
-                "commit_hash": "eb78a8bd1868c9991f3ba90742859d70b5adda2f",
                 "commit_message": ""
             }
         ]
