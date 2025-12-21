@@ -18,7 +18,7 @@
     <Beta>False</Beta>
     <Category>AI: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>overseerr jellyseerr radarr sonarr automation classification ai machine learning plex</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/classifarr-icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/cloudbyday90/Classifarr/refs/heads/main/logo/icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/classifarr.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
