@@ -6,6 +6,9 @@ on:
 jobs:
   validate_app_config:
     runs-on: ubuntu-latest
+    env:
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -23,5 +26,5 @@ jobs:
           pip install -r automation/template_validation/requirements.txt
 
       - name: Run Python script to check if all XML files edited in PR pass app config validation
-        run: for file in $(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'templates/.*\.xml'); do python automation/template_validation/validate_app_config.py "$file"; done
+        run: for file in $(gh pr view $PR_NUMBER --json files --jq '.files.[].path' | grep 'templates/.*\.xml'); do python automation/template_validation/validate_app_config.py "$file"; done
         continue-on-error: false
