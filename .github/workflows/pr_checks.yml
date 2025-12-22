@@ -7,24 +7,8 @@ on:
       - edited
       - ready_for_review
       - reopened
-  push:
-    branches:
-      - main
-      - master
 
 jobs:
-  validate_xml:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Validate XML files
-        uses: action-pack/valid-xml@v1
-        with:
-          path: "templates/"
-          file-endings: ".xml"
-
   validate_app_config:
     runs-on: ubuntu-latest
     steps:
@@ -43,6 +27,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r automation/template_validation/requirements.txt
 
-      - name: Run Python script to check if all XML files pass app config validation
-        run: for file in templates/*.xml; do python automation/template_validation/validate_app_config.py "$file"; done
+      - name: Run Python script to check if all XML files edited in PR pass app config validation
+        run: for file in $(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'templates/.*\.xml'); do python automation/template_validation/validate_app_config.py "$file"; done
         continue-on-error: false

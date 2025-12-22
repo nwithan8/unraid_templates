@@ -1,0 +1,42 @@
+name: Validate Template
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  validate_xml:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate XML files
+        uses: action-pack/valid-xml@v1
+        with:
+          path: "templates/"
+          file-endings: ".xml"
+
+  validate_app_config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PRIVILEGED_GITHUB_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r automation/template_validation/requirements.txt
+
+      - name: Run Python script to check if all XML files pass app config validation
+        run: for file in templates/*.xml; do python automation/template_validation/validate_app_config.py "$file"; done
+        continue-on-error: false
