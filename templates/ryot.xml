@@ -22,7 +22,7 @@
     <Beta>False</Beta>
     <Category>MediaServer:Other Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>tracker media fitness video games music podcasts anime manga download books movies shows tv series audiobooks twitch itunes tmdb server audible mal anilist google</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ryot-icon.png</Icon>
+    <Icon>https://raw.githubusercontent.com/IgnisDa/ryot/refs/heads/main/libs/assets/icon-512x512.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ryot.xml</TemplateURL>
     <Screenshot>https://ryot.io/cta-image.png</Screenshot>
     <Maintainer>
