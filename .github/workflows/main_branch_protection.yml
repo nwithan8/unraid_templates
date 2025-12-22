@@ -1,4 +1,4 @@
-name: Validate Template
+name: Main Branch Protections
 
 on:
   push:
