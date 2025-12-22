@@ -37,7 +37,6 @@
         Requires a separate Postgres database.
     </Requires>
     <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
-    <Config Name="Timezone" Target="TZ" Default="Etc/GMT" Description="Timezone to be used for cron jobs. Accepts values according to the IANA database." Type="Variable" Display="always-hide" Required="true" Mask="false">Etc/GMT</Config>
     <Config Name="Server - Admin Access Token" Target="SERVER_ADMIN_ACCESS_TOKEN" Default="" Description="An access token that can be used for admin operations." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Server - Pro Key" Target="SERVER_PRO_KEY" Default="" Description="Key to activate pro features. If left blank, will default to community edition." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Server - SMTP - Mailbox" Target="SERVER_SMTP_MAILBOX" Default="Ryot &lt;no-reply@ryot.io&gt;" Description="The mailbox format for sending emails." Type="Variable" Display="always-hide" Required="false" Mask="false">Ryot &lt;no-reply@ryot.io&gt;</Config>
