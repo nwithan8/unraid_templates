@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>MeepleStats - Frontend</Name>
+    <Repository>ghcr.io/tommythehuman/meeplestats/frontend:latest</Repository>
+    <Registry>ghcr.io/tommythehuman/meeplestats/frontend</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5173]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/TommyTheHuman/MeepleStats/issues</Support>
+    <Project>https://github.com/TommyTheHuman/MeepleStats</Project>
+    <Overview>
+        A self-hosted web application designed to track board game statistics for your group of friends! It allows users to log game sessions, analyze player performance, and manage a wishlist of games. &#xD;
+        &#xD;
+        This is the frontend component.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>meeplestats board games stats tracking gaming sessions wishlist</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/meeplestats-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/meeplestats_frontend.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-24
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate MongoDB and MeepleStats - Backend containers.
+    </Requires>
+    <Config Name="Web UI Port" Target="5173" Default="5173" Mode="tcp" Description="Container Port: 5173" Type="Port" Display="always-hide" Required="true" Mask="false">5173</Config>
+    <Config Name="Backend URL" Target="VITE_API_URL" Default="http://IP_ADDRESS:5000" Description="URL of the MeepleStats backend API" Type="Variable" Display="always" Required="true" Mask="false">http://IP_ADDRESS:5000</Config>
+    <Config Name="JWT Storage" Target="VITE_JWT_STORAGE" Default="localstorage|cookie" Description="Storage method for JWT tokens" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Enable RAG" Target="VITE_ENABLE_RAG" Default="True|False" Description="Enable Rulesbooks Chat (RAG) features in the frontend" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Allowed Hosts" Target="VITE_ALLOWED_HOSTS" Default="" Description="Comma-separated list of allowed hosts for CORS" Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>

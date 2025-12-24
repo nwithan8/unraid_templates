@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>MeepleStats - Backend</Name>
+    <Repository>ghcr.io/tommythehuman/meeplestats/backend:latest</Repository>
+    <Registry>ghcr.io/tommythehuman/meeplestats/backend</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/TommyTheHuman/MeepleStats/issues</Support>
+    <Project>https://github.com/TommyTheHuman/MeepleStats</Project>
+    <Overview>
+        A self-hosted web application designed to track board game statistics for your group of friends! It allows users to log game sessions, analyze player performance, and manage a wishlist of games. &#xD;
+        &#xD;
+        This is the backend component.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>meeplestats board games stats tracking gaming sessions wishlist</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/meeplestats-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/meeplestats_backend.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-24
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate MongoDB and MeepleStats - Frontend containers.
+    </Requires>
+    <Config Name="API Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="BoardGameGeek Username" Target="BGG_USERNAME" Default="" Description="Your BoardGameGeek username for fetching game data" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Database - URL" Target="MONGO_URI" Default="mongodb://root:password@IP_ADDRESS:27017/meeplestats?authSource=admin" Description="MongoDB connection string" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Name" Target="DB_NAME" Default="meeplestats" Description="Name of the MongoDB database to use" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Use `openssl rand -base64 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="CORS Origins" Target="CORS_ORIGIN" Default="" Description="Comma-separated list of allowed CORS origins (e.g. http://localhost:3000)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="JWT - Secret Key" Target="JWT_SECRET_KEY" Default="" Description="Use `openssl rand -base64 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="JWT - Expiration (seconds)" Target="JWT_ACCESS_TOKEN_EXPIRES" Default="28" Description="Expiration time for JWT access tokens in seconds" Type="Variable" Display="always-hide" Required="true" Mask="false">28</Config>
+    <Config Name="JWT - Storage" Target="JWT_STORAGE" Default="localstorage|cookie" Description="Storage method for JWT tokens" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="JWT - Token Location" Target="JWT_TOKEN_LOCATION" Default="" Description="Token location, e.g. headers, cookies" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="JWT - Secure Cookies" Target="JWT_COOKIE_SECURE" Default="True|False" Description="Whether to use secure cookies for JWT" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="JWT - Access Cookie Name" Target="JWT_ACCESS_COOKIE_NAME" Default="meeplestats" Description="Name of the JWT access cookie" Type="Variable" Display="always" Required="false" Mask="false">meeplestats</Config>
+    <Config Name="JWT - CRSF Protection" Target="JWT_COOKIE_CSRF_PROTECT" Default="True|False" Description="Whether to enable CSRF protection for JWT cookies" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="JWT - Storage" Target="JWT_STORAGE" Default="localstorage|cookie" Description="Storage method for JWT tokens" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Storage - Type" Target="STORAGE_TYPE" Default="local|s3" Description="Type of storage to use for file uploads" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Storage - S3 Endpoint" Target="S3_ENDPOINT" Default="" Description="S3 endpoint URL (required if using S3 storage)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Storage - S3 Access Key" Target="S3_ACCESS_KEY" Default="" Description="S3 access key (required if using S3 storage)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Storage - S3 Secret Key" Target="S3_SECRET_KEY" Default="" Description="S3 secret key (required if using S3 storage)" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Storage - S3 Bucket Name" Target="S3_BUCKET_NAME" Default="" Description="S3 bucket name (required if using S3 storage)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Rulesbooks Chat (RAG) - Enable" Target="ENABLE_RAG" Default="True|False" Description="Enable Rulesbooks Chat (RAG) integration" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Rulesbooks Chat (RAG) - Pinecone API Key" Target="PINECONE_API_KEY" Default="" Description="Pinecone API key for RAG integration" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Rulesbooks Chat (RAG) - Pinecone Index Name" Target="PINECONE_INDEX_NAME" Default="" Description="Pinecone index name for RAG integration" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Rulesbooks Chat (RAG) - Embedding Type" Target="EMBEDDING_TYPE" Default="gemini|local" Description="Embedding type for RAG integration" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Rulesbooks Chat (RAG) - Embedding Model" Target="EMBEDDING_MODEL" Default="" Description="Embedding model for RAG integration. Example: BAAI/bge-small-en-v1.5" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Rulesbooks Chat (RAG) - Gemini API Key" Target="GEMINI_API_KEY" Default="" Description="Gemini API key for RAG integration" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Rulesbooks Chat (RAG) - Pinecone Dimension" Target="PINECONE_DIMENSION" Default="384" Description="Chunk size for RAG document processing" Type="Variable" Display="always" Required="true" Mask="false">384</Config>
+    <Config Name="Rulesbooks Chat (RAG) - OpenRouter API Key" Target="OPENROUTER_API_KEY" Default="" Description="OpenRouter API key for RAG integration" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Rulesbooks Chat (RAG) - LLM Model" Target="LLM_MODEL" Default="" Description="LLM model for RAG integration. Example: qwen/qwq-32b:free" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Data Folder" Target="/data" Default="/mnt/user/appdata/meeplestats/backend/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meeplestats/backend/data</Config>
+    <Config Name="Internal Upload Folder" Target="UPLOAD_FOLDER" Default="/data" Description="Path inside the container for uploaded files" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
