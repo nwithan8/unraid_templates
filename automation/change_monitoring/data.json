@@ -955,8 +955,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "8974e822a5ed62d70f7e5b95aa27ae7104d8add5",
-                "commit_message": null
+                "commit_hash": "b7468ac32618cf7f4512f5cee08a67a0793f2cda",
+                "commit_message": "\"v0.26.0-alpha\"\n"
             }
         ]
     },
