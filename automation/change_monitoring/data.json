@@ -955,8 +955,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "b7468ac32618cf7f4512f5cee08a67a0793f2cda",
-                "commit_message": "\"v0.26.0-alpha\"\n"
+                "commit_hash": "66e137ccacbf29a74b4811409ee6faff22cd411e",
+                "commit_message": "v0.30.0-alpha: Re-Classification System Foundation\n\nAdds infrastructure for re-classification workflow including:\n- Library mapping system (Plex libraries to *arr root folders)\n- Re-classification service with media move capabilities\n- Learned corrections integration for classification chain\n- Path testing service for Docker environment validation\n\nNew Features:\n- reclassificationService.js with execute/preview/rollback\n- libraryMappingService.js with auto-detection\n- pathTestService.js with health checks\n- LibraryMappings.vue in Settings > Media Sources\n- PathTest.vue in Settings > System > Path Testing\n- /api/classification/reclassify endpoints\n- /api/settings/path-test endpoints\n\nDatabase:\n- New tables: library_arr_mappings, learned_corrections, app_settings\n- New columns: media_server_id in radarr_config and sonarr_config\n\nNote: SetupBanner disabled pending bug fixes in future minor release.\n"
             }
         ]
     },
