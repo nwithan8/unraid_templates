@@ -29,7 +29,9 @@
         Initial release
     </Changes>
     <Requires>
-        Requires a separate Ollama instance.
+        Requires a separate Ollama instance. &#xD;
+        &#xD;
+        Requires one-to-one mapping of Radarr/Sonarr paths to Classifarr paths. See documentation for details: https://github.com/cloudbyday90/Classifarr/blob/main/docker-compose.yml
     </Requires>
     <Config Name="Web UI Port" Target="21324" Default="21324" Mode="tcp" Description="Container Port: 21324" Type="Port" Display="always-hide" Required="true" Mask="false">21324</Config>
     <Config Name="Config Data" Target="/app/data" Default="/mnt/user/appdata/classifarr/data" Description="Path to persistent config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/classifarr/data</Config>
