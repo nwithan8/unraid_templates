@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Authelia Admin Control Panel</Name>
+    <Repository>ghcr.io/asalimonov/authelia-admin:latest</Repository>
+    <Registry>ghcr.io/asalimonov/authelia-admin</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9093]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/asalimonov/authelia-admin/issues</Support>
+    <Project>https://github.com/asalimonov/authelia-admin</Project>
+    <Overview>
+        A web-based administration interface for managing Authelia authentication server with LLDAP.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Security: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>authelia admin webui management portal 2fa mfa totp saml openid connect oidc lldap</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/authelia-admin-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/authelia_admin.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/asalimonov/authelia-admin/refs/heads/main/public/authelia-admin.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-27
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a `config.yaml` file to be present in the Config Path. See documentation: https://github.com/asalimonov/authelia-admin#yaml-configuration
+    </Requires>
+    <Config Name="Web UI Port" Target="9093" Default="9093" Mode="tcp" Description="Container Port: 9093" Type="Port" Display="always-hide" Required="true" Mask="false">9093</Config>
+    <Config Name="Authelia Config File" Target="/opt/authelia-admin/config.yml" Default="" Description="Path to the Authelia config.yaml file" Type="Path" Mode="ro" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Trusted Origins" Target="TRUSTED_ORIGINS" Default="https://auth.yourdomain.com" Description="Set the trusted origins for Authelia" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/authelia_admin/config" Description="Path to the config folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/authelia_admin/config</Config>
+    <Config Name="App Data Path" Target="/data" Default="/mnt/user/appdata/authelia_admin/data" Description="Path to the app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/authelia_admin/data</Config>
+    <Config Name="Log Level" Target="AAD_LOGLEVEL" Default="DEBUG|INFO|WARNING|ERROR|CRITICAL" Description="Set the log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
