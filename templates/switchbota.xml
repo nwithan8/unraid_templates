@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Switchbota</Name>
+    <Repository>ghcr.io/kendallgoto/switchbota/switchbota-server:latest</Repository>
+    <Registry>ghcr.io/kendallgoto/switchbota/switchbota-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/kendallgoto/switchbota/issues</Support>
+    <Project>https://github.com/kendallgoto/switchbota</Project>
+    <Overview>
+        Replaces the factory firmware on the SwitchBot Plug Mini via OTA, enabling the use of Tasmota without disassembling the unit.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>switchbota switchbot home automation iot flash api</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/switchbota-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/switchbota.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-27
+
+        Initial release
+    </Changes>
+    <ExtraParams>--user 099:100</ExtraParams>
+    <Config Name="API Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+</Container>
