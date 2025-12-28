@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Airsonic Refix UI</Name>
+    <Repository>tamland/airsonic-refix:latest</Repository>
+    <Registry>https://hub.docker.com/r/tamland/airsonic-refix</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/tamland/airsonic-refix/issues</Support>
+    <Project>https://github.com/tamland/airsonic-refix</Project>
+    <Overview>
+        Modern responsive web frontend for airsonic-advanced, navidrome, gonic and other subsonic compatible music servers.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>airsonic airsonic-refix navidrome gonic subsonic music server frontend</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/airsonic-refix-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/airsonic_refix.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/tamland/airsonic-refix/refs/heads/master/screenshots/album.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/tamland/airsonic-refix/refs/heads/master/screenshots/album-list.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/tamland/airsonic-refix/refs/heads/master/screenshots/artist.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/tamland/airsonic-refix/refs/heads/master/screenshots/artist-list.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-27
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Subsonic-compatible server.
+    </Requires>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Server URL" Target="SERVER_URL" Default="" Description="Optional, define Subsonic server URL to bypass input option on login screen." Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
