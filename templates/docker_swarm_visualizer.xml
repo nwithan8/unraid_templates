@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Docker Swarm Visualizer</Name>
+    <Repository>dockerswarmvisualizer/dockerswarmvisualizer:latest</Repository>
+    <Registry>https://hub.docker.com/r/dockerswarmvisualizer/dockerswarmvisualizer</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/sammonsempes/DockerSwarmVisualizer/issues</Support>
+    <Project>https://sammonsempes.github.io/DockerSwarmVisualizer/</Project>
+    <Overview>
+        A real-time web visualization tool for Docker Swarm clusters. See your nodes, services, and networks as an interactive graph.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>docker swarm visualization graph monitoring</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/docker-swarm-visualizer-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/docker_swarm_visualizer.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-27
+
+        Initial release
+    </Changes>
+    <ExtraParams>--security-opt no-new-privileges:true --cap-drop ALL</ExtraParams>
+    <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
