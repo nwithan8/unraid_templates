@@ -976,5 +976,22 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Make A Wrapped",
+        "git_url": "https://github.com/DevMatei/make-a-wrapped.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "e46f629f13ce026d436d8a30524956416f8c7eda",
+                "commit_message": null
+            },
+            {
+                "file_path": ".env.example",
+                "commit_hash": "e7dbc251d915e0153cbed0ff6a6e363584f23f6e",
+                "commit_message": null
+            }
+        ]
     }
 ]

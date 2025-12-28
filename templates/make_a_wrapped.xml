@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Make A Wrapped</Name>
+    <Repository>ghcr.io/devmatei/listenbrainz-wrapped:latest</Repository>
+    <Registry>ghcr.io/devmatei/listenbrainz-wrapped</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/DevMatei/make-a-wrapped/issues</Support>
+    <Project>https://wrapped.devmatei.com/</Project>
+    <Overview>
+        Spotify Wrapped style recap generator for ListenBrainz, Last.fm, and Navidrome.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>navidrome listenbrainz last.fm spotify wrapped recap music stats</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/make-a-wrapped-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/make_a_wrapped.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-27
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires an optional Last.fm API key.
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Secret key. Generate a random string." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="App Limit Salt" Target="APP_RATE_LIMIT_SALT" Default="" Description="Salt for app rate limiting. Generate a random string." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Last.fm - API Key" Target="LASTFM_API_KEY" Default="" Description="Last.fm API key. Required for higher quality artist artwork" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Count Since" Target="WRAPPED_COUNT_SINCE" Default="2024-12-01" Description="Start date for counting listens (YYYY-MM-DD)" Type="Variable" Display="always-hide" Required="true" Mask="false">2024-12-01</Config>
+    <Config Name="Trust Proxy Headers" Target="APP_TRUST_PROXY_HEADERS" Default="0|1" Description="Whether to trust proxy headers (0 = False, 1 = True)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Cloudflare Turnstile - Site Key" Target="TURNSTILE_SITE_KEY" Default="" Description="Cloudflare Turnstile site key for CAPTCHA protection" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Cloudflare Turnstile - Secret Key" Target="TURNSTILE_SECRET_KEY" Default="" Description="Cloudflare Turnstile secret key for CAPTCHA protection" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/make_a_wrapped/data" Description="Path to application data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/make_a_wrapped/data</Config>
+    <Config Name="Internal Metrics File" Target="WRAPPED_COUNT_FILE" Default="data/wrapped-count.txt" Description="Path to internal metrics file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">data/wrapped-count.txt</Config>
+    <Config Name="ListenBrainz - API" Target="LISTENBRAINZ_API" Default="https://api.listenbrainz.org/1" Description="ListenBrainz API URL" Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://api.listenbrainz.org/1</Config>
+    <Config Name="ListenBrainz - User Agent" Target="LISTENBRAINZ_USER_AGENT" Default="wrapped-listenbrainz/1.0" Description="User agent for ListenBrainz API requests" Type="Variable" Display="advanced-hide" Required="true" Mask="false">wrapped-listenbrainz/1.0</Config>
+    <Config Name="ListenBrainz - Range" Target="LISTENBRAINZ_RANGE" Default="this_year" Description="ListenBrainz listening range" Type="Variable" Display="advanced-hide" Required="true" Mask="false">this_year</Config>
+    <Config Name="MusicBrainz - API" Target="MUSICBRAINZ_API" Default="https://musicbrainz.org/ws/2" Description="MusicBrainz API URL" Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://musicbrainz.org/ws/2</Config>
+    <Config Name="MusicBrainz - User Agent" Target="MUSICBRAINZ_USER_AGENT" Default="wrapped-listenbrainz/1.0" Description="User agent for MusicBrainz API requests" Type="Variable" Display="advanced-hide" Required="true" Mask="false">wrapped-listenbrainz/1.0</Config>
+    <Config Name="Cover Art Archive - API" Target="COVER_ART_API" Default="https://coverartarchive.org/release" Description="Cover Art Archive API URL" Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://coverartarchive.org/release</Config>
+    <Config Name="Last.fm - API" Target="LASTFM_API" Default="https://ws.audioscrobbler.com/2.0/" Description="Last.fm API URL" Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://ws.audioscrobbler.com/2.0/</Config>
+    <Config Name="Last.fm - User Agent" Target="LASTFM_USER_AGENT" Default="wrapped-listenbrainz/1.0" Description="User agent for Last.fm API requests" Type="Variable" Display="advanced-hide" Required="true" Mask="false">wrapped-listenbrainz/1.0</Config>
+    <Config Name="Flask Environment" Target="FLASK_ENV" Default="production" Description="Flask environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+    <Config Name="HTTP Timeout" Target="HTTP_TIMEOUT" Default="10" Description="Timeout for HTTP requests" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
+    <Config Name="HTTP Pool Size" Target="HTTP_POOL_MAXSIZE" Default="40" Description="Maximum number of connections in the HTTP connection pool" Type="Variable" Display="advanced-hide" Required="true" Mask="false">40</Config>
+    <Config Name="ListenBrainz - Cache TTL" Target="LISTENBRAINZ_CACHE_TTL" Default="60" Description="Time-to-live for ListenBrainz API cache" Type="Variable" Display="advanced-hide" Required="true" Mask="false">60</Config>
+    <Config Name="ListenBrainz - Cache Size" Target="LISTENBRAINZ_CACHE_SIZE" Default="256" Description="Maximum size of the ListenBrainz API cache" Type="Variable" Display="advanced-hide" Required="true" Mask="false">256</Config>
+    <Config Name="App - Rate Limit" Target="APP_RATE_LIMIT" Default="90 per minute" Description="Rate limit for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">90 per minute</Config>
+    <Config Name="App - Stats Rate Limit" Target="APP_STATS_RATE_LIMIT" Default="45 per minute" Description="Rate limit for application statistics" Type="Variable" Display="advanced-hide" Required="true" Mask="false">45 per minute</Config>
+    <Config Name="App - Image Rate Limit" Target="APP_IMAGE_RATE_LIMIT" Default="15 per minute" Description="Rate limit for image requests" Type="Variable" Display="advanced-hide" Required="true" Mask="false">15 per minute</Config>
+    <Config Name="App - Max Top Results" Target="APP_MAX_TOP_RESULTS" Default="15" Description="Maximum number of top results to return" Type="Variable" Display="advanced-hide" Required="true" Mask="false">15</Config>
+    <Config Name="App - Image Concurrency" Target="APP_IMAGE_CONCURRENCY" Default="2" Description="Number of concurrent image requests" Type="Variable" Display="advanced-hide" Required="true" Mask="false">2</Config>
+    <Config Name="App - Image Queue Limit" Target="APP_IMAGE_QUEUE_LIMIT" Default="10" Description="Maximum number of images in the queue" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
+    <Config Name="App - Image Queue Timeout" Target="APP_IMAGE_QUEUE_TIMEOUT" Default="15" Description="Timeout for image queue" Type="Variable" Display="advanced-hide" Required="true" Mask="false">15</Config>
+    <Config Name="Temp Artwork TTL" Target="TEMP_ARTWORK_TTL_SECONDS" Default="3600" Description="Time-to-live for temporary artwork files" Type="Variable" Display="advanced-hide" Required="true" Mask="false">3600</Config>
+    <Config Name="Temp Artwork Max Bytes" Target="TEMP_ARTWORK_MAX_BYTES" Default="6291456" Description="Maximum size of temporary artwork files, in bytes" Type="Variable" Display="advanced-hide" Required="true" Mask="false">6291456</Config>
+    <Config Name="Cloudflare Turnstile - Cache TTL" Target="TURNSTILE_CACHE_TTL" Default="120" Description="Time-to-live for Cloudflare Turnstile cache" Type="Variable" Display="advanced-hide" Required="true" Mask="false">120</Config>
+    <Config Name="Cloudflare Turnstile - Timeout" Target="TURNSTILE_TIMEOUT" Default="5" Description="Timeout for Cloudflare Turnstile requests" Type="Variable" Display="advanced-hide" Required="true" Mask="false">5</Config>
+</Container>
