@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Databasus</Name>
+    <Repository>databasus/databasus:latest</Repository>
+    <Registry>https://hub.docker.com/r/databasus/databasus</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4005]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://databasus.com/installation</Support>
+    <Project>https://databasus.com/</Project>
+    <Overview>
+        Databasus is a free, open source and self-hosted tool to backup databases. Make backups with different storages (S3, Google Drive, FTP, etc.) and notifications about progress (Slack, Discord, Telegram, etc.). Previously known as Postgresus.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>database backup postgres mysql mongodb s3 google-drive ftp slack discord telegram</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/databasus-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/databasus.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/databasus/databasus/main/assets/dashboard-dark.svg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/databasus/databasus/main/assets/dashboard.svg</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-28
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="4005" Default="4005" Mode="tcp" Description="Container Port: 4005" Type="Port" Display="always-hide" Required="true" Mask="false">4005</Config>
+    <Config Name="App Data" Target="/databasus-data" Default="/mnt/user/appdata/databasus/data" Description="Path to app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/databasus/data</Config>
+</Container>
