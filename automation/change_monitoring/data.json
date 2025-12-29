@@ -1005,5 +1005,22 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Music Downloader",
+        "git_url": "https://github.com/soggy8/music-downloader.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "cc83871dfec70a2049cc8a3e3cd6046e8fd12fb9",
+                "commit_message": null
+            },
+            {
+                "file_path": "backend/env.example",
+                "commit_hash": "1a31307c801c6937869b4d78ea109ff6a47db041",
+                "commit_message": null
+            }
+        ]
     }
 ]

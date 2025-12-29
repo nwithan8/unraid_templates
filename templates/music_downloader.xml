@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Music Downloader</Name>
+    <Repository>ghcr.io/soggy8/music-downloader:latest</Repository>
+    <Registry>ghcr.io/soggy8/music-downloader</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/soggy8/music-downloader/issues</Support>
+    <Project>https://github.com/soggy8/music-downloader</Project>
+    <Overview>
+        A modern web application that allows users to search for songs on Spotify and automatically download them from YouTube, then seamlessly add them to your Navidrome music server. Perfect for building your personal music library with proper metadata, album art, and organized file structure.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Music MediaServer:Music Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>spotify youtube navidrome music downloader automator</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/music-downloader-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/music_downloader.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/soggy8/music-downloader/main/images/main-interface.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/soggy8/music-downloader/main/images/download-queue.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-28
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a `config.json` file to be mounted at `/app/config.json` before starting the container. See configuration details: https://github.com/soggy8/music-downloader/blob/main/config.json &#xD;
+        [br]
+        Requires a number of JSON files to be created on the host system BEFORE the container is started. These files can be created with the `touch` command.
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Navidrome Music Path" Target="/music" Default="" Description="Path to your Navidrome music folder" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Temp Downloads Path" Target="/app/downloads" Default="/mnt/user/appdata/music_downloader/downloads" Description="Path to temporary downloads folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/music-downloader/downloads</Config>
+    <Config Name="Navidrome - URL" Target="NAVIDROME_API_URL" Default="http://IP_ADDRESS:4533" Description="URL to your Navidrome server" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://IP_ADDRESS:4533</Config>
+    <Config Name="Navidrome - Admin Username" Target="NAVIDROME_USERNAME" Default="" Description="Your Navidrome admin username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Navidrome - Admin Password" Target="NAVIDROME_PASSWORD" Default="" Description="Your Navidrome admin password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Spotify - Client ID" Target="SPOTIFY_CLIENT_ID" Default="" Description="Your Spotify Client ID" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Spotify - Client Secret" Target="SPOTIFY_CLIENT_SECRET" Default="" Description="Your Spotify Client Secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Spotify - Redirect URI" Target="SPOTIFY_REDIRECT_URI" Default="http://localhost:8000/callback" Description="Your Spotify Redirect URI" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000/callback</Config>
+    <Config Name="Music Format" Target="OUTPUT_FORMAT" Default="mp3" Description="Desired music format for downloads" Type="Variable" Display="always-hide" Required="true" Mask="false">mp3</Config>
+    <Config Name="Music Quality" Target="AUDIO_QUALITY" Default="128" Description="Desired audio quality in kbps" Type="Variable" Display="always-hide" Required="true" Mask="false">128</Config>
+    <Config Name="Internal Host" Target="API_HOST" Default="0.0.0.0" Description="Internal host for the web server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Internal Port" Target="API_PORT" Default="8000" Description="Internal port for the web server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Internal Music Path" Target="NAVIDROME_MUSIC_PATH" Default="/music" Description="Internal path to your Navidrome music folder. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/music</Config>
+    <Config Name="CORS Origins" Target="CORS_ORIGINS" Default="http://localhost:3000,http://127.0.0.1:3000" Description="Comma-separated list of allowed CORS origins" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://localhost:3000,http://127.0.0.1:3000</Config>
+</Container>
