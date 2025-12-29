@@ -1022,5 +1022,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Forgotten Movies",
+        "git_url": "https://github.com/PyroghostX/ForgottenMovies.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml-example",
+                "commit_hash": "604ffb67ac7d6d84447ad5071500f0c0a12833e9",
+                "commit_message": null
+            }
+        ]
     }
 ]
