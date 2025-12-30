@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Healarr</Name>
+    <Repository>ghcr.io/mescon/healarr:latest</Repository>
+    <Registry>ghcr.io/mescon/healarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3090]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/mescon/Healarr/issues</Support>
+    <Project>https://github.com/mescon/Healarr</Project>
+    <Overview>
+        Health Evaluation And Library Auto-Recovery for aRR
+
+        Healarr monitors your media library for corrupted files and automatically triggers re-downloads through Sonarr, Radarr, or Whisparr. It detects issues using ffprobe, MediaInfo, or HandBrake, then orchestrates the complete remediation workflow.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>automation sonarr radarr whisparr health check repair recover re-download ffprobe mediainfo handbrake</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/healarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/healarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-29
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires mounting Sonarr, Radarr and/or Whisparr folders at same paths as in the aRR applications. See documentation: https://github.com/mescon/Healarr#docker-compose
+    </Requires>
+    <Config Name="Web UI Port" Target="3090" Default="3090" Mode="tcp" Description="Container Port: 3090" Type="Port" Display="always-hide" Required="true" Mask="false">3090</Config>
+    <Config Name="Enable Dry Run" Target="HEALARR_DRY_RUN" Default="false|true" Description="Enable dry run mode for testing purposes." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Retention Days" Target="HEALARR_RETENTION_DAYS" Default="90" Description="Days to keep old data. 0 to disable." Type="Variable" Display="always-hide" Required="true" Mask="false">90</Config>
+    <Config Name="Max Remediation Attempts" Target="HEALARR_DEFAULT_MAX_RETRIES" Default="3" Description="Maximum number of remediation attempts per item." Type="Variable" Display="always-hide" Required="true" Mask="false">3</Config>
+    <Config Name="Verification Timeout" Target="HEALARR_VERIFICATION_TIMEOUT" Default="72h" Description="Maximum time to wait for file replacement." Type="Variable" Display="always-hide" Required="true" Mask="false">72h</Config>
+    <Config Name="Scan Interval" Target="HEALARR_VERIFICATION_INTERVAL" Default="30s" Description="Interval between library scans." Type="Variable" Display="always-hide" Required="true" Mask="false">30s</Config>
+    <Config Name="Config Folder" Target="/config" Default="/mnt/user/appdata/healarr/config" Description="Path to the config folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/healarr/config</Config>
+    <Config Name="Internal Port" Target="HEALARR_PORT" Default="3090" Description="Internal port for the application. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3090</Config>
+    <Config Name="Internal Config Directory" Target="HEALARR_DATA_DIR" Default="./config" Description="Internal config directory for the application. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">./config</Config>
+    <Config Name="Internal Database Path" Target="HEALARR_DATABASE_PATH" Default="{data-dir}/healarr.db" Description="Internal database path for the application. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">{data-dir}/healarr.db</Config>
+    <Config Name="Log Level" Target="HEALARR_LOG_LEVEL" Default="info|debug|error" Description="Log level for the application." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Base Path" Target="HEALARR_BASE_PATH" Default="/" Description="Base path for the application." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/</Config>
+    <Config Name="Rate Limit" Target="HEALARR_ARR_RATE_LIMIT_RPS" Default="5" Description="Max requests/second to *arr APIs" Type="Variable" Display="advanced-hide" Required="true" Mask="false">5</Config>
+    <Config Name="Rate Limit Burst Size" Target="HEALARR_ARR_RATE_LIMIT_BURST" Default="10" Description="Burst size for *arr API rate limiting" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
+</Container>
