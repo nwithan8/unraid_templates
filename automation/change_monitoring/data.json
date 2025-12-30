@@ -1034,5 +1034,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "NodeCast TV",
+        "git_url": "https://github.com/technomancer702/nodecast-tv.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "52bb407fccd88d77ba60f4adfe0ec0040f24408a",
+                "commit_message": null
+            }
+        ]
     }
 ]

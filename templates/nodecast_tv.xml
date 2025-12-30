@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>NodeCast TV</Name>
+    <Repository>ghcr.io/technomancer702/nodecast-tv:latest</Repository>
+    <Registry>ghcr.io/technomancer702/nodecast-tv</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/technomancer702/nodecast-tv/issues</Support>
+    <Project>https://github.com/technomancer702/nodecast-tv</Project>
+    <Overview>
+        A modern, web-based IPTV player featuring Live TV, EPG, Movies (VOD), and Series support. Built with performance and user experience in mind.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>iptv live tv epg vod movies series player streaming</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/nodecast-tv-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/nodecast_tv.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/technomancer702/nodecast-tv/refs/heads/main/public/img/screenshots/screenshot-1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/technomancer702/nodecast-tv/refs/heads/main/public/img/screenshots/screenshot-2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/technomancer702/nodecast-tv/refs/heads/main/public/img/screenshots/screenshot-3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/technomancer702/nodecast-tv/refs/heads/main/public/img/screenshots/screenshot-4.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-12-29
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/nodecast_tv/data" Description="Path to the app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/nodecast_tv/data</Config>
+    <Config Name="Node Environment" Target="NODE_ENV" Default="production" Description="Set the Node environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+    <Config Name="Internal Port" Target="PORT" Default="3000" Description="Internal port used by the application. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3000</Config>
+</Container>
