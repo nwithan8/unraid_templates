@@ -919,8 +919,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "7f777b05577a9941d8f1a3e610bf27ac0d93ce57",
-                "commit_message": ""
+                "commit_hash": "0fb1b756c3d3ff11cb52737cd86852de0e10658c",
+                "commit_message": "docs: add comprehensive reverse proxy guide and clean up docker-compose\n\nDocumentation updates:\n- Create new reverse-proxy.md with complete BASE_PATH guide\n  - Nginx, Traefik, Caddy, Apache configurations\n  - Subfolder and root domain deployment examples\n  - SSL/HTTPS setup, troubleshooting, security best practices\n  - Docker network integration examples\n- Update configuration.md with BASE_PATH section and proxy guide link\n- Update installation.md with privileged mode documentation\n  - Explain when privileged mode is needed (remote-to-remote backups)\n  - Security considerations and how to disable if not needed\n\nDocker Compose cleanup:\n- Simplify and clarify comments throughout\n- Document privileged mode requirement clearly\n  - Only needed for remote-to-remote backups via SSHFS\n  - Can be disabled for direct SSH or local backups\n- Remove outdated commented alternatives\n- Condense environment variable documentation\n- Simplify volumes section\n- Make production security warnings more prominent\n- Remove redundant volume configuration options\n\nBenefits:\n- Clearer documentation for BASE_PATH subfolder deployments\n- Better understanding of Docker security settings\n- Simplified docker-compose.yml that's easier to understand\n- Prominent warnings for production security considerations\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\n"
             }
         ]
     },
@@ -955,8 +955,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "66e137ccacbf29a74b4811409ee6faff22cd411e",
-                "commit_message": "v0.30.0-alpha: Re-Classification System Foundation\n\nAdds infrastructure for re-classification workflow including:\n- Library mapping system (Plex libraries to *arr root folders)\n- Re-classification service with media move capabilities\n- Learned corrections integration for classification chain\n- Path testing service for Docker environment validation\n\nNew Features:\n- reclassificationService.js with execute/preview/rollback\n- libraryMappingService.js with auto-detection\n- pathTestService.js with health checks\n- LibraryMappings.vue in Settings > Media Sources\n- PathTest.vue in Settings > System > Path Testing\n- /api/classification/reclassify endpoints\n- /api/settings/path-test endpoints\n\nDatabase:\n- New tables: library_arr_mappings, learned_corrections, app_settings\n- New columns: media_server_id in radarr_config and sonarr_config\n\nNote: SetupBanner disabled pending bug fixes in future minor release.\n"
+                "commit_hash": "3f46c0edcfea24d7cc42c6f6ed619bfed5f60fec",
+                "commit_message": "fix: update docker-compose env format to match README with helpful comments\n"
             }
         ]
     },
@@ -1054,8 +1054,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "4ad8b129c62f5278554672f5f6d2eda8e77c2299",
-                "commit_message": null
+                "commit_hash": "cb8b4534a02dcc025aa670faa717800ba407721e",
+                "commit_message": "Update file permissions for infrastructure files\n"
             }
         ]
     }
