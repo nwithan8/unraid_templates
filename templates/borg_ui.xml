@@ -9,7 +9,7 @@
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8081]/</WebUI>
-    <Privileged>false</Privileged>
+    <Privileged>true</Privileged>
     <Support>https://karanhudia.github.io/borg-ui/configuration</Support>
     <Project>https://karanhudia.github.io/borg-ui/</Project>
     <Overview>
@@ -33,6 +33,7 @@
     <Config Name="Data Path" Target="/local" Default="" Description="Path to data you want to backup" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Cache Path" Target="/home/borg/.cache/borg" Default="/mnt/user/appdata/borg-ui/cache" Description="Path to cache folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/borg-ui/cache</Config>
     <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/borg-ui/data" Description="Path to app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/borg-ui/data</Config>
+    <Config Name="Base Path" Target="BASE_PATH" Default="/" Description="Set the base path for the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/</Config>
     <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|DEBUG|WARNING|ERROR" Description="Set the log level" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
