@@ -919,8 +919,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "385dffff4e434332828e7b2eacbe19297c346aa7",
-                "commit_message": "revert: remove all BASE_PATH functionality\n\nCompletely remove BASE_PATH support as it was causing too many issues:\n- Removed base_path field and validation from app/config.py\n- Reverted app/main.py to pre-BASE_PATH version (v1.37.0)\n- Reverted frontend files (main.tsx, api.ts, vite.config.ts, vite-env.d.ts)\n- Removed BASE_PATH args from Dockerfile\n- Removed BASE_PATH env vars from docker-compose.yml\n- Deleted docs/reverse-proxy.md documentation\n\nThe application now works only at root path (/) without subfolder support.\nUsers requiring reverse proxy subfolder deployment will need to use a\ndifferent approach or wait for a more stable implementation.\n"
+                "commit_hash": "df3714c92f776a9f3f5fe7040efa852a585d4bba",
+                "commit_message": "fix: properly remove only BASE_PATH from docker-compose.yml\n\nPrevious revert (385dfff) unnecessarily changed the entire file structure.\nThis commit properly restores the pre-BASE_PATH version with surgical removal:\n- Removed BASE_PATH build arg (line 20)\n- Removed BASE_PATH environment variable (line 62)\n\nAll other improvements and documentation remain intact.\nNo unnecessary formatting or structural changes.\n"
             }
         ]
     },
