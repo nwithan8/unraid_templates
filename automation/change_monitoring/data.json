@@ -1075,5 +1075,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "ebook2audiobook",
+        "git_url": "https://github.com/DrewThomasson/ebook2audiobook.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "4c28fce9e1439111919ac820ead531aaaf2fa9a5",
+                "commit_message": null
+            }
+        ]
     }
 ]
