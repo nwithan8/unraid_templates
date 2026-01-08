@@ -666,8 +666,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "634596ac0b16a708559282a8e020f9d3e7a1c920",
-                "commit_message": "repo restructure"
+                "commit_hash": "aef7b4dcfd4b4b24dc7d8fbe01e12b02f1301ed2",
+                "commit_message": "Consolidate Docker architecture into single production container\n\n- Create multi-stage Dockerfile for single production image\n- Add nginx.conf and supervisord.conf for all-in-one container\n- Simplify CI workflow to build single image instead of two\n- Update docker-compose files for clear dev/prod separation\n- Remove redundant docker_compose/ directory\n- Update README with published image usage instructions\n"
             }
         ]
     },
@@ -919,8 +919,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "df3714c92f776a9f3f5fe7040efa852a585d4bba",
-                "commit_message": "fix: properly remove only BASE_PATH from docker-compose.yml\n\nPrevious revert (385dfff) unnecessarily changed the entire file structure.\nThis commit properly restores the pre-BASE_PATH version with surgical removal:\n- Removed BASE_PATH build arg (line 20)\n- Removed BASE_PATH environment variable (line 62)\n\nAll other improvements and documentation remain intact.\nNo unnecessary formatting or structural changes.\n"
+                "commit_hash": "656a850cae091136b24fcfdf5ea537567f5616a1",
+                "commit_message": "docs: improve cache config clarity and add complete docker-compose example\n\n**Changes:**\n\n1. **Generic version numbers**: Changed \"v1.37.0\" etc to \"vX.Y.Z\" in docs\n\n2. **Clarified env vars vs UI**:\n   - docker-compose.yml now emphasizes UI configuration is recommended\n   - Environment variables set initial defaults only\n   - UI settings take precedence\n\n3. **Simplified docker-compose.yml Redis comments**:\n   - Removed verbose \"Option 1\" and \"Option 2\" sections\n   - Clear note: \u2699\ufe0f Configure via Settings \u2192 Cache tab in UI\n   - Kept essential env vars with cleaner comments\n\n4. **Added Quick Start in cache docs**:\n   - Complete docker-compose.yml with both app and redis services\n   - Includes depends_on, healthcheck, networks, volumes\n   - Users can copy entire file instead of stitching pieces together\n   - Clear instruction: configure in Settings \u2192 Cache UI after\n\n**Result:**\n- Environment variables still supported (initial setup)\n- UI configuration clearly marked as recommended approach\n- Complete working example for copy-paste deployment\n- Less confusing comments about options\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\n"
             }
         ]
     },
@@ -1042,8 +1042,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "52bb407fccd88d77ba60f4adfe0ec0040f24408a",
-                "commit_message": null
+                "commit_hash": "9256883aa6a1733deff9cefc2d10e1fe6e1bac42",
+                "commit_message": "Add pre-built GHCR image to docker-compose, keep build fallback\n"
             }
         ]
     },
@@ -1054,8 +1054,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "cb8b4534a02dcc025aa670faa717800ba407721e",
-                "commit_message": "Update file permissions for infrastructure files\n"
+                "commit_hash": "1d120e59f6628ba7d617cec48fcf7c3d6d0f8854",
+                "commit_message": "docs: clarify custom binaries volume mount\n\nMake it clearer that the tools volume mount should be a directory\ncontaining the binary executables, not a path to a binary itself.\n\n\n"
             }
         ]
     },
@@ -1066,13 +1066,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f48bbabff9682825fd016152ae5fcc70006c8f4b",
-                "commit_message": null
+                "commit_hash": "5d03f86872dae534d032a735bdbd21461bec1866",
+                "commit_message": "feat: add download mode option (Track/Album) for Deezer downloads\n\nCloses #10\n"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "ba2aa98a23ba2044e26accb9e052bcbd1fb18440",
-                "commit_message": null
+                "commit_hash": "275467c5bfd33114c582f76bc0dee039e4cfaebf",
+                "commit_message": "feat: add pluggable music service architecture with Qobuz support\n"
             }
         ]
     },
