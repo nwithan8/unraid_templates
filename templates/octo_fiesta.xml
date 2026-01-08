@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-06
+
+        Add new environmental variable
+
         ### 2026-01-02
 
         Initial release
@@ -35,6 +39,7 @@
     <Config Name="Subsonic URL" Target="Subsonic__Url" Default="http://IP_ADDRESS:4533" Description="The URL of your Subsonic server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:4533</Config>
     <Config Name="Deezer ARL Token" Target="Deezer__Arl" Default="" Description="Your Deezer ARL token for accessing Deezer content" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Deezer ARL Token Fallback" Target="Deezer__ArlFallback" Default="" Description="Fallback Deezer ARL token if the primary one fails" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Deezer Quality" Target="Deezer__Quality" Default="FLAC|MP3_320|MP3_128" Description="Preferred audio quality for Deezer downloads. Remove to default to highest." Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Downloads Path" Target="/app/downloads" Default="/mnt/user/appdata/octo_fiesta/downloads" Description="Path to store downloaded files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/octo_fiesta/downloads</Config>
     <Config Name="Internal Downloads Path" Target="Library__DownloadPath" Default="/app/downloads" Description="Internal path to downloaded files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/downloads</Config>
     <Config Name="App Environment" Target="ASPNETCORE_ENVIRONMENT" Default="Production" Description="Set the ASP.NET Core environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">Production</Config>
