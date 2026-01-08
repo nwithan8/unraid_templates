@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Flixor - Frontend</Name>
+    <Repository>flixorui/flixor_web:latest</Repository>
+    <Registry>https://hub.docker.com/r/flixorui/flixor_web</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Flixorui/flixor/issues</Support>
+    <Project>https://github.com/Flixorui/flixor</Project>
+    <Overview>
+        A fast, Netflix‑style web app, Android, iOS, and MacOS for your Plex library. Browse beautiful rows, see rich details (IMDb/Rotten Tomatoes), and play instantly in your browser with built‑in DASH/HLS playback. Works on any modern desktop or mobile browser. &#xD;
+        &#xD;
+        This is the frontend web component.
+    </Overview>
+    <Beta>True</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex ui flixor netflix streaming rows metadata android macos ios tv browser</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/flixor-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/flixor_frontend.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-01.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-02.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-00m52.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-01m20.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-02m14.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-02m24.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-02m34.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-02m48.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-03m04.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Flixorui/flixor/main/docs/screenshots/flixor-lib-03m11.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-01-06
+
+        Deprecated in favor of all-in-one Flixor container.
+
+        ### 2025-10-13
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Flixor - Backend container.
+    </Requires>
+    <Config Name="API Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+</Container>

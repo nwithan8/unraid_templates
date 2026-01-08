@@ -35,6 +35,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-01-06
+
+        Deprecated in favor of all-in-one Flixor container.
+
         ### 2025-10-13
 
         Initial release
