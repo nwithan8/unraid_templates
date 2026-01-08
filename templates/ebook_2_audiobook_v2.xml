@@ -15,7 +15,7 @@
     <Overview>
         CPU/GPU Converter from eBooks to audiobooks with chapters and metadata using Calibre, ffmpeg, XTTSv2, Fairseq and more. Supports voice cloning and 1124 languages! &#xD;
         &#xD;
-        For Nvidia GPU support, add "-runtime=nvidia --gpus all" to the Extra Parameters field under Advanced. &#xD;
+        For Nvidia GPU support, add "--runtime=nvidia --gpus all" to the Extra Parameters field under Advanced. &#xD;
     </Overview>
     <Beta>False</Beta>
     <Category>AI: MediaApp:Books MediaServer:Books Productivity: Tools: Other: Status:Stable</Category>
