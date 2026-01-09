@@ -1030,8 +1030,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml-example",
-                "commit_hash": "604ffb67ac7d6d84447ad5071500f0c0a12833e9",
-                "commit_message": null
+                "commit_hash": "a377ca0362fe7fe4b5213a3428e618ee7241a559",
+                "commit_message": "Feature: allow SMTP logon with SMTP_USERNAME\n\n   - Add SMTP_USERNAME for auth username override\n   - Add SMTP_USERNAME override and document new env var\n"
             }
         ]
     },
