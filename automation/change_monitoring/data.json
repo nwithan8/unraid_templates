@@ -1071,8 +1071,8 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "275467c5bfd33114c582f76bc0dee039e4cfaebf",
-                "commit_message": "feat: add pluggable music service architecture with Qobuz support\n"
+                "commit_hash": "61a21b0e0c271b0ee947d7aefd607ec959e740ed",
+                "commit_message": "refactor: centralize cache path logic and add TMPDIR documentation\n"
             }
         ]
     },
