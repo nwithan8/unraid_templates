@@ -43,4 +43,6 @@
     <Config Name="Downloads Path" Target="/app/downloads" Default="/mnt/user/appdata/octo_fiesta/downloads" Description="Path to store downloaded files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/octo_fiesta/downloads</Config>
     <Config Name="Internal Downloads Path" Target="Library__DownloadPath" Default="/app/downloads" Description="Internal path to downloaded files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/downloads</Config>
     <Config Name="App Environment" Target="ASPNETCORE_ENVIRONMENT" Default="Production" Description="Set the ASP.NET Core environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">Production</Config>
+    <Config Name="Storage Mode" Target="STORAGE_MODE" Default="Permanent|Temporary" Description="Set the storage mode for downloaded files." Type="Variable" Display="advanced-hide" Required="true" Mask="false">Permanent</Config>
+    <Config Name="Cache Duration (Hours)" Target="CACHE_DURATION_HOURS" Default="1" Description="Duration in hours to cache files if using Temporary storage mode." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
 </Container>
