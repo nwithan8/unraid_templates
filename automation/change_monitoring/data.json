@@ -1087,5 +1087,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Tara Assistant",
+        "git_url": "https://github.com/TaraHome/taraassistant-public.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "compose.yml",
+                "commit_hash": "0d7a136583480dd0ed681a00cf06a306a5f504fb",
+                "commit_message": null
+            }
+        ]
     }
 ]
