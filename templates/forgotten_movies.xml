@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-11
+
+        Add STMP_USERNAME environmental variable
+
         ### 2025-12-28
 
         Initial release
@@ -43,6 +47,7 @@
     <Config Name="Email - SMTP Server" Target="SMTP_SERVER" Default="" Description="SMTP server address for sending emails" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Email - SMTP Port" Target="SMTP_PORT" Default="587" Description="SMTP server port" Type="Variable" Display="always-hide" Required="true" Mask="false">587</Config>
     <Config Name="Email - SMTP Encryption" Target="SMTP_ENCRYPTION" Default="STARTTLS|SSL|NONE" Description="SMTP encryption method" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Email - SMTP Username" Target="SMTP_USERNAME" Default="" Description="Username for SMTP authentication" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Email - From Name" Target="FROM_NAME" Default="Plex Forgotten Movies" Description="Name displayed in the 'From' field of the email" Type="Variable" Display="always-hide" Required="true" Mask="false">Plex Forgotten Movies</Config>
     <Config Name="Email - From Address" Target="FROM_ADDRESS" Default="" Description="Email address used in the 'From' field" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Email - Password" Target="EMAIL_PASSWORD" Default="" Description="Password for the email account" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
