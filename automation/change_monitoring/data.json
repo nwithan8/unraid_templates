@@ -415,8 +415,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "4c71095617d2eb011fec4a16188372e7ee79c7ca",
-                "commit_message": "feat: add postgresql engine and tests (#34)\n\n* feat: add postgresql engine and tests\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* fixups\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* fixups\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* fixups\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* fixups\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* fixups\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* Add pgsql custom image\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* add pgvector\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* CI and docs\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* Fixup tests\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* Add logging\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* Use Makefile in CI\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n* tAdd tests for hybrid/semantic search and reset\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n\n---------\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>"
+                "commit_hash": "099fab7869ab06b100801fdf2d3f68ecf31a4ebd",
+                "commit_message": "Add volumes to docker compose file\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n"
             }
         ]
     },
