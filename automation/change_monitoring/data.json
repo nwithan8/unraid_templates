@@ -1099,5 +1099,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Lab Dash",
+        "git_url": "https://github.com/AnthonyGress/lab-dash.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "23017f7e83bec1685bfc024e78d471c3468cc516",
+                "commit_message": null
+            }
+        ]
     }
 ]
