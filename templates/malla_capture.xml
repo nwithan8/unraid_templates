@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Malla - Capture</Name>
+    <Repository>ghcr.io/zenitram/malla:latest</Repository>
+    <Registry>ghcr.io/zenitram/malla</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/zenitraM/malla/issues</Support>
+    <Project>https://github.com/zenitraM/malla</Project>
+    <Overview>
+        Malla is a web analyzer for Meshtastic networks based on MQTT data. &#xD;
+        &#xD;
+        This is the capture component.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>meshtastic mesh network mqtt analyzer map visualization data capture collection message</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/malla-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/malla_capture.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/dashboard.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/nodes.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/packets.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/traceroutes.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/map.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/traceroute_graph.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/hop_analysis.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/gateway_compare.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/longest_links.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/line_of_sight.jpg</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-15
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate Malla - Web and MQTT instances. &#xD;
+        &#xD;
+        Requires a `config.yaml` file to be mounted at `/app/config.yaml` before starting the container. See configuration details: https://github.com/zenitraM/malla/blob/main/config.sample.yaml
+    </Requires>
+    <PostArgs>/app/.venv/bin/malla-capture</PostArgs>
+    <Config Name="MQTT - Address" Target="MALLA_MQTT_BROKER_ADDRESS" Default="" Description="MQTT broker address (IP or hostname) where Meshtastic devices publish data." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="MQTT - Port" Target="MALLA_MQTT_PORT" Default="1883" Description="MQTT broker port." Type="Variable" Display="always-hide" Required="true" Mask="false">1883</Config>
+    <Config Name="MQTT - Username" Target="MALLA_MQTT_USERNAME" Default="" Description="MQTT broker username (if required)." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="MQTT - Password" Target="MALLA_MQTT_PASSWORD" Default="" Description="MQTT broker password (if required)." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="MQTT - Topic Prefix" Target="MALLA_MQTT_TOPIC_PREFIX" Default="msh" Description="MQTT topic prefix used by Meshtastic devices." Type="Variable" Display="always" Required="false" Mask="false">msh</Config>
+    <Config Name="MQTT - Topic Suffix" Target="MALLA_MQTT_TOPIC_SUFFIX" Default="/+/+/+/#" Description="MQTT topic suffix used by Meshtastic devices." Type="Variable" Display="always" Required="false" Mask="false">/+/+/+/#</Config>
+    <Config Name="MQTT - Default Channel Key" Target="MALLA_DEFAULT_CHANNEL_KEY" Default="" Description="Default channel key for decrypting Meshtastic messages (if used)." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/malla/data" Description="Path to store Malla data." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/malla/data</Config>
+    <Config Name="Internal Database Path" Target="MALLA_DATABASE_FILE" Default="/app/data/meshtastic_history.db" Description="Path to the internal database file inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/data/meshtastic_history.db</Config>
+</Container>

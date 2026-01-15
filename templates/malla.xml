@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Malla</Name>
+    <Repository>ghcr.io/zenitram/malla:latest</Repository>
+    <Registry>ghcr.io/zenitram/malla</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5008]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/zenitraM/malla/issues</Support>
+    <Project>https://github.com/zenitraM/malla</Project>
+    <Overview>
+        Malla is a web analyzer for Meshtastic networks based on MQTT data. &#xD;
+        &#xD;
+        This is the web component.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>meshtastic mesh network mqtt analyzer map visualization data capture collection message</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/malla-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/malla.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/dashboard.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/nodes.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/packets.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/traceroutes.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/map.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/traceroute_graph.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/hop_analysis.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/gateway_compare.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/longest_links.jpg</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/zenitraM/malla/main/.screenshots/line_of_sight.jpg</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-15
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Malla - Capture instance. &#xD;
+        &#xD;
+        Requires a `config.yaml` file to be mounted at `/app/config.yaml` before starting the container. See configuration details: https://github.com/zenitraM/malla/blob/main/config.sample.yaml
+    </Requires>
+    <PostArgs>/app/.venv/bin/malla-web-gunicorn</PostArgs>
+    <Config Name="Web UI Port" Target="5008" Default="5008" Mode="tcp" Description="Container Port: 5008" Type="Port" Display="always-hide" Required="true" Mask="false">5008</Config>
+    <Config Name="App Name" Target="MALLA_NAME" Default="Malla" Description="Name of the Malla instance." Type="Variable" Display="always-hide" Required="true" Mask="false">Malla</Config>
+    <Config Name="Secret Key" Target="MALLA_SECRET_KEY" Default="" Description="Secret key." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Config File" Target="/app/config.yaml" Default="/mnt/user/appdata/malla/config.yaml" Description="Path to the Malla config file." Type="Path" Mode="ro" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/malla/config.yaml</Config>
+    <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/malla/data" Description="Path to store Malla data." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/malla/data</Config>
+    <Config Name="Debug Mode" Target="MALLA_DEBUG" Default="false|true" Description="Enable debug mode." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Host" Target="MALLA_HOST" Default="0.0.0.0" Description="Internal host address for Malla web server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Internal Port" Target="MALLA_PORT" Default="5008" Description="Internal port for Malla web server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">5008</Config>
+    <Config Name="Internal Database Path" Target="MALLA_DATABASE_FILE" Default="/app/data/meshtastic_history.db" Description="Path to the internal database file inside the container. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/data/meshtastic_history.db</Config>
+</Container>

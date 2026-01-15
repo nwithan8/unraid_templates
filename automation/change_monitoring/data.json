@@ -1147,5 +1147,22 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Malla",
+        "git_url": "https://github.com/zenitraM/malla.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "9ca0be6378babf861d93fa6707ebb87259240e78",
+                "commit_message": null
+            },
+            {
+                "file_path": "env.example",
+                "commit_hash": "9ca0be6378babf861d93fa6707ebb87259240e78",
+                "commit_message": null
+            }
+        ]
     }
 ]
