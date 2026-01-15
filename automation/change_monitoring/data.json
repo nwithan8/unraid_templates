@@ -1111,5 +1111,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Mesh Bot",
+        "git_url": "https://github.com/SpudGunMan/meshing-around.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "compose.yaml",
+                "commit_hash": "c0d0ca374351e34617737c6f81bc81f3a038fc70",
+                "commit_message": null
+            }
+        ]
     }
 ]

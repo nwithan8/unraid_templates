@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Mesh Bot</Name>
+    <Repository>ghcr.io/spudgunman/meshing-around:main</Repository>
+    <Registry>ghcr.io/spudgunman/meshing-around</Registry>
+    <Branch>
+        <Tag>main</Tag>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8420]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/SpudGunMan/meshing-around/issues</Support>
+    <Project>https://github.com/SpudGunMan/meshing-around</Project>
+    <Overview>
+        Mesh Bot is a feature-rich bot designed to enhance your Meshtastic network experience. It provides powerful tools for network testing, messaging, games, and more—all via text-based message delivery. Whether you want to test your mesh, send messages, or play games, Mesh Bot has you covered.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>meshtastic mesh bot messaging network testing games ollama ai llm gpt</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mesh-bot-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/meshing_around.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Ollama instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="8420" Default="8420" Mode="tcp" Description="Container Port: 8420" Type="Port" Display="always-hide" Required="true" Mask="false">8420</Config>
+    <Config Name="Ollama API URL" Target="OLLAMA_API_URL" Default="http://IP_ADDRESS:11434" Description="Ollama API URL" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:11434</Config>
+    <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/meshing_around/data" Description="Path to app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meshing_around/data</Config>
+</Container>
