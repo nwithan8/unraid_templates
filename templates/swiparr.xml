@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Swiparr</Name>
+    <Repository>ghcr.io/m3sserstudi0s/swiparr::latest</Repository>
+    <Registry>ghcr.io/m3sserstudi0s/swiparr:</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:4321]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/m3sserstudi0s/swiparr/issues</Support>
+    <Project>https://github.com/m3sserstudi0s/swiparr</Project>
+    <Overview>
+        Swiparr is a fun way to discover and decide what to watch next from your Jellyfin media library. Think "Tinder for Movies" – swipe through your library, match with friends in a session, and find something everyone wants to watch.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>jellyfin swipe tinder movie discovery watchlist friends session</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/swiparr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/swiparr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-15
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Jellyfin instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="4321" Default="4321" Mode="tcp" Description="Container Port: 4321" Type="Port" Display="always-hide" Required="true" Mask="false">4321</Config>
+    <Config Name="Jellyfin - URL" Target="JELLYFIN_URL" Default="http://IP_ADDRESS:8096" Description="Internal URL to your Jellyfin server." Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:8096</Config>
+    <Config Name="Jellyfin - Public URL" Target="JELLYFIN_PUBLIC_URL" Default="" Description="(Optional) Public URL to your Jellyfin server. Defaults to the internal URL if not set." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Jellyfin - Use Watchlist" Target="JELLYFIN_USE_WATCHLIST" Default="false|true" Description="Set to true to use Watchlist instead of Favorites" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Use Secure Cookies" Target="USE_SECURE_COOKIES" Default="false|true" Description="Set to true if accessing Swiparr over HTTPS" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Admin Username" Target="ADMIN_USERNAME" Default="" Description="(Optional) A Jellyfin username that will always have admin privileges." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Auth Secret" Target="AUTH_SECRET" Default="" Description="Random string (min 32 chars). Generated automatically if not set." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Internal Database Path" Target="DATABASE_URL" Default="file:/app/data/swiparr.db" Description="Internal path to database. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">file:/app/data/swiparr.db</Config>
+    <Config Name="Internal Port" Target="PORT" Default="4321" Description="Internal port Swiparr listens on. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">4321</Config>
+    <Config Name="Internal Host" Target="HOSTNAME" Default="0.0.0.0" Description="Internal host Swiparr binds to. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="X-Frame Options" Target="X_FRAME_OPTIONS" Default="DENY" Description="X-Frame-Options header. Set to DISABLED to remove." Type="Variable" Display="advanced-hide" Required="true" Mask="false">DENY</Config>
+    <Config Name="CSP Frame Ancestors" Target="CSP_FRAME_ANCESTORS" Default="none" Description="Content-Security-Policy frame-ancestors directive." Type="Variable" Display="advanced-hide" Required="true" Mask="false">none</Config>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/swiparr/data" Description="Path to the application data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/swiparr/data</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
