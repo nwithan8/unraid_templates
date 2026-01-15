@@ -28,10 +28,13 @@
 
         Initial release
     </Changes>
+    <Requires>optional: use privileged: true and network_mode: host for monitoring network usage stats.</Requires>
     <Config Name="Web UI Port" Target="2022" Default="2022" Mode="tcp" Description="Container Port: 2022" Type="Port" Display="always-hide" Required="true" Mask="false">2022</Config>
     <Config Name="Secret Key" Target="SECRET" Default="" Description="Generate with 'openssl rand -base64 32'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/lab-dash/config" Description="Path to the config folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lab-dash/config</Config>
     <Config Name="Uploads Path" Target="/app/public/uploads" Default="/mnt/user/appdata/lab-dash/uploads" Description="Path to the uploads folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lab-dash/uploads</Config>
     <Config Name="System Path" Target="/sys" Default="/sys" Description="Path to the system folder" Type="Path" Mode="ro" Display="advanced-hide" Required="true" Mask="false">/sys</Config>
     <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="PUID" Target="PUID" Default="99" Description="User ID (Unraid: 99 = nobody)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="Group ID (Unraid: 100 = users)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
 </Container>
