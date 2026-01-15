@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Meshview</Name>
+    <Repository>ghcr.io/pablorevilla-meshtastic/meshview:latest</Repository>
+    <Registry>ghcr.io/pablorevilla-meshtastic/meshview</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8081]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/pablorevilla-meshtastic/meshview/issues</Support>
+    <Project>https://github.com/pablorevilla-meshtastic/meshview</Project>
+    <Overview>
+        A real-time monitoring and diagnostic tool for the Meshtastic mesh network. It provides detailed insights into network activity, including message traffic, node positions, and telemetry data.    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>meshtastic mesh network monitoring diagnostics telemetry nodes messages</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/meshview-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/meshview.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/pablorevilla-meshtastic/meshview/master/screenshots/animated.gif</Screenshot>
+
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a `config.ini` file in the Config Path before starting the container. See configuration details: https://github.com/pablorevilla-meshtastic/meshview/blob/master/README-Docker.md#configuration
+    </Requires>
+    <Config Name="Web UI Port" Target="8081" Default="8081" Mode="tcp" Description="Container Port: 8081" Type="Port" Display="always-hide" Required="true" Mask="false">8081</Config>
+    <Config Name="Config Path" Target="/etc/meshview" Default="/mnt/user/appdata/meshview/config" Description="Path to the config folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meshview/config</Config>
+    <Config Name="Data Path" Target="/var/lib/meshview" Default="/mnt/user/appdata/meshview/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meshview/data</Config>
+    <Config Name="Logs Path" Target="/var/log/meshview" Default="/mnt/user/appdata/meshview/logs" Description="Path to the logs folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meshview/logs</Config>
+    <Config Name="Database Backups Path" Target="/var/lib/meshview/backups" Default="/mnt/user/appdata/meshview/backups" Description="Path to the database backups folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meshview/backups</Config>
+</Container>
+
+
+
+
+    <Config Name="Config File" Target="/app/config.json" Default="/mnt/user/appdata/dynamix/config.json" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/config.json</Config>
+    <Config Name="User Exemptions File" Target="/app/used_collections.json" Default="/mnt/user/appdata/dynamix/used_collections.json" Description="Path to the user exemptions file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/used_collections.json</Config>
+    <Config Name="Used Collections File" Target="/app/used_collections.json" Default="/mnt/user/appdata/dynamix/used_collections.json" Description="Path to the used collections file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/used_collections.json</Config>
+    <Config Name="Run State File" Target="/app/run_state.json" Default="/mnt/user/appdata/dynamix/run_state.json" Description="Path to the run state file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/run_state.json</Config>
+    <Config Name="Log Folder" Target="/app/logs" Default="/mnt/user/appdata/dynamix/logs" Description="Path to the log folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/logs</Config>
+</Container>
