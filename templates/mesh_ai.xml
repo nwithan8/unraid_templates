@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>MESH-AI</Name>
+    <Repository>mrtbot/mesh-ai:latest</Repository>
+    <Registry>https://hub.docker.com/r/mrtbot/mesh-ai</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/mr-tbot/mesh-ai/issues</Support>
+    <Project>https://github.com/mr-tbot/mesh-ai</Project>
+    <Overview>
+        Off-Grid AI + Mesh Router for Meshtastic - Seamlessly connect LM Studio, Ollama, OpenAI, 3rd-party APIs, and Home Assistant to your LoRa mesh. Supports custom commands, Twilio SMS (inbound/outbound), Discord channel routing, and GPS emergency alerts via SMS, email, or Discord.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>mesh ai lora meshtastic llm local language model offline sms discord gps emergency alert</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/mesh-ai-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/mesh_ai.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires multiple files to exist prior to starting the container. Run `touch FILE_NAME` for all files listed here: See configuration details: https://github.com/mr-tbot/mesh-ai/blob/main/docker-compose.yml &#xD;
+        [br]
+        Expects a `config.json` file to be mounted at `/app/config.json` before starting the container. See configuration details: https://github.com/mr-tbot/mesh-ai#configuration
+    </Requires>
+    <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="Config File" Target="/app/config.json" Default="/mnt/user/appdata/mesh_ai/config.json" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/config.json</Config>
+    <Config Name="Commands Config File" Target="/app/commands_config.json" Default="/mnt/user/appdata/mesh_ai/commands_config.json" Description="Path to the commands config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/commands_config.json</Config>
+    <Config Name="Message-of-the-Day File" Target="/app/motd.json" Default="/mnt/user/appdata/mesh_ai/motd.json" Description="Path to the message of the day file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/motd.json</Config>
+    <Config Name="Messages Log" Target="/app/messages.log" Default="/mnt/user/appdata/mesh_ai/messages.log" Description="Path to the messages log file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/messages.log</Config>
+    <Config Name="Messages Archive" Target="/app/messages_archive.json" Default="/mnt/user/appdata/mesh_ai/messages_archive.json" Description="Path to the messages archive log file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/messages_archive.json</Config>
+    <Config Name="Script Log" Target="/app/script.log" Default="/mnt/user/appdata/mesh_ai/script.log" Description="Path to the script log file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/script.log</Config>
+</Container>

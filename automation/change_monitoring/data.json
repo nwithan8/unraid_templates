@@ -1135,5 +1135,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "MESH-AI",
+        "git_url": "https://github.com/mr-tbot/mesh-ai.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "1d260b504c8b904b3d4f55827d8fd4c4d09619da",
+                "commit_message": null
+            }
+        ]
     }
 ]
