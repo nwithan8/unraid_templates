@@ -38,13 +38,3 @@
     <Config Name="Logs Path" Target="/var/log/meshview" Default="/mnt/user/appdata/meshview/logs" Description="Path to the logs folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meshview/logs</Config>
     <Config Name="Database Backups Path" Target="/var/lib/meshview/backups" Default="/mnt/user/appdata/meshview/backups" Description="Path to the database backups folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meshview/backups</Config>
 </Container>
-
-
-
-
-    <Config Name="Config File" Target="/app/config.json" Default="/mnt/user/appdata/dynamix/config.json" Description="Path to the config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/config.json</Config>
-    <Config Name="User Exemptions File" Target="/app/used_collections.json" Default="/mnt/user/appdata/dynamix/used_collections.json" Description="Path to the user exemptions file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/used_collections.json</Config>
-    <Config Name="Used Collections File" Target="/app/used_collections.json" Default="/mnt/user/appdata/dynamix/used_collections.json" Description="Path to the used collections file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/used_collections.json</Config>
-    <Config Name="Run State File" Target="/app/run_state.json" Default="/mnt/user/appdata/dynamix/run_state.json" Description="Path to the run state file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/run_state.json</Config>
-    <Config Name="Log Folder" Target="/app/logs" Default="/mnt/user/appdata/dynamix/logs" Description="Path to the log folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/logs</Config>
-</Container>
