@@ -35,6 +35,6 @@
     <Config Name="Uploads Path" Target="/app/public/uploads" Default="/mnt/user/appdata/lab-dash/uploads" Description="Path to the uploads folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lab-dash/uploads</Config>
     <Config Name="System Path" Target="/sys" Default="/sys" Description="Path to the system folder" Type="Path" Mode="ro" Display="advanced-hide" Required="true" Mask="false">/sys</Config>
     <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
-    <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID (Unraid: 99 = nobody)" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
-    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID (Unraid: 100 = users)" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="PUID" Target="PUID" Default="99" Description="User ID (Unraid: 99 = nobody)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="Group ID (Unraid: 100 = users)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
 </Container>
