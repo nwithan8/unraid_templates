@@ -1071,8 +1071,8 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "61a21b0e0c271b0ee947d7aefd607ec959e740ed",
-                "commit_message": "refactor: centralize cache path logic and add TMPDIR documentation\n"
+                "commit_hash": "1bf3e17d78a03990a360387dc621fb5351c0174b",
+                "commit_message": "docs: add external playlists feature documentation\n"
             }
         ]
     },
@@ -1083,7 +1083,7 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "570faa076e02de3807b89f70de82d2618bd9cc32",
+                "commit_hash": "f1a13eca2e25eac2846def9321a06ea64e2ca0e2",
                 "commit_message": "...\n"
             }
         ]
@@ -1131,8 +1131,8 @@
         "files_to_check": [
             {
                 "file_path": "README-Docker.md",
-                "commit_hash": "e77428661c2125655dfb2d7487700c8b14802ae4",
-                "commit_message": null
+                "commit_hash": "7d395e5e275c5d63e5d7410acad853b338b3a478",
+                "commit_message": "Correct documentation error\n"
             }
         ]
     },
