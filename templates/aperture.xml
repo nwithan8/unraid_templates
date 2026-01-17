@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Aperture</Name>
+    <Repository>ghcr.io/dgruhin-hrizn/aperture:latest</Repository>
+    <Registry>ghcr.io/dgruhin-hrizn/aperture</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3456]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dgruhin-hrizn/aperture/issues</Support>
+    <Project>https://github.com/dgruhin-hrizn/aperture</Project>
+    <Overview>
+        Aperture creates personalized recommendation libraries for your Emby and Jellyfin media server users using OpenAI embeddings and pgvector similarity search. Recommendations appear as virtual libraries in your media server's home screen, with support for both movies and TV series.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex jellyfin emby automation collection recommendation virtual library openai embeddings pgvector ai llm</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/aperture-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/aperture.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-17
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate Jellyin/Emby media servers and pgvector database instances.
+    </Requires>
+    <ExtraParams>--user 099:100</ExtraParams>
+    <Config Name="Web UI Port" Target="3456" Default="3456" Mode="tcp" Description="Container Port: 3456" Type="Port" Display="always-hide" Required="true" Mask="false">3456</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="postgresql://aperture:password@IP_ADDRESS:5432/aperture" Description="Database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://aperture:password@IP_ADDRESS:5432/aperture</Config>
+    <Config Name="Base URL" Target="APP_BASE_URL" Default="http://IP_ADDRESS:3456" Description="Base URL for accessing the application" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3456</Config>
+    <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Description="Secret key, at least 32 characters" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Aperture Libraries Path" Target="/aperture-libraries" Default="" Description="Path where Aperture libraries will be stored. Should be inside your existing media server's library path." Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Media Libraries Path" Target="/media" Default="" Description="Path to the root of your media library." Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Backups Path" Target="/backups" Default="/mnt/user/appdata/aperture/backups" Description="Path where backups will be stored" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/aperture/backups</Config>
+    <Config Name="Run Migrations on Start" Target="RUN_MIGRATIONS_ON_START" Default="true|false" Description="Whether to run database migrations on container start" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Node Environment" Target="NODE_ENV" Default="production" Description="Set the Node environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+    <Config Name="Internal Port" Target="PORT" Default="3456" Description="Internal port the application listens on. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">3456</Config>
+</Container>
