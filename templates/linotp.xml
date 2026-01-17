@@ -20,6 +20,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-17
+
+        Add cache path
+
         ### 2025-10-22
 
         Remove unused environmental variables
@@ -38,6 +42,7 @@
     <Config Name="Admin Password" Target="LINOTP_ADMIN_PASSWORD" Default="" Description="Password for the LinOTP admin user" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Database URI" Target="LINOTP_DATABASE_URI" Default="postgresql://USERNAME:PASSWORD@IP_ADDRESS:5432/linotp" Description="Database connection URI for the LinOTP database" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://USERNAME:PASSWORD@IP_ADDRESS:5432/linotp</Config>
     <Config Name="Data Path" Target="/data" Default="/mnt/user/appdata/linotp/data" Description="Path to the data directory for LinOTP" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/linotp/data</Config>
+    <Config Name="Cache Path" Target="/cache" Default="/mnt/user/appdata/linotp/cache" Description="Path to the cache directory for LinOTP" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/linotp/cache</Config>
     <Config Name="Secure Session Cookie" Target="LINOTP_SESSION_COOKIE_SECURE" Default="false|true" Description="Set to true to use secure cookies for sessions (recommended for production)" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
     <Config Name="Log Level" Target="LINOTP_LOG_LEVEL" Default="INFO|DEBUG|WARNING|ERROR|CRITICAL" Description="Set the log level for LinOTP." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
 </Container>
