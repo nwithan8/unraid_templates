@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Immaculaterr</Name>
+    <Repository>ohmzii/immaculaterr:latest</Repository>
+    <Registry>https://hub.docker.com/r/ohmzii/immaculaterr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5454]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ohmzi/Immaculaterr/issues</Support>
+    <Project>https://github.com/ohmzi/Immaculaterr</Project>
+    <Overview>
+        An automation tool for dynamically managing Plex collections. It pins and unpins library collections based on configurable time blocks, ensuring fresh and relevant content is featured.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex automation collection pin unpin playlist collection ai habit monitor tautulli</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/immaculaterr-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/ohmzi/Immaculaterr/refs/heads/develop/doc/assets/screenshots/logo.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/immaculaterr.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/ohmzi/Immaculaterr/master/doc/assets/screenshots/showcase.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/ohmzi/Immaculaterr/master/doc/assets/screenshots/showcase-mobile.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/ohmzi/Immaculaterr/master/doc/assets/screenshots/plex_mobile_app_screenshot2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/ohmzi/Immaculaterr/master/doc/assets/screenshots/plex_pc_screenshot.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-17
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Plex instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="5454" Default="5454" Mode="tcp" Description="Container Port: 5454" Type="Port" Display="always-hide" Required="true" Mask="false">5454</Config>
+    <Config Name="App Master Key" Target="APP_MASTER_KEY" Default="" Description="Master key for the application. Generate a secure random key with `openssl rand -base64 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Config Data" Target="/data" Default="/mnt/user/appdata/immaculaterr/config" Description="Path to the config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/immaculaterr/config</Config>
+    <Config Name="Update Check" Target="UPDATE_CHECK_ENABLED" Default="true|false" Description="Enable or disable update checks." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Update Check Repo" Target="UPDATE_CHECK_REPO" Default="" Description="Repository to check for updates against." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Internal Database Path" Target="DATABASE_URL" Default="file:/data/tcp.sqlite" Description="Internal database path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">file:/data/tcp.sqlite</Config>
+    <Config Name="Internal Host" Target="HOST" Default="0.0.0.0" Description="Internal host. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Internal Port" Target="PORT" Default="5454" Description="Internal port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">5454</Config>
+    <Config Name="Internal Data Path" Target="APP_DATA_DIR" Default="/data" Description="Internal data path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data</Config>
+</Container>

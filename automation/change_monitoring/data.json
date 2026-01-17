@@ -1188,5 +1188,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Immaculaterr",
+        "git_url": "https://github.com/ohmzi/Immaculaterr.git",
+        "branch_override": "develop",
+        "files_to_check": [
+            {
+                "file_path": "docker/immaculaterr/docker-compose.yml",
+                "commit_hash": "b6ee95e392ef7bc2b546a94125fda95a81261a13",
+                "commit_message": null
+            }
+        ]
     }
 ]
