@@ -391,8 +391,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/compose.yaml",
-                "commit_hash": "f776c3daa598f52ad1a08c34427e707585c1c2e9",
-                "commit_message": "chore: update docker infrastructure\n"
+                "commit_hash": "02c92aaf48d358b7ad1bf8c8eb0f9cc748e08f43",
+                "commit_message": "chore: rename and add volumes in `compose.yaml`\n"
             }
         ]
     },
@@ -1083,7 +1083,7 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f1a13eca2e25eac2846def9321a06ea64e2ca0e2",
+                "commit_hash": "0d8c003b1c1a4d62f99c3c66006b0951527aa7ed",
                 "commit_message": "...\n"
             }
         ]
