@@ -1083,7 +1083,7 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "0d8c003b1c1a4d62f99c3c66006b0951527aa7ed",
+                "commit_hash": "465d1c73585b65defba16913a332b7a586b776d9",
                 "commit_message": "...\n"
             }
         ]
@@ -1184,8 +1184,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.unraid.yml",
-                "commit_hash": "a6fcf734fc393c8a454a51ff13469b7336ac5a69",
-                "commit_message": null
+                "commit_hash": "6bf8145504bac2123099217bae76cc99e2ecf796",
+                "commit_message": "fix: quote SESSION_SECRET in docker-compose files to prevent YAML parsing issues\n\nRandom key generators often produce keys with special characters like #, $, !\nwhich YAML interprets as comments or special syntax. This causes the value to\nbe truncated, leading to 'must contain at least 32 characters' errors even\nwhen users paste 32+ character keys.\n\nChanges:\n- Quote SESSION_SECRET placeholder in all docker-compose files\n- Add warning comment about keeping quotes for special characters\n- Update Windows Docker Desktop docs with troubleshooting for this issue\n- Update example configurations to show quoted values\n\nAffected files:\n- docker-compose.windows.yml\n- docker-compose.prod.yml\n- docker-compose.synology.yml\n- docker-compose.qnap.yml\n- docker-compose.unraid.yml\n- docs/admin/windows-docker-desktop.md\n"
             }
         ]
     },
