@@ -1077,18 +1077,6 @@
         ]
     },
     {
-        "app_name": "ebook2audiobook",
-        "git_url": "https://github.com/DrewThomasson/ebook2audiobook.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "docker-compose.yml",
-                "commit_hash": "465d1c73585b65defba16913a332b7a586b776d9",
-                "commit_message": "...\n"
-            }
-        ]
-    },
-    {
         "app_name": "Tara Assistant",
         "git_url": "https://github.com/TaraHome/taraassistant-public.git",
         "branch_override": null,
