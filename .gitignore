@@ -1,8 +1,10 @@
-scratch.yml
-**/scratch.xml
+
 /.idea/
 **/.idea/
 wget-log
 **/wget-log
 .DS_Store
 **/.DS_Store
+/scratch/
+scratch.yml
+**/scratch.xml

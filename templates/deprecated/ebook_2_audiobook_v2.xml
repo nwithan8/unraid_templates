@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
-    <Name>ebook2audiobook - Legacy</Name>
-    <Repository>athomasson2/ebook2audiobookxtts:latest</Repository>
-    <Registry>https://hub.docker.com/r/athomasson2/ebook2audiobookxtts</Registry>
+    <Name>ebook2audiobook</Name>
+    <Repository>athomasson2/ebook2audiobook:latest</Repository>
+    <Registry>https://hub.docker.com/r/athomasson2/ebook2audiobook</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -13,34 +13,38 @@
     <Support>https://github.com/DrewThomasson/ebook2audiobook/issues</Support>
     <Project>https://github.com/DrewThomasson/ebook2audiobook</Project>
     <Overview>
-        This is a legacy version of ebook2audiobook. Please use the new version.
+        CPU/GPU Converter from eBooks to audiobooks with chapters and metadata using Calibre, ffmpeg, XTTSv2, Fairseq and more. Supports voice cloning and 1124 languages! &#xD;
+        &#xD;
+        For Nvidia GPU support, add "--runtime=nvidia --gpus all" to the Extra Parameters field under Advanced. &#xD;
     </Overview>
     <Beta>False</Beta>
     <Category>AI: MediaApp:Books MediaServer:Books Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>audiobook ebook book reader voice tts text speech converter automation</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/ebook-2-audiobook-icon.png</Icon>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ebook_2_audiobook.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/ebook_2_audiobook_v2.xml</TemplateURL>
     <Screenshot>https://raw.githubusercontent.com/DrewThomasson/ebook2audiobook/main/assets/demo_web_gui.gif</Screenshot>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
-        ### 2025-01-10
+        ### 2026-01-18
 
-        Add optional source files mapping to host to cut down on image size bloat.
+        Deprecated due to unresponsive upstream maintainer.
 
-        ### 2025-01-05
+        ### 2026-01-06
 
-        Remove unsupported branch
+        - Clarify Nvidia GPU support instructions.
 
-        ### 2024-12-27
+        ### 2025-02-11
 
         Initial release
     </Changes>
     <ExtraParams>--platform=linux/amd64</ExtraParams>
-    <PostArgs>python app.py</PostArgs>
     <Config Name="Web UI Port" Target="7860" Default="7860" Mode="tcp" Description="Container Port: 7860" Type="Port" Display="always-hide" Required="true" Mask="false">7860</Config>
     <Config Name="Temp Path" Target="/home/user/app/tmp" Default="" Mode="rw" Description="Path to temporary files." Type="Path" Display="always" Required="false" Mask="false"/>
     <Config Name="Audiobooks Path" Target="/home/user/app/audiobooks" Default="" Mode="rw" Description="Path to audiobooks." Type="Path" Display="always" Required="false" Mask="false"/>
     <Config Name="Models Path" Target="/home/user/app/models" Default="" Mode="rw" Description="Path to models. Warning, this can consume a large amount of space." Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+
 </Container>
