@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>pgvector-13</Name>
+    <Repository>pgvector/pgvector:pg13</Repository>
+    <Registry>https://hub.docker.com/r/pgvector/pgvector</Registry>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/pgvector/pgvector/issues</Support>
+    <Project>https://github.com/pgvector/pgvector</Project>
+    <Overview>
+        Open-source vector similarity search for Postgres.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>postgres vector database similarity search embedding</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/pgvector-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pgvector13.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-18
+
+        Initial release
+    </Changes>
+    <Config Name="Port" Target="5432" Default="5432" Mode="tcp" Description="Container Port: 5432" Type="Port" Display="always-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Database Storage Path" Target="/var/lib/postgresql/data" Default="/mnt/cache/appdata/pgvector13" Description="Path to store database files" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/cache/appdata/pgvector13</Config>
+    <Config Name="Username" Target="POSTGRES_USER" Default="" Description="PostgreSQL superuser name" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Password" Target="POSTGRES_PASSWORD" Default="" Description="PostgreSQL superuser password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Database Name" Target="POSTGRES_DB" Default="" Description="Initial database name" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+</Container>
