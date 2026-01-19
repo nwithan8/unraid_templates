@@ -1188,5 +1188,22 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Watchma",
+        "git_url": "https://github.com/json-bateman/watchma.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "de4072e80b819b89747266872eb7ba5650ed2aca",
+                "commit_message": null
+            },
+            {
+                "file_path": ".env.example",
+                "commit_hash": "cfa42a042e0d5d6117c381575c9460011577f3ef",
+                "commit_message": null
+            }
+        ]
     }
 ]

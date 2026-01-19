@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Watchma</Name>
+    <Repository>jsonbateman/watchma:latest</Repository>
+    <Registry>https://hub.docker.com/r/jsonbateman/watchma</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:58008]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/json-bateman/watchma/issues</Support>
+    <Project>https://github.com/json-bateman/watchma</Project>
+    <Overview>
+        A movie voting system for groups on Jellyfin.
+    </Overview>
+    <Beta>True</Beta>
+    <Category>AI: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex emby jellyfin movie voting system watchma group choice openai ai llm chatgpt</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/json-bateman/watchma/main/public/favicon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/watchma.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-18
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Jellyfin instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="58008" Default="58008" Mode="tcp" Description="Container Port: 58008" Type="Port" Display="always-hide" Required="true" Mask="false">58008</Config>
+    <Config Name="Jellyfin - URL" Target="JELLYFIN_BASE_URL" Default="http://IP_ADDRESS:8096" Description="The base URL of your Jellyfin server." Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:8096</Config>
+    <Config Name="Jellyfin - API Key" Target="JELLYFIN_API_KEY" Default="" Description="Your Jellyfin API key." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="OpenAI - API Key" Target="OPENAI_API_KEY" Default="" Description="Optional, OpenAI API key for AI-generated messages." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/watchma/data" Description="Path to app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/watchma/data</Config>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="WARN|INFO|DEBUG|ERROR" Description="Set the logging level" Type="Variable" Display="advanced-show" Required="true" Mask="false"/>
+    <Config Name="Development Mode" Target="IS_DEV" Default="false|true" Description="Enable development mode" Type="Variable" Display="advanced-show" Required="true" Mask="false"/>
+    <Config Name="Internal Port" Target="PORT" Default="58008" Description="Internal port for the application. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">58008</Config>
+</Container>
