@@ -1217,5 +1217,22 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "PotatoMesh Ingestor",
+        "git_url": "https://github.com/l5yth/potato-mesh.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "b4dd72e7eb30b7da782acfda0662e41f464f47ee",
+                "commit_message": null
+            },
+            {
+                "file_path": ".env.example",
+                "commit_hash": "2ae1e34d63fc63fb7be2fe7c5a3206a5e3dd08f3",
+                "commit_message": null
+            }
+        ]
     }
 ]
