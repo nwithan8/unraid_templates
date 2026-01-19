@@ -35,7 +35,7 @@
         "files_to_check": [
             {
                 "file_path": "docs/guide/swarm.md",
-                "commit_hash": "79cc6f83ab310e0797c092f977bec032cbd142a8",
+                "commit_hash": "4a32791b547f862b3722ade11a8e2ae290438e32",
                 "commit_message": "update docs\n"
             }
         ]
@@ -1184,8 +1184,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/immaculaterr/docker-compose.yml",
-                "commit_hash": "b6ee95e392ef7bc2b546a94125fda95a81261a13",
-                "commit_message": null
+                "commit_hash": "5d1edee0ef0cb2c7002fb98f635b5d7e46aa05fc",
+                "commit_message": "Merge branch 'develop' into fix/refactor/basic"
             }
         ]
     },
