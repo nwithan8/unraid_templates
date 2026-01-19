@@ -34,8 +34,8 @@
         "branch_override": null,
         "files_to_check": [
             {
-                "file_path": "docs/guide/swarm.md",
-                "commit_hash": "4a32791b547f862b3722ade11a8e2ae290438e32",
+                "file_path": "docs/compose/compose.yaml",
+                "commit_hash": "854905563439d4f68d36dcd75b97a70ab3362727",
                 "commit_message": "update docs\n"
             }
         ]
