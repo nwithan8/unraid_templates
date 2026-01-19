@@ -1219,7 +1219,7 @@
         ]
     },
     {
-        "app_name": "PotatoMesh Ingestor",
+        "app_name": "PotatoMesh",
         "git_url": "https://github.com/l5yth/potato-mesh.git",
         "branch_override": null,
         "files_to_check": [
