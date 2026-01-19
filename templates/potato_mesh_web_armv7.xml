@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>PotatoMesh Web (ARMv7)</Name>
+    <Repository>ghcr.io/l5yth/potato-mesh-web-linux-armv7:latest</Repository>
+    <Registry>ghcr.io/l5yth/potato-mesh-web-linux-armv7</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/l5yth/potato-mesh/issues</Support>
+    <Project>https://potatomesh.net/</Project>
+    <Overview>
+        A federated, Meshtastic-powered node dashboard for your local community. This is the web container that displays data from ingested Meshtastic nodes.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>mesh meshtastic data node ingestor web potato</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/potatomesh-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/potato_mesh_web_armv7.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/l5yth/potato-mesh/main/scrot-0.4.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-19
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires data from one or more PotatoMesh ingestors.
+    </Requires>
+    <Config Name="PotatoMesh Instance" Target="INSTANCE_DOMAIN" Default="" Description="Domain of the PotatoMesh instance to connect to." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="API Key" Target="API_TOKEN" Default="" Description="API key for authenticating with the PotatoMesh instance." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Site Name" Target="SITE_NAME" Default="PotatoMesh" Description="Mesh network name" Type="Variable" Display="always-hide" Required="true" Mask="false">PotatoMesh</Config>
+    <Config Name="Channel" Target="CHANNEL" Default="#LongFast" Description="Default channel to display on the web interface." Type="Variable" Display="always-hide" Required="true" Mask="false">#LongFast</Config>
+    <Config Name="Frequency" Target="FREQUENCY" Default="915MHz|868MHz|433MHz" Description="Frequency the mesh is operating on." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Map - Center" Target="MAP_CENTER" Default="" Description="Default map center coordinates (latitude,longitude)." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Map - Zoom" Target="MAP_ZOOM" Default="" Description="Default map zoom level." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Max Distance" Target="MAX_DISTANCE" Default="42" Description="Maximum distance (in km) to show nodes from the map center." Type="Variable" Display="always-hide" Required="true" Mask="false">42</Config>
+    <Config Name="Contact Link" Target="CONTACT_LINK" Default="#potatomesh:dod.ngo" Description="Community chat link or Matrix room for your community" Type="Variable" Display="always-hide" Required="false" Mask="false">#potatomesh:dod.ngo</Config>
+    <Config Name="Federation" Target="FEDERATION" Default="1|0" Description="Enable or disable PotatoMesh federation features." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Private" Target="PRIVATE" Default="0|1" Description="Hide public mesh messages from unauthenticated visitors (1=hidden, 0=public)" Display="always-hide" Type="Variable" Required="true" Mask="false"/>
+    <Config Name="Data Storage" Target="/app/.local/share/potato-mesh" Default="/mnt/user/appdata/potato-mesh-web/data" Description="Path to store application data." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/potato-mesh-web/data</Config>
+    <Config Name="Config Storage" Target="/app/.config/potato-mesh" Default="/mnt/user/appdata/potato-mesh-web/config" Description="Path to store configuration data." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/potato-mesh-web/config</Config>
+    <Config Name="Logs Storage" Target="/app/logs" Default="/mnt/user/appdata/potato-mesh-web/logs" Description="Path to store log files." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/potato-mesh-web/logs</Config>
+    <Config Name="Debugging" Target="DEBUG" Default="0|1" Description="Enable or disable debugging." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
