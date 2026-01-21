@@ -17,7 +17,7 @@
         &#xD;
         You own your data and control what each audience sees. &#xD;
         &#xD;
-        Default login: admin@example.com / changeme123 (you'll be prompted to change the password immediately after first login)
+        Default password: changeme123 (you'll be prompted to change the password immediately after first login)
     </Overview>
     <Beta>False</Beta>
     <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
@@ -33,9 +33,7 @@
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
-    <Config Name="Encryption Key" Target="ENCRYPTION_KEY" Default="" Description="Used for generating API keys and tokens. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Public URL" Target="APP_URL" Default="" Description="Public URL for Facet (e.g. http://IP_ADDRESS:8080). Used for OAuth callbacks and share links." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Origin URL" Target="ORIGIN" Default="" Description="Must match APP_URL" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Public URL" Target="APP_URL" Default="" Description="Public URL for Facet (e.g. http://IP_ADDRESS:8080). Used for OAuth callbacks and share links." Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Admin Emails" Target="ADMIN_EMAILS" Default="" Description="Comma-separated email allowlist for OAuth login" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Behind Proxy" Target="TRUST_PROXY" Default="false|true" Description="Set to true if running behind a reverse proxy" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="OAuth - Google - Client ID" Target="GOOGLE_CLIENT_ID" Default="" Description="Client ID for 'Sign in with Google'. Redirect URI: YOUR_URL/api/oauth2-redirect" Type="Variable" Display="always" Required="false" Mask="false"/>
