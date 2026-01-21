@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Facet</Name>
+    <Repository>ghcr.io/jesposito/facet:latest</Repository>
+    <Registry>ghcr.io/jesposito/facet</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/jesposito/Facet/issues</Support>
+    <Project>https://facet-demo.theansible.co/</Project>
+    <Overview>
+        Facet is a self-hosted personal profile platform that lets you create multiple views of your professional profile for different audiences (recruiters, conferences, clients). &#xD;
+        &#xD;
+        You own your data and control what each audience sees. &#xD;
+        &#xD;
+        Default login: admin@example.com / changeme123 (you'll be prompted to change the password immediately after first login)
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>personal profile portfolio resume cv recruiter conference client self-hosted</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/jesposito/Facet/main/assets/icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/facet.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-20
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Encryption Key" Target="ENCRYPTION_KEY" Default="" Description="Used for generating API keys and tokens. Generate with `openssl rand -hex 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Public URL" Target="APP_URL" Default="" Description="Public URL for Facet (e.g. http://IP_ADDRESS:8080). Used for OAuth callbacks and share links." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Origin URL" Target="ORIGIN" Default="" Description="Must match APP_URL" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Admin Emails" Target="ADMIN_EMAILS" Default="" Description="Comma-separated email allowlist for OAuth login" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Behind Proxy" Target="TRUST_PROXY" Default="false|true" Description="Set to true if running behind a reverse proxy" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="OAuth - Google - Client ID" Target="GOOGLE_CLIENT_ID" Default="" Description="Client ID for 'Sign in with Google'. Redirect URI: YOUR_URL/api/oauth2-redirect" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OAuth - Google - Client Secret" Target="GOOGLE_CLIENT_SECRET" Default="" Description="Client secret from Google Cloud Console." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="OAuth - GitHub - Client ID" Target="GITHUB_CLIENT_ID" Default="" Description="Client ID for 'Sign in with GitHub'. Redirect URI: YOUR_URL/api/oauth2-redirect" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="OAuth - GitHub - Client Secret" Target="GITHUB_CLIENT_SECRET" Default="" Description="Client secret from GitHub OAuth Apps." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="AI - OpenAI - API Key" Target="OPENAI_API_KEY" Default="" Description="API key for OpenAI services. Required for AI features powered by OpenAI." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="AI - Anthropic - API Key" Target="ANTHROPIC_API_KEY" Default="" Description="API key for Anthropic services. Required for AI features powered by Anthropic." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="AI - Ollama - URL" Target="OLLAMA_BASE_URL" Default="" Description="URL for Ollama API. Required for AI features powered by Ollama." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="AI - Ollama - Model" Target="OLLAMA_MODEL" Default="" Description="Model name for Ollama API. Required for AI features powered by Ollama." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/facet/data" Description="Path to the app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/facet/data</Config>
+    <Config Name="Uploads Storage" Target="/uploads" Default="/mnt/user/appdata/facet/uploads" Description="Path to the uploads storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/facet/uploads</Config>
+    <Config Name="Admin Enabled" Target="ADMIN_ENABLED" Default="false|true" Description="Set to true to enable PocketBase admin UI at /_/ for debugging purposes" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Port" Target="PORT" Default="8080" Description="Internal port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Internal Data Path" Target="DATA_PATH" Default="./data" Description="Internal data path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">./data</Config>
+    <Config Name="Internal Uploads Path" Target="UPLOADS_PATH" Default="./uploads" Description="Internal uploads path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">./uploads</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>
