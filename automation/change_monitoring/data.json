@@ -1071,8 +1071,8 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "eebd19e84db02f438b9fd76418b510d21d4362da",
-                "commit_message": "feat: auto-upgrade MP3 tracks to FLAC when higher quality available\n"
+                "commit_hash": "69a44b565b93fb4f62767877e387ed6efb0c56f1",
+                "commit_message": "feat: add SquidWTF music provider with Qobuz/Tidal backends\n"
             }
         ]
     },
