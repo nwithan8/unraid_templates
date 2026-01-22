@@ -11,13 +11,13 @@
     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/jesposito/Facet/issues</Support>
-    <Project>https://facet-demo.theansible.co/</Project>
+    <Project>https://github.com/jesposito/Facet</Project>
     <Overview>
         Facet is a self-hosted personal profile platform that lets you create multiple views of your professional profile for different audiences (recruiters, conferences, clients). &#xD;
         &#xD;
         You own your data and control what each audience sees. &#xD;
         &#xD;
-        Default password: changeme123 (you'll be prompted to change the password immediately after first login)
+        Default password: changeme123 ((you will be prompted to change it on first login)
     </Overview>
     <Beta>False</Beta>
     <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
@@ -28,6 +28,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-22
+
+        Remove unnecessary environmental variables causing app to fail
+
         ### 2026-01-20
 
         Initial release
@@ -46,10 +50,6 @@
     <Config Name="AI - Ollama - Model" Target="OLLAMA_MODEL" Default="" Description="Model name for Ollama API. Required for AI features powered by Ollama." Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/facet/data" Description="Path to the app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/facet/data</Config>
     <Config Name="Uploads Storage" Target="/uploads" Default="/mnt/user/appdata/facet/uploads" Description="Path to the uploads storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/facet/uploads</Config>
-    <Config Name="Admin Enabled" Target="ADMIN_ENABLED" Default="false|true" Description="Set to true to enable PocketBase admin UI at /_/ for debugging purposes" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Internal Port" Target="PORT" Default="8080" Description="Internal port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
-    <Config Name="Internal Data Path" Target="DATA_PATH" Default="./data" Description="Internal data path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">./data</Config>
-    <Config Name="Internal Uploads Path" Target="UPLOADS_PATH" Default="./uploads" Description="Internal uploads path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">./uploads</Config>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
