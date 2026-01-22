@@ -32,5 +32,5 @@
     <Config Name="Postgres User" Target="POSTGRES_USER" Default="" Description="Postgres user" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="" Description="Postgres password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Postgres Database" Target="POSTGRES_DB" Default="" Description="Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Data path" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/paradedb/data" Description="Path to store the database data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/paradedb/data</Config>
+    <Config Name="Data path" Target="/var/lib/postgresql" Default="/mnt/user/appdata/paradedb/data" Description="Path to store the database data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/paradedb/data</Config>
 </Container>
