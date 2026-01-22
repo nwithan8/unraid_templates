@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-22
+
+        Add new environmental variables
+
         ### 2025-10-22
 
         Add missing environmental variables
@@ -36,7 +40,7 @@
         Initial release
     </Changes>
     <Requires>
-        Requires separate SurfSense - Backend, SurfSense - Worker, pgAdmin4, pgvector and Redis containers. See documentation: https://github.com/MODSetter/SurfSense/blob/main/DOCKER_SETUP.md#deployment-options
+        Requires separate SurfSense - Backend, SurfSense - Worker, pgAdmin4, pgvector, electric and Redis containers. See documentation: https://github.com/MODSetter/SurfSense/blob/main/DOCKER_SETUP.md#deployment-options
     </Requires>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="Backend - URL" Target="NEXT_PUBLIC_API_URL" Default="http://MY_IP_ADDRESS:3001" Description="URL of the backend service, including port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://MY_IP_ADDRESS:3001</Config>
@@ -44,6 +48,8 @@
     <Config Name="Backend - Authentication Type" Target="NEXT_PUBLIC_FASTAPI_BACKEND_AUTH_TYPE" Default="LOCAL|GOOGLE" Description="Authentication type used by the backend." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Backend - ETL Service" Target="NEXT_PUBLIC_ETL_SERVICE" Default="UNSTRUCTURED|LLAMACLOUD|DOCLING" Description="Document parsing service used by the backend." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Database - Postgres URL" Target="DATABASE_URL" Default="postgresql://postgres:MY_PASSWORD@db.sdsf.supabase.co:5432/postgres" Description="PostgreSQL database connection URL" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://postgres:MY_PASSWORD@db.sdsf.supabase.co:5432/postgres</Config>
+    <Config Name="Electric - URL" Target="NEXT_PUBLIC_ELECTRIC_URL" Default="http://MY_IP_ADDRESS:5133" Description="URL of the Electric service, including port" Type="Variable" Display="always-hide" Required="true" Mask="false">http://MY_IP_ADDRESS:5133</Config>
+    <Config Name="Electric - Auth Mode" Target="NEXT_PUBLIC_ELECTRIC_AUTH_MODE" Default="insecure" Description="Authentication mode for Electric service" Type="Variable" Display="always-hide" Required="true" Mask="false">insecure</Config>
     <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/surfsense/frontend/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/frontend/data</Config>
     <Config Name="App Node Modules" Target="/app/node_modules" Default="/mnt/user/appdata/surfsense/frontend/node_modules" Description="Path to node modules" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/surfsense/frontend/node_modules</Config>
 </Container>
