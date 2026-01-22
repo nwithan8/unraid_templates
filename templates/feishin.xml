@@ -28,6 +28,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-22
+
+        Add new environment variable to disable analytics
+
         ### 2025-11-17
 
         Initial release
@@ -37,6 +41,7 @@
     <Config Name="Server Type" Target="SERVER_TYPE" Default="jellyfin|navidrome" Description="Type of music server" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Server URL" Target="SERVER_URL" Default="" Description="URL of your music server (e.g., http://localhost:8096)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Lock Settings" Target="SERVER_LOCK" Default="true|false" Description="When enabled, prevents changes to server settings via the web UI" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disable Analytics" Target="ANALYTICS_DISABLED" Default="true|false" Description="When enabled, disables anonymous usage analytics" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
