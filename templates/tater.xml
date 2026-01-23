@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Tater</Name>
+    <Repository>ghcr.io/tatertotterson/tater:latest</Repository>
+    <Registry>https://github.com/TaterTotterson/Tater/pkgs/container/tater</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8501]/</WebUI>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/TaterTotterson/Tater/issues</Support>
+    <Project>https://github.com/TaterTotterson/Tater</Project>
+    <Overview>
+        A Local AI LLM Assistant With Tools and Integrations for Home Assistant, HomeKit, XBMC, Discord, Matrix, IRC, and Automations
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: HomeAutomation: Productivity: Tools: Other: Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:8501]/</WebUI>
+    <ExtraSearchTerms>ai llm local assistant home assistant homekit xbmc discord matrix irc automations tools integrations productivity tatertotterson tater</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/tatertotterson/Tater/refs/heads/main/images/tater.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/tatertotterson/unraid_templates/main/tater.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-22
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate OpenAI-compatible LLM instance and Redis instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="8501" Default="8501" Mode="tcp" Description="Container Port: 8501" Type="Port" Display="always-hide" Required="true" Mask="false">8501</Config>
+    <Config Name="HA Port" Target="8787" Default="8787" Description="" Type="Port" Display="always" Required="false" Mask="false">8787</Config>
+    <Config Name="Auto Port" Target="8788" Default="8788" Description="" Type="Port" Display="always" Required="false" Mask="false">8788</Config>
+    <Config Name="HomeKit Port" Target="8789" Default="8789" Description="" Type="Port" Display="always" Required="false" Mask="false">8789</Config>
+    <Config Name="XBMC Port" Target="8790" Default="8790" Description="" Type="Port" Display="always" Required="false" Mask="false">8790</Config>
+    <Config Name="LLM - Host" Target="LLM_HOST" Default="MY_IP_ADDRESS" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">MY_IP_ADDRESS</Config>
+    <Config Name="LLM - Port" Target="LLM_PORT" Default="11434" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">11434</Config>
+    <Config Name="LLM - Model" Target="LLM_MODEL" Default="" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Redis - Host" Target="REDIS_HOST" Default="MY_IP_ADDRESS" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">MY_IP_ADDRESS</Config>
+    <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+</Container>
