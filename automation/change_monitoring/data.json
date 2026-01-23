@@ -88,8 +88,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "0fee673acb9788e10142e0e96db5cd095537ba4f",
-                "commit_message": "Add health check and graceful shutdown support\n\n- Implemented health check endpoint for Docker and orchestration systems.\n- Added graceful shutdown configuration in Docker Compose and application code.\n- Enhanced shutdown handling in main application and background tasks for improved diagnostics.\n- Updated Dockerfile to include health check command.\n- Introduced readiness check endpoint for Kubernetes-style orchestration.\n"
+                "commit_hash": "aaadd164d881988454cdaaff1b99c80955d99c3e",
+                "commit_message": "Apply PR #750: Reduce zombie processes\n\nChanges:\n1. Add SIGCHLD handler to reap terminated child processes (zombies)\n2. Replace curl healthcheck with Python requests to reduce process spawning\n3. Update healthcheck to use /api/health endpoint\n\nTechnical details:\n- SIGCHLD handler uses os.waitpid(-1, os.WNOHANG) pattern\n- Python healthcheck reduces spawning of curl processes every 30s\n- Proper exception handling for ChildProcessError and OSError\n"
             }
         ]
     },
@@ -439,8 +439,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "8aad15d392d702cf5de413a524a42952aca5ef19",
-                "commit_message": "Reapply \"Merge pull request #686 from AnishSarkar22/feat/replace-logs\"\n\nThis reverts commit 3418c0e0261544a140970bd3243dc176461ecfa6.\n"
+                "commit_hash": "8d44e6acd3505d64ae0c86944c6f9ce70609a814",
+                "commit_message": "Add comment in docker-compose for obsidian\n"
             },
             {
                 "file_path": "surfsense_backend/env.example",
