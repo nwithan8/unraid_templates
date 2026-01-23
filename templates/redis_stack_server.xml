@@ -16,7 +16,6 @@
     </Overview>
     <Beta>False</Beta>
     <Category>Productivity: Tools: Other: Status:Stable</Category>
-    <WebUI>http://[IP]:[PORT:8001]/</WebUI>
     <ExtraSearchTerms>redis database redisinsight redis-stack tools productivity</ExtraSearchTerms>
     <Icon>https://www.gravatar.com/avatar/d97b18081fdbcb9838acfeaa4335e3d3</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/redis_stack_server.xml</TemplateURL>
