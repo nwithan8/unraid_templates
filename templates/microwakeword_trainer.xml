@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>microWakeWord_Trainer-Nvidia</Name>
+    <Repository>ghcr.io/tatertotterson/microwakeword:latest</Repository>
+    <Registry>https://github.com/TaterTotterson/microWakeWord-Trainer-Nvidia-Docker/pkgs/container/microwakeword</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8888]/</WebUI>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/TaterTotterson/microWakeWord-Trainer-Nvidia-Docker/issues</Support>
+    <Project>https://github.com/TaterTotterson/microWakeWord-Trainer-Nvidia-Docker</Project>
+    <Overview>
+        Train microWakeWord detection models using a simple web-based recorder + trainer UI, packaged in a Docker container.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: HomeAutomation: Productivity: Tools: Other: Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:8888]/</WebUI>
+    <ExtraSearchTerms>ai llm local assistant home assistant wake word wakeword voice speech recognition trainer tatertotterson microwakeword</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/tatertotterson/MicroWakeWord-Trainer-Docker/refs/heads/main/mmw.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/microwakeword_trainer.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-22
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires an Nvidia GPU
+    </Requires>
+    <ExtraParams>--gpus all</ExtraParams>
+    <Config Name="Web UI Port" Target="8888" Default="8888" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always-hide" Required="true" Mask="false">8888</Config>
+    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/mww/data" Description="Path to the app data" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mww/data</Config>
+</Container>
