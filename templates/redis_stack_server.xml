@@ -1,26 +1,25 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
-    <Name>redis-stack</Name>
-    <Repository>redis/redis-stack:latest</Repository>
-    <Registry>https://hub.docker.com/r/redis/redis-stack</Registry>
+    <Name>redis-stack-server</Name>
+    <Repository>redis/redis-stack-server:latest</Repository>
+    <Registry>https://hub.docker.com/r/redis/redis-stack-server</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:8001]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://redis.io/about/redis-stack/</Support>
     <Project>https://redis.io</Project>
     <Overview>
-        redis-stack installs a Redis server with additional database capabilities and the RedisInsight.
+        redis-stack installs a Redis server with additional database capabilities.
     </Overview>
     <Beta>False</Beta>
     <Category>Productivity: Tools: Other: Status:Stable</Category>
     <WebUI>http://[IP]:[PORT:8001]/</WebUI>
     <ExtraSearchTerms>redis database redisinsight redis-stack tools productivity</ExtraSearchTerms>
     <Icon>https://www.gravatar.com/avatar/d97b18081fdbcb9838acfeaa4335e3d3</Icon>
-    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/redis_stack.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/redis_stack_server.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
@@ -29,7 +28,6 @@
 
         Initial release
     </Changes>
-    <Config Name="Web UI Port" Target="8001" Default="8001" Mode="tcp" Description="Container Port: 8001" Type="Port" Display="always-hide" Required="true" Mask="false">8001</Config>
     <Config Name="Redis Port" Target="6379" Default="6379" Mode="tcp" Description="Redis Port" Type="Port" Display="always" Required="true" Mask="false">6379</Config>
-    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/redis_stack/data" Description="Path to the app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/redis_stack/data</Config>
+    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/redis_stack_server/data" Description="Path to the app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/redis_stack_server/data</Config>
 </Container>
