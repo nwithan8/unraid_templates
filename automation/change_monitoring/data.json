@@ -1263,5 +1263,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Reitti",
+        "git_url": "https://github.com/dedicatedcode/reitti.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "181e499edd23380a1d66beaea21a0b81ef839610",
+                "commit_message": null
+            }
+        ]
     }
 ]

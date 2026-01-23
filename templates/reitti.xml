@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Reitti</Name>
+    <Repository>dedicatedcode/reitti:latest</Repository>
+    <Registry>https://hub.docker.com/r/dedicatedcode/reitti</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://www.dedicatedcode.com/projects/reitti/installation/</Support>
+    <Project>https://www.dedicatedcode.com/projects/reitti/</Project>
+    <Overview>
+        Reitti is a comprehensive personal location tracking and analysis application that helps you understand your movement patterns and significant places.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>reitti location tracking pattern place geofence</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/dedicatedcode/reitti/refs/heads/main/src/main/resources/static/img/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/reitti.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-22
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires separate PostGIS, Redis, Photon, RabbitMQ and OSM Tile cache instances.
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Photon - URL" Target="PHOTON_BASE_URL" Default="http://IP_ADDRESS:2322/" Description="Base URL for the Photon instance." Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:2322/</Config>
+    <Config Name="PostGIS - Host" Target="POSTGIS_HOST" Default="IP_ADDRESS" Description="Hostname or IP address of the PostGIS instance." Type="Variable" Display="always-hide" Required="true" Mask="false">IP_ADDRESS</Config>
+    <Config Name="PostGIS - Database" Target="POSTGIS_DB" Default="reitti" Description="Database name for the PostGIS instance." Type="Variable" Display="always-hide" Required="true" Mask="false">reitti</Config>
+    <Config Name="PostGIS - User" Target="POSTGIS_USER" Default="reitti" Description="Username for the PostGIS instance." Type="Variable" Display="always-hide" Required="true" Mask="false">reitti</Config>
+    <Config Name="PostGIS - Password" Target="POSTGIS_PASSWORD" Default="reitti" Description="Password for the PostGIS instance." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Data Storage" Target="/data/" Default="/mnt/user/appdata/reitti/data" Description="Path to store Reitti data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/reitti/data</Config>
+</Container>
