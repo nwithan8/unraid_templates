@@ -8,8 +8,8 @@
         <TagDescription>Latest development release</TagDescription>
     </Branch>
     <Branch>
-        <Tag>edge</Tag>
-        <TagDescription>Edge release (every 2 hours) release</TagDescription>
+        <Tag>dev</Tag>
+        <TagDescription>Dev pre-release</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8000]/</WebUI>
@@ -36,6 +36,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ## 2026-01-23
+
+        Retire the "edge" tag and replace with the "dev" tag.
+
         ## 2025-08-11
 
         Remove hardware-acceleration-specific tags, no longer needed
