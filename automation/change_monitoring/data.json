@@ -1251,5 +1251,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "MeshCore MQTT Bridge",
+        "git_url": "https://github.com/ipnet-mesh/meshcore-mqtt.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "b34e59ad18b3b9cf31a30a46714d609ab9f163b9",
+                "commit_message": null
+            }
+        ]
     }
 ]

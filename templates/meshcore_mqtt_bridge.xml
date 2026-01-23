@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>MeshCore MQTT Bridge</Name>
+    <Repository>ghcr.io/ipnet-mesh/meshcore-mqtt:latest</Repository>
+    <Registry>ghcr.io/ipnet-mesh/meshcore-mqtt</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ipnet-mesh/meshcore-mqtt/issues</Support>
+    <Project>https://ipnt.uk/</Project>
+    <Overview>
+        A robust bridge service that connects MeshCore devices to MQTT brokers, enabling seamless integration with IoT platforms and message processing systems.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>meshcore meshtastic mqtt bridge iot integration</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/meshcore-mqtt-bridge-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/meshcore_mqtt_bridge.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-22
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MQTT instance. &#xD;
+        &#xD;
+        Requires a `config.yaml` file in the Config Path. See documentation: https://github.com/ipnet-mesh/meshcore-mqtt#yaml-configuration-configyaml
+    </Requires>
+    <PostArgs>python -m meshcore_mqtt.main --config-file /config/config.yaml</PostArgs>
+    <Config Name="USB Device" Target="/dev/ttyUSB0" Default="/dev/ttyUSB0" Description="USB device to use for ingestion." Type="Device" Display="always-hide" Required="true" Mask="false">/dev/ttyUSB0</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/meshcore_mqtt_bridge/config" Description="Path to the config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meshcore_mqtt_bridge/config</Config>
+</Container>
