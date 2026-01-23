@@ -21,7 +21,7 @@
     <WebUI>http://[IP]:[PORT:8501]/</WebUI>
     <ExtraSearchTerms>ai llm local assistant home assistant homekit xbmc discord matrix irc automations tools integrations productivity tatertotterson tater</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/tatertotterson/Tater/refs/heads/main/images/tater.png</Icon>
-    <TemplateURL>https://raw.githubusercontent.com/tatertotterson/unraid_templates/main/tater.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tater.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
