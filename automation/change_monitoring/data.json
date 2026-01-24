@@ -449,8 +449,8 @@
             },
             {
                 "file_path": "surfsense_web/.env.example",
-                "commit_hash": "8aad15d392d702cf5de413a524a42952aca5ef19",
-                "commit_message": "Reapply \"Merge pull request #686 from AnishSarkar22/feat/replace-logs\"\n\nThis reverts commit 3418c0e0261544a140970bd3243dc176461ecfa6.\n"
+                "commit_hash": "14b60014898d745e98aac9cb086e98739a52a6b1",
+                "commit_message": "chore(env): add optional deployment mode and update database URL example\n"
             }
         ]
     },
@@ -553,8 +553,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "793f76dce207ffa793695fa494d38701a20b8423",
-                "commit_message": "Clarify SPARKY_FITNESS_DB_HOST settings\n\nUpdated PostgreSQL database host configuration for clarity."
+                "commit_hash": "91f873feca00aa7f34b8a4f6b10af14d8b85d0e6",
+                "commit_message": "fitbit updates & nginx fix for swagger url\n"
             }
         ]
     },
@@ -649,13 +649,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.app.yml",
-                "commit_hash": "c27a5dd530bd6dfe0ffbee09cc02da2ab9b3502e",
-                "commit_message": "feat: custom labels (protected, depends_on) (#59)\n\n+ added support of custom labels dev.quenary.tugtainer.protected and dev.quenary.tugtainer.depends_on\n+ added protected label to tugtainer images and docker-compose\n+ edited readme\n+ fixed issue when progress request fails with 404 because of unsafe group cache key in path param (cache_id as query param)\n\nCloses #41\nCloses #5"
+                "commit_hash": "67c896620d6c7bc059623f268e12acf5759459f7",
+                "commit_message": "docs: ghcr reg in readme and docker-compose\n"
             },
             {
                 "file_path": "docker-compose.agent.yml",
-                "commit_hash": "c27a5dd530bd6dfe0ffbee09cc02da2ab9b3502e",
-                "commit_message": "feat: custom labels (protected, depends_on) (#59)\n\n+ added support of custom labels dev.quenary.tugtainer.protected and dev.quenary.tugtainer.depends_on\n+ added protected label to tugtainer images and docker-compose\n+ edited readme\n+ fixed issue when progress request fails with 404 because of unsafe group cache key in path param (cache_id as query param)\n\nCloses #41\nCloses #5"
+                "commit_hash": "67c896620d6c7bc059623f268e12acf5759459f7",
+                "commit_message": "docs: ghcr reg in readme and docker-compose\n"
             }
         ]
     },
