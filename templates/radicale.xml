@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Radicale</Name>
+    <Repository>ghcr.io/kozea/radicale:stable</Repository>
+    <Registry>ghcr.io/kozea/radicale</Registry>
+    <Branch>
+        <Tag>stable</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5232]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://radicale.org/v3.html#documentation-1</Support>
+    <Project>https://radicale.org</Project>
+    <Overview>
+        Radicale is a small but powerful CalDAV (calendars, to-do lists) and CardDAV (contacts) server
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>calendar contacts cal dav caldav carddav sync server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/radicale-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/radicale.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        See https://radicale.org/master.html#configuration for information about making a "config" file for Radicale. This config file should be stored in the "Config path" folder.
+    </Requires>
+    <Config Name="Web UI Port" Target="5232" Default="5232" Mode="tcp" Description="Container Port: 5232" Type="Port" Display="always-hide" Required="true" Mask="false">5232</Config>
+    <Config Name="Config Data" Target="/etc/radicale" Default="/mnt/user/appdata/radicale/config" Description="Path to the config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/radicale/config</Config>
+    <Config Name="Data Storage" Target="/var/lib/radicale" Default="/mnt/user/appdata/radicale/data" Description="Path to the data storage" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/radicale/data</Config>
+</Container>
