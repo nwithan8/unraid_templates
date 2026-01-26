@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Huntorr</Name>
+    <Repository>thewicklowwolf/huntorr:latest</Repository>
+    <Registry>https://hub.docker.com/r/thewicklowwolf/huntorr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://thewicklowwolf.github.io/Huntorr</Support>
+    <Project>https://thewicklowwolf.github.io/Huntorr</Project>
+    <Overview>
+        Huntorr is a quick and simple tool for performing torrent searches against the three top torrent sites and automatically adding them to your qBittorrent client.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Downloaders: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>torrent usenet 1337x qbittorrent download piratebay eztv plex jellyfin</ExtraSearchTerms>
+    <Icon>https://thewicklowwolf.github.io/images/huntorr.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/huntorr.xml</TemplateURL>
+    <Screenshot>https://thewicklowwolf.github.io/images/huntorr-search.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-01-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate qBittorrent instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="qBittorrent - Host" Target="torrenter_ip" Default="" Description="The IP address or hostname of your qBittorrent instance." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="qBittorrent - Port" Target="torrenter_port" Default="5002" Description="The port number of your qBittorrent Web UI." Type="Variable" Display="always-hide" Required="true" Mask="false">5002</Config>
+    <Config Name="qBittorrent - Username" Target="torrenter_username" Default="admin" Description="The username for your qBittorrent Web UI." Type="Variable" Display="always-hide" Required="true" Mask="false">admin</Config>
+    <Config Name="qBittorrent - Password" Target="torrenter_password" Default="" Description="The password for your qBittorrent Web UI." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Media Servers - Addresses" Target="media_server_addresses" Default="" Description="Comma-separated list of Plex or Jellyfin server addresses to notify after adding torrents (e.g. Plex:http://192.168.1.2:32400, Jellyfin:http://192.168.1.2:8096)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Media Servers - Tokens" Target="media_server_tokens" Default="" Description="Token for your Plex or Jellyfin server(s) to allow Huntorr to notify them of new content. (e.g. Plex:abc, Jellyfin:def)" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Media Servers - Library Name" Target="media_server_library_name" Default="" Description="Name of the library to update on your media server(s) after adding torrents." Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
