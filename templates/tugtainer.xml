@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>Tugtainer</Name>
-    <Repository>quenary/tugtainer:latest</Repository>
-    <Registry>https://hub.docker.com/r/quenary/tugtainer</Registry>
+    <Repository>ghcr.io/quenary/tugtainer:latest</Repository>
+    <Registry>ghcr.io/quenary/tugtainer</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-25
+
+        Switch to GitHub Container Registry
+
         ### 2025-10-07
 
         Initial release
