@@ -1013,13 +1013,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "cc83871dfec70a2049cc8a3e3cd6046e8fd12fb9",
-                "commit_message": null
+                "commit_hash": "6ed4c2e7f8e45483d07e72aa472f47436234013b",
+                "commit_message": "Add YouTube cookies support for bypassing bot detection\n\n- Add YOUTUBE_COOKIES_PATH configuration option\n- Implement cookie support in all yt-dlp operations\n- Add Docker volume mount example for cookies file\n- Update documentation with cookie setup instructions\n- Add troubleshooting section for YouTube bot detection errors\n\nFixes 'Sign in to confirm you're not a bot' errors by allowing\nusers to provide YouTube cookies in Netscape format.\n"
             },
             {
                 "file_path": "backend/env.example",
-                "commit_hash": "1a31307c801c6937869b4d78ea109ff6a47db041",
-                "commit_message": null
+                "commit_hash": "6ed4c2e7f8e45483d07e72aa472f47436234013b",
+                "commit_message": "Add YouTube cookies support for bypassing bot detection\n\n- Add YOUTUBE_COOKIES_PATH configuration option\n- Implement cookie support in all yt-dlp operations\n- Add Docker volume mount example for cookies file\n- Update documentation with cookie setup instructions\n- Add troubleshooting section for YouTube bot detection errors\n\nFixes 'Sign in to confirm you're not a bot' errors by allowing\nusers to provide YouTube cookies in Netscape format.\n"
             }
         ]
     },
@@ -1066,8 +1066,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "5d03f86872dae534d032a735bdbd21461bec1866",
-                "commit_message": "feat: add download mode option (Track/Album) for Deezer downloads\n\nCloses #10\n"
+                "commit_hash": "23f4913075ac96eec79bc7287bec884b602a3896",
+                "commit_message": "fix: add missing environment variables to docker-compose.yml\n"
             },
             {
                 "file_path": ".env.example",
