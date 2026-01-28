@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-28
+
+        Add YouTube cookies configuration
+
         ### 2025-12-28
 
         Initial release
@@ -38,6 +42,7 @@
     <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
     <Config Name="Navidrome Music Path" Target="/music" Default="" Description="Path to your Navidrome music folder" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Temp Downloads Path" Target="/app/downloads" Default="/mnt/user/appdata/music_downloader/downloads" Description="Path to temporary downloads folder" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/music-downloader/downloads</Config>
+    <Config Name="YouTube Cookies Path" Target="/app/youtube_cookies.txt" Default="/mnt/user/appdata/music_downloader/youtube_cookies.txt" Description="Path to your YouTube cookies file" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/music-downloader/youtube_cookies.txt</Config>
     <Config Name="Navidrome - URL" Target="NAVIDROME_API_URL" Default="http://IP_ADDRESS:4533" Description="URL to your Navidrome server" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://IP_ADDRESS:4533</Config>
     <Config Name="Navidrome - Admin Username" Target="NAVIDROME_USERNAME" Default="" Description="Your Navidrome admin username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Navidrome - Admin Password" Target="NAVIDROME_PASSWORD" Default="" Description="Your Navidrome admin password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
@@ -49,5 +54,6 @@
     <Config Name="Internal Host" Target="API_HOST" Default="0.0.0.0" Description="Internal host for the web server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
     <Config Name="Internal Port" Target="API_PORT" Default="8000" Description="Internal port for the web server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8000</Config>
     <Config Name="Internal Music Path" Target="NAVIDROME_MUSIC_PATH" Default="/music" Description="Internal path to your Navidrome music folder. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/music</Config>
+    <Config Name="Internal YouTube Cookies Path" Target="YOUTUBE_COOKIES_PATH" Default="/app/youtube_cookies.txt" Description="Internal path to your YouTube cookies file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/youtube_cookies.txt</Config>
     <Config Name="CORS Origins" Target="CORS_ORIGINS" Default="http://localhost:3000,http://127.0.0.1:3000" Description="Comma-separated list of allowed CORS origins" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://localhost:3000,http://127.0.0.1:3000</Config>
 </Container>
