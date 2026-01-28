@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-28
+
+        Add missing environmental variables
+
         ### 2026-01-16
 
         Add new environmental variables
@@ -40,15 +44,24 @@
         Requires a Deezer account and a separate Subsonic-compatible server.
     </Requires>
     <Config Name="Web UI Port" Target="8080" Default="5274" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">5274</Config>
-    <Config Name="Subsonic URL" Target="Subsonic__Url" Default="http://IP_ADDRESS:4533" Description="The URL of your Subsonic server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:4533</Config>
-    <Config Name="Deezer ARL Token" Target="Deezer__Arl" Default="" Description="Your Deezer ARL token for accessing Deezer content" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Deezer ARL Token Fallback" Target="Deezer__ArlFallback" Default="" Description="Fallback Deezer ARL token if the primary one fails" Type="Variable" Display="always" Required="false" Mask="true"/>
-    <Config Name="Deezer Quality" Target="Deezer__Quality" Default="FLAC|MP3_320|MP3_128" Description="Preferred audio quality for Deezer downloads. Remove to default to highest." Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="Playlist Support" Target="ENABLE_EXTERNAL_PLAYLISTS" Default="true|false" Description="When enabled, allows searching and downloading playlists from Deezer/Qobuz. Starring a playlist triggers automatic download of all tracks and creates an M3U file" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Subsonic - Service" Target="Subsonic__MusicService" Default="SquidWTF" Description="The Subsonic-compatible music service to use (e.g. Deezer, Qobuz, SquidWTF)" Type="Variable" Display="always-hide" Required="true" Mask="false">SquidWTF</Config>
+    <Config Name="Subsonic - URL" Target="Subsonic__Url" Default="http://IP_ADDRESS:4533" Description="The URL of your Subsonic server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:4533</Config>
+    <Config Name="Subsonic - Download Mode" Target="Subsonic__DownloadMode" Default="Track|Album" Description="Determines whether to download individual tracks or entire albums when a track is requested." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Explicit Filter" Target="Subsonic__ExplicitFilter" Default="All|ExplicitOnly|CleanOnly" Description="Filter songs based on explicit content." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Auto-Upgrade" Target="Subsonic__AutoUpgradeQuality" Default="false|true" Description="Re-download tracks when higher quality is available" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Deezer - ARL Token" Target="Deezer__Arl" Default="" Description="Your Deezer ARL token for accessing Deezer content" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Deezer - ARL Token Fallback" Target="Deezer__ArlFallback" Default="" Description="Fallback Deezer ARL token if the primary one fails" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Deezer - Quality" Target="Deezer__Quality" Default="FLAC|MP3_320|MP3_128" Description="Preferred audio quality for Deezer downloads. Remove to default to highest." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Qobuz - User Auth Token" Target="Qobuz__UserAuthToken" Default="" Description="Your Qobuz user authentication token for accessing Qobuz content" Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="Qobuz - User ID" Target="Qobuz__UserId" Default="" Description="Your Qobuz user ID" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Qobuz - Quality" Target="Qobuz__Quality" Default="" Description="Preferred audio quality for Qobuz downloads (e.g. FLAC, FLAC_24_HIGH, FLAC_24_LOW, FLAC_16, MP3_320)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SquidWTF - Source" Target="SquidWTF__Source" Default="Qobuz|Tidal" Description="The backend source to use for SquidWTF downloads" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="SquidWTF - Quality" Target="SquidWTF__Quality" Default="" Description="Preferred audio quality for SquidWTF downloads. Qobuz: 27 (FLAC 24-bit), 7 (FLAC 16-bit), 6 (MP3 320), 5 (MP3 128). Tidal: HI_RES_LOSSLESS, LOSSLESS" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Playlist Support" Target="Subsonic__EnableExternalPlaylists" Default="true|false" Description="When enabled, allows searching and downloading playlists. Starring a playlist triggers automatic download of all tracks and creates an M3U file" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Downloads Path" Target="/app/downloads" Default="/mnt/user/appdata/octo_fiesta/downloads" Description="Path to store downloaded files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/octo_fiesta/downloads</Config>
-    <Config Name="Playlists Folder" Target="PLAYLISTS_DIRECTORY" Default="playlists" Description="M3U playlist files will be created in {DOWNLOAD_PATH}/{PLAYLISTS_DIRECTORY}/" Type="Variable" Display="advanced-hide" Required="true" Mask="false">playlists</Config>
+    <Config Name="Playlists Folder" Target="Subsonic__PlaylistsDirectory" Default="playlists" Description="M3U playlist files will be created in {DOWNLOAD_PATH}/{PLAYLISTS_DIRECTORY}/" Type="Variable" Display="advanced-hide" Required="true" Mask="false">playlists</Config>
     <Config Name="Internal Downloads Path" Target="Library__DownloadPath" Default="/app/downloads" Description="Internal path to downloaded files. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/downloads</Config>
     <Config Name="App Environment" Target="ASPNETCORE_ENVIRONMENT" Default="Production" Description="Set the ASP.NET Core environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">Production</Config>
-    <Config Name="Storage Mode" Target="STORAGE_MODE" Default="Permanent|Temporary" Description="Set the storage mode for downloaded files." Type="Variable" Display="advanced-hide" Required="true" Mask="false">Permanent</Config>
-    <Config Name="Cache Duration (Hours)" Target="CACHE_DURATION_HOURS" Default="1" Description="Duration in hours to cache files if using Temporary storage mode." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
+    <Config Name="Storage Mode" Target="Subsonic__StorageMode" Default="Permanent|Temporary" Description="Set the storage mode for downloaded files." Type="Variable" Display="advanced-hide" Required="true" Mask="false">Permanent</Config>
+    <Config Name="Cache Duration (Hours)" Target="Subsonic__CacheDurationHours" Default="1" Description="Duration in hours to cache files if using Temporary storage mode." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
 </Container>
