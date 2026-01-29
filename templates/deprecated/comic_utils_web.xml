@@ -28,6 +28,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-01-29
+
+        Deprecated in favor of official template
+
         ### 2025-02-04
 
         Initial release
