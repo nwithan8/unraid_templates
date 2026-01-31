@@ -955,8 +955,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "3f46c0edcfea24d7cc42c6f6ed619bfed5f60fec",
-                "commit_message": "fix: update docker-compose env format to match README with helpful comments\n"
+                "commit_hash": "65c5ede5861e41c6d6abf6bcc66f185c35488cce",
+                "commit_message": "v0.40.5a-alpha: pgvector CPU Compatibility Hotfix\n\nFixes:\n- Non-AVX CPU Safety: pgvector now ships with generic + AVX variants and auto-selects the best binary at startup (AVX when supported, generic otherwise), preventing PostgreSQL crashes during vector similarity queries.\n- AVX2 Optimization: Added an AVX2 pgvector variant and prefer it when the CPU supports AVX2 for faster similarity search.\n- Dashboard Visibility: Added a banner when pgvector is running in generic mode so users can confirm CPU compatibility status.\n- Build Portability: Generic pgvector builds now follow upstream guidance (OPTFLAGS=\"\") for maximum CPU compatibility.\n- Upgrade Recovery Marker: Startup now records the previous version and runs a one-time PostgreSQL restart when upgrading from v0.40.5-alpha.\n"
             }
         ]
     },
