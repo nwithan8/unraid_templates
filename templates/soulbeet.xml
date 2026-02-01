@@ -26,7 +26,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
-        ### 20250-12-11
+        ### 2026-02-01
+
+        Update environmental variable
+
+        ### 2025-12-11
 
         Fix environmental variable type
 
@@ -41,7 +45,7 @@
     <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="A secret key for Soulbeet (can be any random string)" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Soulseek - URL" Target="SLSKD_URL" Default="http://IP_ADDRESS:5030" Description="URL for the slskd server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:5030</Config>
     <Config Name="Soulseek - API Key" Target="SLSKD_API_KEY" Default="" Description="API key for the slskd server" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Soulseek - Internal Download Folder" Target="SLSKD_DOWNLOAD_PATH" Default="/downloads" Description="Internal path to the slskd download folder. Should match the path in Soulseek" Type="Variable" Display="always-hide" Required="true" Mask="false">/downloads</Config>
+    <Config Name="Soulseek - Internal Download Folder" Target="DOWNLOAD_PATH" Default="/downloads" Description="Internal path to the slskd download folder. Should match the path in Soulseek" Type="Variable" Display="always-hide" Required="true" Mask="false">/downloads</Config>
     <Config Name="Soulseek - External Download Folder" Target="/downloads" Default="" Description="Path to the external slskd download folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/downloads/soulseek</Config>
     <Config Name="Beets - Config File" Target="BEETS_CONFIG" Default="/config/config.yaml" Description="Internal path to the beets config file. Optional, remove if not used." Type="Variable" Display="always" Required="false" Mask="false">/config/config.yaml</Config>
     <Config Name="Beets - Music Folder" Target="/music" Default="" Description="Path to the music library folder managed by beets" Type="Path" Display="always" Required="false" Mask="false"/>
