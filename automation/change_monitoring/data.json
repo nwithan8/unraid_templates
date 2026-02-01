@@ -548,13 +548,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "71d3f4931f0e5eb1765723c3af16dd3bf0c32131",
-                "commit_message": "doc update\n"
+                "commit_hash": "3bf6909d8b7623b39a9ae827362145839674e45e",
+                "commit_message": "nginx and auth updates\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "91f873feca00aa7f34b8a4f6b10af14d8b85d0e6",
-                "commit_message": "fitbit updates & nginx fix for swagger url\n"
+                "commit_hash": "12e154e9aa417f09f2a2ae7e6dbe364a203455b1",
+                "commit_message": "test\n"
             }
         ]
     },
@@ -931,8 +931,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "89736689ede7280da317395e751f88775f3dafa6",
-                "commit_message": "Add slskd credentials in docker-compose.yml\n\nComment out sensitive environment variables in docker-compose.yml"
+                "commit_hash": "bf6cda2520bd40ac241977b7c1643c0997e97964",
+                "commit_message": "Move slskd/lastfm config to database with dynamic provider loading\n"
             }
         ]
     },
