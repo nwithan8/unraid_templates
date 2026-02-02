@@ -548,8 +548,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "3bf6909d8b7623b39a9ae827362145839674e45e",
-                "commit_message": "nginx and auth updates\n"
+                "commit_hash": "924fecbc273ad92e4f53109b720ad5ca8a514071",
+                "commit_message": "Auth code optimization\n"
             },
             {
                 "file_path": "docker/.env.example",
