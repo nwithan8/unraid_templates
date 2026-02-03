@@ -439,8 +439,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "8d44e6acd3505d64ae0c86944c6f9ce70609a814",
-                "commit_message": "Add comment in docker-compose for obsidian\n"
+                "commit_hash": "4df40f8cea1eadffea71e7df33a17f3dac75ab1e",
+                "commit_message": "feat: add CELERY_TASK_DEFAULT_QUEUE environment variable for task isolation\n"
             },
             {
                 "file_path": "surfsense_backend/env.example",
