@@ -71,8 +71,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yaml",
-                "commit_hash": "3b5dc72686b815eb7bab95cd3fc8642e1ecd8750",
-                "commit_message": "feat(worker): Allow custom worker delay time\n\nAllow different worker delays, eg. for dev. Also some minor improvements.\n\nSigned-off-by: Jo Vandeginste <Jo.Vandeginste@kuleuven.be>\n"
+                "commit_hash": "d057616c5b5545797c29f86dbe6950de4e91ac6f",
+                "commit_message": "feat(health): Implement application and container health checks\n\nAdd a new public HTTP GET route `/health` that returns a simple \"OK\" response\nwith HTTP 200.\n\nConfigure `HEALTHCHECK` instructions in the Dockerfile and detailed health check\nparameters in the `docker-compose.yaml` file for documentation.\n\nFixes #735\n\nSigned-off-by: Jo Vandeginste <Jo.Vandeginste@kuleuven.be>\n"
             },
             {
                 "file_path": "docker/postgres.env",
@@ -919,8 +919,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "656a850cae091136b24fcfdf5ea537567f5616a1",
-                "commit_message": "docs: improve cache config clarity and add complete docker-compose example\n\n**Changes:**\n\n1. **Generic version numbers**: Changed \"v1.37.0\" etc to \"vX.Y.Z\" in docs\n\n2. **Clarified env vars vs UI**:\n   - docker-compose.yml now emphasizes UI configuration is recommended\n   - Environment variables set initial defaults only\n   - UI settings take precedence\n\n3. **Simplified docker-compose.yml Redis comments**:\n   - Removed verbose \"Option 1\" and \"Option 2\" sections\n   - Clear note: \u2699\ufe0f Configure via Settings \u2192 Cache tab in UI\n   - Kept essential env vars with cleaner comments\n\n4. **Added Quick Start in cache docs**:\n   - Complete docker-compose.yml with both app and redis services\n   - Includes depends_on, healthcheck, networks, volumes\n   - Users can copy entire file instead of stitching pieces together\n   - Clear instruction: configure in Settings \u2192 Cache UI after\n\n**Result:**\n- Environment variables still supported (initial setup)\n- UI configuration clearly marked as recommended approach\n- Complete working example for copy-paste deployment\n- Less confusing comments about options\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\n"
+                "commit_hash": "b2aa4329e7afa4de1e41e3bc08c23e431e0065e6",
+                "commit_message": "feat: Add script parameters support (#245)\n\n* Update script parameter issues: change is_secret to type field (text/password) and add encryption details\n\n* Implement script parameters feature - backend\n\n- Add database schema for script parameters and parameter_values\n- Add encryption/decryption utilities for password-type parameters\n- Add parameter parsing from {{PARAM}} syntax with type detection\n- Add template rendering service with parameter substitution\n- Update script library API endpoints to handle parameters\n- Encrypt password-type parameter values in repository assignments\n- Mask password values in API responses\n- Integrate parameter rendering in script execution\n\nImplements borg-ui-773, borg-ui-vcy, borg-ui-my3, borg-ui-sa3, borg-ui-3il, borg-ui-kkj, borg-ui-1ab\n\n* Add parameter support to script test endpoint\n\n- Add ScriptTestRequest schema with parameter_values field\n- Update /scripts/{script_id}/test to accept and render parameter values\n- Test values are not encrypted (plain text for testing)\n- Renders template with test system variables\n\n* Fix parameter checking in script assignment dialog\n\n- Add hasParameters boolean check for better readability\n- Add Array.isArray validation for parameters\n- Add console logging to debug parameter detection\n- Use non-null assertion operator for TypeScript\n\n* working on scripts\n\n* fix missing model\n\n* chore: cleanup\n\n* chore: cleanup\n\n* merge main, remove duplicate onUpdate call\n\n* revert: models.py\n\n* fix models, add unit test for script params\n\n---------\n\nCo-authored-by: Jan Wiebe <janwiebe@janwie.be>"
             }
         ]
     },
