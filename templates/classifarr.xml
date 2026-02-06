@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2025-02-06
+
+        Fix default PUID and PGID to 1000
+
         ### 2025-12-20
 
         Initial release
@@ -36,7 +40,7 @@
     <Config Name="Web UI Port" Target="21324" Default="21324" Mode="tcp" Description="Container Port: 21324" Type="Port" Display="always-hide" Required="true" Mask="false">21324</Config>
     <Config Name="Config Data" Target="/app/data" Default="/mnt/user/appdata/classifarr/data" Description="Path to persistent config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/classifarr/data</Config>
     <Config Name="Environment" Target="NODE_ENV" Default="production" Description="The environment the app is running in" Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
-    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">099</Config>
-    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">1000</Config>
     <Config Name="UMASK" Target="UMASK" Default="002" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">002</Config>
 </Container>
