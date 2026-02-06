@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-02-06
+
+        Add new environmental variables
+
         ### 2026-01-28
 
         Add missing environmental variables
@@ -57,6 +61,7 @@
     <Config Name="Qobuz - Quality" Target="Qobuz__Quality" Default="" Description="Preferred audio quality for Qobuz downloads (e.g. FLAC, FLAC_24_HIGH, FLAC_24_LOW, FLAC_16, MP3_320)" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="SquidWTF - Source" Target="SquidWTF__Source" Default="Qobuz|Tidal" Description="The backend source to use for SquidWTF downloads" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="SquidWTF - Quality" Target="SquidWTF__Quality" Default="" Description="Preferred audio quality for SquidWTF downloads. Qobuz: 27 (FLAC 24-bit), 7 (FLAC 16-bit), 6 (MP3 320), 5 (MP3 128). Tidal: HI_RES_LOSSLESS, LOSSLESS" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SquidWTF - Timeout" Target="SquidWTF__InstanceTimeoutSeconds" Default="5" Description="Number of seconds to wait for a response from the SquidWTF instance before timing out." Type="Variable" Display="always-hide" Required="true" Mask="false">5</Config>
     <Config Name="Playlist Support" Target="Subsonic__EnableExternalPlaylists" Default="true|false" Description="When enabled, allows searching and downloading playlists. Starring a playlist triggers automatic download of all tracks and creates an M3U file" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Downloads Path" Target="/app/downloads" Default="/mnt/user/appdata/octo_fiesta/downloads" Description="Path to store downloaded files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/octo_fiesta/downloads</Config>
     <Config Name="Playlists Folder" Target="Subsonic__PlaylistsDirectory" Default="playlists" Description="M3U playlist files will be created in {DOWNLOAD_PATH}/{PLAYLISTS_DIRECTORY}/" Type="Variable" Display="advanced-hide" Required="true" Mask="false">playlists</Config>
