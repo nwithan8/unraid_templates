@@ -955,8 +955,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "65c5ede5861e41c6d6abf6bcc66f185c35488cce",
-                "commit_message": "v0.40.5a-alpha: pgvector CPU Compatibility Hotfix\n\nFixes:\n- Non-AVX CPU Safety: pgvector now ships with generic + AVX variants and auto-selects the best binary at startup (AVX when supported, generic otherwise), preventing PostgreSQL crashes during vector similarity queries.\n- AVX2 Optimization: Added an AVX2 pgvector variant and prefer it when the CPU supports AVX2 for faster similarity search.\n- Dashboard Visibility: Added a banner when pgvector is running in generic mode so users can confirm CPU compatibility status.\n- Build Portability: Generic pgvector builds now follow upstream guidance (OPTFLAGS=\"\") for maximum CPU compatibility.\n- Upgrade Recovery Marker: Startup now records the previous version and runs a one-time PostgreSQL restart when upgrading from v0.40.5-alpha.\n"
+                "commit_hash": "ce671973e39fcb1d9d0d76e1911facd578ebb6ea",
+                "commit_message": "Close issue 289 image embeddings\n"
             }
         ]
     },
@@ -1066,13 +1066,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "23f4913075ac96eec79bc7287bec884b602a3896",
-                "commit_message": "fix: add missing environment variables to docker-compose.yml\n"
+                "commit_hash": "f3dae501e52a6adad9ae704bf76c59e722d52fe6",
+                "commit_message": "feat: add automatic instance failover for SquidWTF Tidal backend\n"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "69a44b565b93fb4f62767877e387ed6efb0c56f1",
-                "commit_message": "feat: add SquidWTF music provider with Qobuz/Tidal backends\n"
+                "commit_hash": "f3dae501e52a6adad9ae704bf76c59e722d52fe6",
+                "commit_message": "feat: add automatic instance failover for SquidWTF Tidal backend\n"
             }
         ]
     },
@@ -1160,8 +1160,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.example.yml",
-                "commit_hash": "00c784f287b7456e424be6b51b44227e8f88b0a9",
-                "commit_message": null
+                "commit_hash": "19e6ed19a4598f4d66846dd68d6d8f29b32d2c85",
+                "commit_message": "Make ready for Vercel deployment\n"
             }
         ]
     },
