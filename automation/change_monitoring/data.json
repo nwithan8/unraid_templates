@@ -883,8 +883,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/getting-started/docker.mdx",
-                "commit_hash": "af083a3cd5c3e3d5d7917fdf4fdd67fe3f39c46b",
-                "commit_message": ""
+                "commit_hash": "a0a784b97616bea7f159f0722c0d9d69ea03020e",
+                "commit_message": "docs: add missing migration steps (#2376)\n\n"
             }
         ]
     },
@@ -1054,8 +1054,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "1d120e59f6628ba7d617cec48fcf7c3d6d0f8854",
-                "commit_message": "docs: clarify custom binaries volume mount\n\nMake it clearer that the tools volume mount should be a directory\ncontaining the binary executables, not a path to a binary itself.\n\n\n"
+                "commit_hash": "1cf12c9e92d0537d64af7fbf1d85de75b8269c5e",
+                "commit_message": "fix: review findings \u2014 rate limiting, accessibility, clock abstraction, wizard decomposition\n\n- Add SetupLimiter middleware to /setup/import and /setup/restore endpoints\n- Docker: add no-new-privileges and cap_drop ALL security hardening\n- Document MetricsService lifecycle (no Stop needed, EventBus manages goroutines)\n- Extend Clock interface with After() and Since(), inject into VerifierService\n- Dashboard: use semantic button elements for clickable cards with ARIA labels\n- ProviderSelect: add ARIA listbox pattern and keyboard navigation\n- Decompose SetupWizard into 6 autonomous step components + orchestrator\n- Add edge case tests: RFC3339 timestamps, NULL mediaID, invalid metadata,\n  getCorruptionContextWithRetry success/ErrNoRows paths\n"
             }
         ]
     },
