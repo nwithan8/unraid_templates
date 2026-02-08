@@ -553,8 +553,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "12e154e9aa417f09f2a2ae7e6dbe364a203455b1",
-                "commit_message": "test\n"
+                "commit_hash": "e470bd10310dcc7861efb86e7673b3911593f18c",
+                "commit_message": "docs: document API key rate-limit env vars and configuration\n\nAdd SPARKY_FITNESS_API_KEY_RATELIMIT_WINDOW_MS and\nSPARKY_FITNESS_API_KEY_RATELIMIT_MAX_REQUESTS to .env.example files,\nenvironment variables reference, and rate limiting docs.\n"
             }
         ]
     },
