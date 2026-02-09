@@ -36,7 +36,7 @@
     <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
     <Config Name="Config File" Target="/app/environment/environment.yaml" Default="/mnt/user/appdata/sync_in/environment.yaml" Description="Path to the environment file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/sync_in/environment.yaml</Config>
     <Config Name="Initialize Admin" Target="INIT_ADMIN" Default="true|false" Description="Initialize the admin user on first run" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/sync_in/data" Description="Path to data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dynamix/data</Config>
+    <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/sync_in/data" Description="Path to data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/sync_in/data</Config>
     <Config Name="Desktop Releases Path" Target="/app/static/releases" Default="/mnt/user/appdata/sync_in/releases" Description="Path to desktop releases" Type="Path" Mode="ro" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/sync_in/releases</Config>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
