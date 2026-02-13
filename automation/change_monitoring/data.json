@@ -206,8 +206,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "ca2b1faa46b852833df205e84d73bafb24065980",
-                "commit_message": "fix: docker compose link (#2914)\n\nThe current docker-compose.yml fails to start today with an error:\n\nservice \"atuin\" depends on undefined service \"postgresql\": invalid\ncompose project\n\nThis patch modernizes the yml and fixes the link. Tested on docker\ncompose v2.39.4.\n\nDocs patch is https://github.com/atuinsh/docs/pull/104 .  /cc @ellie \n\n## Checks\n- [x] I am happy for maintainers to push small adjustments to this PR,\nto speed up the review cycle\n- [x] I have checked that there are no existing pull requests for the\nsame thing"
+                "commit_hash": "438e37edcf40d8dafe53560834581abd15504b96",
+                "commit_message": "fix: Server start commands for Docker. (#3160)\n\nWith the new atuin-server binary the startup command for the server is\nnow just start rather than server start. This needs reflected in the\ndocker compose and k8s configs.\n\nCloses #3159\n\n## Checks\n- [x] I am happy for maintainers to push small adjustments to this PR,\nto speed up the review cycle\n- [x] I have checked that there are no existing pull requests for the\nsame thing"
             }
         ]
     },
@@ -553,8 +553,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "9f55328f88b8cb1db38e327fe52cbdc8de1de775",
-                "commit_message": "added support for SPARKY_FITNESS_EXTRA_TRUSTED_ORIGINS\n"
+                "commit_hash": "45bb5c4f0e8be3e801c9287bb240944439b7f79e",
+                "commit_message": "Updated withing to save json as mockup files. renamed few other variables used by developers\n"
             }
         ]
     },
@@ -883,8 +883,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/getting-started/docker.mdx",
-                "commit_hash": "a0a784b97616bea7f159f0722c0d9d69ea03020e",
-                "commit_message": "docs: add missing migration steps (#2376)\n\n"
+                "commit_hash": "7cd3521cfd35d8cc84356993b18773c56fb20c9b",
+                "commit_message": "docs(docker): document available image tags and their usage (#2402)\n\nSigned-off-by: Ludovic Ortega <ludovic.ortega@adminafk.fr>"
             }
         ]
     },
@@ -1066,13 +1066,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f3dae501e52a6adad9ae704bf76c59e722d52fe6",
-                "commit_message": "feat: add automatic instance failover for SquidWTF Tidal backend\n"
+                "commit_hash": "34e1ad6ab70bd01b2636e73d96355e592b19b292",
+                "commit_message": "fix: update .env and docker-compose with complete SquidWTF quality options\n"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "f3dae501e52a6adad9ae704bf76c59e722d52fe6",
-                "commit_message": "feat: add automatic instance failover for SquidWTF Tidal backend\n"
+                "commit_hash": "34e1ad6ab70bd01b2636e73d96355e592b19b292",
+                "commit_message": "fix: update .env and docker-compose with complete SquidWTF quality options\n"
             }
         ]
     },
