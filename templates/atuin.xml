@@ -22,6 +22,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-02-12
+
+        Fix start command in PostArgs
+
         ### 2025-05-05
 
         Initial release
@@ -31,7 +35,7 @@
         [br]
         This container requires a separate Postgres database.
     </Requires>
-    <PostArgs>server start</PostArgs>
+    <PostArgs>start</PostArgs>
     <Config Name="Web UI Port" Target="8888" Default="8888" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always-hide" Required="true" Mask="false">8888</Config>
     <Config Name="Database Connection" Target="ATUIN_DB_URI" Default="postgres://$ATUIN_DB_USERNAME:$ATUIN_DB_PASSWORD@db/$ATUIN_DB_NAME" Description="Connection string to the database. This is automatically set by the container." Type="Variable" Display="always-hide" Required="true" Mask="false">postgres://$ATUIN_DB_USERNAME:$ATUIN_DB_PASSWORD@db/$ATUIN_DB_NAME</Config>
     <Config Name="Allow Registration" Target="ATUIN_OPEN_REGISTRATION" Default="true|false" Description="Allow new users to register" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
