@@ -1,8 +1,12 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>Seerr</Name>
-    <Repository>ghcr.io/seerr-team/seerr:develop</Repository>
+    <Repository>ghcr.io/seerr-team/seerr:latest</Repository>
     <Registry>ghcr.io/seerr-team/seerr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
     <Branch>
         <Tag>develop</Tag>
         <TagDescription>Latest development release</TagDescription>
@@ -15,7 +19,7 @@
     <Overview>
         Seerr is a request management and media discovery tool built to work with your existing Plex/Jellyfin ecosystem.
     </Overview>
-    <Beta>True</Beta>
+    <Beta>False</Beta>
     <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>plex jellyfin request management media discovery overseerr jellyseerr</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/seerr-icon.png</Icon>
@@ -25,6 +29,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-02-15
+
+        Move out of beta, default to `latest` tag
+
         ### 2025-12-08
 
         Initial release
