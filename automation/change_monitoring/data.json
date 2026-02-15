@@ -1225,8 +1225,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "b4dd72e7eb30b7da782acfda0662e41f464f47ee",
-                "commit_message": null
+                "commit_hash": "724b3e14e5c67bd7eb07799075420b10e331f6cd",
+                "commit_message": "ci: fix docker compose and docs (#634)\n\n* ci: fix docker compose and docs\n\n* docker: address review comments"
             },
             {
                 "file_path": ".env.example",
@@ -1247,8 +1247,8 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "f6ce6c9bb19398520ee301c9fae1d230be1fd14a",
-                "commit_message": null
+                "commit_hash": "1ff5bd19e87372d16f7397954416fc5329b4440c",
+                "commit_message": "docs: comprehensive documentation audit for email notifications and testimonials\n\nUpdate all documentation to reflect current state of the PR:\n- .env.example: add SMTP configuration section\n- CHANGELOG: add v2.18.0 entry with all features and fixes\n- README: update config table, admin routes, project structure\n- DESIGN.md: add testimonial endpoints, SMTP vars, data model\n- ROADMAP.md: update current status, Phase 20.1 details\n- SETUP.md: add SMTP env vars, email notifications section\n- TESTIMONIALS.md: update implementation checklist, email flow\n"
             }
         ]
     },
