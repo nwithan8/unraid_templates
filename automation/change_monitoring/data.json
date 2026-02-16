@@ -548,13 +548,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "ad83a876459b8facb6b7143a9a92a262a44bec3a",
-                "commit_message": "feat #630: add optional private network CORS support\n\nAdd configurable CORS support for private network addresses\n(e.g., 192.168.x.x, 10.x.x.x, localhost) to enable self-hosted\ndeployments on local networks.\n\nChanges:\n- Create corsHelper utility with private network detection\n- Add ALLOW_PRIVATE_NETWORK_CORS environment variable (defaults to false)\n- Implement comprehensive test coverage (16 tests)\n- Update Docker Compose configurations\n- Document security implications in .env.example\n\nSecurity: Feature is opt-in and disabled by default. Only enable\non private/self-hosted networks, not on shared hosting.\n"
+                "commit_hash": "a5708f8cccbf410ff5df7149b19b249d86ed4044",
+                "commit_message": "refactor: apply Gemini code review suggestions for PR666\n\n- Use project logger instead of console.log for consistency\n- Add default empty values to SPARKY_FITNESS_EXTRA_TRUSTED_ORIGINS in docker-compose files\n- Resolves code review feedback from @gemini-code-assist[bot]\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "45bb5c4f0e8be3e801c9287bb240944439b7f79e",
-                "commit_message": "Updated withing to save json as mockup files. renamed few other variables used by developers\n"
+                "commit_hash": "45a4da053be7bb6d4627ec30b3bcb6117477d9f2",
+                "commit_message": "json data source logic for hevy\n"
             }
         ]
     },
