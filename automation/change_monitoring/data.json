@@ -1287,5 +1287,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Taggarr",
+        "git_url": "https://github.com/BassHous3/taggarr.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "a0e3c89b3700ae1f005872d1d22734b9e456d515",
+                "commit_message": null
+            }
+        ]
     }
 ]

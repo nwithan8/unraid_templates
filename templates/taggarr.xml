@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Taggarr</Name>
+    <Repository>basshous3/taggarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/basshous3/taggarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/BassHous3/taggarr/issues</Support>
+    <Project>https://github.com/BassHous3/taggarr</Project>
+    <Overview>
+        Dub analysis and tagging for media files.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>dub sub analysis tagging media files shows movies anime language subtitle audio sonarr radarr plex jellyfin emby</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/taggarr-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/BassHous3/taggarr/refs/heads/main/assets/logo/banner_transparent.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/taggarr.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-02-17
+
+        Initial release
+    </Changes>
+    <Config Name="TV Path" Target="/tv" Default="" Description="Path to your TV media files for analysis (e.g. /mnt/user/tv)" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Sonarr - URL" Target="SONARR_URL" Default="" Description="URL to your Sonarr instance (e.g. http://sonarr:8989)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Sonarr - API Key" Target="SONARR_API_KEY" Default="" Description="API key for your Sonarr instance" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Dry Run" Target="DRY_RUN" Default="false|true" Description="Enable dry run mode to see what actions would be taken without making any changes." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Tags - Dub" Target="TAG_DUB" Default="dub" Description="Tag to apply for dubs." Type="Variable" Display="always-hide" Required="true" Mask="false">dub</Config>
+    <Config Name="Tags - Semi-Dub" Target="TAG_SEMI" Default="semi-dub" Description="Tag to apply for semi-dubs." Type="Variable" Display="always-hide" Required="true" Mask="false">semi-dub</Config>
+    <Config Name="Tags - Wrong Dub" Target="TAG_WRONG_DUB" Default="wrong-dub" Description="Tag to apply for wrong dubs." Type="Variable" Display="always-hide" Required="true" Mask="false">wrong-dub</Config>
+    <Config Name="Add Tag to Genre" Target="ADD_TAG_TO_GENRE" Default="true|false" Description="Whether to add the tag to the genre." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Target Genre" Target="TARGET_GENRE" Default="" Description="Genre to target for analysis (e.g. anime, movie, show)." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Target Languages" Target="TARGET_LANGUAGES" Default="en,fr" Description="Comma-separated list of target languages (e.g. en, fr, ja)." Type="Variable" Display="always" Required="false" Mask="false">en,fr</Config>
+    <Config Name="Run Interval" Target="RUN_INTERVAL_SECONDS" Default="7200" Description="Interval, in seconds, between runs (default: 7200 seconds = 2 hours)" Type="Variable" Display="always-hide" Required="true" Mask="false">7200</Config>
+    <Config Name="Logs Path" Target="/logs" Default="/mnt/user/appdata/taggarr/logs" Description="Path to store logs" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/taggarr/logs</Config>
+    <Config Name="Start Running" Target="START_RUNNING" Default="true|false" Description="Whether to start running immediately after container starts." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Quick Mode" Target="QUICK_MODE" Default="false|true" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Write Mode" Target="WRITE_MODE" Default="0|1|2" Description="Write mode for tags: 0 = None, 1 = Rewrite, 2 = Remove." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="INFO|WARNING|ERROR|DEBUG" Description="Logging level for the application." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
