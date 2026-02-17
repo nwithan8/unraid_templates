@@ -280,6 +280,11 @@
                 "file_path": "docker-compose.yml",
                 "commit_hash": "cd2e9f3a2ad753815ef8da998f9b54853d953a2a",
                 "commit_message": "chore(docker): bump image tag to `v2`\n"
+            },
+            {
+                "file_path": ".env.example",
+                "commit_hash": "4eeb06f29d984164939bf66299075efead87ee19",
+                "commit_message": "docs: add ENCRYPTION_KEY to .env.example for breaking change preparation"
             }
         ]
     },

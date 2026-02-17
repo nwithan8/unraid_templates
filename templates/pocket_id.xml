@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-02-16
+
+        Add missing Encryption Key environment variable
+
         ### 2025-05-25
 
         Migrate to v1
@@ -45,6 +49,7 @@
     <Config Name="WebUI Port" Target="1411" Default="1411" Mode="tcp" Description="Port to access WebUI" Type="Port" Display="always-hide" Required="true" Mask="false">1411</Config>
     <Config Name="App URL" Target="APP_URL" Default="http://localhost" Description="The URL where you will access the app. Recommended to change from default." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost</Config>
     <Config Name="Behind Proxy" Target="TRUST_PROXY" Default="false|true" Description="Whether the app is behind a reverse proxy." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Encryption Key" Target="ENCRYPTION_KEY=" Default="" Description="A secure random key used for encrypting sensitive data. Generate with `openssl rand -base64 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Maxmind License Key" Target="MAXMIND_LICENSE_KEY" Default="" Description="License Key for the GeoLite2 Database. If the key is not provided, IP locations will be marked as unknown in audit logs." Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Disable UI Configuration" Target="UI_CONFIG_DISABLED" Default="false|true" Description="Disable the ability to configure the app via the UI. If enabled, you must set all required environment variables. See documentation: https://pocket-id.org/docs/configuration/environment-variables/#overriding-the-ui-configuration" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Database - Provider" Target="DB_PROVIDER" Default="sqlite|postgres" Description="The database provider to use." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
