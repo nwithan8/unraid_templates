@@ -38,8 +38,9 @@
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="5055" Default="5055" Mode="tcp" Description="Container Port: 5055" Type="Port" Display="always-hide" Required="true" Mask="false">5055</Config>
-    <Config Name="Config Data" Target="/app/config" Default="/mnt/user/appdata/seerr/config" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/seerr/config</Config>
+    <Config Name="Config Data" Target="/app/config" Default="/mnt/user/appdata/seerr" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/seerr</Config>
     <Config Name="Log Level" Target="LOG_LEVEL" Default="debug|info|warn|error" Description="Set the log level for the application." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Logs Storage" Target="/app/config/logs" Default="/mnt/user/appdata/seerr/logs" Description="Path to store log files." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/seerr/logs</Config>
     <Config Name="Internal UI Port" Target="PORT" Default="5055" Description="Internal UI port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="false" Mask="false">5055</Config>
+    <ExtraParams>--init --user 99:100</ExtraParams>
 </Container>
