@@ -88,8 +88,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "aaadd164d881988454cdaaff1b99c80955d99c3e",
-                "commit_message": "Apply PR #750: Reduce zombie processes\n\nChanges:\n1. Add SIGCHLD handler to reap terminated child processes (zombies)\n2. Replace curl healthcheck with Python requests to reduce process spawning\n3. Update healthcheck to use /api/health endpoint\n\nTechnical details:\n- SIGCHLD handler uses os.waitpid(-1, os.WNOHANG) pattern\n- Python healthcheck reduces spawning of curl processes every 30s\n- Proper exception handling for ChildProcessError and OSError\n"
+                "commit_hash": "88a08d7b9b03cdc30661119e5785bea559eff060",
+                "commit_message": "Security Fix\n"
             }
         ]
     },
@@ -444,8 +444,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "4df40f8cea1eadffea71e7df33a17f3dac75ab1e",
-                "commit_message": "feat: add CELERY_TASK_DEFAULT_QUEUE environment variable for task isolation\n"
+                "commit_hash": "b939c79a490cfd32fd76b45caa9d3e794641d522",
+                "commit_message": "feat: fixed docker issues\n"
             },
             {
                 "file_path": "surfsense_backend/env.example",
@@ -924,8 +924,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "b2aa4329e7afa4de1e41e3bc08c23e431e0065e6",
-                "commit_message": "feat: Add script parameters support (#245)\n\n* Update script parameter issues: change is_secret to type field (text/password) and add encryption details\n\n* Implement script parameters feature - backend\n\n- Add database schema for script parameters and parameter_values\n- Add encryption/decryption utilities for password-type parameters\n- Add parameter parsing from {{PARAM}} syntax with type detection\n- Add template rendering service with parameter substitution\n- Update script library API endpoints to handle parameters\n- Encrypt password-type parameter values in repository assignments\n- Mask password values in API responses\n- Integrate parameter rendering in script execution\n\nImplements borg-ui-773, borg-ui-vcy, borg-ui-my3, borg-ui-sa3, borg-ui-3il, borg-ui-kkj, borg-ui-1ab\n\n* Add parameter support to script test endpoint\n\n- Add ScriptTestRequest schema with parameter_values field\n- Update /scripts/{script_id}/test to accept and render parameter values\n- Test values are not encrypted (plain text for testing)\n- Renders template with test system variables\n\n* Fix parameter checking in script assignment dialog\n\n- Add hasParameters boolean check for better readability\n- Add Array.isArray validation for parameters\n- Add console logging to debug parameter detection\n- Use non-null assertion operator for TypeScript\n\n* working on scripts\n\n* fix missing model\n\n* chore: cleanup\n\n* chore: cleanup\n\n* merge main, remove duplicate onUpdate call\n\n* revert: models.py\n\n* fix models, add unit test for script params\n\n---------\n\nCo-authored-by: Jan Wiebe <janwiebe@janwie.be>"
+                "commit_hash": "ad29fa6150047bab8603e384d27e185de78955d3",
+                "commit_message": "feat: add proxy authentication support (SSO integration)\n\nAdd ability to disable built-in authentication and delegate to reverse\nproxies like Authelia, Authentik, Traefik, or OAuth2 Proxy.\n\nBackend Changes:\n- Add DISABLE_AUTHENTICATION and PROXY_AUTH_HEADER environment variables\n- Implement proxy authentication in security.py with auto-user creation\n- Support multiple common headers (X-Forwarded-User, X-Remote-User, etc)\n- Use default \"admin\" user when no proxy header present\n- Add /api/auth/config endpoint to expose auth mode to frontend\n- Remove trusted proxy IP check per user feedback\n\nFrontend Changes:\n- Detect proxy auth mode via /api/auth/config endpoint\n- Auto-login when proxy auth is enabled\n- Prevent redirect loops in proxy auth mode\n- Fix analytics consent banner appearing on every refresh\n\nTests:\n- Add 13 comprehensive test cases for proxy authentication\n- Test auto-user creation, header fallbacks, user reuse, etc\n- Verify backward compatibility with JWT auth\n\nBreaking Changes: None\nBackward Compatible: Yes (defaults to JWT auth)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\n"
             }
         ]
     },
