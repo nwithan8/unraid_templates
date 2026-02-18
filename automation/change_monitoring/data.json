@@ -1059,8 +1059,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "1cf12c9e92d0537d64af7fbf1d85de75b8269c5e",
-                "commit_message": "fix: review findings \u2014 rate limiting, accessibility, clock abstraction, wizard decomposition\n\n- Add SetupLimiter middleware to /setup/import and /setup/restore endpoints\n- Docker: add no-new-privileges and cap_drop ALL security hardening\n- Document MetricsService lifecycle (no Stop needed, EventBus manages goroutines)\n- Extend Clock interface with After() and Since(), inject into VerifierService\n- Dashboard: use semantic button elements for clickable cards with ARIA labels\n- ProviderSelect: add ARIA listbox pattern and keyboard navigation\n- Decompose SetupWizard into 6 autonomous step components + orchestrator\n- Add edge case tests: RFC3339 timestamps, NULL mediaID, invalid metadata,\n  getCorruptionContextWithRetry success/ErrNoRows paths\n"
+                "commit_hash": "b940a289a9529b5bbea95e1b7319764933bfeea7",
+                "commit_message": "docs(docker): clarify security model for root-start privilege drop pattern\n"
             }
         ]
     },
