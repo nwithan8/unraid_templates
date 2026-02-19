@@ -1136,8 +1136,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "e29f96f3148d7b50ae90cae35efb12e6553ec4ab",
-                "commit_message": "RENAMED MESH-API - PUSHING PR3 (and WIP verison of PR4)"
+                "commit_hash": "a36b762414b5346de935e903bff35ee29e27d5c6",
+                "commit_message": "v0.6.0 RC1 - API EXTENSIONS UPDATE"
             }
         ]
     },
