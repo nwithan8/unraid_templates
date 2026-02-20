@@ -24,6 +24,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-02-20
+
+        - Reverted to original Docker link
+        - Added extensions config directory
+
         ### 2026-02-11
 
         Renamed app
@@ -43,5 +48,6 @@
     <Config Name="Message-of-the-Day File" Target="/app/motd.json" Default="/mnt/user/appdata/mesh_ai/motd.json" Description="Path to the message of the day file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/motd.json</Config>
     <Config Name="Messages Log" Target="/app/messages.log" Default="/mnt/user/appdata/mesh_ai/messages.log" Description="Path to the messages log file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/messages.log</Config>
     <Config Name="Messages Archive" Target="/app/messages_archive.json" Default="/mnt/user/appdata/mesh_ai/messages_archive.json" Description="Path to the messages archive log file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/messages_archive.json</Config>
+    <Config Name="Extensions Configs" Target="/app/extensions" Default="/mnt/user/appdata/mesh_ai/extensions" Description="Path to the extensions configs directory" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/extensions</Config>
     <Config Name="Script Log" Target="/app/script.log" Default="/mnt/user/appdata/mesh_ai/script.log" Description="Path to the script log file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mesh_ai/script.log</Config>
 </Container>
