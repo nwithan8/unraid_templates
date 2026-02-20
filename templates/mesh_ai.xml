@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>MESH-API</Name>
-    <Repository>mrtbot/mesh-api:latest</Repository>
-    <Registry>https://hub.docker.com/r/mrtbot/mesh-api</Registry>
+    <Repository>mrtbot/mesh-ai:latest</Repository>
+    <Registry>https://hub.docker.com/r/mrtbot/mesh-ai</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
