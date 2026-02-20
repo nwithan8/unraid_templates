@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>MeshCore MQTT Bridge</Name>
-    <Repository>ghcr.io/ipnet-mesh/meshcore-mqtt:latest</Repository>
-    <Registry>ghcr.io/ipnet-mesh/meshcore-mqtt</Registry>
+    <Repository>ghcr.io/jinglemansweep/meshcore-mqtt:latest</Repository>
+    <Registry>ghcr.io/jinglemansweep/meshcore-mqtt</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -23,6 +23,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-02-20
+
+        Fix Docker image link
+
         ### 2026-01-22
 
         Initial release
