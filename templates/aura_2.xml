@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>AURA</Name>
+    <Repository>ghcr.io/mediux-team/aura:latest</Repository>
+    <Registry>ghcr.io/mediux-team/aura</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/mediux-team/AURA/issues</Support>
+    <Project>https://github.com/mediux-team/AURA</Project>
+    <Overview>
+        Automated Utility for Retrieval of Assets, a tool designed to use Mediux images for your media server content. It provides a web interface to browse and select image sets for your library.
+    </Overview>
+    <Beta>True</Beta>
+    <Category>MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>mediux aura media server image retrieval automation plex emby jellyfin kometa meta manager</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/aura-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/aura_2.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2025-06-02
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="API Port" Target="8888" Default="8888" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always-hide" Required="true" Mask="false">8888</Config>
+    <Config Name="Media Path" Target="/data/media" Default="" Description="Path to the media directory. Edit the Target to match the same path as inside your media server (e.g. Plex) Docker container." Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/aura/config" Description="Path to the config directory" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/aura/config</Config>
+</Container>

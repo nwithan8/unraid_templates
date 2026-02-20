@@ -18,7 +18,6 @@
     </Overview>
     <Beta>False</Beta>
     <Category>AI: HomeAutomation: Productivity: Tools: Other: Status:Stable</Category>
-    <WebUI>http://[IP]:[PORT:8501]/</WebUI>
     <ExtraSearchTerms>ai llm local assistant home assistant homekit xbmc discord matrix irc automations tools integrations productivity tatertotterson tater</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/tatertotterson/Tater/refs/heads/main/images/tater.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tater.xml</TemplateURL>

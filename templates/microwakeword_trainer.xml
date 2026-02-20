@@ -18,7 +18,6 @@
     </Overview>
     <Beta>False</Beta>
     <Category>AI: HomeAutomation: Productivity: Tools: Other: Status:Stable</Category>
-    <WebUI>http://[IP]:[PORT:8888]/</WebUI>
     <ExtraSearchTerms>ai llm local assistant home assistant wake word wakeword voice speech recognition trainer tatertotterson microwakeword</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/tatertotterson/MicroWakeWord-Trainer-Docker/refs/heads/main/mmw.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/microwakeword_trainer.xml</TemplateURL>
