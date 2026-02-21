@@ -553,8 +553,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "a5708f8cccbf410ff5df7149b19b249d86ed4044",
-                "commit_message": "refactor: apply Gemini code review suggestions for PR666\n\n- Use project logger instead of console.log for consistency\n- Add default empty values to SPARKY_FITNESS_EXTRA_TRUSTED_ORIGINS in docker-compose files\n- Resolves code review feedback from @gemini-code-assist[bot]\n"
+                "commit_hash": "640f8d9578e91d63012ebdcfda3e7f73bab7b7fe",
+                "commit_message": "fix for \"Sync Past Entries\" fails after changing an exercise #544\"\n"
             },
             {
                 "file_path": "docker/.env.example",
