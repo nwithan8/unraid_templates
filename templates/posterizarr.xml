@@ -25,6 +25,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-02-21
+        
+        - Add optional empty variable ARR_WAIT_TIME
+        
         ### 2025-10-27
         
         - Add Web UI Port for v2.0.0
@@ -60,6 +64,7 @@
     <Config Name="Run time" Target="RUN_TIME" Default="disabled" Description="[Advanced] Set the run time (e.g., 00:00) or set to 'disabled' to use the Web UI scheduler (recommended)." Type="Variable" Display="advanced" Required="true" Mask="false">disabled</Config>
     <Config Name="UMASK" Target="UMASK" Default="002" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">002</Config>
     <Config Name="TERM" Target="TERM" Default="xterm" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">xterm</Config>
+    <Config Name="ARR_WAIT_TIME" Target="ARR_WAIT_TIME" Default="" Description="Wait time for Arr services (optional)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
     <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/posterizarr" Mode="rw" Description="Storage for config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/posterizarr</Config>
     <Config Name="Asset Path" Target="/assets" Default="/mnt/user/appdata/posterizarr/assets" Mode="rw" Description="Storage for assets" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/posterizarr/assets</Config>
     <Config Name="Manual Asset Path" Target="/manualassets" Default="/mnt/user/appdata/posterizarr/manualassets" Mode="rw" Description="Storage for manual assets" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/posterizarr/manualassets</Config>
