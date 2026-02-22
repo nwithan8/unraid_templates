@@ -553,13 +553,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "640f8d9578e91d63012ebdcfda3e7f73bab7b7fe",
-                "commit_message": "fix for \"Sync Past Entries\" fails after changing an exercise #544\"\n"
+                "commit_hash": "f68d267e009c5362ec1820b52156163f88d24211",
+                "commit_message": "docker env variable udpate & coressponding doc\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "45a4da053be7bb6d4627ec30b3bcb6117477d9f2",
-                "commit_message": "json data source logic for hevy\n"
+                "commit_hash": "f68d267e009c5362ec1820b52156163f88d24211",
+                "commit_message": "docker env variable udpate & coressponding doc\n"
             }
         ]
     },
