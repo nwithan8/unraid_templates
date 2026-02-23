@@ -30,6 +30,10 @@
         <DonateText>Donations to Plex.One, the developer of Huntarr</DonateText>
     </Maintainer>
     <Changes>
+        ### 2026-02-23
+
+        Deprecated following security audit drama and source deletion
+
         ### 2026-02-11
 
         Add PUID/PGID environment variables
