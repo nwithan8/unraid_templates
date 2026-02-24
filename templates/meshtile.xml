@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Meshtile</Name>
+    <Repository>stevenlafl/meshtile:latest</Repository>
+    <Registry>https://hub.docker.com/r/stevenlafl/meshtile</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/stevenlafl/meshtile/issues</Support>
+    <Project>https://github.com/stevenlafl/meshtile</Project>
+    <Overview>
+        RF coverage tile server for MeshCore networks
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>mesh meshtastic meshcore meshmapper letsmesh rf wardriving coverage tile server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/meshtile-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/meshtile.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-02-23
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires editing Post Arguments for region settings. See documentation: https://github.com/stevenlafl/meshtile#usage
+    </Requires>
+    <PostArgs>--region pnw</PostArgs>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Cache" Target="/data/.cache" Default="/mnt/user/appdata/meshtile/cache" Description="Path to the data cache" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/meshtile/cache</Config>
+</Container>

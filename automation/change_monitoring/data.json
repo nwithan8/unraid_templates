@@ -1304,5 +1304,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Meshtile",
+        "git_url": "https://github.com/stevenlafl/meshtile.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "32daf1ba793c6d74526abf21ed9e3cb999ee85a5",
+                "commit_message": null
+            }
+        ]
     }
 ]
