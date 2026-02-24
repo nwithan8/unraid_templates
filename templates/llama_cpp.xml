@@ -1,30 +1,86 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>llama.cpp</Name>
-    <Repository>ghcr.io/ggerganov/llama.cpp:server</Repository>
-    <Registry>https://github.com/ggerganov/llama.cpp/pkgs/container/llama.cpp</Registry>
+    <Repository>ghcr.io/ggml-org/llama.cpp:full</Repository>
+    <Registry>ghcr.io/ggml-org/llama.cpp</Registry>
+    <Branch>
+        <Tag>full</Tag>
+        <TagDescription>Latest full release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>light</Tag>
+        <TagDescription>Latest light release</TagDescription>
+    </Branch>
     <Branch>
         <Tag>server</Tag>
-        <TagDescription>Latest server release</TagDescription>
+        <TagDescription>Latest server-only release</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>full-cuda</Tag>
+        <TagDescription>Latest full release with CUDA support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>light-cuda</Tag>
+        <TagDescription>Latest light release with CUDA support</TagDescription>
     </Branch>
     <Branch>
         <Tag>server-cuda</Tag>
-        <TagDescription>Latest server release with Nvidia (CUDA) support</TagDescription>
+        <TagDescription>Latest server-only release with CUDA support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>full-rocm</Tag>
+        <TagDescription>Latest full release with ROCm support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>light-rocm</Tag>
+        <TagDescription>Latest light release with ROCm support</TagDescription>
     </Branch>
     <Branch>
         <Tag>server-rocm</Tag>
-        <TagDescription>Latest server release with AMD (ROCm) support</TagDescription>
+        <TagDescription>Latest server-only release with ROCm support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>full-musa</Tag>
+        <TagDescription>Latest full release with MUSA support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>light-musa</Tag>
+        <TagDescription>Latest light release with MUSA support</TagDescription>
     </Branch>
     <Branch>
         <Tag>server-musa</Tag>
-        <TagDescription>Latest server release with MUSA support</TagDescription>
+        <TagDescription>Latest server-only release with MUSA support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>full-intel</Tag>
+        <TagDescription>Latest full release with SYCL support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>light-intel</Tag>
+        <TagDescription>Latest light release with SYCL support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>server-intel</Tag>
+        <TagDescription>Latest server-only release with SYCL support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>full-vulkan</Tag>
+        <TagDescription>Latest full release with Vulkan support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>light-vulkan</Tag>
+        <TagDescription>Latest light release with Vulkan support</TagDescription>
+    </Branch>
+    <Branch>
+        <Tag>server-vulkan</Tag>
+        <TagDescription>Latest server-only release with Vulkan support</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8000]/</WebUI>
     <PostArgs>-m /models/model.gguf --port 8000 --host 0.0.0.0 --n-gpu-layers 1</PostArgs>
     <Privileged>false</Privileged>
-    <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates</Support>
-    <Project>https://github.com/ggerganov/llama.cpp</Project>
+    <Support>https://github.com/ggml-org/llama.cpp/issues</Support>
+    <Project>https://github.com/ggml-org/llama.cpp</Project>
     <Overview>
         Inference of Meta's LLaMA model (and others) in pure C/C++
     </Overview>
@@ -42,6 +98,10 @@
         If you are using an Nvidia GPU, add "--gpus all" to the Extra Parameters field under Advanced.
     </Requires>
     <Changes>
+        ### 2026-02-23
+
+        Fix repo location and branch options
+
         ### 2025-05-03
 
         Add MUSA branch
