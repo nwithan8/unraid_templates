@@ -1,15 +1,11 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>TGraph Bot</Name>
-    <Repository>ghcr.io/engels74/tgraph-bot:latest</Repository>
+    <Repository>ghcr.io/engels74/tgraph-bot:nightly</Repository>
     <Registry>https://github.com/engels74/tgraph-bot/pkgs/container/tgraph-bot</Registry>
     <Branch>
-        <Tag>latest</Tag>
-        <TagDescription>Latest stable release</TagDescription>
-    </Branch>
-    <Branch>
-        <Tag>testing</Tag>
-        <TagDescription>Latest development build</TagDescription>
+        <Tag>nightly</Tag>
+        <TagDescription>Latest nightly release</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
@@ -30,6 +26,10 @@
         Users must configure a configuration file in the "Config Path". See documentation: https://github.com/engels74/tgraph-bot-source?tab=readme-ov-file#configuration
     </Requires>
     <Changes>
+        ### 2026-02-23
+
+        Update default branch
+
         ### 2024-08-22
 
         Initial release
