@@ -82,18 +82,6 @@
         ]
     },
     {
-        "app_name": "Huntarr",
-        "git_url": "https://github.com/plexguide/Huntarr.io.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "docker-compose.yml",
-                "commit_hash": "88a08d7b9b03cdc30661119e5785bea559eff060",
-                "commit_message": "Security Fix\n"
-            }
-        ]
-    },
-    {
         "app_name": "Kokoro FastAPI",
         "git_url": "https://github.com/remsky/Kokoro-FastAPI.git",
         "branch_override": null,
@@ -266,8 +254,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "2a5b2c53dd86b25898527e12611ead34145db259",
-                "commit_message": null
+                "commit_hash": "ebe8a1b3e98d7a18b48b3424c4b7608715463d49",
+                "commit_message": "feat: add web UI dashboard (v2.0)\n"
             }
         ]
     },
@@ -553,13 +541,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "f68d267e009c5362ec1820b52156163f88d24211",
-                "commit_message": "docker env variable udpate & coressponding doc\n"
+                "commit_hash": "9df907cf7c3476eb8fb68260ff4c1985bd4bbeba",
+                "commit_message": "docker file updates\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "f68d267e009c5362ec1820b52156163f88d24211",
-                "commit_message": "docker env variable udpate & coressponding doc\n"
+                "commit_hash": "9df907cf7c3476eb8fb68260ff4c1985bd4bbeba",
+                "commit_message": "docker file updates\n"
             }
         ]
     },
