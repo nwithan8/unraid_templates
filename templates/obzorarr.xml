@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Obzorarr</Name>
+    <Repository>ghcr.io/engels74/obzorarr-docker:latest</Repository>
+    <Registry>ghcr.io/engels74/obzorarr-docker</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/engels74/obzorarr/issues</Support>
+    <Project>https://github.com/engels74/obzorarr</Project>
+    <Overview>
+        Obzorarr is a "Wrapped for Plex" application that syncs viewing history from your Plex Media Server and generates yearly statistics with an animated slideshow presentation - similar to Spotify Wrapped. It doesn't require Tautulli; it only relies on the Plex API.    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex spotify wrapped tautulli details history statistics fun analytics</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/engels74/obzorarr/main/src/lib/assets/obzorarr-icon.svg</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/obzorarr.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/gifs/wrapped-demo.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/wrapped-pages/01-total-time.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/wrapped-pages/02-top-movies.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/wrapped-pages/03-top-shows.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/wrapped-pages/04-genres.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/wrapped-pages/05-percentile.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/wrapped-pages/06-fun-fact.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/wrapped-pages/07-summary.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/wrapped-pages/08-share-modal.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/gifs/admin-demo.gif</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/admin-dashboard/01-dashboard.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/admin-dashboard/02-settings.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/engels74/obzorarr/main/public/readme/screenshots/admin-dashboard/03-sync.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-02-25
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Plex instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Plex Server URL" Target="PLEX_SERVER_URL" Default="" Description="URL of your Plex Server (e.g., http://localhost:32400)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Plex Token" Target="PLEX_TOKEN" Default="" Description="Plex token" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Config Data" Target="/config" Default="/mnt/user/appdata/obzorarr/config" Description="Path to the config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/obzorarr/config</Config>
+    <Config Name="PUID" Target="PUID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="PGID" Target="PGID" Default="1000" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+    <Config Name="UMASK" Target="UMASK" Default="002" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">002</Config>
+</Container>
