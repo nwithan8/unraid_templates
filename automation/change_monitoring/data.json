@@ -546,8 +546,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "9df907cf7c3476eb8fb68260ff4c1985bd4bbeba",
-                "commit_message": "docker file updates\n"
+                "commit_hash": "f7d94d9041fdb3b31053a9fc025a449e49cec457",
+                "commit_message": "Merge branch 'main' into OIDC-env"
             }
         ]
     },
@@ -948,8 +948,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "ce671973e39fcb1d9d0d76e1911facd578ebb6ea",
-                "commit_message": "Close issue 289 image embeddings\n"
+                "commit_hash": "15abfcab96d08cd97b4dbc0bfec14a5623665f57",
+                "commit_message": "v0.43.0-alpha: Safer automation with clearer day-to-day control\n\nRelease prep for v0.43.0-alpha with security, reliability, and documentation updates.\n\nNew Features:\n\n- Webhook Authorization Header controls with unmask/regenerate/copy and auto-remask\n\n- Runtime settings support and expanded AI/RAG guidance\n\nFixes:\n\n- OMDb timeout/retry tuning and enrichment stale-row recovery\n\n- CSRF/auth consistency for cookie-based mutating actions\n"
             }
         ]
     },
