@@ -8,6 +8,7 @@
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
     <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
     <Privileged>false</Privileged>
     <Support>https://github.com/sahara101/Dakosys/issues</Support>
     <Project>https://github.com/sahara101/Dakosys</Project>
@@ -28,6 +29,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-02-25
+
+        Add Web UI
+
         ### 2025-05-14
 
         Initial release
@@ -38,6 +43,7 @@
         This is a CLI tool. Open a Console in the container and run `goss` to use it.
     </Requires>
     <PostArgs>daemon</PostArgs>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
     <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/dakosys/data" Mode="rw" Description="Data path" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/dakosys/data</Config>
     <Config Name="Kometa Data Path" Target="/kometa" Default="" Mode="rw" Description="Path to Kometa config" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Config Data" Target="/app/config" Default="/mnt/user/appdata/dakosys/config" Mode="rw" Description="Configuration data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dakosys/config</Config>
