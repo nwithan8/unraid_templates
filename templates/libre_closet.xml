@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Libre Closet</Name>
+    <Repository>ghcr.io/lazztech/libre-closet:latest</Repository>
+    <Registry>ghcr.io/lazztech/libre-closet</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/lazztech/Libre-Closet/issues</Support>
+    <Project>https://librecloset.lazz.tech/</Project>
+    <Overview>
+        A free, open-source, self-hosted wardrobe organizer. Catalog your clothes, upload photos, build outfits, and access everything from your phone as an offline-ready PWA — all on your own server.    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>clothing closet wardrobe organizer outfit planner fashion pwa self-hosted</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/libre-closet-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/libre_closet.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Lazztech/Libre-Closet/main/screenshots/Screenshot_1.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Lazztech/Libre-Closet/main/screenshots/Screenshot_2.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Lazztech/Libre-Closet/main/screenshots/Screenshot_3.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/Lazztech/Libre-Closet/main/screenshots/Screenshot_4.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-02-28
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="App Name" Target="APP_NAME" Default="Libre Closet" Description="Name of the application" Type="Variable" Display="always-hide" Required="true" Mask="false">Libre Closet</Config>
+    <Config Name="Auth Enabled" Target="AUTH_ENABLED" Default="false|true" Description="Enable or disable authentication." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="PWA Enabled" Target="PWA_ENABLED" Default="false|true" Description="Enable or disable PWA service worker." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Auth Access Token" Target="ACCESS_TOKEN_SECRET" Default="" Description="Secret key for signing access tokens. Generate a secure random key with `openssl rand -base64 60`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Email From Address" Target="EMAIL_FROM_ADDRESS" Default="" Description="Email address to use as the sender for password reset emails." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Email Transport" Target="EMAIL_TRANSPORT" Default="gmail|mailgun" Description="Email transport method to use for sending emails." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Mailgun API Key" Target="EMAIL_API_KEY" Default="" Description="API key for Mailgun email transport." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/libre_closet/data" Description="Path to the app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/libre_closet/data</Config>
+    <Config Name="Internal Data Path" Target="DATA_PATH" Default="./data" Description="Internal data path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">./data</Config>
+    <Config Name="Database Type" Target="DATABASE_TYPE" Default="sqlite" Description="Type of database to use (e.g., sqlite, postgres). Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">sqlite</Config>
+    <Config Name="File Storage Type" Target="FILE_STORAGE_TYPE" Default="local" Description="Type of file storage to use (e.g., local, s3). Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">local</Config>
+</Container>
