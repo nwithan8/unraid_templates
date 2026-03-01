@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>MacOS</Name>
+    <Repository>dockurr/macos:latest</Repository>
+    <Registry>https://hub.docker.com/r/dockurr/macos</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8006]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dockur/macos/issues</Support>
+    <Project>https://github.com/dockur/macos</Project>
+    <Overview>
+        MacOS inside a Docker container.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>macos apple mac os computer vm virtual machine</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/dockur/macos/master/.github/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/macos.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-02-28
+
+        Initial release
+    </Changes>
+    <Requires>
+        See documentation for setup instructions: https://github.com/dockur/macos#faq-
+    </Requires>
+    <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
+    <Config Name="Web UI Port" Target="8006" Default="8006" Mode="tcp" Description="Container Port: 8006" Type="Port" Display="always-hide" Required="true" Mask="false">8006</Config>
+    <Config Name="Server Port - TCP" Target="5900" Default="5900" Mode="tcp" Description="Container Port: 5900" Type="Port" Display="always-hide" Required="true" Mask="false">5900</Config>
+    <Config Name="Server Port - UDP" Target="5900" Default="5900" Mode="udp" Description="Container Port: 5900" Type="Port" Display="always-hide" Required="true" Mask="false">5900</Config>
+    <Config Name="MacOS Version" Target="VERSION" Default="15|14|13|12|11" Description="MacOS version to run. Note that not all versions may work on all hardware." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Storage" Target="/storage" Default="" Description="Path to storage directory. This may be large." Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Disk Size" Target="DISK_SIZE" Default="64G" Description="Size of the virtual disk." Type="Variable" Display="always-hide" Required="true" Mask="false">64G</Config>
+    <Config Name="RAM Size" Target="RAM_SIZE" Default="4G" Description="Amount of RAM to allocate to the VM." Type="Variable" Display="always-hide" Required="true" Mask="false">4G</Config>
+    <Config Name="CPU Cores" Target="CPU_CORES" Default="1" Description="Number of CPU cores to allocate to the VM." Type="Variable" Display="always-hide" Required="true" Mask="false">1</Config>
+    <Config Name="KVM Device" Target="/dev/kvm" Default="/dev/kvm" Description="Path to KVM device." Type="Path" Display="always-hide" Required="true" Mask="false">/dev/kvm</Config>
+    <Config Name="Network Tunnel Device" Target="/dev/net/tun" Default="/dev/net/tun" Description="Path to network tunnel device." Type="Path" Display="always-hide" Required="true" Mask="false">/dev/net/tun</Config>
+</Container>

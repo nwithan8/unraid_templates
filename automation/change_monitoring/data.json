@@ -1304,5 +1304,29 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "MacOS",
+        "git_url": "https://github.com/dockur/macos.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "compose.yml",
+                "commit_hash": "45b966703e4077a8027da5a80b6da826d5b5118a",
+                "commit_message": null
+            }
+        ]
+    },
+    {
+        "app_name": "Windows",
+        "git_url": "https://github.com/dockur/windows.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "compose.yml",
+                "commit_hash": "c9abc7551ab871a6b4086356fc3cd05c5b403047",
+                "commit_message": null
+            }
+        ]
     }
 ]
