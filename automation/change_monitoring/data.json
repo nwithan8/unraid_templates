@@ -432,8 +432,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "b939c79a490cfd32fd76b45caa9d3e794641d522",
-                "commit_message": "feat: fixed docker issues\n"
+                "commit_hash": "a6563f396ad13817d1f8d9d6e1215201e601d320",
+                "commit_message": "chore: moved to daytona due to lack of windows support in microsandbox\n"
             },
             {
                 "file_path": "surfsense_backend/env.example",
@@ -1153,8 +1153,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.example.yml",
-                "commit_hash": "19e6ed19a4598f4d66846dd68d6d8f29b32d2c85",
-                "commit_message": "Make ready for Vercel deployment\n"
+                "commit_hash": "3b009e66e7bb383a9e56f8c4c7a9544575d12bda",
+                "commit_message": "Fix custom URL base path support\n"
             }
         ]
     },
