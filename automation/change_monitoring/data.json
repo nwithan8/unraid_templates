@@ -1173,7 +1173,7 @@
     {
         "app_name": "Immaculaterr",
         "git_url": "https://github.com/ohmzi/Immaculaterr.git",
-        "branch_override": null,
+        "branch_override": "develop",
         "files_to_check": [
             {
                 "file_path": "docker/immaculaterr/docker-compose.yml",
