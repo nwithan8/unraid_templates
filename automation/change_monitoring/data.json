@@ -432,8 +432,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "a6563f396ad13817d1f8d9d6e1215201e601d320",
-                "commit_message": "chore: moved to daytona due to lack of windows support in microsandbox\n"
+                "commit_hash": "68be0d867582d11c39e5bff99becaa67c8b36b93",
+                "commit_message": "chore: remove legacy Docker configuration files and initialization scripts for SurfSense\n"
             },
             {
                 "file_path": "surfsense_backend/env.example",
@@ -912,7 +912,7 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "fb7a2a7705cca45c743fe55cb3e35c4a868745e4",
+                "commit_hash": "12654d549a5ed77efe080254dd582446a67c0b7a",
                 "commit_message": "docs: clarify /local is a convention, not a requirement\n\nMake clear throughout the installation guide and docker-compose that\n/local is just the default example path. Any container mount path\nworks as long as LOCAL_MOUNT_POINTS is updated to match. Previously\nthe docs implied /local was special/required, confusing users who\nmounted to other paths like /disk1 or /nas.\n\nCo-Authored-By: Claude <noreply@anthropic.com>\n"
             }
         ]
