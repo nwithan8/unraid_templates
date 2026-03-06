@@ -426,28 +426,6 @@
         ]
     },
     {
-        "app_name": "SurfSense",
-        "git_url": "https://github.com/MODSetter/SurfSense.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "docker-compose.yml",
-                "commit_hash": "68be0d867582d11c39e5bff99becaa67c8b36b93",
-                "commit_message": "chore: remove legacy Docker configuration files and initialization scripts for SurfSense\n"
-            },
-            {
-                "file_path": "surfsense_backend/env.example",
-                "commit_hash": "19ed0becce8ae78ed62287b9c97371c2510c58c2",
-                "commit_message": null
-            },
-            {
-                "file_path": "surfsense_web/.env.example",
-                "commit_hash": "14b60014898d745e98aac9cb086e98739a52a6b1",
-                "commit_message": "chore(env): add optional deployment mode and update database URL example\n"
-            }
-        ]
-    },
-    {
         "app_name": "Anubis",
         "git_url": "https://github.com/TecharoHQ/anubis.git",
         "branch_override": null,
