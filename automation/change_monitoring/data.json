@@ -495,8 +495,8 @@
         "files_to_check": [
             {
                 "file_path": "auth-portal-full-stack-dev_docker-compose.yml",
-                "commit_hash": "8c4cd586cd1e95330bc8e359c3c625d88efaa698",
-                "commit_message": "feat: honor configurable APP_TIMEZONE throughout backups\n\n- added APP_TIMEZONE/TZ handling in the app, sample env, and docker stack so every service runs in the configured zone.\n- converted backup scheduling, last-run/next-run calculations, and admin UI formatting to use that timezone, including localized labels and dates in admin.html/admin.js.\n"
+                "commit_hash": "574208aa0baae2190ff4811d85c010acaa86979d",
+                "commit_message": "docs(oidc): update v2.0.3 docs for authorize resume flow and redirect host config\n"
             }
         ]
     },
@@ -524,8 +524,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "f7d94d9041fdb3b31053a9fc025a449e49cec457",
-                "commit_message": "Merge branch 'main' into OIDC-env"
+                "commit_hash": "33a9ee7118f585389d6d90af400c23f56f75e336",
+                "commit_message": "lint & format\n"
             }
         ]
     },
@@ -548,8 +548,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "1c9dd57898d149673d737f962a390a4697881f37",
-                "commit_message": "chore: switch from local build to remote container image\n"
+                "commit_hash": "8887a1b2bedb46caf2856fae2a779adfd121cce7",
+                "commit_message": "Make config.ini read-only in docker-compose\n"
             }
         ]
     },
@@ -926,8 +926,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "15abfcab96d08cd97b4dbc0bfec14a5623665f57",
-                "commit_message": "v0.43.0-alpha: Safer automation with clearer day-to-day control\n\nRelease prep for v0.43.0-alpha with security, reliability, and documentation updates.\n\nNew Features:\n\n- Webhook Authorization Header controls with unmask/regenerate/copy and auto-remask\n\n- Runtime settings support and expanded AI/RAG guidance\n\nFixes:\n\n- OMDb timeout/retry tuning and enrichment stale-row recovery\n\n- CSRF/auth consistency for cookie-based mutating actions\n"
+                "commit_hash": "232f843c4e7154c88d97bb461d18a95f3d047e59",
+                "commit_message": "v0.43.6-beta: OOM crash fix, adaptive heap cap, memory health endpoint\n\nRoot cause of silent OOM crashes on long-running instances identified and\nfixed at multiple layers. task_queue accumulated 300k+ completed rows with\nno TTL policy, bloating queries and exhausting the Node.js heap.\n\nFixes:\n- Migration 20260309_140000_task_queue_retention.sql: partial cleanup index,\n  seeds task_queue_retention_days=7, one-time batched emergency purge on deploy\n- QueueService._backgroundDrainIfBloated(): startup background drain if >1000\n  stale rows exist (non-blocking, worker starts immediately)\n- scheduler.runTaskQueueCleanup(): daily loop-until-clean job (03:15 + 5min\n  after boot), configurable via TASK_QUEUE_RETENTION_DAYS env var\n- docker-compose.yml + docker-compose.unraid.yml: NODE_OPTIONS heap cap 1536MB,\n  2G memory limit enabled in unraid compose\n- docker-entrypoint.sh: auto-derives --max-old-space-size from cgroup v2/v1\n  memory limit (75% of container limit); WARN logged if no limit detected\n\nAdded:\n- GET /api/system/health/memory: no-auth probe endpoint (pre-authenticateToken),\n  returns heap%, OS RAM%, status ok/warning/critical, HTTP 503 on critical\n- healthCheckService.checkProcessMemory(): process + OS memory stats included\n  in all health service responses under the 'memory' key\n- Startup [WARN] log if no explicit heap cap is configured at boot time\n- docs/issue-286-implementation-plan.md: graph RAG enhancement plan (deferred)\n"
             }
         ]
     },
@@ -1037,13 +1037,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "34e1ad6ab70bd01b2636e73d96355e592b19b292",
-                "commit_message": "fix: update .env and docker-compose with complete SquidWTF quality options\n"
+                "commit_hash": "11cba21aad1f3ab8a6452b62302c00afb25f0c8e",
+                "commit_message": "feat: add configurable folder template for downloads\n"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "34e1ad6ab70bd01b2636e73d96355e592b19b292",
-                "commit_message": "fix: update .env and docker-compose with complete SquidWTF quality options\n"
+                "commit_hash": "11cba21aad1f3ab8a6452b62302c00afb25f0c8e",
+                "commit_message": "feat: add configurable folder template for downloads\n"
             }
         ]
     },
@@ -1102,8 +1102,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "a36b762414b5346de935e903bff35ee29e27d5c6",
-                "commit_message": "v0.6.0 RC1 - API EXTENSIONS UPDATE"
+                "commit_hash": "ee6465d38266f9c1f23fae6a84a6a119845a79ec",
+                "commit_message": "Docker adjustment\n\nSigned-off-by: TBOT <monsieurtalbot@gmail.com>"
             }
         ]
     },
