@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-03-09
+
+        Update environmental variables
+
         ### 2025-10-27
 
         Add new database environment variables
@@ -61,7 +65,7 @@
     <Config Name="Garmin Microservice URL" Target="GARMIN_MICROSERVICE_URL" Default="http://IP_ADDRESS:8000" Description="URL of the Garmin microservice (e.g., http://IP_ADDRESS:8000)" Type="Variable" Display="always" Required="false" Mask="false">http://IP_ADDRESS:8000</Config>
     <Config Name="Frontend URL" Target="SPARKY_FITNESS_FRONTEND_URL" Default="http://IP_ADDRESS:3004" Description="URL where the frontend is accessible (e.g., http://IP_ADDRESS:3004)" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3004</Config>
     <Config Name="Security - Encryption Key" Target="SPARKY_FITNESS_API_ENCRYPTION_KEY" Default="" Description="A 64-character hex string used to encrypt data. Generate with 'openssl rand -hex 32'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Security - JWT Secret" Target="JWT_SECRET" Default="" Description="A secret key for signing JSON Web Tokens. Generate with 'openssl rand -base64 32'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Security - Secret" Target="BETTER_AUTH_SECRET" Default="" Description="A secret key. Generate with 'openssl rand -base64 32'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="Disable User Signups" Target="SPARKY_FITNESS_DISABLE_SIGNUP" Default="false|true" Description="Set to true to disable new user registrations" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Force Email Logins" Target="SPARKY_FITNESS_FORCE_EMAIL_LOGIN" Default="false|true" Description="Force email/password login to be enabled, overriding any in-app settings. This is a fail-safe to prevent being locked out if OIDC is misconfigured." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Admin Email" Target="SPARKY_FITNESS_ADMIN_EMAIL" Default="" Description="Automatically grant admin rights to this email" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
