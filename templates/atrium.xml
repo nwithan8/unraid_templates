@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Atrium</Name>
+    <Repository>vibralabs/atrium:latest</Repository>
+    <Registry>https://hub.docker.com/r/vibralabs/atrium</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Vibra-Labs/Atrium/blob/main/docs/configuration.md</Support>
+    <Project>https://atrium.vibralabs.co/</Project>
+    <Overview>
+        A self-hosted client portal for agencies and freelancers. Manage projects, share files, and give clients a branded portal to track progress.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>client portal agency freelance projects work vibe-coded</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/atrium-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/atrium.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/Vibra-Labs/Atrium/main/public/dashboard.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-03-11
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Postgres instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="postgresql://atrium:atrium@localhost:5432/atrium" Description="Connection URL for Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="false">postgresql://atrium:atrium@localhost:5432/atrium</Config>
+    <Config Name="Auth Secret" Target="BETTER_AUTH_SECRET" Default="" Description="Secret key. Generate a secure random key with `openssl rand -base64 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Uploads Path" Target="/app/uploads" Default="/mnt/user/appdata/atrium/uploads" Description="Path to store uploaded files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/atrium/uploads</Config>
+    <Config Name="Storage Provider" Target="STORAGE_PROVIDER" Default="local" Description="Storage provider to use for file uploads." Type="Variable" Display="advanced-hide" Required="true" Mask="false">local</Config>
+</Container>
