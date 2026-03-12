@@ -495,8 +495,8 @@
         "files_to_check": [
             {
                 "file_path": "auth-portal-full-stack-dev_docker-compose.yml",
-                "commit_hash": "574208aa0baae2190ff4811d85c010acaa86979d",
-                "commit_message": "docs(oidc): update v2.0.3 docs for authorize resume flow and redirect host config\n"
+                "commit_hash": "16e803372517e1f87465b449185a4fa45fc100d3",
+                "commit_message": "feat(release): cut v2.0.4 with modular admin UX, portal styling simplification, and hardened runtime base\n"
             }
         ]
     },
