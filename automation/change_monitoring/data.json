@@ -18,8 +18,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "8bb4ab099c2e10bfa61ac3382551b3ac2ae2d90c",
-                "commit_message": "Rework user data import-export and replace some js with turbo/stimulus\n"
+                "commit_hash": "9e2ceb3c8cb3494e71430a828c65677d834a17be",
+                "commit_message": "Update user management\n"
             },
             {
                 "file_path": "docker/.env.example",
