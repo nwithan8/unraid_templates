@@ -230,8 +230,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "2225c49bbf3fde155bb841428132dc4c4a163ee9",
-                "commit_message": "Update docker-compose.yml"
+                "commit_hash": "85ad1ef62abf8e5980b2c5833bcee1fa497b3146",
+                "commit_message": "Formatted files with Prettier\n"
             }
         ]
     },
@@ -1037,13 +1037,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "11cba21aad1f3ab8a6452b62302c00afb25f0c8e",
-                "commit_message": "feat: add configurable folder template for downloads\n"
+                "commit_hash": "0e0e5a272379f6cd20ad0edd98dec30c189aeea6",
+                "commit_message": "review fix: section \"docker-compose.yml: env var won't be read\"\n"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "11cba21aad1f3ab8a6452b62302c00afb25f0c8e",
-                "commit_message": "feat: add configurable folder template for downloads\n"
+                "commit_hash": "c7314d162240d010440183aa8ae30722b2a58ed2",
+                "commit_message": "misc: update docker files to support yandex music\n"
             }
         ]
     },
