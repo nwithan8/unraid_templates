@@ -854,8 +854,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/getting-started/docker.mdx",
-                "commit_hash": "7cd3521cfd35d8cc84356993b18773c56fb20c9b",
-                "commit_message": "docs(docker): document available image tags and their usage (#2402)\n\nSigned-off-by: Ludovic Ortega <ludovic.ortega@adminafk.fr>"
+                "commit_hash": "40e02bba6ad1d5071041c07599d292e0de390df2",
+                "commit_message": "docs(docker): replace backslashes by backticks in windows docker run commands [skip-ci] (#2557)"
             }
         ]
     },
