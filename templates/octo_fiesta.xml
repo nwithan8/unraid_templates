@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-03-17
+
+        Add Yandex settings
+
         ### 2026-02-06
 
         Add new environmental variables
@@ -63,6 +67,10 @@
     <Config Name="SquidWTF - Source" Target="SquidWTF__Source" Default="Qobuz|Tidal" Description="The backend source to use for SquidWTF downloads" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="SquidWTF - Quality" Target="SquidWTF__Quality" Default="" Description="Preferred audio quality for SquidWTF downloads. Qobuz: 27 (FLAC 24-bit), 7 (FLAC 16-bit), 6 (MP3 320), 5 (MP3 128). Tidal: HI_RES_LOSSLESS, LOSSLESS" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="SquidWTF - Timeout" Target="SquidWTF__InstanceTimeoutSeconds" Default="5" Description="Number of seconds to wait for a response from the SquidWTF instance before timing out." Type="Variable" Display="always-hide" Required="true" Mask="false">5</Config>
+    <Config Name="Yandex - OAuth Token" Target="Yandex__OAuthToken" Default="" Description="OAuth token for API access." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="Yandex - Quality" Target="Yandex__Quality" Default="FLAC|AAC_64|MP3_192|AAC_192|AAC_256|MP3_320" Description="Preferred audio quality for Yandex downloads." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Yandex - Language" Target="Yandex__Language" Default="ru" Description="Language for the API responses. Curated playlists and some album titles will be translated into that language." Type="Variable" Display="always" Required="false" Mask="false">ru</Config>
+    <Config Name="Yandex - Include Unavailable Tracks" Target="IncludeUnavilable" Default="false|true" Description="Allow show tracks in search results, playlists and albums that are marked unavailable for listening" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Playlist Support" Target="Subsonic__EnableExternalPlaylists" Default="true|false" Description="When enabled, allows searching and downloading playlists. Starring a playlist triggers automatic download of all tracks and creates an M3U file" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Downloads Path" Target="/app/downloads" Default="/mnt/user/appdata/octo_fiesta/downloads" Description="Path to store downloaded files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/octo_fiesta/downloads</Config>
     <Config Name="Playlists Folder" Target="Subsonic__PlaylistsDirectory" Default="playlists" Description="M3U playlist files will be created in {DOWNLOAD_PATH}/{PLAYLISTS_DIRECTORY}/" Type="Variable" Display="advanced-hide" Required="true" Mask="false">playlists</Config>
