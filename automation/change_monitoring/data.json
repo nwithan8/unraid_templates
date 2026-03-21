@@ -519,8 +519,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "9df907cf7c3476eb8fb68260ff4c1985bd4bbeba",
-                "commit_message": "docker file updates\n"
+                "commit_hash": "90f893d89797b63bd81b396b3bf0dad255888e34",
+                "commit_message": "Update docker-compose.prod.yml"
             },
             {
                 "file_path": "docker/.env.example",
@@ -902,8 +902,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "bf6cda2520bd40ac241977b7c1643c0997e97964",
-                "commit_message": "Move slskd/lastfm config to database with dynamic provider loading\n"
+                "commit_hash": "449fab8902fb701598a157eaed4e6b8279ac82c8",
+                "commit_message": "Multi-user discovery with recommendation engine, ListenBrainz and Navidrome integration\n"
             }
         ]
     },
