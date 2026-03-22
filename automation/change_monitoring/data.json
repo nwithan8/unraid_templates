@@ -890,8 +890,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "12654d549a5ed77efe080254dd582446a67c0b7a",
-                "commit_message": "docs: clarify /local is a convention, not a requirement\n\nMake clear throughout the installation guide and docker-compose that\n/local is just the default example path. Any container mount path\nworks as long as LOCAL_MOUNT_POINTS is updated to match. Previously\nthe docs implied /local was special/required, confusing users who\nmounted to other paths like /disk1 or /nas.\n\nCo-Authored-By: Claude <noreply@anthropic.com>\n"
+                "commit_hash": "f185f2f918e94085befa6dc3dd60e11b7d269cd2",
+                "commit_message": "feat: Add support for subfolder-based reverse proxy configurations. (#339)\n\nCo-authored-by: Karan Hudia <karanhudia@gmail.com>"
             }
         ]
     },
