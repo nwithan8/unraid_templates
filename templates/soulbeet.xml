@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-03-22
+
+        Add Navidrome environmental variable
+
         ### 2026-02-01
 
         Update environmental variable
@@ -49,6 +53,7 @@
     <Config Name="Soulseek - External Download Folder" Target="/downloads" Default="" Description="Path to the external slskd download folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/downloads/soulseek</Config>
     <Config Name="Beets - Config File" Target="BEETS_CONFIG" Default="/config/config.yaml" Description="Internal path to the beets config file. Optional, remove if not used." Type="Variable" Display="always" Required="false" Mask="false">/config/config.yaml</Config>
     <Config Name="Beets - Music Folder" Target="/music" Default="" Description="Path to the music library folder managed by beets" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Navidrome URL" Target="NAVIDROME_URL" Default="" Description="Your Navidrome URL" Type="Path" Display="always" Required="false" Mask="false"/>
     <Config Name="Data Folder" Target="/data" Default="/mnt/user/appdata/soulbeet/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/soulbeet/data</Config>
     <Config Name="Database URL" Target="DATABASE_URL" Default="sqlite:/data/soulbeet.db" Description="Database connection URL" Type="Variable" Display="advanced-hide" Required="false" Mask="false">sqlite:/data/soulbeet.db</Config>
 /</Container>
