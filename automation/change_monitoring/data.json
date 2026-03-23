@@ -230,8 +230,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "2225c49bbf3fde155bb841428132dc4c4a163ee9",
-                "commit_message": "Update docker-compose.yml"
+                "commit_hash": "85ad1ef62abf8e5980b2c5833bcee1fa497b3146",
+                "commit_message": "Formatted files with Prettier\n"
             }
         ]
     },
@@ -519,13 +519,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "9df907cf7c3476eb8fb68260ff4c1985bd4bbeba",
-                "commit_message": "docker file updates\n"
+                "commit_hash": "90f893d89797b63bd81b396b3bf0dad255888e34",
+                "commit_message": "Update docker-compose.prod.yml"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "33a9ee7118f585389d6d90af400c23f56f75e336",
-                "commit_message": "lint & format\n"
+                "commit_hash": "7aa71ca0f369acd83efe5c3ede937f2ae4aa7f67",
+                "commit_message": "Better-Auth upgrade & TOTP fixes\n"
             }
         ]
     },
@@ -854,8 +854,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/getting-started/docker.mdx",
-                "commit_hash": "7cd3521cfd35d8cc84356993b18773c56fb20c9b",
-                "commit_message": "docs(docker): document available image tags and their usage (#2402)\n\nSigned-off-by: Ludovic Ortega <ludovic.ortega@adminafk.fr>"
+                "commit_hash": "40e02bba6ad1d5071041c07599d292e0de390df2",
+                "commit_message": "docs(docker): replace backslashes by backticks in windows docker run commands [skip-ci] (#2557)"
             }
         ]
     },
@@ -890,8 +890,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "12654d549a5ed77efe080254dd582446a67c0b7a",
-                "commit_message": "docs: clarify /local is a convention, not a requirement\n\nMake clear throughout the installation guide and docker-compose that\n/local is just the default example path. Any container mount path\nworks as long as LOCAL_MOUNT_POINTS is updated to match. Previously\nthe docs implied /local was special/required, confusing users who\nmounted to other paths like /disk1 or /nas.\n\nCo-Authored-By: Claude <noreply@anthropic.com>\n"
+                "commit_hash": "f185f2f918e94085befa6dc3dd60e11b7d269cd2",
+                "commit_message": "feat: Add support for subfolder-based reverse proxy configurations. (#339)\n\nCo-authored-by: Karan Hudia <karanhudia@gmail.com>"
             }
         ]
     },
@@ -902,8 +902,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "bf6cda2520bd40ac241977b7c1643c0997e97964",
-                "commit_message": "Move slskd/lastfm config to database with dynamic provider loading\n"
+                "commit_hash": "449fab8902fb701598a157eaed4e6b8279ac82c8",
+                "commit_message": "Multi-user discovery with recommendation engine, ListenBrainz and Navidrome integration\n"
             }
         ]
     },
@@ -1037,13 +1037,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "11cba21aad1f3ab8a6452b62302c00afb25f0c8e",
-                "commit_message": "feat: add configurable folder template for downloads\n"
+                "commit_hash": "0e0e5a272379f6cd20ad0edd98dec30c189aeea6",
+                "commit_message": "review fix: section \"docker-compose.yml: env var won't be read\"\n"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "11cba21aad1f3ab8a6452b62302c00afb25f0c8e",
-                "commit_message": "feat: add configurable folder template for downloads\n"
+                "commit_hash": "c7314d162240d010440183aa8ae30722b2a58ed2",
+                "commit_message": "misc: update docker files to support yandex music\n"
             }
         ]
     },
