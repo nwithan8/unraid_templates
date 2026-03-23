@@ -524,8 +524,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "33a9ee7118f585389d6d90af400c23f56f75e336",
-                "commit_message": "lint & format\n"
+                "commit_hash": "7aa71ca0f369acd83efe5c3ede937f2ae4aa7f67",
+                "commit_message": "Better-Auth upgrade & TOTP fixes\n"
             }
         ]
     },
