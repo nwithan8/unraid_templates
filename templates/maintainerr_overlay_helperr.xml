@@ -17,7 +17,7 @@
     <Beta>False</Beta>
     <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>netflix plex maintainerr image poster overlay notification media</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/gssariev/maintainerr-overlay-helperr/refs/heads/dev/logo.png</Icon>
+    <Icon>https://raw.githubusercontent.com/gssariev/maintainerr-overlay-helperr/refs/heads/main/img/logo.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/maintainerr_overlay_helperr.xml</TemplateURL>
     <Screenshot>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/maintainerr-overlay-helperr_demo_1.png</Screenshot>
     <Maintainer>
@@ -96,6 +96,7 @@
     <Config Name="Internal Image Save Path" Target="IMAGE_SAVE_PATH" Default="/images" Description="Internal path to save images. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/images</Config>
     <Config Name="Internal Original Image Save Path" Target="ORIGINAL_IMAGE_PATH" Default="/images/originals" Description="Internal path to save original images. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/images/originals</Config>
     <Config Name="Internal Temporary Image Save Path" Target="TEMP_IMAGE_PATH" Default="/images/temp" Description="Internal path to save temporary images. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/images/temp</Config>
+    <Config Name="Internal Font Path" Target="FONT_PATH" Default="/fonts/font.ttf" Description="Internal path to saved font file. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/fonts/font.ttf</Config>
     <Config Name="PUID" Target="PUID" Default="99" Description="User ID for the container (Default 99 for 'nobody')" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="Group ID for the container (Default 100 for 'users')" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
     <Config Name="UMASK" Target="UMASK" Default="022" Description="UMASK for file permissions" Type="Variable" Display="advanced-hide" Required="true" Mask="false">022</Config>
