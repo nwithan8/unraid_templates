@@ -27,6 +27,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-03-24
+
+        Add environmental variables
+
         ### 2025-08-29
 
         Initial release
@@ -35,4 +39,7 @@
         Requires separate SparkyFitness - Backend and Postgres containers.
     </Requires>
     <Config Name="Web UI Port" Target="80" Default="3004" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">3004</Config>
+    <Config Name="Frontend URL" Target="SPARKY_FITNESS_FRONTEND_URL" Default="http://IP_ADDRESS:3004" Description="URL where the frontend is accessible (e.g., http://IP_ADDRESS:3004)" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:3004</Config>
+    <Config Name="Backend Host" Target="SPARKY_FITNESS_SERVER_HOST" Default="" Description="Host of backend." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Backend Port" Target="SPARKY_FITNESS_SERVER_PORT" Default="" Description="3004" Type="Variable" Display="always-hide" Required="true" Mask="false">3004</Config>
 </Container>
