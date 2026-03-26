@@ -1037,8 +1037,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "0e0e5a272379f6cd20ad0edd98dec30c189aeea6",
-                "commit_message": "review fix: section \"docker-compose.yml: env var won't be read\"\n"
+                "commit_hash": "1538e959694d2b95b9485d6029ad92f8871a16e9",
+                "commit_message": "fix(docker): fix folder template variable\n"
             },
             {
                 "file_path": ".env.example",
