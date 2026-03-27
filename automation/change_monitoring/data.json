@@ -984,13 +984,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "6ed4c2e7f8e45483d07e72aa472f47436234013b",
-                "commit_message": "Add YouTube cookies support for bypassing bot detection\n\n- Add YOUTUBE_COOKIES_PATH configuration option\n- Implement cookie support in all yt-dlp operations\n- Add Docker volume mount example for cookies file\n- Update documentation with cookie setup instructions\n- Add troubleshooting section for YouTube bot detection errors\n\nFixes 'Sign in to confirm you're not a bot' errors by allowing\nusers to provide YouTube cookies in Netscape format.\n"
+                "commit_hash": "9fefcefd494f93d122d5ece5e4c7276242674d85",
+                "commit_message": "Add Deezer + Spotify as choosable metadata catalogs\n\n- Deezer public API as default (no API key); optional Spotify with credentials\n- UI Catalog selector with localStorage; DEFAULT_METADATA_PROVIDER in .env\n- GET /api/metadata/providers; provider on search, download, album, reverse flows\n- Remove MusicBrainz; rebrand container/service to musikat where applicable\n- Docs and env.example updated\n\nMade-with: Cursor\n"
             },
             {
                 "file_path": "backend/env.example",
-                "commit_hash": "6ed4c2e7f8e45483d07e72aa472f47436234013b",
-                "commit_message": "Add YouTube cookies support for bypassing bot detection\n\n- Add YOUTUBE_COOKIES_PATH configuration option\n- Implement cookie support in all yt-dlp operations\n- Add Docker volume mount example for cookies file\n- Update documentation with cookie setup instructions\n- Add troubleshooting section for YouTube bot detection errors\n\nFixes 'Sign in to confirm you're not a bot' errors by allowing\nusers to provide YouTube cookies in Netscape format.\n"
+                "commit_hash": "ec7cc07aa1777a8e47e3b06d85a0d51c3870c132",
+                "commit_message": "feat: Navidrome folder sync to DB; scope downloaded checks by target\n\n- Periodic scan of NAVIDROME_MUSIC_PATH (tags + Deezer/Spotify match) \u2192 completed_track_downloads\n- Configurable interval/delay; optional NAVIDROME_SYNC_ENABLED\n- /exists?location= local vs navidrome: local = files on disk only; navidrome = DB + library\n- Stop writing completed_track_downloads on local browser temp cleanup\n- Duplicate guard uses completed DB only for navidrome downloads\n\nMade-with: Cursor\n"
             }
         ]
     },
