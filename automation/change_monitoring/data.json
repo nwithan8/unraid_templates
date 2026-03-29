@@ -519,7 +519,7 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "90f893d89797b63bd81b396b3bf0dad255888e34",
+                "commit_hash": "0cca8ff145be1e1ec0af9fafa3d26e76fe495ea2",
                 "commit_message": "Update docker-compose.prod.yml"
             },
             {
