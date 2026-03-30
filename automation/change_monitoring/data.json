@@ -18,8 +18,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "9e2ceb3c8cb3494e71430a828c65677d834a17be",
-                "commit_message": "Update user management\n"
+                "commit_hash": "2568163cc1aba5d21e7ddae70b89e812f0c40c80",
+                "commit_message": "Add 2fa\n"
             },
             {
                 "file_path": "docker/.env.example",
