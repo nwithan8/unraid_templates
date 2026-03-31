@@ -1306,5 +1306,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "PinePods",
+        "git_url": "https://github.com/madeofpendletonwool/PinePods.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "deployment/docker/compose-files/docker-compose-postgres/docker-compose.yml",
+                "commit_hash": "158075c3484c215a5292a6c9150a266ea8da1746",
+                "commit_message": null
+            }
+        ]
     }
 ]
