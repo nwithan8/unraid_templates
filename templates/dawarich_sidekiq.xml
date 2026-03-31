@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-03-30
+
+        - Add 2FA
+
         ### 2026-02-09
 
         Remove unused environment variables
@@ -82,6 +86,9 @@
     <Config Name="Prometheus Exporter - Enable" Target="PROMETHEUS_EXPORTER_ENABLED" Default="false|true" Description="Enable the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Prometheus Exporter - Host" Target="PROMETHEUS_EXPORTER_HOST" Default="0.0.0.0" Description="Host of the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false">0.0.0.0</Config>
     <Config Name="Prometheus Exporter - Port" Target="PROMETHEUS_EXPORTER_PORT" Default="3001" Description="Port of the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false">9394</Config>
+    <Config Name="2FA - OTP Encryption Primary Key" Target="OTP_ENCRYPTION_PRIMARY_KEY" Default="" Description="Required to enable 2FA." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="2FA - OTP Encryption Deterministic Key" Target="OTP_ENCRYPTION_DETERMINISTIC_KEY" Default="" Description="Required to enable 2FA." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="2FA - OTP Encryption Key Derivation Salt" Target="OTP_ENCRYPTION_KEY_DERIVATION_SALT" Default="" Description="Required to enable 2FA." Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Enable Telemetry" Target="ENABLE_TELEMETRY" Default="false|true" Description="Enable telemetry" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Web Files Path" Target="/var/app/public" Default="/mnt/user/appdata/dawarich/wwwroot" Description="Path to web files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/dawarich/wwwroot</Config>
     <Config Name="Rails Environment" Target="RAILS_ENV" Default="development" Description="Rails environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">development</Config>

@@ -29,6 +29,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-03-30
+
+        - Add 2FA
+
         ### 2025-12-03
 
         - Document additional optional environment variables (e.g. OIDC support)
@@ -105,6 +109,9 @@
     <Config Name="Photon API - Host" Target="PHOTON_API_HOST" Default="photon.komoot.io" Description="Host of the Photon API" Type="Variable" Display="always-hide" Required="false" Mask="false">photon.komoot.io</Config>
     <Config Name="Photon API - Use HTTPS" Target="PHOTON_API_USE_HTTPS" Default="true|false" Description="Use HTTPS for the Photon API" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="Prometheus Exporter - Enable" Target="PROMETHEUS_EXPORTER_ENABLED" Default="false|true" Description="Enable the Prometheus exporter" Type="Variable" Display="always-hide" Required="true" Mask="false">false</Config>
+    <Config Name="2FA - OTP Encryption Primary Key" Target="OTP_ENCRYPTION_PRIMARY_KEY" Default="" Description="Required to enable 2FA." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="2FA - OTP Encryption Deterministic Key" Target="OTP_ENCRYPTION_DETERMINISTIC_KEY" Default="" Description="Required to enable 2FA." Type="Variable" Display="always" Required="false" Mask="true"/>
+    <Config Name="2FA - OTP Encryption Key Derivation Salt" Target="OTP_ENCRYPTION_KEY_DERIVATION_SALT" Default="" Description="Required to enable 2FA." Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Prometheus Exporter - Port" Target="9394" Default="9394" Mode="tcp" Description="Container Port: 9394 (optional, for Prometheus monitoring)" Type="Port" Display="always-hide" Required="false" Mask="false">9394</Config>
     <Config Name="Enable Telemetry" Target="ENABLE_TELEMETRY" Default="false|true" Description="Enable telemetry" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
     <Config Name="Rails Environment" Target="RAILS_ENV" Default="production" Description="Rails environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
