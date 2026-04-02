@@ -989,8 +989,8 @@
             },
             {
                 "file_path": "backend/env.example",
-                "commit_hash": "ec7cc07aa1777a8e47e3b06d85a0d51c3870c132",
-                "commit_message": "feat: Navidrome folder sync to DB; scope downloaded checks by target\n\n- Periodic scan of NAVIDROME_MUSIC_PATH (tags + Deezer/Spotify match) \u2192 completed_track_downloads\n- Configurable interval/delay; optional NAVIDROME_SYNC_ENABLED\n- /exists?location= local vs navidrome: local = files on disk only; navidrome = DB + library\n- Stop writing completed_track_downloads on local browser temp cleanup\n- Duplicate guard uses completed DB only for navidrome downloads\n\nMade-with: Cursor\n"
+                "commit_hash": "8f5497472f8dbc0c9bc29b6500ff97f559a2c0a9",
+                "commit_message": "docs: refresh README; UI: Settings tab for catalog and download options\n\n- Rewrite README for multi-library Navidrome, env vars, and API summary\n- Document NAVIDROME_MUSIC_PATHS in env.example\n- Move catalog, download target, format/quality, auto-retry to Settings tab\n- Add tab styles and setupMainTabs(); keep download queue visible on both tabs\n\nMade-with: Cursor\n"
             }
         ]
     },
@@ -1242,8 +1242,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "181e499edd23380a1d66beaea21a0b81ef839610",
-                "commit_message": null
+                "commit_hash": "f34a319afc2f5e406f57f32fd6278c7d72a114f3",
+                "commit_message": "merge next branch into main (#851)"
             }
         ]
     },
