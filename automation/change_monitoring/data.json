@@ -194,8 +194,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "438e37edcf40d8dafe53560834581abd15504b96",
-                "commit_message": "fix: Server start commands for Docker. (#3160)\n\nWith the new atuin-server binary the startup command for the server is\nnow just start rather than server start. This needs reflected in the\ndocker compose and k8s configs.\n\nCloses #3159\n\n## Checks\n- [x] I am happy for maintainers to push small adjustments to this PR,\nto speed up the review cycle\n- [x] I have checked that there are no existing pull requests for the\nsame thing"
+                "commit_hash": "b7ea01b9d990dbc6f3f0fd30246b621943f8b298",
+                "commit_message": "docs: remove docker-compose duplication (#3376)\n\nIt does not make sense to have two copies of it to keep in sync\n\nThe user needs to read and edit this file anyway, so prefer keeping the\ndocs copy\n\nresolves #3371 \n\n## Checks\n- [ ] I am happy for maintainers to push small adjustments to this PR,\nto speed up the review cycle\n- [ ] I have checked that there are no existing pull requests for the\nsame thing"
             }
         ]
     },
