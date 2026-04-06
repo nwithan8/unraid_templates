@@ -1196,8 +1196,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "724b3e14e5c67bd7eb07799075420b10e331f6cd",
-                "commit_message": "ci: fix docker compose and docs (#634)\n\n* ci: fix docker compose and docs\n\n* docker: address review comments"
+                "commit_hash": "de1ccc5a2e41b734f02994f111884f07333c6f03",
+                "commit_message": "release: v0.6.0 \u2014 remove deprecated env var aliases (#704)\n\n* chore: bump version to 0.6.0 and remove deprecated env var aliases\n\nBREAKING CHANGES:\n- POTATOMESH_INSTANCE removed \u2014 use INSTANCE_DOMAIN\n- PROVIDER removed \u2014 use PROTOCOL\n- MESH_SERIAL removed \u2014 use CONNECTION\n- PORT config alias removed \u2014 use CONNECTION\n\nThe _ConfigModule proxy class (which kept PROTOCOL/PROVIDER and\nCONNECTION/PORT in sync) is deleted. docker-compose.yml now defaults\nINSTANCE_DOMAIN to http://web:41447 so deployments without an explicit\nvalue continue to work.\n\n* tests: run black\n\n* address review comments"
             },
             {
                 "file_path": ".env.example",
