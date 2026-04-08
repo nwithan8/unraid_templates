@@ -42,6 +42,7 @@ jobs:
         uses: https://codeberg.org/nwithan8_actions/add-and-commit@v9
         with:
           add: 'automation/change_monitoring/data.json'
-          default_author: actions
+          author_name: Forgejo Actions
+          author_email: actions@actions.git.nateharr.is
           message: "App Check Completed (Changed:  ${{ steps.load_changed_apps.outputs.changed_apps }}) [skip actions]" # https://github.blog/changelog/2021-02-08-github-actions-skip-pull-request-and-push-workflows-with-skip-ci/
           push: '--force'
