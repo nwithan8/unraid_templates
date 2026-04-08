@@ -39,7 +39,7 @@ jobs:
           echo "changed_apps=$(cat automation/change_monitoring/changed_apps.txt | tr '\n' ',')" >> "$FORGEJO_OUTPUT"
 
       - name: Commit new app data JSON file
-        uses: https://git.nateharr.is/actions/add-and-commit@v9
+        uses: https://codeberg.org/nwithan8_actions/add-and-commit@v9
         with:
           add: 'automation/change_monitoring/data.json'
           default_author: actions
