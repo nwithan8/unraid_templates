@@ -1,0 +1,47 @@
+name: Check Apps For Potential Changes
+
+on:
+  schedule:
+    - cron: "0 8 * * *" # UTC
+  workflow_dispatch: ~
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PRIVILEGED_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.12
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r automation/change_monitoring/requirements.txt
+
+      - name: Run Python script to check for app git updates
+        run: python automation/change_monitoring/check_git_changes.py 
+          --data_file automation/change_monitoring/data.json
+          --ntfy-url ${{ secrets.NTFY_URL }}
+          --ntfy-topic ${{ secrets.NTFY_TOPIC }}
+          --ntfy-token ${{ secrets.NTFY_TOKEN }}
+          --repo-url ${{ secrets.REPO_URL }}
+          --tracker-file automation/change_monitoring/changed_apps.txt
+
+      - name: Load changed app names
+        id: load_changed_apps
+        run: |
+          echo "changed_apps=$(cat automation/change_monitoring/changed_apps.txt | tr '\n' ',')" >> "$FORGEJO_OUTPUT"
+
+      - name: Commit new app data JSON file
+        uses: https://git.nateharr.is/actions/add-and-commit@v9
+        with:
+          add: 'automation/change_monitoring/data.json'
+          default_author: actions
+          message: "App Check Completed (Changed:  ${{ steps.load_changed_apps.outputs.changed_apps }}) [skip actions]" # https://github.blog/changelog/2021-02-08-github-actions-skip-pull-request-and-push-workflows-with-skip-ci/
+          push: '--force'
