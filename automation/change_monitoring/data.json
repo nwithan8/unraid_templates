@@ -854,8 +854,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/getting-started/docker.mdx",
-                "commit_hash": "40e02bba6ad1d5071041c07599d292e0de390df2",
-                "commit_message": "docs(docker): replace backslashes by backticks in windows docker run commands [skip-ci] (#2557)"
+                "commit_hash": "86acc41fa5414c7e2d7e91d888a03017f59e1d2d",
+                "commit_message": "fix(helm): healthcheck endpoint to avoid github rate limit (#2837)\n\nSigned-off-by: Ludovic Ortega <ludovic.ortega@adminafk.fr>"
             }
         ]
     },
@@ -890,8 +890,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f185f2f918e94085befa6dc3dd60e11b7d269cd2",
-                "commit_message": "feat: Add support for subfolder-based reverse proxy configurations. (#339)\n\nCo-authored-by: Karan Hudia <karanhudia@gmail.com>"
+                "commit_hash": "49f024a1f9898cca8b05dc766fcd5e1cb1a5b116",
+                "commit_message": "refactor(licensing): remove shared secret config\n"
             }
         ]
     },
