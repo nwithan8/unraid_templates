@@ -12,11 +12,11 @@
     <Support>https://github.com/l5yth/potato-mesh/issues</Support>
     <Project>https://potatomesh.net/</Project>
     <Overview>
-        A federated, Meshtastic-powered node dashboard for your local community. This is the web container that displays data from ingested Meshtastic nodes.
+        A federated, Meshtastic-powered node dashboard for your local community. This is the web container that displays data from ingested Meshtastic and MeshCore nodes.
     </Overview>
     <Beta>False</Beta>
     <Category>Productivity: Tools: Other: Status:Stable</Category>
-    <ExtraSearchTerms>mesh meshtastic data node ingestor web potato</ExtraSearchTerms>
+    <ExtraSearchTerms>mesh meshtastic data node ingestor web potato meshcore</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/potatomesh-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/potato_mesh_web_arm64.xml</TemplateURL>
     <Screenshot>https://raw.githubusercontent.com/l5yth/potato-mesh/main/scrot-0.4.png</Screenshot>
@@ -45,5 +45,6 @@
     <Config Name="Data Storage" Target="/app/.local/share/potato-mesh" Default="/mnt/user/appdata/potato-mesh-web/data" Description="Path to store application data." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/potato-mesh-web/data</Config>
     <Config Name="Config Storage" Target="/app/.config/potato-mesh" Default="/mnt/user/appdata/potato-mesh-web/config" Description="Path to store configuration data." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/potato-mesh-web/config</Config>
     <Config Name="Logs Storage" Target="/app/logs" Default="/mnt/user/appdata/potato-mesh-web/logs" Description="Path to store log files." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/potato-mesh-web/logs</Config>
+    <Config Name="Pages Storage" Target="/app/pages" Default="/mnt/user/appdata/potato-mesh-web/pages" Description="Path to store pages." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/potato-mesh-web/pages</Config>
     <Config Name="Debugging" Target="DEBUG" Default="0|1" Description="Enable or disable debugging." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
