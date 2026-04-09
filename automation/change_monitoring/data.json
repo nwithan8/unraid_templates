@@ -193,7 +193,7 @@
         "branch_override": null,
         "files_to_check": [
             {
-                "file_path": "docker-compose.yml",
+                "file_path": "docs/docs/self-hosting/docker.md",
                 "commit_hash": "b7ea01b9d990dbc6f3f0fd30246b621943f8b298",
                 "commit_message": "docs: remove docker-compose duplication (#3376)\n\nIt does not make sense to have two copies of it to keep in sync\n\nThe user needs to read and edit this file anyway, so prefer keeping the\ndocs copy\n\nresolves #3371 \n\n## Checks\n- [ ] I am happy for maintainers to push small adjustments to this PR,\nto speed up the review cycle\n- [ ] I have checked that there are no existing pull requests for the\nsame thing"
             }
