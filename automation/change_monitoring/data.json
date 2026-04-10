@@ -1330,5 +1330,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "TinyAuth - Docs",
+        "git_url": "https://github.com/steveiliop56/tinyauth-docs.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "src/content/docs/docs/getting-started.mdx",
+                "commit_hash": "306b55b9c5fc8cbce5c51d662b1bce812a04fd78",
+                "commit_message": null
+            }
+        ]
     }
 ]
