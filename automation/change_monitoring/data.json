@@ -548,8 +548,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "8887a1b2bedb46caf2856fae2a779adfd121cce7",
-                "commit_message": "Make config.ini read-only in docker-compose\n"
+                "commit_hash": "d8be2fdc2d6e6a1616836ff60fec4530d5749b6a",
+                "commit_message": "fix: mount config.ini as read-write in docker-compose\n"
             }
         ]
     },
@@ -890,8 +890,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "49f024a1f9898cca8b05dc766fcd5e1cb1a5b116",
-                "commit_message": "refactor(licensing): remove shared secret config\n"
+                "commit_hash": "3a17f3257ac72ace116fc9a6940c419384893596",
+                "commit_message": "Harden startup licensing sync defaults\n"
             }
         ]
     },
@@ -1196,13 +1196,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "de1ccc5a2e41b734f02994f111884f07333c6f03",
-                "commit_message": "release: v0.6.0 \u2014 remove deprecated env var aliases (#704)\n\n* chore: bump version to 0.6.0 and remove deprecated env var aliases\n\nBREAKING CHANGES:\n- POTATOMESH_INSTANCE removed \u2014 use INSTANCE_DOMAIN\n- PROVIDER removed \u2014 use PROTOCOL\n- MESH_SERIAL removed \u2014 use CONNECTION\n- PORT config alias removed \u2014 use CONNECTION\n\nThe _ConfigModule proxy class (which kept PROTOCOL/PROVIDER and\nCONNECTION/PORT in sync) is deleted. docker-compose.yml now defaults\nINSTANCE_DOMAIN to http://web:41447 so deployments without an explicit\nvalue continue to work.\n\n* tests: run black\n\n* address review comments"
+                "commit_hash": "81e588e44c58963b1c9723d34646727afa08f1e5",
+                "commit_message": "web: add markdown static pages (#723)\n\n* web: add markdown static pages\n\n* web: add tests and docker\n\n* web: improve wording and configs\n\n* web: add tests\n\n* web: address review comments\n\n* web: address review comments\n\n* Potential fix for pull request finding 'CodeQL / Incomplete multi-character sanitization'\n\nCo-authored-by: Copilot Autofix powered by AI <62310815+github-advanced-security[bot]@users.noreply.github.com>\n\n* web: address review comments\n\n* web: address review comments\n\n---------\n\nCo-authored-by: Copilot Autofix powered by AI <62310815+github-advanced-security[bot]@users.noreply.github.com>"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "2ae1e34d63fc63fb7be2fe7c5a3206a5e3dd08f3",
-                "commit_message": null
+                "commit_hash": "4a6ba38e9443838c151f5a4c62af9de34b6b5cdb",
+                "commit_message": "chore: prepare codebase for breaking release (#718)\n\n* chore: prepare codebase for breaking release\n\n* docker: fix debug flug in prod matrix bridge"
             }
         ]
     },
