@@ -1266,8 +1266,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "a0e3c89b3700ae1f005872d1d22734b9e456d515",
-                "commit_message": null
+                "commit_hash": "e52414a19607896ae657f9120e353f8c1e17f9fb",
+                "commit_message": "Improved language handling\n"
             }
         ]
     },
