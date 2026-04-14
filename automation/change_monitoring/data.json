@@ -495,8 +495,8 @@
         "files_to_check": [
             {
                 "file_path": "auth-portal-full-stack-dev_docker-compose.yml",
-                "commit_hash": "16e803372517e1f87465b449185a4fa45fc100d3",
-                "commit_message": "feat(release): cut v2.0.4 with modular admin UX, portal styling simplification, and hardened runtime base\n"
+                "commit_hash": "9706d8f7d3ac426fed2fbd2ca812ec88e34a4d82",
+                "commit_message": "docs: update release documentation and examples for v2.0.5\n"
             }
         ]
     },
@@ -743,8 +743,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/DOCKER.md",
-                "commit_hash": "956bebccf87b388d232da4d30df7ccc9f47afdb9",
-                "commit_message": "docs: add ARM architecture guidance for manual docker compose users\n"
+                "commit_hash": "1d5177273b3d6f789d6e9777d15b846df0b44778",
+                "commit_message": "docs: refine project guidelines and dev workflow documentation\n\n- Rewrite CLAUDE.md to add Scope Discipline, Security, and Documentation Sync sections; tighten code standards and redirect architecture details to reference docs\n- Document backend hot reload via `node --watch` and the Vite dev server HMR workflow in DEVELOPMENT.md; replace `console.log` examples with Pino logger usage\n- Add Compose file comparison table to DOCKER.md and call out the auto-created `./migrations` directory pitfall that can break database bootstrap\n- Restructure DOCKER.md permission/UID section to recommend non-root setup with the correct `.env` + chown ordering, and add bundled-database directory setup notes\n- Clarify in CONFIG.md that `YOUTUBE_OUTPUT_DIR` is env-only (not stored in config.json) and note the legacy migration path\n- Correct DB_PORT default documentation in ENVIRONMENT_VARIABLES.md (3321 for the bundled container, 3306 for external databases)\n- Move the misplaced \"Disable Auth\" section to its correct position in AUTHENTICATION.md\n- Add the `ApiKeys` table to the schema reference in DATABASE.md\n- Update the port-mapping comment in docker-compose.dev.yml to describe the Vite proxy target\n"
             },
             {
                 "file_path": "env.example",
@@ -854,8 +854,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/getting-started/docker.mdx",
-                "commit_hash": "86acc41fa5414c7e2d7e91d888a03017f59e1d2d",
-                "commit_message": "fix(helm): healthcheck endpoint to avoid github rate limit (#2837)\n\nSigned-off-by: Ludovic Ortega <ludovic.ortega@adminafk.fr>"
+                "commit_hash": "a1339307e18647c936e8eccbb2f6c842f771e7ed",
+                "commit_message": "docs: Clarify Docker volume creation instructions on fresh Windows install (#2861)\n\nCo-authored-by: fallenbagel <98979876+fallenbagel@users.noreply.github.com>"
             }
         ]
     },
@@ -1242,8 +1242,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f34a319afc2f5e406f57f32fd6278c7d72a114f3",
-                "commit_message": "merge next branch into main (#851)"
+                "commit_hash": "e9e09ff98e3551e01761c30a7d7db4ba3005cd7f",
+                "commit_message": "Places queue stays at 1 (#891)"
             }
         ]
     },
@@ -1266,8 +1266,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "a0e3c89b3700ae1f005872d1d22734b9e456d515",
-                "commit_message": null
+                "commit_hash": "e52414a19607896ae657f9120e353f8c1e17f9fb",
+                "commit_message": "Improved language handling\n"
             }
         ]
     },
