@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Knot</Name>
+    <Repository>tngl/knot:latest</Repository>
+    <Registry>https://hub.docker.com/r/tngl/knot</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5555]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://tangled.org/tangled.org/knot-docker/issues</Support>
+    <Project>https://tangled.org/</Project>
+    <Overview>
+        The next-generation social coding platform, built on the AT Protocol.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>tangled git repository activitypub at protocol bluesky decentralized node</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/knot-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/knot.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-04-14
+
+        Initial release
+    </Changes>
+    <Requires>
+        May require a reverse proxy to the web UI.
+    </Requires>
+    <Config Name="Web UI Port" Target="5555" Default="5555" Mode="tcp" Description="Container Port: 5555" Type="Port" Display="always-hide" Required="true" Mask="false">5555</Config>
+    <Config Name="SSH Port" Target="22" Default="2222" Description="Container Port: 22" Type="Port" Display="always-hide" Required="true" Mask="false">2222</Config>
+    <Config Name="Server Hostname" Target="KNOT_SERVER_HOSTNAME" Default="" Description="Hostname/domain for instance (e.g. knot.example.com)" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Server Owner" Target="KNOT_SERVER_OWNER" Default="did:plc:yourdidgoeshere" Description="Owner string" Type="Variable" Display="always-hide" Required="true" Mask="false">did:plc:yourdidgoeshere</Config>
+    <Config Name="Keys Path" Target="/etc/ssh/keys" Default="/mnt/user/appdata/knot/keys" Description="Path to server keys" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/knot/keys</Config>
+    <Config Name="Repositories Path" Target="/home/git/repositories" Default="/mnt/user/appdata/knot/repositories" Description="Path to repositories" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/knot/repositories</Config>
+    <Config Name="App Data" Target="/app" Default="/mnt/user/appdata/knot/data" Description="Path to app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/knot/data</Config>
+    <Config Name="Internal Database Path" Target="KNOT_SERVER_DB_PATH" Default="/app/knotserver.db" Description="Internal path to database. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app/knotserver.db</Config>
+    <Config Name="Internal Repositories Path" Target="KNOT_REPO_SCAN_PATH" Default="/home/git/repositories" Description="Internal path to repositories. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/home/git/repositories</Config>
+    <Config Name="Internal Listen Address" Target="KNOT_SERVER_INTERNAL_LISTEN_ADDR" Default="localhost:5444" Description="Internal listen address. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost:5444</Config>
+</Container>

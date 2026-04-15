@@ -1342,5 +1342,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Knot",
+        "git_url": "https://tangled.org/tangled.org/knot-docker",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "c0af00f2f0baa65b8e5ce4731213c4085d198b0a",
+                "commit_message": null
+            }
+        ]
     }
 ]
