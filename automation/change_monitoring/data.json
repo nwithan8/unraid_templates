@@ -348,8 +348,8 @@
             },
             {
                 "file_path": ".env.sample",
-                "commit_hash": "e32b82b961a7ee1ddef6bd7053649f8d7500b1e8",
-                "commit_message": "feat(env): updated examples\n"
+                "commit_hash": "3cfe55ea4a6854c502d3505301f9758edb4409a6",
+                "commit_message": "feat(tables): add sortable Checked column and quick-add toggle setting\n"
             }
         ]
     },
@@ -854,8 +854,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/getting-started/docker.mdx",
-                "commit_hash": "a1339307e18647c936e8eccbb2f6c842f771e7ed",
-                "commit_message": "docs: Clarify Docker volume creation instructions on fresh Windows install (#2861)\n\nCo-authored-by: fallenbagel <98979876+fallenbagel@users.noreply.github.com>"
+                "commit_hash": "1cc73a832b458a6153e493658aae07d06089a1e5",
+                "commit_message": "ci(docker): release alias for major and minor version series (#2881)\n\nSigned-off-by: Ludovic Ortega <ludovic.ortega@adminafk.fr>"
             }
         ]
     },
@@ -1155,8 +1155,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/immaculaterr/docker-compose.yml",
-                "commit_hash": "8adcaf1e1296c531645cc330e0a133415e0e4b3f",
-                "commit_message": "feat(auth): enhance security with password proof, throttling, and CSP\n\n- Implement challenge-response password proof (PBKDF2-SHA256) and credential envelopes to avoid sending plaintext passwords.\n- Add rate limiting and CAPTCHA support for authentication endpoints (`login`, `register`, `change-password`).\n- Introduce session expiration and `tokenVersion` for global logout and session invalidation.\n- Implement a strict Content Security Policy (CSP) and additional security headers (HSTS, COOP, CORP).\n- Add support for webhook secret verification via headers or query parameters.\n- Optimize Docker security by dropping `NET_RAW` capabilities and enforcing `no-new-privileges`.\n- Add a script to handle legacy session/auth data migration.\n"
+                "commit_hash": "02d5220c219263480dc3887492f83ba61c49bd71",
+                "commit_message": "feat(docker): add timezone support via TZ environment variable\n\n- Add `TZ` environment variable to all `docker-compose` templates with a default value of `America/New_York`.\n- Update `.env.example` and setup documentation (README, Unraid, TrueNAS) to include `TZ` configuration.\n- Sync UI setup pages for Docker, Unraid, and TrueNAS to include the new `TZ` variable.\n- Update TrueNAS documentation to use `America/New_York` instead of `America/Los_Angeles` for consistency.\n"
             }
         ]
     },
