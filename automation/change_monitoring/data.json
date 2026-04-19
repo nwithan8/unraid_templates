@@ -342,7 +342,7 @@
         "branch_override": null,
         "files_to_check": [
             {
-                "file_path": "compose.yml",
+                "file_path": "compose.yaml",
                 "commit_hash": "e28ad8b32c9df02ff473bf2cb9c9f5f846154438",
                 "commit_message": null
             },
