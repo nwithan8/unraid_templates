@@ -7,7 +7,7 @@
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
     </Branch>
-    <Network>bridge</Network>
+    <Network>host</Network>
     <WebUI>http://[IP]:[PORT:8501]/</WebUI>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
@@ -25,6 +25,11 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-04-19
+
+        - Move to host network
+        - Update paths
+
         ### 2026-01-22
 
         Initial release
@@ -32,14 +37,6 @@
     <Requires>
         Requires a separate OpenAI-compatible LLM instance and Redis instance.
     </Requires>
-    <Config Name="Web UI Port" Target="8501" Default="8501" Mode="tcp" Description="Container Port: 8501" Type="Port" Display="always-hide" Required="true" Mask="false">8501</Config>
-    <Config Name="HA Port" Target="8787" Default="8787" Description="" Type="Port" Display="always" Required="false" Mask="false">8787</Config>
-    <Config Name="Auto Port" Target="8788" Default="8788" Description="" Type="Port" Display="always" Required="false" Mask="false">8788</Config>
-    <Config Name="HomeKit Port" Target="8789" Default="8789" Description="" Type="Port" Display="always" Required="false" Mask="false">8789</Config>
-    <Config Name="XBMC Port" Target="8790" Default="8790" Description="" Type="Port" Display="always" Required="false" Mask="false">8790</Config>
-    <Config Name="LLM - Host" Target="LLM_HOST" Default="MY_IP_ADDRESS" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">MY_IP_ADDRESS</Config>
-    <Config Name="LLM - Port" Target="LLM_PORT" Default="11434" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">11434</Config>
-    <Config Name="LLM - Model" Target="LLM_MODEL" Default="" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Redis - Host" Target="REDIS_HOST" Default="MY_IP_ADDRESS" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">MY_IP_ADDRESS</Config>
-    <Config Name="Redis - Port" Target="REDIS_PORT" Default="6379" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="Agent Lab Config" Target="/app/agent_lab" Default="/mnt/user/appdata/tater/agent_lab" Description="Path to the Agent Lab config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/tater/agent_lab</Config>
+    <Config Name="Runtime" Target="/app/.runtime" Default="/mnt/user/appdata/tater/runtime" Description="Path to the runtime data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/tater/runtime</Config>
 </Container>
