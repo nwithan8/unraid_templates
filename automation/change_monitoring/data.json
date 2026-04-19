@@ -348,8 +348,8 @@
             },
             {
                 "file_path": ".env.sample",
-                "commit_hash": "e32b82b961a7ee1ddef6bd7053649f8d7500b1e8",
-                "commit_message": "feat(env): updated examples\n"
+                "commit_hash": "3cfe55ea4a6854c502d3505301f9758edb4409a6",
+                "commit_message": "feat(tables): add sortable Checked column and quick-add toggle setting\n"
             }
         ]
     },
@@ -854,8 +854,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/getting-started/docker.mdx",
-                "commit_hash": "a1339307e18647c936e8eccbb2f6c842f771e7ed",
-                "commit_message": "docs: Clarify Docker volume creation instructions on fresh Windows install (#2861)\n\nCo-authored-by: fallenbagel <98979876+fallenbagel@users.noreply.github.com>"
+                "commit_hash": "1cc73a832b458a6153e493658aae07d06089a1e5",
+                "commit_message": "ci(docker): release alias for major and minor version series (#2881)\n\nSigned-off-by: Ludovic Ortega <ludovic.ortega@adminafk.fr>"
             }
         ]
     },
@@ -926,8 +926,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "232f843c4e7154c88d97bb461d18a95f3d047e59",
-                "commit_message": "v0.43.6-beta: OOM crash fix, adaptive heap cap, memory health endpoint\n\nRoot cause of silent OOM crashes on long-running instances identified and\nfixed at multiple layers. task_queue accumulated 300k+ completed rows with\nno TTL policy, bloating queries and exhausting the Node.js heap.\n\nFixes:\n- Migration 20260309_140000_task_queue_retention.sql: partial cleanup index,\n  seeds task_queue_retention_days=7, one-time batched emergency purge on deploy\n- QueueService._backgroundDrainIfBloated(): startup background drain if >1000\n  stale rows exist (non-blocking, worker starts immediately)\n- scheduler.runTaskQueueCleanup(): daily loop-until-clean job (03:15 + 5min\n  after boot), configurable via TASK_QUEUE_RETENTION_DAYS env var\n- docker-compose.yml + docker-compose.unraid.yml: NODE_OPTIONS heap cap 1536MB,\n  2G memory limit enabled in unraid compose\n- docker-entrypoint.sh: auto-derives --max-old-space-size from cgroup v2/v1\n  memory limit (75% of container limit); WARN logged if no limit detected\n\nAdded:\n- GET /api/system/health/memory: no-auth probe endpoint (pre-authenticateToken),\n  returns heap%, OS RAM%, status ok/warning/critical, HTTP 503 on critical\n- healthCheckService.checkProcessMemory(): process + OS memory stats included\n  in all health service responses under the 'memory' key\n- Startup [WARN] log if no explicit heap cap is configured at boot time\n- docs/issue-286-implementation-plan.md: graph RAG enhancement plan (deferred)\n"
+                "commit_hash": "c64174063161b06ce42b9457911d306b475bd264",
+                "commit_message": "v0.45.4-beta: Classification and Docker hardening\n\nRelease v0.45.4-beta.\n\nNew Features:\n- Add sidecar health alerting and image embedding auth hardening\n- Add smart local Docker pgvector build selection\n\nFixes:\n- Harden classification thresholds, scoring, and routing math\n- Fix read-only pgvector startup behavior in Docker\n\n## Security Checklist Sign-off \u2014 v0.45.4-beta\nDate: 2026-04-18\nReviewer: GitHub Copilot\n\nA. Automated Gates ............. [x] all green\nB. Route Authentication ........ [x] no regressions\nC. Webhook Auth ................ [x] HMAC + constant-time confirmed\nD. HTTP Security Headers ....... [x] CSP + CORS verified\nE. Session & Token Security .... [x] httpOnly + CSRF confirmed\nF. Credential Handling ......... [x] no raw key/secret exposure in release changes\nG. Debug Artifacts & Git ....... [x] no tracked .log files; tracked text files reviewed\nH. Error Handling .............. [x] production sanitization confirmed\nI. Input Validation ............ [x] existing validation posture preserved for release scope\nJ. Container & Runtime ......... [x] non-root/design decision current\nK. Dependencies ................ [x] 0 critical/high locally; OSV tag run pending post-push\nL. Secret Scanning ............. [x] gitleaks workflow present; tag run pending post-push\nM. Password Storage ............ [x] bcrypt \u226512; no password in response path reviewed\nN. Rate Limiting ............... [x] auth endpoints rate-limited\n\nNotes / exceptions:\n- OSV, Gitleaks, and tag-scoped GitHub workflow verification require the pushed tag and will be completed after push.\n"
             }
         ]
     },
@@ -1155,8 +1155,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/immaculaterr/docker-compose.yml",
-                "commit_hash": "8adcaf1e1296c531645cc330e0a133415e0e4b3f",
-                "commit_message": "feat(auth): enhance security with password proof, throttling, and CSP\n\n- Implement challenge-response password proof (PBKDF2-SHA256) and credential envelopes to avoid sending plaintext passwords.\n- Add rate limiting and CAPTCHA support for authentication endpoints (`login`, `register`, `change-password`).\n- Introduce session expiration and `tokenVersion` for global logout and session invalidation.\n- Implement a strict Content Security Policy (CSP) and additional security headers (HSTS, COOP, CORP).\n- Add support for webhook secret verification via headers or query parameters.\n- Optimize Docker security by dropping `NET_RAW` capabilities and enforcing `no-new-privileges`.\n- Add a script to handle legacy session/auth data migration.\n"
+                "commit_hash": "02d5220c219263480dc3887492f83ba61c49bd71",
+                "commit_message": "feat(docker): add timezone support via TZ environment variable\n\n- Add `TZ` environment variable to all `docker-compose` templates with a default value of `America/New_York`.\n- Update `.env.example` and setup documentation (README, Unraid, TrueNAS) to include `TZ` configuration.\n- Sync UI setup pages for Docker, Unraid, and TrueNAS to include the new `TZ` variable.\n- Update TrueNAS documentation to use `America/New_York` instead of `America/Los_Angeles` for consistency.\n"
             }
         ]
     },
