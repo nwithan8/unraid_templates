@@ -343,8 +343,8 @@
         "files_to_check": [
             {
                 "file_path": "compose.yaml",
-                "commit_hash": "e28ad8b32c9df02ff473bf2cb9c9f5f846154438",
-                "commit_message": null
+                "commit_hash": "2536cbe17053f438b21a7380cfff0864b469680b",
+                "commit_message": "fix(docker): support non-root users with `user:` (#138)\n"
             },
             {
                 "file_path": ".env.sample",
@@ -572,8 +572,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "400dcf97b160645f186bacfaf9a79df28701a8e9",
-                "commit_message": "2025.11.06\n\n* Correctly label TV placeholder files as `S00E00.Coming.Soon` instead of `S00E00.Trailer`\n* update cleanup logic to detect `S00E00.Coming.Soon` and clean up entire show folder if using `umtk_root_tv`\n* Create metadata files to update TV Show episode name to `Trailer` or `Coming Soon` accordingly\n* append_dates_to_sort_titles (for sorting by expected availability date)\n* Updated readme to default to using umtk roots.\n* Update yt-dlp with the default optional dependency group included\n"
+                "commit_hash": "cb168d6922aeb2d449b950c1f46c7c0a6bfea846",
+                "commit_message": "2026.04.15\n\n- Fix instance_output_mode changes not being saved to config from webUI\n- Run Trending processing only once and iterate over all Arr instances\n- Roots can now be set for each Arr instance\n- Added retries on connection issues\n"
             }
         ]
     },
@@ -1242,8 +1242,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "e9e09ff98e3551e01761c30a7d7db4ba3005cd7f",
-                "commit_message": "Places queue stays at 1 (#891)"
+                "commit_hash": "567c20dcef0278dc9146adbce1ef6db11aafd445",
+                "commit_message": "Update Docker images to use 'latest' tag (#931)"
             }
         ]
     },
