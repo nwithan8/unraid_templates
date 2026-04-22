@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>HubProxy</Name>
+    <Repository>ghcr.io/sky22333/hubproxy:latest</Repository>
+    <Registry>ghcr.io/sky22333/hubproxy</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:5000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/sky22333/hubproxy/issues</Support>
+    <Project>https://github.com/sky22333/hubproxy</Project>
+    <Overview>
+        An proxy for accessing GitHub releases and Docker images.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>proxy network github docker releases container image repository repo registry kubernetes obtainium</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/hubproxy-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/hubproxy.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-04-22
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a config.toml file at the Config File path BEFORE starting the container: https://github.com/sky22333/hubproxy/blob/main/src/config.toml
+    </Requires>
+    <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
+    <Config Name="Config File" Target="/root/config.toml" Default="/mnt/user/appdata/hubproxy/config.toml" Description="Config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/hubproxy/config.toml</Config>
+</Container>

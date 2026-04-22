@@ -1366,5 +1366,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "HubProxy",
+        "git_url": "https://github.com/sky22333/hubproxy.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "42ddfaab9dfe82c1b36fe2aca040bf444e7530fe",
+                "commit_message": null
+            }
+        ]
     }
 ]
