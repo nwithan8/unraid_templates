@@ -14,6 +14,8 @@
     <Project>https://github.com/DialmasterOrg/Youtarr</Project>
     <Overview>
         Youtarr is a self-hosted YouTube downloader that automatically downloads videos from your favorite channels or specific URLs. With optional Plex integration, it can refresh your media library for a seamless, ad-free viewing experience.
+
+        By default the container runs as root. To run as a non-root user (e.g. nobody:users so Plex/Jellyfin can manage the downloaded files), see the Unraid-specific instructions at https://github.com/DialmasterOrg/Youtarr/blob/main/docs/platforms/unraid.md
     </Overview>
     <Beta>False</Beta>
     <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
@@ -24,6 +26,13 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-04-19
+
+        - DB_HOST default cleared; users must supply their MariaDB LAN IP (previously defaulted to 'localhost', which resolves to the container itself on a bridge network)
+        - AUTH_ENABLED dropdown now defaults to 'true' so the Web UI is secure on first Apply
+        - Clarified descriptions for database, auth, output-directory, and log-level fields
+        - Added pointer in Overview to non-root setup instructions for Plex/Jellyfin file-permission compatibility
+
         ### 2025-11-07
 
         Initial release
@@ -33,18 +42,18 @@
     </Requires>
     <Config Name="Web UI Port" Target="3011" Default="3011" Mode="tcp" Description="Container Port: 3011" Type="Port" Display="always-hide" Required="true" Mask="false">3011</Config>
     <Config Name="YouTube Output Directory" Target="/usr/src/app/data" Default="" Description="Path to store downloaded YouTube videos" Type="Path" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="YouTube Output Directory Host" Target="YOUTUBE_OUTPUT_DIR" Default="" Description="Host path to store downloaded YouTube videos. Should match above." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Database - Host" Target="DB_HOST" Default="localhost" Description="Database host address" Type="Variable" Display="always-hide" Required="true" Mask="false">localhost</Config>
-    <Config Name="Database - Port" Target="DB_PORT" Default="3306" Description="Database port number" Type="Variable" Display="always-hide" Required="true" Mask="false">3306</Config>
-    <Config Name="Database - Name" Target="DB_NAME" Default="youtarr" Description="Database name" Type="Variable" Display="always-hide" Required="true" Mask="false">youtarr</Config>
-    <Config Name="Database - User" Target="DB_USER" Default="" Description="Database username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Database - Password" Target="DB_PASSWORD" Default="" Description="Database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Auth - Enabled" Target="AUTH_ENABLED" Default="false|true" Description="Enable or disable authentication for the web interface" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
-    <Config Name="Auth - Username" Target="AUTH_PRESET_USERNAME" Default="" Description="Username for authentication" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
-    <Config Name="Auth - Password" Target="AUTH_PRESET_PASSWORD" Default="" Description="Password for authentication" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
+    <Config Name="YouTube Output Directory Host" Target="YOUTUBE_OUTPUT_DIR" Default="" Description="Host path to your downloaded YouTube videos. Should match the host side of 'YouTube Output Directory' above. Used only to display the path inside the Youtarr web UI." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Host" Target="DB_HOST" Default="" Description="Hostname or IP of your MariaDB server. On Unraid, use your server's LAN IP (e.g. 192.168.1.100). Do NOT use 'localhost' or '127.0.0.1' - those resolve to this container, not your Unraid host." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Port" Target="DB_PORT" Default="3306" Description="Port of your MariaDB server. Standard MariaDB is 3306." Type="Variable" Display="always-hide" Required="true" Mask="false">3306</Config>
+    <Config Name="Database - Name" Target="DB_NAME" Default="youtarr" Description="Name of the database Youtarr should use. Must already exist on your MariaDB server." Type="Variable" Display="always-hide" Required="true" Mask="false">youtarr</Config>
+    <Config Name="Database - User" Target="DB_USER" Default="" Description="MariaDB username with read/write access to the database above." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Password" Target="DB_PASSWORD" Default="" Description="Password for the MariaDB user above." Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Auth - Enabled" Target="AUTH_ENABLED" Default="true|false" Description="Enable the built-in login for Youtarr's web UI. Leave 'true' unless Youtarr is only reachable over LAN/VPN or is behind an authenticating reverse proxy - setting 'false' exposes the full UI with no password." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Auth - Username" Target="AUTH_PRESET_USERNAME" Default="" Description="Strongly recommended on Unraid: set this and Auth - Password together to seed initial login credentials. Without them, Youtarr's first-run setup wizard only accepts connections from 'localhost' on the Unraid host, which is awkward for headless installs. Must be 3-32 characters; if either this or Auth - Password fails validation, both are ignored." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Auth - Password" Target="AUTH_PRESET_PASSWORD" Default="" Description="Initial admin password (8-64 characters). Must be set together with Auth - Username or both are ignored. You can change this later from within the Youtarr UI." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Config Storage" Target="/app/config" Default="/mnt/user/appdata/youtarr/config" Description="Path to store configuration files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/youtarr/config</Config>
     <Config Name="Image Storage" Target="/app/server/images" Default="/mnt/user/appdata/youtarr/images" Description="Path to store images" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/youtarr/images</Config>
     <Config Name="Job Storage" Target="/app/jobs" Default="/mnt/user/appdata/youtarr/jobs" Description="Path to store job files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/youtarr/jobs</Config>
-    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|warn|debug" Description="Set the logging level (debug, info, warn, error)" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Log Level" Target="LOG_LEVEL" Default="info|warn|debug" Description="Logging verbosity. Options: info (default), warn, debug." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="In Docker Container Flag" Target="IN_DOCKER_CONTAINER" Default="1" Description="Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
 </Container>
