@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>PlexMind</Name>
+    <Repository>ghcr.io/finechainesium/plexmind:latest</Repository>
+    <Registry>https://github.com/FineChAInesium/PlexMind/pkgs/container/plexmind</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/FineChAInesium/PlexMind/issues</Support>
+    <Project>https://github.com/FineChAInesium/PlexMind</Project>
+    <Overview>
+        AI-powered Plex recommendations using a fully local LLM (Ollama). Analyzes each user's watch history and generates personalized movie/TV picks — no cloud, no API costs, no data leaving your server.&#xD;&#xA;&#xD;&#xA;Also includes: Whisper ASR subtitle generation, Ollama-powered subtitle translation, and library maintenance tools.&#xD;&#xA;&#xD;&#xA;Requires: Ollama container running with a model pulled (recommended: qwen3.5:9b for 12GB VRAM, gemma3:4b for 8GB).&#xD;&#xA;&#xD;&#xA;Web dashboard at http://[IP]:[PORT:8000]/
+    </Overview>
+    <Category>MediaApp:Other Tools:</Category>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/plexmind.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/FineChAInesium/PlexMind/main/templates/icon.png</Icon>
+    <ExtraParams>--gpus all --group-add 281</ExtraParams>
+    <Description>
+        PlexMind generates personalized Plex recommendations using a local LLM. See the full README at https://github.com/FineChAInesium/PlexMind for setup instructions and configuration options.
+    </Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>8000</HostPort>
+                <ContainerPort>8000</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/plexmind/data</HostDir>
+            <ContainerDir>/app/data</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+        <Volume>
+            <HostDir>/var/run/docker.sock</HostDir>
+            <ContainerDir>/var/run/docker.sock</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+
+    <Environment>
+        <Variable>
+            <Value>http://192.168.1.10:32400</Value>
+            <Name>PLEX_URL</Name>
+            <Mode/>
+            <Description>Your Plex Media Server URL (use LAN IP)</Description>
+        </Variable>
+        <Variable>
+            <Value/>
+            <Name>PLEX_TOKEN</Name>
+            <Mode/>
+            <Description>Your Plex authentication token — find it at plex.tv/claim or in Plex web app preferences URL</Description>
+        </Variable>
+        <Variable>
+            <Value>http://192.168.1.10:11434</Value>
+            <Name>OLLAMA_URL</Name>
+            <Mode/>
+            <Description>Ollama API URL — use LAN IP of the host running Ollama, not localhost</Description>
+        </Variable>
+        <Variable>
+            <Value>qwen3.5:9b</Value>
+            <Name>OLLAMA_MODEL</Name>
+            <Mode/>
+            <Description>Ollama model name (must be pulled first: docker exec ollama ollama pull qwen3.5:9b)</Description>
+        </Variable>
+        <Variable>
+            <Value/>
+            <Name>TMDB_API_KEY</Name>
+            <Mode/>
+            <Description>Optional — enriches recommendations with ratings and posters. Free at themoviedb.org/settings/api</Description>
+        </Variable>
+        <Variable>
+            <Value/>
+            <Name>PLEXMIND_API_KEY</Name>
+            <Mode/>
+            <Description>STRONGLY RECOMMENDED — Protects all API endpoints. Generate a key with: openssl rand -hex 32 and paste it here. If left blank, all endpoints are open to anyone on your network (a WARNING is logged at every startup). If set, add ?api_key=YOUR_KEY to your Plex webhook URL.</Description>
+        </Variable>
+        <Variable>
+            <Value>10</Value>
+            <Name>MAX_RECOMMENDATIONS</Name>
+            <Mode/>
+            <Description>Number of recommendations to generate per user</Description>
+        </Variable>
+        <Variable>
+            <Value>60</Value>
+            <Name>SUPPRESSION_DAYS</Name>
+            <Mode/>
+            <Description>Days before a recommendation can reappear</Description>
+        </Variable>
+        <Variable>
+            <Value>America/New_York</Value>
+            <Name>TZ</Name>
+            <Mode/>
+            <Description>Timezone for the scheduled monthly batch run</Description>
+        </Variable>
+        <Variable>
+            <Value>plexmind-whisper</Value>
+            <Name>WHISPER_CONTAINER_NAME</Name>
+            <Mode/>
+            <Description>Docker container to start before transcription and stop when transcription exits</Description>
+        </Variable>
+        <Variable>
+            <Value>plexmind-ollama</Value>
+            <Name>OLLAMA_CONTAINER_NAME</Name>
+            <Mode/>
+            <Description>Docker container to start before translation and stop when translation exits</Description>
+        </Variable>
+        <Variable>
+            <Value>1</Value>
+            <Name>START_SIDECAR_CONTAINERS</Name>
+            <Mode/>
+            <Description>Set to 1 to start Whisper/Ollama sidecars before script jobs</Description>
+        </Variable>
+        <Variable>
+            <Value>1</Value>
+            <Name>STOP_SIDECAR_CONTAINERS</Name>
+            <Mode/>
+            <Description>Set to 1 to stop Whisper/Ollama sidecars when script jobs exit</Description>
+        </Variable>
+    </Environment>
+</Container>

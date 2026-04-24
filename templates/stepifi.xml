@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Stepifi</Name>
+    <Repository>voron69bit/stepifi:latest</Repository>
+    <Registry>https://hub.docker.com/r/voron69bit/stepifi</Registry>
+    <Network>bridge</Network>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/voron69-bit/Stepifi/issues</Support>
+    <Project>https://github.com/voron69-bit/Stepifi</Project>
+    <Overview>Convert STL and 3MF mesh files to STEP (CAD solid) or STL format. Features output format selection, automatic mesh repair, 3D preview, and BambuStudio 3MF support. Self-hosted web interface with job queue management.</Overview>
+    <Category>Tools: Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:3169]</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/stepifi.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/voron69-bit/Stepifi/main/logo.png</Icon>
+    <Requires>Redis container</Requires>
+    <Config Name="WebUI Port" Target="3169" Default="3169" Mode="tcp" Description="Web interface port" Type="Port" Display="always" Required="true" Mask="false">3169</Config>
+    <Config Name="Uploads Path" Target="/app/uploads" Default="/mnt/user/appdata/stepifi/uploads" Mode="rw" Description="Temporary storage for uploaded files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/stepifi/uploads</Config>
+    <Config Name="Converted Path" Target="/app/converted" Default="/mnt/user/appdata/stepifi/converted" Mode="rw" Description="Storage for converted files (24h retention)" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/stepifi/converted</Config>
+    <Config Name="Redis Host" Target="REDIS_HOST" Default="redis" Mode="" Description="Redis hostname (use 'redis' if using docker-compose with redis service)" Type="Variable" Display="advanced" Required="true" Mask="false">redis</Config>
+    <Config Name="Redis Port" Target="REDIS_PORT" Default="6379" Mode="" Description="Redis port" Type="Variable" Display="advanced" Required="true" Mask="false">6379</Config>
+    <Config Name="File Expiry Hours" Target="FILE_EXPIRY_HOURS" Default="24" Mode="" Description="Hours before converted files are automatically deleted" Type="Variable" Display="advanced" Required="false" Mask="false">24</Config>
+    <Config Name="Max File Size MB" Target="MAX_FILE_SIZE_MB" Default="100" Mode="" Description="Maximum upload file size in MB" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+    <Config Name="Node Environment" Target="NODE_ENV" Default="production" Mode="" Description="Node.js environment (leave as production)" Type="Variable" Display="advanced" Required="true" Mask="false">production</Config>
+</Container>

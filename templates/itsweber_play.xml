@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>itsweber-play</Name>
+    <Repository>ghcr.io/itsweber-official/itsweber-play:main</Repository>
+    <Registry>https://ghcr.io/itsweber-official/itsweber-play</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ITSWEBER-OFFICIAL/itsweber-play/issues</Support>
+    <Project>https://github.com/ITSWEBER-OFFICIAL/itsweber-play</Project>
+    <Overview>Self-hosted video platform</Overview>
+    <Category>MediaApp:Video MediaServer:Video Network:Web</Category>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/itsweber_play.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/ITSWEBER-OFFICIAL/itsweber-play/main/assets/logo/exports/icon-256-transparent.png</Icon>
+    <Config Name="WebUI Port" Target="3000" Default="3000" Mode="tcp" Description="Einziger exponierter Port. Nginx multiplext intern zu Web/API/S3." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Data" Target="/data" Default="/mnt/user/appdata/itsweber-play/data" Mode="rw" Description="Postgres, Redis, MinIO, Logs, Whisper-Modelle — alles unter /data. Regelmäßig sichern." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/itsweber-play/data</Config>
+    <Config Name="Public URL" Target="PUBLIC_URL" Default="https://play.example.com" Mode="" Description="Die externe HTTPS-URL (ohne Trailing-Slash). Wird für Auth-Cookies, OG-Tags und Uploads gebraucht. Muss auf den Reverse-Proxy vor diesem Container zeigen." Type="Variable" Display="always" Required="true" Mask="false">https://play.example.com</Config>
+    <Config Name="Site URL (public)" Target="NEXT_PUBLIC_SITE_URL" Default="https://play.example.com" Mode="" Description="Identisch zu Public URL — landet ins JS-Bundle." Type="Variable" Display="always" Required="true" Mask="false">https://play.example.com</Config>
+    <Config Name="API URL (public)" Target="NEXT_PUBLIC_API_URL" Default="/api" Mode="" Description="Relativ lassen (/api), wenn ein Reverse-Proxy alles auf Port 3000 schickt. Nur ändern bei separatem API-Subdomain." Type="Variable" Display="always" Required="true" Mask="false">/api</Config>
+    <Config Name="S3 URL (public)" Target="NEXT_PUBLIC_S3_PUBLIC_URL" Default="/s3" Mode="" Description="Relativ lassen (/s3). Wird für Thumbnails + HLS-Playlists verwendet." Type="Variable" Display="always" Required="true" Mask="false">/s3</Config>
+    <Config Name="S3 URL (server-side)" Target="S3_PUBLIC_URL" Default="/s3" Mode="" Description="MUSS identisch zu S3 URL (public) sein." Type="Variable" Display="advanced" Required="true" Mask="false">/s3</Config>
+    <Config Name="Auth Secret" Target="AUTH_SECRET" Default="" Mode="" Description="Erzeugen mit: openssl rand -hex 32 — Pflicht, sonst startet Better-Auth nicht." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Postgres Password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Erzeugen mit: openssl rand -hex 24 — wird auch als Part von DATABASE_URL gebraucht." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="MinIO Root Password" Target="MINIO_ROOT_PASSWORD" Default="" Mode="" Description="Erzeugen mit: openssl rand -hex 24 — wird als S3-Secret für die API verwendet." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Initial Admin Email" Target="INITIAL_ADMIN_EMAIL" Default="admin@example.com" Mode="" Description="Der erste User mit dieser Email wird beim Sign-up automatisch auf ADMIN gesetzt." Type="Variable" Display="always" Required="true" Mask="false">admin@example.com</Config>
+    <Config Name="Initial Admin Handle" Target="INITIAL_ADMIN_HANDLE" Default="admin" Mode="" Description="Handle (Benutzername ohne @) des Admin-Accounts." Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
+    <Config Name="Initial Admin Name" Target="INITIAL_ADMIN_NAME" Default="Admin" Mode="" Description="Anzeige-Name des Admin-Accounts." Type="Variable" Display="always" Required="true" Mask="false">Admin</Config>
+    <Config Name="Initial Admin Password" Target="INITIAL_ADMIN_PASSWORD" Default="" Mode="" Description="Starkes Passwort. Kann nach dem ersten Login über den Profil-Reset-Flow geändert werden." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Auth Cookie Domain" Target="AUTH_COOKIE_DOMAIN" Default="" Mode="" Description="Leer lassen für Single-Domain. Für SSO über Subdomains: .deine-domain.tld (mit führendem Punkt)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="App Name" Target="NEXT_PUBLIC_APP_NAME" Default="Play" Mode="" Description="Sichtbarer Name im Header / Meta-Tags. Leer lassen = &quot;Play&quot;." Type="Variable" Display="advanced" Required="false" Mask="false">Play</Config>
+    <Config Name="Vendor Name" Target="NEXT_PUBLIC_VENDOR_NAME" Default="" Mode="" Description="Dein Firmen-/Creator-Name (optional, im Footer). Leer lassen für generisch." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Vendor URL" Target="NEXT_PUBLIC_VENDOR_URL" Default="" Mode="" Description="Link auf deine Firmen-/Creator-Homepage (optional)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Author Name" Target="NEXT_PUBLIC_AUTHOR_NAME" Default="" Mode="" Description="Für HTML-Meta-Tag (optional)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Author URL" Target="NEXT_PUBLIC_AUTHOR_URL" Default="" Mode="" Description="Für HTML-Meta-Tag (optional)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Product Homepage" Target="NEXT_PUBLIC_PRODUCT_HOMEPAGE" Default="" Mode="" Description="Externe Landing-Page (optional)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="NODE_ENV" Target="NODE_ENV" Default="production" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+    <Config Name="Timezone" Target="TZ" Default="Europe/Berlin" Mode="" Description="TZ-Database-Name, z. B. Europe/Berlin, UTC." Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Berlin</Config>
+    <Config Name="Postgres Host" Target="POSTGRES_HOST" Default="127.0.0.1" Mode="" Description="All-in-One: Postgres läuft im selben Container." Type="Variable" Display="advanced-hide" Required="true" Mask="false">127.0.0.1</Config>
+    <Config Name="Postgres Port" Target="POSTGRES_PORT" Default="5432" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">5432</Config>
+    <Config Name="Postgres DB" Target="POSTGRES_DB" Default="itsweber_play" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">itsweber_play</Config>
+    <Config Name="Postgres User" Target="POSTGRES_USER" Default="play" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">play</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="postgresql://play:REPLACE_WITH_POSTGRES_PASSWORD@127.0.0.1:5432/itsweber_play" Mode="" Description="Muss dasselbe Passwort enthalten wie POSTGRES_PASSWORD oben. Bei Änderung beides anpassen." Type="Variable" Display="advanced" Required="true" Mask="true">postgresql://play:REPLACE_WITH_POSTGRES_PASSWORD@127.0.0.1:5432/itsweber_play</Config>
+    <Config Name="Redis Host" Target="REDIS_HOST" Default="127.0.0.1" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">127.0.0.1</Config>
+    <Config Name="Redis Port" Target="REDIS_PORT" Default="6379" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">6379</Config>
+    <Config Name="MinIO Root User" Target="MINIO_ROOT_USER" Default="play-admin" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">play-admin</Config>
+    <Config Name="S3 Endpoint" Target="S3_ENDPOINT" Default="http://127.0.0.1:9000" Mode="" Description="All-in-One: MinIO im selben Container." Type="Variable" Display="advanced-hide" Required="true" Mask="false">http://127.0.0.1:9000</Config>
+    <Config Name="S3 Region" Target="S3_REGION" Default="us-east-1" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">us-east-1</Config>
+    <Config Name="S3 Access Key" Target="S3_ACCESS_KEY" Default="play-admin" Mode="" Description="Identisch zu MinIO Root User." Type="Variable" Display="advanced-hide" Required="true" Mask="false">play-admin</Config>
+    <Config Name="S3 Secret Key" Target="S3_SECRET_KEY" Default="" Mode="" Description="Identisch zu MinIO Root Password (oben)." Type="Variable" Display="advanced" Required="true" Mask="true"/>
+    <Config Name="Bucket Videos" Target="S3_BUCKET_VIDEOS" Default="play-videos" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">play-videos</Config>
+    <Config Name="Bucket Thumbs" Target="S3_BUCKET_THUMBS" Default="play-thumbs" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">play-thumbs</Config>
+    <Config Name="Bucket Raw" Target="S3_BUCKET_RAW" Default="play-raw" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">play-raw</Config>
+    <Config Name="Bucket Assets" Target="S3_BUCKET_ASSETS" Default="play-assets" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">play-assets</Config>
+    <Config Name="Max Upload Size (MB)" Target="MAX_UPLOAD_SIZE_MB" Default="8192" Mode="" Description="Muss ≤ `client_max_body_size` im Reverse-Proxy sein. 8192 = 8 GB." Type="Variable" Display="advanced" Required="false" Mask="false">8192</Config>
+    <Config Name="Transcode Qualities" Target="TRANSCODE_QUALITIES" Default="1080p,720p,480p" Mode="" Description="Komma-getrennt. Weglassen = weniger Qualitätsstufen = schnellerer Transcode." Type="Variable" Display="advanced" Required="false" Mask="false">1080p,720p,480p</Config>
+    <Config Name="Transcode Concurrency" Target="TRANSCODE_CONCURRENCY" Default="2" Mode="" Description="Gleichzeitig verarbeitete Videos. Höher = CPU-intensiver." Type="Variable" Display="advanced" Required="false" Mask="false">2</Config>
+    <Config Name="Import Concurrency" Target="IMPORT_CONCURRENCY" Default="2" Mode="" Description="Gleichzeitige yt-dlp-Imports." Type="Variable" Display="advanced" Required="false" Mask="false">2</Config>
+    <Config Name="Auto-Captions" Target="AUTO_CAPTIONS_ENABLED" Default="0" Mode="" Description="1 = automatische Untertitel via Whisper.cpp generieren. Braucht Whisper-Modell im /data-Volume." Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+    <Config Name="Rate Limit Max" Target="RATE_LIMIT_MAX" Default="120" Mode="" Description="Requests pro Fenster auf sensible Endpoints." Type="Variable" Display="advanced" Required="false" Mask="false">120</Config>
+    <Config Name="Rate Limit Window (ms)" Target="RATE_LIMIT_WINDOW_MS" Default="60000" Mode="" Description="Zeitfenster in Millisekunden. 60000 = 1 Minute." Type="Variable" Display="advanced" Required="false" Mask="false">60000</Config>
+</Container>
