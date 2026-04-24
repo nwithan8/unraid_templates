@@ -524,8 +524,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "7aa71ca0f369acd83efe5c3ede937f2ae4aa7f67",
-                "commit_message": "Better-Auth upgrade & TOTP fixes\n"
+                "commit_hash": "a3af75e506edf69dda9ccd84e02deb064bd0ca0a",
+                "commit_message": "feat(702): support for custom uploads and backup location\n"
             }
         ]
     },
@@ -1338,8 +1338,8 @@
         "files_to_check": [
             {
                 "file_path": "src/content/docs/docs/getting-started.mdx",
-                "commit_hash": "306b55b9c5fc8cbce5c51d662b1bce812a04fd78",
-                "commit_message": null
+                "commit_hash": "6406d1d0f013230289bc71d0d492a5014cd6b257",
+                "commit_message": "feat: add browser tabs for user, totp and oidc gen (#84)\n\n* feat: add browser tabs for user, totp and oidc gen\n\n* fix: local qrcode gen\n\naddresses coderabbit critial finding\n\n* fix: preserve whitespace in username/passowrd\n\n* address remaining coderabbit comments\n\n* update bun lockfile with new packages\n\n* replace ugly double outline\n\n* remaining style/formatting changes"
             }
         ]
     },
