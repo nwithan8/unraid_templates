@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>Tinyauth</Name>
-    <Repository>ghcr.io/steveiliop56/tinyauth:latest</Repository>
-    <Registry>ghcr.io/steveiliop56/tinyauth</Registry>
+    <Repository>ghcr.io/tinyauthapp/tinyauth:latest</Repository>
+    <Registry>ghcr.io/tinyauthapp/tinyauth</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-04-29
+
+        Update Docker image link
+
         ### 2026-04-10
 
         Update environmental variables for v5

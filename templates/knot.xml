@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>Knot</Name>
-    <Repository>tngl/knot:latest</Repository>
-    <Registry>https://hub.docker.com/r/tngl/knot</Registry>
+    <Repository>atcr.io/tangled.org/knot:latest</Repository>
+    <Registry>https://atcr.io/r/tangled.org/knot</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest release</TagDescription>
@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-04-29
+
+        Update Docker image link
+
         ### 2026-04-14
 
         Initial release
