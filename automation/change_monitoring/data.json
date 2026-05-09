@@ -35,8 +35,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/compose/compose.yaml",
-                "commit_hash": "854905563439d4f68d36dcd75b97a70ab3362727",
-                "commit_message": "update docs\n"
+                "commit_hash": "0aea2f74f0bcd2f21764b4102ab85b9f3031ec4f",
+                "commit_message": "docs: restructure config docs for v2, add migration guide and schema page\n"
             }
         ]
     },
@@ -1037,13 +1037,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "99d6992ca3dd8a7ee638ea303cf73f732ca29a07",
-                "commit_message": "fix(squidwtf): switch default registry to tidal-uptime and support object format\n"
+                "commit_hash": "54c3c27c327c385e7d4f69cfe959d13b8be446f8",
+                "commit_message": "feature/add-admin-account-support-for-server-to-server-communication"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "c7314d162240d010440183aa8ae30722b2a58ed2",
-                "commit_message": "misc: update docker files to support yandex music\n"
+                "commit_hash": "28955f7df8c767f2a5f5c0063e9eb9d5fb5c9e7b",
+                "commit_message": "feat: add admin account support for server-to-server actions\n"
             }
         ]
     },
@@ -1155,8 +1155,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/immaculaterr/docker-compose.yml",
-                "commit_hash": "02d5220c219263480dc3887492f83ba61c49bd71",
-                "commit_message": "feat(docker): add timezone support via TZ environment variable\n\n- Add `TZ` environment variable to all `docker-compose` templates with a default value of `America/New_York`.\n- Update `.env.example` and setup documentation (README, Unraid, TrueNAS) to include `TZ` configuration.\n- Sync UI setup pages for Docker, Unraid, and TrueNAS to include the new `TZ` variable.\n- Update TrueNAS documentation to use `America/New_York` instead of `America/Los_Angeles` for consistency.\n"
+                "commit_hash": "78ee1f72be0a0e2ff2661a9fe2781a71dc5bdf87",
+                "commit_message": "feat: add support for hosting under a public base path (`APP_BASE_PATH`)\n\n- **Server-side**: Added `APP_BASE_PATH` support in the NestJS API to handle prefix-hosted deployments (e.g., `/recommendations`). Requests to the prefixed API path are now rewritten to internal API routes.\n- **Frontend**: Updated the React SPA to derive its basename from the document base. Assets now use relative paths, and navigation helpers ensure links and redirects remain within the configured public prefix.\n- **Docker/Deployment**: Updated the entrypoint script to dynamically patch the `index.html` base href based on `APP_BASE_PATH`. Added guidance and configuration examples for reverse-proxy hosting in documentation and compose templates.\n- **UI/UX**: Added a read-only \"Public path\" field to the Profile page and updated the Setup and FAQ pages with subpath hosting instructions.\n- **Version**: Bumped version to `1.7.8-beta-6`.\n"
             }
         ]
     },
@@ -1374,8 +1374,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "42ddfaab9dfe82c1b36fe2aca040bf444e7530fe",
-                "commit_message": null
+                "commit_hash": "d0b3c657ccb345cf77c58670ff30aee78790eb6d",
+                "commit_message": "\u66f4\u65b0\u6784\u5efa\u914d\u7f6e\u5e76\u8865\u5145\u6d4b\u8bd5\n"
             }
         ]
     }
