@@ -41,6 +41,8 @@
     <Config Name="Config Data" Target="/data" Default="/mnt/user/appdata/immaculaterr/config" Description="Path to the config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/immaculaterr/config</Config>
     <Config Name="Update Check" Target="UPDATE_CHECK_ENABLED" Default="true|false" Description="Enable or disable update checks." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
     <Config Name="Update Check Repo" Target="UPDATE_CHECK_REPO" Default="" Description="Repository to check for updates against." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="Trust Proxy" Target="TRUST_PROXY" Default="1|0" Description="Trust proxy" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+    <Config Name="App Base Path" Target="APP_BASE_PATH" Default="" Description="Base path for app behind proxy" Display="advanced" Required="false" Mask="false"/>
     <Config Name="Internal Database Path" Target="DATABASE_URL" Default="file:/data/tcp.sqlite" Description="Internal database path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">file:/data/tcp.sqlite</Config>
     <Config Name="Internal Host" Target="HOST" Default="0.0.0.0" Description="Internal host. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
     <Config Name="Internal Port" Target="PORT" Default="5454" Description="Internal port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">5454</Config>

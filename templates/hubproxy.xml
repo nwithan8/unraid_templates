@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-05-09
+
+        Update internal path for config file
+
         ### 2026-04-22
 
         Initial release
@@ -32,5 +36,5 @@
         Expects a config.toml file at the Config File path BEFORE starting the container: https://github.com/sky22333/hubproxy/blob/main/src/config.toml
     </Requires>
     <Config Name="Web UI Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always-hide" Required="true" Mask="false">5000</Config>
-    <Config Name="Config File" Target="/root/config.toml" Default="/mnt/user/appdata/hubproxy/config.toml" Description="Config file" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/hubproxy/config.toml</Config>
+    <Config Name="Config File" Target="/app/config.toml" Default="/mnt/user/appdata/hubproxy/config.toml" Description="Config file" Type="Path" Mode="ro" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/hubproxy/config.toml</Config>
 </Container>
