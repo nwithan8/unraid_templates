@@ -29,6 +29,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-05-11
+
+        - Remove Prometheus metrics
+
         ### 2026-03-30
 
         - Add 2FA
@@ -119,6 +123,4 @@
     <Config Name="Background Processing Concurrency" Target="BACKGROUND_PROCESSING_CONCURRENCY" Default="10" Description="Number of background processing threads" Type="Variable" Display="advanced-hide" Required="false" Mask="false">10</Config>
     <Config Name="Application Protocol" Target="APPLICATION_PROTOCOL" Default="http" Description="Protocol of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http</Config>
     <Config Name="Is Self-Hosted" Target="SELF_HOSTED" Default="true|false" Description="Is the application self-hosted?" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
-    <Config Name="Prometheus Exporter - Internal Host" Target="PROMETHEUS_EXPORTER_HOST" Default="0.0.0.0" Description="Internal host of the Prometheus exporter. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
-    <Config Name="Prometheus Exporter - Internal Port" Target="PROMETHEUS_EXPORTER_PORT" Default="9394" Description="Internal port of the Prometheus exporter. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">9394</Config>
 </Container>

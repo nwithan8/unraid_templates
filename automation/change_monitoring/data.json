@@ -747,8 +747,8 @@
                 "commit_message": "fix(setup): replace localhost gate with one-time token\n\nThe previous initial-setup flow gated /setup/create-auth on a\nclient-IP allowlist that depends on proxy-header trust and\ncontainer networking. Replace it with a one-time setup token and\ntighten rate-limit keying.\n\n- Generate a 32-byte setup token on first boot, write it to\n  config/setup-token (mode 0600), log it at info until setup\n  completes, and require it on /setup/create-auth with\n  constant-time compare, single-use claim, and consume on\n  success.\n- Add a per-IP rate limiter to /setup/create-auth.\n- Make Express proxy trust explicit via TRUST_PROXY. Until it is\n  set, login, session, setup, and general-API rate limits key on\n  the direct peer IP; the request-level trust-proxy default stays\n  true for compatibility with existing reverse-proxy installs.\n- Add YOUTARR_HOST_PORT so the host port can be changed without\n  editing compose files; start scripts poll /setup/status and\n  surface the matching setup URL with token guidance.\n- Update the frontend wizard to require the token input and drop\n  the localhost-only error view.\n- Update authentication, installation, Docker, env vars,\n  troubleshooting, and platform docs to describe the new flow.\n\nRefs: #431\n"
             },
             {
-                "file_path": "env.example",
-                "commit_hash": "690dba6ac00d200cf68421af947d1ae2fca07788",
+                "file_path": ".env.example",
+                "commit_hash": "4e1b423f0cf988355ab4280ed6eecc4a520a8755",
                 "commit_message": null
             },
             {
