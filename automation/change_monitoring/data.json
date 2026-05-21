@@ -23,8 +23,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "77bb29398e21c97afc2d56b1d1ea7bc47fa1c151",
-                "commit_message": "fix: restore SIDEKIQ_METRICS_URL env var for non-docker-compose deployments\n"
+                "commit_hash": "74ce2e11d70edf89fd70d555beac21f34fc8bcf6",
+                "commit_message": "Decouple email+password login from registration flag\n\nOIDC-only deployments wanted to disable email+password login but keep\nself-registration disabled (or vice versa). The login form was gated by\nthe registration flag, conflating the two.\n\nIntroduce a separate ALLOW_EMAIL_PASSWORD_LOGIN env var (default true),\ngate both the view and the sessions controller's POST blocker on it, and\nstop borrowing the registration flag.\n\nCloses #2495\n"
             }
         ]
     },
@@ -88,8 +88,8 @@
         "files_to_check": [
             {
                 "file_path": "docker/cpu/docker-compose.yml",
-                "commit_hash": "0c50b03ed647188bebf97ce22371536678cb35fe",
-                "commit_message": "build(docker): add multi-stage for ~45% gpu image trim, align gpu base image with cu126 wheels, compose image naming, add INCLUDE_JAPANESE flag for future build opts\n\nbuild(bake): redirected to *.optimized dockerfiles\n\nexamples(transcription tests): long form and multilingual whisper transcription reporsts w/ WER scoring thresholds\n\nchore: release alignment prep, version WIP bumped to 0.3.0-rc\n"
+                "commit_hash": "a10fc75da14ee0a8e5e157ae43249f9ae2561390",
+                "commit_message": "fix(web): firefox/supported playback handling and msging, bmac link, waveform bugfix\n\nci: build caching,\n\nbuild: container naming consistency on local compose\n"
             },
             {
                 "file_path": "docker/gpu/docker-compose.yml",
@@ -519,13 +519,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "0cca8ff145be1e1ec0af9fafa3d26e76fe495ea2",
-                "commit_message": "Update docker-compose.prod.yml"
+                "commit_hash": "18a2ab21e123aa1d4d883be799b583c8c3c14532",
+                "commit_message": "docker compose update for MCP server PROD\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "a3af75e506edf69dda9ccd84e02deb064bd0ca0a",
-                "commit_message": "feat(702): support for custom uploads and backup location\n"
+                "commit_hash": "ca427059e5d5a150b0ae133b5686ada5135015c3",
+                "commit_message": "Implementation of MCP server and related docker file updates\n"
             }
         ]
     },
@@ -1242,8 +1242,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "567c20dcef0278dc9146adbce1ef6db11aafd445",
-                "commit_message": "Update Docker images to use 'latest' tag (#931)"
+                "commit_hash": "e3f800b145058ea6790722c1243ba32ce9cb1245",
+                "commit_message": "921 docker install fails to start after reboot (#979)"
             }
         ]
     },
