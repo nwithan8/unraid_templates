@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Vencloud</Name>
+    <Repository>ghcr.io/vencord/vencloud:latest</Repository>
+    <Registry>ghcr.io/vencord/vencloud</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://vencord.dev/cloud/</Support>
+    <Project>https://vencord.dev/</Project>
+    <Overview>
+        Self-hosted cloud for syncing Vencord settings.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>discord vencord settings cloud sync data private</ExtraSearchTerms>
+    <Icon>https://vencord.dev/assets/logo-nav.avif</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/vencloud.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-05-23
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Redis instance.
+    </Requires>
+    <Config Name="API Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Redis - URI" Target="REDIS_URI" Default="" Description="Connection URL to Redis database" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Discord - Client ID" Target="DISCORD_CLIENT_ID" Default="" Description="Client ID for Discord authentication" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Discord - Client Secret" Target="DISCORD_CLIENT_SECRET" Default="" Description="Client secret for Discord authentication" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Discord - Redirect URI" Target="DISCORD_REDIRECT_URI" Default="" Description="Redirect URI for Discord authentication" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Pepper - Secrets" Target="PEPPER_SECRETS" Default="" Description="Used to generate secret key for each user's API secret. Generate with 'openssl rand -hex 64'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Pepper - Settings" Target="PEPPER_SETTINGS" Default="" Description="Used to generate secret key for each user's settings. Generate with 'openssl rand -hex 64'" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Allowed Users" Target="ALLOWED_USERS" Default="" Description="Comma-separated whitelist for users to use this service. If empty, all users allowed." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Root Redirect" Target="ROOT_REDIRECT" Default="https://github.com/Vencord/Vencloud" Description="URL that the root of the API will redirect to." Type="Variable" Display="advanced-hide" Required="true" Mask="false">https://github.com/Vencord/Vencloud</Config>
+    <Config Name="Expose Prometheus Metrics" Target="PROMETHEUS" Default="false|true" Description="Enable to offer metrics at /metrics" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Proxy Header" Target="PROXY_HEADER" Default="" Description="Leave empty if not using reverse proxy." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Size Limits" Target="SIZE_LIMIT" Default="32000000" Description="The maximum settings backup size, in bytes" Type="Variable" Display="advanced-hide" Required="true" Mask="false">32000000</Config>
+    <Config Name="Internal Host" Target="HOST" Default="0.0.0.0" Description="Internal host. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Internal Port" Target="PORT" Default="8080" Description="Internal port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Internal Data Path" Target="APP_DATA_DIR" Default="/data" Description="Internal data path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data</Config>
+
+</Container>
