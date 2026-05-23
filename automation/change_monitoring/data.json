@@ -23,8 +23,8 @@
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "74ce2e11d70edf89fd70d555beac21f34fc8bcf6",
-                "commit_message": "Decouple email+password login from registration flag\n\nOIDC-only deployments wanted to disable email+password login but keep\nself-registration disabled (or vice versa). The login form was gated by\nthe registration flag, conflating the two.\n\nIntroduce a separate ALLOW_EMAIL_PASSWORD_LOGIN env var (default true),\ngate both the view and the sessions controller's POST blocker on it, and\nstop borrowing the registration flag.\n\nCloses #2495\n"
+                "commit_hash": "2d50f09ad7201d4a4672d9c882a2203b5a2dbe3c",
+                "commit_message": "feat: OIDC PKCE support (#2282)\n\nAdds optional PKCE (S256) for the OIDC authorization code flow. Required\nfor providers that enforce PKCE on confidential clients (Pocket ID with\nPKCE on, hardened Authentik/Keycloak setups).\n\n- New OIDC_PKCE_ENABLED env var (default false) \u2014 preserves existing\n  behavior for providers that don't advertise PKCE.\n- Extract OIDC config building from the Devise initializer into\n  lib/oidc_config.rb so it's testable and the initializer stays small.\n- OidcConfig.build returns a hash including pkce: true/false, used\n  verbatim by omniauth_openid_connect.\n- Log line distinguishes \"PKCE enabled\" / \"PKCE disabled\" at boot for\n  diagnostics.\n- docker/.env.example documents the new var with rationale.\n"
             }
         ]
     },
@@ -88,13 +88,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/cpu/docker-compose.yml",
-                "commit_hash": "a10fc75da14ee0a8e5e157ae43249f9ae2561390",
-                "commit_message": "fix(web): firefox/supported playback handling and msging, bmac link, waveform bugfix\n\nci: build caching,\n\nbuild: container naming consistency on local compose\n"
+                "commit_hash": "0cf239ef55e4040a04bd84a5515ba055017246fd",
+                "commit_message": "fix(docker): compose defaults to idempotent model download; harden download_model scripts, static release artifact link\n"
             },
             {
                 "file_path": "docker/gpu/docker-compose.yml",
-                "commit_hash": "0c50b03ed647188bebf97ce22371536678cb35fe",
-                "commit_message": "build(docker): add multi-stage for ~45% gpu image trim, align gpu base image with cu126 wheels, compose image naming, add INCLUDE_JAPANESE flag for future build opts\n\nbuild(bake): redirected to *.optimized dockerfiles\n\nexamples(transcription tests): long form and multilingual whisper transcription reporsts w/ WER scoring thresholds\n\nchore: release alignment prep, version WIP bumped to 0.3.0-rc\n"
+                "commit_hash": "0cf239ef55e4040a04bd84a5515ba055017246fd",
+                "commit_message": "fix(docker): compose defaults to idempotent model download; harden download_model scripts, static release artifact link\n"
             }
         ]
     },
@@ -890,8 +890,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "3a17f3257ac72ace116fc9a6940c419384893596",
-                "commit_message": "Harden startup licensing sync defaults\n"
+                "commit_hash": "a9e652289f25e28ede461ec0e7be5a8b8d0cc2da",
+                "commit_message": "Document Docker socket proxy hook access\n\n## Description\nDocumented Docker socket proxy support for backup hook scripts. The app already passes `DOCKER_HOST` through to hook execution, so this PR adds the missing operator guidance: direct socket mount versus socket proxy, a commented optional `docker-socket-proxy` Compose service sample, and security notes for keeping port 2375 internal.\n\n## Related Issue\nFixes #77\nRelated Linear ticket: BOR-50\n\n## Type of Change\n- [ ] \ud83d\udc1b Bug fix (non-breaking change which fixes an issue)\n- [ ] \u2728 New feature (non-breaking change which adds functionality)\n- [ ] \ud83d\udca5 Breaking change (fix or feature that would cause existing functionality to not work as expected)\n- [x] \ud83d\udcd6 Documentation update\n- [ ] \ud83c\udfa8 UI/UX improvement\n- [x] \ud83e\uddea Test addition/improvement\n- [ ] \u267b\ufe0f Refactoring\n\n## Testing\n- [x] I have tested this locally\n- [x] I have added tests that prove my fix is effective or that my feature works\n- [x] All existing tests pass\n\nCommands run:\n- `git diff --check`\n- `ruff check app tests`\n- `ruff format --check app tests`\n- `pytest tests/unit/test_docker_socket_proxy_docs.py tests/unit/test_script_executor.py::TestScriptExecutor::test_environment_variables -q`\n- `docker compose config`\n- `docker compose --profile docker-socket-proxy config`\n\n## Checklist\n- [x] I have read the [CONTRIBUTING](CONTRIBUTING.md) guidelines\n- [x] My code follows the style guidelines of this project\n- [x] I have performed a self-review of my own code\n- [x] I have commented my code, particularly in hard-to-understand areas\n- [x] I have made corresponding changes to the documentation\n- [x] My changes generate no new warnings\n- [x] New and existing unit tests pass locally with my changes\n\n## Screenshots (if applicable)\nNot applicable; this is a documentation and Compose configuration change.\n\n## Additional Context\nThe implementation keeps Borg UI application behavior unchanged. The current script executor already inherits the app container environment, which allows hook scripts to use `DOCKER_HOST=tcp://docker-socket-proxy:2375` when operators configure that endpoint. The packaged Compose file keeps the proxy service commented so operators opt in by uncommenting the sample.\n\n---\n\n**Note:** By submitting this pull request, you agree that your contributions will be licensed under the GNU General Public License v3.0, the same license as this project."
             }
         ]
     },
@@ -1314,8 +1314,8 @@
         "files_to_check": [
             {
                 "file_path": "deployment/docker/compose-files/docker-compose-postgres/docker-compose.yml",
-                "commit_hash": "158075c3484c215a5292a6c9150a266ea8da1746",
-                "commit_message": null
+                "commit_hash": "852579e10fe593cfa34a24306f0bf23266e8a6f2",
+                "commit_message": "Pagification to pages. Faster loading\n"
             }
         ]
     },
