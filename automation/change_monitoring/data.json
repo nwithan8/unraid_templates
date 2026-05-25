@@ -93,8 +93,8 @@
             },
             {
                 "file_path": "docker/gpu/docker-compose.yml",
-                "commit_hash": "0cf239ef55e4040a04bd84a5515ba055017246fd",
-                "commit_message": "fix(docker): compose defaults to idempotent model download; harden download_model scripts, static release artifact link\n"
+                "commit_hash": "0d6b4d89193bd18fc2bba47366a77db011143ab8",
+                "commit_message": " fix(docker): aligns cu128 base image with wheel (12.9.1 \u2192 12.8.1), minimum toolkit with Blackwell (sm_120) support (CUDA 12.8)\n\nRelated #306 #320 #389 #443 #365\n"
             }
         ]
     },
