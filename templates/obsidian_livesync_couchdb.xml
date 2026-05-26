@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-05-25
+
+        Add App Data path
+
         ### 2025-01-11
 
         Initial release
@@ -33,4 +37,5 @@
     <Config Name="Database - User" Target="COUCHDB_USER" Default="user" Description="CouchDB user" Type="Variable" Display="always-hide" Required="true" Mask="false">user</Config>
     <Config Name="Database - Password" Target="COUCHDB_PASSWORD" Default="password" Description="CouchDB password" Type="Variable" Display="always-hide" Required="true" Mask="true">password</Config>
     <Config Name="Database - Name" Target="COUCHDB_DATABASE" Default="obsidian" Description="CouchDB database name" Type="Variable" Display="always-hide" Required="true" Mask="false">obsidian</Config>
+    <Config Name="App Data" Target="/opt/couchdb/data" Default="/mnt/user/appdata/obsidian_livesync/data" Description="Path to the app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/obsidian_livesync/data</Config>
 </Container>

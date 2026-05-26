@@ -29,6 +29,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-05-25
+
+        Update environmental variables
+
         ### 2025-11-07
 
         Update environmental variables
@@ -38,6 +42,7 @@
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="8880" Default="8880" Mode="tcp" Description="Container Port: 8880" Type="Port" Display="always-hide" Required="true" Mask="false">8880</Config>
+    <Config Name="Download Model" Target="DOWNLOAD_MODEL" Default="true|false" Description="Download model on start" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="App Data" Target="/app/api" Default="/mnt/user/appdata/kokoro-fastapi/data" Description="Path to the app data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/kokoro-fastapi/data</Config>
     <Config Name="Python Path" Target="PYTHONPATH" Default="/app:/app/api" Description="Python path environment variable" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/app:/app/api</Config>
     <Config Name="ONNX Optimization - Thread Count" Target="ONNX_NUM_THREADS" Default="8" Description="Number of threads to use for ONNX model inference" Type="Variable" Display="advanced-hide" Required="true" Mask="false">8</Config>
