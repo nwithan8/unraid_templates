@@ -87,6 +87,10 @@
         Additional image variants are also available: https://localai.io/basics/container/#standard-container-images &#xD;
     </Requires>
     <Changes>
+        ### 2026-06-04
+
+        Add missing volumes
+
         ### 2025-06-25
 
         Add new Docker tags
@@ -112,7 +116,12 @@
         Initial release
     </Changes>
     <ExtraParams>--gpus=all</ExtraParams>
-    <Config Name="WebUI" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
-    <Config Name="Debug mode" Target="DEBUG" Default="true|false" Description="Whether to enable debug mode" Type="Variable" Display="advanced" Required="true" Mask="false"/>
-    <Config Name="Model Storage Path" Target="/build/models" Default="/mnt/user/appdata/local_ai/models" Mode="rw" Description="Storage for models" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/local_ai/models</Config>
+    <Config Name="WebUI" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Debug mode" Target="DEBUG" Default="true|false" Description="Whether to enable debug mode" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+    <Config Name="Model Storage Path" Target="/models" Default="/mnt/user/appdata/local_ai/models" Mode="rw" Description="Storage for models" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/local_ai/models</Config>
+    <Config Name="Image Storage Path" Target="/tmp/generated/images/" Default="/mnt/user/appdata/local_ai/images" Mode="rw" Description="Storage for images" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/local_ai/images</Config>
+    <Config Name="Data Storage Path" Target="/data" Default="/mnt/user/appdata/local_ai/data" Mode="rw" Description="Storage for data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/local_ai/data</Config>
+    <Config Name="Configuration Storage Path" Target="/configuration" Default="/mnt/user/appdata/local_ai/configuration" Mode="rw" Description="Storage for configuration" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/local_ai/configuration</Config>
+    <Config Name="Backends Storage Path" Target="/backends" Default="/mnt/user/appdata/local_ai/backends" Mode="rw" Description="Storage for backends" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/local_ai/backends</Config>
+    <Config Name="Internal Model Storage Path" Target="MODELS_PATH" Default="/models" Description="Internal path to models storage. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/models</Config>
 </Container>

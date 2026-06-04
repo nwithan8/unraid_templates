@@ -414,6 +414,23 @@
         ]
     },
     {
+        "app_name": "LocalAI",
+        "git_url": "https://github.com/mudler/LocalAI.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yaml",
+                "commit_hash": "551ebdb57a098dc6e25aa52d37d432b50050e3f6",
+                "commit_message": null
+            },
+            {
+                "file_path": ".env",
+                "commit_hash": "cff972094cd46ea35bf941aca184d4bdcbd185a7",
+                "commit_message": null
+            }
+        ]
+    },
+    {
         "app_name": "Torrents Manager",
         "git_url": "https://gitlab.com/h0st1ng/media/torrents-manager.git",
         "branch_override": null,
