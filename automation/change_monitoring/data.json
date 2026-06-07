@@ -536,13 +536,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "439810081a19b9ab0ae710ee7c9e54e97d4e648f",
-                "commit_message": "better-auth proxy forward issue between server and mcp server to handle non-https route\n"
+                "commit_hash": "d4fad18c03d0f4e3eb12da1a2fb9362aa860f3ee",
+                "commit_message": "updated api doc to include public accessable and fixed API key auth issue in swagger UI\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "1d2f50c48c3160c5b20114538541afc83d2dd534",
-                "commit_message": "Updated Chatbot to use MCP Server instead of custom code.\n"
+                "commit_hash": "d4fad18c03d0f4e3eb12da1a2fb9362aa860f3ee",
+                "commit_message": "updated api doc to include public accessable and fixed API key auth issue in swagger UI\n"
             }
         ]
     },
@@ -1042,8 +1042,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "48b10e86e215feae878a1ac46f06c7b63fcafea4",
-                "commit_message": "feat(scanner): memory-aware default worker count (#240)\n\nThe parallel scan worker pool defaulted to a fixed 4 workers. Each worker can\nrun an ffmpeg/ffprobe subprocess that, in thorough mode on a large file, uses a\nfew hundred MB. On a memory-constrained container that fixed default can push\nthe host into an OOM kill (the failure mode in issue #144).\n\nDerive the default from the memory available to the process: read the cgroup\nmemory limit (v2 then v1), falling back to /proc/meminfo total, and allow\nroughly one worker per 512 MB, capped by CPU count and 32, floored at 1. When\nmemory can't be determined (e.g. non-Linux) fall back to 4. An explicit\nHEALARR_SCANNER_WORKERS still overrides.\n\nworkersForMemory is a pure function for testing; availableMemoryBytes is\nbest-effort and portable (the Linux paths simply don't exist elsewhere).\n\nDocs (README, docker-compose, CHANGELOG) updated to describe the memory-aware\ndefault.\n\nTest plan:\n- go build ./... ; golangci-lint ./internal/services/... 0 issues\n- go test ./internal/services/ pass; new TestWorkersForMemory + TestScannerWorkers_EnvOverride\n\nCo-authored-by: mescon <mescon@users.noreply.github.com>"
+                "commit_hash": "3eb2d31d77d817123d862ef6a4df7c90cc6c6262",
+                "commit_message": "fix(scanner): make enumeration visible, bounded, and cancellable (#303)\n\nA scan stuck in the directory-walk phase was indistinguishable from a\nhang: the only log line was 'Starting scan', no scan row existed in\nthe DB yet (so /scans and the dashboard showed nothing), the walk\nignored cancellation (pressing Cancel did nothing until enumeration\nfinished), and there was no timeout so a hung mount hung the scan\nforever. Diagnosed live on a mergerfs-over-CIFS mount where degraded\nnetwork storage made each stat block for seconds.\n\nFour changes:\n\n1. Visibility: the scan row is now created up front in a new\n   'enumerating' state (migration 011 extends the scans.status CHECK\n   to allow 'enumerating' and 'scanning' \u2014 values the code already\n   referenced but the constraint silently forbade). The row flips to\n   'scanning' once the walk completes (FinishEnumeration persists the\n   file list + total). /scans and the dashboard show the scan\n   immediately.\n\n2. Progress: enumerateMediaFiles emits a throttled 'Enumerating PATH:\n   N media files found so far (M entries scanned)' heartbeat every 5s,\n   so a slow mount is visibly working instead of looking hung.\n\n3. Cancellation: enumerateMediaFiles takes a context and checks\n   ctx.Err() on every entry, so a user cancel (which cancels the scan\n   ctx) aborts the walk promptly. The row is marked 'cancelled'.\n\n4. Timeout: the walk runs under HEALARR_SCANNER_ENUMERATION_TIMEOUT\n   (default 30m). On timeout the scan is marked 'aborted' with an\n   explanatory error_message pointing at slow/unresponsive storage,\n   instead of hanging until a container restart.\n\nReconcile interplay: an orphaned 'enumerating' row (process died\nmid-walk) has current_file_index=0, so ReconcileOrphans marks it\n'cancelled' (not resumable) \u2014 correct, there's no file list to\nresume from.\n\nTests: repo CreateEnumerating/FinishEnumeration + enumerating-orphan\nreconcile; scanner timeout env parsing, walk-honors-cancellation, and\nhandleEnumerationFailure status mapping (cancel->cancelled,\ntimeout->aborted, error->aborted). Full services suite green under\n-race.\n\nCo-authored-by: mescon <mescon@users.noreply.github.com>"
             }
         ]
     },
@@ -1307,8 +1307,8 @@
         "files_to_check": [
             {
                 "file_path": "compose.yml",
-                "commit_hash": "45b966703e4077a8027da5a80b6da826d5b5118a",
-                "commit_message": null
+                "commit_hash": "9b5f5baca442c457158407cba558a11b55956649",
+                "commit_message": "fix: Apple Account sign-in on Sequoia (#426)"
             }
         ]
     },
