@@ -536,8 +536,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/.vitepress/components/DockerCompose.vue",
-                "commit_hash": "8434cee6834bff488385edc1a751e84c3a9a2516",
-                "commit_message": "Update Docker Compose Builder (#207)\n\n"
+                "commit_hash": "edbcc65bcd70038324976a9dbbcac7618acc55b9",
+                "commit_message": "Revert \"Add SYS_PTRACE capability for .NET crash dump support (#246)\" (#247)\n\nDue to internal discussion, we've decided to not display the cap in the builder.\n\nThis reverts commit 728d8feee9658231e25e2adff6626a4713350c04."
             }
         ]
     },
