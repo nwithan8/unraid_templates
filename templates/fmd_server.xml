@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>FMD Server</Name>
-    <Repository>registry.gitlab.com/fmd-foss/fmd-server:latest</Repository>
+    <Repository>registry.gitlab.com/fmd-foss/fmd-server:0</Repository>
     <Registry>https://gitlab.com/fmd-foss/fmd-server/container_registry/</Registry>
     <Branch>
-        <Tag>latest</Tag>
-        <TagDescription>Latest stable release</TagDescription>
+        <Tag>0</Tag>
+        <TagDescription>Latest major release</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
