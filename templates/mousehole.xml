@@ -25,15 +25,19 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-06-07
+
+        Update variables
+
         ### 2025-10-25
 
         Initial release
     </Changes>
     <Config Name="Web UI Port" Target="5010" Default="5010" Mode="tcp" Description="Container Port: 5010" Type="Port" Display="always-hide" Required="true" Mask="false">5010</Config>
-    <Config Name="User Agent" Target="MOUSEHOLE_USER_AGENT" Default="mousehole-by-timtimtim" Description="The user agent to use for requests to MAM." Type="Variable" Display="always-hide" Required="true" Mask="false">mousehole-by-timtimtim</Config>
-    <Config Name="Check Interval" Target="MOUSEHOLE_CHECK_INTERVAL_SECONDS" Default="300" Description="The interval in seconds between checks." Type="Variable" Display="always-hide" Required="true" Mask="false">300</Config>
-    <Config Name="Response Interval" Target="MOUSEHOLE_STALE_RESPONSE_SECONDS" Default="86400" Description="The number of seconds after which a MAM response is considered stale." Type="Variable" Display="always-hide" Required="true" Mask="false">86400</Config>
-    <Config Name="App Data" Target="/srv/mousehole" Default="/mnt/user/appdata/mousehole/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/mousehole/data</Config>
-    <Config Name="Internal Port" Target="MOUSEHOLE_PORT" Default="5010" Description="Port for the internal HTTP server. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">5010</Config>
-    <Config Name="Internal Data Path" Target="MOUSEHOLE_STATE_DIR_PATH" Default="/srv/mousehole" Description="Path to store internal state data. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/srv/mousehole</Config>
+    <Config Name="Auth Password" Target="MOUSEHOLE_AUTH_PASSWORD" Default="" Description="Password for Mousehole web UI, API, and WebSocket authentication" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Allowed Hosts" Target="MOUSEHOLE_ALLOWED_HOSTS" Default="" Description="Comma-separated hostnames or IP addresses allowed to access Mousehole, such as your Unraid server IP or hostname. Set this when opening the WebUI through http://[IP]:5010." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="App Data" Target="/var/lib/mousehole" Default="/mnt/user/appdata/mousehole/data" Description="Path to the data folder" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/mousehole/data</Config>
+    <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+    <Config Name="UMASK" Target="UMASK" Default="022" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
 </Container>

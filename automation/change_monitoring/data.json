@@ -530,23 +530,6 @@
         ]
     },
     {
-        "app_name": "SparkyFitness",
-        "git_url": "https://github.com/CodeWithCJ/SparkyFitness.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "docker/docker-compose.prod.yml",
-                "commit_hash": "d4fad18c03d0f4e3eb12da1a2fb9362aa860f3ee",
-                "commit_message": "updated api doc to include public accessable and fixed API key auth issue in swagger UI\n"
-            },
-            {
-                "file_path": "docker/.env.example",
-                "commit_hash": "d4fad18c03d0f4e3eb12da1a2fb9362aa860f3ee",
-                "commit_message": "updated api doc to include public accessable and fixed API key auth issue in swagger UI\n"
-            }
-        ]
-    },
-    {
         "app_name": "Shoko",
         "git_url": "https://github.com/ShokoAnime/ShokoDocs.git",
         "branch_override": null,
@@ -1393,6 +1376,18 @@
                 "file_path": "docker-compose.yml",
                 "commit_hash": "d0b3c657ccb345cf77c58670ff30aee78790eb6d",
                 "commit_message": "\u66f4\u65b0\u6784\u5efa\u914d\u7f6e\u5e76\u8865\u5145\u6d4b\u8bd5\n"
+            }
+        ]
+    },
+    {
+        "app_name": "Mousehole",
+        "git_url": "https://github.com/t-mart/mousehole.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "contrib/unraid/my-mousehole.xml",
+                "commit_hash": "2ac082b33d15d33e72b9c175f4b64fda3e8fc991",
+                "commit_message": null
             }
         ]
     }
