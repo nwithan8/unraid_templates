@@ -620,8 +620,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.app.yml",
-                "commit_hash": "67c896620d6c7bc059623f268e12acf5759459f7",
-                "commit_message": "docs: ghcr reg in readme and docker-compose\n"
+                "commit_hash": "0052a5544e187a4d12f771838a8a23ca4afb61cd",
+                "commit_message": "fix(security): make AGENT_SECRET mandatory\n\n+ make AGENT_SECRET mandatory according to @finderer SA\n+ reflect in readme, compose, env.example, translations\n+ added body as text fallback in verify_signature\n"
             },
             {
                 "file_path": "docker-compose.agent.yml",
@@ -926,8 +926,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "c64174063161b06ce42b9457911d306b475bd264",
-                "commit_message": "v0.45.4-beta: Classification and Docker hardening\n\nRelease v0.45.4-beta.\n\nNew Features:\n- Add sidecar health alerting and image embedding auth hardening\n- Add smart local Docker pgvector build selection\n\nFixes:\n- Harden classification thresholds, scoring, and routing math\n- Fix read-only pgvector startup behavior in Docker\n\n## Security Checklist Sign-off \u2014 v0.45.4-beta\nDate: 2026-04-18\nReviewer: GitHub Copilot\n\nA. Automated Gates ............. [x] all green\nB. Route Authentication ........ [x] no regressions\nC. Webhook Auth ................ [x] HMAC + constant-time confirmed\nD. HTTP Security Headers ....... [x] CSP + CORS verified\nE. Session & Token Security .... [x] httpOnly + CSRF confirmed\nF. Credential Handling ......... [x] no raw key/secret exposure in release changes\nG. Debug Artifacts & Git ....... [x] no tracked .log files; tracked text files reviewed\nH. Error Handling .............. [x] production sanitization confirmed\nI. Input Validation ............ [x] existing validation posture preserved for release scope\nJ. Container & Runtime ......... [x] non-root/design decision current\nK. Dependencies ................ [x] 0 critical/high locally; OSV tag run pending post-push\nL. Secret Scanning ............. [x] gitleaks workflow present; tag run pending post-push\nM. Password Storage ............ [x] bcrypt \u226512; no password in response path reviewed\nN. Rate Limiting ............... [x] auth endpoints rate-limited\n\nNotes / exceptions:\n- OSV, Gitleaks, and tag-scoped GitHub workflow verification require the pushed tag and will be completed after push.\n"
+                "commit_hash": "bf816317f1671e319bfe825754b3ef843b04fb3f",
+                "commit_message": "v0.47.4a-beta: Docker startup and policy builder hardening\n\nRelease v0.47.4a-beta with pgvector noexec-safe symlink staging, PostgreSQL config rewrite hardening, policy intent contract work, and intent-first policy builder state extraction.\n\nNew Features:\\n- Policy intent contract and intent-first policy builder state extraction\\n- Explicit PGVECTOR_RUNTIME_STAGING=auto runtime policy for Docker and Unraid\\n- v0.47.4a-beta release notes and documentation\n\nFixes:\\n- Prevent pgvector startup loops on noexec PostgreSQL runtime mounts\\n- Preserve PostgreSQL config terminal newlines during startup rewrites\\n- Avoid PostgreSQL 18 ambiguous BIGINT migration operator resolution\\n- Require read-write API permissions for the non-production library rule debug insert endpoint\n\nSecurity Checklist Sign-off - v0.47.4a-beta\\nDate: 2026-06-13\\nReviewer: Codex\\n\\nA. Automated Gates ............. [x] all green\\nB. Route Authentication ........ [x] no regressions\\nC. Webhook Auth ................ [x] HMAC + constant-time confirmed\\nD. HTTP Security Headers ....... [x] CSP + CORS verified\\nE. Session & Token Security .... [x] httpOnly + CSRF confirmed\\nF. Credential Handling ......... [x] no raw key/secret exposure\\nG. Debug Artifacts & Git ....... [x] no debug scripts or logs tracked\\nH. Error Handling .............. [x] production sanitization confirmed\\nI. Input Validation ............ [x] parameterized queries verified\\nJ. Container & Runtime ......... [x] non-root runtime and compose hardening verified\\nK. Dependencies ................ [x] server/client audit clean; OSV pending tag CI\\nL. Secret Scanning ............. [x] gitleaks workflow present; no hardcoded secrets\\nM. Password Storage ............ [x] bcrypt >=12; no password in response\\nN. Rate Limiting ............... [x] auth/API/webhook endpoints rate-limited\n"
             }
         ]
     },
@@ -1386,8 +1386,8 @@
         "files_to_check": [
             {
                 "file_path": "contrib/unraid/my-mousehole.xml",
-                "commit_hash": "fd818479dd6932ba93aa4a308d35fdac2c0e0981",
-                "commit_message": "docs: update unraid guide and hotio/binhex examples (#115)\n\n* docs: update unraid guide and hotio example\n\n* remove local port binds for binhex, add VPN_INPUT_PORTS\n\n* hotio: provide starter stub with VPN_EXPOSE_PORTS_ON_LAN\n\n---------\n\nCo-authored-by: Tim Martin <tim@timmart.in>"
+                "commit_hash": "51b228c4c03d667cd375ca25fa0e27fa701fceff",
+                "commit_message": "vocab: retire \"check\" \u2014 users see updates, the wire records contacts\n"
             }
         ]
     }
