@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Paperless-AI-Next</Name>
+    <Repository>admonstrator/paperless-ai-next:latest</Repository>
+    <Registry>https://hub.docker.com/r/admonstrator/paperless-ai-next</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/admonstrator/paperless-ai-next/issues</Support>
+    <Project>https://paperless-ai-next.admon.me/</Project>
+    <Overview>
+        An automated document analyzer for Paperless-ngx using OpenAI API and Ollama (Mistral, llama, phi 3, gemma 2) to automatically analyze and tag your documents.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Cloud: MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>paperless-ngx AI paperless document analyzer llama ollama openai chatgpt</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/paperless-ai-icon.png</Icon>
+    <Banner>https://raw.githubusercontent.com/admonstrator/paperless-ai-next/main/logo.png</Banner>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/paperless_ai_next.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-06-16
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Paperless-ngx instance (and optional Ollama) to function.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/paperless-ai" Description="Path to app data" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/paperless-ai</Config>
+</Container>

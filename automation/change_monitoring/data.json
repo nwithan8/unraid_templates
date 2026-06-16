@@ -1390,5 +1390,17 @@
                 "commit_message": "vocab: retire \"check\" \u2014 users see updates, the wire records contacts\n"
             }
         ]
+    },
+    {
+        "app_name": "Paperless-AI-Next",
+        "git_url": "https://github.com/admonstrator/paperless-ai-next.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "c4c49078242341036ce7ab040fdafce64d237fd7",
+                "commit_message": null
+            }
+        ]
     }
 ]
