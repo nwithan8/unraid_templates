@@ -1414,5 +1414,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "RemoteTerm for MeshCore",
+        "git_url": "https://github.com/jkingsman/Remote-Terminal-for-MeshCore.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.example.yml",
+                "commit_hash": "1243d01e11b9a02a202575568a20ca43cb56dac1",
+                "commit_message": null
+            }
+        ]
     }
 ]

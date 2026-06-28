@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>RemoteTerm for MeshCore</Name>
+    <Repository>jkingsman/remoteterm-meshcore:latest</Repository>
+    <Registry>https://hub.docker.com/r/jkingsman/remoteterm-meshcore</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/jkingsman/Remote-Terminal-for-MeshCore/issues</Support>
+    <Project>https://github.com/jkingsman/Remote-Terminal-for-MeshCore</Project>
+    <Overview>
+        A remote client for MeshCore radios with packet capture, store-and-decrypt, bots, MQTT, and more!
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Messenger MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>meshcore mesh meshtastic terminal control remote</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/remoteterm-meshcore-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/remoteterm_meshcore.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-06-28
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a MeshCore device.&#xD;
+        [br]
+        Defaults to serial connection. Can be configured for TCP or Bluetooth as well, see documentation: https://github.com/jkingsman/Remote-Terminal-for-MeshCore/blob/main/docker-compose.example.yml
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="5274" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">5274</Config>
+    <Config Name="MeshCore Device" Target="/dev/meshcore-radio" Default="" Description="MeshCore USB device to control" Type="Device" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/remoteterm_meshcore/data" Description="Path to the application data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/remoteterm_meshcore/data</Config>
+    <Config Name="Internal Database Path" Target="MESHCORE_DATABASE_PATH" Default="data/meshcore.db" Description="Internal path to the database. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">data/meshcore.db</Config>
+    <Config Name="Internal Serial Path" Target="MESHCORE_SERIAL_PORT" Default="/dev/meshcore-radio" Description="Internal path to the serial port. Not recommended to change." Type="Variable" Display="advanced" Required="true" Mask="false">/dev/meshcore-radio</Config>
+</Container>
