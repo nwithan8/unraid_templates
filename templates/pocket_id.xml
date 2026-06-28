@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>Pocket ID</Name>
-    <Repository>ghcr.io/pocket-id/pocket-id:latest</Repository>
-    <Registry>ghcr.io/pocket-id/pocket-id</Registry>
+    <Repository>pocketid/pocket-id:latest</Repository>
+    <Registry>https://hub.docker.com/r/pocket-id/pocket-id</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-06-27
+
+        Switch from GHCR to Docker Hub for more stability
+
         ### 2026-02-16
 
         Add missing Encryption Key environment variable
