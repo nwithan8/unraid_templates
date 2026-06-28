@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>llama-swap</Name>
+    <Repository>ghcr.io/mostlygeek/llama-swap:unified-cuda</Repository>
+    <Registry>ghcr.io/mostlygeek/llama-swap</Registry>
+    <Branch>
+        <Tag>unified-cuda</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/mostlygeek/llama-swap/issues</Support>
+    <Project>https://github.com/mostlygeek/llama-swap</Project>
+    <Overview>
+        Run multiple generative AI models on your machine and hot-swap between them on demand. llama-swap works with any OpenAI and Anthropic API compatible server and is used by thousands of people to power their local AI workflows.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ai models llama ollama swap change multiple openai anthropic api server</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/llama-swap-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/llama_swap.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-06-28
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects a `config.yaml` file at the Config File path BEFORE starting the container.
+    </Requires>
+    <ExtraParams>--runtime=nvidia --gpus all</ExtraParams>
+    <Config Name="Web UI Port" Target="8080" Default="9292" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">9292</Config>
+    <Config Name="Config File" Target="/etc/llama-swap/config/config.yaml" Default="/mnt/user/appdata/llama_swap/config.yaml" Description="Path to the config file" Required="true" Mask="false">/mnt/user/appdata/llama_swap/config.yaml</Config>
+    <Config Name="Models Storage" Target="/models" Default="/mnt/user/appdata/llama_swap/models" Description="Path to models" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/llama_swap/models</Config>
+</Container>
