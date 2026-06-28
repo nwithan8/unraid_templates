@@ -1402,5 +1402,17 @@
                 "commit_message": null
             }
         ]
+    },
+    {
+        "app_name": "Livrarr",
+        "git_url": "https://github.com/kkodecs/livrarr.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "f78f3bc839ae71a27ff511658c98c1a7eb1e3c6d",
+                "commit_message": null
+            }
+        ]
     }
 ]
