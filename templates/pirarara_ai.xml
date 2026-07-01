@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Pirarara AI</Name>
+    <Repository>caiquebrito/pirarara-ai:latest</Repository>
+    <Registry>https://hub.docker.com/r/caiquebrito/pirarara-ai</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/caiquebrito/PirararaAI/issues</Support>
+    <Project>https://github.com/caiquebrito/PirararaAI</Project>
+    <Overview>
+        Pirarara AI is a self-hosted local AI platform — a lightweight alternative to Open WebUI.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>AI: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>ai models llama ollama swap change multiple openai anthropic api server</ExtraSearchTerms>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/pirarara_ai.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-06-30
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate Ollama instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Ollama URL" Target="OLLAMA_URL" Default="http://localhost:11434" Description="URL of your Ollama instance (replace with your Unraid server IP)" Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:11434</Config>
+    <Config Name="Default Model" Target="OLLAMA_DEFAULT_MODEL" Default="qwen2.5-coder:7b-instruct-q4_K_M" Description="Ollama model to use by default" Type="Variable" Display="always-hide" Required="true" Mask="false">qwen2.5-coder:7b-instruct-q4_K_M</Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Description="Random secret for JWT signing — generate with: openssl rand -hex 32" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Anthropic API Key" Target="ANTHROPIC_API_KEY" Default="" Description="Optional — for Claude models via Anthropic API" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="OpenAI API Key" Target="OPENAI_API_KEY" Default="" Description="Optional — for OpenAI models" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Database Path" Target="/data" Default="/mnt/user/appdata/pirarara/db" Mode="rw" Description="Where the SQLite database file is stored" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/pirarara/db</Config>
+    <Config Name="Workspace" Target="/workspace" Default="/mnt/user/appdata/pirarara/workspace" Mode="rw" Description="Directory where the agent can read/write files" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/pirarara/workspace</Config>
+</Container>
