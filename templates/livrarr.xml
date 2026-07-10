@@ -32,4 +32,6 @@
     <Config Name="Books Storage" Target="/books" Default="" Description="Path to books storage" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Downloads Storage" Target="/downloads" Default="" Description="Path to downloads storage" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Config Data" Target="/config" Default="/mnt/user/appdata/livrarr/config" Description="Path to the config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/livrarr/config</Config>
+    <Config Name="PUID" Target="PUID" Default="99" Description="Container User ID" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="Container Group ID" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
 </Container>
