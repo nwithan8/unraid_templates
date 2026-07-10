@@ -478,8 +478,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "60886d1a0c52682e4c83a7cef9dfac417fff6bd2",
-                "commit_message": "release: merge 0.9.0 secure-by-default Docker server hardening into develop\n\nSquash of security/docker-hardening-2026-06 (the full R1-R7 redesign) plus the\nthree new 0.9.0 security fixes (download path traversal, streaming-path SSRF,\nextra_args RCE) and uniform egress pinning across all browser-fetch endpoints.\n\nVersion 0.9.0. Supersedes the 0.8.8/0.8.9 non-breaking patches with their\nbreaking-by-design variants; the 0.8.8/0.8.9 CHANGELOG and credit ledger\nentries are preserved. The old exec-based hook_manager.py is removed in favor\nof declarative hook_registry.py. Security suite: 309 passed, 1 xfailed.\n\nSee deploy/docker/MIGRATION.md for the breaking-change migration guide.\n"
+                "commit_hash": "c8aee8cd676754b818d0cb65a3200764e74eb5ea",
+                "commit_message": "fix(docker): make read-only tmpfs writable\n"
             },
             {
                 "file_path": ".llm.env.example",
@@ -830,8 +830,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "92f0aef6edbd9d2cdde1e90599af25449527e975",
-                "commit_message": ""
+                "commit_hash": "e1c83ba4adf067c2ff60fa192e0cb029715d596a",
+                "commit_message": "fix: more dono variables\n\n+ base64 encode to add an extra step - please don't change our donation variables and keep donos to our official instance </3\n"
             }
         ]
     },
@@ -1001,8 +1001,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml-example",
-                "commit_hash": "935bc0eaf5f15aeffb946a2e626e4bae27f48280",
-                "commit_message": "added Watched by requestor and also watched by anyone.\nadded more manual update buttons in the settings\n"
+                "commit_hash": "455b124a83b8b5b1a9d71cbf9a2935a69cef495a",
+                "commit_message": "Clean up comments in docker-compose.yml-example\n\nRemoved outdated comments regarding configuration."
             }
         ]
     },
@@ -1037,13 +1037,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "6afc3c7c6297d7943be9fb18a48d3a1f6c014d02",
-                "commit_message": "feat(squidwtf): Amazon Music backend via amz.squid.wtf\n"
+                "commit_hash": "93745b06996cab03f0aad6f8bfacc37a1e62d29b",
+                "commit_message": "feat(subsonic): add DisableLibraryScan option\n"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "3fa843a3a6d95b87417a3e0ebb932d21d347e6c6",
-                "commit_message": "fix(squidwtf): demux Amazon Music FLAC from MP4 container to raw FLAC\n\nCENC-decrypted Amazon streams are FLAC-in-CMAF/MP4. After decryption,\nffmpeg now remuxes FLAC codec streams into a raw .flac file in the same\npass (-vn -c:a copy -f flac), so downloads land as .flac instead of .m4a.\nAAC/Opus/Atmos streams remain .m4a.\n\nAlso documents Amazon Music quality values in .env.example.\n"
+                "commit_hash": "93745b06996cab03f0aad6f8bfacc37a1e62d29b",
+                "commit_message": "feat(subsonic): add DisableLibraryScan option\n"
             }
         ]
     },
@@ -1201,8 +1201,8 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "4a6ba38e9443838c151f5a4c62af9de34b6b5cdb",
-                "commit_message": "chore: prepare codebase for breaking release (#718)\n\n* chore: prepare codebase for breaking release\n\n* docker: fix debug flug in prod matrix bridge"
+                "commit_hash": "1b934ee6f72b6e4affb485d2b08a883847ec822a",
+                "commit_message": "feat(ingestor): passive UDP transport (Mesh via UDP), primary-channel only (#838)\n\nAdds an optional passive UDP transport (TRANSPORT=udp) that reads the node's\n\"Mesh via UDP\" LAN multicast instead of holding the radio's single API/serial\nslot, filters to the PRIMARY channel by channel-hash (fail-closed), decrypts\nwith the default PSK, and enriches payloads to match the API-path packet shape\nso the collector receives identical records. Implemented as a MeshProtocol\nprovider; 100% unit coverage on new modules; real-capture fixtures included\n(node IDs/GPS anonymized). See PR description for details.\n\nCo-authored-by: Claude Opus 4.8 <noreply@anthropic.com>"
             }
         ]
     },
@@ -1213,8 +1213,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f6ce6c9bb19398520ee301c9fae1d230be1fd14a",
-                "commit_message": null
+                "commit_hash": "3b59f4e6a5a1bf5dcb3712ac2884cf25ea456dfd",
+                "commit_message": "Backport portable Facet Cloud fixes"
             },
             {
                 "file_path": ".env.example",
@@ -1242,8 +1242,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "1c2913ccaa7386357e88138b64229b5261b8149a",
-                "commit_message": "Next (#1041)\n\nCo-authored-by: FreshImmuc <65733898+FreshImmuc@users.noreply.github.com>\nCo-authored-by: FreshImmuc <corysor12@gmail.com>\nCo-authored-by: Weblate (bot) <hosted@weblate.org>\nCo-authored-by: Daniel Graf <weblate@dedicatedcode.com>\nCo-authored-by: Tomasz Rzymyszkiewicz <tomasz@rzymyszkiewicz.com>\nCo-authored-by: Cornelius Wichering <cornelius.wichering@gmail.com>\nCo-authored-by: Christian Homrighausen <ch.homrighausen@gmail.com>\nCo-authored-by: Cenk Cidecio <cenk.cidecio@gmail.com>\nCo-authored-by: V\u00edctor Manuel Gorriz Prieto <victormgp@gmail.com>\nCo-authored-by: GunseiKPaseri <GunseiKPaseri@gmail.com>\nCo-authored-by: LinFei83 <linfei5611@foxmail.com>\nCo-authored-by: Antti <antti.123@windowslive.com>\nCo-authored-by: John Doe <vvi08@temp-mail.me>\nCo-authored-by: Stefan L <stefanlinden@users.noreply.github.com>\nCo-authored-by: Hoi <Hoihoi@users.noreply.hosted.weblate.org>\nCo-authored-by: Xapitonov <sergejharitonov001@gmail.com>\nCo-authored-by: Sergey Dreger <sergey.dreger@gmail.com>\nCo-authored-by: Dima <romanikadima@yandex.ru>\nCo-authored-by: Alex O <craz87@gmail.com>\nCo-authored-by: SKBo <eric.weblate@skbo.net>\nCo-authored-by: rodrigomescua <ro_mescua@outlook.com>\nCo-authored-by: Scott Kuo <scottkuo@gmail.com>\nCo-authored-by: Seungbeom Ha <tmdqja75@gmail.com>\nCo-authored-by: ssantos <ssantos@web.de>"
+                "commit_hash": "3cda00efe1e0d03370b06dc5742bad2bfe9606e7",
+                "commit_message": "1068 doc update the readme (#1086)"
             }
         ]
     },
@@ -1314,8 +1314,8 @@
         "files_to_check": [
             {
                 "file_path": "deployment/docker/compose-files/docker-compose-postgres/docker-compose.yml",
-                "commit_hash": "35a466e993731dd1b5abbe9b7f606b8824e98d6d",
-                "commit_message": "images refresh\n"
+                "commit_hash": "dbc86cd04712854a0475987c789a0546eaedf982",
+                "commit_message": "Initial implementation of ad block\n"
             }
         ]
     },
@@ -1368,18 +1368,6 @@
         ]
     },
     {
-        "app_name": "HubProxy",
-        "git_url": "https://github.com/sky22333/hubproxy.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "docker-compose.yml",
-                "commit_hash": "d0b3c657ccb345cf77c58670ff30aee78790eb6d",
-                "commit_message": "\u66f4\u65b0\u6784\u5efa\u914d\u7f6e\u5e76\u8865\u5145\u6d4b\u8bd5\n"
-            }
-        ]
-    },
-    {
         "app_name": "Mousehole",
         "git_url": "https://github.com/t-mart/mousehole.git",
         "branch_override": null,
@@ -1410,8 +1398,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f78f3bc839ae71a27ff511658c98c1a7eb1e3c6d",
-                "commit_message": null
+                "commit_hash": "761ac2657eb9ccb9532bdddc27251e39a1044eef",
+                "commit_message": "feat(docker): configurable PUID/PGID + Unraid & Proxmox support (#158, #105, #106)\n\nRoot-start/drop entrypoint (LinuxServer.io convention): the container starts as\nroot, fixes ownership of /config only, then drops to PUID:PGID and runs the app\nas that user \u2014 it never leaves the app running as root. Adds a documented\nhardened never-root profile (user: + cap_drop ALL) for rootless / max-lockdown\nsetups. No Rust changes.\n\n- docker/entrypoint.sh: validate PUID/PGID (reject 0 and leading-zero forms in\n  every mode), repair /config ownership only (symlink-safe find), preflight the\n  privilege drop for a clear error, then su-exec -> tini -> app.\n- Dockerfile: add su-exec, remove USER (root-start), COPY entrypoint, new ENTRYPOINT.\n- docker-compose.yml: PUID/PGID/TZ env + minimal cap_add (CHOWN, SETUID, SETGID,\n  DAC_OVERRIDE); documented hardened profile.\n- README: Permissions rewrite (both modes, upgrade note, SELinux/k8s).\n- docker/unraid-template.xml (#105): caps declared in template; only /config auto-owned.\n- docs/proxmox-lxc.md (#106): Docker-in-LXC, unprivileged-LXC uid shift, and the\n  network_mode:host requirement for unprivileged LXCs.\n- wiki: deployment/container-permissions.md.\n\nVerified: entrypoint logic 16/16 (amd64 and arm64), real amd64 image 6/6\n(S1/S2/S3 + upgrade case), real docker-compose.yml via compose up (app runs as\nuid 1000 with zero effective capabilities), and Proxmox unprivileged LXC on real\nhardware (works with network_mode:host). arm64 gets its native build in CI.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\n"
             }
         ]
     },
