@@ -88,13 +88,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/cpu/docker-compose.yml",
-                "commit_hash": "0cf239ef55e4040a04bd84a5515ba055017246fd",
-                "commit_message": "fix(docker): compose defaults to idempotent model download; harden download_model scripts, static release artifact link\n"
+                "commit_hash": "316aa672ad56eee5f5f28d9345d7d0c14be39471",
+                "commit_message": "fix(debug-endpoints): gate /debug/* introspection routes behind ENABLE_DEBUG_ENDPOINTS, documentation"
             },
             {
                 "file_path": "docker/gpu/docker-compose.yml",
-                "commit_hash": "0d6b4d89193bd18fc2bba47366a77db011143ab8",
-                "commit_message": " fix(docker): aligns cu128 base image with wheel (12.9.1 \u2192 12.8.1), minimum toolkit with Blackwell (sm_120) support (CUDA 12.8)\n\nRelated #306 #320 #389 #443 #365\n"
+                "commit_hash": "316aa672ad56eee5f5f28d9345d7d0c14be39471",
+                "commit_message": "fix(debug-endpoints): gate /debug/* introspection routes behind ENABLE_DEBUG_ENDPOINTS, documentation"
             }
         ]
     },
@@ -271,8 +271,8 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "4eeb06f29d984164939bf66299075efead87ee19",
-                "commit_message": "docs: add ENCRYPTION_KEY to .env.example for breaking change preparation"
+                "commit_hash": "d9ead47d19451b256336b7d0eb46606a236928f3",
+                "commit_message": "fix: allow insecure callback URLs by default until next major release\n"
             }
         ]
     },
@@ -410,23 +410,6 @@
                 "file_path": "docker-compose.yml",
                 "commit_hash": "099fab7869ab06b100801fdf2d3f68ecf31a4ebd",
                 "commit_message": "Add volumes to docker compose file\n\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>\n"
-            }
-        ]
-    },
-    {
-        "app_name": "LocalAI",
-        "git_url": "https://github.com/mudler/LocalAI.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "docker-compose.yaml",
-                "commit_hash": "551ebdb57a098dc6e25aa52d37d432b50050e3f6",
-                "commit_message": null
-            },
-            {
-                "file_path": ".env",
-                "commit_hash": "cff972094cd46ea35bf941aca184d4bdcbd185a7",
-                "commit_message": null
             }
         ]
     },
@@ -572,8 +555,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "cb168d6922aeb2d449b950c1f46c7c0a6bfea846",
-                "commit_message": "2026.04.15\n\n- Fix instance_output_mode changes not being saved to config from webUI\n- Run Trending processing only once and iterate over all Arr instances\n- Roots can now be set for each Arr instance\n- Added retries on connection issues\n"
+                "commit_hash": "3a2c44a3cfe867d517c665a70060305e42b0a5c5",
+                "commit_message": "2026.07.09\n\n- You can now add as many MDBList \"trending\" lists as you like\n"
             }
         ]
     },
