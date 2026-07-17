@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>Livrarr</Name>
-    <Repository>ghcr.io/kkodecs/livrarr:0.1.0-alpha5</Repository>
+    <Repository>ghcr.io/kkodecs/livrarr:0.1.0-alpha6</Repository>
     <Registry>ghcr.io/kkodecs/livrarr</Registry>
     <Branch>
-        <Tag>0.1.0-alpha5</Tag>
+        <Tag>0.1.0-alpha6</Tag>
         <TagDescription>Latest alpha release</TagDescription>
     </Branch>
     <Network>bridge</Network>
@@ -24,10 +24,17 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-07-17
+
+        - Update image tag
+
         ### 2026-06-27
 
         Initial release
     </Changes>
+    <Requires>
+        Note this app does not currently publish a `:latest` tag. To update, manually change the Docker image tag.
+    </Requires>
     <Config Name="Web UI Port" Target="8789" Default="8789" Mode="tcp" Description="Container Port: 8789" Type="Port" Display="always-hide" Required="true" Mask="false">8789</Config>
     <Config Name="Books Storage" Target="/books" Default="" Description="Path to books storage" Type="Path" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Downloads Storage" Target="/downloads" Default="" Description="Path to downloads storage" Type="Path" Display="always-hide" Required="true" Mask="false"/>

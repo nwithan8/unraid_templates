@@ -36,6 +36,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-07-17
+
+        - Add support for remote Site Manager
+
         ### 2025-09-25
 
         - Add environmental variables
@@ -78,6 +82,8 @@
     <Config Name="UniFi OS Console - Port" Target="UNIFI_PORT" Default="443" Description="Port of the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false">443</Config>
     <Config Name="UniFi OS Console - Token" Target="UNIFI_TOKEN" Default="" Description="The API Key created on the integrations tab within UniFi OS" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="UniFi OS Console - Site ID" Target="UNIFI_SITE_ID" Default="default" Description="Site ID for the UniFi OS Console" Type="Variable" Display="always-hide" Required="true" Mask="false">default</Config>
+    <Config Name="UniFi OS Console - Site Manager" Target="UNIFI_SITE_MANAGER" Default="false|true" Description="Use remote site manager" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="UniFi OS Console - Site Manager Console ID" Target="UNIFI_SITE_MANAGER_CONSOLE_ID" Default="" Description="Use remote site manager console ID" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="UniFi OS Console - SSID" Target="UNIFI_SSID" Default="" Description="The UniFi SSID where guests need to connect to (Used within templating and 'Scan to Connect')" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="UniFi OS Console - SSID Password" Target="UNIFI_SSID_PASSWORD" Default="" Description="The UniFi SSID WPA/WPA2/WPA3 Password (Can be ignored for 'Open' networks) (Used within templating and 'Scan to Connect')" Type="Variable" Display="always-hide" Required="false" Mask="true"/>
     <Config Name="Authentication - Web UI - Enable" Target="AUTH_INTERNAL_ENABLED" Default="true|false" Description="Enable internal authentication for the voucher portal web UI" Type="Variable" Display="always-hide" Required="true" Mask="false"/>

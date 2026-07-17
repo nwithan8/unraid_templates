@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-07-17
+
+        - Add concurrency environmental variables
+
         ### 2026-05-11
 
         - Remove Prometheus metrics
@@ -96,7 +100,7 @@
     <Config Name="Rails Environment" Target="RAILS_ENV" Default="development" Description="Rails environment. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">development</Config>
     <Config Name="Application Host" Target="APPLICATION_HOST" Default="localhost" Description="Host of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
     <Config Name="Application Hosts" Target="APPLICATION_HOSTS" Default="localhost" Description="Hosts of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">localhost</Config>
-    <Config Name="Background Processing Concurrency" Target="BACKGROUND_PROCESSING_CONCURRENCY" Default="10" Description="Number of background processing threads" Type="Variable" Display="advanced-hide" Required="true" Mask="false">10</Config>
+    <Config Name="Background Processing Concurrency" Target="BACKGROUND_PROCESSING_CONCURRENCY" Default="3" Description="Number of background processing threads" Type="Variable" Display="advanced-hide" Required="true" Mask="false">3</Config>
     <Config Name="Application Protocol" Target="APPLICATION_PROTOCOL" Default="http" Description="Protocol of the application" Type="Variable" Display="advanced-hide" Required="true" Mask="false">http</Config>
     <Config Name="Is Self-Hosted" Target="SELF_HOSTED" Default="true|false" Description="Is the application self-hosted?" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
