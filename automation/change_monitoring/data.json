@@ -1102,8 +1102,8 @@
             },
             {
                 "file_path": "env.example",
-                "commit_hash": "fc522ce5da3c0ffbee3af85a6617da702583a083",
-                "commit_message": "Refactor reverse proxy config to trusted proxy IPs (#87)"
+                "commit_hash": "e11e08c84e1ceeaf3a21b17bbca8ffac2416ca43",
+                "commit_message": "Add configurable custom CSS and <head> HTML (#89)\n\n## Summary\n- add two `AppConfig` fields \u2014 `custom_css` and `custom_html_head` \u2014 also\n  settable via `MALLA_CUSTOM_CSS` / `MALLA_CUSTOM_HTML_HEAD`\n- inject both into `<head>` from `base.html`, after the theme stylesheet and\n  per-page CSS so operator styles take precedence site-wide (all page\n  templates extend `base.html`)\n- document both in `config.sample.yaml` and `env.example`\n\nOperators often want to brand or restyle their instance \u2014 accent colour,\nfavicon, an announcement banner \u2014 without forking templates or rebuilding the\nimage. Because the theme is driven by Bootstrap CSS variables, overriding\n`--bs-primary` in `custom_css` recolours the whole site (buttons, links, table\nheaders, navbar). Both fields default to empty, so existing deployments are\nunchanged; they are trusted deployment-level settings (injected with `| safe`,\nthe same trust model as the existing `home_markdown` option).\n\n### Example\n```yaml\n# config.yaml \u2014 recolour the navbar\ncustom_css: |\n  .navbar.bg-primary { background-color: #0e4b57 !important; }\n```\n\n## Testing\n- uv run pytest -n0 tests/unit/test_custom_css.py -q\n\nCo-authored-by: mesh-taiwan <hello@meshmap.pro>"
             }
         ]
     },
@@ -1321,8 +1321,8 @@
         "files_to_check": [
             {
                 "file_path": "src/content/docs/docs/getting-started.mdx",
-                "commit_hash": "1088cd0b0890bc6a6a2e15bf1cc725a20dffe6d0",
-                "commit_message": "docs: changes for v5.1.0 (#109)\n\nCo-authored-by: dosubot[bot] <131922026+dosubot[bot]@users.noreply.github.com>"
+                "commit_hash": "968656f24a257724fdb11682f66d78317a0d65f1",
+                "commit_message": "Update Docker image name (#112)"
             }
         ]
     },
