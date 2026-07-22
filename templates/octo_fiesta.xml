@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-07-22
+
+        Add Deemix SquidWTF option
+
         ### 2026-06-27
 
         Add Amazon Music SquidWTF option
@@ -70,7 +74,7 @@
     <Config Name="Qobuz - User Auth Token" Target="Qobuz__UserAuthToken" Default="" Description="Your Qobuz user authentication token for accessing Qobuz content" Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Qobuz - User ID" Target="Qobuz__UserId" Default="" Description="Your Qobuz user ID" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Qobuz - Quality" Target="Qobuz__Quality" Default="" Description="Preferred audio quality for Qobuz downloads (e.g. FLAC, FLAC_24_HIGH, FLAC_24_LOW, FLAC_16, MP3_320)" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="SquidWTF - Source" Target="SquidWTF__Source" Default="Qobuz|Tidal|AmazonMusic" Description="The backend source to use for SquidWTF downloads" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="SquidWTF - Source" Target="SquidWTF__Source" Default="Qobuz|Tidal|AmazonMusic|Deemix" Description="The backend source to use for SquidWTF downloads" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="SquidWTF - Quality" Target="SquidWTF__Quality" Default="" Description="Preferred audio quality for SquidWTF downloads. Qobuz: 27 (FLAC 24-bit), 7 (FLAC 16-bit), 6 (MP3 320), 5 (MP3 128). Tidal: HI_RES_LOSSLESS, LOSSLESS. AmazonMusic: FLAC_24 (24-bit), FLAC_16 (16-bit), AAC (256kbps), OPUS, ATMOS" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="SquidWTF - Timeout" Target="SquidWTF__InstanceTimeoutSeconds" Default="5" Description="Number of seconds to wait for a response from the SquidWTF instance before timing out." Type="Variable" Display="always-hide" Required="true" Mask="false">5</Config>
     <Config Name="Yandex - OAuth Token" Target="Yandex__OAuthToken" Default="" Description="OAuth token for API access." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
