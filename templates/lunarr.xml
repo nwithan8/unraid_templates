@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Lunarr</Name>
+    <Repository>sayem314/lunarr:latest</Repository>
+    <Registry>https://hub.docker.com/r/sayem314/lunarr</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/lunarr-app/lunarr-go/issues</Support>
+    <Project>https://github.com/lunarr-app/lunarr-go</Project>
+    <Overview>
+        Self-hosted media streaming server designed as an alternative to Plex, allowing you to monitor and manage your movie and TV show files on a headless server.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex emby jellyfin media movie tv show file stream</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/lunarr-app/lunarr-go/refs/heads/main/static/images/lunarr-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/lunarr.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/lunarr-app/lunarr-go/refs/heads/main/static/images/lunarr-preview.gif</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-07-22
+
+        Initial release
+    </Changes>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
+    <Config Name="Media Library" Target="/media" Default="" Description="Path to media files" Mode="ro" Type="Path" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Auth Secret" Target="AUTH_SECRET" Default="" Description="Generate a secure random key with `openssl rand -base64 32`" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Public Domain" Target="ORIGIN" Default="" Description="Domain where this instance will be accessed (e.g. https://lunarr.example.com)" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Config Data" Target="/data" Default="/mnt/user/appdata/lunarr/config" Description="Path to the config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/lunarr/config</Config>
+</Container>
