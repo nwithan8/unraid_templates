@@ -1020,8 +1020,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "93745b06996cab03f0aad6f8bfacc37a1e62d29b",
-                "commit_message": "feat(subsonic): add DisableLibraryScan option\n"
+                "commit_hash": "0f37bac51b3fadeb9e0ddf5236c6a1e80dc64508",
+                "commit_message": "feat: add Deemix SquidWTF provider\n"
             },
             {
                 "file_path": ".env.example",
