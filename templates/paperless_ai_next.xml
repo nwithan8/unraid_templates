@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
-    <Name>Paperless-AI-Next</Name>
-    <Repository>admonstrator/paperless-ai-next:latest</Repository>
-    <Registry>https://hub.docker.com/r/admonstrator/paperless-ai-next</Registry>
+    <Name>Zettelrobbe</Name>
+    <Repository>admonstrator/zettelrobbe:latest</Repository>
+    <Registry>https://hub.docker.com/r/admonstrator/zettelrobbe</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -10,21 +10,24 @@
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:3000]/</WebUI>
     <Privileged>false</Privileged>
-    <Support>https://github.com/admonstrator/paperless-ai-next/issues</Support>
-    <Project>https://paperless-ai-next.admon.me/</Project>
+    <Support>https://github.com/admonstrator/zettelrobbe/issues</Support>
+    <Project>https://zettelrob.be/</Project>
     <Overview>
         An automated document analyzer for Paperless-ngx using OpenAI API and Ollama (Mistral, llama, phi 3, gemma 2) to automatically analyze and tag your documents.
     </Overview>
     <Beta>False</Beta>
     <Category>AI: Cloud: MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>paperless-ngx AI paperless document analyzer llama ollama openai chatgpt</ExtraSearchTerms>
-    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/paperless-ai-icon.png</Icon>
-    <Banner>https://raw.githubusercontent.com/admonstrator/paperless-ai-next/main/logo.png</Banner>
+    <Icon>https://raw.githubusercontent.com/admonstrator/zettelrobbe/refs/heads/main/public/logo.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/paperless_ai_next.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-08-05
+
+        Rebrand
+
         ### 2026-06-16
 
         Initial release
