@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-08-09
+
+        Fix post arguments
+
         ### 2026-04-22
 
         - Revert to bridge network mode
@@ -42,6 +46,7 @@
     <Requires>
         Requires separate Kometa, Sonarr/Radarr and Plex servers.
     </Requires>
+    <PostArgs>--init</PostArgs>
     <Config Name="Web UI Port" Target="2120" Default="2120" Mode="tcp" Description="Container Port: 2120" Type="Port" Display="always-hide" Required="true" Mask="false">2120</Config>
     <Config Name="Cron Schedule" Target="CRON" Default="0 2 * * *" Description="Cron schedule for running the update (default: daily at 2 AM)" Type="Variable" Display="always-hide" Required="true" Mask="false">0 2 * * *</Config>
     <Config Name="Kometa Config Files" Target="/app/kometa" Default="" Description="Output directory for generated Kometa YAML files" Type="Path" Display="always-hide" Required="true" Mask="false"/>
