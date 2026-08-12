@@ -16,7 +16,7 @@
         <TagDescription>Latest development release</TagDescription>
     </Branch>
     <Network>bridge</Network>
-    <WebUI>http://[IP]:[PORT:8000]</WebUI>
+    <WebUI>http://[IP]:[PORT:8080]</WebUI>
     <Privileged>false</Privileged>
     <Support>https://docs.castopod.org</Support>
     <Project>https://castopod.org/</Project>
@@ -33,6 +33,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-08-11
+
+        Fix port mapping
+      
         ### 2024-10-13
 
         Initial release
@@ -40,7 +44,7 @@
     <Requires>
         Requires separate MariaDB and Redis databases.
     </Requires>
-    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always-hide" Required="true" Mask="false">8000</Config>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
     <Config Name="App URL" Target="CP_BASEURL" Default="http://localhost:8000" Description="URL of Castopod. Change to IP or domain." Type="Variable" Display="always-hide" Required="true" Mask="false">http://localhost:8000</Config>
     <Config Name="Analytics Salt" Target="CP_ANALYTICS_SALT" Default="" Description="Salt for analytics" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
     <Config Name="MariaDB - Host" Target="CP_DATABASE_HOSTNAME" Default="" Description="Hostname of MariaDB" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
