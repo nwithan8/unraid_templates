@@ -1409,5 +1409,17 @@
                 "commit_message": "Prettier format\n"
             }
         ]
+    },
+    {
+        "app_name": "Advanced Automations",
+        "git_url": "https://github.com/jstnjx/uc-advanced-automations.git",
+        "branch_override": null,
+        "files_to_check": [
+            {
+                "file_path": "docker-compose.yml",
+                "commit_hash": "3ea681bf00bebd2df03a2eeedb5a40202a7c9b24",
+                "commit_message": ""
+            }
+        ]
     }
 ]

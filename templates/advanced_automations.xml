@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Advanced Automations</Name>
+    <Repository>ghcr.io/jstnjx/uc-advanced-automations:latest</Repository>
+    <Registry>ghcr.io/jstnjx/uc-advanced-automations</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:9201]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/jstnjx/uc-advanced-automations/issues</Support>
+    <Project>https://github.com/jstnjx/uc-advanced-automations</Project>
+    <Overview>
+        Advanced Automations is a local visual automation engine for Unfolded Circle Remote Two and Remote 3.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>unfolded circle remote 2 3 automation dashboard</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/jstnjx/uc-advanced-automations/refs/heads/main/advanced-automations.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/advanced_automations.xml</TemplateURL>
+    <Screenshot>https://raw.githubusercontent.com/jstnjx/uc-advanced-automations/main/docs/screenshots/automation-dashboard.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jstnjx/uc-advanced-automations/main/docs/screenshots/automation-editor.png</Screenshot>
+    <Screenshot>https://raw.githubusercontent.com/jstnjx/uc-advanced-automations/main/docs/screenshots/sequence-step-picker.png</Screenshot>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-08-31
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires an Unfolded Circle Remote 2 or Remote 3.
+    </Requires>
+    <Config Name="Web UI Port" Target="9201" Default="9201" Mode="tcp" Description="Container Port: 9201" Type="Port" Display="always-hide" Required="true" Mask="false">9201</Config>
+    <Config Name="Integration HTTP Port" Target="9090" Default="9090" Mode="tcp" Description="Container Port: 9090" Type="Port" Display="always-hide" Required="true" Mask="false">9090</Config>
+    <Config Name="UC_EXTERNAL" Target="UC_EXTERNAL" Default="true|false" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="UC_RUNTIME_MODE" Target="UC_RUNTIME_MODE" Default="external" Type="Variable" Display="always-hide" Required="true" Mask="true">external</Config>
+    <Config Name="UC_DISABLE_MDNS_PUBLISH" Target="UC_DISABLE_MDNS_PUBLISH" Default="true|false" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/advanced_automations/data" Description="Path to the app data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/advanced_automations/data</Config>
+    <Config Name="Internal Data Path" Target="UC_AUTOMATIONS_DATA_DIR" Default="/data" Description="Internal data path. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/data</Config>
+    <Config Name="Internal Integration HTTP Host" Target="UC_INTEGRATION_INTERFACE" Default="0.0.0.0" Description="Internal host. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Internal Integration HTTP Port" Target="UC_INTEGRATION_HTTP_PORT" Default="9090" Description="Internal port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">9090</Config>
+    <Config Name="Internal Web UI Host" Target="UC_AUTOMATIONS_WEB_HOST" Default="0.0.0.0" Description="Internal host. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
+    <Config Name="Internal Web UI Port" Target="UC_AUTOMATIONS_WEB_PORT" Default="9201" Description="Internal port. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">9201</Config>
+</Container>
