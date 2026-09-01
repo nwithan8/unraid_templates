@@ -46,6 +46,8 @@
     <Config Name="Federation" Target="FEDERATION" Default="1|0" Description="Enable or disable PotatoMesh federation features." Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Energy Saving" Target="ENERGY_SAVING" Default="0|1" Description="Whether to save energy with node" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="Private" Target="PRIVATE" Default="0|1" Description="Hide public mesh messages from unauthenticated visitors (1=hidden, 0=public)" Display="always-hide" Type="Variable" Required="true" Mask="false"/>
+    <Config Name="Transmit Enabled" Target="TX_ENABLED" Default="0|1" Description="Allow node to transmit to the mesh" Display="always-hide" Type="Variable" Required="true" Mask="false"/>
+    <Config Name="Announcement Enabled" Target="TX_ANNOUNCE" Default="0|1" Description="Periodically announce status on the mesh" Display="always-hide" Type="Variable" Required="true" Mask="false"/>
     <Config Name="Channel Index" Target="CHANNEL_INDEX" Default="0" Description="Index of the channel to use on the USB device." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0</Config>
     <Config Name="Internal USB Device" Target="CONNECTION" Default="/dev/ttyUSB0" Description="Internal path to the USB device. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/dev/ttyUSB0</Config>
     <Config Name="Localtime path" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="Localtime path" Type="Path" Display="advanced-hide" Required="true" Mask="false">/etc/localtime</Config>
