@@ -911,6 +911,11 @@
                 "file_path": "docker-compose.yml",
                 "commit_hash": "ef3ee11fa3272ed407f91f0862bf076bfe8f0c86",
                 "commit_message": "fix: supervise embedded application and database lifecycle\n"
+            },
+            {
+                "file_path": "docker-compose.unraid.yml",
+                "commit_hash": "ef3ee11fa3272ed407f91f0862bf076bfe8f0c86",
+                "commit_message": "fix: supervise embedded application and database lifecycle\n"
             }
         ]
     },

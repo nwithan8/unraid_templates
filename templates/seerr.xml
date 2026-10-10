@@ -29,6 +29,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-10-10
+
+        Lock down permissions
+
         ### 2026-02-15
 
         Move out of beta, default to `latest` tag
@@ -37,6 +41,7 @@
 
         Initial release
     </Changes>
+    <ExtraParams>--security-opt no-new-privileges:true --cap-drop ALL</ExtraParams>
     <Config Name="Web UI Port" Target="5055" Default="5055" Mode="tcp" Description="Container Port: 5055" Type="Port" Display="always-hide" Required="true" Mask="false">5055</Config>
     <Config Name="Config Data" Target="/app/config" Default="/mnt/user/appdata/seerr" Description="Path to config files" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/seerr</Config>
     <Config Name="Log Level" Target="LOG_LEVEL" Default="debug|info|warn|error" Description="Set the log level for the application." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>

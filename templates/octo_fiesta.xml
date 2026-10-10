@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-10-10
+
+        Add Tidal support
+
         ### 2026-07-22
 
         Add Deemix SquidWTF option
@@ -60,7 +64,7 @@
         Requires a Deezer account and a separate Subsonic-compatible server.
     </Requires>
     <Config Name="Web UI Port" Target="8080" Default="5274" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">5274</Config>
-    <Config Name="Subsonic - Service" Target="Subsonic__MusicService" Default="SquidWTF" Description="The Subsonic-compatible music service to use (e.g. Deezer, Qobuz, SquidWTF)" Type="Variable" Display="always-hide" Required="true" Mask="false">SquidWTF</Config>
+    <Config Name="Subsonic - Service" Target="Subsonic__MusicService" Default="Deezer" Description="The Subsonic-compatible music service to use (e.g. Deezer, Qobuz, Tidal, Yandex, SquidWTF - deprecated)" Type="Variable" Display="always-hide" Required="true" Mask="false">Deezer</Config>
     <Config Name="Subsonic - URL" Target="Subsonic__Url" Default="http://IP_ADDRESS:4533" Description="The URL of your Subsonic server" Type="Variable" Display="always-hide" Required="true" Mask="false">http://IP_ADDRESS:4533</Config>
     <Config Name="Subsonic - Admin Username" Target="SUBSONIC_ADMIN_USERNAME" Default="" Description="Admin username to perform actions on Navidrome server that require admin permissions" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Subsonic - Admin Password" Target="SUBSONIC_ADMIN_PASSWORD" Default="" Description="Admin password to perform actions on Navidrome server that require admin permissions" Type="Variable" Display="always" Required="false" Mask="true"/>
@@ -74,6 +78,14 @@
     <Config Name="Qobuz - User Auth Token" Target="Qobuz__UserAuthToken" Default="" Description="Your Qobuz user authentication token for accessing Qobuz content" Type="Variable" Display="always" Required="false" Mask="true"/>
     <Config Name="Qobuz - User ID" Target="Qobuz__UserId" Default="" Description="Your Qobuz user ID" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="Qobuz - Quality" Target="Qobuz__Quality" Default="" Description="Preferred audio quality for Qobuz downloads (e.g. FLAC, FLAC_24_HIGH, FLAC_24_LOW, FLAC_16, MP3_320)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Tidal - Token Source" Target="Tidal__TokenStore" Default="" Description="Internal path to a Tidal tokens JSON file." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Tidal - Quality" Target="Tidal__Quality" Default="" Description="Preferred audio quality for Tidal downloads: HI_RES_LOSSLESS, LOSSLESS, HIGH, or LOW" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Tidal - Client ID" Target="Tidal__ClientId" Default="" Description="Client ID for app authentication (optional, defaults to a working pair)." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Tidal - Client Secret" Target="Tidal__ClientSecret" Default="" Description="Client secret for app authentication (optional, defaults to a working pair)." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Tidal - Access Token" Target="Tidal__AccessToken" Default="" Description="Overrides token source file" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Tidal - Refresh Token" Target="Tidal__RefreshToken" Default="" Description="Overrides token source file" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Tidal - Access Token" Target="Tidal__AccessToken" Default="" Description="Overrides token source file" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+    <Config Name="Tidal - Country Code" Target="Tidal__CountryCode" Default="" Description="Overrides token source file" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
     <Config Name="SquidWTF - Source" Target="SquidWTF__Source" Default="Qobuz|Tidal|AmazonMusic|Deemix" Description="The backend source to use for SquidWTF downloads" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
     <Config Name="SquidWTF - Quality" Target="SquidWTF__Quality" Default="" Description="Preferred audio quality for SquidWTF downloads. Qobuz: 27 (FLAC 24-bit), 7 (FLAC 16-bit), 6 (MP3 320), 5 (MP3 128). Tidal: HI_RES_LOSSLESS, LOSSLESS. AmazonMusic: FLAC_24 (24-bit), FLAC_16 (16-bit), AAC (256kbps), OPUS, ATMOS" Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="SquidWTF - Timeout" Target="SquidWTF__InstanceTimeoutSeconds" Default="5" Description="Number of seconds to wait for a response from the SquidWTF instance before timing out." Type="Variable" Display="always-hide" Required="true" Mask="false">5</Config>
