@@ -5,7 +5,7 @@
     <Registry>ghcr.io/cloudbyday90/classifarr</Registry>
     <Branch>
         <Tag>latest</Tag>
-        <TagDescription>Latest stable release</TagDescription>
+        <TagDescription>Latest published release (currently beta)</TagDescription>
     </Branch>
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:21324]/</WebUI>
@@ -13,11 +13,11 @@
     <Support>https://github.com/cloudbyday90/Classifarr/issues</Support>
     <Project>https://github.com/cloudbyday90/Classifarr</Project>
     <Overview>
-        Classifarr is an intelligent media classification platform that automatically routes incoming requests from Overseerr/Jellyseerr to the correct Radarr/Sonarr library using AI and machine learning.
+        Classify movie and TV requests into the right Radarr or Sonarr library using policy rules and optional AI. Works with Plex, Jellyfin and Emby. Includes PostgreSQL in one container; no external database is required. Music is not supported. Configure connections and API keys in the WebUI.
     </Overview>
-    <Beta>False</Beta>
-    <Category>AI: MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
-    <ExtraSearchTerms>overseerr jellyseerr radarr sonarr automation classification ai machine learning plex</ExtraSearchTerms>
+    <Beta>True</Beta>
+    <Category>AI: MediaApp:Video Tools:</Category>
+    <ExtraSearchTerms>overseerr jellyseerr radarr sonarr automation classification ai plex jellyfin emby movies television</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/cloudbyday90/Classifarr/refs/heads/main/logo/icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/classifarr.xml</TemplateURL>
     <Maintainer>
@@ -33,11 +33,13 @@
         Initial release
     </Changes>
     <Requires>
-        Requires a separate Ollama instance. &#xD;
-        &#xD;
-        Requires one-to-one mapping of Radarr/Sonarr paths to Classifarr paths. See documentation for details: https://github.com/cloudbyday90/Classifarr/blob/main/docker-compose.yml
+        TMDb API key and configured Radarr/Sonarr library mappings for routing. AI providers, including Ollama, are optional. Media path mounts are needed for file verification and moves. No external PostgreSQL server is required. Existing installations: keep your saved appdata path, PUID/PGID and media mappings. See the setup guide: https://github.com/cloudbyday90/Classifarr/blob/main/unraid/README.md
     </Requires>
+    <ExtraParams>--add-host=host.docker.internal:host-gateway</ExtraParams>
     <Config Name="Web UI Port" Target="21324" Default="21324" Mode="tcp" Description="Container Port: 21324" Type="Port" Display="always-hide" Required="true" Mask="false">21324</Config>
+    <Config Name="Media Path" Target="/data/media" Default="" Mode="rw" Description="Optional media root for file verification and moves. Use this OR separate Movies/TV paths. Leave blank if unused." Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Movies Path" Target="/data/movies" Default="" Mode="rw" Description="Optional separate movie folder instead of a unified media root. Leave blank if unused." Type="Path" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="TV Path" Target="/data/tv" Default="" Mode="rw" Description="Optional separate TV folder instead of a unified media root. Leave blank if unused." Type="Path" Display="advanced" Required="false" Mask="false"/>
     <Config Name="Config Data" Target="/app/data" Default="/mnt/user/appdata/classifarr/data" Description="Path to persistent config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/classifarr/data</Config>
     <Config Name="Environment" Target="NODE_ENV" Default="production" Description="The environment the app is running in" Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
     <Config Name="Node Options" Target="NODE_OPTIONS" Default="--max-old-space-size=1536" Description="Options for Node environment" Type="Variable" Display="advanced-hide" Required="true" Mask="false">--max-old-space-size=1536</Config>
