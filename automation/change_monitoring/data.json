@@ -6,8 +6,8 @@
         "files_to_check": [
             {
                 "file_path": "README.md",
-                "commit_hash": "41b7d0f2a1dbda566c8f99cb049c895f44ece92c",
-                "commit_message": "- Point users to Discussions on GitHub\n"
+                "commit_hash": "c8e13e54860fa1b59155ed82d7b3b8fac78176ba",
+                "commit_message": "- Clarify README\n"
             }
         ]
     },
@@ -194,8 +194,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/docs/self-hosting/docker.md",
-                "commit_hash": "876fa02e9f159bac7f8b8f81db9ee20c93ab1c1a",
-                "commit_message": "chore: Add Timezone and restart policy for postgres backup docker (#3083)\n\nCo-authored-by: Matheus Martins <matheuscumth@gmail.com>\nCo-authored-by: Marko Vejnovic <marko@atuin.sh>"
+                "commit_hash": "3842c76b3ef73cf4c3129144c8ba00774e5afa54",
+                "commit_message": "feat(server): read the database password from db_password_file (atuinsh/atuin#4425)\n\nFixes atuinsh/atuin#2452."
             }
         ]
     },
@@ -461,8 +461,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "fe4d4b493b04bcdf6b27c5ecef05eaf3152c7260",
-                "commit_message": "fix(docker): align commented env var lines with the environment list\n\nThe optional LLM-key lines sat at 5-space indent once uncommented, while\nthe live entry uses 4. Removing the '#' produced 'did not find expected\n- indicator' and broke every compose command until re-indented by hand.\n\nCo-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>\n"
+                "commit_hash": "a4312acdf3bf648e5317894a68251d54bd6f1807",
+                "commit_message": "feat(docker): opt-in deep crawling via CRAWL4AI_ALLOW_DEEP_CRAWL (#2308)\n\nRequests may set deep_crawl_strategy when the flag is true, with safe types only,\nglob-only URL patterns, config page/depth limits and a deadline on streamed deep crawls.\n"
             },
             {
                 "file_path": ".llm.env.example",
@@ -471,8 +471,8 @@
             },
             {
                 "file_path": ".env.txt",
-                "commit_hash": "88643612e82df67cc308434965405ca2d8de189a",
-                "commit_message": ""
+                "commit_hash": "5b8fd5b64e9e81d9add4f86dc552c2012ab794d4",
+                "commit_message": "chore: tidy the repository root\n\nRename .env.txt to .env.example, move JOURNAL.md to docs/deprecated/,\nand remove two stale webhook check scripts from the root. Webhook\ncoverage lives in deploy/docker/tests/.\n"
             }
         ]
     },
@@ -914,8 +914,8 @@
             },
             {
                 "file_path": "docker-compose.unraid.yml",
-                "commit_hash": "ef3ee11fa3272ed407f91f0862bf076bfe8f0c86",
-                "commit_message": "fix: supervise embedded application and database lifecycle\n"
+                "commit_hash": "49fcc9bfc4e2189f0f08fc4b5f56d72f3e7581da",
+                "commit_message": "fix: include optional Unraid media mounts and clarify setup\n"
             }
         ]
     },
@@ -1025,13 +1025,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "8dea9c6e65be9b62ddf4fbe679703f102dce0928",
-                "commit_message": "feat(tidal): log in as the public web client with PKCE\n"
+                "commit_hash": "e15c0c72acb2168d1ec98ec90b7e6b31d50f6f14",
+                "commit_message": "feat: allow a per-provider download path override\n\nCo-authored-by: Derek <derek@m5.macbookpro>\nCo-authored-by: V1ck3s <contact@vickes.fr>"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "8dea9c6e65be9b62ddf4fbe679703f102dce0928",
-                "commit_message": "feat(tidal): log in as the public web client with PKCE\n"
+                "commit_hash": "e15c0c72acb2168d1ec98ec90b7e6b31d50f6f14",
+                "commit_message": "feat: allow a per-provider download path override\n\nCo-authored-by: Derek <derek@m5.macbookpro>\nCo-authored-by: V1ck3s <contact@vickes.fr>"
             }
         ]
     },
@@ -1374,8 +1374,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "9b68b810ef1aefeefd1aa24632aa5628f4680467",
-                "commit_message": "Stop the container restart loop under cap_drop: ALL (#241)\n\nBackground\nOn a fresh install the shipped compose file could not start the container. The\nentrypoint ran under `set -eu` and called `chown -R node:node /app/data` as\nroot; `cap_drop: ALL` removes CAP_CHOWN, the chown failed, `set -e` aborted the\nentrypoint and `restart: unless-stopped` turned that into a loop. The only\noutput was two `Operation not permitted` lines, so the workaround both reporters\nfound was deleting `cap_drop: ALL` and giving up the whole hardening.\n\nThe chown was only the first wall. `gosu` needs CAP_SETUID and CAP_SETGID to\ndrop from root to the unprivileged user, and those were dropped too - the\nentrypoint simply never got that far. Fixing the chown alone would have moved\nthe loop one line down.\n\nChanges\n- docker-entrypoint.sh: the chown is best effort and the privilege drop is\n  attempted, not assumed. Neither aborts the script. Afterwards the script\n  re-executes itself as the user the application will actually run as and\n  proves, by creating and deleting a probe file, that /app/data and\n  /app/data/logs are writable. `test -w` is not used: for root it reports\n  success even where the write is refused. If the probe fails the container\n  refuses to start and prints the directory, its owner and mode, the uid/gid of\n  the process and three concrete ways out, instead of looping on a bare\n  `Operation not permitted`. If the privilege drop is impossible the application\n  keeps running as root inside the container and says so, loudly, with the\n  capabilities to add - a hardening mismatch should not be an outage.\n- docker-entrypoint.sh: PUID/PGID are honoured. They have been in the compose\n  file all along while the entrypoint hardcoded node:node. They are validated as\n  numeric, used for both the chown and the privilege drop, and because gosu\n  resolves HOME from /etc/passwd and a uid without an account there gets \"/\",\n  HOME falls back to the data directory so pm2 can write its runtime state.\n- Dockerfile: /app/data and /app/data/logs are created in the image as\n  root:node, mode 775. Docker seeds a fresh named volume from the image\n  including ownership and mode, so the default deployment is writable for root\n  before the privilege drop and for the unprivileged user after it - with no\n  runtime chown at all. This is what makes the \"chown may be skipped\" path\n  actually work, and what makes the fully unprivileged variant below possible on\n  a fresh volume.\n- docker-compose.yml: `cap_drop: ALL` and `no-new-privileges` stay. Four\n  capabilities come back explicitly, each with a comment saying what needs it:\n  CHOWN (hand a root-owned bind mount over to PUID:PGID), DAC_OVERRIDE (recurse\n  into a bind mount whose permission bits shut root out - verified: without it\n  `chown -R` stops at the first directory it cannot read), SETGID and SETUID\n  (the two syscalls gosu makes). The file also documents the fully unprivileged\n  alternative - `user: '1000:1000'` with no cap_add at all - and the bind mount\n  variant.\n\nTesting\nReal containers on Docker 29.8.0, every case started from a clean volume.\n- Shipped compose, fresh volume: healthy, application runs as uid 1000, no\n  entrypoint messages. Second up/down cycle on the volume left behind: healthy.\n- cap_drop: ALL with no cap_add (what the reporters had): starts and stays\n  healthy, two warnings explaining that it is running as root.\n- `user: '1000:1000'` plus cap_drop: ALL, zero capabilities: healthy, silent.\n- Non-empty mount owned by root, full capabilities: chown repairs it, healthy.\n- Non-empty mount owned by root, capabilities without CHOWN: refuses to start\n  with the full diagnostic.\n- Non-empty mount already owned by 1000:1000, capabilities without CHOWN:\n  healthy, chown skipped.\n- Bind mount from the host: healthy.\n- PUID=1500/PGID=1500: healthy, data directory and pm2 state owned by 1500.\n- Non-numeric PUID: rejected with a message.\n- `npx prettier --check docker-compose.yml`: clean.\n\nImpact\nA fresh `docker compose up` works again with the hardening intact. Deployments\nthat already removed `cap_drop: ALL` are unaffected. Deployments that kept\n`cap_drop: ALL` without adding the capabilities no longer loop; they run as root\ninside the container and say so. PUID/PGID stop being a promise the entrypoint\nignored.\n\nUpstream Status\nNot applicable - the hardened compose file and this entrypoint are fork-only.\n\nCo-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01J98EV4grCxiPwCEoQReEVf\n"
+                "commit_hash": "2d13e1d0bcf2c280f1664411668462ec9d996282",
+                "commit_message": "Single sign-on with any OpenID Connect provider (#2)\n\n* feat(auth): single sign-on with any OpenID Connect provider\n\nBackground:\nZettelrobbe has a single administrator account with a local password.\nOperators running an identity provider (Authentik, Authelia, Keycloak, ...)\nwant to sign in through it instead of keeping yet another password.\nRequested in admonstrator/zettelrobbe#320 and #259.\n\nChanges:\n- New services/oidcService.js and routes/oidc.js: standard authorization\n  code flow with PKCE (S256), state and nonce via openid-client. Endpoints,\n  keys and token endpoint auth methods come from discovery; nothing is\n  provider-specific. Tolerates a trailing-slash issuer mismatch and a full\n  discovery URL as OIDC_ISSUER_URL.\n- One account, no user logic: the identity whose e-mail claim equals\n  OIDC_ADMIN_EMAIL (case-insensitive) signs in as the administrator. No\n  provisioning, no group handling; access is restricted at the provider.\n- OIDC_ADMIN_EMAIL is required. With OIDC_ENABLED=yes but an incomplete\n  configuration, SSO stays off and startup logs what is missing.\n- Login form: an \"or\" divider and an SSO button, customizable with\n  OIDC_BUTTON_TEXT, OIDC_BUTTON_ICON, OIDC_BUTTON_COLOR and\n  OIDC_BUTTON_TEXT_COLOR (colours and icon URLs are validated).\n- OIDC_CLIENT_SECRET is masked in settings and logs; OIDC_* keys are part\n  of the env export.\n- docs/sso-oidc.md: configuration, provider examples, button customization,\n  security notes and troubleshooting. README and docker-compose.yml point\n  to it. OpenAPI regenerated for the two new routes.\n\nTesting:\n- tests/test-oidc-sso.js (29 checks) against a fake Authentik-like\n  provider: happy path, refusals (state, missing transaction, provider\n  error, other e-mail), token separation, auth methods, issuer spelling,\n  button customization and helper validation.\n- node scripts/run-tests.js --all: 111 passed, 6 skipped (need a running\n  server), 1 failed (changelog-releases, fails on main too).\n- Login page rendered in Chromium with default and customized button.\n- eslint, prettier and stylelint clean on changed files.\n\nImpact:\nOff by default. Password login is unchanged and keeps working with SSO\nenabled. New dependency: openid-client (loaded only when SSO is used).\n\nUpstream Status:\nNot submitted upstream yet.\n\nCo-Authored-By: Claude Opus 5.5 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01LYo842vZsjeyzKRLQuLqwX\n\n* fix(auth): reject an OIDC_REDIRECT_URI without scheme\n\nBackground:\nA redirect URI configured without its scheme\n(paperless-ai.example.com/auth/oidc/callback) was sent to the provider\nverbatim. Authentik rejected it with a generic \"Redirect URI Error\",\nwhich gave no hint at the cause. Seen on a real Authentik setup.\n\nChanges:\n- getConfigErrors() requires OIDC_REDIRECT_URI, when set, to be an\n  absolute http(s) URL. Otherwise SSO stays off and the startup log\n  names the setting.\n- docs/sso-oidc.md troubleshooting mentions the scheme.\n\nTesting:\n- tests/test-oidc-sso.js: new check, 30 passed.\n- eslint and prettier clean on changed files.\n\nImpact:\nOnly affects misconfigured installs, which now fail visibly at startup\ninstead of at the provider."
             }
         ]
     },
