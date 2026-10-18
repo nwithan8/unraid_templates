@@ -1,17 +1,5 @@
 [
     {
-        "app_name": "nwithan8 Unraid Templates",
-        "git_url": "https://github.com/nwithan8/unraid_templates.git",
-        "branch_override": null,
-        "files_to_check": [
-            {
-                "file_path": "README.md",
-                "commit_hash": "c8e13e54860fa1b59155ed82d7b3b8fac78176ba",
-                "commit_message": "- Clarify README\n"
-            }
-        ]
-    },
-    {
         "app_name": "Dawarich",
         "git_url": "https://github.com/Freika/dawarich.git",
         "branch_override": null,
@@ -470,7 +458,7 @@
                 "commit_message": ""
             },
             {
-                "file_path": ".env.txt",
+                "file_path": ".env.example",
                 "commit_hash": "5b8fd5b64e9e81d9add4f86dc552c2012ab794d4",
                 "commit_message": "chore: tidy the repository root\n\nRename .env.txt to .env.example, move JOURNAL.md to docs/deprecated/,\nand remove two stale webhook check scripts from the root. Webhook\ncoverage lives in deploy/docker/tests/.\n"
             }
