@@ -6,13 +6,13 @@
         "files_to_check": [
             {
                 "file_path": "docker/docker-compose.yml",
-                "commit_hash": "6d19c51d507c996b34c4c98a9ab09199aecaff35",
-                "commit_message": "Restart app and sidekiq containers after a graceful exit\n\nUse restart: unless-stopped (not on-failure) for the Dawarich app and\nsidekiq services so a graceful, exit-0 shutdown from a stray SIGHUP is\nrestarted automatically instead of leaving the container down.\n\nCloses #3099\n"
+                "commit_hash": "0046404401378b3febbd41e13d80de54b0233873",
+                "commit_message": "chore: give the default app container one CPU core now that it runs jobs\n"
             },
             {
                 "file_path": "docker/.env.example",
-                "commit_hash": "4da0a7a0a400ca811d1835e00888dc64a1d63c19",
-                "commit_message": "Merge remote-tracking branch 'origin/dev' into feat/instance-settings-resolver\n\nIntegrations keeps dev's TeslaMate service and icon map without the\nremoved geocoding pane. Specs added on dev that configured geocoding per\nuser or by stubbing DawarichSettings now configure the instance provider.\n\n# Conflicts:\n#\tCHANGELOG.md\n#\tapp/assets/builds/tailwind.css\n#\tapp/controllers/settings/integrations_controller.rb\n#\tapp/helpers/integrations_helper.rb\n#\tapp/services/integrations/status.rb\n#\tapp/views/settings/integrations/_geocoding.html.erb\n#\tdb/schema.rb\n#\tspec/services/integrations/status_spec.rb\n#\tspec/services/places/search_spec.rb\n"
+                "commit_hash": "0046404401378b3febbd41e13d80de54b0233873",
+                "commit_message": "chore: give the default app container one CPU core now that it runs jobs\n"
             }
         ]
     },
@@ -182,8 +182,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/docs/self-hosting/docker.md",
-                "commit_hash": "3842c76b3ef73cf4c3129144c8ba00774e5afa54",
-                "commit_message": "feat(server): read the database password from db_password_file (atuinsh/atuin#4425)\n\nFixes atuinsh/atuin#2452."
+                "commit_hash": "a26289059013791c4881e350bdbf3a5d3278ecd1",
+                "commit_message": "fix: upgrade regressions found in release QA (atuinsh/atuin#4519)\n\nRegressions since v18.24.1 that break things for users on upgrade, found by a QA pass over the next release:\n\n- `fix(pty-proxy)`: bash and zsh exited 127 before their first prompt when `atuin` couldn't run by name and pty-proxy was on (2378529e0).\n- `fix(daemon)`: a foreground daemon in a terminal of a Dock-launched app took that app's inherited `XPC_SERVICE_NAME` for its launchd job, so `daemon restart` ran `launchctl kickstart -k` on the app (d923707d0).\n- `fix(daemon)`: a daemon forked over SSH while logged out of the desktop blocked the launchd agent at the next GUI login, and every prompt then waited 2-4s on launchd's socket (a2676a7a4). The agent now takes over from a daemon a client forked. A daemon removes its socket file on exit only if it is still the one it bound. A daemon from before run modes is left alone, since clients replace those before installing the agent.\n- `fix(server)`: a Service named `atuin` crash-looped the server, because kubelet's `ATUIN_PORT=tcp://...` now overrides server.toml. An empty `ATUIN_*` variable also overrode a valid file value (73a320fcd). With `RUST_LOG` unset the server now logs warnings, not only errors, so the warning shows.\n- `fix(config)`: a path setting naming an unset variable, or an empty one, failed every command including `init` and the shell hooks, and `:memory:`/`sqlite:`/`file:` database paths were refused (066b54d30). Unset variables now warn and keep the path as written, as 18.24.1 did; empty paths warn and mean the default. Warnings from loading settings are held until logging is set up, so `init` and `doctor` show them; `--hook` stays quiet.\n\nWorkspace nextest passes, except `posix_shells_run_their_command_or_file_instead_of_a_proxy::bash::Login`, which also fails on main when PATH has an empty entry; it passes with a clean PATH. Workspace clippy (with and without `--tests`), nightly fmt and rustdoc are clean.\n\nThe fixes were written by Claude agents and tested on macOS. Live launchd and Linux/Windows at runtime are untested."
             }
         ]
     },
@@ -813,8 +813,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "fbf2b5a369a57c37f55d978385e153544bcf29a9",
-                "commit_message": "docs: docker updates, general corrections\n"
+                "commit_hash": "9bf1ea2a2981396d90b11c295d42784c60d1f98f",
+                "commit_message": "Merge branch 'pr/42'\n"
             }
         ]
     },
@@ -873,8 +873,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "cc671a55ee500f6ea8036cb2d00a54dfb81fd849",
-                "commit_message": "add beets plugin tier docs with replaygain ffmpeg backend note and commented my-plugins mount example\n"
+                "commit_hash": "2944627d4d389ecbadb0a9a41372d71d3e4e0a44",
+                "commit_message": "Show why beets imports fail and queue them per library (#91)\n\n* Add the waiting-for-library row state, importer health types and batch folder names to the shared types\n\n* Run beets through a reader that never blocks on a full pipe and kills the whole process group on timeout\n\n* Classify beets runs from their run log and exact output markers, with real 2.11 transcripts as fixtures\n\n* Check the beets config by loading it the way beet does and report missing metadata sources and broken plugins\n\n* Report beets health from a real config check and return import outcomes instead of fake API errors\n\n* Recheck a timed-out beets config check after five minutes and give beet ls its own time limits\n\n* Refuse downloads and discovery while beets is broken and only download into the user's own folders\n\n* Show refusals through a distinct error code instead of forwarding every server message\n\n* Queue every beets import per library, show waiting rows and keep failed files for a Retry import\n\n* Refuse a retry whose kept files are gone and stop keeping jobs that had nothing left to import\n\n* Download each batch into its own folder, track slskd transfers by id and stop treating Already in progress as success\n\n* Claim handed-off downloads by file identity so a later file under the same name still resolves, and only lock while looking\n\n* Own each in-flight download in a registry so repeat clicks join the running batch instead of downloading again\n\n* Keep claimed downloads moving when the client disconnects and only join a running batch that imports into the same folder\n\n* Track monitor slots by transfer id and only remove slskd records once their files are on disk\n\n* Leave succeeded slskd records to the handoff that found their file and only let a batch rebind keys it owns\n\n* Match discovery downloads by transfer id and drop the fuzzy transfer matching\n\n* Cancel abandoned transfers without removing their records and delete the unused album directory helpers\n\n* Show beets health in the status chip, a banner and Settings, and show why an import was skipped with a Retry button\n\n* Show the outcome note on imported rows, keep the beets output to rows with a reason, and disable Retry import while it runs\n\n* Run cargo tests and the beets config probe in CI, add tini as PID 1 and document how BEETS_CONFIG replaces the shipped config\n\n* Read probe.py from the workspace root in the CI probe steps and fix the README and compose config hints\n\n* Cover queued imports, repeat clicks, skipped rows with Retry and a broken beets config end to end\n\n* Show a failed download only once it has settled, so a retry from its row is not refused\n\n* Name a track search's download folder after the track instead of Download\n\n* Prove repeat clicks never reach slskd twice and share the download panel helpers across specs\n\n* Keep one beets importer for the whole process so saving settings cannot reset its health, and check it before a first import\n\n* Run each promote in its own task and tell the user why a promote or a discovery run did nothing\n\n* Offer Retry import only on rows whose job the server kept, and keep at most 200 such jobs per user\n\n* Join a running batch in one registry step, cancel transfers nobody will watch, and refuse files already downloading into another folder\n\n* Import with --noincremental and --noresume so Retry import always runs, and take the timing races out of the beets tests\n\n* Percent-encode every reserved byte of an slskd path segment and refuse peer names that are dot segments\n\n* Share one status banner and health dot, show the beets fix and promote errors, and clear a stale download error\n\n* Keep one copy of the issue 90 beets config and leave the beets fixtures out of the image build context\n\n* Format the files this branch touched\n\n* Publish prerelease tags as GitHub prereleases without moving latest or the rolling tier tags"
             }
         ]
     },
