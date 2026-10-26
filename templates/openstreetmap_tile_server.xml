@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>OSM Tile Server</Name>
+    <Repository>overv/openstreetmap-tile-server:latest</Repository>
+    <Registry>https://hub.docker.com/r/overv/openstreetmap-tile-server</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Overv/openstreetmap-tile-server/issues</Support>
+    <Project>https://github.com/Overv/openstreetmap-tile-server</Project>
+    <Overview>
+        Host an OpenStreetMaps PNG tile server.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>osm tiles server map</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/osm-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/openstreetmap_tile_server.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-10-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        Read instructions for importing maps: https://github.com/Overv/openstreetmap-tile-server/blob/master/README.md
+    </Requires>
+    <PostArgs>run</PostArgs>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Storage Data" Target="/data/database/" Default="/mnt/user/appdata/openstreetmap_tile_server/data" Description="Path to the config data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/openstreetmap_tile_server/data</Config>
+</Container>
