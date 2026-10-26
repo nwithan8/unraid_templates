@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Tor</Name>
+    <Repository>dockurr/tor:latest</Repository>
+    <Registry>https://hub.docker.com/r/dockurr/tor</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dockur/tor/issues</Support>
+    <Project>https://github.com/dockur/tor</Project>
+    <Overview>
+        Tor network proxy daemon in a Docker container.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Proxy Security: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>network tor privacy proxy vpn</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/dockur/tor/master/.github/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/tor.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-10-26
+
+        Initial release
+    </Changes>
+    <Config Name="SOCKSv5 Proxy Port" Target="9050" Default="9050" Mode="tcp" Description="Container Port: 9050" Type="Port" Display="always-hide" Required="true" Mask="false">9050</Config>
+    <Config Name="HTTPS Port" Target="8118" Default="8118" Mode="tcp" Description="Container Port: 8118" Type="Port" Display="always-hide" Required="true" Mask="false">8118</Config>
+</Container>

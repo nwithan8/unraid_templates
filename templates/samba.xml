@@ -15,7 +15,7 @@
         Set up an SMB networking server.
     </Overview>
     <Beta>False</Beta>
-    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <Category>Cloud: Network: Productivity: Tools: Other: Status:Stable</Category>
     <ExtraSearchTerms>samba smb share files network</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/samba-icon.png</Icon>
     <Banner>https://raw.githubusercontent.com/dockur/samba/master/.github/logo.png</Banner>
