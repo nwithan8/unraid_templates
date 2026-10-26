@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Strix</Name>
+    <Repository>eduard256/strix:latest</Repository>
+    <Registry>https://hub.docker.com/r/eduard256/strix</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>host</Network>
+    <WebUI>http://[IP]:[PORT:4567]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/eduard256/Strix/issues</Support>
+    <Project>https://github.com/eduard256/Strix</Project>
+    <Overview>
+        Smart IP camera stream finder. Tests 102K+ URL patterns in 30 seconds. Supports 67K camera models. Generates ready Frigate/go2rtc configs.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>MediaApp:Video MediaServer:Video Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>cameras frigate go2rtc video</ExtraSearchTerms>
+    <Icon>https://github.com/eduard256/Strix/releases/download/v2.0.0/icon-192.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/strix.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-10-26
+
+        Initial release
+    </Changes>
+    <Config Name="Listening Port" Target="STRIX_LISTEN" Default=":4567" Description="Port to listen on" Display="advanced-hide" Required="true" Mask="false">:4567</Config>
+    <Config Name="Frigate URL" Target="STRIX_FRIGATE_URL" Default="" Description="Frigate URL, optional" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="go2rtc URL" Target="STRIX_GO2RTC_URL" Default="" Description="go2rtc URL, optional" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Log Level" Target="STRIX_LOG_LEVEL" Default="info|debug" Description="Log level" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
