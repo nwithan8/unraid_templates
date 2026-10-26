@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>MeshCore Map Uploader</Name>
+    <Repository>ghcr.io/greentown0/map.meshcore.dev-uploader:latest</Repository>
+    <Registry>ghcr.io/greentown0/map.meshcore.dev-uploader</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+    <Privileged>true</Privileged>
+    <Support>https://github.com/greentown0/map.meshcore.dev-uploader/issues</Support>
+    <Project>https://github.com/greentown0/map.meshcore.dev-uploader</Project>
+    <Overview>
+        This bot will upload every repeater or room server to the meshcore.io map when companion hears new advert
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Network:Messenger MediaApp:Other Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>meshcore mesh map upload</ExtraSearchTerms>
+    <Icon>https://blog.meshcore.io/assets/images/authors/admin.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/meshcore_map_uploader.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-10-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a MeshCore companion radio.
+    </Requires>
+    <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="USB Device" Target="/dev/ttyACM0" Default="" Description="Connected MeshCore USB companion device." Type="Device" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Internal Device Path" Target="DEVICE" Default="/dev/ttyACM0" Description="Internal device path" Type="Variable" Display="advanced-hide" Required="true" Mask="true">/dev/ttyACM0</Config>
+    <Config Name="Advert Timeout (ms)" Target="ADVERT_TIMEOUT_MS" Default="3600000" Description="Maximum time (in milliseconds) to wait for an advert before health check fails" Type="Variable" Display="advanced-hide" Required="true" Mask="false">3600000</Config>
+</Container>
