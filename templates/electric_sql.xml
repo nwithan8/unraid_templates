@@ -33,5 +33,5 @@
     </Requires>
     <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
     <Config Name="Postgres Database URL" Target="DATABASE_URL" Default="" Description="Connection string to a Postgres database" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
-    <Config Name="Insecure Mode" Target="ELECTRIC_INSECURE" Default="false|true" Description="Insecure mode for API for development" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Insecure Mode" Target="ELECTRIC_INSECURE" Default="false|true" Description="Insecure mode for API for development" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
 </Container>
