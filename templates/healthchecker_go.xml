@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>healthchecker-go</Name>
+    <Repository>keatontaylor/healthchecker-go:latest</Repository>
+    <Registry>https://hub.docker.com/r/keatontaylor/healthchecker-go</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/keatontaylor/healthchecker-go/issues</Support>
+    <Project>https://github.com/keatontaylor/healthchecker-go</Project>
+    <Overview>
+        Creating custom metrics for prometheus.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Network: Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>prometheus status check go golang health</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/healthchecker-go-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/healthchecker-go.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-10-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        This is a CLI tool. Please edit the **Post Arguments** accordingly: https://github.com/keatontaylor/healthchecker-go#application-usage
+    </Requires>
+    <PostArgs>--url https://example.com --interval 5s</PostArgs>
+    <Config Name="Port" Target="2112" Default="2112" Mode="tcp" Description="Container Port: 2112" Type="Port" Display="always-hide" Required="true" Mask="false">2112</Config>
+</Container>
