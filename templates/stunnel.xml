@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>stunnel</Name>
+    <Repository>dockurr/stunnel:latest</Repository>
+    <Registry>https://hub.docker.com/r/dockurr/stunnel</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/dockur/stunnel/issues</Support>
+    <Project>https://github.com/dockur/stunnel</Project>
+    <Overview>
+        A proxy designed to add TLS encryption functionality to existing clients and servers without any changes in the programs' code.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Network:Security Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>proxy tls server web security</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/dockur/stunnel/master/.github/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/stunnel.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-10-26
+
+        Initial release
+    </Changes>
+    <Requires>
+        Expects PEM files to exist before starting container. Can also use .crt/.key files
+    </Requires>
+    <Config Name="Port" Target="853" Default="853" Mode="tcp" Description="Container Port: 853" Type="Port" Display="always-hide" Required="true" Mask="false">853</Config>
+    <Config Name="Connect Host" Target="CONNECT_HOST" Default="1.1.1.1" Description="" Type="Variable" Display="always-hide" Required="true" Mask="true">1.1.1.1</Config>
+    <Config Name="Connect Port" Target="CONNECT_PORT" Default="53" Description="" Type="Variable" Display="always-hide" Required="true" Mask="true">53</Config>
+    <Config Name="Private File" Target="/private.pem" Default="/mnt/user/appdata/stunnel/private.pem" Description="Path to the PEM file" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/stunnel/private.pem</Config>
+    <Config Name="Cert File" Target="/cert.pem" Default="/mnt/user/appdata/stunnel/cert.pem" Description="Path to the PEM file" Type="Path" Mode="rw" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/stunnel/cert.pem</Config>
+    <Config Name="External Listening Port" Target="LISTEN_PORT" Default="853" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="true">853</Config>
+</Container>
