@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>MollySocket</Name>
+    <Repository>ghcr.io/mollyim/mollysocket:latest</Repository>
+    <Registry>ghcr.io/mollyim/mollysocket</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/mollyim/mollysocket/issues</Support>
+    <Project>https://github.com/mollyim/mollysocket</Project>
+    <Overview>
+        MollySocket allows getting Signal notifications via UnifiedPush.
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Network:Security Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>signal encryption privacy notifications firebase gcm</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/molly-socket-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/molly_socket.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-10-26
+
+        Initial release
+    </Changes>
+    <ExtraParams>--working-dir /data</ExtraParams>
+    <Config Name="Port" Target="8020" Default="8020" Mode="tcp" Description="Container Port: 8020" Type="Port" Display="always-hide" Required="true" Mask="false">8020</Config>
+    <Config Name="Data Storage" Target="/data" Default="/mnt/user/appdata/mollysocket/data" Description="Path to the data storage" Type="Path" Mode="rw" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/mollysocket/data</Config>
+    <Config Name="Allowed Endpoints" Target="MOLLY_ALLOWED_ENDPOINTS" Default="['*']" Description="Do not add space in the array." Type="Variable" Display="advanced-hide" Required="true" Mask="true">['*']</Config>
+    <Config Name="Allowed UUIDs" Target="MOLLY_ALLOWED_UUIDS" Default="['*']" Description="Do not add space in the array." Type="Variable" Display="advanced-hide" Required="true" Mask="true">['*']</Config>
+    <Config Name="Internal DB Path" Target="MOLLY_DB" Default="/data/mollysocket.db" Description="Internal path to database" Type="Variable" Display="advanced-hide" Required="true" Mask="true">/data/mollysocket.db</Config>
+    <Config Name="Internal Host" Target="MOLLY_HOST" Default="0.0.0.0" Description="Internal host." Type="Variable" Display="advanced-hide" Required="true" Mask="true">0.0.0.0</Config>
+    <Config Name="Internal Port" Target="MOLLY_PORT" Default="8020" Description="Internal port." Type="Variable" Display="advanced-hide" Required="true" Mask="true">8020</Config>
+    <Config Name="Log Level" Target="RUST_LOG" Default="info" Description="Log level" Type="Variable" Display="advanced-hide" Required="true" Mask="true">info</Config>
+</Container>
