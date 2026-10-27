@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>watchtower</Name>
+    <Repository>nickfedor/watchtower:latest</Repository>
+    <Registry>https://hub.docker.com/r/nickfedor/watchtower</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support>https://watchtower.nickfedor.com</Support>
+    <Project>https://watchtower.nickfedor.com</Project>
+    <Overview>
+        Automate Docker container image updates &#xD;
+        Edit **Post Arguments** accordingly: https://watchtower.nickfedor.com/dev/configuration/introduction/
+    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>docker update monitor automate</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nicholas-fedor/watchtower/main/logo.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/watchtower.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-10-26
+
+        Initial release
+    </Changes>
+    <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to the Docker socket" Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
