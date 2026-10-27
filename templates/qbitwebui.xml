@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
     <Name>qbitwebui</Name>
-    <Repository>ghcr.io/maciejonos/qbitwebui:latest</Repository>
-    <Registry>ghcr.io/maciejonos/qbitwebui</Registry>
+    <Repository>ghcr.io/mkbula/qbitwebui:latest</Repository>
+    <Registry>ghcr.io/mkbula/qbitwebui</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -10,8 +10,8 @@
     <Network>bridge</Network>
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <Privileged>false</Privileged>
-    <Support>https://github.com/Maciejonos/qbitwebui/issues</Support>
-    <Project>https://github.com/Maciejonos/qbitwebui</Project>
+    <Support>https://github.com/mkbula/qbitwebui/issues</Support>
+    <Project>https://github.com/mkbula/qbitwebui</Project>
     <Overview>
         A modern lightweight web interface for qBittorrent.
     </Overview>
@@ -24,6 +24,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-10-26
+
+        Fix registry and repository name
+
         ### 2026-01-02
 
         Initial release
