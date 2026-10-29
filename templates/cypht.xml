@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
+    <Name>Cypht</Name>
+    <Repository>cypht/cypht:latest</Repository>
+    <Registry>https://hub.docker.com/r/cypht/cypht</Registry>
+    <Branch>
+        <Tag>latest</Tag>
+        <TagDescription>Latest stable release</TagDescription>
+    </Branch>
+    <Network>bridge</Network>
+    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <Privileged>false</Privileged>
+    <Support>https://www.cypht.org</Support>
+    <Project>https://www.cypht.org</Project>
+    <Overview>
+        Cypht combines your accounts into one view. It does not replace them. It is also a standard email client: browse and manage your folders, read and send messages. And it works as a news reader too.    </Overview>
+    <Beta>False</Beta>
+    <Category>Productivity: Tools: Other: Status:Stable</Category>
+    <ExtraSearchTerms>email smtp imap pop3 messages inbox</ExtraSearchTerms>
+    <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/cypht-icon.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/cypht.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/nwithan8</WebPage>
+    </Maintainer>
+    <Changes>
+        ### 2026-10-28
+
+        Initial release
+    </Changes>
+    <Requires>
+        Requires a separate MariaDB instance.
+    </Requires>
+    <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+    <Config Name="Auth - Username" Target="AUTH_USERNAME" Default="" Description="Authentication username" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Auth - Password" Target="AUTH_PASSWORD" Default="" Description="Authentication password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Database - Connection Type" Target="DB_CONNECTION_TYPE" Default="host" Description="Database connection type" Type="Variable" Display="always-hide" Required="true" Mask="false">host</Config>
+    <Config Name="Database - Driver" Target="DB_DRIVER" Default="mysql" Description="Database driver" Type="Variable" Display="always-hide" Required="true" Mask="false">mysql</Config>
+    <Config Name="Database - Host" Target="DB_HOST" Default="" Description="Database host" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
+    <Config Name="Database - Name" Target="DB_NAME" Default="cypht" Description="Database name" Type="Variable" Display="always-hide" Required="true" Mask="false">cypht</Config>
+    <Config Name="Database - Username" Target="DB_USER" Default="cypht" Description="Database username" Type="Variable" Display="always-hide" Required="true" Mask="false">cypht</Config>
+    <Config Name="Database - Password" Target="DB_PASS" Default="" Description="Database password" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
+    <Config Name="Session Type" Target="SESSION_TYPE" Default="DB" Description="Session type" Type="Variable" Display="advanced-hide" Required="true" Mask="false">DB</Config>
+    <Config Name="User Config Type" Target="USER_CONFIG_TYPE" Default="DB" Description="User config type" Type="Variable" Display="advanced-hide" Required="true" Mask="false">DB</Config>
+    <Config Name="Nginx Data" Target="/var/log/nginx" Default="/mnt/user/appdata/cypht/ngninx" Description="Path to the Nginx data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/cypht/nginx</Config>
+    <Config Name="PHP Data" Target="/var/log/php" Default="/mnt/user/appdata/cypht/php" Description="Path to the PHP data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/cypht/php</Config>
+    <Config Name="supervisord Data" Target="/var/log/supervisord" Default="/mnt/user/appdata/cypht/supervisord" Description="Path to the supervisord data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/cypht/supervisord</Config>
+    <Config Name="Fonts Data" Target="/usr/local/share/cypht/site/fonts" Default="/mnt/user/appdata/cypht/fonts" Description="Path to the fonts data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/cypht/fonts</Config>
+</Container>
