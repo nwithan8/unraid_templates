@@ -1326,8 +1326,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "1d00aff570aca81279aea46f9fcfcfa52fd179da",
-                "commit_message": "more newcomer friendly compose\n\nyay, an up-to-date prebuilt image!\n\nthis changes the provided compose file to be more in-line with what a user would likely expect (as opposed to having to clone the full repo to build the image locally). the instructions about how to build the image with a compose file in the readme are still valid in-case people still want to go that route\n\n(thanks oyster.cafe!)\n"
+                "commit_hash": "0e86744b89f966107a0cf902a6e9bc44af82d18b",
+                "commit_message": "Golang knot is fully deprecated\n\nLewis: May this revision serve well! <did:plc:3fwecdnvtcscjnrx2p4n7alz>\n"
             }
         ]
     },
