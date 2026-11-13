@@ -105,8 +105,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "41d65c6ef549d467de68a96c74d660243c80f741",
-                "commit_message": "Add support for remote Unifi Site Manager connection (#129)\n\n* Update variables.js\n\nAdded Console ID as a variable\n\n* Update variables.js\n\nAdded Unifi Site Mgr as a variable\n\n* Update fetch.js\n\nAdded option to use the Unifi Cloud for API access if Site Mgr variable is set. Changed site filter to filter for id instead of internalReference\n\n* Update fetch.js\n\nFiltering rule changes based on site manager usage. Unifi Cloud requires a site id that is not default whereas local access is fine with default.\n\n* Update README.md\n\nUpdated docker compose section to add documentation & environment variables for UNIFI_CONSOLE_ID, UNIFI_SITE_MGR, and added note onto UNIFI_IP\n\n* Update docker-compose.yml\n\nAdded UNIFI_CONSOLE_ID and UNIFI_SITE_MGR environment variables\n\n* Update README.md\n\nAdded warning to leave UNIFI_CONSOLE_ID blank if not using site manager.\n\n* Update modules/variables.js\n\nCo-authored-by: Glenn de Haan <glenn@dehaan.cloud>\n\n* Update modules/variables.js\n\nCo-authored-by: Glenn de Haan <glenn@dehaan.cloud>\n\n* Update utils/fetch.js\n\nCo-authored-by: Glenn de Haan <glenn@dehaan.cloud>\n\n* Update utils/fetch.js\n\nCo-authored-by: Glenn de Haan <glenn@dehaan.cloud>\n\n* Update docker-compose.yml\n\nCo-authored-by: Glenn de Haan <glenn@dehaan.cloud>\n\n* Update docker-compose.yml\n\nCo-authored-by: Glenn de Haan <glenn@dehaan.cloud>\n\n* Update README.md\n\nCo-authored-by: Glenn de Haan <glenn@dehaan.cloud>\n\n* Added Site Manager API Key example\n\n* Update README.md\n\nAdded documentation for the Site Manager API Key, added picture\n\n* Update variables.js\n\nAdjusted positions of variables to follow:\r\nUNIFI_TOKEN\r\nUNIFI_SITE_ID\r\nUNIFI_SITE_MANAGER\r\nUNIFI_SITE_MANAGER_CONSOLE_ID\n\n* Update docker-compose.yml\n\nAdjusted positions of environment variables to match:\r\nUNIFI_TOKEN\r\nUNIFI_SITE_ID\r\nUNIFI_SITE_MANAGER\r\nUNIFI_SITE_MANAGER_CONSOLE_ID\n\n* Update README.md\n\nAdjusted positions of the docker compose environment variables to match:\r\nUNIFI_TOKEN\r\nUNIFI_SITE_ID\r\nUNIFI_SITE_MANAGER\r\nUNIFI_SITE_MANAGER_CONSOLE_ID\n\n---------\n\nCo-authored-by: Glenn de Haan <glenn@dehaan.cloud>"
+                "commit_hash": "2aa273491a9c644cf127a6891aadb87742029c86",
+                "commit_message": "Updated dependencies. Add `AUTH_OIDC_RESTRICT_VISIBILITY_USER` variable. Add OIDC user email to voucher notes\n"
             }
         ]
     },
@@ -591,13 +591,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.app.yml",
-                "commit_hash": "3ab7cbffc8f191b9183ec57947792f53b2b79b34",
-                "commit_message": "feat: Swarm support\n\n- added agent api\n- added check/update functionality\n- added swarp ui (table, logs)\n- added unit-tests\n- added docs\n\nCloses #200\n"
+                "commit_hash": "14814643b8728fcb96d52ccbb2d371b532122747",
+                "commit_message": "feat!: replace python-on-whales with async Docker/Podman Engine API client (#271)\n\n## Summary\n\nReplaces python-on-whales and the bundled Docker CLI with a direct\nasynchronous Engine API client (`shared/runtime`, aiohttp) used by the\nagent, the backend and the self-update helper. Implements ADR 0002\n(`docs/adr/0002-async-runtime-api.md`).\n\n- Shared `RuntimeClient` over Unix sockets and TCP/HTTP(S), including\nsocket-proxy deployments and TLS client certificates\n(`DOCKER_TLS_VERIFY` / `DOCKER_CERT_PATH`).\n- API version negotiation via unversioned `/version`; Docker Engine\n25.0+ (API 1.44+), maximum tested API 1.48.\n- Separate Podman detection (`Podman Engine` component /\n`Libpod-API-Version`); the Docker version floor is not applied to\nPodman. Podman is accessed through its Docker-compatible API, as in 1.x.\n- Project-owned Pydantic runtime models replace library schemas.\n- Container recreation maps inspect data to Engine API create payloads\n(healthcheck, mounts and endpoint settings preserved as-is). Preflight\nruns in the backend before stop/remove, for both the new and the\nrollback config. Secondary networks are attached before start.\n- Update check works on both the classic and the containerd image store\n(Docker 29 default).\n- Logs/exec: frame demultiplexing only for non-TTY streams; exec reads\nthe stream to completion and requires a final exit code.\n- Image pull and Swarm service update forward `X-Registry-Auth` from\n`config.json` `auths` (incl. `identitytoken`). Swarm service update\nresolves the current image digest and preserves the full spec with\n`Version.Index`.\n- Backend checks agent compatibility before any update/recreate.\n- Self-update helper runs on the shared runtime client without backend\nimports; plan schema version 2.\n- Generic command execution API (`command_api`, `command_validator`)\nreplaced by typed operations.\n\n## Breaking changes and upgrade notes\n\n- **Manual upgrade from 1.x.** A 1.x app cannot self-update to 2.x; the\n2.x helper rejects 1.x plans before touching any container. Recreate the\napp container from `ghcr.io/quenary/tugtainer:2` and keep the\n`/tugtainer` volume; the database stays compatible.\n- **Coordinated agent upgrade.** Update every remote agent to\n`ghcr.io/quenary/tugtainer-agent:2` together with the app. The backend\nrefuses operations on incompatible (1.x) agents.\n- **Docker requirements.** Docker Engine 25.0+ (API 1.44+). Older\ndaemons are rejected.\n- **Podman.** Rootful and rootless sockets are supported through\n`DOCKER_HOST` or a mounted socket; there is no automatic rootless\ndetection and no fallback to the rootful socket. Swarm is Docker-only.\nContainers managed by Quadlet / podman-generated systemd units\n(`PODMAN_SYSTEMD_UNIT`, cidfile) are refused for update and self-update\ninstead of being recreated outside systemd; use `podman auto-update` for\nthem. Pod membership is not preserved (not exposed by the compatible\nAPI, as in 1.x).\n- **`DOCKER_HOST`.** Supported schemes: `unix://`, `tcp://`, `http://`,\n`https://`, with TLS client certificates via `DOCKER_TLS_VERIFY` /\n`DOCKER_CERT_PATH`. `ssh://` is not supported (it was not usable in 1.x\nimages either).\n- **Registry credentials.** `auths` entries in `config.json` (incl.\n`identitytoken`), as before. Docker credential helpers (`credsStore` /\n`credHelpers`) remain unsupported.\n- **Socket proxy permissions.** `VERSION`, `PING`, `INFO`, `CONTAINERS`,\n`IMAGES`, `NETWORKS`, `POST`; `ALLOW_LOGS` and start/stop/restart/pause\nflags as before; `EXEC` for update hooks; `SERVICES`, `TASKS`, `NODES`,\n`SWARM`, `DISTRIBUTION` for Swarm. See README.\n- **Images.** The app and agent images no longer contain the Docker CLI.\n\n## Removed\n\n- `python-on-whales` dependency, models, mocks and imports.\n- Docker CLI from `Dockerfile.app` and `Dockerfile.agent`.\n- Agent `command` API, `command_schemas`, `command_validator`,\n`filter_cli_safe_labels`.\n- `agent/unil/asyncall`.\n- CLI-era mappings, unreachable preflight checks and other dead code.\n\n## Testing\n\n- Unit: `pytest`, `ruff check`, `ruff format --check`, `mypy agent\nbackend shared`.\n- Integration (Playwright, CI on Docker 29 with the containerd image\nstore): container check/update with extended config fields, healthcheck\nhandling, extra networks, private registry authentication, self-update.\n- Not covered by automated tests: Podman (rootful/rootless), Swarm\nservice update.\n\n## Known limitations\n\n- Podman-specific settings that the Docker-compatible API cannot\nrepresent are rejected rather than translated; some mount options and\n`GwPriority` are refused on Podman until verified.\n- Podman and Swarm have no integration coverage yet.\n\nBREAKING CHANGE: Tugtainer 2.0 talks to the container runtime API\ndirectly and no longer ships the Docker CLI. Requires Docker Engine\n25.0+ (API 1.44+), a coordinated upgrade of the app and all agents to\n2.x, and manual recreation of the app container when upgrading from 1.x\n(self-update from 1.x is refused). Docker credential helpers and\n`ssh://` DOCKER_HOST are not supported.\nCloses #272 "
             },
             {
                 "file_path": "docker-compose.agent.yml",
-                "commit_hash": "3ab7cbffc8f191b9183ec57947792f53b2b79b34",
-                "commit_message": "feat: Swarm support\n\n- added agent api\n- added check/update functionality\n- added swarp ui (table, logs)\n- added unit-tests\n- added docs\n\nCloses #200\n"
+                "commit_hash": "14814643b8728fcb96d52ccbb2d371b532122747",
+                "commit_message": "feat!: replace python-on-whales with async Docker/Podman Engine API client (#271)\n\n## Summary\n\nReplaces python-on-whales and the bundled Docker CLI with a direct\nasynchronous Engine API client (`shared/runtime`, aiohttp) used by the\nagent, the backend and the self-update helper. Implements ADR 0002\n(`docs/adr/0002-async-runtime-api.md`).\n\n- Shared `RuntimeClient` over Unix sockets and TCP/HTTP(S), including\nsocket-proxy deployments and TLS client certificates\n(`DOCKER_TLS_VERIFY` / `DOCKER_CERT_PATH`).\n- API version negotiation via unversioned `/version`; Docker Engine\n25.0+ (API 1.44+), maximum tested API 1.48.\n- Separate Podman detection (`Podman Engine` component /\n`Libpod-API-Version`); the Docker version floor is not applied to\nPodman. Podman is accessed through its Docker-compatible API, as in 1.x.\n- Project-owned Pydantic runtime models replace library schemas.\n- Container recreation maps inspect data to Engine API create payloads\n(healthcheck, mounts and endpoint settings preserved as-is). Preflight\nruns in the backend before stop/remove, for both the new and the\nrollback config. Secondary networks are attached before start.\n- Update check works on both the classic and the containerd image store\n(Docker 29 default).\n- Logs/exec: frame demultiplexing only for non-TTY streams; exec reads\nthe stream to completion and requires a final exit code.\n- Image pull and Swarm service update forward `X-Registry-Auth` from\n`config.json` `auths` (incl. `identitytoken`). Swarm service update\nresolves the current image digest and preserves the full spec with\n`Version.Index`.\n- Backend checks agent compatibility before any update/recreate.\n- Self-update helper runs on the shared runtime client without backend\nimports; plan schema version 2.\n- Generic command execution API (`command_api`, `command_validator`)\nreplaced by typed operations.\n\n## Breaking changes and upgrade notes\n\n- **Manual upgrade from 1.x.** A 1.x app cannot self-update to 2.x; the\n2.x helper rejects 1.x plans before touching any container. Recreate the\napp container from `ghcr.io/quenary/tugtainer:2` and keep the\n`/tugtainer` volume; the database stays compatible.\n- **Coordinated agent upgrade.** Update every remote agent to\n`ghcr.io/quenary/tugtainer-agent:2` together with the app. The backend\nrefuses operations on incompatible (1.x) agents.\n- **Docker requirements.** Docker Engine 25.0+ (API 1.44+). Older\ndaemons are rejected.\n- **Podman.** Rootful and rootless sockets are supported through\n`DOCKER_HOST` or a mounted socket; there is no automatic rootless\ndetection and no fallback to the rootful socket. Swarm is Docker-only.\nContainers managed by Quadlet / podman-generated systemd units\n(`PODMAN_SYSTEMD_UNIT`, cidfile) are refused for update and self-update\ninstead of being recreated outside systemd; use `podman auto-update` for\nthem. Pod membership is not preserved (not exposed by the compatible\nAPI, as in 1.x).\n- **`DOCKER_HOST`.** Supported schemes: `unix://`, `tcp://`, `http://`,\n`https://`, with TLS client certificates via `DOCKER_TLS_VERIFY` /\n`DOCKER_CERT_PATH`. `ssh://` is not supported (it was not usable in 1.x\nimages either).\n- **Registry credentials.** `auths` entries in `config.json` (incl.\n`identitytoken`), as before. Docker credential helpers (`credsStore` /\n`credHelpers`) remain unsupported.\n- **Socket proxy permissions.** `VERSION`, `PING`, `INFO`, `CONTAINERS`,\n`IMAGES`, `NETWORKS`, `POST`; `ALLOW_LOGS` and start/stop/restart/pause\nflags as before; `EXEC` for update hooks; `SERVICES`, `TASKS`, `NODES`,\n`SWARM`, `DISTRIBUTION` for Swarm. See README.\n- **Images.** The app and agent images no longer contain the Docker CLI.\n\n## Removed\n\n- `python-on-whales` dependency, models, mocks and imports.\n- Docker CLI from `Dockerfile.app` and `Dockerfile.agent`.\n- Agent `command` API, `command_schemas`, `command_validator`,\n`filter_cli_safe_labels`.\n- `agent/unil/asyncall`.\n- CLI-era mappings, unreachable preflight checks and other dead code.\n\n## Testing\n\n- Unit: `pytest`, `ruff check`, `ruff format --check`, `mypy agent\nbackend shared`.\n- Integration (Playwright, CI on Docker 29 with the containerd image\nstore): container check/update with extended config fields, healthcheck\nhandling, extra networks, private registry authentication, self-update.\n- Not covered by automated tests: Podman (rootful/rootless), Swarm\nservice update.\n\n## Known limitations\n\n- Podman-specific settings that the Docker-compatible API cannot\nrepresent are rejected rather than translated; some mount options and\n`GwPriority` are refused on Podman until verified.\n- Podman and Swarm have no integration coverage yet.\n\nBREAKING CHANGE: Tugtainer 2.0 talks to the container runtime API\ndirectly and no longer ships the Docker CLI. Requires Docker Engine\n25.0+ (API 1.44+), a coordinated upgrade of the app and all agents to\n2.x, and manual recreation of the app container when upgrading from 1.x\n(self-update from 1.x is refused). Docker credential helpers and\n`ssh://` DOCKER_HOST are not supported.\nCloses #272 "
             }
         ]
     },
@@ -719,13 +719,13 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "a7c56ed77b1485e5d6836b0e3dd4571c6d10e5e7",
-                "commit_message": "fix: respect TZ env var in console log timestamps\n\nLog timestamps always came out in UTC even when TZ was set to\nsomething else. Switching pino-pretty from UTC: to SYS: makes it\nuse the container's timezone instead.\n\nAlso: The dev Compose file wasn't passing TZ through at all, so I added\nit there, and updated the TZ wording in the docs and setup prompt.\n\nRefs: #838\n"
+                "commit_hash": "0082558098809aa581fbed4c6ae1a0f0a8377eeb",
+                "commit_message": "fix: make external API opt-in and verify MariaDB migrations\n"
             },
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "026f1d92e7811b0ae278b9c6f911209fa4a998d2",
-                "commit_message": "feat: add rolling log files and live log level\n\nLogs were only reachable through docker logs, and changing the level\nmeant editing LOG_LEVEL and recreating the container, which is hard\non NAS setups without easy Docker CLI access.\n\nThe server now also writes its log to rolling files in config/logs,\nin the same format as the console without colors. LOG_FILE_MAX_SIZE\n(default 10MB) and LOG_FILE_MAX_COUNT (default 5 older files kept)\ncap disk use, and older files from earlier runs are pruned on\nrotation. Only the server process writes these files; post-processor\noutput already reaches the server log through yt-dlp. If the folder\nis not writable or a write fails, logging continues on the console.\n\nA new Logging page in Settings sets the level (Default, Warn, Info,\nDebug) without a restart and shows whether the current level comes\nfrom the setting or LOG_LEVEL. Default keeps LOG_LEVEL in charge, so\nstart.sh --debug still works. The page also has a Download logs\nbutton that returns all log files oldest first as one file, with\nconfigured API keys, tokens, notification URLs, and proxy passwords\nreplaced by [REDACTED].\n\nRefs: #883\n"
+                "commit_hash": "3331783deb80bb9418b71cfbfd53c3fd6373b570",
+                "commit_message": "feat: add output dir health check timeout env var\n\nThe pre-download write probe of the output directory gives up after a\nfixed 10 seconds, which was reported to fail every download on a slow\nbut healthy NFS share.\n\nOUTPUT_DIR_HEALTHCHECK_TIMEOUT (whole seconds, 1 to 3600, default 10)\nnow sets the limit. An invalid value logs a warning and keeps the\ndefault, and a job that fails on the timeout names the variable in its\nnotes. The Compose files pass it through and the docs describe it.\n\nRefs: #988\n"
             }
         ]
     },
@@ -936,8 +936,8 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "f76d63c3b9f333b5c7a145ae041fc21ac48b3be2",
-                "commit_message": "multi server support: per node counters, shared artwork and badges, template replication\n"
+                "commit_hash": "b7ec9aecde89fc5440d667c5083fd0915efa1b05",
+                "commit_message": "feat: add aggregate generation stats page\n"
             }
         ]
     },
@@ -1066,8 +1066,8 @@
         "files_to_check": [
             {
                 "file_path": "README-Docker.md",
-                "commit_hash": "7d395e5e275c5d63e5d7410acad853b338b3a478",
-                "commit_message": "Correct documentation error\n"
+                "commit_hash": "8446ef8956acf8630b6cef730c4c13e7e64279a5",
+                "commit_message": "fixed colors in report\n"
             }
         ]
     },
@@ -1107,8 +1107,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.example.yml",
-                "commit_hash": "3b009e66e7bb383a9e56f8c4c7a9544575d12bda",
-                "commit_message": "Fix custom URL base path support\n"
+                "commit_hash": "02fabd76c729b22596a72f7869de3009b847910c",
+                "commit_message": "feat(ui): Messer Swipe \u2014 neutral brand, Lucide icons, square tabs, 2.0 copy\n\n- brand: src/styles/messer/brand.css regenerated from messer-ui's brand-messer-swipe\n  (portal/studio neutral), so the app ships with no primary colour \u2014 every accent usage\n  (buttons, ring, charts) resolves to ink or paper\n- icons: @phosphor-icons/react removed, lucide-react restored app-wide (47 files). The icon\n  family is a declared exception in messer-ui canon \u00a79 / scripts/apps.json, enforced by\n  messer check --static; the mark glyph is Lucide layers\n- tabs: the animate-ui highlight/list/trigger were rounded-full/lg/md, so the active tab\n  stayed a pill; now square, and the highlight's shadow is gone (rule 2)\n- marks: public/ now carries marks/messer-swipe (svg, 32, 180, og); icon0.svg, icon1.png,\n  favicon.ico and the web-app-manifest PNGs are deleted; the login logo and the manifest\n  use the generated mark\n- og: both OG routes render one card from src/lib/og.tsx \u2014 ink box, Lucide glyph drawn in\n  paper, Golos/JetBrains, square join-code box; Zalando Sans, the emoji and the rounded\n  logo were the last non-canon surfaces\n- copy/identity: Swiparr -> Messer Swipe everywhere it is user-facing or external\n  (metadata, manifest, login, invite toast, provider client names, logger prefix, docs)\n- wire compat: session cookie renamed with a copy-on-read migration in proxy.ts, settings\n  storage renamed with a fallback read; the salt, Plex client id, db file and swiparr.com\n  stay and are documented in MESSER.md\n"
             }
         ]
     },
@@ -1119,8 +1119,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.unraid.yml",
-                "commit_hash": "6bf8145504bac2123099217bae76cc99e2ecf796",
-                "commit_message": "fix: quote SESSION_SECRET in docker-compose files to prevent YAML parsing issues\n\nRandom key generators often produce keys with special characters like #, $, !\nwhich YAML interprets as comments or special syntax. This causes the value to\nbe truncated, leading to 'must contain at least 32 characters' errors even\nwhen users paste 32+ character keys.\n\nChanges:\n- Quote SESSION_SECRET placeholder in all docker-compose files\n- Add warning comment about keeping quotes for special characters\n- Update Windows Docker Desktop docs with troubleshooting for this issue\n- Update example configurations to show quoted values\n\nAffected files:\n- docker-compose.windows.yml\n- docker-compose.prod.yml\n- docker-compose.synology.yml\n- docker-compose.qnap.yml\n- docker-compose.unraid.yml\n- docs/admin/windows-docker-desktop.md\n"
+                "commit_hash": "270a5b9db3c3fe8f6f2649b220858e8f089e4597",
+                "commit_message": "Prepare 1.0.2-dev.1 with output compatibility checks and current docs\n"
             }
         ]
     },
@@ -1189,13 +1189,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f014bd8b03262c5b2329c5fb8f079e4d14f4d3ea",
-                "commit_message": "Backport portable Facet Cloud fixes\n"
+                "commit_hash": "1ad62563bd4c0b6a3610bca979f50d8918b241ed",
+                "commit_message": "fix: harden self-hosted Facet and complete public and admin workflows (#521)\n\nEnforce public/private and purchase boundaries, keep self-hosted courses free, and require operator SMTP for all email. Make newsletter progress durable and resumable, repair authentication and recovery flows, update dependencies, improve public/admin UX, and rewrite the documentation.\n\nValidated with the full backend race and security suites, 256 production browser/API checks, both architecture builds, migration/upgrade probes, and a clean review of the final PR head."
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "cb76dbc1c7009cc7839a20d5ee9a6622e36a3238",
-                "commit_message": "docs: comprehensive documentation audit for email notifications and testimonials\n\nUpdate all documentation to reflect current state of the PR:\n- .env.example: add SMTP configuration section\n- CHANGELOG: add v2.18.0 entry with all features and fixes\n- README: update config table, admin routes, project structure\n- DESIGN.md: add testimonial endpoints, SMTP vars, data model\n- ROADMAP.md: update current status, Phase 20.1 details\n- SETUP.md: add SMTP env vars, email notifications section\n- TESTIMONIALS.md: update implementation checklist, email flow\n"
+                "commit_hash": "23cb9cf74ba9a6ae7be2168f75ec2b7226b08c05",
+                "commit_message": "feat: improve self-hosted publishing, reliability and product UX (#522)\n\nPreserve edits and publication boundaries through failed reads, uncertain writes and shared-page access. Improve standalone Facet guidance, navigation, accessibility, courses, operator SMTP, request privacy and documentation.\n\nValidated with the complete backend race suite, 622 frontend checks, both image architectures and production-image SMTP, responsive, log privacy and backup/restore probes."
             }
         ]
     },
@@ -1290,8 +1290,8 @@
         "files_to_check": [
             {
                 "file_path": "deployment/docker/compose-files/docker-compose-postgres/docker-compose.yml",
-                "commit_hash": "dbc86cd04712854a0475987c789a0546eaedf982",
-                "commit_message": "Initial implementation of ad block\n"
+                "commit_hash": "dc41ce894580ee368d3efe4907cd576e919d1970",
+                "commit_message": "README: easiest vs production setup\n"
             }
         ]
     },
@@ -1326,8 +1326,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "1d00aff570aca81279aea46f9fcfcfa52fd179da",
-                "commit_message": "more newcomer friendly compose\n\nyay, an up-to-date prebuilt image!\n\nthis changes the provided compose file to be more in-line with what a user would likely expect (as opposed to having to clone the full repo to build the image locally). the instructions about how to build the image with a compose file in the readme are still valid in-case people still want to go that route\n\n(thanks oyster.cafe!)\n"
+                "commit_hash": "7dd40a5ba6f8badd0045793617458d32529f8d21",
+                "commit_message": "Update compose to use tagged release\n"
             }
         ]
     },
