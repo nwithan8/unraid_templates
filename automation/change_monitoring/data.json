@@ -483,8 +483,8 @@
         "files_to_check": [
             {
                 "file_path": "auth-portal-full-stack-dev_docker-compose.yml",
-                "commit_hash": "c415c9f72184ec94074e2e6f6c2e4c945e18f568",
-                "commit_message": "chore(release): prepare AuthPortal v2.0.6 (#169)\n\n* chore(release): prepare v2.0.6\n\n* fix(release): align v2.0.6 version metadata"
+                "commit_hash": "53be013c7683af728921c028a171855ebb69fa36",
+                "commit_message": "chore(release): prepare v2.0.7 security maintenance (#180)\n\n* chore: update dependencies and security tooling\n\n* docs: clarify maintenance and release version boundaries\n\n* chore(release): prepare v2.0.7"
             }
         ]
     },
