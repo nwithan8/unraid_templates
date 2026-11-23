@@ -254,8 +254,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "99ab38dc799d07d4d91863199b1350fb7d06e03e",
-                "commit_message": "chore: add support for Docker Hub\n"
+                "commit_hash": "7e324ee319808ea9eadfdea1f965a8eea120be64",
+                "commit_message": "feat!: make distroless the default container image (#1919)"
             },
             {
                 "file_path": ".env.example",
@@ -483,8 +483,8 @@
         "files_to_check": [
             {
                 "file_path": "auth-portal-full-stack-dev_docker-compose.yml",
-                "commit_hash": "c415c9f72184ec94074e2e6f6c2e4c945e18f568",
-                "commit_message": "chore(release): prepare AuthPortal v2.0.6 (#169)\n\n* chore(release): prepare v2.0.6\n\n* fix(release): align v2.0.6 version metadata"
+                "commit_hash": "53be013c7683af728921c028a171855ebb69fa36",
+                "commit_message": "chore(release): prepare v2.0.7 security maintenance (#180)\n\n* chore: update dependencies and security tooling\n\n* docs: clarify maintenance and release version boundaries\n\n* chore(release): prepare v2.0.7"
             }
         ]
     },
@@ -714,13 +714,13 @@
         "files_to_check": [
             {
                 "file_path": "docs/DOCKER.md",
-                "commit_hash": "a495cce16cd0c210e30fc4d59249e3b076dfd419",
-                "commit_message": "docs: add portainer setup guide\n"
+                "commit_hash": "5a97254fb9b9d7f757412459fdbebe65c3aa8423",
+                "commit_message": "feat: guard library against wrong mounts\n\nWhen the downloads folder points somewhere other than the library (for\nexample after the library was moved on the host but the volume line\nwas not), the empty-folder check stopped protecting it once a single\ndownload landed in that folder. After that, rescans could mark every\nvideo missing and Empty trash offered to forget them. On slow shares,\nrescans could also stop at the 5-minute limit right after the disk\nwalk, so each run started over and never finished.\n\n- Rescans always finish the walk and the row check; the time limit\n  now covers only resolution probing and starts after the walk\n- Rescans log walk progress and hold back missing marks in a folder\n  where fewer than half of its videos (and at least 25) were found\n- Other writers also sample 20 stored paths and treat the folder as\n  unavailable (\"not-found\") when most of them are gone\n- Downloads pause while the downloads folder looks unavailable; that\n  check is cached, runs one at a time and has a timeout\n- Rescan anyway shows how many videos it would mark missing and needs\n  a checkbox; Empty trash no longer preselects Missing, and both trash\n  actions ask again when most of the library is missing\n- Maintenance shows live rescan progress, files found next to videos\n  in the database, run length and the missing count\n- Settings no longer says YOUTUBE_OUTPUT_DIR sets the volume\n\nRefs: #1054\n"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "0082558098809aa581fbed4c6ae1a0f0a8377eeb",
-                "commit_message": "fix: make external API opt-in and verify MariaDB migrations\n"
+                "commit_hash": "4597eef3b8da4ecbb2e8b2e31f2c5e7ea41d86b8",
+                "commit_message": "docs: clarify Gluetun setup and its gotchas\n\nFollow-up on the Gluetun compose override so the docs match what the\nscripts and Compose actually do:\n\n- Fresh-install steps now live in GLUETUN_INTEGRATION.md; the main\n  install guide just points there and warns that the ARM/NAS -f\n  command skips COMPOSE_FILE\n- Explain that a second COMPOSE_FILE line in .env wins over the\n  first, which can drop the named-volume override and make the\n  library look empty\n- Say the external-database start script ignores COMPOSE_FILE and\n  would start Youtarr with no VPN\n- Give one recovery command for when Gluetun restarts or gets\n  replaced on its own: docker compose up -d --force-recreate youtarr\n- Drop the Docker Desktop \"Use Docker Compose V2\" tip (that toggle\n  is gone) and ask for Compose 2.24 or newer instead\n- Put the simple table of contents back in ENVIRONMENT_VARIABLES.md;\n  the docs build reported broken anchors with the long one\n- Fix the WIREGUARD_MTU default, add examples, cover the new file in\n  DOCKER.md, and add short VPN notes to the platform guides\n\nRefs: #1010\n"
             },
             {
                 "file_path": "docker-compose.yml",
@@ -861,8 +861,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "f4eb63c753e86cd8361f3f633ae12bcc2c9c1617",
-                "commit_message": "fix(ui): drop the 2.0 badge and settle on the Borg UI name (#1017)\n\nThe sidebar and login screen showed a hardcoded 2.0 badge that read as a\nversion and drifted from the real one, which is already shown at the\nbottom of the sidebar. Remove it.\n\nRename the remaining \"Borg Web UI\" strings to \"Borg UI\" so the browser\ntab, login title, API title, Docker labels, and docs all use one name.\n\nCloses #912\n\nCo-authored-by: Claude Opus 5 <noreply@anthropic.com>"
+                "commit_hash": "e9661202d4641803377c77b2be0a900e9a82c482",
+                "commit_message": "feat(this-machine): protect the host and back up Borg UI itself (phase 1) (#1587)\n\n* docs(spec): This machine protection, self-backup and restore\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* docs(plan): This machine implementation plan\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* feat(this-machine): system role on plans and repositories\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* feat(this-machine): set up the host plan and repository\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* feat(this-machine): back up Borg UI itself in the host plan\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* feat(this-machine): read-all capability for Borg only\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* docs(this-machine): protecting the host and Borg UI itself\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* chore(this-machine): register routes, migration weight, backend strings\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): keep the database in self-backup and close review gaps\n\n- stage the snapshot as borg-ui-db.sqlite so the live borg.db exclude cannot drop it\n- write the snapshot and manifest first; skip unreadable rebuild inputs\n- permanent delete of a confirmed system repository removes its record\n- fall back to the data volume when the host snapshot folder is not writable\n- clear staging at startup and exclude it from every other plan\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): read-all access for the This machine plan only\n\nThe borg wrapper (and the native forwarder) use the read-all interpreter only\nwhen Borg UI sets BORG_UI_READ_ALL=1, which it does for This machine backups\nalone. Other plans, restores and browsing keep the app user's access, and only\nadmins can change what the This machine plan covers.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): address CodeRabbit review round 1\n\n- keep an empty staging folder when staging fails, so the backup still runs\n- staging is owner-only; Borg keyfiles join the self-backup\n- run the staging step off the event loop\n- the by-name fallback exclude applies only in data-volume mode\n- status reports where the saved repository actually lives\n- start-up and installer probes read a real root-only file\n- native read-all copy is root-owned and service-group only\n- docs and plan use borg-ui-db.sqlite; kit plan carries rclone remotes\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): address CodeRabbit review round 2\n\n- stage the secret key in use (SECRET_KEY wins over the file), owner-only\n- parse the SQLite URL so query options are not part of the file name\n- split LOCAL_MOUNT_POINTS on commas only, trimming spaces\n- prove read-all by reading the host's own /etc/shadow, not a container file\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): address CodeRabbit review round 3\n\n- skip a rebuild-input collector on any error, not only OSError\n- spec matches the staging contract that shipped\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* test(this-machine): use a placeholder home path the path guard allows\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): chain the system_role migration after main's new head\n\nmain added b4f1d7e2c9a6 on the same parent, leaving two Alembic heads.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): address PR review\n\n- keep root-only source roots (Docker's 0710 /var/lib/docker crashed setup)\n- This machine backups skip the app-user existence preflight\n- setup finishes what a stopped setup left: adopts its plan or repository,\n  retries the restore check, reports the saved location, 409s on a race\n- clear staging under the runner lease, not before it\n- installer revokes every read-all copy and the marker before choosing Borg\n- docs: archived secret-key, data-volume fallback; plan: wrapper as built\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* test(e2e): read every announcement as acknowledged in browser tests\n\nThe Black Friday announcement (#1586, live from 20 November) opens a modal\nover the SSH keys page and hides its heading. main fails the same way.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): exclude the repository setup uses and keep the plan linked to it\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): system role from the first commit, serialized setup\n\n- the create routes store system_role in the row's own insert (a context\n  variable setup sets), so setup never adopts anything by name or path\n- setup refuses with 409 when a user's plan or repository has the name or\n  path it needs\n- setup runs under one lock, so concurrent requests share one repository\n  and one passphrase\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(this-machine): a reused plan excludes the repository setup selected\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* fix(repositories): verify the passphrase opens an existing repository before saving it\n\nWhen init finds a repository already at the path, create now runs borg info\nwith the submitted passphrase and refuses to store the row if it fails. A\nThis machine setup retry after a half-finished run can no longer save a\nfresh passphrase that cannot open the repository on disk.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n* test(this-machine): assert concurrent setup stores the passphrase Borg was initialised with\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n---------\n\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>"
             }
         ]
     },
@@ -873,8 +873,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "2944627d4d389ecbadb0a9a41372d71d3e4e0a44",
-                "commit_message": "Show why beets imports fail and queue them per library (#91)\n\n* Add the waiting-for-library row state, importer health types and batch folder names to the shared types\n\n* Run beets through a reader that never blocks on a full pipe and kills the whole process group on timeout\n\n* Classify beets runs from their run log and exact output markers, with real 2.11 transcripts as fixtures\n\n* Check the beets config by loading it the way beet does and report missing metadata sources and broken plugins\n\n* Report beets health from a real config check and return import outcomes instead of fake API errors\n\n* Recheck a timed-out beets config check after five minutes and give beet ls its own time limits\n\n* Refuse downloads and discovery while beets is broken and only download into the user's own folders\n\n* Show refusals through a distinct error code instead of forwarding every server message\n\n* Queue every beets import per library, show waiting rows and keep failed files for a Retry import\n\n* Refuse a retry whose kept files are gone and stop keeping jobs that had nothing left to import\n\n* Download each batch into its own folder, track slskd transfers by id and stop treating Already in progress as success\n\n* Claim handed-off downloads by file identity so a later file under the same name still resolves, and only lock while looking\n\n* Own each in-flight download in a registry so repeat clicks join the running batch instead of downloading again\n\n* Keep claimed downloads moving when the client disconnects and only join a running batch that imports into the same folder\n\n* Track monitor slots by transfer id and only remove slskd records once their files are on disk\n\n* Leave succeeded slskd records to the handoff that found their file and only let a batch rebind keys it owns\n\n* Match discovery downloads by transfer id and drop the fuzzy transfer matching\n\n* Cancel abandoned transfers without removing their records and delete the unused album directory helpers\n\n* Show beets health in the status chip, a banner and Settings, and show why an import was skipped with a Retry button\n\n* Show the outcome note on imported rows, keep the beets output to rows with a reason, and disable Retry import while it runs\n\n* Run cargo tests and the beets config probe in CI, add tini as PID 1 and document how BEETS_CONFIG replaces the shipped config\n\n* Read probe.py from the workspace root in the CI probe steps and fix the README and compose config hints\n\n* Cover queued imports, repeat clicks, skipped rows with Retry and a broken beets config end to end\n\n* Show a failed download only once it has settled, so a retry from its row is not refused\n\n* Name a track search's download folder after the track instead of Download\n\n* Prove repeat clicks never reach slskd twice and share the download panel helpers across specs\n\n* Keep one beets importer for the whole process so saving settings cannot reset its health, and check it before a first import\n\n* Run each promote in its own task and tell the user why a promote or a discovery run did nothing\n\n* Offer Retry import only on rows whose job the server kept, and keep at most 200 such jobs per user\n\n* Join a running batch in one registry step, cancel transfers nobody will watch, and refuse files already downloading into another folder\n\n* Import with --noincremental and --noresume so Retry import always runs, and take the timing races out of the beets tests\n\n* Percent-encode every reserved byte of an slskd path segment and refuse peer names that are dot segments\n\n* Share one status banner and health dot, show the beets fix and promote errors, and clear a stale download error\n\n* Keep one copy of the issue 90 beets config and leave the beets fixtures out of the image build context\n\n* Format the files this branch touched\n\n* Publish prerelease tags as GitHub prereleases without moving latest or the rolling tier tags"
+                "commit_hash": "e2099ceb6ca363ec68424bb6add51f77d2bb26de",
+                "commit_message": "Keep the beets library databases off the music share and retry a locked one (#108)\n\n* Keep the beets library databases next to Soulbeet's database instead of on the music share, report a locked one as its own failure and import it again by itself after a wait\n\n* Start the automatic runs of a locked import again after a restart, read the MCP instance's beets libraries at its own music root and say to delete a removed folder's beets library"
             }
         ]
     },
@@ -936,8 +936,8 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "b7ec9aecde89fc5440d667c5083fd0915efa1b05",
-                "commit_message": "feat: add aggregate generation stats page\n"
+                "commit_hash": "58dc39a4e4696f2d86ab1ea4b93f42790d429734",
+                "commit_message": "feat: support navidrome behind an auth proxy (header auth)\n\nset NAVIDROME_AUTH_MODE=header and NAVIDROME_URL and the browser goes\nthrough /navidrome-proxy, which passes the signed in user header on to\nnavidrome. no password field needed.\n\ncloses #42\n"
             }
         ]
     },
@@ -1013,13 +1013,13 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "e15c0c72acb2168d1ec98ec90b7e6b31d50f6f14",
-                "commit_message": "feat: allow a per-provider download path override\n\nCo-authored-by: Derek <derek@m5.macbookpro>\nCo-authored-by: V1ck3s <contact@vickes.fr>"
+                "commit_hash": "04ef59ebb14845dad6d646640686f1e8409c0b51",
+                "commit_message": "feat: stream tracks while they download"
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "e15c0c72acb2168d1ec98ec90b7e6b31d50f6f14",
-                "commit_message": "feat: allow a per-provider download path override\n\nCo-authored-by: Derek <derek@m5.macbookpro>\nCo-authored-by: V1ck3s <contact@vickes.fr>"
+                "commit_hash": "04ef59ebb14845dad6d646640686f1e8409c0b51",
+                "commit_message": "feat: stream tracks while they download"
             }
         ]
     },
@@ -1078,8 +1078,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "ee6465d38266f9c1f23fae6a84a6a119845a79ec",
-                "commit_message": "Docker adjustment\n\nSigned-off-by: TBOT <monsieurtalbot@gmail.com>"
+                "commit_hash": "65ff7d989f71da95316b418d3a0e049c7d5d22f1",
+                "commit_message": "release: v0.7.6.0 Beta - WebUI login follow-ups: API scope setting, Twilio webhook gate, login lockout, config form (#68)\n\nFollow-up to #65 (optional WebUI login, bind address, secret masking) and\n#66 (dashboard layout fixes), both by KnottyDyes.\n\n- webui.auth.protect_api (default true). The login covers the HTTP API as\n  well as the dashboard, so scripts calling /send, /messages or /nodes need\n  the API token once it is on. Set it to false to leave /send, /messages,\n  /nodes, /connection_status and /commands_info open while the dashboard,\n  config, logs, restart and firmware stay behind the login. The startup\n  line now states what the login covers.\n- /twilio_webhook only answers while Twilio is enabled. It stayed live on\n  the default inbound channel with Twilio off, and it is exempt from the\n  login, so any caller could broadcast text onto the mesh.\n- Failed-login lockout: 10 wrong credentials from one address within\n  5 minutes refuse further attempts from it until the window passes.\n- exempt_paths: an empty list now exempts nothing (it fell back to the\n  defaults); a missing key still means the defaults.\n- Config editor: new \"WebUI Access\" section with every webui setting, so\n  the block is no longer raw-JSON only.\n- Docs: CONFIGURATION.md states what the login blocks in each mode, what\n  protects the exempt webhooks, how to find a generated password, and the\n  HTTPS caveat. README API reference, DEVELOPING_EXTENSIONS.md and\n  AGENTS.md carry the login notes. docker-compose health check comment no\n  longer fails with the login on.\n- docker-required-volumes.zip: config.json refreshed with the webui block.\n\nCo-Authored-By: Claude Fable 5.2 <noreply@anthropic.com>"
             }
         ]
     },
@@ -1090,8 +1090,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "9ca0be6378babf861d93fa6707ebb87259240e78",
-                "commit_message": null
+                "commit_hash": "e87d1d9c998bace236a8c7fe06cb0c15cdd727f7",
+                "commit_message": "fix(deploy): cap glibc malloc arenas in the web container\n\nProduction workers grew to 2-3GB RSS with an almost-empty Python heap:\nsmmaps showed dozens of anonymous 64MB mappings (45x64MB + 23x63MB in one\nworker) alongside 22 threads. That is glibc's per-thread arena footprint -\neach arena is a 64MB mmap and is never returned to the OS, so a worker\nrunning gunicorn + gRPC/OTel exporter threads accumulates arenas under\nrequest load until the OOM killer reaps it (29 SIGKILLs observed today).\n\nMALLOC_ARENA_MAX=2 bounds the arenas; MALLOC_TRIM_THRESHOLD_ returns\nfreed memory promptly. Applies to the malla-web service; capture is\nsingle-threaded and unaffected.\n"
             },
             {
                 "file_path": "env.example",
@@ -1326,8 +1326,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "7dd40a5ba6f8badd0045793617458d32529f8d21",
-                "commit_message": "Update compose to use tagged release\n"
+                "commit_hash": "0d919406470afc777734209e3188f40506e635e4",
+                "commit_message": "Update tag to v1.20.1\n\nLewis: May this revision serve well! <did:plc:3fwecdnvtcscjnrx2p4n7alz>\n"
             }
         ]
     },
