@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/template_schema.xsd template_schema.xsd">
-    <Name>Plex Rewind</Name>
-    <Repository>ghcr.io/raunot/plex-rewind:latest</Repository>
-    <Registry>https://github.com/raunot/plex-rewind/pkgs/container/plex-rewind</Registry>
+    <Name>Rewindarr</Name>
+    <Repository>ghcr.io/raunot/rewindarr:latest</Repository>
+    <Registry>https://github.com/RaunoT/rewindarr/pkgs/container/rewindarr</Registry>
     <Branch>
         <Tag>latest</Tag>
         <TagDescription>Latest stable release</TagDescription>
@@ -14,16 +14,21 @@
     <Network>bridge</Network>
     <Privileged>false</Privileged>
     <WebUI>http://[IP]:[PORT:8383]/</WebUI>
-    <Support>https://github.com/RaunoT/plex-rewind/issues</Support>
-    <Project>https://github.com/RaunoT/plex-rewind</Project>
-    <Overview>Present Plex user statistics and habits in a beautiful and organized manner à la Spotify Wrapped.</Overview>
+    <Support>https://github.com/RaunoT/rewindarr/issues</Support>
+    <Project>https://github.com/RaunoT/rewindarr</Project>
+    <Overview>A rewind for your media server, inspired by Spotify Wrapped. Present Plex and Jellyfin user statistics and habits using data from Tautulli or Tracearr (Jellyfin through Tracearr), with an optional Seerr integration. Formerly Plex Rewind.</Overview>
     <Category>Tools: MediaServer Other: Status:Stable</Category>
+    <ExtraSearchTerms>plex rewind jellyfin tautulli tracearr wrapped statistics</ExtraSearchTerms>
     <Icon>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/images/plex-rewind-icon.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/main/templates/plex_rewind.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-10-31
+
+        Plex Rewind is now Rewindarr: switch to the ghcr.io/raunot/rewindarr image, update links and icon, add PUID and PGID, remove the unused All-Time Start Date variable
+
         ### 2024-08-20
 
         Remove requirement for pre-boot settings file, change Settings Path to Config Path
@@ -40,6 +45,7 @@
     <Config Name="Site URL" Target="NEXT_PUBLIC_SITE_URL" Default="http://192.168.1.1:8383" Description="IMPORTANT: Change to your server IP address and port, or domain if app is publicly exposed." Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Authentication Secret" Target="NEXTAUTH_SECRET" Default="" Description="Required to encrypt authentication JWT token. Run `openssl rand -base64 32` to generate." Type="Variable" Display="always" Required="true" Mask="true" />
     <Config Name="Authentication URL" Target="NEXTAUTH_URL" Default="http://192.168.1.1:8383" Description="IMPORTANT: Change to your server IP address and port, or domain if app is publicly exposed." Type="Variable" Display="always" Required="true" Mask="false" />
-    <Config Name="All-Time Start Date" Target="NEXT_PUBLIC_STATISTICS_START_DATE" Default="2018-01-01" Description="Start date for 'all time' option" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="PUID" Target="PUID" Default="99" Description="User ID the app runs as" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="Group ID the app runs as" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
     <Config Name="Config Path" Target="/app/config" Default="/mnt/user/appdata/plex_rewind/config" Mode="rw" Description="Path to configuration files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/plex_rewind/config</Config>
 </Container>
