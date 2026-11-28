@@ -14,8 +14,8 @@
     <Network>bridge</Network>
     <Privileged>false</Privileged>
     <WebUI>http://[IP]:[PORT:1411]/</WebUI>
-    <Support>https://github.com/stonith404/pocket-id/issues</Support>
-    <Project>https://github.com/stonith404/pocket-id</Project>
+    <Support>https://pocket-id.org/docs/introduction</Support>
+    <Project>https://pocket-id.org</Project>
     <Overview>A simple OIDC provider that allows users to authenticate with their passkeys to your services.</Overview>
     <Beta>False</Beta>
     <Category>Network:Privacy Productivity: Security: Tools: Other:</Category>
