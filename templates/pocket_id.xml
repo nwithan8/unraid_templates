@@ -26,6 +26,10 @@
         <WebPage>https://github.com/nwithan8</WebPage>
     </Maintainer>
     <Changes>
+        ### 2026-11-28
+
+        Add cache directory
+
         ### 2026-06-27
 
         Switch from GHCR to Docker Hub for more stability
@@ -65,6 +69,7 @@
     <Config Name="Internal Port" Target="PORT" Default="1411" Mode="tcp" Description="The port inside the container on which the server should listen. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1411</Config>
     <Config Name="Internal Host" Target="HOST" Default="0.0.0.0" Description="The host inside the container on which the server should listen. Not recommended to change." Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.0.0.0</Config>
     <Config Name="Data Path" Target="/app/data" Default="/mnt/user/appdata/pocket-id/data" Mode="rw" Description="Data directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pocket-id/data</Config>
+    <Config Name="Cache Path" Target="/app/cache" Default="/mnt/user/appdata/pocket-id/cache" Mode="rw" Description="Cache directory" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/pocket-id/cache</Config>
     <Config Name="PUID" Target="PUID" Default="099" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">099</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
