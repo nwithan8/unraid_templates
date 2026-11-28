@@ -254,8 +254,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "7e324ee319808ea9eadfdea1f965a8eea120be64",
-                "commit_message": "feat!: make distroless the default container image (#1919)"
+                "commit_hash": "3fc23252f50488eb4a70b5b685aa870ab0e608d1",
+                "commit_message": "feat!: move regenerable files to a separate cache folder (#1932)\n\nCo-authored-by: Alessandro (Ale) Segala <43508+ItalyPaleAle@users.noreply.github.com>"
             },
             {
                 "file_path": ".env.example",
@@ -507,8 +507,8 @@
         "files_to_check": [
             {
                 "file_path": "docs/.vitepress/components/DockerCompose.vue",
-                "commit_hash": "edbcc65bcd70038324976a9dbbcac7618acc55b9",
-                "commit_message": "Revert \"Add SYS_PTRACE capability for .NET crash dump support (#246)\" (#247)\n\nDue to internal discussion, we've decided to not display the cap in the builder.\n\nThis reverts commit 728d8feee9658231e25e2adff6626a4713350c04."
+                "commit_hash": "9cfc01af03b9dadda27431b809c906ce18f25225",
+                "commit_message": "docs: update pre-release wording for Shoko Server 6.0.0\n"
             }
         ]
     },
@@ -777,8 +777,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "e4aeac32ca0d7ff0aa4de382d1c40eee39c7a49d",
-                "commit_message": ""
+                "commit_hash": "ef99ca9981e04158fff629f7447aa8accf7408ad",
+                "commit_message": "support a second Radarr/Sonarr (4K): items attached to the instance owning their folder, versions share playbacks and favorites\n"
             }
         ]
     },
@@ -873,8 +873,8 @@
         "files_to_check": [
             {
                 "file_path": "docker-compose.yml",
-                "commit_hash": "e2099ceb6ca363ec68424bb6add51f77d2bb26de",
-                "commit_message": "Keep the beets library databases off the music share and retry a locked one (#108)\n\n* Keep the beets library databases next to Soulbeet's database instead of on the music share, report a locked one as its own failure and import it again by itself after a wait\n\n* Start the automatic runs of a locked import again after a restart, read the MCP instance's beets libraries at its own music root and say to delete a removed folder's beets library"
+                "commit_hash": "134fee1dd0e478c07d4bdbd26d788dc384d0d089",
+                "commit_message": "Add the Direct Connect (AirDC++) download backend, off by default (#142)"
             }
         ]
     },
@@ -936,8 +936,8 @@
             },
             {
                 "file_path": ".env.example",
-                "commit_hash": "58dc39a4e4696f2d86ab1ea4b93f42790d429734",
-                "commit_message": "feat: support navidrome behind an auth proxy (header auth)\n\nset NAVIDROME_AUTH_MODE=header and NAVIDROME_URL and the browser goes\nthrough /navidrome-proxy, which passes the signed in user header on to\nnavidrome. no password field needed.\n\ncloses #42\n"
+                "commit_hash": "8489a00483e072e088e83dde9387a404a84fced2",
+                "commit_message": "perf: cap the image cache and run fewer, wider workers\n\ndownloaded art was kept in three unbounded-ish lru caches per worker (raw\nbytes, no ttl). it now lives in one ttl cache with a 24 mb budget, and the\nttl cache evicts in O(1). the docker image runs 2 workers x 16 threads with\nMALLOC_ARENA_MAX=2 and recycles workers every ~5000 requests. image and\nrender limits are raised so the totals stay the same.\n\nlocally: 250 -> 141 mb idle, 438 -> 237 mb after a burst of artwork requests\n"
             }
         ]
     },
@@ -1290,8 +1290,8 @@
         "files_to_check": [
             {
                 "file_path": "deployment/docker/compose-files/docker-compose-postgres/docker-compose.yml",
-                "commit_hash": "dc41ce894580ee368d3efe4907cd576e919d1970",
-                "commit_message": "README: easiest vs production setup\n"
+                "commit_hash": "5b39fceee87450c3ba906908f5eef75a5d43dc65",
+                "commit_message": "AI sidecar fixes\n"
             }
         ]
     },
